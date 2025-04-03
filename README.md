@@ -1,4 +1,4 @@
-!(mvc/public/img/rtfm.jpg)
+1(https://github.com/dougherty-dev/mvc/blob/main/public/img/rtfm.jpg)
 
 # MVC
 ## DV1608 V25 lp4 Objektorienterade webbteknologier
