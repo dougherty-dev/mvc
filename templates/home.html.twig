@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Hem{% endblock %}
+
+{% block body %}
+    <section class="two-columns">
+        <h1>Om Chihiro</h1>
+        <p class="initcap">千尋です。よろしくお願いします！<em>(Chihiro desu. Yoroshiku onegaishimasu!)</em> Detta är min enkla boning i kursen MVC, en dammig virtuell labblokal med gamla trasiga tjockskärmar och andra komponenter från <em>annodazumal</em>. Det är i denna kusliga miljö vi ämnar förkovra oss i MVC.</p>
+        <p>För ändamålets skull norpar vi denna gång ett alter ego i form av Ogino Chihiro (荻野千尋), huvudfigur i fantastiska <em>Spirited away</em> (2001), en japansk saga med riklig ansamling av <em>susuwatari</em>, <em>yōkai</em> och andra <em>kami</em> ur den japanska folkloren.</p>
+        <p>Chihiro är bara tio år, men intelligent som få. MVC-kursen blir en enkel resa för henne, i alla fall med hjälp av <em>kami</em>. Det handlar om fantasi mer än logik, och Chihiros föreställningsvärld är ovanligt rik.</p>
+        <h2>Om sajten</h2>
+        <p>Symfony nyttjas för att rendera sidor och annat innehåll, med PHP som ryggrad. GPT-4o respektive DALL·E 3 används för att generera bilder, ur vilka en lämplig palett för CSS extraheras. Bilder föreligger genomgående i 10-bitars HEIF/AVIF för bästa prestanda. Utvecklingsmiljön består av MacOS Sequoia 15.4 med AMP-stack och erforderliga paket via brew, composer och npm.</p>
+        <p></p>
+        <img src="{{ asset('img/chihiro.avif') }}" width="1536" alt="Chihiro">
+    </section>
+{% endblock %}
