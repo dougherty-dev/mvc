@@ -3,19 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="{{ asset('img/favicon.ico') }}">
-        {% block stylesheets %}
-            {#{ encore_entry_link_tags('app') }#}
-        {% endblock %}
+        <link rel="icon" href="{{ asset('build/images/favicon.ico') }}">
+        {% block stylesheets %}{% endblock %}
 
         {% block javascripts %}
-            {#{ encore_entry_script_tags('app') }#}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
     <body>
         <header>
-            <nav>
+            <nav id="navbar">
                 <ul>
                     <li><a href="{{ path('home') }}">Hem</a></li> ·
                     <li><a href="{{ path('about') }}">Om</a></li> ·
@@ -40,7 +37,7 @@
                 (<a href="https://www.student.bth.se/~nido24/dbwebb-kurser/design/me/kmom10/">projekt</a>)&nbsp;|
                 <a href="https://www.student.bth.se/~nido24/dbwebb-kurser/webtec/me/report/public/me.php">Webtec</a>
                 (<a href="https://www.student.bth.se/~nido24/dbwebb-kurser/webtec/me/proj/public/home.php">projekt</a>)</p>
-                <p>© 2025 <span style="color: var(--red);">nido24</span></p>
+                <p>© 2025 <span style="color: var(--orange);">nido24</span></p>
         </footer>
     </body>
 </html>

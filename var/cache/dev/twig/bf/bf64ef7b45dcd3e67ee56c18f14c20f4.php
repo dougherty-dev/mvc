@@ -107,7 +107,7 @@ class __TwigTemplate_36cd26bc423fd6a4a857f779086bef76 extends Template
         <p></p>
         <img src=\"";
         // line 14
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/chihiro.avif"), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
     </section>
 ";
@@ -159,7 +159,7 @@ class __TwigTemplate_36cd26bc423fd6a4a857f779086bef76 extends Template
         <h2>Om sajten</h2>
         <p>Symfony nyttjas för att rendera sidor och annat innehåll, med PHP som ryggrad. GPT-4o respektive DALL·E 3 används för att generera bilder, ur vilka en lämplig palett för CSS extraheras. Bilder föreligger genomgående i 10-bitars HEIF/AVIF för bästa prestanda. Utvecklingsmiljön består av MacOS Sequoia 15.4 med AMP-stack och erforderliga paket via brew, composer och npm.</p>
         <p></p>
-        <img src=\"{{ asset('img/chihiro.avif') }}\" width=\"1536\" alt=\"Chihiro\">
+        <img src=\"{{ asset('build/images/chihiro.avif') }}\" width=\"1536\" alt=\"Chihiro\">
     </section>
 {% endblock %}
 ", "home.html.twig", "/Users/nik/Sites/dbwebb-kurser/mvc/me/report/templates/home.html.twig");

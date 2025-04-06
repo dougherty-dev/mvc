@@ -108,7 +108,7 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
         <figure>
             <img src=\"";
         // line 12
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/chihiro-api.avif"), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-api.avif"), "html", null, true);
         yield "\" width=\"896\" alt=\"Chihiro\">
             <figcaption>@mos fastnar i en loop.</figcaption>
         </figure>
@@ -160,7 +160,7 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
             <li><a href=\"{{ path('quotation') }}\">Citat</a></li>
         </ul>
         <figure>
-            <img src=\"{{ asset('img/chihiro-api.avif') }}\" width=\"896\" alt=\"Chihiro\">
+            <img src=\"{{ asset('build/images/chihiro-api.avif') }}\" width=\"896\" alt=\"Chihiro\">
             <figcaption>@mos fastnar i en loop.</figcaption>
         </figure>
     </section>

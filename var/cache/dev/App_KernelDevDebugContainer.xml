@@ -362,6 +362,21 @@
     <service id="App\Entity" class="App\Entity" abstract="true">
       <tag name="container.excluded" source="in &quot;config/services.yaml&quot;"/>
     </service>
+    <service id="App\Cards\Card" class="App\Cards\Card" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;App\Cards\Card&quot; to be defined in file &quot;/Users/nik/Sites/dbwebb-kurser/mvc/me/report/vendor/composer/../../src/Cards/Card.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="App\Cards\CardGraphic" class="App\Cards\CardGraphic" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;App\Cards\CardGraphic&quot; to be defined in file &quot;/Users/nik/Sites/dbwebb-kurser/mvc/me/report/vendor/composer/../../src/Cards/CardGraphic.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="App\Cards\Deck" class="App\Cards\Deck" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;App\Cards\Deck&quot; to be defined in file &quot;/Users/nik/Sites/dbwebb-kurser/mvc/me/report/vendor/composer/../../src/Cards/Deck.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="App\Cards\ExtendedDeck" class="App\Cards\ExtendedDeck" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;App\Cards\ExtendedDeck&quot; to be defined in file &quot;/Users/nik/Sites/dbwebb-kurser/mvc/me/report/vendor/composer/../../src/Cards/ExtendedDeck.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="App\Cards\Hand" class="App\Cards\Hand" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;App\Cards\Hand&quot; to be defined in file &quot;/Users/nik/Sites/dbwebb-kurser/mvc/me/report/vendor/composer/../../src/Cards/Hand.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>

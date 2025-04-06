@@ -100,16 +100,28 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         yield "    <select id=\"kmom\" aria-label=\"kmom\" onChange=\"window.document.location.href=this.options[this.selectedIndex].value;\">
         <option value=\"#navbar\">topp</option>
         <option value=\"#kmom01\">km01</option>
-        <!-- option value=\"#kmom02\">km02</option>
-        <option value=\"#kmom03\">km03</option>
+        <option value=\"#kmom02\">km02</option>
+        <!-- option value=\"#kmom03\">km03</option>
         <option value=\"#kmom04\">km04</option>
         <option value=\"#kmom05\">km05</option>
         <option value=\"#kmom06\">km06</option>
         <option value=\"#kmom10\">km10</option -->
     </select>
-    <nav id=\"navbar\"></nav>
     <h1>Rapport</h1>
-    <section class=\"two-columns\" id=\"#kmom01\">
+    <section class=\"two-columns\" id=\"kmom02\">
+        <h2>Kmom02</h2>
+        <p class=\"initcap\"></p>
+        <p></p>
+        <p></p>
+        <figure>
+            <img src=\"";
+        // line 23
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom02.avif"), "html", null, true);
+        yield "\" width=\"1792\" alt=\"Chihiro\">
+            <figcaption>Chihiro programmerar kortklasser.</figcaption>
+        </figure>
+    </section>
+    <section class=\"two-columns\" id=\"kmom01\">
         <h2>Kmom01</h2>
         <p class=\"initcap\">I rasande tempo introduceras ramverket Symfony, och den församlade skaran studerande har bara att försöka hänga med i störtfloden av ny information. Upplägget är bekant sedan tidigare: att plumsa i havet, gripa tag i någon drivved och försöka överleva. Även om man får en del plankor till skänks att hålla fast vid.</p>
         <p>Kontroller, mallar och vyer införs i diskursen, och så även RESTfulla API:n via JSON. Via Twig kan webbsidor slutligen renderas på någorlunda bekant sätt, och på något vis känns motorn i bakgrunden tämligen överflödig.</p>
@@ -120,8 +132,8 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <p>TIL får nog sägas vara att nyttja ramverket Symfony, en erfarenhet som kanske är nyttig men som jag aldrig skulle fundera på att använda för egen del. Det är själva definitionen av bloat.</p>
         <figure>
             <img src=\"";
-        // line 28
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/chihiro-kmom01.avif"), "html", null, true);
+        // line 37
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom01.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
             <figcaption>@mos inskärper allvaret i studierna.</figcaption>
         </figure>
@@ -157,7 +169,7 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  124 => 28,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  136 => 37,  119 => 23,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -170,16 +182,25 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
     <select id=\"kmom\" aria-label=\"kmom\" onChange=\"window.document.location.href=this.options[this.selectedIndex].value;\">
         <option value=\"#navbar\">topp</option>
         <option value=\"#kmom01\">km01</option>
-        <!-- option value=\"#kmom02\">km02</option>
-        <option value=\"#kmom03\">km03</option>
+        <option value=\"#kmom02\">km02</option>
+        <!-- option value=\"#kmom03\">km03</option>
         <option value=\"#kmom04\">km04</option>
         <option value=\"#kmom05\">km05</option>
         <option value=\"#kmom06\">km06</option>
         <option value=\"#kmom10\">km10</option -->
     </select>
-    <nav id=\"navbar\"></nav>
     <h1>Rapport</h1>
-    <section class=\"two-columns\" id=\"#kmom01\">
+    <section class=\"two-columns\" id=\"kmom02\">
+        <h2>Kmom02</h2>
+        <p class=\"initcap\"></p>
+        <p></p>
+        <p></p>
+        <figure>
+            <img src=\"{{ asset('build/images/chihiro-kmom02.avif') }}\" width=\"1792\" alt=\"Chihiro\">
+            <figcaption>Chihiro programmerar kortklasser.</figcaption>
+        </figure>
+    </section>
+    <section class=\"two-columns\" id=\"kmom01\">
         <h2>Kmom01</h2>
         <p class=\"initcap\">I rasande tempo introduceras ramverket Symfony, och den församlade skaran studerande har bara att försöka hänga med i störtfloden av ny information. Upplägget är bekant sedan tidigare: att plumsa i havet, gripa tag i någon drivved och försöka överleva. Även om man får en del plankor till skänks att hålla fast vid.</p>
         <p>Kontroller, mallar och vyer införs i diskursen, och så även RESTfulla API:n via JSON. Via Twig kan webbsidor slutligen renderas på någorlunda bekant sätt, och på något vis känns motorn i bakgrunden tämligen överflödig.</p>
@@ -189,7 +210,7 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <p>Det finns i princip inget i <em>PHP The Right Way</em> som är särskilt intressant eller tilltalande. Artikeln är förlegad och därtill väldigt rörig. Särskilt upprörande är att man förespråkar en kodstandard som skiljer sig från PHP:s egna (1TBS, K&amp;R).</p>
         <p>TIL får nog sägas vara att nyttja ramverket Symfony, en erfarenhet som kanske är nyttig men som jag aldrig skulle fundera på att använda för egen del. Det är själva definitionen av bloat.</p>
         <figure>
-            <img src=\"{{ asset('img/chihiro-kmom01.avif') }}\" width=\"1536\" alt=\"Chihiro\">
+            <img src=\"{{ asset('build/images/chihiro-kmom01.avif') }}\" width=\"1536\" alt=\"Chihiro\">
             <figcaption>@mos inskärper allvaret i studierna.</figcaption>
         </figure>
     </section>

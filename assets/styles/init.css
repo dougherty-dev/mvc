@@ -1,0 +1,24 @@
+:root {
+  --darkgreen: rgb(7 12 13);
+  --green: rgb(73 89 57);
+  --aqua: rgb(41 101 115);
+  --beige: rgb(166 159 128);
+  --lightbrown: rgb(191 143 101);
+  --orange: rgb(191 62 33);
+  --brown: rgb(115 52 38);
+
+  --dark: rgb(0 0 0);
+  --light: rgb(240 240 240);
+  --footer: rgb(22 22 22);
+  --table: rgb(67 67 67);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*[lang='sv'] {
+  font-language-override: 'SVE';
+}*/

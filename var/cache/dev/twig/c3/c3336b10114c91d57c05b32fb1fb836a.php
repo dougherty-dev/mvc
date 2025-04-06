@@ -104,7 +104,7 @@ class __TwigTemplate_ddf48122773390b3530c158ff9419703 extends Template
         <p>Git brukas som versionshanterare, kanske mest för drillens skull, medan resultaten publiceras på sedvanligt manér till en server. Även en del API:er med JSON nyttjas, parallellt med motsvarande behandling i annan kurs. Kursen har ett centralt <a href=\"https://github.com/dbwebb-se/mvc\">kursrepo</a> på Github, där även gaffel för detta projekt <a href=\"https://github.com/dougherty-dev/mvc\">huseras</a>.</p>
         <img src=\"";
         // line 11
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/chihiro-about.avif"), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-about.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
     </section>
 ";
@@ -153,7 +153,7 @@ class __TwigTemplate_ddf48122773390b3530c158ff9419703 extends Template
         <p class=\"initcap\">Kursen DV1608 <em>Objektorienterade webbteknologier</em> syftar till att beskriva <code>Hello world!</code> på det mest komplicerade vis som kan föreställas, omfattande 200 MB kod utvecklad under 300 manår. Samt kanske att förbereda för mer avancerade projekt med hjälp av tunga ramverk.</p>
         <p>Moment omfattar objektorienterad PHP med klasser, egenskaper, arv, namnrymder med mera, i kombination med objektorienterad databashantering (ORM). Som ramverk nyttjas Symfony med komponenter som Twig, direkt under Symfonys egen http-server och kanske även PHP:s motsvarighet.</p>
         <p>Git brukas som versionshanterare, kanske mest för drillens skull, medan resultaten publiceras på sedvanligt manér till en server. Även en del API:er med JSON nyttjas, parallellt med motsvarande behandling i annan kurs. Kursen har ett centralt <a href=\"https://github.com/dbwebb-se/mvc\">kursrepo</a> på Github, där även gaffel för detta projekt <a href=\"https://github.com/dougherty-dev/mvc\">huseras</a>.</p>
-        <img src=\"{{ asset('img/chihiro-about.avif') }}\" width=\"1536\" alt=\"Chihiro\">
+        <img src=\"{{ asset('build/images/chihiro-about.avif') }}\" width=\"1536\" alt=\"Chihiro\">
     </section>
 {% endblock %}
 ", "about.html.twig", "/Users/nik/Sites/dbwebb-kurser/mvc/me/report/templates/about.html.twig");

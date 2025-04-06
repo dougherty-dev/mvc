@@ -102,7 +102,7 @@ class __TwigTemplate_3779ffc3a12de8d2cf498ba1380ac302 extends Template
         <figure>
             <img src=\"";
         // line 9
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("img/bth/" . (isset($context["number"]) || array_key_exists("number", $context) ? $context["number"] : (function () { throw new RuntimeError('Variable "number" does not exist.', 9, $this->source); })())) . ".avif")), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("build/images/bth/" . (isset($context["number"]) || array_key_exists("number", $context) ? $context["number"] : (function () { throw new RuntimeError('Variable "number" does not exist.', 9, $this->source); })())) . ".avif")), "html", null, true);
         yield "\" width=\"512\" height=\"512\" alt=\"Chihiro\">
             <figcaption>";
         // line 10
@@ -154,7 +154,7 @@ class __TwigTemplate_3779ffc3a12de8d2cf498ba1380ac302 extends Template
     <section class=\"center\">
         <h1>Ögonblicksbilder @ BTH</h1>
         <figure>
-            <img src=\"{{ asset('img/bth/'~number~'.avif') }}\" width=\"512\" height=\"512\" alt=\"Chihiro\">
+            <img src=\"{{ asset('build/images/bth/'~number~'.avif') }}\" width=\"512\" height=\"512\" alt=\"Chihiro\">
             <figcaption>{{ number }}</figcaption>
         </figure>
     </section>

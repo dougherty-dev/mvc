@@ -1,0 +1,115 @@
+html {
+  font-size: 100%;
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Poppins, sans-serif;
+  font-size: 1.1em;
+  line-height: 1.4;
+  hyphens: auto;
+  text-wrap: balance;
+}
+
+header {
+  padding: 1rem;
+  background-color: var(--green);
+  min-height: 75px;
+  background-image: url("../images/chihiro-nav.avif");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: contain;
+  background-blend-mode: multiply;
+}
+
+nav {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 60%;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline;
+}
+
+main {
+  flex-grow: 1;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+footer {
+  flex-shrink: 0;
+  z-index: 100;
+  background-color: var(--darkgreen);
+  color: var(--beige);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem 4rem 0;
+}
+
+* a, * a:link, * a:visited, * a:hover {
+  color: inherit;
+  opacity: 0.8;
+}
+
+a.active {
+  text-decoration: underline double currentcolor;
+  color: var(--orange) !important;
+}
+
+img {
+  max-width: 100% !important;
+  max-height: 100%;
+  object-fit: scale-down;
+  border-radius: 0.1em;
+  padding: 0.5em 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Poppins-Bold, sans-serif;
+  color: var(--light);
+  margin-bottom: 1.4rem;
+}
+
+h1 {
+  font-size: 2.0rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+em, figcaption {
+  font-family: Poppins-Italic, sans-serif;
+}
+
+figcaption {
+  color: var(--green);
+}
+
+strong, th {
+  font-family: Poppins-Bold, sans-serif;
+}
+
+code {
+  font-family: "Courier New", Courier, monospace;
+  color: var(--orange);
+}
+
+section {
+  margin-bottom: 3rem;
+}

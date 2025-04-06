@@ -60,40 +60,40 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
         yield "</title>
         <link rel=\"icon\" href=\"";
         // line 6
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/favicon.ico"), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/favicon.ico"), "html", null, true);
         yield "\">
         ";
         // line 7
         yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
-        // line 10
+        // line 8
         yield "
         ";
-        // line 11
+        // line 9
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 15
+        // line 12
         yield "    </head>
     <body>
         <header>
-            <nav>
+            <nav id=\"navbar\">
                 <ul>
                     <li><a href=\"";
-        // line 20
+        // line 17
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         yield "\">Hem</a></li> ·
                     <li><a href=\"";
-        // line 21
+        // line 18
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("about");
         yield "\">Om</a></li> ·
                     <li><a href=\"";
-        // line 22
+        // line 19
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("report");
         yield "\">Rapport</a></li><br>
                     <li><a href=\"";
-        // line 23
+        // line 20
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("lucky");
         yield "\">Tur</a></li> ·
                     <li><a href=\"";
-        // line 24
+        // line 21
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api");
         yield "\">API:n</a></li>
                 </ul>
@@ -101,9 +101,9 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
         </header>
         <main class=\"main\">
             ";
-        // line 29
+        // line 26
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 30
+        // line 27
         yield "        </main>
         <footer>
             <p>
@@ -117,7 +117,7 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
                 (<a href=\"https://www.student.bth.se/~nido24/dbwebb-kurser/design/me/kmom10/\">projekt</a>)&nbsp;|
                 <a href=\"https://www.student.bth.se/~nido24/dbwebb-kurser/webtec/me/report/public/me.php\">Webtec</a>
                 (<a href=\"https://www.student.bth.se/~nido24/dbwebb-kurser/webtec/me/proj/public/home.php\">projekt</a>)</p>
-                <p>© 2025 <span style=\"color: var(--red);\">nido24</span></p>
+                <p>© 2025 <span style=\"color: var(--orange);\">nido24</span></p>
         </footer>
     </body>
 </html>
@@ -167,10 +167,6 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 8
-        yield "            ";
-        // line 9
-        yield "        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -180,7 +176,7 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
         yield from [];
     }
 
-    // line 11
+    // line 9
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -193,12 +189,10 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 12
-        yield "            ";
-        // line 13
+        // line 10
         yield "            ";
         yield from $this->unwrap()->yieldBlock('importmap', $context, $blocks);
-        // line 14
+        // line 11
         yield "        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -209,7 +203,7 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
         yield from [];
     }
 
-    // line 13
+    // line 10
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -232,7 +226,7 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
         yield from [];
     }
 
-    // line 29
+    // line 26
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -275,7 +269,7 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  236 => 29,  213 => 13,  202 => 14,  199 => 13,  197 => 12,  184 => 11,  173 => 9,  171 => 8,  158 => 7,  135 => 5,  107 => 30,  105 => 29,  97 => 24,  93 => 23,  89 => 22,  85 => 21,  81 => 20,  74 => 15,  72 => 11,  69 => 10,  67 => 7,  63 => 6,  59 => 5,  53 => 1,);
+        return array (  230 => 26,  207 => 10,  196 => 11,  193 => 10,  180 => 9,  158 => 7,  135 => 5,  107 => 27,  105 => 26,  97 => 21,  93 => 20,  89 => 19,  85 => 18,  81 => 17,  74 => 12,  72 => 9,  69 => 8,  67 => 7,  63 => 6,  59 => 5,  53 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -285,19 +279,16 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
     <head>
         <meta charset=\"UTF-8\">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel=\"icon\" href=\"{{ asset('img/favicon.ico') }}\">
-        {% block stylesheets %}
-            {#{ encore_entry_link_tags('app') }#}
-        {% endblock %}
+        <link rel=\"icon\" href=\"{{ asset('build/images/favicon.ico') }}\">
+        {% block stylesheets %}{% endblock %}
 
         {% block javascripts %}
-            {#{ encore_entry_script_tags('app') }#}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
     <body>
         <header>
-            <nav>
+            <nav id=\"navbar\">
                 <ul>
                     <li><a href=\"{{ path('home') }}\">Hem</a></li> ·
                     <li><a href=\"{{ path('about') }}\">Om</a></li> ·
@@ -322,7 +313,7 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
                 (<a href=\"https://www.student.bth.se/~nido24/dbwebb-kurser/design/me/kmom10/\">projekt</a>)&nbsp;|
                 <a href=\"https://www.student.bth.se/~nido24/dbwebb-kurser/webtec/me/report/public/me.php\">Webtec</a>
                 (<a href=\"https://www.student.bth.se/~nido24/dbwebb-kurser/webtec/me/proj/public/home.php\">projekt</a>)</p>
-                <p>© 2025 <span style=\"color: var(--red);\">nido24</span></p>
+                <p>© 2025 <span style=\"color: var(--orange);\">nido24</span></p>
         </footer>
     </body>
 </html>
