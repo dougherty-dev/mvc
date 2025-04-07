@@ -103,7 +103,7 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
             <li><a href=\"";
         // line 9
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("quotation");
-        yield "\">Citat</a></li>
+        yield "\">Citat</a>: Slumpar fram välformulerade citat.</li>
         </ul>
         <figure>
             <img src=\"";
@@ -157,7 +157,7 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
     <section class=\"center\">
         <h1>Tillgängliga API:n</h1>
         <ul>
-            <li><a href=\"{{ path('quotation') }}\">Citat</a></li>
+            <li><a href=\"{{ path('quotation') }}\">Citat</a>: Slumpar fram välformulerade citat.</li>
         </ul>
         <figure>
             <img src=\"{{ asset('build/images/chihiro-api.avif') }}\" width=\"896\" alt=\"Chihiro\">

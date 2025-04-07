@@ -16,7 +16,7 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerRSSlMux\App_KernelDevDebugContainer([
     'container.build_hash' => 'RSSlMux',
-    'container.build_id' => 'fb81ec76',
-    'container.build_time' => 1743966471,
+    'container.build_id' => '60b86c4c',
+    'container.build_time' => 1743971047,
     'container.runtime_mode' => \in_array(\PHP_SAPI, ['cli', 'phpdbg', 'embed'], true) ? 'web=0' : 'web=1',
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerRSSlMux');
