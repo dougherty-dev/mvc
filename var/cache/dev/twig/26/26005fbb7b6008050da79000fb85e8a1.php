@@ -105,9 +105,9 @@ class __TwigTemplate_ac09d8d0132b93fd7c22272538e052af extends Template
         $context['_seq'] = CoreExtension::ensureTraversable((isset($context["deck"]) || array_key_exists("deck", $context) ? $context["deck"] : (function () { throw new RuntimeError('Variable "deck" does not exist.', 8, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["card"]) {
             // line 9
-            yield "            <span><img src=\"../../build/images/cards/";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["card"], "html", null, true);
-            yield ".svg\" width=\"100\" alt=\"";
+            yield "            <span><img src=\"";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("build/images/cards/" . $context["card"]) . ".svg")), "html", null, true);
+            yield "\" width=\"100\" alt=\"";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), (isset($context["unicode"]) || array_key_exists("unicode", $context) ? $context["unicode"] : (function () { throw new RuntimeError('Variable "unicode" does not exist.', 9, $this->source); })()), $context["card"], 1), "html", null, true);
             yield "\"></span>
         ";
@@ -161,7 +161,7 @@ class __TwigTemplate_ac09d8d0132b93fd7c22272538e052af extends Template
     <section class=\"columns center\">
         <h1>Blanda kortleken</h1>
         {% for card in deck %}
-            <span><img src=\"../../build/images/cards/{{ card }}.svg\" width=\"100\" alt=\"{{ unicode[card:1] }}\"></span>
+            <span><img src=\"{{ asset('build/images/cards/'~card~'.svg') }}\" width=\"100\" alt=\"{{ unicode[card:1] }}\"></span>
         {% endfor %}
     </section>
 {% endblock %}

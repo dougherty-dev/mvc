@@ -1,0 +1,3 @@
+<?php //dbb4486ff6b65295aed59763f924532e
+
+return [PHP_INT_MAX, 'styles/font.css'];

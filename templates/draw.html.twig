@@ -4,10 +4,13 @@
 
 {% block body %}
     <section class="columns center">
-        <h1>Dra kort</h1>
-        {% if remaining > 0 %}
-        <p><img src="../../build/images/cards/{{ card }}.svg" width="100" alt="{{ unicode[card:1] }}"></p>
+        <h1>Dra kort {{ card }}</h1>
+        <p><img src="{{ asset('build/images/cards/'~card~'.svg') }}" width="100" alt="{{ unicode[card:1] }}"></p>
         <p>Kort kvar i lek: {{ remaining }}</p>
+        {% if remaining > 0 %}
+        {% for a in deckValues %}
+        {{ a }}
+        {% endfor %}
         {% endif %}
     </sectiodn>
 {% endblock %}

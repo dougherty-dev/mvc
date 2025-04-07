@@ -8,7 +8,7 @@ class Deck
 {
     public const DECK = Card::CLUBS . Card::DIAMONDS . Card::HEARTS . Card::SPADES;
 
-    public $deck = null;
+    public $deck = [];
 
     public function __construct()
     {
@@ -16,6 +16,7 @@ class Deck
 
     public function resetDeck(): void
     {
+        $this->deck = [];
         foreach (mb_str_split(static::DECK) as $k => $_) {
             $this->deck[] = new Card($k);
         }
@@ -23,6 +24,7 @@ class Deck
 
     public function shuffleDeck(): void
     {
+        $this->resetDeck();
         shuffle($this->deck);
     }
 

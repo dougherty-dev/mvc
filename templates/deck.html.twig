@@ -5,8 +5,8 @@
 {% block body %}
     <section class="columns center">
         <h1>Kortleken</h1>
-        {% for card in deck %}
-            <span><img src="../build/images/cards/{{ card }}.svg" width="100" alt="{{ unicode[card:1] }}"></span>
+        {% for card in deck|sort %}
+            <span><img src="{{ asset('build/images/cards/'~card~'.svg') }}" width="100" alt="{{ unicode[card:1] }}"></span>
         {% endfor %}
     </section>
 {% endblock %}

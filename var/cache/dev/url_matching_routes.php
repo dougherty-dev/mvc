@@ -48,6 +48,7 @@ return [
                         .')'
                     .')'
                 .')'
+                .'|/card/deck/draw/([^/]++)(*:226)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -58,8 +59,9 @@ return [
         148 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
         168 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         181 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        191 => [
-            [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
+        191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        226 => [
+            [['_route' => 'draw_number', '_controller' => 'App\\Controller\\CardController::drawNumberCard'], ['number'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

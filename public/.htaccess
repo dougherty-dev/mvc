@@ -4,7 +4,16 @@
 #
 # Do NOT forget to change /~mosstud/ to your own student acronym.
 #
+
 RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^www\.student\.bth\.se$ [NC]
+RewriteCond %{REQUEST_URI} ^(.*)/build/build/(.*)$
+RewriteRule ^(.*)/build/build/(.*)$ /~nido24/dbwebb-kurser/mvc/me/report/public/build/$2 [L,NC,R=302]
+
+RewriteCond %{HTTP_HOST} !^www\.student\.bth\.se$ [NC]
+RewriteCond %{REQUEST_URI} ^(.*)/build/build/(.*)$
+RewriteRule ^(.*)/build/build/(.*)$ /dbwebb-kurser/mvc/me/report/public/build/$2 [L,NC,R=302]
 
 # Igore real files (images, stylesheets etc.)
 RewriteCond %{REQUEST_FILENAME} -f [OR]
@@ -17,4 +26,4 @@ RewriteRule (.*) /~nido24/dbwebb-kurser/mvc/me/report/public/index.php/$1 [NC,L]
 
 # Rewrite 2 - For other requests
 RewriteCond %{HTTP_HOST} !^www\.student\.bth\.se$ [NC]
-RewriteRule (.*) index.php/$1 [NC,L]
+RewriteRule ^(.*)$ index.php/$1 [L,NC]

@@ -70,6 +70,7 @@ class CardController extends AbstractController
     {
         $this->deck->shuffleDeck();
 
+        $this->session->set("deck", serialize($this->deck));
         $this->session->set("deckValues", $this->deck->deckValues());
 
         $data = [
@@ -93,7 +94,31 @@ class CardController extends AbstractController
         $data = [
             "card" => $this->session->get("card"),
             "remaining" => $this->session->get("remaining"),
-            "unicode" => $this->session->get("unicode")
+            "unicode" => $this->session->get("unicode"),
+            "deckValues" => $this->session->get("deckValues")
+        ];
+
+        return $this->render('draw.html.twig', $data);
+    }
+
+    #[Route("card/deck/draw/{number}", name: "draw_number")]
+    public function drawNumberCard(int $number): Response
+    {
+        while ($number > 0) {
+            if ($this->deck->cards($number) > 0) {
+                $this->session->set("card", $this->deck->drawCard());
+            }
+            --$number;
+        }
+        $this->session->set("deck", serialize($this->deck));
+        $this->session->set("deckValues", $this->deck->deckValues());
+        $this->session->set("remaining", $this->deck->cards());
+
+        $data = [
+            "card" => $this->session->get("card"),
+            "remaining" => $this->session->get("remaining"),
+            "unicode" => $this->session->get("unicode"),
+            "deckValues" => $this->session->get("deckValues")
         ];
 
         return $this->render('draw.html.twig', $data);

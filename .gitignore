@@ -2,3 +2,6 @@ node_modules
 /tools/**/vendor/
 /tools/**/composer.lock
 .php-cs-fixer.cache
+
+# Mac OS
+.DS_Store

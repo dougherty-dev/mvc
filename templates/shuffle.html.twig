@@ -6,7 +6,7 @@
     <section class="columns center">
         <h1>Blanda kortleken</h1>
         {% for card in deck %}
-            <span><img src="../../build/images/cards/{{ card }}.svg" width="100" alt="{{ unicode[card:1] }}"></span>
+            <span><img src="{{ asset('build/images/cards/'~card~'.svg') }}" width="100" alt="{{ unicode[card:1] }}"></span>
         {% endfor %}
     </section>
 {% endblock %}
