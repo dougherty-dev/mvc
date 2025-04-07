@@ -14,8 +14,7 @@ class CardController extends AbstractController
     #[Route("session", name: "session")]
     public function session(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $data = [
             "session" => $session
         ];
@@ -26,8 +25,7 @@ class CardController extends AbstractController
     #[Route("session/delete", name: "sessionDelete")]
     public function sessionDelete(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $session->clear();
 
         $this->addFlash(
@@ -47,12 +45,13 @@ class CardController extends AbstractController
     #[Route("card/deck", name: "deck")]
     public function deck(
         SessionInterface $session
-    ): Response
-    {
-        $deck = new \App\Cards\Deck();
-        $session->set("deck", $deck->deck);
+    ): Response {
+        $deck = new \App\Cards\ExtendedDeck();
+        $session->set("deck", $deck->deckValues());
+        $session->set("unicode", $deck::DECK);
         $data = [
-            "deck" => $session->get("deck")
+            "deck" => $session->get("deck"),
+            "unicode" => $session->get("unicode")
         ];
 
         return $this->render('deck.html.twig', $data);
@@ -61,13 +60,14 @@ class CardController extends AbstractController
     #[Route("card/deck/shuffle", name: "shuffle")]
     public function shuffleDeck(
         SessionInterface $session
-    ): Response
-    {
-        $deck = new \App\Cards\Deck();
+    ): Response {
+        $deck = new \App\Cards\ExtendedDeck();
         $deck->shuffleDeck();
-        $session->set("deck", $deck->deck);
+        $session->set("deck", $deck->deckValues());
+        $session->set("unicode", $deck::DECK);
         $data = [
-            "deck" => $session->get("deck")
+            "deck" => $session->get("deck"),
+            "unicode" => $session->get("unicode")
         ];
 
         return $this->render('shuffle.html.twig', $data);

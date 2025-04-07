@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Cards\ExtendedDeck;
+namespace App\Cards;
 
 class ExtendedDeck extends Deck
 {
-    protected const UTF_JOKERS = '🃟🃟';
-    protected const UTF_DECK = UTF_SUITE_CLUBS . UTF_SUITE_DIAMONDS .
-        UTF_SUITE_HEARTS . UTF_SUITE_SPADES . UTF_JOKERS;
+    protected const JOKERS = '🃟🃟';
+    public const DECK = parent::SUITE_CLUBS . parent::SUITE_DIAMONDS .
+        parent::SUITE_HEARTS . parent::SUITE_SPADES . self::JOKERS;
 
     public function __construct()
     {
         parent::__construct();
     }
+
 }

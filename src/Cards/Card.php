@@ -4,11 +4,15 @@ namespace App\Cards;
 
 class Card
 {
-    protected $card = null;
+    public $card = null;
 
-    public function __construct()
+    public function __construct($value)
     {
+        $this->card = $value;
     }
 
-
+    public function getValue(): int
+    {
+        return $this->card;
+    }
 }

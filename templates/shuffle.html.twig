@@ -1,12 +1,12 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Kortleken{% endblock %}
+{% block title %}Blanda kortleken{% endblock %}
 
 {% block body %}
-    <section class="columns">
-        <h1>Kortleken</h1>
+    <section class="columns center">
+        <h1>Blanda kortleken</h1>
         {% for card in deck %}
-            <span><img src="../../build/images/cards/{{ card }}.svg" width="100"></span>
+            <span><img src="../../build/images/cards/{{ card }}.svg" width="100" alt="{{ unicode[card:1] }}"></span>
         {% endfor %}
     </section>
 {% endblock %}

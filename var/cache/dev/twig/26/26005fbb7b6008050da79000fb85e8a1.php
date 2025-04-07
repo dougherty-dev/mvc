@@ -73,7 +73,7 @@ class __TwigTemplate_ac09d8d0132b93fd7c22272538e052af extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Kortleken";
+        yield "Blanda kortleken";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -97,8 +97,8 @@ class __TwigTemplate_ac09d8d0132b93fd7c22272538e052af extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <section class=\"columns\">
-        <h1>Kortleken</h1>
+        yield "    <section class=\"columns center\">
+        <h1>Blanda kortleken</h1>
         ";
         // line 8
         $context['_parent'] = $context;
@@ -107,7 +107,9 @@ class __TwigTemplate_ac09d8d0132b93fd7c22272538e052af extends Template
             // line 9
             yield "            <span><img src=\"../../build/images/cards/";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["card"], "html", null, true);
-            yield ".svg\" width=\"100\"></span>
+            yield ".svg\" width=\"100\" alt=\"";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), (isset($context["unicode"]) || array_key_exists("unicode", $context) ? $context["unicode"] : (function () { throw new RuntimeError('Variable "unicode" does not exist.', 9, $this->source); })()), $context["card"], 1), "html", null, true);
+            yield "\"></span>
         ";
         }
         $_parent = $context['_parent'];
@@ -146,20 +148,20 @@ class __TwigTemplate_ac09d8d0132b93fd7c22272538e052af extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  117 => 11,  108 => 9,  104 => 8,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  119 => 11,  108 => 9,  104 => 8,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends \"base.html.twig\" %}
 
-{% block title %}Kortleken{% endblock %}
+{% block title %}Blanda kortleken{% endblock %}
 
 {% block body %}
-    <section class=\"columns\">
-        <h1>Kortleken</h1>
+    <section class=\"columns center\">
+        <h1>Blanda kortleken</h1>
         {% for card in deck %}
-            <span><img src=\"../../build/images/cards/{{ card }}.svg\" width=\"100\"></span>
+            <span><img src=\"../../build/images/cards/{{ card }}.svg\" width=\"100\" alt=\"{{ unicode[card:1] }}\"></span>
         {% endfor %}
     </section>
 {% endblock %}

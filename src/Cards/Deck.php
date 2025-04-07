@@ -4,13 +4,13 @@ namespace App\Cards;
 
 class Deck
 {
-    protected const UTF_SUITE_CLUBS = '🃑🃒🃓🃔🃕🃖🃗🃘🃙🃚🃛🃝🃞';
-    protected const UTF_SUITE_DIAMONDS = '🃁🃂🃃🃄🃅🃆🃇🃈🃉🃊🃋🃍🃎';
-    protected const UTF_SUITE_HEARTS = '🂡🂢🂣🂤🂥🂦🂧🂨🂩🂪🂫🂭🂮';
-    protected const UTF_SUITE_SPADES = '🂱🂲🂳🂴🂵🂶🂷🂸🂹🂺🂻🂽🂾';
+    protected const SUITE_CLUBS = '🃑🃒🃓🃔🃕🃖🃗🃘🃙🃚🃛🃝🃞';
+    protected const SUITE_DIAMONDS = '🃁🃂🃃🃄🃅🃆🃇🃈🃉🃊🃋🃍🃎';
+    protected const SUITE_HEARTS = '🂡🂢🂣🂤🂥🂦🂧🂨🂩🂪🂫🂭🂮';
+    protected const SUITE_SPADES = '🂱🂲🂳🂴🂵🂶🂷🂸🂹🂺🂻🂽🂾';
 
-    protected const UTF_DECK = self::UTF_SUITE_CLUBS . self::UTF_SUITE_DIAMONDS .
-        self::UTF_SUITE_HEARTS . self::UTF_SUITE_SPADES;
+    protected const DECK = self::SUITE_CLUBS . self::SUITE_DIAMONDS .
+        self::SUITE_HEARTS . self::SUITE_SPADES;
 
     public $deck = null;
 
@@ -21,7 +21,9 @@ class Deck
 
     public function resetDeck(): void
     {
-        $this->deck = range(0, mb_strlen(self::UTF_DECK) - 1);
+        foreach (mb_str_split(static::DECK) as $k => $_) {
+            $this->deck[] = new \App\Cards\Card($k);
+        }
     }
 
     public function shuffleDeck(): void
@@ -32,5 +34,14 @@ class Deck
     public function drawCard(): int
     {
         return array_slice($this->deck, array_rand($this->deck), 1)[0];
+    }
+
+    public function deckValues(): array
+    {
+        $deckValues = [];
+        foreach ($this->deck as $k => $card) {
+            $deckValues[] = $card->card;
+        }
+        return $deckValues;
     }
 }

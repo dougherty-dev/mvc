@@ -362,12 +362,12 @@
     <service id="App\Entity" class="App\Entity" abstract="true">
       <tag name="container.excluded" source="in &quot;config/services.yaml&quot;"/>
     </service>
-    <service id="App\Cards\Card" class="App\Cards\Card" autowire="true" autoconfigure="true"/>
+    <service id="App\Cards\Card" class="App\Cards\Card" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;App\Cards\Card&quot;: argument &quot;$value&quot; of method &quot;__construct()&quot; has no type-hint, you should configure its value explicitly."/>
+    </service>
     <service id="App\Cards\CardGraphic" class="App\Cards\CardGraphic" autowire="true" autoconfigure="true"/>
     <service id="App\Cards\Deck" class="App\Cards\Deck" autowire="true" autoconfigure="true"/>
-    <service id="App\Cards\ExtendedDeck" class="App\Cards\ExtendedDeck" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="Class &quot;App\Cards\ExtendedDeck\Deck&quot; not found while loading &quot;App\Cards\ExtendedDeck&quot;."/>
-    </service>
+    <service id="App\Cards\ExtendedDeck" class="App\Cards\ExtendedDeck" autowire="true" autoconfigure="true"/>
     <service id="App\Cards\Hand" class="App\Cards\Hand" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\CardController" class="App\Controller\CardController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
