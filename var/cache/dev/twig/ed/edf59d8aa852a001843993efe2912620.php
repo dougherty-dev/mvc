@@ -73,7 +73,7 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Om";
+        yield "Kortspel";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -97,11 +97,13 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <section class=\"two-columns\">
+        yield "    <section class=\"center\">
         <h1>Kortspel</h1>
-        <p class=\"initcap\">Kursen DV1608 <em>Objektorienterade webbteknologier</em> syftar till att beskriva <code>Hello world!</code> på det mest komplicerade vis som kan föreställas, omfattande 200 MB kod utvecklad under 300 manår. Samt kanske att förbereda för mer avancerade projekt med hjälp av tunga ramverk.</p>
-        <p>Moment omfattar objektorienterad PHP med klasser, egenskaper, arv, namnrymder med mera, i kombination med objektorienterad databashantering (ORM). Som ramverk nyttjas Symfony med komponenter som Twig, direkt under Symfonys egen http-server och kanske även PHP:s motsvarighet.</p>
-        <a href=\"card/deck\">deck</a>
+        <ul>
+            <li><a href=\"session\">sessionen</a></li>
+            <li><a href=\"card/deck\">kortleken</a></li>
+            <li><a href=\"card/deck/shuffle\">blanda leken</a></li>
+        </ul>
     </section>
 ";
         
@@ -141,14 +143,16 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
     {
         return new Source("{% extends \"base.html.twig\" %}
 
-{% block title %}Om{% endblock %}
+{% block title %}Kortspel{% endblock %}
 
 {% block body %}
-    <section class=\"two-columns\">
+    <section class=\"center\">
         <h1>Kortspel</h1>
-        <p class=\"initcap\">Kursen DV1608 <em>Objektorienterade webbteknologier</em> syftar till att beskriva <code>Hello world!</code> på det mest komplicerade vis som kan föreställas, omfattande 200 MB kod utvecklad under 300 manår. Samt kanske att förbereda för mer avancerade projekt med hjälp av tunga ramverk.</p>
-        <p>Moment omfattar objektorienterad PHP med klasser, egenskaper, arv, namnrymder med mera, i kombination med objektorienterad databashantering (ORM). Som ramverk nyttjas Symfony med komponenter som Twig, direkt under Symfonys egen http-server och kanske även PHP:s motsvarighet.</p>
-        <a href=\"card/deck\">deck</a>
+        <ul>
+            <li><a href=\"session\">sessionen</a></li>
+            <li><a href=\"card/deck\">kortleken</a></li>
+            <li><a href=\"card/deck/shuffle\">blanda leken</a></li>
+        </ul>
     </section>
 {% endblock %}
 ", "card.html.twig", "/Users/nik/Sites/dbwebb-kurser/mvc/me/report/templates/card.html.twig");
