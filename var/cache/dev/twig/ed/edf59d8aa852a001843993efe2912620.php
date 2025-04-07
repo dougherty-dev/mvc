@@ -103,6 +103,7 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
             <li><a href=\"session\">sessionen</a></li>
             <li><a href=\"card/deck\">kortleken</a></li>
             <li><a href=\"card/deck/shuffle\">blanda leken</a></li>
+            <li><a href=\"card/deck/draw\">dra kort från lek</a></li>
         </ul>
     </section>
 ";
@@ -152,6 +153,7 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
             <li><a href=\"session\">sessionen</a></li>
             <li><a href=\"card/deck\">kortleken</a></li>
             <li><a href=\"card/deck/shuffle\">blanda leken</a></li>
+            <li><a href=\"card/deck/draw\">dra kort från lek</a></li>
         </ul>
     </section>
 {% endblock %}

@@ -372,6 +372,7 @@
     <service id="App\Controller\CardController" class="App\Controller\CardController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="request_stack"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\CardController"/>
       </call>

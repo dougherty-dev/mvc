@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Dra kort{% endblock %}
+
+{% block body %}
+    <section class="columns center">
+        <h1>Dra kort</h1>
+        {% if remaining > 0 %}
+        <p><img src="../../build/images/cards/{{ card }}.svg" width="100" alt="{{ unicode[card:1] }}"></p>
+        <p>Kort kvar i lek: {{ remaining }}</p>
+        {% endif %}
+    </sectiodn>
+{% endblock %}
