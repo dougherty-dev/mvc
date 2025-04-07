@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Sessionen{% endblock %}
+
+{% block body %}
+    <section class="columns">
+        <h1>Sessionen</h1>
+        {% for message in app.flashes('notice') %}
+            <div class="flash-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <p><a href="session/delete"><button type="button">Rensa session</button></a></p>
+        {{ dump(app.session.all) }}
+    </section>
+{% endblock %}

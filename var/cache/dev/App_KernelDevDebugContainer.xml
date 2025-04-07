@@ -362,20 +362,19 @@
     <service id="App\Entity" class="App\Entity" abstract="true">
       <tag name="container.excluded" source="in &quot;config/services.yaml&quot;"/>
     </service>
-    <service id="App\Cards\Card" class="App\Cards\Card" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;App\Cards\Card&quot; to be defined in file &quot;/Users/nik/Sites/dbwebb-kurser/mvc/me/report/vendor/composer/../../src/Cards/Card.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
-    </service>
-    <service id="App\Cards\CardGraphic" class="App\Cards\CardGraphic" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;App\Cards\CardGraphic&quot; to be defined in file &quot;/Users/nik/Sites/dbwebb-kurser/mvc/me/report/vendor/composer/../../src/Cards/CardGraphic.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
-    </service>
-    <service id="App\Cards\Deck" class="App\Cards\Deck" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;App\Cards\Deck&quot; to be defined in file &quot;/Users/nik/Sites/dbwebb-kurser/mvc/me/report/vendor/composer/../../src/Cards/Deck.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
-    </service>
+    <service id="App\Cards\Card" class="App\Cards\Card" autowire="true" autoconfigure="true"/>
+    <service id="App\Cards\CardGraphic" class="App\Cards\CardGraphic" autowire="true" autoconfigure="true"/>
+    <service id="App\Cards\Deck" class="App\Cards\Deck" autowire="true" autoconfigure="true"/>
     <service id="App\Cards\ExtendedDeck" class="App\Cards\ExtendedDeck" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;App\Cards\ExtendedDeck&quot; to be defined in file &quot;/Users/nik/Sites/dbwebb-kurser/mvc/me/report/vendor/composer/../../src/Cards/ExtendedDeck.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="Class &quot;App\Cards\ExtendedDeck\Deck&quot; not found while loading &quot;App\Cards\ExtendedDeck&quot;."/>
     </service>
-    <service id="App\Cards\Hand" class="App\Cards\Hand" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;App\Cards\Hand&quot; to be defined in file &quot;/Users/nik/Sites/dbwebb-kurser/mvc/me/report/vendor/composer/../../src/Cards/Hand.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    <service id="App\Cards\Hand" class="App\Cards\Hand" autowire="true" autoconfigure="true"/>
+    <service id="App\Controller\CardController" class="App\Controller\CardController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\CardController"/>
+      </call>
     </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
@@ -7406,6 +7405,9 @@
         <argument key="_default" type="service_closure" id="webpack_encore.entrypoint_lookup[_default]"/>
       </argument>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CardController" class="App\Controller\CardController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CardController" class="App\Controller\CardController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\CardController" class="App\Controller\CardController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -8507,6 +8509,12 @@
         <argument key="web_link.http_header_serializer" type="service_closure" id="web_link.http_header_serializer" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\CardController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\CardController"/>
+      <argument>App\Controller\CardController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
     <service id=".service_locator.ZyP9f7K.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
       <argument>App\Controller\HomeController</argument>
@@ -8700,6 +8708,7 @@
       <call method="allowControllers">
         <argument type="collection">
           <argument>App\Kernel</argument>
+          <argument>App\Controller\CardController</argument>
           <argument>App\Controller\HomeController</argument>
           <argument>App\Controller\QuotationsController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>

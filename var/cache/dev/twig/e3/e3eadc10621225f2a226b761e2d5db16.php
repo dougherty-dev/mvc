@@ -94,6 +94,10 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
         yield "\">Tur</a></li> ·
                     <li><a href=\"";
         // line 21
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("card");
+        yield "\">Kort</a></li> ·
+                    <li><a href=\"";
+        // line 22
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api");
         yield "\">API:n</a></li>
                 </ul>
@@ -101,9 +105,9 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
         </header>
         <main class=\"main\">
             ";
-        // line 26
-        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
         // line 27
+        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
+        // line 28
         yield "        </main>
         <footer>
             <p>
@@ -226,7 +230,7 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
         yield from [];
     }
 
-    // line 26
+    // line 27
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -269,7 +273,7 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  230 => 26,  207 => 10,  196 => 11,  193 => 10,  180 => 9,  158 => 7,  135 => 5,  107 => 27,  105 => 26,  97 => 21,  93 => 20,  89 => 19,  85 => 18,  81 => 17,  74 => 12,  72 => 9,  69 => 8,  67 => 7,  63 => 6,  59 => 5,  53 => 1,);
+        return array (  234 => 27,  211 => 10,  200 => 11,  197 => 10,  184 => 9,  162 => 7,  139 => 5,  111 => 28,  109 => 27,  101 => 22,  97 => 21,  93 => 20,  89 => 19,  85 => 18,  81 => 17,  74 => 12,  72 => 9,  69 => 8,  67 => 7,  63 => 6,  59 => 5,  53 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -294,6 +298,7 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
                     <li><a href=\"{{ path('about') }}\">Om</a></li> ·
                     <li><a href=\"{{ path('report') }}\">Rapport</a></li><br>
                     <li><a href=\"{{ path('lucky') }}\">Tur</a></li> ·
+                    <li><a href=\"{{ path('card') }}\">Kort</a></li> ·
                     <li><a href=\"{{ path('api') }}\">API:n</a></li>
                 </ul>
             </nav>

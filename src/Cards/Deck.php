@@ -1,6 +1,6 @@
 <?php
 
-namespace nido24\Deck;
+namespace App\Cards;
 
 class Deck
 {
@@ -8,26 +8,29 @@ class Deck
     protected const UTF_SUITE_DIAMONDS = '🃁🃂🃃🃄🃅🃆🃇🃈🃉🃊🃋🃍🃎';
     protected const UTF_SUITE_HEARTS = '🂡🂢🂣🂤🂥🂦🂧🂨🂩🂪🂫🂭🂮';
     protected const UTF_SUITE_SPADES = '🂱🂲🂳🂴🂵🂶🂷🂸🂹🂺🂻🂽🂾';
-    protected const UTF_JOKERS = '🃟🃟';
 
-    protected const UTF_DECK = UTF_SUITE_CLUBS . UTF_SUITE_DIAMONDS .
-        UTF_SUITE_HEARTS . UTF_SUITE_SPADES . UTF_JOKERS;
+    protected const UTF_DECK = self::UTF_SUITE_CLUBS . self::UTF_SUITE_DIAMONDS .
+        self::UTF_SUITE_HEARTS . self::UTF_SUITE_SPADES;
 
-    protected $deck = null;
+    public $deck = null;
 
     public function __construct()
     {
-        $this->shuffleDeck();
-    }
-
-    public function resetDeck()
-    {
-        $this->deck = range(0, mb_strlen(UTF_DECK));
-    }
-
-    public function shuffleDeck()
-    {
         $this->resetDeck();
+    }
+
+    public function resetDeck(): void
+    {
+        $this->deck = range(0, mb_strlen(self::UTF_DECK) - 1);
+    }
+
+    public function shuffleDeck(): void
+    {
         shuffle($this->deck);
+    }
+
+    public function drawCard(): int
+    {
+        return array_slice($this->deck, array_rand($this->deck), 1)[0];
     }
 }

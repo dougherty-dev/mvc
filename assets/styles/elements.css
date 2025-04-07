@@ -117,3 +117,12 @@ section {
 figure {
   margin-top: 2rem;
 }
+
+button, input, textarea {
+  color: var(--light);
+  background-color: var(--dark);
+}
+
+button {
+  padding: 0.5rem;
+}

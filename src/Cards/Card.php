@@ -1,6 +1,6 @@
 <?php
 
-namespace nido24\Cards;
+namespace App\Cards;
 
 class Card
 {

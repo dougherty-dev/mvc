@@ -7,6 +7,11 @@
   column-gap: 2rem;
 }
 
+.columns {
+  columns: auto auto;
+  column-gap: 1rem;
+}
+
 select#kmom {
   position: fixed;
   top: 0;
