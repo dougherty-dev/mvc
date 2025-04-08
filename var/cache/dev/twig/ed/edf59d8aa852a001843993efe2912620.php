@@ -97,8 +97,15 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    ";
         yield from $this->loadTemplate("card_template.html.twig", "card.html.twig", 6)->unwrap()->yield($context);
+        // line 7
+        yield "            <figure class=\"center\">
+                <img src=\"";
+        // line 8
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-cards.avif"), "html", null, true);
+        yield "\" width=\"896\" alt=\"Chihiro\">
+            </figure>
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -129,7 +136,7 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  105 => 8,  102 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -139,7 +146,10 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
 {% block title %}Kortspel{% endblock %}
 
 {% block body %}
-    {% include 'card_template.html.twig' %}
+{% include 'card_template.html.twig' %}
+            <figure class=\"center\">
+                <img src=\"{{ asset('build/images/chihiro-cards.avif') }}\" width=\"896\" alt=\"Chihiro\">
+            </figure>
 {% endblock %}
 ", "card.html.twig", "/Users/nik/Sites/dbwebb-kurser/mvc/me/report/templates/card.html.twig");
     }

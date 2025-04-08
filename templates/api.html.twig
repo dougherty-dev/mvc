@@ -5,9 +5,44 @@
 {% block body %}
     <section class="center">
         <h1>Tillgängliga API:n</h1>
-        <ul>
-            <li><a href="{{ path('quotation') }}">Citat</a>: Slumpar fram välformulerade citat.</li>
-        </ul>
+        <table class="left">
+            <tr>
+                <th><a href="{{ path('quotation') }}">Citat</a></th>
+                <td>Slumpar fram välformulerade citat.</td>
+            </tr>
+            <tr>
+                <th><a href="{{ path('api_deck') }}">Kortlek</a></th>
+                <td>Visa ordnad kortlek.</td>
+            </tr>
+            <tr>
+                <th><a href="{{ path('api_deck_shuffle') }}">Blanda lek</a></th>
+                <td>Visa blandad kortlek.</td>
+            </tr>
+            <tr>
+                <th><a href="{{ path('api_deck_draw') }}">Dra kort</a></th>
+                <td>Dra ett kort ur leken.</td>
+            </tr>
+            <tr>
+                <th>Dra flera kort</th>
+                <td><form method="post" action="{{ path('api_deck_draw_process') }}">
+                    <input type="number" min="1" name="number" value="5">
+                    <button type="submit">Dra</button>
+                </form>
+                </td>
+            </tr>
+            <tr>
+                <th>Dela kort till spelare.</th>
+                <td>
+                    <form method="post" action="{{ path('api_deck_deal_process') }}">
+                        Spelare
+                        <input type="number" min="1" name="players" value="3">
+                        Kort
+                        <input type="number" min="1" name="cards" value="5">
+                        <button type="submit">Dela</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
         <figure>
             <img src="{{ asset('build/images/chihiro-api.avif') }}" width="896" alt="Chihiro">
             <figcaption>@mos fastnar i en loop.</figcaption>

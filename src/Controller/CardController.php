@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CardController extends AbstractController
 {
-    private $deck = null;
+    public $deck = null;
     public $session = null;
 
     public function __construct(
@@ -77,7 +77,7 @@ class CardController extends AbstractController
         return $this->redirectToRoute('draw_number', ['number' => $request->request->get('number')]);
     }
 
-    private function drawCards($number = 1): array
+    public function drawCards($number = 1): array
     {
         $n = $number;
         $cards = [];

@@ -97,7 +97,6 @@ class __TwigTemplate_06947f2526b326ba811e1101c287ce59 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    ";
         yield from $this->loadTemplate("card_template.html.twig", "deal.html.twig", 6)->unwrap()->yield($context);
         // line 7
         yield "    <section class=\"columns center\">
@@ -116,13 +115,13 @@ class __TwigTemplate_06947f2526b326ba811e1101c287ce59 extends Template
                 </tr>
                 <tr>
                     <th class=\"left\">Kort</th>
-                    <td><input type=\"number\" min=\"1\" maxlength=\"4\" size=\"4\" name=\"cards\" value=\"";
+                    <td><input type=\"number\" min=\"1\" name=\"cards\" value=\"";
         // line 17
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["cards"]) || array_key_exists("cards", $context) ? $context["cards"] : (function () { throw new RuntimeError('Variable "cards" does not exist.', 17, $this->source); })()), "html", null, true);
         yield "\"></td>
                 </tr>
             </table>
-            <button type=\"submit\">Dela kort</button>
+            <button type=\"submit\">Dela</button>
         </form>
         ";
         // line 22
@@ -202,7 +201,7 @@ class __TwigTemplate_06947f2526b326ba811e1101c287ce59 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  173 => 34,  168 => 32,  165 => 31,  158 => 29,  147 => 27,  143 => 26,  139 => 25,  136 => 24,  131 => 23,  129 => 22,  121 => 17,  114 => 13,  107 => 9,  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  172 => 34,  167 => 32,  164 => 31,  157 => 29,  146 => 27,  142 => 26,  138 => 25,  135 => 24,  130 => 23,  128 => 22,  120 => 17,  113 => 13,  106 => 9,  102 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -212,7 +211,7 @@ class __TwigTemplate_06947f2526b326ba811e1101c287ce59 extends Template
 {% block title %}Ny giv{% endblock %}
 
 {% block body %}
-    {% include 'card_template.html.twig' %}
+{% include 'card_template.html.twig' %}
     <section class=\"columns center\">
         <h2>Ny giv</h2>
         <form method=\"post\" action=\"{{ path('deal_post') }}\">
@@ -223,10 +222,10 @@ class __TwigTemplate_06947f2526b326ba811e1101c287ce59 extends Template
                 </tr>
                 <tr>
                     <th class=\"left\">Kort</th>
-                    <td><input type=\"number\" min=\"1\" maxlength=\"4\" size=\"4\" name=\"cards\" value=\"{{ cards }}\"></td>
+                    <td><input type=\"number\" min=\"1\" name=\"cards\" value=\"{{ cards }}\"></td>
                 </tr>
             </table>
-            <button type=\"submit\">Dela kort</button>
+            <button type=\"submit\">Dela</button>
         </form>
         {% if players %}
         {% for key, player in player_cards|reverse(true) %}

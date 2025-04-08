@@ -3,7 +3,7 @@
 {% block title %}Ny giv{% endblock %}
 
 {% block body %}
-    {% include 'card_template.html.twig' %}
+{% include 'card_template.html.twig' %}
     <section class="columns center">
         <h2>Ny giv</h2>
         <form method="post" action="{{ path('deal_post') }}">
@@ -14,10 +14,10 @@
                 </tr>
                 <tr>
                     <th class="left">Kort</th>
-                    <td><input type="number" min="1" maxlength="4" size="4" name="cards" value="{{ cards }}"></td>
+                    <td><input type="number" min="1" name="cards" value="{{ cards }}"></td>
                 </tr>
             </table>
-            <button type="submit">Dela kort</button>
+            <button type="submit">Dela</button>
         </form>
         {% if players %}
         {% for key, player in player_cards|reverse(true) %}

@@ -2,13 +2,17 @@
 
 namespace App\Cards;
 
-class CardGraphic
-{
-    protected $card = null;
+use App\Cards;
 
+class CardGraphic extends Card
+{
     public function __construct()
     {
+        parent::__construct();
     }
 
-
+    public function getTextValue(): int
+    {
+        return $this->card;
+    }
 }

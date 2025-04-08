@@ -97,7 +97,6 @@ class __TwigTemplate_d25f02f05507c0ae93737558f9ff9cac extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    ";
         yield from $this->loadTemplate("card_template.html.twig", "deck.html.twig", 6)->unwrap()->yield($context);
         // line 7
         yield "    <section class=\"columns center\">
@@ -151,7 +150,7 @@ class __TwigTemplate_d25f02f05507c0ae93737558f9ff9cac extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  122 => 12,  111 => 10,  107 => 9,  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  121 => 12,  110 => 10,  106 => 9,  102 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -161,7 +160,7 @@ class __TwigTemplate_d25f02f05507c0ae93737558f9ff9cac extends Template
 {% block title %}Kortleken{% endblock %}
 
 {% block body %}
-    {% include 'card_template.html.twig' %}
+{% include 'card_template.html.twig' %}
     <section class=\"columns center\">
         <h2>Kortleken</h2>
         {% for card in app.session.get('deck').deck|sort %}

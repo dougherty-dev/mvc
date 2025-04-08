@@ -4,13 +4,12 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="{{ asset('build/images/favicon.ico') }}">
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
     </head>
     <body>
         <header>
@@ -33,8 +32,7 @@
             {% block body %}{% endblock %}
         </main>
         <footer>
-            <p>
-                <a href="https://dougherty-dev.github.io/webapp-lager/">Webapp</a>&nbsp;|
+            <p><a href="https://dougherty-dev.github.io/webapp-lager/">Webapp</a>&nbsp;|
                 <a href="https://www.student.bth.se/~nido24/dbwebb-kurser/mvc/me/report/public/">MVC</a>&nbsp;|
                 <a href="https://www.student.bth.se/~nido24/dbwebb-kurser/oopython/me/kmom06/yahtzee5/app.cgi">OOPython</a>
                 (<a href="https://www.student.bth.se/~nido24/dbwebb-kurser/oopython/me/kmom10/spellchecker/app.cgi/">projekt</a>)&nbsp;|
@@ -44,7 +42,7 @@
                 (<a href="https://www.student.bth.se/~nido24/dbwebb-kurser/design/me/kmom10/">projekt</a>)&nbsp;|
                 <a href="https://www.student.bth.se/~nido24/dbwebb-kurser/webtec/me/report/public/me.php">Webtec</a>
                 (<a href="https://www.student.bth.se/~nido24/dbwebb-kurser/webtec/me/proj/public/home.php">projekt</a>)</p>
-                <p>© 2025 <span style="color: var(--orange);">nido24</span></p>
+            <p>© 2025 <span style="color: var(--orange);">nido24</span></p>
         </footer>
     </body>
 </html>

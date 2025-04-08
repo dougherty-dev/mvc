@@ -5,6 +5,9 @@
 .two-columns {
   columns: 2 25rem;
   column-gap: 2rem;
+  column-rule: thin dashed var(--aqua);
+  border-bottom: thin dashed var(--aqua);
+  padding-bottom: 2rem;
 }
 
 .columns {
@@ -30,4 +33,12 @@ select#kmom {
   /* Firefox */
   float: left;
   font-size: 500%;    
+}
+
+ul.inline li {
+  display: inline;
+}
+
+input[type="number"] {
+  width: 3rem;
 }

@@ -97,7 +97,6 @@ class __TwigTemplate_a8b180a82585fe6c2ee81eb7bd3b3139 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    ";
         yield from $this->loadTemplate("card_template.html.twig", "draw.html.twig", 6)->unwrap()->yield($context);
         // line 7
         yield "    <section class=\"columns center\">
@@ -164,7 +163,7 @@ class __TwigTemplate_a8b180a82585fe6c2ee81eb7bd3b3139 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  132 => 16,  121 => 14,  117 => 13,  111 => 10,  107 => 9,  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  131 => 16,  120 => 14,  116 => 13,  110 => 10,  106 => 9,  102 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -174,7 +173,7 @@ class __TwigTemplate_a8b180a82585fe6c2ee81eb7bd3b3139 extends Template
 {% block title %}Dra kort{% endblock %}
 
 {% block body %}
-    {% include 'card_template.html.twig' %}
+{% include 'card_template.html.twig' %}
     <section class=\"columns center\">
         <h2>Dra kort från lek</h2>
         <form method=\"post\" action=\"{{ path('draw_number_post') }}\">

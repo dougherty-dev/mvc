@@ -3,7 +3,7 @@
 {% block title %}Kortleken{% endblock %}
 
 {% block body %}
-    {% include 'card_template.html.twig' %}
+{% include 'card_template.html.twig' %}
     <section class="columns center">
         <h2>Kortleken</h2>
         {% for card in app.session.get('deck').deck|sort %}

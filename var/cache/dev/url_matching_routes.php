@@ -15,6 +15,11 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/api/deck' => [[['_route' => 'api_deck', '_controller' => 'App\\Controller\\CardAPIController::api_deck'], null, null, null, false, false, null]],
+        '/api/deck/shuffle' => [[['_route' => 'api_deck_shuffle', '_controller' => 'App\\Controller\\CardAPIController::api_deck_shuffle'], null, null, null, false, false, null]],
+        '/api/deck/draw' => [[['_route' => 'api_deck_draw', '_controller' => 'App\\Controller\\CardAPIController::api_deck_draw'], null, null, null, false, false, null]],
+        '/api/deck/draw/process' => [[['_route' => 'api_deck_draw_process', '_controller' => 'App\\Controller\\CardAPIController::api_deck_draw_process'], null, ['POST' => 0], null, false, false, null]],
+        '/api/deck/deal/process' => [[['_route' => 'api_deck_deal_process', '_controller' => 'App\\Controller\\CardAPIController::api_deck_deal_process'], null, ['POST' => 0], null, false, false, null]],
         '/session' => [[['_route' => 'session', '_controller' => 'App\\Controller\\CardController::session'], null, null, null, false, false, null]],
         '/session/delete' => [[['_route' => 'session_delete', '_controller' => 'App\\Controller\\CardController::sessionDelete'], null, null, null, false, false, null]],
         '/card' => [[['_route' => 'card', '_controller' => 'App\\Controller\\CardController::card'], null, null, null, false, false, null]],
@@ -50,9 +55,13 @@ return [
                         .')'
                     .')'
                 .')'
+                .'|/api/deck/d(?'
+                    .'|raw/(\\d+)(*:225)'
+                    .'|eal/(\\d+)/(\\d+)(*:248)'
+                .')'
                 .'|/card/deck/d(?'
-                    .'|raw/(\\d+)(*:226)'
-                    .'|eal(?:/(\\d+)(?:/(\\d+))?)?(*:259)'
+                    .'|raw/(\\d+)(*:281)'
+                    .'|eal(?:/(\\d+)(?:/(\\d+))?)?(*:314)'
                 .')'
             .')/?$}sDu',
     ],
@@ -65,8 +74,10 @@ return [
         168 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         181 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        226 => [[['_route' => 'draw_number', '_controller' => 'App\\Controller\\CardController::drawNumberCard'], ['number'], null, null, false, true, null]],
-        259 => [
+        225 => [[['_route' => 'api_deck_draw_number', '_controller' => 'App\\Controller\\CardAPIController::api_deck_draw_number'], ['number'], null, null, false, true, null]],
+        248 => [[['_route' => 'api_deck_deal_players_cards', '_controller' => 'App\\Controller\\CardAPIController::api_deck_deal_players_cards'], ['players', 'cards'], null, null, false, true, null]],
+        281 => [[['_route' => 'draw_number', '_controller' => 'App\\Controller\\CardController::drawNumberCard'], ['number'], null, null, false, true, null]],
+        314 => [
             [['_route' => 'deal', 'players' => 0, 'cards' => 0, '_controller' => 'App\\Controller\\CardController::deal'], ['players', 'cards'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

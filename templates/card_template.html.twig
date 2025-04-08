@@ -1,12 +1,12 @@
-    <section class="center">
-        <h1>Kortspel</h1>
-        {% for message in app.flashes('notice') %}
-            <p class="flash-notice">{{ message }}</p>
-        {% endfor %}
-        <ul>
-            <li><a href="{{ path('deck') }}">Visa lek</a></li> |
-            <li><a href="{{ path('shuffle') }}">Blanda lek</a></li> |
-            <li><a href="{{ path('draw') }}">Dra kort</a></li> |
-            <li><a href="{{ path('deal') }}">Ny giv</a></li>
-        </ul>
-    </section>
+<section class="center">
+                <h1>Kortspel</h1>
+{% for message in app.flashes('notice') %}
+                <p class="flash-notice">{{ message }}</p>
+{% endfor %}
+                <ul class="inline">
+                    <li><a href="{{ path('deck') }}">Visa lek</a></li> |
+                    <li><a href="{{ path('shuffle') }}">Blanda lek</a></li> |
+                    <li><a href="{{ path('draw') }}">Dra kort</a></li> |
+                    <li><a href="{{ path('deal') }}">Ny giv</a></li>
+                </ul>
+            </section>

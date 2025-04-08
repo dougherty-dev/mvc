@@ -10,7 +10,7 @@ class Card
     public const SPADES = '🂱🂲🂳🂴🂵🂶🂷🂸🂹🂺🂻🂽🂾';
     public const JOKERS = '🃟🃟';
 
-    protected $card = null;
+    public $card = null;
 
     public function __construct($value)
     {

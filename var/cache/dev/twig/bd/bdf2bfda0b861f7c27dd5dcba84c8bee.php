@@ -110,15 +110,26 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
     <h1>Rapport</h1>
     <section class=\"two-columns\" id=\"kmom02\">
         <h2>Kmom02</h2>
-        <p class=\"initcap\"></p>
-        <p></p>
-        <p></p>
+        <p class=\"initcap\">Grunden till ett kortspel implementeras här i objektorienterad PHP under ramverket Symfony och med Twig som motor. Arv, komposition, aggregation, gränssnitt och egenskaper definieras teoretiskt, och ansluter i stort till tidigare stoff i Python.</p>
+        <p>Med arv (inheritance) menas här snarare en utvidgning av en föräldraklass till en barnklass, i vilken ytterligare metoder, konstanter och attribut kan definieras. I förekommande fall kan befintliga konstanter och metoder omdefinieras eller öppnas upp mot omvärlden (men inte omvänt).</p>
+        <p>Komposition är en klass i en klass, det vill säga klassvis instantiering av en yttre klass. Gränssnitt definierar vi som ett «kontrakt» för en klass, det vill säga en mall för metoder utan specifik implementering, vilket är till nytta för att definiera API:n till brukare.</p>
+        <p>Egenskaper (traits) är mer en form av syntaktiskt lim, ofta förekommande kod som kan klistras in efter behag via <code>use</code> och då får en självständig roll i förhållande till den omgivande klassen. Egenskaper kan ofta vara ett alternativ till onödigt krånglig komposition av en miljard klasser.</p>
         <figure>
             <img src=\"";
-        // line 23
+        // line 24
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom02.avif"), "html", null, true);
         yield "\" width=\"1792\" alt=\"Chihiro\">
-            <figcaption>Chihiro programmerar kortklasser.</figcaption>
+        </figure>
+        <p>För uppgiften i fråga används varken egenskaper eller gränssnitt, men däremot nyttjas arv i ett par instanser. De givna rekommendationerna med kortleksklasser vidgade med jokrar har här implementerats, och även ett embryo för en «grafisk» kortklass föreligger löst i bakgrunden. Men den givna och naturliga implementationen av arv ges här av att nyttja <code>CardController</code> som föräldraklass till <code>CardAPIController</code>, eftersom de båda har gemensamma metoder, konstanter och attribut, exempelvis session, klassen <code>Deck</code> (eller snarare <code>DeckExtended</code>) med flera.</p>
+        <p>Det är notoriskt krångligt att bygga klasser på ett smidigt sätt, och det finns i princip alltid potential för förbättringar. Klassen <code>Card</code> är här ganska menlös i förefintligt skick, men skulle säkert kunna byggas mer komplicerat.</p>
+        <p>Det lär ta fler kursmoment för att övertyga om ramverkens förträfflighet. Komplexiteten ökar betänkligt utan att ge så stora vinster, även om det har sin tjusning med färdiga lösningar på många vanliga kodproblem. Dessvärre får man lägga en del tid på buggar i själva ramverket snarare än att fokusera på objektorienterad kod i sig.</p>
+        <p>Icke desto mindre är det tillfredsställande när man väl kommer över den jobbiga tröskeln och kan börja bygga applikationer. Koden med kontroller, mallar och vyer blir ganska liten kompakt, även om man är mer begränsad än med rå PHP.</p>
+        <p>TIL för kursmomentet får sägas vara sessioner i Symfony och Twig, ett smidigt sätt att hantera objekt till skillnad från PHP:s krångliga motsvarigheter.</p>
+        <figure>
+            <img src=\"";
+        // line 32
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-cards-api.avif"), "html", null, true);
+        yield "\" width=\"1024\" alt=\"Chihiro\">
         </figure>
     </section>
     <section class=\"two-columns\" id=\"kmom01\">
@@ -132,7 +143,7 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <p>TIL får nog sägas vara att nyttja ramverket Symfony, en erfarenhet som kanske är nyttig men som jag aldrig skulle fundera på att använda för egen del. Det är själva definitionen av bloat.</p>
         <figure>
             <img src=\"";
-        // line 37
+        // line 45
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom01.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
             <figcaption>@mos inskärper allvaret i studierna.</figcaption>
@@ -169,7 +180,7 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  136 => 37,  119 => 23,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  147 => 45,  131 => 32,  120 => 24,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -192,12 +203,20 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
     <h1>Rapport</h1>
     <section class=\"two-columns\" id=\"kmom02\">
         <h2>Kmom02</h2>
-        <p class=\"initcap\"></p>
-        <p></p>
-        <p></p>
+        <p class=\"initcap\">Grunden till ett kortspel implementeras här i objektorienterad PHP under ramverket Symfony och med Twig som motor. Arv, komposition, aggregation, gränssnitt och egenskaper definieras teoretiskt, och ansluter i stort till tidigare stoff i Python.</p>
+        <p>Med arv (inheritance) menas här snarare en utvidgning av en föräldraklass till en barnklass, i vilken ytterligare metoder, konstanter och attribut kan definieras. I förekommande fall kan befintliga konstanter och metoder omdefinieras eller öppnas upp mot omvärlden (men inte omvänt).</p>
+        <p>Komposition är en klass i en klass, det vill säga klassvis instantiering av en yttre klass. Gränssnitt definierar vi som ett «kontrakt» för en klass, det vill säga en mall för metoder utan specifik implementering, vilket är till nytta för att definiera API:n till brukare.</p>
+        <p>Egenskaper (traits) är mer en form av syntaktiskt lim, ofta förekommande kod som kan klistras in efter behag via <code>use</code> och då får en självständig roll i förhållande till den omgivande klassen. Egenskaper kan ofta vara ett alternativ till onödigt krånglig komposition av en miljard klasser.</p>
         <figure>
             <img src=\"{{ asset('build/images/chihiro-kmom02.avif') }}\" width=\"1792\" alt=\"Chihiro\">
-            <figcaption>Chihiro programmerar kortklasser.</figcaption>
+        </figure>
+        <p>För uppgiften i fråga används varken egenskaper eller gränssnitt, men däremot nyttjas arv i ett par instanser. De givna rekommendationerna med kortleksklasser vidgade med jokrar har här implementerats, och även ett embryo för en «grafisk» kortklass föreligger löst i bakgrunden. Men den givna och naturliga implementationen av arv ges här av att nyttja <code>CardController</code> som föräldraklass till <code>CardAPIController</code>, eftersom de båda har gemensamma metoder, konstanter och attribut, exempelvis session, klassen <code>Deck</code> (eller snarare <code>DeckExtended</code>) med flera.</p>
+        <p>Det är notoriskt krångligt att bygga klasser på ett smidigt sätt, och det finns i princip alltid potential för förbättringar. Klassen <code>Card</code> är här ganska menlös i förefintligt skick, men skulle säkert kunna byggas mer komplicerat.</p>
+        <p>Det lär ta fler kursmoment för att övertyga om ramverkens förträfflighet. Komplexiteten ökar betänkligt utan att ge så stora vinster, även om det har sin tjusning med färdiga lösningar på många vanliga kodproblem. Dessvärre får man lägga en del tid på buggar i själva ramverket snarare än att fokusera på objektorienterad kod i sig.</p>
+        <p>Icke desto mindre är det tillfredsställande när man väl kommer över den jobbiga tröskeln och kan börja bygga applikationer. Koden med kontroller, mallar och vyer blir ganska liten kompakt, även om man är mer begränsad än med rå PHP.</p>
+        <p>TIL för kursmomentet får sägas vara sessioner i Symfony och Twig, ett smidigt sätt att hantera objekt till skillnad från PHP:s krångliga motsvarigheter.</p>
+        <figure>
+            <img src=\"{{ asset('build/images/chihiro-cards-api.avif') }}\" width=\"1024\" alt=\"Chihiro\">
         </figure>
     </section>
     <section class=\"two-columns\" id=\"kmom01\">

@@ -99,15 +99,65 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
         // line 6
         yield "    <section class=\"center\">
         <h1>Tillgängliga API:n</h1>
-        <ul>
-            <li><a href=\"";
-        // line 9
+        <table class=\"left\">
+            <tr>
+                <th><a href=\"";
+        // line 10
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("quotation");
-        yield "\">Citat</a>: Slumpar fram välformulerade citat.</li>
-        </ul>
+        yield "\">Citat</a></th>
+                <td>Slumpar fram välformulerade citat.</td>
+            </tr>
+            <tr>
+                <th><a href=\"";
+        // line 14
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_deck");
+        yield "\">Kortlek</a></th>
+                <td>Visa ordnad kortlek.</td>
+            </tr>
+            <tr>
+                <th><a href=\"";
+        // line 18
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_deck_shuffle");
+        yield "\">Blanda lek</a></th>
+                <td>Visa blandad kortlek.</td>
+            </tr>
+            <tr>
+                <th><a href=\"";
+        // line 22
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_deck_draw");
+        yield "\">Dra kort</a></th>
+                <td>Dra ett kort ur leken.</td>
+            </tr>
+            <tr>
+                <th>Dra flera kort</th>
+                <td><form method=\"post\" action=\"";
+        // line 27
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_deck_draw_process");
+        yield "\">
+                    <input type=\"number\" min=\"1\" name=\"number\" value=\"5\">
+                    <button type=\"submit\">Dra</button>
+                </form>
+                </td>
+            </tr>
+            <tr>
+                <th>Dela kort till spelare.</th>
+                <td>
+                    <form method=\"post\" action=\"";
+        // line 36
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_deck_deal_process");
+        yield "\">
+                        Spelare
+                        <input type=\"number\" min=\"1\" name=\"players\" value=\"3\">
+                        Kort
+                        <input type=\"number\" min=\"1\" name=\"cards\" value=\"5\">
+                        <button type=\"submit\">Dela</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
         <figure>
             <img src=\"";
-        // line 12
+        // line 47
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-api.avif"), "html", null, true);
         yield "\" width=\"896\" alt=\"Chihiro\">
             <figcaption>@mos fastnar i en loop.</figcaption>
@@ -144,7 +194,7 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  111 => 12,  105 => 9,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  161 => 47,  147 => 36,  135 => 27,  127 => 22,  120 => 18,  113 => 14,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -156,9 +206,44 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
 {% block body %}
     <section class=\"center\">
         <h1>Tillgängliga API:n</h1>
-        <ul>
-            <li><a href=\"{{ path('quotation') }}\">Citat</a>: Slumpar fram välformulerade citat.</li>
-        </ul>
+        <table class=\"left\">
+            <tr>
+                <th><a href=\"{{ path('quotation') }}\">Citat</a></th>
+                <td>Slumpar fram välformulerade citat.</td>
+            </tr>
+            <tr>
+                <th><a href=\"{{ path('api_deck') }}\">Kortlek</a></th>
+                <td>Visa ordnad kortlek.</td>
+            </tr>
+            <tr>
+                <th><a href=\"{{ path('api_deck_shuffle') }}\">Blanda lek</a></th>
+                <td>Visa blandad kortlek.</td>
+            </tr>
+            <tr>
+                <th><a href=\"{{ path('api_deck_draw') }}\">Dra kort</a></th>
+                <td>Dra ett kort ur leken.</td>
+            </tr>
+            <tr>
+                <th>Dra flera kort</th>
+                <td><form method=\"post\" action=\"{{ path('api_deck_draw_process') }}\">
+                    <input type=\"number\" min=\"1\" name=\"number\" value=\"5\">
+                    <button type=\"submit\">Dra</button>
+                </form>
+                </td>
+            </tr>
+            <tr>
+                <th>Dela kort till spelare.</th>
+                <td>
+                    <form method=\"post\" action=\"{{ path('api_deck_deal_process') }}\">
+                        Spelare
+                        <input type=\"number\" min=\"1\" name=\"players\" value=\"3\">
+                        Kort
+                        <input type=\"number\" min=\"1\" name=\"cards\" value=\"5\">
+                        <button type=\"submit\">Dela</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
         <figure>
             <img src=\"{{ asset('build/images/chihiro-api.avif') }}\" width=\"896\" alt=\"Chihiro\">
             <figcaption>@mos fastnar i en loop.</figcaption>
