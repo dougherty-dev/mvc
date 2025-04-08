@@ -117,7 +117,7 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/card-uml.avif"), "html", null, true);
         yield "\" width=\"1000\" alt=\"UML\">
                 </figure>
-                <p class=\"huge\">🃑🃒🃓🃔🃕🃖🃗🃙🃘🃚🃛🃝🃞<br>
+                <p class=\"huge\">🃑🃒🃓🃔🃕🃖🃗🃘🃙🃚🃛🃝🃞<br>
                 🃁🃂🃃🃄🃅🃆🃇🃈🃉🃊🃋🃍🃎<br>
                 🂡🂢🂣🂤🂥🂦🂧🂨🂩🂪🂫🂭🂮<br>
                 🂱🂲🂳🂴🂵🂶🂷🂸🂹🂺🂻🂽🂾🃟🃟</p>
@@ -179,7 +179,7 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
                 <figure>
                     <img src=\"{{ asset('build/images/card-uml.avif') }}\" width=\"1000\" alt=\"UML\">
                 </figure>
-                <p class=\"huge\">🃑🃒🃓🃔🃕🃖🃗🃙🃘🃚🃛🃝🃞<br>
+                <p class=\"huge\">🃑🃒🃓🃔🃕🃖🃗🃘🃙🃚🃛🃝🃞<br>
                 🃁🃂🃃🃄🃅🃆🃇🃈🃉🃊🃋🃍🃎<br>
                 🂡🂢🂣🂤🂥🂦🂧🂨🂩🂪🂫🂭🂮<br>
                 🂱🂲🂳🂴🂵🂶🂷🂸🂹🂺🂻🂽🂾🃟🃟</p>
