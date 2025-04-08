@@ -9,7 +9,6 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Controller;
-use App\Cards\Deck;
 
 class CardAPIController extends CardController
 {
@@ -19,7 +18,6 @@ class CardAPIController extends CardController
         $this->deck->resetDeck();
         $response = new JsonResponse($this->deck->deckValues());
         $response->setEncodingOptions(JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-
         return $response;
     }
 
@@ -39,10 +37,10 @@ class CardAPIController extends CardController
         $data = parent::drawCards();
 
         $this->session->set("deck", $this->deck);
-        $response = new JsonResponse(
-            ["card" => $this->deck->handValues($data["cards"]),
-            "remaining" => $data["remaining"]]
-        );
+        $response = new JsonResponse([
+            "card" => $this->deck->hand->handValuesUTF($data["cards"]),
+            "remaining" => $data["remaining"]
+        ]);
         $response->setEncodingOptions(JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         return $response;
     }
@@ -54,7 +52,7 @@ class CardAPIController extends CardController
 
         $this->session->set("deck", $this->deck);
         $response = new JsonResponse([
-            "card" => $this->deck->handValues($data["cards"]),
+            "card" => $this->deck->hand->handValuesUTF($data["cards"]),
             "remaining" => $data["remaining"]
         ]);
         $response->setEncodingOptions(JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
@@ -77,7 +75,7 @@ class CardAPIController extends CardController
         while ($p > 0) {
             $c = $cards;
             while ($c > 0 && $this->deck->cards()) {
-                $player_cards[$p][] = $this->deck->handValues([$this->deck->drawCard()]);
+                $player_cards[$p][] = $this->deck->hand->handValuesUTF([$this->deck->drawCard()]);
                 --$c;
             }
             --$p;
@@ -101,5 +99,4 @@ class CardAPIController extends CardController
             'cards' => $request->request->get('cards')
         ]);
     }
-
 }

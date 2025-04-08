@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Cards\Deck;
+use App\Cards\CardGraphic;
 
 class CardController extends AbstractController
 {
@@ -17,7 +19,7 @@ class CardController extends AbstractController
     public function __construct(
         private RequestStack $requestStack
     ) {
-        $this->deck = new \App\Cards\ExtendedDeck();
+        $this->deck = new Deck();
         $this->checkSession();
     }
 
@@ -43,6 +45,13 @@ class CardController extends AbstractController
     public function card(): Response
     {
         return $this->render('card.html.twig');
+    }
+
+    #[Route("card/deck/reset", name: "reset")]
+    public function reset(): Response
+    {
+        $this->deck->resetDeck();
+        return $this->redirectToRoute('deck');
     }
 
     #[Route("card/deck", name: "deck")]
@@ -152,7 +161,7 @@ class CardController extends AbstractController
         }
 
         if (!$this->session->get("unicode")) {
-            $this->session->set("unicode", $this->deck::DECK);
+            $this->session->set("unicode", $this->deck->hand->card::DECK);
         }
     }
 }

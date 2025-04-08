@@ -2,8 +2,20 @@
 .right {text-align: right;}
 .left {text-align: left;}
 
+.huge {
+  font-size: 5rem;
+}
+
 .two-columns {
   columns: 2 25rem;
+  column-gap: 2rem;
+  column-rule: thin dashed var(--aqua);
+  border-bottom: thin dashed var(--aqua);
+  padding-bottom: 2rem;
+}
+
+.three-columns {
+  columns: 3 20rem;
   column-gap: 2rem;
   column-rule: thin dashed var(--aqua);
   border-bottom: thin dashed var(--aqua);

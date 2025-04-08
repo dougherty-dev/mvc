@@ -11,7 +11,7 @@
             <button type="submit">Dra</button>
         </form>
         {% for card in cards %}
-        <img src="{{ asset('build/images/cards/'~card~'.svg') }}" width="100" alt="{{ app.session.get('unicode')[card:1] }}">
+        <img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="100" alt="{{ app.session.get('unicode')[card.value:1] }}">
         {% endfor %}
         <p>Kort kvar i lek: {{ remaining }}</p>
     </section>

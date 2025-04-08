@@ -8,17 +8,19 @@ class Card
     public const DIAMONDS = '🃁🃂🃃🃄🃅🃆🃇🃈🃉🃊🃋🃍🃎';
     public const HEARTS = '🂡🂢🂣🂤🂥🂦🂧🂨🂩🂪🂫🂭🂮';
     public const SPADES = '🂱🂲🂳🂴🂵🂶🂷🂸🂹🂺🂻🂽🂾';
-    public const JOKERS = '🃟🃟';
+    public const DECK = self::CLUBS . self::DIAMONDS . self::HEARTS . self::SPADES;
 
-    public $card = null;
+    public $value = null;
+    public array $utf = [];
 
-    public function __construct($value)
+    public function __construct(int $value)
     {
-        $this->card = $value;
+        $this->value = $value;
+        $this->utf = mb_str_split(static::DECK);
     }
 
     public function getValue(): int
     {
-        return $this->card;
+        return $this->value;
     }
 }

@@ -20,16 +20,13 @@
         <p>Med arv (inheritance) menas här snarare en utvidgning av en föräldraklass till en barnklass, i vilken ytterligare metoder, konstanter och attribut kan definieras. I förekommande fall kan befintliga konstanter och metoder omdefinieras eller öppnas upp mot omvärlden (men inte omvänt).</p>
         <p>Komposition är en klass i en klass, det vill säga klassvis instantiering av en yttre klass. Gränssnitt definierar vi som ett «kontrakt» för en klass, det vill säga en mall för metoder utan specifik implementering, vilket är till nytta för att definiera API:n till brukare.</p>
         <p>Egenskaper (traits) är mer en form av syntaktiskt lim, ofta förekommande kod som kan klistras in efter behag via <code>use</code> och då får en självständig roll i förhållande till den omgivande klassen. Egenskaper kan ofta vara ett alternativ till onödigt krånglig komposition av en miljard klasser.</p>
-        <figure>
-            <img src="{{ asset('build/images/chihiro-kmom02.avif') }}" width="1792" alt="Chihiro">
-        </figure>
-        <p>För uppgiften i fråga används varken egenskaper eller gränssnitt, men däremot nyttjas arv i ett par instanser. De givna rekommendationerna med kortleksklasser vidgade med jokrar har här implementerats, och även ett embryo för en «grafisk» kortklass föreligger löst i bakgrunden. Men den givna och naturliga implementationen av arv ges här av att nyttja <code>CardController</code> som föräldraklass till <code>CardAPIController</code>, eftersom de båda har gemensamma metoder, konstanter och attribut, exempelvis session, klassen <code>Deck</code> (eller snarare <code>DeckExtended</code>) med flera.</p>
-        <p>Det är notoriskt krångligt att bygga klasser på ett smidigt sätt, och det finns i princip alltid potential för förbättringar. Klassen <code>Card</code> är här ganska menlös i förefintligt skick, men skulle säkert kunna byggas mer komplicerat.</p>
+        <p>För uppgiften i fråga används varken egenskaper eller gränssnitt, men däremot nyttjas arv i ett par instanser. De givna rekommendationerna med kortklasser vidgade med jokrar har här implementerats löst. Men den givna och naturliga implementationen av arv ges här av att nyttja <code>CardController</code> som föräldraklass till <code>CardAPIController</code>, eftersom de båda har gemensamma metoder, konstanter och attribut, exempelvis session, klassen <code>Deck</code> med flera.</p>
+        <p>Det är notoriskt krångligt att bygga klasser på ett smidigt sätt, och det finns i princip alltid potential för förbättringar. Klassen <code>Card</code> (eller snarare <code>CardGraphic</code>) är här ganska menlös i förefintligt skick, men skulle säkert kunna byggas mer komplicerat.</p>
         <p>Det lär ta fler kursmoment för att övertyga om ramverkens förträfflighet. Komplexiteten ökar betänkligt utan att ge så stora vinster, även om det har sin tjusning med färdiga lösningar på många vanliga kodproblem. Dessvärre får man lägga en del tid på buggar i själva ramverket snarare än att fokusera på objektorienterad kod i sig.</p>
         <p>Icke desto mindre är det tillfredsställande när man väl kommer över den jobbiga tröskeln och kan börja bygga applikationer. Koden med kontroller, mallar och vyer blir ganska liten kompakt, även om man är mer begränsad än med rå PHP.</p>
         <p>TIL för kursmomentet får sägas vara sessioner i Symfony och Twig, ett smidigt sätt att hantera objekt till skillnad från PHP:s krångliga motsvarigheter.</p>
         <figure>
-            <img src="{{ asset('build/images/chihiro-cards-api.avif') }}" width="1024" alt="Chihiro">
+            <img src="{{ asset('build/images/chihiro-kmom02.avif') }}" width="1536" alt="Chihiro">
         </figure>
     </section>
     <section class="two-columns" id="kmom01">

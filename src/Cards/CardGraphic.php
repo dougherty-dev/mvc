@@ -4,15 +4,44 @@ namespace App\Cards;
 
 use App\Cards;
 
+define('SUIT', [
+    '♣️ klöver',
+    '♦️ ruter',
+    '♥️ hjärter',
+    '♠️ spader',
+    '🃏 joker'
+]);
+
+define('FACES', [
+    'ess',
+    'två',
+    'tre',
+    'fyra',
+    'fem',
+    'sex',
+    'sju',
+    'åtta',
+    'nio',
+    'tio',
+    'knekt',
+    'dam',
+    'kung',
+]);
+
 class CardGraphic extends Card
 {
-    public function __construct()
+    public const JOKERS = '🃟🃟';
+    public const DECK = parent::DECK . self::JOKERS;
+
+    public function __construct($value)
     {
-        parent::__construct();
+        parent::__construct($value);
     }
 
-    public function getTextValue(): int
+    public function getTextValue(int $value): string
     {
-        return $this->card;
+        $suit = SUIT[intdiv($value, 13)];
+        $face = $suit === 'joker' ? '' : FACES[$value % 13];
+        return trim("$suit $face");
     }
 }

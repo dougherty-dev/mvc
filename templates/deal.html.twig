@@ -24,7 +24,7 @@
         <figure>
             <figcaption>Spelare {{ key }}</figcaption>
             {% for card in player %}
-            <span><img src="{{ asset('build/images/cards/'~card~'.svg') }}" width="100" alt="{{ app.session.get('unicode')[card:1] }}"></span>
+            <span><img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="100" alt="{{ app.session.get('unicode')[card.value:1] }}"></span>
             {% endfor %}
         </figure>
         {% endfor %}

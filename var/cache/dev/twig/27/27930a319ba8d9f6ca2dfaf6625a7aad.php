@@ -78,7 +78,11 @@ class __TwigTemplate_8586d49d5c75dc254837be34a1a0da93 extends Template
                     <li><a href=\"";
         // line 10
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deal");
-        yield "\">Ny giv</a></li>
+        yield "\">Dela kort</a></li> |
+                    <li><a href=\"";
+        // line 11
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reset");
+        yield "\">Återställ lek</a></li>
                 </ul>
             </section>
 ";
@@ -112,7 +116,7 @@ class __TwigTemplate_8586d49d5c75dc254837be34a1a0da93 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  80 => 10,  76 => 9,  72 => 8,  68 => 7,  65 => 6,  56 => 4,  52 => 3,  48 => 1,);
+        return array (  84 => 11,  80 => 10,  76 => 9,  72 => 8,  68 => 7,  65 => 6,  56 => 4,  52 => 3,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -126,7 +130,8 @@ class __TwigTemplate_8586d49d5c75dc254837be34a1a0da93 extends Template
                     <li><a href=\"{{ path('deck') }}\">Visa lek</a></li> |
                     <li><a href=\"{{ path('shuffle') }}\">Blanda lek</a></li> |
                     <li><a href=\"{{ path('draw') }}\">Dra kort</a></li> |
-                    <li><a href=\"{{ path('deal') }}\">Ny giv</a></li>
+                    <li><a href=\"{{ path('deal') }}\">Dela kort</a></li> |
+                    <li><a href=\"{{ path('reset') }}\">Återställ lek</a></li>
                 </ul>
             </section>
 ", "card_template.html.twig", "/Users/nik/Sites/dbwebb-kurser/mvc/me/report/templates/card_template.html.twig");

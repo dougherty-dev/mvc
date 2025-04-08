@@ -23,6 +23,7 @@ return [
         '/session' => [[['_route' => 'session', '_controller' => 'App\\Controller\\CardController::session'], null, null, null, false, false, null]],
         '/session/delete' => [[['_route' => 'session_delete', '_controller' => 'App\\Controller\\CardController::sessionDelete'], null, null, null, false, false, null]],
         '/card' => [[['_route' => 'card', '_controller' => 'App\\Controller\\CardController::card'], null, null, null, false, false, null]],
+        '/card/deck/reset' => [[['_route' => 'reset', '_controller' => 'App\\Controller\\CardController::reset'], null, null, null, false, false, null]],
         '/card/deck' => [[['_route' => 'deck', '_controller' => 'App\\Controller\\CardController::deck'], null, null, null, false, false, null]],
         '/card/deck/shuffle' => [[['_route' => 'shuffle', '_controller' => 'App\\Controller\\CardController::shuffleDeck'], null, null, null, false, false, null]],
         '/card/deck/draw' => [[['_route' => 'draw', '_controller' => 'App\\Controller\\CardController::drawCard'], null, null, null, false, false, null]],

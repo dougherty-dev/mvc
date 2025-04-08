@@ -6,51 +6,44 @@ use App\Cards;
 
 class Deck
 {
-    public const DECK = Card::CLUBS . Card::DIAMONDS . Card::HEARTS . Card::SPADES;
-
     public array $deck = [];
-    public array $utf = [];
+    public Hand $hand;
 
     public function __construct()
     {
-        $this->utf = mb_str_split(static::DECK);
+        $this->hand = new Hand();
     }
 
     public function resetDeck(): void
     {
         $this->deck = [];
-        foreach ($this->utf as $k => $_) {
-            $this->deck[] = new Card($k);
+        foreach ($this->hand->card->utf as $k => $_) {
+            $this->deck[] = new CardGraphic($k);
         }
     }
 
     public function shuffleDeck(): void
     {
-        $this->resetDeck();
         shuffle($this->deck);
     }
 
-    public function drawCard(): int
+    public function drawCard(): CardGraphic
     {
-        return array_splice($this->deck, array_rand($this->deck), 1)[0]->getValue();
+        return array_splice($this->deck, array_rand($this->deck), 1)[0];
     }
 
     public function deckValues(): array
     {
-        $deckValues = [];
-        foreach ($this->deck as $k => $card) {
-            $deckValues[] = $this->utf[$card->getValue()];
-        }
-        return $deckValues;
+        return $this->hand->handValuesUTF($this->deck);
     }
 
-    public function handValues(array $hand): array
+    public function deckTextValues(): array
     {
-        $handValues = [];
-        foreach ($hand as $k => $card) {
-            $handValues[] = $this->utf[$card];
+        $deckTextValues = [];
+        foreach ($this->deck as $k => $card) {
+            $deckTextValues[] = $this->hand->card->getTextValue($card->value);
         }
-        return $handValues;
+        return $deckTextValues;
     }
 
     public function cards(): int

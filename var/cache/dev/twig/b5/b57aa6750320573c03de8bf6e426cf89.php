@@ -144,9 +144,9 @@ class __TwigTemplate_06947f2526b326ba811e1101c287ce59 extends Template
                 foreach ($context['_seq'] as $context["_key"] => $context["card"]) {
                     // line 27
                     yield "            <span><img src=\"";
-                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("build/images/cards/" . $context["card"]) . ".svg")), "html", null, true);
+                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("build/images/cards/" . CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 27)) . ".svg")), "html", null, true);
                     yield "\" width=\"100\" alt=\"";
-                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "session", [], "any", false, false, false, 27), "get", ["unicode"], "method", false, false, false, 27), $context["card"], 1), "html", null, true);
+                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "session", [], "any", false, false, false, 27), "get", ["unicode"], "method", false, false, false, 27), CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 27), 1), "html", null, true);
                     yield "\"></span>
             ";
                 }
@@ -232,7 +232,7 @@ class __TwigTemplate_06947f2526b326ba811e1101c287ce59 extends Template
         <figure>
             <figcaption>Spelare {{ key }}</figcaption>
             {% for card in player %}
-            <span><img src=\"{{ asset('build/images/cards/'~card~'.svg') }}\" width=\"100\" alt=\"{{ app.session.get('unicode')[card:1] }}\"></span>
+            <span><img src=\"{{ asset('build/images/cards/'~card.value~'.svg') }}\" width=\"100\" alt=\"{{ app.session.get('unicode')[card.value:1] }}\"></span>
             {% endfor %}
         </figure>
         {% endfor %}
