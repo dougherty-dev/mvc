@@ -97,43 +97,42 @@ class __TwigTemplate_a8b180a82585fe6c2ee81eb7bd3b3139 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <section class=\"columns center\">
-        <h1>Dra kort ";
+        yield "    ";
+        yield from $this->loadTemplate("card_template.html.twig", "draw.html.twig", 6)->unwrap()->yield($context);
         // line 7
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["card"]) || array_key_exists("card", $context) ? $context["card"] : (function () { throw new RuntimeError('Variable "card" does not exist.', 7, $this->source); })()), "html", null, true);
-        yield "</h1>
-        <p><img src=\"";
-        // line 8
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("build/images/cards/" . (isset($context["card"]) || array_key_exists("card", $context) ? $context["card"] : (function () { throw new RuntimeError('Variable "card" does not exist.', 8, $this->source); })())) . ".svg")), "html", null, true);
-        yield "\" width=\"100\" alt=\"";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), (isset($context["unicode"]) || array_key_exists("unicode", $context) ? $context["unicode"] : (function () { throw new RuntimeError('Variable "unicode" does not exist.', 8, $this->source); })()), (isset($context["card"]) || array_key_exists("card", $context) ? $context["card"] : (function () { throw new RuntimeError('Variable "card" does not exist.', 8, $this->source); })()), 1), "html", null, true);
-        yield "\"></p>
-        <p>Kort kvar i lek: ";
+        yield "    <section class=\"columns center\">
+        <h2>Dra kort från lek</h2>
+        <form method=\"post\" action=\"";
         // line 9
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["remaining"]) || array_key_exists("remaining", $context) ? $context["remaining"] : (function () { throw new RuntimeError('Variable "remaining" does not exist.', 9, $this->source); })()), "html", null, true);
-        yield "</p>
-        ";
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("draw_number_post");
+        yield "\">
+            <input type=\"number\" min=\"1\" name=\"number\" value=\"";
         // line 10
-        if (((isset($context["remaining"]) || array_key_exists("remaining", $context) ? $context["remaining"] : (function () { throw new RuntimeError('Variable "remaining" does not exist.', 10, $this->source); })()) > 0)) {
-            // line 11
-            yield "        ";
-            $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable((isset($context["deckValues"]) || array_key_exists("deckValues", $context) ? $context["deckValues"] : (function () { throw new RuntimeError('Variable "deckValues" does not exist.', 11, $this->source); })()));
-            foreach ($context['_seq'] as $context["_key"] => $context["a"]) {
-                // line 12
-                yield "        ";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["a"], "html", null, true);
-                yield "
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["number"]) || array_key_exists("number", $context) ? $context["number"] : (function () { throw new RuntimeError('Variable "number" does not exist.', 10, $this->source); })()), "html", null, true);
+        yield "\">
+            <button type=\"submit\">Dra</button>
+        </form>
         ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_key'], $context['a'], $context['_parent']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 13
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["cards"]) || array_key_exists("cards", $context) ? $context["cards"] : (function () { throw new RuntimeError('Variable "cards" does not exist.', 13, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["card"]) {
             // line 14
-            yield "        ";
+            yield "        <img src=\"";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("build/images/cards/" . $context["card"]) . ".svg")), "html", null, true);
+            yield "\" width=\"100\" alt=\"";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "session", [], "any", false, false, false, 14), "get", ["unicode"], "method", false, false, false, 14), $context["card"], 1), "html", null, true);
+            yield "\">
+        ";
         }
-        // line 15
-        yield "    </sectiodn>
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['card'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 16
+        yield "        <p>Kort kvar i lek: ";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["remaining"]) || array_key_exists("remaining", $context) ? $context["remaining"] : (function () { throw new RuntimeError('Variable "remaining" does not exist.', 16, $this->source); })()), "html", null, true);
+        yield "</p>
+    </section>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -165,7 +164,7 @@ class __TwigTemplate_a8b180a82585fe6c2ee81eb7bd3b3139 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  136 => 15,  133 => 14,  124 => 12,  119 => 11,  117 => 10,  113 => 9,  107 => 8,  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  132 => 16,  121 => 14,  117 => 13,  111 => 10,  107 => 9,  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -175,16 +174,18 @@ class __TwigTemplate_a8b180a82585fe6c2ee81eb7bd3b3139 extends Template
 {% block title %}Dra kort{% endblock %}
 
 {% block body %}
+    {% include 'card_template.html.twig' %}
     <section class=\"columns center\">
-        <h1>Dra kort {{ card }}</h1>
-        <p><img src=\"{{ asset('build/images/cards/'~card~'.svg') }}\" width=\"100\" alt=\"{{ unicode[card:1] }}\"></p>
-        <p>Kort kvar i lek: {{ remaining }}</p>
-        {% if remaining > 0 %}
-        {% for a in deckValues %}
-        {{ a }}
+        <h2>Dra kort från lek</h2>
+        <form method=\"post\" action=\"{{ path('draw_number_post') }}\">
+            <input type=\"number\" min=\"1\" name=\"number\" value=\"{{ number }}\">
+            <button type=\"submit\">Dra</button>
+        </form>
+        {% for card in cards %}
+        <img src=\"{{ asset('build/images/cards/'~card~'.svg') }}\" width=\"100\" alt=\"{{ app.session.get('unicode')[card:1] }}\">
         {% endfor %}
-        {% endif %}
-    </sectiodn>
+        <p>Kort kvar i lek: {{ remaining }}</p>
+    </section>
 {% endblock %}
 ", "draw.html.twig", "/Users/nik/Sites/dbwebb-kurser/mvc/me/report/templates/draw.html.twig");
     }

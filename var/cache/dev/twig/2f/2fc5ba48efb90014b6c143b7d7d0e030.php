@@ -105,22 +105,17 @@ class __TwigTemplate_e70b2ad878e4f10cd3fbecfaf98b41d7 extends Template
         $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 8, $this->source); })()), "flashes", ["notice"], "method", false, false, false, 8));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
             // line 9
-            yield "            <div class=\"flash-notice\">
-                ";
-            // line 10
+            yield "            <p class=\"flash-notice\">";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
-            yield "
-            </div>
+            yield "</p>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 13
-        yield "        <p><a href=\"session/delete\"><button type=\"button\">Rensa session</button></a></p>
-        ";
-        // line 14
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "session", [], "any", false, false, false, 14), "all", [], "any", false, false, false, 14));
+        // line 11
+        yield "        ";
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "session", [], "any", false, false, false, 11), "all", [], "any", false, false, false, 11));
         yield "
     </section>
 ";
@@ -154,7 +149,7 @@ class __TwigTemplate_e70b2ad878e4f10cd3fbecfaf98b41d7 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  123 => 14,  120 => 13,  111 => 10,  108 => 9,  104 => 8,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  117 => 11,  108 => 9,  104 => 8,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -167,11 +162,8 @@ class __TwigTemplate_e70b2ad878e4f10cd3fbecfaf98b41d7 extends Template
     <section class=\"columns\">
         <h1>Sessionen</h1>
         {% for message in app.flashes('notice') %}
-            <div class=\"flash-notice\">
-                {{ message }}
-            </div>
+            <p class=\"flash-notice\">{{ message }}</p>
         {% endfor %}
-        <p><a href=\"session/delete\"><button type=\"button\">Rensa session</button></a></p>
         {{ dump(app.session.all) }}
     </section>
 {% endblock %}

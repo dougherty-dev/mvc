@@ -16,11 +16,13 @@ return [
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/session' => [[['_route' => 'session', '_controller' => 'App\\Controller\\CardController::session'], null, null, null, false, false, null]],
-        '/session/delete' => [[['_route' => 'sessionDelete', '_controller' => 'App\\Controller\\CardController::sessionDelete'], null, null, null, false, false, null]],
+        '/session/delete' => [[['_route' => 'session_delete', '_controller' => 'App\\Controller\\CardController::sessionDelete'], null, null, null, false, false, null]],
         '/card' => [[['_route' => 'card', '_controller' => 'App\\Controller\\CardController::card'], null, null, null, false, false, null]],
         '/card/deck' => [[['_route' => 'deck', '_controller' => 'App\\Controller\\CardController::deck'], null, null, null, false, false, null]],
         '/card/deck/shuffle' => [[['_route' => 'shuffle', '_controller' => 'App\\Controller\\CardController::shuffleDeck'], null, null, null, false, false, null]],
         '/card/deck/draw' => [[['_route' => 'draw', '_controller' => 'App\\Controller\\CardController::drawCard'], null, null, null, false, false, null]],
+        '/card/deck/draw/process' => [[['_route' => 'draw_number_post', '_controller' => 'App\\Controller\\CardController::drawNumberCardPost'], null, ['POST' => 0], null, false, false, null]],
+        '/card/deck/deal/process' => [[['_route' => 'deal_post', '_controller' => 'App\\Controller\\CardController::dealPost'], null, ['POST' => 0], null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::home'], null, null, null, false, false, null]],
         '/about' => [[['_route' => 'about', '_controller' => 'App\\Controller\\HomeController::about'], null, null, null, false, false, null]],
         '/report' => [[['_route' => 'report', '_controller' => 'App\\Controller\\HomeController::report'], null, null, null, false, false, null]],
@@ -48,7 +50,10 @@ return [
                         .')'
                     .')'
                 .')'
-                .'|/card/deck/draw/([^/]++)(*:226)'
+                .'|/card/deck/d(?'
+                    .'|raw/(\\d+)(*:226)'
+                    .'|eal(?:/(\\d+)(?:/(\\d+))?)?(*:259)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -60,8 +65,9 @@ return [
         168 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         181 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        226 => [
-            [['_route' => 'draw_number', '_controller' => 'App\\Controller\\CardController::drawNumberCard'], ['number'], null, null, false, true, null],
+        226 => [[['_route' => 'draw_number', '_controller' => 'App\\Controller\\CardController::drawNumberCard'], ['number'], null, null, false, true, null]],
+        259 => [
+            [['_route' => 'deal', 'players' => 0, 'cards' => 0, '_controller' => 'App\\Controller\\CardController::deal'], ['players', 'cards'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

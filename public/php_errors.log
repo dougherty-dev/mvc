@@ -1,1 +1,0 @@
-[07-Apr-2025 06:49:03 Europe/Stockholm] PHP Fatal error:  Cannot declare promoted property outside a constructor in /Users/nik/Sites/dbwebb-kurser/mvc/me/report/src/Controller/CardController.php on line 81

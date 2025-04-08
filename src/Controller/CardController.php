@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CardController extends AbstractController
 {
-    public $deck = null;
+    private $deck = null;
     public $session = null;
 
     public function __construct(
@@ -24,18 +24,13 @@ class CardController extends AbstractController
     #[Route("session", name: "session")]
     public function session(): Response
     {
-        $data = [
-            "session" => $this->session
-        ];
-
-        return $this->render('session.html.twig', $data);
+        return $this->render('session.html.twig');
     }
 
-    #[Route("session/delete", name: "sessionDelete")]
+    #[Route("session/delete", name: "session_delete")]
     public function sessionDelete(): Response
     {
         $this->session->clear();
-
         $this->addFlash(
             'notice',
             'Sessionen raderades.'
@@ -53,75 +48,96 @@ class CardController extends AbstractController
     #[Route("card/deck", name: "deck")]
     public function deck(): Response
     {
-
-        $this->session->set("deckValues", $this->deck->deckValues());
-        $this->session->set("unicode", $this->deck::DECK);
-
-        $data = [
-            "deck" => $this->session->get("deckValues"),
-            "unicode" => $this->session->get("unicode")
-        ];
-
-        return $this->render('deck.html.twig', $data);
+        return $this->render('deck.html.twig');
     }
 
     #[Route("card/deck/shuffle", name: "shuffle")]
     public function shuffleDeck(): Response
     {
         $this->deck->shuffleDeck();
-
-        $this->session->set("deck", serialize($this->deck));
-        $this->session->set("deckValues", $this->deck->deckValues());
-
-        $data = [
-            "deck" => $this->session->get("deckValues"),
-            "unicode" => $this->session->get("unicode")
-        ];
-
-        return $this->render('shuffle.html.twig', $data);
+        $this->session->set("deck", $this->deck);
+        return $this->render('shuffle.html.twig');
     }
 
     #[Route("card/deck/draw", name: "draw")]
     public function drawCard(): Response
     {
-        if ($this->deck->cards() > 0) {
-            $this->session->set("card", $this->deck->drawCard());
-        }
-        $this->session->set("deck", serialize($this->deck));
-        $this->session->set("deckValues", $this->deck->deckValues());
-        $this->session->set("remaining", $this->deck->cards());
-
-        $data = [
-            "card" => $this->session->get("card"),
-            "remaining" => $this->session->get("remaining"),
-            "unicode" => $this->session->get("unicode"),
-            "deckValues" => $this->session->get("deckValues")
-        ];
-
-        return $this->render('draw.html.twig', $data);
+        return $this->render('draw.html.twig', $this->drawCards());
     }
 
-    #[Route("card/deck/draw/{number}", name: "draw_number")]
+    #[Route("card/deck/draw/{number<\d+>}", name: "draw_number")]
     public function drawNumberCard(int $number): Response
     {
-        while ($number > 0) {
-            if ($this->deck->cards($number) > 0) {
-                $this->session->set("card", $this->deck->drawCard());
-            }
-            --$number;
+        return $this->render('draw.html.twig', $this->drawCards($number));
+    }
+
+    #[Route("card/deck/draw/process", name: "draw_number_post", methods: ['POST'])]
+    public function drawNumberCardPost(Request $request): Response
+    {
+        return $this->redirectToRoute('draw_number', ['number' => $request->request->get('number')]);
+    }
+
+    private function drawCards($number = 1): array
+    {
+        $n = $number;
+        $cards = [];
+        while ($n > 0 && $this->deck->cards()) {
+            $cards[] = $this->deck->drawCard();
+            --$n;
         }
-        $this->session->set("deck", serialize($this->deck));
-        $this->session->set("deckValues", $this->deck->deckValues());
-        $this->session->set("remaining", $this->deck->cards());
+        $this->session->set("deck", $this->deck);
+
+        return [
+            "number" => $number,
+            "cards" => $cards,
+            "remaining" => $this->deck->cards()
+        ];
+    }
+
+    #[Route("card/deck/deal/{players<\d+>}/{cards<\d+>}", name: "deal")]
+    public function deal(int $players = 0, int $cards = 0): Response
+    {
+        $p = $players;
+        $c = $cards;
+        $no_cards = $p * $c;
+
+        if ($no_cards > $this->deck->cards()) {
+            $this->addFlash(
+                'notice',
+                'För få kort i lek.'
+            );
+            return $this->redirectToRoute('card');
+        }
+
+        $player_cards = [];
+        while ($p > 0) {
+            $c = $cards;
+            while ($c > 0 && $this->deck->cards()) {
+                $player_cards[$p][] = $this->deck->drawCard();
+                --$c;
+            }
+            --$p;
+        }
+
+        $this->session->set("deck", $this->deck);
 
         $data = [
-            "card" => $this->session->get("card"),
-            "remaining" => $this->session->get("remaining"),
-            "unicode" => $this->session->get("unicode"),
-            "deckValues" => $this->session->get("deckValues")
+            'players' => $players,
+            'cards' => $cards,
+            'player_cards' => $player_cards,
+            'remaining' => $this->deck->cards()
         ];
 
-        return $this->render('draw.html.twig', $data);
+        return $this->render('deal.html.twig', $data);
+    }
+
+    #[Route("card/deck/deal/process", name: "deal_post", methods: ['POST'])]
+    public function dealPost(Request $request): Response
+    {
+        return $this->redirectToRoute('deal', [
+            'players' => $request->request->get('players'),
+            'cards' => $request->request->get('cards')
+        ]);
     }
 
     private function checkSession(): void
@@ -130,9 +146,9 @@ class CardController extends AbstractController
 
         if (!$this->session->get("deck")) {
             $this->deck->resetDeck();
-            $this->session->set("deck", serialize($this->deck));
+            $this->session->set("deck", $this->deck);
         } else {
-            $this->deck = unserialize($this->session->get("deck"));
+            $this->deck = $this->session->get("deck");
         }
 
         if (!$this->session->get("unicode")) {

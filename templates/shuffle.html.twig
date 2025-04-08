@@ -3,10 +3,11 @@
 {% block title %}Blanda kortleken{% endblock %}
 
 {% block body %}
+    {% include 'card_template.html.twig' %}
     <section class="columns center">
-        <h1>Blanda kortleken</h1>
-        {% for card in deck %}
-            <span><img src="{{ asset('build/images/cards/'~card~'.svg') }}" width="100" alt="{{ unicode[card:1] }}"></span>
+        <h2>Blanda kortleken</h2>
+        {% for card in app.session.get('deck').deck %}
+            <span><img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="100" alt="{{ app.session.get('unicode')[card.value:1] }}"></span>
         {% endfor %}
     </section>
 {% endblock %}

@@ -1,0 +1,247 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+use Twig\TemplateWrapper;
+
+/* deal.html.twig */
+class __TwigTemplate_06947f2526b326ba811e1101c287ce59 extends Template
+{
+    private Source $source;
+    /**
+     * @var array<string, Template>
+     */
+    private array $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->blocks = [
+            'title' => [$this, 'block_title'],
+            'body' => [$this, 'block_body'],
+        ];
+    }
+
+    protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
+    {
+        // line 1
+        return "base.html.twig";
+    }
+
+    protected function doDisplay(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "deal.html.twig"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "deal.html.twig"));
+
+        $this->parent = $this->loadTemplate("base.html.twig", "deal.html.twig", 1);
+        yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
+    // line 3
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_title(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        yield "Ny giv";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    // line 5
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_body(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        // line 6
+        yield "    ";
+        yield from $this->loadTemplate("card_template.html.twig", "deal.html.twig", 6)->unwrap()->yield($context);
+        // line 7
+        yield "    <section class=\"columns center\">
+        <h2>Ny giv</h2>
+        <form method=\"post\" action=\"";
+        // line 9
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deal_post");
+        yield "\">
+            <table>
+                <tr>
+                    <th class=\"left\">Spelare</th>
+                    <td><input type=\"number\" min=\"1\" name=\"players\" value=\"";
+        // line 13
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["players"]) || array_key_exists("players", $context) ? $context["players"] : (function () { throw new RuntimeError('Variable "players" does not exist.', 13, $this->source); })()), "html", null, true);
+        yield "\"></td>
+                </tr>
+                <tr>
+                    <th class=\"left\">Kort</th>
+                    <td><input type=\"number\" min=\"1\" maxlength=\"4\" size=\"4\" name=\"cards\" value=\"";
+        // line 17
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["cards"]) || array_key_exists("cards", $context) ? $context["cards"] : (function () { throw new RuntimeError('Variable "cards" does not exist.', 17, $this->source); })()), "html", null, true);
+        yield "\"></td>
+                </tr>
+            </table>
+            <button type=\"submit\">Dela kort</button>
+        </form>
+        ";
+        // line 22
+        if ((isset($context["players"]) || array_key_exists("players", $context) ? $context["players"] : (function () { throw new RuntimeError('Variable "players" does not exist.', 22, $this->source); })())) {
+            // line 23
+            yield "        ";
+            $context['_parent'] = $context;
+            $context['_seq'] = CoreExtension::ensureTraversable(Twig\Extension\CoreExtension::reverse($this->env->getCharset(), (isset($context["player_cards"]) || array_key_exists("player_cards", $context) ? $context["player_cards"] : (function () { throw new RuntimeError('Variable "player_cards" does not exist.', 23, $this->source); })()), true));
+            foreach ($context['_seq'] as $context["key"] => $context["player"]) {
+                // line 24
+                yield "        <figure>
+            <figcaption>Spelare ";
+                // line 25
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["key"], "html", null, true);
+                yield "</figcaption>
+            ";
+                // line 26
+                $context['_parent'] = $context;
+                $context['_seq'] = CoreExtension::ensureTraversable($context["player"]);
+                foreach ($context['_seq'] as $context["_key"] => $context["card"]) {
+                    // line 27
+                    yield "            <span><img src=\"";
+                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("build/images/cards/" . $context["card"]) . ".svg")), "html", null, true);
+                    yield "\" width=\"100\" alt=\"";
+                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "session", [], "any", false, false, false, 27), "get", ["unicode"], "method", false, false, false, 27), $context["card"], 1), "html", null, true);
+                    yield "\"></span>
+            ";
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_key'], $context['card'], $context['_parent']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 29
+                yield "        </figure>
+        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['key'], $context['player'], $context['_parent']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 31
+            yield "        <br>
+        <p>Kort kvar i lek: ";
+            // line 32
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["remaining"]) || array_key_exists("remaining", $context) ? $context["remaining"] : (function () { throw new RuntimeError('Variable "remaining" does not exist.', 32, $this->source); })()), "html", null, true);
+            yield "</p>
+        ";
+        }
+        // line 34
+        yield "    </section>
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getTemplateName(): string
+    {
+        return "deal.html.twig";
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function isTraitable(): bool
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getDebugInfo(): array
+    {
+        return array (  173 => 34,  168 => 32,  165 => 31,  158 => 29,  147 => 27,  143 => 26,  139 => 25,  136 => 24,  131 => 23,  129 => 22,  121 => 17,  114 => 13,  107 => 9,  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+    }
+
+    public function getSourceContext(): Source
+    {
+        return new Source("{% extends \"base.html.twig\" %}
+
+{% block title %}Ny giv{% endblock %}
+
+{% block body %}
+    {% include 'card_template.html.twig' %}
+    <section class=\"columns center\">
+        <h2>Ny giv</h2>
+        <form method=\"post\" action=\"{{ path('deal_post') }}\">
+            <table>
+                <tr>
+                    <th class=\"left\">Spelare</th>
+                    <td><input type=\"number\" min=\"1\" name=\"players\" value=\"{{ players }}\"></td>
+                </tr>
+                <tr>
+                    <th class=\"left\">Kort</th>
+                    <td><input type=\"number\" min=\"1\" maxlength=\"4\" size=\"4\" name=\"cards\" value=\"{{ cards }}\"></td>
+                </tr>
+            </table>
+            <button type=\"submit\">Dela kort</button>
+        </form>
+        {% if players %}
+        {% for key, player in player_cards|reverse(true) %}
+        <figure>
+            <figcaption>Spelare {{ key }}</figcaption>
+            {% for card in player %}
+            <span><img src=\"{{ asset('build/images/cards/'~card~'.svg') }}\" width=\"100\" alt=\"{{ app.session.get('unicode')[card:1] }}\"></span>
+            {% endfor %}
+        </figure>
+        {% endfor %}
+        <br>
+        <p>Kort kvar i lek: {{ remaining }}</p>
+        {% endif %}
+    </section>
+{% endblock %}
+", "deal.html.twig", "/Users/nik/Sites/dbwebb-kurser/mvc/me/report/templates/deal.html.twig");
+    }
+}

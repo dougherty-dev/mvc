@@ -97,16 +97,8 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <section class=\"center\">
-        <h1>Kortspel</h1>
-        <ul>
-            <li><a href=\"session\">sessionen</a></li>
-            <li><a href=\"card/deck\">kortleken</a></li>
-            <li><a href=\"card/deck/shuffle\">blanda leken</a></li>
-            <li><a href=\"card/deck/draw\">dra kort från lek</a></li>
-        </ul>
-    </section>
-";
+        yield "    ";
+        yield from $this->loadTemplate("card_template.html.twig", "card.html.twig", 6)->unwrap()->yield($context);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -147,15 +139,7 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
 {% block title %}Kortspel{% endblock %}
 
 {% block body %}
-    <section class=\"center\">
-        <h1>Kortspel</h1>
-        <ul>
-            <li><a href=\"session\">sessionen</a></li>
-            <li><a href=\"card/deck\">kortleken</a></li>
-            <li><a href=\"card/deck/shuffle\">blanda leken</a></li>
-            <li><a href=\"card/deck/draw\">dra kort från lek</a></li>
-        </ul>
-    </section>
+    {% include 'card_template.html.twig' %}
 {% endblock %}
 ", "card.html.twig", "/Users/nik/Sites/dbwebb-kurser/mvc/me/report/templates/card.html.twig");
     }

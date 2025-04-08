@@ -16,7 +16,7 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerDUepCxl\App_KernelDevDebugContainer([
     'container.build_hash' => 'DUepCxl',
-    'container.build_id' => '560f3972',
-    'container.build_time' => 1744024881,
+    'container.build_id' => '5a82204e',
+    'container.build_time' => 1744070189,
     'container.runtime_mode' => \in_array(\PHP_SAPI, ['cli', 'phpdbg', 'embed'], true) ? 'web=0' : 'web=1',
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerDUepCxl');

@@ -69,44 +69,54 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
         ";
         // line 11
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 15
+        // line 14
         yield "    </head>
     <body>
         <header>
             <nav id=\"navbar\">
                 <ul>
                     <li><a href=\"";
-        // line 20
+        // line 19
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         yield "\">Hem</a></li> ·
                     <li><a href=\"";
-        // line 21
+        // line 20
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("about");
         yield "\">Om</a></li> ·
                     <li><a href=\"";
-        // line 22
+        // line 21
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("report");
-        yield "\">Rapport</a></li><br>
+        yield "\">Rapport</a></li> ·
                     <li><a href=\"";
-        // line 23
+        // line 22
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("lucky");
         yield "\">Tur</a></li> ·
                     <li><a href=\"";
-        // line 24
+        // line 23
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("card");
         yield "\">Kort</a></li> ·
                     <li><a href=\"";
-        // line 25
+        // line 24
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api");
         yield "\">API:n</a></li>
+                </ul>
+                <ul>
+                    <li><a href=\"";
+        // line 27
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("session");
+        yield "\">session</a><li> |
+                    <li><a href=\"";
+        // line 28
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("session_delete");
+        yield "\">förstör</a></li>
                 </ul>
             </nav>
         </header>
         <main class=\"main\">
             ";
-        // line 30
+        // line 33
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 31
+        // line 34
         yield "        </main>
         <footer>
             <p>
@@ -201,9 +211,7 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
         yield "            ";
         yield $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         yield "
-            ";
-        // line 14
-        yield "        ";
+        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -213,7 +221,7 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
         yield from [];
     }
 
-    // line 30
+    // line 33
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -256,7 +264,7 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  217 => 30,  206 => 14,  201 => 12,  188 => 11,  174 => 8,  161 => 7,  138 => 5,  110 => 31,  108 => 30,  100 => 25,  96 => 24,  92 => 23,  88 => 22,  84 => 21,  80 => 20,  73 => 15,  71 => 11,  68 => 10,  66 => 7,  62 => 6,  58 => 5,  52 => 1,);
+        return array (  225 => 33,  211 => 12,  198 => 11,  184 => 8,  171 => 7,  148 => 5,  120 => 34,  118 => 33,  110 => 28,  106 => 27,  100 => 24,  96 => 23,  92 => 22,  88 => 21,  84 => 20,  80 => 19,  73 => 14,  71 => 11,  68 => 10,  66 => 7,  62 => 6,  58 => 5,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -273,7 +281,6 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
-            {#% block importmap %}{{ importmap('app') }}{% endblock %#}
         {% endblock %}
     </head>
     <body>
@@ -282,10 +289,14 @@ class __TwigTemplate_7b5892e7765f6950af11c8fd8835e1f1 extends Template
                 <ul>
                     <li><a href=\"{{ path('home') }}\">Hem</a></li> ·
                     <li><a href=\"{{ path('about') }}\">Om</a></li> ·
-                    <li><a href=\"{{ path('report') }}\">Rapport</a></li><br>
+                    <li><a href=\"{{ path('report') }}\">Rapport</a></li> ·
                     <li><a href=\"{{ path('lucky') }}\">Tur</a></li> ·
                     <li><a href=\"{{ path('card') }}\">Kort</a></li> ·
                     <li><a href=\"{{ path('api') }}\">API:n</a></li>
+                </ul>
+                <ul>
+                    <li><a href=\"{{ path('session') }}\">session</a><li> |
+                    <li><a href=\"{{ path('session_delete') }}\">förstör</a></li>
                 </ul>
             </nav>
         </header>

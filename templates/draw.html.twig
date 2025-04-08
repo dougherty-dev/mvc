@@ -3,14 +3,16 @@
 {% block title %}Dra kort{% endblock %}
 
 {% block body %}
+    {% include 'card_template.html.twig' %}
     <section class="columns center">
-        <h1>Dra kort {{ card }}</h1>
-        <p><img src="{{ asset('build/images/cards/'~card~'.svg') }}" width="100" alt="{{ unicode[card:1] }}"></p>
-        <p>Kort kvar i lek: {{ remaining }}</p>
-        {% if remaining > 0 %}
-        {% for a in deckValues %}
-        {{ a }}
+        <h2>Dra kort från lek</h2>
+        <form method="post" action="{{ path('draw_number_post') }}">
+            <input type="number" min="1" name="number" value="{{ number }}">
+            <button type="submit">Dra</button>
+        </form>
+        {% for card in cards %}
+        <img src="{{ asset('build/images/cards/'~card~'.svg') }}" width="100" alt="{{ app.session.get('unicode')[card:1] }}">
         {% endfor %}
-        {% endif %}
-    </sectiodn>
+        <p>Kort kvar i lek: {{ remaining }}</p>
+    </section>
 {% endblock %}

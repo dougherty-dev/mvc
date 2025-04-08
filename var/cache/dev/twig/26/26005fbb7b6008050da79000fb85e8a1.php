@@ -97,25 +97,28 @@ class __TwigTemplate_ac09d8d0132b93fd7c22272538e052af extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
+        yield "    ";
+        yield from $this->loadTemplate("card_template.html.twig", "shuffle.html.twig", 6)->unwrap()->yield($context);
+        // line 7
         yield "    <section class=\"columns center\">
-        <h1>Blanda kortleken</h1>
+        <h2>Blanda kortleken</h2>
         ";
-        // line 8
+        // line 9
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["deck"]) || array_key_exists("deck", $context) ? $context["deck"] : (function () { throw new RuntimeError('Variable "deck" does not exist.', 8, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "session", [], "any", false, false, false, 9), "get", ["deck"], "method", false, false, false, 9), "deck", [], "any", false, false, false, 9));
         foreach ($context['_seq'] as $context["_key"] => $context["card"]) {
-            // line 9
+            // line 10
             yield "            <span><img src=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("build/images/cards/" . $context["card"]) . ".svg")), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("build/images/cards/" . CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 10)) . ".svg")), "html", null, true);
             yield "\" width=\"100\" alt=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), (isset($context["unicode"]) || array_key_exists("unicode", $context) ? $context["unicode"] : (function () { throw new RuntimeError('Variable "unicode" does not exist.', 9, $this->source); })()), $context["card"], 1), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "session", [], "any", false, false, false, 10), "get", ["unicode"], "method", false, false, false, 10), CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 10), 1), "html", null, true);
             yield "\"></span>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['card'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 11
+        // line 12
         yield "    </section>
 ";
         
@@ -148,7 +151,7 @@ class __TwigTemplate_ac09d8d0132b93fd7c22272538e052af extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  119 => 11,  108 => 9,  104 => 8,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  122 => 12,  111 => 10,  107 => 9,  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -158,10 +161,11 @@ class __TwigTemplate_ac09d8d0132b93fd7c22272538e052af extends Template
 {% block title %}Blanda kortleken{% endblock %}
 
 {% block body %}
+    {% include 'card_template.html.twig' %}
     <section class=\"columns center\">
-        <h1>Blanda kortleken</h1>
-        {% for card in deck %}
-            <span><img src=\"{{ asset('build/images/cards/'~card~'.svg') }}\" width=\"100\" alt=\"{{ unicode[card:1] }}\"></span>
+        <h2>Blanda kortleken</h2>
+        {% for card in app.session.get('deck').deck %}
+            <span><img src=\"{{ asset('build/images/cards/'~card.value~'.svg') }}\" width=\"100\" alt=\"{{ app.session.get('unicode')[card.value:1] }}\"></span>
         {% endfor %}
     </section>
 {% endblock %}

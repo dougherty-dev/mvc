@@ -6,11 +6,8 @@
     <section class="columns">
         <h1>Sessionen</h1>
         {% for message in app.flashes('notice') %}
-            <div class="flash-notice">
-                {{ message }}
-            </div>
+            <p class="flash-notice">{{ message }}</p>
         {% endfor %}
-        <p><a href="session/delete"><button type="button">Rensa session</button></a></p>
         {{ dump(app.session.all) }}
     </section>
 {% endblock %}

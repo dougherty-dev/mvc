@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Ny giv{% endblock %}
+
+{% block body %}
+    {% include 'card_template.html.twig' %}
+    <section class="columns center">
+        <h2>Ny giv</h2>
+        <form method="post" action="{{ path('deal_post') }}">
+            <table>
+                <tr>
+                    <th class="left">Spelare</th>
+                    <td><input type="number" min="1" name="players" value="{{ players }}"></td>
+                </tr>
+                <tr>
+                    <th class="left">Kort</th>
+                    <td><input type="number" min="1" maxlength="4" size="4" name="cards" value="{{ cards }}"></td>
+                </tr>
+            </table>
+            <button type="submit">Dela kort</button>
+        </form>
+        {% if players %}
+        {% for key, player in player_cards|reverse(true) %}
+        <figure>
+            <figcaption>Spelare {{ key }}</figcaption>
+            {% for card in player %}
+            <span><img src="{{ asset('build/images/cards/'~card~'.svg') }}" width="100" alt="{{ app.session.get('unicode')[card:1] }}"></span>
+            {% endfor %}
+        </figure>
+        {% endfor %}
+        <br>
+        <p>Kort kvar i lek: {{ remaining }}</p>
+        {% endif %}
+    </section>
+{% endblock %}
