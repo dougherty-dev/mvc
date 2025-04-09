@@ -1,0 +1,8 @@
+npm run build
+bin/console cache:clear
+git add .
+git tag -a x.yz -m "Version x.yz, message"
+git commit -m "Commit for x.yz, message"
+git push origin --tags
+git push
+dbwebb publishpure report
