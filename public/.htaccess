@@ -7,13 +7,8 @@
 
 RewriteEngine on
 
-RewriteCond %{HTTP_HOST} ^www\.student\.bth\.se$ [NC]
-RewriteCond %{REQUEST_URI} ^(.*)/build/build/(.*)$
-RewriteRule ^(.*)/build/build/(.*)$ /~nido24/dbwebb-kurser/mvc/me/report/public/build/$2 [L,NC,R=302]
-
-RewriteCond %{HTTP_HOST} !^www\.student\.bth\.se$ [NC]
-RewriteCond %{REQUEST_URI} ^(.*)/build/build/(.*)$
-RewriteRule ^(.*)/build/build/(.*)$ /dbwebb-kurser/mvc/me/report/public/build/$2 [L,NC,R=302]
+# Fix Encore bug when using relative URIs
+RedirectMatch "^(.+)/build/build/(.+)$" "$1/build/$2"
 
 # Igore real files (images, stylesheets etc.)
 RewriteCond %{REQUEST_FILENAME} -f [OR]
