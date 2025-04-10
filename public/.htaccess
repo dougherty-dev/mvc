@@ -1,8 +1,5 @@
 RewriteEngine on
 
-# Fix Encore bug when using relative URIs
-RedirectMatch "^(.+)/build/build/(.+)$" "$1/build/$2"
-
 RewriteCond %{REQUEST_URI}::$0 ^(/.+)/(.*)::\2$
 RewriteRule .* - [E=BASE:%1]
 

@@ -18,7 +18,10 @@ Encore
       // only needed for CDN's or subdirectory deploy
     //.setManifestKeyPrefix('build/')
     // .setManifestKeyPrefix('build/')
-
+    .configureMiniCssExtractPlugin((loaderConfig) => {
+      loaderConfig.publicPath = './';
+    })
+ 
     /*
      * ENTRY CONFIG
      *

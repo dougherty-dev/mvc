@@ -16,7 +16,7 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerIP5jGhF\App_KernelDevDebugContainer([
     'container.build_hash' => 'IP5jGhF',
-    'container.build_id' => 'bde716a4',
-    'container.build_time' => 1744249761,
+    'container.build_id' => 'b399c534',
+    'container.build_time' => 1744283039,
     'container.runtime_mode' => \in_array(\PHP_SAPI, ['cli', 'phpdbg', 'embed'], true) ? 'web=0' : 'web=1',
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerIP5jGhF');

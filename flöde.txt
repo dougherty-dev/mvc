@@ -1,3 +1,13 @@
+bin/console debug:router
+bin/console router:match /lucky/number
+bin/console
+
+symfony server:start
+http://127.0.0.1:8000
+
+php -S localhost:8888 -t public
+http://localhost:8888
+
 composer validate
 
 composer csfix:dry
