@@ -16,7 +16,7 @@ return [[
                 'build/app.c1705dca.js',
             ],
             'css' => [
-                'build/app.4696cd45.css',
+                'build/app.aaf759e5.css',
             ],
         ],
     ],

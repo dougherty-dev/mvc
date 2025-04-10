@@ -1,4 +1,3 @@
-DirectoryIndex index.php
 RewriteEngine on
 
 # Fix Encore bug when using relative URIs

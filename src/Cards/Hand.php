@@ -27,7 +27,7 @@ class Hand
     {
         $handValuesUTF = [];
         foreach ($hand as $k => $card) {
-            $handValuesUTF[] = $this->card->utf[$card->value];
+            $handValuesUTF[] = $this->card->getCardsArray()[$card->value];
         }
         return $handValuesUTF;
     }

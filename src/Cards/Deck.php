@@ -17,7 +17,7 @@ class Deck
     public function resetDeck(): void
     {
         $this->deck = [];
-        foreach ($this->hand->card->utf as $k => $_) {
+        foreach ($this->hand->card->getCardsArray() as $k => $_) {
             $this->deck[] = new CardGraphic($k);
         }
     }

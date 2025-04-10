@@ -1,3 +1,8 @@
+composer validate
+
+composer csfix:dry
+composer csfix
+
 npm run build
 bin/console cache:clear
 git add .

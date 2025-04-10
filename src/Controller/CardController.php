@@ -161,7 +161,7 @@ class CardController extends AbstractController
         }
 
         if (!$this->session->get("unicode")) {
-            $this->session->set("unicode", $this->deck->hand->card::DECK);
+            $this->session->set("unicode", $this->deck->hand->card->getCards());
         }
     }
 }

@@ -4,23 +4,31 @@ namespace App\Cards;
 
 class Card
 {
-    public const CLUBS = '🃑🃒🃓🃔🃕🃖🃗🃘🃙🃚🃛🃝🃞';
-    public const DIAMONDS = '🃁🃂🃃🃄🃅🃆🃇🃈🃉🃊🃋🃍🃎';
-    public const HEARTS = '🂡🂢🂣🂤🂥🂦🂧🂨🂩🂪🂫🂭🂮';
-    public const SPADES = '🂱🂲🂳🂴🂵🂶🂷🂸🂹🂺🂻🂽🂾';
-    public const DECK = self::CLUBS . self::DIAMONDS . self::HEARTS . self::SPADES;
+    private const CLUBS = '🃑🃒🃓🃔🃕🃖🃗🃘🃙🃚🃛🃝🃞';
+    private const DIAMONDS = '🃁🃂🃃🃄🃅🃆🃇🃈🃉🃊🃋🃍🃎';
+    private const HEARTS = '🂡🂢🂣🂤🂥🂦🂧🂨🂩🂪🂫🂭🂮';
+    private const SPADES = '🂱🂲🂳🂴🂵🂶🂷🂸🂹🂺🂻🂽🂾';
+    protected const DECK = self::CLUBS . self::DIAMONDS . self::HEARTS . self::SPADES;
 
     public $value = null;
-    public array $utf = [];
 
     public function __construct(int $value)
     {
         $this->value = $value;
-        $this->utf = mb_str_split(static::DECK);
     }
 
     public function getValue(): int
     {
         return $this->value;
+    }
+
+    public function getCards(): string
+    {
+        return static::DECK;
+    }
+
+    public function getCardsArray(): array
+    {
+        return mb_str_split(static::DECK);
     }
 }

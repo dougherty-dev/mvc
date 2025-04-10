@@ -30,8 +30,8 @@ define('FACES', [
 
 class CardGraphic extends Card
 {
-    public const JOKERS = '🃟🃟';
-    public const DECK = parent::DECK . self::JOKERS;
+    private const JOKERS = '🃟🃟';
+    protected const DECK = parent::DECK . self::JOKERS;
 
     public function __construct($value)
     {

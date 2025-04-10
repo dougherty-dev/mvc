@@ -105,15 +105,11 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
                 <p>Till klassen hör också en textmässig representation av de femtiotvå spelkorten, dels i form av unicodetecken för respektive spelkort i respektive svit, sammanfogade i en femtiotvå tecken lång sträng som representerar den grundläggande kortleken; dels i ett motsvarande fält <code>utf</code> för enkel hämtning via index. Leken löper över [0, 51].</p>
                 <p>Två jokrar tillkommer i den utvidgade klassen <code>CardGraphic</code>, som expanderar kortleken till 54 tecken på samma manér. Klassen definierar även en metod för att uttrycka spelkorten i klartext <strong>klöver ess</strong> o.s.v., även om metoden för närvarande är vilande.</p>
                 <p>En klass <code>Hand</code> tillkommer för att hantera delmängder av spelkort, med metoder för att beskriva korten. Slutligen implementeras en klass <code>Deck</code> som nyttjar kompositioner av såväl <code>Hand</code> som <code>Card</code> i metoder för att definiera kortleken och utföra operationer, exempelvis att blanda, dra ett kort ur eller återställa leken.</p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
             </section>
             <div class=\"center\">
                 <figure>
                     <img src=\"";
-        // line 20
+        // line 16
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/card-uml.avif"), "html", null, true);
         yield "\" width=\"1000\" alt=\"UML\">
                 </figure>
@@ -153,7 +149,7 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  117 => 20,  102 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  113 => 16,  102 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -170,10 +166,6 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
                 <p>Till klassen hör också en textmässig representation av de femtiotvå spelkorten, dels i form av unicodetecken för respektive spelkort i respektive svit, sammanfogade i en femtiotvå tecken lång sträng som representerar den grundläggande kortleken; dels i ett motsvarande fält <code>utf</code> för enkel hämtning via index. Leken löper över [0, 51].</p>
                 <p>Två jokrar tillkommer i den utvidgade klassen <code>CardGraphic</code>, som expanderar kortleken till 54 tecken på samma manér. Klassen definierar även en metod för att uttrycka spelkorten i klartext <strong>klöver ess</strong> o.s.v., även om metoden för närvarande är vilande.</p>
                 <p>En klass <code>Hand</code> tillkommer för att hantera delmängder av spelkort, med metoder för att beskriva korten. Slutligen implementeras en klass <code>Deck</code> som nyttjar kompositioner av såväl <code>Hand</code> som <code>Card</code> i metoder för att definiera kortleken och utföra operationer, exempelvis att blanda, dra ett kort ur eller återställa leken.</p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
             </section>
             <div class=\"center\">
                 <figure>

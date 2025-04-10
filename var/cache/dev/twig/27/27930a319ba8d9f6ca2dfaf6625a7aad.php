@@ -66,19 +66,19 @@ class __TwigTemplate_8586d49d5c75dc254837be34a1a0da93 extends Template
                     <li><a href=\"";
         // line 7
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deck");
-        yield "\">Visa lek</a></li> |
+        yield "\">Visa lek</a> |</li>
                     <li><a href=\"";
         // line 8
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("shuffle");
-        yield "\">Blanda lek</a></li> |
+        yield "\">Blanda lek</a> |</li>
                     <li><a href=\"";
         // line 9
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("draw");
-        yield "\">Dra kort</a></li> |
+        yield "\">Dra kort</a> |</li>
                     <li><a href=\"";
         // line 10
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deal");
-        yield "\">Dela kort</a></li> |
+        yield "\">Dela kort</a> |</li>
                     <li><a href=\"";
         // line 11
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reset");
@@ -127,10 +127,10 @@ class __TwigTemplate_8586d49d5c75dc254837be34a1a0da93 extends Template
                 <p class=\"flash-notice\">{{ message }}</p>
 {% endfor %}
                 <ul class=\"inline\">
-                    <li><a href=\"{{ path('deck') }}\">Visa lek</a></li> |
-                    <li><a href=\"{{ path('shuffle') }}\">Blanda lek</a></li> |
-                    <li><a href=\"{{ path('draw') }}\">Dra kort</a></li> |
-                    <li><a href=\"{{ path('deal') }}\">Dela kort</a></li> |
+                    <li><a href=\"{{ path('deck') }}\">Visa lek</a> |</li>
+                    <li><a href=\"{{ path('shuffle') }}\">Blanda lek</a> |</li>
+                    <li><a href=\"{{ path('draw') }}\">Dra kort</a> |</li>
+                    <li><a href=\"{{ path('deal') }}\">Dela kort</a> |</li>
                     <li><a href=\"{{ path('reset') }}\">Återställ lek</a></li>
                 </ul>
             </section>

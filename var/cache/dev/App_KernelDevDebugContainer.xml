@@ -6202,7 +6202,7 @@
       <argument>,</argument>
     </service>
     <service id="twig.runtime_loader" class="Twig\RuntimeLoader\ContainerRuntimeLoader">
-      <argument type="service" id=".service_locator.Nsv4T6i"/>
+      <argument type="service" id=".service_locator.0mTqotR"/>
     </service>
     <service id="twig.error_renderer.html" class="Symfony\Bridge\Twig\ErrorRenderer\TwigErrorRenderer">
       <argument type="service" id="twig"/>
@@ -6401,6 +6401,9 @@
     </service>
     <service id="turbo.twig.extension" class="Symfony\UX\Turbo\Twig\TwigExtension">
       <tag name="twig.extension"/>
+    </service>
+    <service id="turbo.twig.runtime" class="Symfony\UX\Turbo\Twig\TurboRuntime">
+      <tag name="twig.runtime"/>
       <argument type="service" id=".service_locator.GIuJv7e"/>
       <argument>default</argument>
     </service>
@@ -9987,7 +9990,7 @@
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
-    <service id=".service_locator.Nsv4T6i" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.0mTqotR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Symfony\Bridge\Twig\Extension\CsrfRuntime" type="service_closure" id="twig.runtime.security_csrf"/>
@@ -9996,6 +9999,7 @@
         <argument key="Symfony\Component\Form\FormRenderer" type="service_closure" id="twig.form.renderer"/>
         <argument key="Symfony\Bridge\Twig\Extension\ImportMapRuntime" type="service_closure" id="twig.runtime.importmap"/>
         <argument key="Symfony\UX\StimulusBundle\Twig\UxControllersTwigRuntime" type="service_closure" id="stimulus.ux_controllers_twig_runtime"/>
+        <argument key="Symfony\UX\Turbo\Twig\TurboRuntime" type="service_closure" id="turbo.twig.runtime"/>
       </argument>
     </service>
     <service id="App\Kernel" alias="kernel" public="true"/>

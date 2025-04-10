@@ -98,7 +98,7 @@ em, figcaption {
 }
 
 figcaption {
-  color: var(--green);
+  color: var(--beige);
 }
 
 strong, th {
@@ -107,7 +107,7 @@ strong, th {
 
 code {
   font-family: "Courier New", Courier, monospace;
-  color: var(--orange);
+  color: var(--beige);
 }
 
 section {

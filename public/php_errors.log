@@ -1,0 +1,1 @@
+[10-Apr-2025 03:32:33 Europe/Stockholm] PHP Fatal error:  Access level to App\Cards\CardGraphic::DECK must be protected (as in class App\Cards\Card) or weaker in /Users/nik/Sites/dbwebb-kurser/mvc/me/report/src/Cards/CardGraphic.php on line 31

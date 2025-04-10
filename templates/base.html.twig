@@ -2,6 +2,8 @@
 <html lang="sv">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="An MVC app.">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="{{ asset('build/images/favicon.ico') }}">
 {% block stylesheets %}
@@ -15,15 +17,15 @@
         <header>
             <nav id="navbar">
                 <ul>
-                    <li><a href="{{ path('home') }}">Hem</a></li> ·
-                    <li><a href="{{ path('about') }}">Om</a></li> ·
-                    <li><a href="{{ path('report') }}">Rapport</a></li> ·
-                    <li><a href="{{ path('lucky') }}">Tur</a></li> ·
-                    <li><a href="{{ path('card') }}">Kort</a></li> ·
+                    <li><a href="{{ path('home') }}">Hem</a> ·</li>
+                    <li><a href="{{ path('about') }}">Om</a> ·</li>
+                    <li><a href="{{ path('report') }}">Rapport</a> ·</li>
+                    <li><a href="{{ path('lucky') }}">Tur</a> ·</li>
+                    <li><a href="{{ path('card') }}">Kort</a> ·</li>
                     <li><a href="{{ path('api') }}">API:n</a></li>
                 </ul>
                 <ul>
-                    <li><a href="{{ path('session') }}">session</a><li> |
+                    <li><a href="{{ path('session') }}">session</a> |<li>
                     <li><a href="{{ path('session_delete') }}">förstör</a></li>
                 </ul>
             </nav>
@@ -42,7 +44,7 @@
                 (<a href="https://www.student.bth.se/~nido24/dbwebb-kurser/design/me/kmom10/">projekt</a>)&nbsp;|
                 <a href="https://www.student.bth.se/~nido24/dbwebb-kurser/webtec/me/report/public/me.php">Webtec</a>
                 (<a href="https://www.student.bth.se/~nido24/dbwebb-kurser/webtec/me/proj/public/home.php">projekt</a>)</p>
-            <p>© 2025 <span style="color: var(--orange);">nido24</span></p>
+            <p>© 2025 <span style="color: var(--beige);">nido24</span></p>
         </footer>
     </body>
 </html>
