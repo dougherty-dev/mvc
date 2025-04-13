@@ -18,7 +18,9 @@ class CardAPIController extends CardController
     #[Route("/api/deck", name: "api_deck")]
     public function apiDeck(): Response
     {
-        $response = new JsonResponse($this->deck->deckValues());
+        $sorted = $this->deck->deckValues();
+        sort($sorted);
+        $response = new JsonResponse($sorted);
         $response->setEncodingOptions(JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         return $response;
     }
