@@ -60,7 +60,7 @@ class CardAPIController extends CardController
         return $this->apiDeckDraw($number);
     }
 
-    #[Route("api/deck/deal/{players<\d+>}/{cards<\d+>}", name: "api_deck_deal_players_cards")]
+    #[Route("/api/deck/deal/{players<\d+>}/{cards<\d+>}", name: "api_deck_deal_players_cards")]
     public function apiDeckDealPlayersCards(int $players, int $cards): Response
     {
         $response = new JsonResponse([

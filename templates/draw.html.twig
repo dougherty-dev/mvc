@@ -6,7 +6,7 @@
 {% include 'card_template.html.twig' %}
     <section class="columns center">
         <h2>Dra kort från lek</h2>
-        <form method="post" action="{{ path('draw_number_post') }}">
+        <form method="post" action="{{ path('card_deck_draw_process') }}">
             <input type="number" min="1" name="number" value="{{ number }}">
             <button type="submit">Dra</button>
         </form>

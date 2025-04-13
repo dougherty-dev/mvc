@@ -15,17 +15,18 @@ class ProcessController extends CardController
 {
     protected RequestStack $requestStack;
 
-    #[Route("session", name: "session")]
+    #[Route("/session", name: "session")]
     public function session(): Response
     {
         return $this->render('session.html.twig');
     }
 
-    #[Route("session/delete", name: "session_delete")]
+    #[Route("/session/delete", name: "session_delete")]
     public function sessionDelete(): Response
     {
         $session = $this->requestStack->getSession();
         $session->clear();
+
         $this->addFlash(
             'notice',
             'Sessionen raderades.'
@@ -34,16 +35,19 @@ class ProcessController extends CardController
         return $this->redirectToRoute('session');
     }
 
-    #[Route("card/deck/draw/process", name: "draw_number_post", methods: ['POST'])]
-    public function drawNumberCardPost(Request $request): Response
+    #[Route("/card/deck/draw/process", name: "card_deck_draw_process", methods: ['POST'])]
+    public function cardDeckDrawProcess(Request $request): Response
     {
-        return $this->redirectToRoute('draw_number', ['number' => $request->request->get('number')]);
+        return $this->redirectToRoute(
+            'card_deck_draw_number',
+            ['number' => $request->request->get('number')]
+        );
     }
 
-    #[Route("card/deck/deal/process", name: "deal_post", methods: ['POST'])]
-    public function dealPost(Request $request): Response
+    #[Route("card/deck/deal/process", name: "card_deck_deal_process", methods: ['POST'])]
+    public function cardDeckDealProcess(Request $request): Response
     {
-        return $this->redirectToRoute('deal', [
+        return $this->redirectToRoute('card_deck_draw_deal_players', [
             'players' => $request->request->get('players'),
             'cards' => $request->request->get('cards')
         ]);
@@ -52,10 +56,13 @@ class ProcessController extends CardController
     #[Route("/api/deck/draw/process", name: "api_deck_draw_process", methods: ['POST'])]
     public function apiDeckDrawProcess(Request $request): Response
     {
-        return $this->redirectToRoute('api_deck_draw_number', ['number' => $request->request->get('number')]);
+        return $this->redirectToRoute(
+            'api_deck_draw_number',
+            ['number' => $request->request->get('number')]
+        );
     }
 
-    #[Route("api/deck/deal/process", name: "api_deck_deal_process", methods: ['POST'])]
+    #[Route("/api/deck/deal/process", name: "api_deck_deal_process", methods: ['POST'])]
     public function apiDeckDealProcess(Request $request): Response
     {
         return $this->redirectToRoute('api_deck_deal_players_cards', [

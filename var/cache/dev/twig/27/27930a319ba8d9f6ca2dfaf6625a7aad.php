@@ -65,23 +65,23 @@ class __TwigTemplate_8586d49d5c75dc254837be34a1a0da93 extends Template
         yield "                <ul class=\"inline\">
                     <li><a href=\"";
         // line 7
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deck");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("card_deck");
         yield "\">Visa lek</a> |</li>
                     <li><a href=\"";
         // line 8
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("shuffle");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("card_deck_shuffle");
         yield "\">Blanda lek</a> |</li>
                     <li><a href=\"";
         // line 9
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("draw");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("card_deck_draw");
         yield "\">Dra kort</a> |</li>
                     <li><a href=\"";
         // line 10
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deal");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("card_deck_draw_deal_players");
         yield "\">Dela kort</a> |</li>
                     <li><a href=\"";
         // line 11
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reset");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("card_deck_reset");
         yield "\">Återställ lek</a></li>
                 </ul>
             </section>
@@ -127,11 +127,11 @@ class __TwigTemplate_8586d49d5c75dc254837be34a1a0da93 extends Template
                 <p class=\"flash-notice\">{{ message }}</p>
 {% endfor %}
                 <ul class=\"inline\">
-                    <li><a href=\"{{ path('deck') }}\">Visa lek</a> |</li>
-                    <li><a href=\"{{ path('shuffle') }}\">Blanda lek</a> |</li>
-                    <li><a href=\"{{ path('draw') }}\">Dra kort</a> |</li>
-                    <li><a href=\"{{ path('deal') }}\">Dela kort</a> |</li>
-                    <li><a href=\"{{ path('reset') }}\">Återställ lek</a></li>
+                    <li><a href=\"{{ path('card_deck') }}\">Visa lek</a> |</li>
+                    <li><a href=\"{{ path('card_deck_shuffle') }}\">Blanda lek</a> |</li>
+                    <li><a href=\"{{ path('card_deck_draw') }}\">Dra kort</a> |</li>
+                    <li><a href=\"{{ path('card_deck_draw_deal_players') }}\">Dela kort</a> |</li>
+                    <li><a href=\"{{ path('card_deck_reset') }}\">Återställ lek</a></li>
                 </ul>
             </section>
 ", "card_template.html.twig", "/Users/nik/Sites/dbwebb-kurser/mvc/me/report/templates/card_template.html.twig");

@@ -103,7 +103,7 @@ class __TwigTemplate_06947f2526b326ba811e1101c287ce59 extends Template
         <h2>Ny giv</h2>
         <form method=\"post\" action=\"";
         // line 9
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deal_post");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("card_deck_deal_process");
         yield "\">
             <table>
                 <tr>
@@ -216,7 +216,7 @@ class __TwigTemplate_06947f2526b326ba811e1101c287ce59 extends Template
 {% include 'card_template.html.twig' %}
     <section class=\"columns center\">
         <h2>Ny giv</h2>
-        <form method=\"post\" action=\"{{ path('deal_post') }}\">
+        <form method=\"post\" action=\"{{ path('card_deck_deal_process') }}\">
             <table>
                 <tr>
                     <th class=\"left\">Spelare</th>

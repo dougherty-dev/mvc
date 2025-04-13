@@ -103,7 +103,7 @@ class __TwigTemplate_a8b180a82585fe6c2ee81eb7bd3b3139 extends Template
         <h2>Dra kort från lek</h2>
         <form method=\"post\" action=\"";
         // line 9
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("draw_number_post");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("card_deck_draw_process");
         yield "\">
             <input type=\"number\" min=\"1\" name=\"number\" value=\"";
         // line 10
@@ -178,7 +178,7 @@ class __TwigTemplate_a8b180a82585fe6c2ee81eb7bd3b3139 extends Template
 {% include 'card_template.html.twig' %}
     <section class=\"columns center\">
         <h2>Dra kort från lek</h2>
-        <form method=\"post\" action=\"{{ path('draw_number_post') }}\">
+        <form method=\"post\" action=\"{{ path('card_deck_draw_process') }}\">
             <input type=\"number\" min=\"1\" name=\"number\" value=\"{{ number }}\">
             <button type=\"submit\">Dra</button>
         </form>

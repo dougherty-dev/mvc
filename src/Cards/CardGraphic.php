@@ -25,11 +25,6 @@ class CardGraphic extends Card
         '🃟', '🃟'
     ];
 
-    public function __construct(?int $value = null)
-    {
-        parent::__construct($value);
-    }
-
     public function getStringValue(): string
     {
         return self::DECK_ARRAY[$this->value];

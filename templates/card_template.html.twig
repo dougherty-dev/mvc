@@ -4,10 +4,10 @@
                 <p class="flash-notice">{{ message }}</p>
 {% endfor %}
                 <ul class="inline">
-                    <li><a href="{{ path('deck') }}">Visa lek</a> |</li>
-                    <li><a href="{{ path('shuffle') }}">Blanda lek</a> |</li>
-                    <li><a href="{{ path('draw') }}">Dra kort</a> |</li>
-                    <li><a href="{{ path('deal') }}">Dela kort</a> |</li>
-                    <li><a href="{{ path('reset') }}">Återställ lek</a></li>
+                    <li><a href="{{ path('card_deck') }}">Visa lek</a> |</li>
+                    <li><a href="{{ path('card_deck_shuffle') }}">Blanda lek</a> |</li>
+                    <li><a href="{{ path('card_deck_draw') }}">Dra kort</a> |</li>
+                    <li><a href="{{ path('card_deck_draw_deal_players') }}">Dela kort</a> |</li>
+                    <li><a href="{{ path('card_deck_reset') }}">Återställ lek</a></li>
                 </ul>
             </section>

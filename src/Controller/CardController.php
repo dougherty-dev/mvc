@@ -24,6 +24,7 @@ class CardController extends AbstractController
         if (!$session->get("deck")) {
             $this->deck = new Deck();
             $this->deck->resetDeck();
+
             $session->set("deck", $this->deck);
         }
 
@@ -38,27 +39,28 @@ class CardController extends AbstractController
         }
     }
 
-    #[Route("card", name: "card")]
+    #[Route("/card", name: "card")]
     public function card(): Response
     {
         return $this->render('card.html.twig');
     }
 
-    #[Route("card/deck/reset", name: "reset")]
-    public function reset(): Response
-    {
-        $this->deck->resetDeck();
-        return $this->redirectToRoute('deck');
-    }
-
-    #[Route("card/deck", name: "deck")]
-    public function deck(): Response
+    #[Route("/card/deck", name: "card_deck")]
+    public function cardDeck(): Response
     {
         return $this->render('deck.html.twig');
     }
 
-    #[Route("card/deck/shuffle", name: "shuffle")]
-    public function shuffleDeck(): Response
+    #[Route("/card/deck/reset", name: "card_deck_reset")]
+    public function cardDeckReset(): Response
+    {
+        $this->deck->resetDeck();
+
+        return $this->redirectToRoute('deck');
+    }
+
+    #[Route("/card/deck/shuffle", name: "card_deck_shuffle")]
+    public function cardDeckShuffle(): Response
     {
         $this->deck->shuffleDeck();
 
@@ -68,8 +70,8 @@ class CardController extends AbstractController
         return $this->render('shuffle.html.twig');
     }
 
-    #[Route("card/deck/draw", name: "draw")]
-    public function drawCard(int $number = 1): Response
+    #[Route("/card/deck/draw", name: "card_deck_draw")]
+    public function cardDeckDraw(int $number = 1): Response
     {
         $hand = $this->deck->drawCards($number);
 
@@ -85,14 +87,14 @@ class CardController extends AbstractController
         return $this->render('draw.html.twig', $data);
     }
 
-    #[Route("card/deck/draw/{number<\d+>}", name: "draw_number")]
-    public function drawNumberCard(int $number): Response
+    #[Route("/card/deck/draw/{number<\d+>}", name: "card_deck_draw_number")]
+    public function cardDeckDrawNumber(int $number): Response
     {
-        return $this->drawCard($number);
+        return $this->cardDeckDraw($number);
     }
 
-    #[Route("card/deck/deal/{players<\d+>}/{cards<\d+>}", name: "deal")]
-    public function deal(int $players = 0, int $cards = 0): Response
+    #[Route("/card/deck/deal/{players<\d+>}/{cards<\d+>}", name: "card_deck_draw_deal_players")]
+    public function cardDeckDealPlayersCards(int $players = 0, int $cards = 0): Response
     {
         $data = [
             'players' => $players,
@@ -100,6 +102,7 @@ class CardController extends AbstractController
             'hands' => $this->dealHands($players, $cards),
             'remaining' => $this->deck->remainingCards()
         ];
+
         return $this->render('deal.html.twig', $data);
     }
 
