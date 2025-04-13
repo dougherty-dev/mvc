@@ -63,8 +63,16 @@ class CardAPIController extends CardController
     #[Route("/api/deck/deal/{players<\d+>}/{cards<\d+>}", name: "api_deck_deal_players_cards")]
     public function apiDeckDealPlayersCards(int $players, int $cards): Response
     {
+        $hands = [];
+        for ($i = 0; $i < $players; $i++) {
+            $hands[$i] = $this->deck->drawCards($cards)->handValues();
+        }
+
+        $session = $this->requestStack->getSession();
+        $session->set("deck", $this->deck);
+
         $response = new JsonResponse([
-            "hands" => $this->dealHands($players, $cards),
+            "hands" => $hands,
             "remaining" => $this->deck->remainingCards()
         ]);
         $response->setEncodingOptions(JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);

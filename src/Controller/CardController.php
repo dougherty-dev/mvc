@@ -21,9 +21,18 @@ class CardController extends AbstractController
         $this->requestStack = $requestStack;
         $session = $this->requestStack->getSession();
 
+        if (!$session->get("deck_values")) {
+            $this->deck = new Deck();
+            $this->deck->resetDeck();
+
+            $session->set("deck_values", $this->deck->deckValues());
+            $session->set("deck_text_values", $this->deck->deckTextValues());
+        }
+
         if (!$session->get("deck")) {
             $this->deck = new Deck();
             $this->deck->resetDeck();
+            $this->deck->shuffleDeck();
 
             $session->set("deck", $this->deck);
         }
@@ -33,10 +42,6 @@ class CardController extends AbstractController
             $this->deck = $session->get("deck");
         }
 
-        if (!$session->get("deck_values")) {
-            $session->set("deck_values", $this->deck->deckValues());
-            $session->set("deck_text_values", $this->deck->deckTextValues());
-        }
     }
 
     #[Route("/card", name: "card")]
@@ -55,6 +60,7 @@ class CardController extends AbstractController
     public function cardDeckReset(): Response
     {
         $this->deck->resetDeck();
+        $this->deck->shuffleDeck();
 
         return $this->redirectToRoute('card_deck');
     }
@@ -96,19 +102,6 @@ class CardController extends AbstractController
     #[Route("/card/deck/deal/{players<\d+>}/{cards<\d+>}", name: "card_deck_draw_deal_players")]
     public function cardDeckDealPlayersCards(int $players = 0, int $cards = 0): Response
     {
-        $data = [
-            'players' => $players,
-            'cards' => $cards,
-            'hands' => $this->dealHands($players, $cards),
-            'remaining' => $this->deck->remainingCards()
-        ];
-
-        return $this->render('deal.html.twig', $data);
-    }
-
-    /** @return array<int<0, max>, Hand> */
-    public function dealHands(int $players, int $cards): array
-    {
         $hands = [];
         for ($i = 0; $i < $players; $i++) {
             $hands[$i] = $this->deck->drawCards($cards);
@@ -117,6 +110,13 @@ class CardController extends AbstractController
         $session = $this->requestStack->getSession();
         $session->set("deck", $this->deck);
 
-        return  $hands;
+        $data = [
+            'players' => $players,
+            'cards' => $cards,
+            'hands' => $hands,
+            'remaining' => $this->deck->remainingCards()
+        ];
+
+        return $this->render('deal.html.twig', $data);
     }
 }

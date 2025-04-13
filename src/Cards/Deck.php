@@ -17,7 +17,6 @@ class Deck
         foreach (array_keys(CardGraphic::DECK_ARRAY) as $k) {
             $this->deck[] = new CardGraphic($k);
         }
-        $this->shuffleDeck();
     }
 
     public function shuffleDeck(): void
