@@ -101,13 +101,33 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <option value=\"#navbar\">topp</option>
         <option value=\"#kmom01\">km01</option>
         <option value=\"#kmom02\">km02</option>
-        <!-- option value=\"#kmom03\">km03</option>
-        <option value=\"#kmom04\">km04</option>
+        <option value=\"#kmom03\">km03</option>
+        <!-- option value=\"#kmom04\">km04</option>
         <option value=\"#kmom05\">km05</option>
         <option value=\"#kmom06\">km06</option>
         <option value=\"#kmom10\">km10</option -->
     </select>
     <h1>Rapport</h1>
+    <section class=\"two-columns\" id=\"kmom03\">
+        <h2>Kmom03</h2>
+        <p class=\"initcap\">Introduktion av PHPStan och PHP Mess Detector gör att kortklasserna i tidigare kursmoment måste refaktoreras, samtidigt som de vässas en smula. Detta är hemmaplan, och nu börjar det likna riktig programmering med erforderlig stringens.</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <figure>
+            <img src=\"";
+        // line 31
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom03.avif"), "html", null, true);
+        yield "\" width=\"1536\" alt=\"Chihiro\">
+        </figure>
+    </section>
     <section class=\"two-columns\" id=\"kmom02\">
         <h2>Kmom02</h2>
         <p class=\"initcap\">Grunden till ett kortspel implementeras här i objektorienterad PHP under ramverket Symfony och med Twig som motor. Arv, komposition, aggregation, gränssnitt och egenskaper definieras teoretiskt, och ansluter i stort till tidigare stoff i Python.</p>
@@ -117,11 +137,11 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <p>För uppgiften i fråga används varken egenskaper eller gränssnitt, men däremot nyttjas arv i ett par instanser. De givna rekommendationerna med kortklasser vidgade med jokrar har här implementerats löst. Men den givna och naturliga implementationen av arv ges här av att nyttja <code>CardController</code> som föräldraklass till <code>CardAPIController</code>, eftersom de båda har gemensamma metoder, konstanter och attribut, exempelvis session, klassen <code>Deck</code> med flera.</p>
         <p>Det är notoriskt krångligt att bygga klasser på ett smidigt sätt, och det finns i princip alltid potential för förbättringar. Klassen <code>Card</code> (eller snarare <code>CardGraphic</code>) är här ganska menlös i förefintligt skick, men skulle säkert kunna byggas mer komplicerat.</p>
         <p>Det lär ta fler kursmoment för att övertyga om ramverkens förträfflighet. Komplexiteten ökar betänkligt utan att ge så stora vinster, även om det har sin tjusning med färdiga lösningar på många vanliga kodproblem. Dessvärre får man lägga en del tid på buggar i själva ramverket snarare än att fokusera på objektorienterad kod i sig.</p>
-        <p>Icke desto mindre är det tillfredsställande när man väl kommer över den jobbiga tröskeln och kan börja bygga applikationer. Koden med kontroller, mallar och vyer blir ganska liten kompakt, även om man är mer begränsad än med rå PHP.</p>
+        <p>Icke desto mindre är det tillfredsställande när man väl kommer över den jobbiga tröskeln och kan börja bygga applikationer. Koden med kontroller, mallar och vyer blir ganska liten och kompakt, även om man är mer begränsad än med rå PHP.</p>
         <p>TIL för kursmomentet får sägas vara sessioner i Symfony och Twig, ett smidigt sätt att hantera objekt till skillnad från PHP:s krångliga motsvarigheter.</p>
         <figure>
             <img src=\"";
-        // line 29
+        // line 46
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom02.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
         </figure>
@@ -137,7 +157,7 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <p>TIL får nog sägas vara att nyttja ramverket Symfony, en erfarenhet som kanske är nyttig men som jag aldrig skulle fundera på att använda för egen del. Det är själva definitionen av bloat.</p>
         <figure>
             <img src=\"";
-        // line 42
+        // line 59
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom01.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
             <figcaption>@mos inskärper allvaret i studierna.</figcaption>
@@ -174,7 +194,7 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  141 => 42,  125 => 29,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  161 => 59,  145 => 46,  127 => 31,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -188,13 +208,30 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <option value=\"#navbar\">topp</option>
         <option value=\"#kmom01\">km01</option>
         <option value=\"#kmom02\">km02</option>
-        <!-- option value=\"#kmom03\">km03</option>
-        <option value=\"#kmom04\">km04</option>
+        <option value=\"#kmom03\">km03</option>
+        <!-- option value=\"#kmom04\">km04</option>
         <option value=\"#kmom05\">km05</option>
         <option value=\"#kmom06\">km06</option>
         <option value=\"#kmom10\">km10</option -->
     </select>
     <h1>Rapport</h1>
+    <section class=\"two-columns\" id=\"kmom03\">
+        <h2>Kmom03</h2>
+        <p class=\"initcap\">Introduktion av PHPStan och PHP Mess Detector gör att kortklasserna i tidigare kursmoment måste refaktoreras, samtidigt som de vässas en smula. Detta är hemmaplan, och nu börjar det likna riktig programmering med erforderlig stringens.</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <figure>
+            <img src=\"{{ asset('build/images/chihiro-kmom03.avif') }}\" width=\"1536\" alt=\"Chihiro\">
+        </figure>
+    </section>
     <section class=\"two-columns\" id=\"kmom02\">
         <h2>Kmom02</h2>
         <p class=\"initcap\">Grunden till ett kortspel implementeras här i objektorienterad PHP under ramverket Symfony och med Twig som motor. Arv, komposition, aggregation, gränssnitt och egenskaper definieras teoretiskt, och ansluter i stort till tidigare stoff i Python.</p>
@@ -204,7 +241,7 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <p>För uppgiften i fråga används varken egenskaper eller gränssnitt, men däremot nyttjas arv i ett par instanser. De givna rekommendationerna med kortklasser vidgade med jokrar har här implementerats löst. Men den givna och naturliga implementationen av arv ges här av att nyttja <code>CardController</code> som föräldraklass till <code>CardAPIController</code>, eftersom de båda har gemensamma metoder, konstanter och attribut, exempelvis session, klassen <code>Deck</code> med flera.</p>
         <p>Det är notoriskt krångligt att bygga klasser på ett smidigt sätt, och det finns i princip alltid potential för förbättringar. Klassen <code>Card</code> (eller snarare <code>CardGraphic</code>) är här ganska menlös i förefintligt skick, men skulle säkert kunna byggas mer komplicerat.</p>
         <p>Det lär ta fler kursmoment för att övertyga om ramverkens förträfflighet. Komplexiteten ökar betänkligt utan att ge så stora vinster, även om det har sin tjusning med färdiga lösningar på många vanliga kodproblem. Dessvärre får man lägga en del tid på buggar i själva ramverket snarare än att fokusera på objektorienterad kod i sig.</p>
-        <p>Icke desto mindre är det tillfredsställande när man väl kommer över den jobbiga tröskeln och kan börja bygga applikationer. Koden med kontroller, mallar och vyer blir ganska liten kompakt, även om man är mer begränsad än med rå PHP.</p>
+        <p>Icke desto mindre är det tillfredsställande när man väl kommer över den jobbiga tröskeln och kan börja bygga applikationer. Koden med kontroller, mallar och vyer blir ganska liten och kompakt, även om man är mer begränsad än med rå PHP.</p>
         <p>TIL för kursmomentet får sägas vara sessioner i Symfony och Twig, ett smidigt sätt att hantera objekt till skillnad från PHP:s krångliga motsvarigheter.</p>
         <figure>
             <img src=\"{{ asset('build/images/chihiro-kmom02.avif') }}\" width=\"1536\" alt=\"Chihiro\">

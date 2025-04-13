@@ -114,13 +114,15 @@ class __TwigTemplate_a8b180a82585fe6c2ee81eb7bd3b3139 extends Template
         ";
         // line 13
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["cards"]) || array_key_exists("cards", $context) ? $context["cards"] : (function () { throw new RuntimeError('Variable "cards" does not exist.', 13, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["hand"]) || array_key_exists("hand", $context) ? $context["hand"] : (function () { throw new RuntimeError('Variable "hand" does not exist.', 13, $this->source); })()), "hand", [], "any", false, false, false, 13));
         foreach ($context['_seq'] as $context["_key"] => $context["card"]) {
             // line 14
             yield "        <img src=\"";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("build/images/cards/" . CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 14)) . ".svg")), "html", null, true);
             yield "\" width=\"100\" alt=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "session", [], "any", false, false, false, 14), "get", ["unicode"], "method", false, false, false, 14), CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 14), 1), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "session", [], "any", false, false, false, 14), "get", ["deck_values"], "method", false, false, false, 14), CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 14), [], "array", false, false, false, 14), "html", null, true);
+            yield "\" title=\"";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "session", [], "any", false, false, false, 14), "get", ["deck_text_values"], "method", false, false, false, 14), CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 14), [], "array", false, false, false, 14), "html", null, true);
             yield "\">
         ";
         }
@@ -163,7 +165,7 @@ class __TwigTemplate_a8b180a82585fe6c2ee81eb7bd3b3139 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  131 => 16,  120 => 14,  116 => 13,  110 => 10,  106 => 9,  102 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  133 => 16,  120 => 14,  116 => 13,  110 => 10,  106 => 9,  102 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -180,8 +182,8 @@ class __TwigTemplate_a8b180a82585fe6c2ee81eb7bd3b3139 extends Template
             <input type=\"number\" min=\"1\" name=\"number\" value=\"{{ number }}\">
             <button type=\"submit\">Dra</button>
         </form>
-        {% for card in cards %}
-        <img src=\"{{ asset('build/images/cards/'~card.value~'.svg') }}\" width=\"100\" alt=\"{{ app.session.get('unicode')[card.value:1] }}\">
+        {% for card in hand.hand %}
+        <img src=\"{{ asset('build/images/cards/'~card.value~'.svg') }}\" width=\"100\" alt=\"{{ app.session.get('deck_values')[card.value] }}\" title=\"{{ app.session.get('deck_text_values')[card.value] }}\">
         {% endfor %}
         <p>Kort kvar i lek: {{ remaining }}</p>
     </section>

@@ -110,7 +110,9 @@ class __TwigTemplate_d25f02f05507c0ae93737558f9ff9cac extends Template
             yield "            <span><img src=\"";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("build/images/cards/" . CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 10)) . ".svg")), "html", null, true);
             yield "\" width=\"100\" alt=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "session", [], "any", false, false, false, 10), "get", ["unicode"], "method", false, false, false, 10), CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 10), 1), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "session", [], "any", false, false, false, 10), "get", ["deck_values"], "method", false, false, false, 10), CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 10), [], "array", false, false, false, 10), "html", null, true);
+            yield "\" title=\"";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "session", [], "any", false, false, false, 10), "get", ["deck_text_values"], "method", false, false, false, 10), CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 10), [], "array", false, false, false, 10), "html", null, true);
             yield "\"></span>
         ";
         }
@@ -150,7 +152,7 @@ class __TwigTemplate_d25f02f05507c0ae93737558f9ff9cac extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  121 => 12,  110 => 10,  106 => 9,  102 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  123 => 12,  110 => 10,  106 => 9,  102 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -164,7 +166,7 @@ class __TwigTemplate_d25f02f05507c0ae93737558f9ff9cac extends Template
     <section class=\"columns center\">
         <h2>Kortleken</h2>
         {% for card in app.session.get('deck').deck|sort %}
-            <span><img src=\"{{ asset('build/images/cards/'~card.value~'.svg') }}\" width=\"100\" alt=\"{{ app.session.get('unicode')[card.value:1] }}\"></span>
+            <span><img src=\"{{ asset('build/images/cards/'~card.value~'.svg') }}\" width=\"100\" alt=\"{{ app.session.get('deck_values')[card.value] }}\" title=\"{{ app.session.get('deck_text_values')[card.value] }}\"></span>
         {% endfor %}
     </section>
 {% endblock %}

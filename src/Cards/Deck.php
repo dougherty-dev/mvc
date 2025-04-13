@@ -1,25 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Cards;
 
 use App\Cards;
 
 class Deck
 {
+    /** @var array<int, CardGraphic> $deck */
     public array $deck = [];
-    public Hand $hand;
-
-    public function __construct()
-    {
-        $this->hand = new Hand();
-    }
 
     public function resetDeck(): void
     {
         $this->deck = [];
-        foreach ($this->hand->card->getCardsArray() as $k => $_) {
+        foreach (array_keys(CardGraphic::DECK_ARRAY) as $k) {
             $this->deck[] = new CardGraphic($k);
         }
+        $this->shuffleDeck();
     }
 
     public function shuffleDeck(): void
@@ -27,26 +25,37 @@ class Deck
         shuffle($this->deck);
     }
 
-    public function drawCard(): CardGraphic
+    public function drawCards(int $number = 1): Hand
     {
-        return array_splice($this->deck, array_rand($this->deck), 1)[0];
+        $hand = new Hand();
+        $remaining = $this->remainingCards();
+        for ($i = 1; $i <= min($number, $remaining); $i++) {
+            $hand->addCard(array_shift($this->deck));
+        }
+        return $hand;
     }
 
+    /** @return string[] */
     public function deckValues(): array
     {
-        return $this->hand->handValuesUTF($this->deck);
+        $deckValues = [];
+        foreach ($this->deck as $card) {
+            $deckValues[] = $card->getStringValue();
+        }
+        return $deckValues;
     }
 
+    /** @return string[] */
     public function deckTextValues(): array
     {
         $deckTextValues = [];
-        foreach ($this->deck as $k => $card) {
-            $deckTextValues[] = $this->hand->card->getTextValue($card->value);
+        foreach ($this->deck as $card) {
+            $deckTextValues[] = $card->getTextValue();
         }
         return $deckTextValues;
     }
 
-    public function cards(): int
+    public function remainingCards(): int
     {
         return count($this->deck);
     }

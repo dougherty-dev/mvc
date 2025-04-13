@@ -20,11 +20,11 @@
             <button type="submit">Dela</button>
         </form>
         {% if players %}
-        {% for key, player in player_cards|reverse(true) %}
+        {% for player, hand in hands %}
         <figure>
-            <figcaption>Spelare {{ key }}</figcaption>
-            {% for card in player %}
-            <span><img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="100" alt="{{ app.session.get('unicode')[card.value:1] }}"></span>
+            <figcaption>Spelare {{ player }}</figcaption>
+            {% for card in hand.hand %}
+            <span><img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="100" alt="{{ app.session.get('deck_values')[card.value] }}" title="{{ app.session.get('deck_text_values')[card.value] }}"></span>
             {% endfor %}
         </figure>
         {% endfor %}

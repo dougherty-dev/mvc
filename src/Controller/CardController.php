@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -9,36 +11,34 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Cards\Deck;
-use App\Cards\CardGraphic;
 
 class CardController extends AbstractController
 {
-    public $deck = null;
-    public $session = null;
+    /** @var RequestStack $requestStack */
+    protected $requestStack;
+    /** @var Deck $deck */
+    public $deck;
 
-    public function __construct(
-        private RequestStack $requestStack
-    ) {
+    public function __construct(RequestStack $requestStack)
+    {
+        $this->requestStack = $requestStack;
+        $session = $this->requestStack->getSession();
+
+        if (!$session->get("deck")) {
+            $this->deck = new Deck();
+            $this->deck->resetDeck();
+            $session->set("deck", $this->deck);
+        }
+
         $this->deck = new Deck();
-        $this->checkSession();
-    }
+        if (is_object($session->get("deck")) && is_a($session->get("deck"), 'App\Cards\Deck')) {
+            $this->deck = $session->get("deck");
+        }
 
-    #[Route("session", name: "session")]
-    public function session(): Response
-    {
-        return $this->render('session.html.twig');
-    }
-
-    #[Route("session/delete", name: "session_delete")]
-    public function sessionDelete(): Response
-    {
-        $this->session->clear();
-        $this->addFlash(
-            'notice',
-            'Sessionen raderades.'
-        );
-
-        return $this->redirectToRoute('session');
+        if (!$session->get("deck_values")) {
+            $session->set("deck_values", $this->deck->deckValues());
+            $session->set("deck_text_values", $this->deck->deckTextValues());
+        }
     }
 
     #[Route("card", name: "card")]
@@ -63,21 +63,42 @@ class CardController extends AbstractController
     #[Route("card/deck/shuffle", name: "shuffle")]
     public function shuffleDeck(): Response
     {
+        $session = $this->requestStack->getSession();
         $this->deck->shuffleDeck();
-        $this->session->set("deck", $this->deck);
+        $session->set("deck", $this->deck);
         return $this->render('shuffle.html.twig');
     }
 
     #[Route("card/deck/draw", name: "draw")]
     public function drawCard(): Response
     {
-        return $this->render('draw.html.twig', $this->drawCards());
+        $session = $this->requestStack->getSession();
+        $hand = $this->deck->drawCards();
+        $session->set("deck", $this->deck);
+
+        $data = [
+            "number" => 1,
+            "hand" => $hand,
+            "remaining" => $this->deck->remainingCards()
+        ];
+
+        return $this->render('draw.html.twig', $data);
     }
 
     #[Route("card/deck/draw/{number<\d+>}", name: "draw_number")]
     public function drawNumberCard(int $number): Response
     {
-        return $this->render('draw.html.twig', $this->drawCards($number));
+        $session = $this->requestStack->getSession();
+        $hand = $this->deck->drawCards($number);
+        $session->set("deck", $this->deck);
+
+        $data = [
+            "number" => $number,
+            "hand" => $hand,
+            "remaining" => $this->deck->remainingCards()
+        ];
+
+        return $this->render('draw.html.twig', $data);
     }
 
     #[Route("card/deck/draw/process", name: "draw_number_post", methods: ['POST'])]
@@ -86,55 +107,22 @@ class CardController extends AbstractController
         return $this->redirectToRoute('draw_number', ['number' => $request->request->get('number')]);
     }
 
-    public function drawCards($number = 1): array
-    {
-        $n = $number;
-        $cards = [];
-        while ($n > 0 && $this->deck->cards()) {
-            $cards[] = $this->deck->drawCard();
-            --$n;
-        }
-        $this->session->set("deck", $this->deck);
-
-        return [
-            "number" => $number,
-            "cards" => $cards,
-            "remaining" => $this->deck->cards()
-        ];
-    }
-
     #[Route("card/deck/deal/{players<\d+>}/{cards<\d+>}", name: "deal")]
     public function deal(int $players = 0, int $cards = 0): Response
     {
-        $p = $players;
-        $c = $cards;
-        $no_cards = $p * $c;
-
-        if ($no_cards > $this->deck->cards()) {
-            $this->addFlash(
-                'notice',
-                'För få kort i lek.'
-            );
-            return $this->redirectToRoute('card');
+        $hands = [];
+        for ($i = 0; $i < $players; $i++) {
+            $hands[$i] = $this->deck->drawCards($cards);
         }
 
-        $player_cards = [];
-        while ($p > 0) {
-            $c = $cards;
-            while ($c > 0 && $this->deck->cards()) {
-                $player_cards[$p][] = $this->deck->drawCard();
-                --$c;
-            }
-            --$p;
-        }
-
-        $this->session->set("deck", $this->deck);
+        $session = $this->requestStack->getSession();
+        $session->set("deck", $this->deck);
 
         $data = [
             'players' => $players,
             'cards' => $cards,
-            'player_cards' => $player_cards,
-            'remaining' => $this->deck->cards()
+            'hands' => $hands,
+            'remaining' => $this->deck->remainingCards()
         ];
 
         return $this->render('deal.html.twig', $data);
@@ -147,21 +135,5 @@ class CardController extends AbstractController
             'players' => $request->request->get('players'),
             'cards' => $request->request->get('cards')
         ]);
-    }
-
-    private function checkSession(): void
-    {
-        $this->session = $this->requestStack->getSession();
-
-        if (!$this->session->get("deck")) {
-            $this->deck->resetDeck();
-            $this->session->set("deck", $this->deck);
-        } else {
-            $this->deck = $this->session->get("deck");
-        }
-
-        if (!$this->session->get("unicode")) {
-            $this->session->set("unicode", $this->deck->hand->card->getCards());
-        }
     }
 }

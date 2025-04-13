@@ -1,47 +1,59 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Cards;
 
 use App\Cards;
 
-define('SUIT', [
-    '♣️ klöver',
-    '♦️ ruter',
-    '♥️ hjärter',
-    '♠️ spader',
-    '🃏 joker'
-]);
-
-define('FACES', [
-    'ess',
-    'två',
-    'tre',
-    'fyra',
-    'fem',
-    'sex',
-    'sju',
-    'åtta',
-    'nio',
-    'tio',
-    'knekt',
-    'dam',
-    'kung',
-]);
-
 class CardGraphic extends Card
 {
-    private const JOKERS = '🃟🃟';
-    protected const DECK = parent::DECK . self::JOKERS;
+    private const SUIT = [
+        '♣️ klöver',
+        '♦️ ruter',
+        '♥️ hjärter',
+        '♠️ spader',
+        '🃏 joker'
+    ];
 
-    public function __construct($value)
+    private const FACES = [
+        'ess',
+        'två',
+        'tre',
+        'fyra',
+        'fem',
+        'sex',
+        'sju',
+        'åtta',
+        'nio',
+        'tio',
+        'knekt',
+        'dam',
+        'kung',
+    ];
+
+    public const DECK_ARRAY = [
+        '🃑', '🃒', '🃓', '🃔', '🃕', '🃖', '🃗', '🃘', '🃙', '🃚', '🃛', '🃝', '🃞',
+        '🃁', '🃂', '🃃', '🃄', '🃅', '🃆', '🃇', '🃈', '🃉', '🃊', '🃋', '🃍', '🃎',
+        '🂡', '🂢', '🂣', '🂤', '🂥', '🂦', '🂧', '🂨', '🂩', '🂪', '🂫', '🂭', '🂮',
+        '🂱', '🂲', '🂳', '🂴', '🂵', '🂶', '🂷', '🂸', '🂹', '🂺', '🂻', '🂽', '🂾',
+        '🃟', '🃟'
+    ];
+
+    public function __construct(?int $value = null)
     {
         parent::__construct($value);
     }
 
-    public function getTextValue(int $value): string
+    public function getStringValue(): string
     {
-        $suit = SUIT[intdiv($value, 13)];
-        $face = $suit === 'joker' ? '' : FACES[$value % 13];
+        return self::DECK_ARRAY[$this->value];
+    }
+
+    public function getTextValue(): string
+    {
+        $suit = self::SUIT[intdiv(intval($this->value), 13)];
+        $face = $this->value > 51 ? '' : self::FACES[$this->value % 13];
         return trim("$suit $face");
     }
 }

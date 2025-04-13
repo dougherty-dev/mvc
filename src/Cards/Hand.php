@@ -1,34 +1,42 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Cards;
 
 use App\Cards;
 
 class Hand
 {
+    /** @var array<int, CardGraphic|null> $hand */
     public array $hand = [];
-    public CardGraphic $card;
 
-    public function __construct()
+    public function addCard(?CardGraphic $card): void
     {
-        $this->card = new CardGraphic(0);
+        $this->hand[] = $card;
     }
 
-    public function handValues(array $hand): array
+    /** @return string[] */
+    public function handValues(): array
     {
         $handValues = [];
-        foreach ($hand as $k => $card) {
-            $handValues[] = $card->value;
+        foreach ($this->hand as $card) {
+            if ($card) {
+                $handValues[] = $card->getStringValue();
+            }
         }
         return $handValues;
     }
 
-    public function handValuesUTF(array $hand): array
+    /** @return string[] */
+    public function handTextValues(): array
     {
-        $handValuesUTF = [];
-        foreach ($hand as $k => $card) {
-            $handValuesUTF[] = $this->card->getCardsArray()[$card->value];
+        $handTextValues = [];
+        foreach ($this->hand as $card) {
+            if ($card) {
+                $handTextValues[] = $card->getTextValue();
+            }
         }
-        return $handValuesUTF;
+        return $handTextValues;
     }
 }

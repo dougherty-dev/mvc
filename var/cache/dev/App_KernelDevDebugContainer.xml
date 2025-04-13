@@ -362,12 +362,8 @@
     <service id="App\Entity" class="App\Entity" abstract="true">
       <tag name="container.excluded" source="in &quot;config/services.yaml&quot;"/>
     </service>
-    <service id="App\Cards\Card" class="App\Cards\Card" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="Cannot autowire service &quot;App\Cards\Card&quot;: argument &quot;$value&quot; of method &quot;__construct()&quot; is type-hinted &quot;int&quot;, you should configure its value explicitly."/>
-    </service>
-    <service id="App\Cards\CardGraphic" class="App\Cards\CardGraphic" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="Cannot autowire service &quot;App\Cards\CardGraphic&quot;: argument &quot;$value&quot; of method &quot;__construct()&quot; has no type-hint, you should configure its value explicitly."/>
-    </service>
+    <service id="App\Cards\Card" class="App\Cards\Card" autowire="true" autoconfigure="true"/>
+    <service id="App\Cards\CardGraphic" class="App\Cards\CardGraphic" autowire="true" autoconfigure="true"/>
     <service id="App\Cards\Deck" class="App\Cards\Deck" autowire="true" autoconfigure="true"/>
     <service id="App\Cards\Hand" class="App\Cards\Hand" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\CardAPIController" class="App\Controller\CardAPIController" public="true" autowire="true" autoconfigure="true">
@@ -398,6 +394,14 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\QuotationsController"/>
+      </call>
+    </service>
+    <service id="App\Controller\SessionController" class="App\Controller\SessionController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="request_stack"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\SessionController"/>
       </call>
     </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
@@ -7430,6 +7434,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SessionController" class="App\Controller\SessionController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SessionController" class="App\Controller\SessionController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\SessionController" class="App\Controller\SessionController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.pRu6x_4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8549,6 +8556,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\SessionController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\SessionController"/>
+      <argument>App\Controller\SessionController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
     <service id=".service_locator.7jukgan" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8734,6 +8747,7 @@
           <argument>App\Controller\CardController</argument>
           <argument>App\Controller\HomeController</argument>
           <argument>App\Controller\QuotationsController</argument>
+          <argument>App\Controller\SessionController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>
       </call>

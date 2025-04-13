@@ -101,15 +101,14 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
         // line 7
         yield "            <section class=\"three-columns\">
                 <h2>Struktur</h2>
-                <p>Ett spelkort har valören två till tio, knekt, dam, kung eller ess, i röd eller svart färg, i någon av sviterna ♣️ klöver, ♦️ ruter, ♥️ hjärter eller ♠️ spader. Fyra sviter med tretton valörer vardera, inalles femtiotvå spelkort, bygger således klassen <code>Card</code>.</p>
-                <p>Till klassen hör också en textmässig representation av de femtiotvå spelkorten, dels i form av unicodetecken för respektive spelkort i respektive svit, sammanfogade i en femtiotvå tecken lång sträng som representerar den grundläggande kortleken; dels i ett motsvarande fält <code>utf</code> för enkel hämtning via index. Leken löper över [0, 51].</p>
-                <p>Två jokrar tillkommer i den utvidgade klassen <code>CardGraphic</code>, som expanderar kortleken till 54 tecken på samma manér. Klassen definierar även en metod för att uttrycka spelkorten i klartext <strong>klöver ess</strong> o.s.v., även om metoden för närvarande är vilande.</p>
-                <p>En klass <code>Hand</code> tillkommer för att hantera delmängder av spelkort, med metoder för att beskriva korten. Slutligen implementeras en klass <code>Deck</code> som nyttjar kompositioner av såväl <code>Hand</code> som <code>Card</code> i metoder för att definiera kortleken och utföra operationer, exempelvis att blanda, dra ett kort ur eller återställa leken.</p>
+                <p>Ett spelkort har valören två till tio, knekt, dam, kung eller ess, i röd eller svart färg, i någon av sviterna ♣️ klöver, ♦️ ruter, ♥️ hjärter eller ♠️ spader. Fyra sviter med tretton valörer vardera tillsammans med två jokrar, inalles femtiofyra spelkort, bygger således en kortlek.</p>
+                <p>Klassen <code>Card</code> definierar i all sin enkelhet ett kort, med ett numeriskt värde [0, 53], tillsammans med en getter. I den utvidgade klassen <code>CardGraphic</code> definieras en textmässig representation av spelkorten, dels i form av unicodetecken för respektive spelkort i respektive svit, sammanfogade i ett fält <code>DECK_ARRAY</code> för enkel hämtning via index. Klassen definierar även en metod för att uttrycka spelkorten i klartext <strong>klöver ess</strong> o.s.v.</p>
+                <p>En klass <code>Hand</code> tillkommer för att hantera delmängder av spelkort, med metoder för att beskriva de ingående korten. Slutligen implementeras en klass <code>Deck</code> som nyttjar kompositioner av såväl <code>Hand</code> som <code>CardGraphic</code> i metoder för att definiera kortleken och utföra operationer, exempelvis att blanda, dra ett kort ur eller återställa leken.</p>
             </section>
             <div class=\"center\">
                 <figure>
                     <img src=\"";
-        // line 16
+        // line 15
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/card-uml.avif"), "html", null, true);
         yield "\" width=\"1000\" alt=\"UML\">
                 </figure>
@@ -149,7 +148,7 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  113 => 16,  102 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  112 => 15,  102 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -162,10 +161,9 @@ class __TwigTemplate_fffd3def8ec255037213b55afc30e1a1 extends Template
 {% include 'card_template.html.twig' %}
             <section class=\"three-columns\">
                 <h2>Struktur</h2>
-                <p>Ett spelkort har valören två till tio, knekt, dam, kung eller ess, i röd eller svart färg, i någon av sviterna ♣️ klöver, ♦️ ruter, ♥️ hjärter eller ♠️ spader. Fyra sviter med tretton valörer vardera, inalles femtiotvå spelkort, bygger således klassen <code>Card</code>.</p>
-                <p>Till klassen hör också en textmässig representation av de femtiotvå spelkorten, dels i form av unicodetecken för respektive spelkort i respektive svit, sammanfogade i en femtiotvå tecken lång sträng som representerar den grundläggande kortleken; dels i ett motsvarande fält <code>utf</code> för enkel hämtning via index. Leken löper över [0, 51].</p>
-                <p>Två jokrar tillkommer i den utvidgade klassen <code>CardGraphic</code>, som expanderar kortleken till 54 tecken på samma manér. Klassen definierar även en metod för att uttrycka spelkorten i klartext <strong>klöver ess</strong> o.s.v., även om metoden för närvarande är vilande.</p>
-                <p>En klass <code>Hand</code> tillkommer för att hantera delmängder av spelkort, med metoder för att beskriva korten. Slutligen implementeras en klass <code>Deck</code> som nyttjar kompositioner av såväl <code>Hand</code> som <code>Card</code> i metoder för att definiera kortleken och utföra operationer, exempelvis att blanda, dra ett kort ur eller återställa leken.</p>
+                <p>Ett spelkort har valören två till tio, knekt, dam, kung eller ess, i röd eller svart färg, i någon av sviterna ♣️ klöver, ♦️ ruter, ♥️ hjärter eller ♠️ spader. Fyra sviter med tretton valörer vardera tillsammans med två jokrar, inalles femtiofyra spelkort, bygger således en kortlek.</p>
+                <p>Klassen <code>Card</code> definierar i all sin enkelhet ett kort, med ett numeriskt värde [0, 53], tillsammans med en getter. I den utvidgade klassen <code>CardGraphic</code> definieras en textmässig representation av spelkorten, dels i form av unicodetecken för respektive spelkort i respektive svit, sammanfogade i ett fält <code>DECK_ARRAY</code> för enkel hämtning via index. Klassen definierar även en metod för att uttrycka spelkorten i klartext <strong>klöver ess</strong> o.s.v.</p>
+                <p>En klass <code>Hand</code> tillkommer för att hantera delmängder av spelkort, med metoder för att beskriva de ingående korten. Slutligen implementeras en klass <code>Deck</code> som nyttjar kompositioner av såväl <code>Hand</code> som <code>CardGraphic</code> i metoder för att definiera kortleken och utföra operationer, exempelvis att blanda, dra ett kort ur eller återställa leken.</p>
             </section>
             <div class=\"center\">
                 <figure>

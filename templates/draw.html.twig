@@ -10,8 +10,8 @@
             <input type="number" min="1" name="number" value="{{ number }}">
             <button type="submit">Dra</button>
         </form>
-        {% for card in cards %}
-        <img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="100" alt="{{ app.session.get('unicode')[card.value:1] }}">
+        {% for card in hand.hand %}
+        <img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="100" alt="{{ app.session.get('deck_values')[card.value] }}" title="{{ app.session.get('deck_text_values')[card.value] }}">
         {% endfor %}
         <p>Kort kvar i lek: {{ remaining }}</p>
     </section>
