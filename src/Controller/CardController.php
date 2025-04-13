@@ -56,7 +56,7 @@ class CardController extends AbstractController
     {
         $this->deck->resetDeck();
 
-        return $this->redirectToRoute('deck');
+        return $this->redirectToRoute('card_deck');
     }
 
     #[Route("/card/deck/shuffle", name: "card_deck_shuffle")]
