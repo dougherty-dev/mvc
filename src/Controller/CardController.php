@@ -5,19 +5,16 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Cards\Deck;
+use App\Cards\Hand;
 
 class CardController extends AbstractController
 {
-    /** @var RequestStack $requestStack */
-    protected $requestStack;
-    /** @var Deck $deck */
-    public $deck;
+    protected RequestStack $requestStack;
+    protected Deck $deck;
 
     public function __construct(RequestStack $requestStack)
     {
@@ -63,33 +60,20 @@ class CardController extends AbstractController
     #[Route("card/deck/shuffle", name: "shuffle")]
     public function shuffleDeck(): Response
     {
-        $session = $this->requestStack->getSession();
         $this->deck->shuffleDeck();
+
+        $session = $this->requestStack->getSession();
         $session->set("deck", $this->deck);
+
         return $this->render('shuffle.html.twig');
     }
 
     #[Route("card/deck/draw", name: "draw")]
-    public function drawCard(): Response
+    public function drawCard(int $number = 1): Response
     {
-        $session = $this->requestStack->getSession();
-        $hand = $this->deck->drawCards();
-        $session->set("deck", $this->deck);
-
-        $data = [
-            "number" => 1,
-            "hand" => $hand,
-            "remaining" => $this->deck->remainingCards()
-        ];
-
-        return $this->render('draw.html.twig', $data);
-    }
-
-    #[Route("card/deck/draw/{number<\d+>}", name: "draw_number")]
-    public function drawNumberCard(int $number): Response
-    {
-        $session = $this->requestStack->getSession();
         $hand = $this->deck->drawCards($number);
+
+        $session = $this->requestStack->getSession();
         $session->set("deck", $this->deck);
 
         $data = [
@@ -101,14 +85,26 @@ class CardController extends AbstractController
         return $this->render('draw.html.twig', $data);
     }
 
-    #[Route("card/deck/draw/process", name: "draw_number_post", methods: ['POST'])]
-    public function drawNumberCardPost(Request $request): Response
+    #[Route("card/deck/draw/{number<\d+>}", name: "draw_number")]
+    public function drawNumberCard(int $number): Response
     {
-        return $this->redirectToRoute('draw_number', ['number' => $request->request->get('number')]);
+        return $this->drawCard($number);
     }
 
     #[Route("card/deck/deal/{players<\d+>}/{cards<\d+>}", name: "deal")]
     public function deal(int $players = 0, int $cards = 0): Response
+    {
+        $data = [
+            'players' => $players,
+            'cards' => $cards,
+            'hands' => $this->dealHands($players, $cards),
+            'remaining' => $this->deck->remainingCards()
+        ];
+        return $this->render('deal.html.twig', $data);
+    }
+
+    /** @return array<int<0, max>, Hand> */
+    public function dealHands(int $players, int $cards): array
     {
         $hands = [];
         for ($i = 0; $i < $players; $i++) {
@@ -118,22 +114,6 @@ class CardController extends AbstractController
         $session = $this->requestStack->getSession();
         $session->set("deck", $this->deck);
 
-        $data = [
-            'players' => $players,
-            'cards' => $cards,
-            'hands' => $hands,
-            'remaining' => $this->deck->remainingCards()
-        ];
-
-        return $this->render('deal.html.twig', $data);
-    }
-
-    #[Route("card/deck/deal/process", name: "deal_post", methods: ['POST'])]
-    public function dealPost(Request $request): Response
-    {
-        return $this->redirectToRoute('deal', [
-            'players' => $request->request->get('players'),
-            'cards' => $request->request->get('cards')
-        ]);
+        return  $hands;
     }
 }

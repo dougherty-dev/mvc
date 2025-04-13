@@ -9,27 +9,12 @@ use App\Cards;
 class CardGraphic extends Card
 {
     private const SUIT = [
-        '♣️ klöver',
-        '♦️ ruter',
-        '♥️ hjärter',
-        '♠️ spader',
-        '🃏 joker'
+        '♣️ klöver', '♦️ ruter', '♥️ hjärter', '♠️ spader', '🃏 joker'
     ];
 
     private const FACES = [
-        'ess',
-        'två',
-        'tre',
-        'fyra',
-        'fem',
-        'sex',
-        'sju',
-        'åtta',
-        'nio',
-        'tio',
-        'knekt',
-        'dam',
-        'kung',
+        'ess', 'två', 'tre', 'fyra', 'fem', 'sex', 'sju',
+        'åtta', 'nio', 'tio', 'knekt', 'dam', 'kung',
     ];
 
     public const DECK_ARRAY = [
