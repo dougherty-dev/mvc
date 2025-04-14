@@ -22,11 +22,11 @@ class CardController extends AbstractController
         $session = $this->requestStack->getSession();
 
         if (!$session->get("deck_values")) {
-            $this->deck = new Deck();
-            $this->deck->resetDeck();
+            $deck = new Deck();
+            $deck->resetDeck();
 
-            $session->set("deck_values", $this->deck->deckValues());
-            $session->set("deck_text_values", $this->deck->deckTextValues());
+            $session->set("deck_values", $deck->deckValues());
+            $session->set("deck_text_values", $deck->deckTextValues());
         }
 
         if (!$session->get("deck")) {
@@ -41,7 +41,6 @@ class CardController extends AbstractController
         if (is_object($session->get("deck")) && is_a($session->get("deck"), 'App\Cards\Deck')) {
             $this->deck = $session->get("deck");
         }
-
     }
 
     #[Route("/card", name: "card")]

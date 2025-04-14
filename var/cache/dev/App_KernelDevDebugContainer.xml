@@ -365,6 +365,7 @@
     <service id="App\Cards\Card" class="App\Cards\Card" autowire="true" autoconfigure="true"/>
     <service id="App\Cards\CardGraphic" class="App\Cards\CardGraphic" autowire="true" autoconfigure="true"/>
     <service id="App\Cards\Deck" class="App\Cards\Deck" autowire="true" autoconfigure="true"/>
+    <service id="App\Cards\Game" class="App\Cards\Game" autowire="true" autoconfigure="true"/>
     <service id="App\Cards\Hand" class="App\Cards\Hand" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\CardAPIController" class="App\Controller\CardAPIController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
@@ -380,6 +381,14 @@
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\CardController"/>
+      </call>
+    </service>
+    <service id="App\Controller\GameController" class="App\Controller\GameController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="request_stack"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\GameController"/>
       </call>
     </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
@@ -7428,6 +7437,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CardController" class="App\Controller\CardController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CardController" class="App\Controller\CardController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CardController" class="App\Controller\CardController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GameController" class="App\Controller\GameController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GameController" class="App\Controller\GameController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\GameController" class="App\Controller\GameController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -8544,6 +8556,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\GameController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\GameController"/>
+      <argument>App\Controller\GameController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
     <service id=".service_locator.ZyP9f7K.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
       <argument>App\Controller\HomeController</argument>
@@ -8745,6 +8763,7 @@
           <argument>App\Kernel</argument>
           <argument>App\Controller\CardAPIController</argument>
           <argument>App\Controller\CardController</argument>
+          <argument>App\Controller\GameController</argument>
           <argument>App\Controller\HomeController</argument>
           <argument>App\Controller\ProcessController</argument>
           <argument>App\Controller\QuotationsController</argument>

@@ -1,0 +1,73 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Dokumentation{% endblock %}
+
+{% block body %}
+            <section class="two-columns">
+                <h1>Dokumentation</h1>
+                <p>Flödesschema, pesudokod och beskrivning av klasser för implementationen av kortspelet 21 ges i det nedanstående. Analysen föregår kodning och utgör ett hjälpmedel för att finna en lämplig struktur för kodbasen. Den slutliga implementationen torde därför komma att avvika från denna skiss.</p>
+                <p>Den förberedande analysen kan ge vissa insikter om var problem kan uppstå och vilken kod som kan lämpa sig för återvinning i metoder och annan abstraktion.</p>
+                <p></p>
+            </section>
+            <section class="center">
+                <h2>Flödeschema</h2>
+                <figure>
+                    <img src="{{ asset('build/images/game/flow-21.avif') }}" width="3000" alt="Flödesschema">
+                </figure>
+            </section>
+            <section class="two-columns">
+                <h2>Pesudokod</h2>
+                <pre><code>
+BEGIN
+  display dojo / card table
+  distribute money to player and banker
+
+  WHILE player NOT bankrupt
+    CALL deal card (player)
+
+    WHILE bet > available amount
+      input bet
+    END WHILE
+    withdraw bets
+
+    WHILE cards < 2 AND player not done
+      CALL deal card (player)
+    END WHILE
+
+    IF player hand value > 21
+      distribute bets to bank
+      return
+    END IF
+
+    CALL deal card (banker)
+    WHILE cards < 2 AND banker not done
+      CALL deal card (banker)
+    END WHILE
+    
+    IF banker hand value > 21 OR banker hand value < player hand value
+      distribute bets to player
+      return
+    END IF
+    
+    distribute bets to bank
+  END WHILE
+END
+
+SUB deal card (person)
+  display probabilities for next card
+  IF player stays
+    return
+  CALL handle deck of cards
+  deal card to person
+  display hand
+END SUB
+
+SUB handle deck of cards
+  IF deck out of cards
+    collect unused cards
+    shuffle deck
+  END IF
+END SUB
+                </code></pre>
+            </section>
+{% endblock %}
