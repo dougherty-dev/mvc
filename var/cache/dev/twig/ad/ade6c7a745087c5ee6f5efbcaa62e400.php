@@ -113,7 +113,8 @@ class __TwigTemplate_d7ee3fd321335f6919c920841ca7b783 extends Template
                 </figure>
             </section>
             <section class=\"two-columns\">
-                <h2>Pesudokod</h2>
+                <h2>Pseudokod</h2>
+                <p>Mockup av kod följer i stort flödesschemat och ger en mer linjär tolkning av flödet.</p>
                 <pre><code>
 BEGIN
   display dojo / card table
@@ -166,6 +167,21 @@ SUB handle deck of cards
   END IF
 END SUB
                 </code></pre>
+            </section>
+            <section class=\"two-columns\">
+                <h2>Klasser</h2>
+                <p>Avseende modellerna följs initialt principen KISS <em>(keep it simple, stupid)</em>, varvid en klass <code>Game</code> får agera huvudklass. Den består i sin tur av en komposition av klassen <code>Player</code>, som håller varje spelares <code>Hand</code>, en rad parametrar för bokföring samt en metod för att beräkna handens momentana värde.</p>
+                <p><code>Game</code> håller även utvidgningen <code>Banker</code> av <code>Player</code>, som för närvarande enbart har begåvats med en boolesk flagga. Denne spelare är så speciell att den förtjänar en egen klass, och man kan misstänka att någon särskild metod kan tillkomma i ett senare skede.</p>
+                <p><code>Game</code> är även en komposition av <code>Deck</code> och <code>Hand</code>, det senare på grund av att beräkningen av sannolikheter kräver värdet av en hand, om än indirekt från <code>Player</code>. Man skulle här kunna tänka sig en utvidgning av <code>Hand</code> för att åstadkomma samma sak, det finns möjligen anledning att återkomma i ämnet vad det lider.</p>
+            </section>
+            <section class=\"center\">
+                <h2>UML-diagram</h2>
+                <figure>
+                    <img src=\"";
+        // line 83
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/game/uml-21.avif"), "html", null, true);
+        yield "\" width=\"3000\" alt=\"UML-diagram\">
+                </figure>
             </section>
 ";
         
@@ -198,7 +214,7 @@ END SUB
      */
     public function getDebugInfo(): array
     {
-        return array (  111 => 15,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  182 => 83,  111 => 15,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -221,7 +237,8 @@ END SUB
                 </figure>
             </section>
             <section class=\"two-columns\">
-                <h2>Pesudokod</h2>
+                <h2>Pseudokod</h2>
+                <p>Mockup av kod följer i stort flödesschemat och ger en mer linjär tolkning av flödet.</p>
                 <pre><code>
 BEGIN
   display dojo / card table
@@ -274,6 +291,18 @@ SUB handle deck of cards
   END IF
 END SUB
                 </code></pre>
+            </section>
+            <section class=\"two-columns\">
+                <h2>Klasser</h2>
+                <p>Avseende modellerna följs initialt principen KISS <em>(keep it simple, stupid)</em>, varvid en klass <code>Game</code> får agera huvudklass. Den består i sin tur av en komposition av klassen <code>Player</code>, som håller varje spelares <code>Hand</code>, en rad parametrar för bokföring samt en metod för att beräkna handens momentana värde.</p>
+                <p><code>Game</code> håller även utvidgningen <code>Banker</code> av <code>Player</code>, som för närvarande enbart har begåvats med en boolesk flagga. Denne spelare är så speciell att den förtjänar en egen klass, och man kan misstänka att någon särskild metod kan tillkomma i ett senare skede.</p>
+                <p><code>Game</code> är även en komposition av <code>Deck</code> och <code>Hand</code>, det senare på grund av att beräkningen av sannolikheter kräver värdet av en hand, om än indirekt från <code>Player</code>. Man skulle här kunna tänka sig en utvidgning av <code>Hand</code> för att åstadkomma samma sak, det finns möjligen anledning att återkomma i ämnet vad det lider.</p>
+            </section>
+            <section class=\"center\">
+                <h2>UML-diagram</h2>
+                <figure>
+                    <img src=\"{{ asset('build/images/game/uml-21.avif') }}\" width=\"3000\" alt=\"UML-diagram\">
+                </figure>
             </section>
 {% endblock %}
 ", "doc.html.twig", "/Users/nik/Sites/dbwebb-kurser/mvc/me/report/templates/doc.html.twig");

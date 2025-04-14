@@ -9,7 +9,7 @@ use App\Cards;
 class Deck
 {
     /** @var array<int, CardGraphic> $deck */
-    public array $deck = [];
+    private array $deck = [];
 
     public function resetDeck(): void
     {
@@ -17,6 +17,12 @@ class Deck
         foreach (array_keys(CardGraphic::DECK_ARRAY) as $k) {
             $this->deck[] = new CardGraphic($k);
         }
+    }
+
+    /** @return array<int, CardGraphic> */
+    public function getDeck(): array
+    {
+        return $this->deck;
     }
 
     public function shuffleDeck(): void

@@ -27,13 +27,13 @@ class CardGraphic extends Card
 
     public function getStringValue(): string
     {
-        return self::DECK_ARRAY[$this->value];
+        return self::DECK_ARRAY[$this->getValue()];
     }
 
     public function getTextValue(): string
     {
-        $suit = self::SUIT[intdiv(intval($this->value), 13)];
-        $face = $this->value > 51 ? '' : self::FACES[$this->value % 13];
+        $suit = self::SUIT[intdiv(intval($this->getValue()), 13)];
+        $face = $this->getValue() > 51 ? '' : self::FACES[$this->getValue() % 13];
         return trim("$suit $face");
     }
 }

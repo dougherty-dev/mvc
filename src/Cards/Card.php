@@ -6,7 +6,7 @@ namespace App\Cards;
 
 class Card
 {
-    public function __construct(public ?int $value = null)
+    public function __construct(private ?int $value = null)
     {
     }
 
