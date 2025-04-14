@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -25,7 +26,7 @@ class CardAPIController extends CardController
         return $response;
     }
 
-    #[Route("/api/deck/shuffle", name: "api_deck_shuffle")]
+    #[Route("/api/deck/shuffle", name: "api_deck_shuffle", methods: ['POST'])]
     public function apiDeckShuffle(): Response
     {
         $this->deck->shuffleDeck();
@@ -38,8 +39,24 @@ class CardAPIController extends CardController
         return $response;
     }
 
-    #[Route("/api/deck/draw", name: "api_deck_draw")]
-    public function apiDeckDraw(int $number = 1): Response
+    #[Route("/api/deck/draw", name: "api_deck_draw", methods: ['POST'])]
+    public function apiDeckDraw(): Response
+    {
+        $hand = $this->deck->drawCards()->handValues();
+
+        $session = $this->requestStack->getSession();
+        $session->set("deck", $this->deck);
+
+        $response = new JsonResponse([
+            "hand" => $hand,
+            "remaining" => $this->deck->remainingCards()
+        ]);
+        $response->setEncodingOptions(JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+        return $response;
+    }
+
+    #[Route("/api/deck/draw/{number<\d+>}", name: "api_deck_draw_number", methods: ['GET'])]
+    public function apiDeckDrawNumber(int $number): Response
     {
         $hand = $this->deck->drawCards($number)->handValues();
 
@@ -54,13 +71,16 @@ class CardAPIController extends CardController
         return $response;
     }
 
-    #[Route("/api/deck/draw/{number<\d+>}", name: "api_deck_draw_number")]
-    public function apiDeckDrawNumber(int $number): Response
+    #[Route("/api/deck/draw/{number<\d+>}", name: "api_deck_draw_number_post", methods: ['POST'])]
+    public function apiDeckDrawNumberPost(Request $request): Response
     {
-        return $this->apiDeckDraw($number);
+        return $this->redirectToRoute(
+            'api_deck_draw_number',
+            ['number' => $request->request->get('number')]
+        );
     }
 
-    #[Route("/api/deck/deal/{players<\d+>}/{cards<\d+>}", name: "api_deck_deal_players_cards")]
+    #[Route("/api/deck/deal/{players<\d+>}/{cards<\d+>}", name: "api_deck_deal_players_cards", methods: ['GET'])]
     public function apiDeckDealPlayersCards(int $players, int $cards): Response
     {
         $hands = [];
@@ -77,5 +97,14 @@ class CardAPIController extends CardController
         ]);
         $response->setEncodingOptions(JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         return $response;
+    }
+
+    #[Route("/api/deck/deal/{players<\d+>}/{cards<\d+>}", name: "api_deck_deal_players_cards_post", methods: ['POST'])]
+    public function apiDeckDealPlayersCardsPost(Request $request): Response
+    {
+        return $this->redirectToRoute('api_deck_deal_players_cards', [
+            'players' => $request->request->get('players'),
+            'cards' => $request->request->get('cards')
+        ]);
     }
 }

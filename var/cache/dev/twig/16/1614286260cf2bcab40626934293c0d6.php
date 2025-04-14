@@ -115,24 +115,30 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
                 <td>Visa ordnad kortlek.</td>
             </tr>
             <tr>
-                <th><a href=\"";
-        // line 18
+                <th>Blanda och visa kortlek</th>
+                <td><form method=\"post\" action=\"";
+        // line 19
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_deck_shuffle");
-        yield "\">Blanda lek</a></th>
-                <td>Visa blandad kortlek.</td>
+        yield "\">
+                    <button type=\"submit\">Visa</button>
+                </form>
+                </td>
             </tr>
             <tr>
-                <th><a href=\"";
-        // line 22
+                <th>Dra ett kort ur leken</th>
+                <td><form method=\"post\" action=\"";
+        // line 26
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_deck_draw");
-        yield "\">Dra kort</a></th>
-                <td>Dra ett kort ur leken.</td>
+        yield "\">
+                    <button type=\"submit\">Dra</button>
+                </form>
+                </td>
             </tr>
             <tr>
                 <th>Dra flera kort</th>
                 <td><form method=\"post\" action=\"";
-        // line 27
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_deck_draw_process");
+        // line 33
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_deck_draw_number_post", ["number" => 5]);
         yield "\">
                     <input type=\"number\" min=\"1\" name=\"number\" value=\"5\">
                     <button type=\"submit\">Dra</button>
@@ -143,8 +149,8 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
                 <th>Dela kort till spelare.</th>
                 <td>
                     <form method=\"post\" action=\"";
-        // line 36
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_deck_deal_process");
+        // line 42
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_deck_deal_players_cards_post", ["players" => 3, "cards" => 5]), "html", null, true);
         yield "\">
                         Spelare
                         <input type=\"number\" min=\"1\" name=\"players\" value=\"3\">
@@ -157,7 +163,7 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
         </table>
         <figure>
             <img src=\"";
-        // line 47
+        // line 53
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-api.avif"), "html", null, true);
         yield "\" width=\"896\" alt=\"Chihiro\">
             <figcaption>@mos fastnar i en loop.</figcaption>
@@ -194,7 +200,7 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  161 => 47,  147 => 36,  135 => 27,  127 => 22,  120 => 18,  113 => 14,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  167 => 53,  153 => 42,  141 => 33,  131 => 26,  121 => 19,  113 => 14,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -216,16 +222,22 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
                 <td>Visa ordnad kortlek.</td>
             </tr>
             <tr>
-                <th><a href=\"{{ path('api_deck_shuffle') }}\">Blanda lek</a></th>
-                <td>Visa blandad kortlek.</td>
+                <th>Blanda och visa kortlek</th>
+                <td><form method=\"post\" action=\"{{ path('api_deck_shuffle') }}\">
+                    <button type=\"submit\">Visa</button>
+                </form>
+                </td>
             </tr>
             <tr>
-                <th><a href=\"{{ path('api_deck_draw') }}\">Dra kort</a></th>
-                <td>Dra ett kort ur leken.</td>
+                <th>Dra ett kort ur leken</th>
+                <td><form method=\"post\" action=\"{{ path('api_deck_draw') }}\">
+                    <button type=\"submit\">Dra</button>
+                </form>
+                </td>
             </tr>
             <tr>
                 <th>Dra flera kort</th>
-                <td><form method=\"post\" action=\"{{ path('api_deck_draw_process') }}\">
+                <td><form method=\"post\" action=\"{{ path('api_deck_draw_number_post', {'number': 5}) }}\">
                     <input type=\"number\" min=\"1\" name=\"number\" value=\"5\">
                     <button type=\"submit\">Dra</button>
                 </form>
@@ -234,7 +246,7 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
             <tr>
                 <th>Dela kort till spelare.</th>
                 <td>
-                    <form method=\"post\" action=\"{{ path('api_deck_deal_process') }}\">
+                    <form method=\"post\" action=\"{{ path('api_deck_deal_players_cards_post', {'players': 3, 'cards': 5}) }}\">
                         Spelare
                         <input type=\"number\" min=\"1\" name=\"players\" value=\"3\">
                         Kort

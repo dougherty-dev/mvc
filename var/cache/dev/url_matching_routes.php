@@ -16,8 +16,8 @@ return [
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/api/deck' => [[['_route' => 'api_deck', '_controller' => 'App\\Controller\\CardAPIController::apiDeck'], null, null, null, false, false, null]],
-        '/api/deck/shuffle' => [[['_route' => 'api_deck_shuffle', '_controller' => 'App\\Controller\\CardAPIController::apiDeckShuffle'], null, null, null, false, false, null]],
-        '/api/deck/draw' => [[['_route' => 'api_deck_draw', '_controller' => 'App\\Controller\\CardAPIController::apiDeckDraw'], null, null, null, false, false, null]],
+        '/api/deck/shuffle' => [[['_route' => 'api_deck_shuffle', '_controller' => 'App\\Controller\\CardAPIController::apiDeckShuffle'], null, ['POST' => 0], null, false, false, null]],
+        '/api/deck/draw' => [[['_route' => 'api_deck_draw', '_controller' => 'App\\Controller\\CardAPIController::apiDeckDraw'], null, ['POST' => 0], null, false, false, null]],
         '/game' => [[['_route' => 'game', '_controller' => 'App\\Controller\\GameController::game'], null, null, null, false, false, null]],
         '/game/doc' => [[['_route' => 'game_doc', '_controller' => 'App\\Controller\\GameController::gameDoc'], null, null, null, false, false, null]],
         '/game/dojo' => [[['_route' => 'game_dojo', '_controller' => 'App\\Controller\\GameController::gameDojo'], null, null, null, false, false, null]],
@@ -30,8 +30,6 @@ return [
         '/session/delete' => [[['_route' => 'session_delete', '_controller' => 'App\\Controller\\ProcessController::sessionDelete'], null, null, null, false, false, null]],
         '/card/deck/draw/process' => [[['_route' => 'card_deck_draw_process', '_controller' => 'App\\Controller\\ProcessController::cardDeckDrawProcess'], null, ['POST' => 0], null, false, false, null]],
         '/card/deck/deal/process' => [[['_route' => 'card_deck_deal_process', '_controller' => 'App\\Controller\\ProcessController::cardDeckDealProcess'], null, ['POST' => 0], null, false, false, null]],
-        '/api/deck/draw/process' => [[['_route' => 'api_deck_draw_process', '_controller' => 'App\\Controller\\ProcessController::apiDeckDrawProcess'], null, ['POST' => 0], null, false, false, null]],
-        '/api/deck/deal/process' => [[['_route' => 'api_deck_deal_process', '_controller' => 'App\\Controller\\ProcessController::apiDeckDealProcess'], null, ['POST' => 0], null, false, false, null]],
         '/card' => [[['_route' => 'card', '_controller' => 'App\\Controller\\ProcessController::card'], null, null, null, false, false, null]],
         '/card/deck' => [[['_route' => 'card_deck', '_controller' => 'App\\Controller\\ProcessController::cardDeck'], null, null, null, false, false, null]],
         '/card/deck/reset' => [[['_route' => 'card_deck_reset', '_controller' => 'App\\Controller\\ProcessController::cardDeckReset'], null, null, null, false, false, null]],
@@ -60,12 +58,16 @@ return [
                     .')'
                 .')'
                 .'|/api/deck/d(?'
-                    .'|raw/(\\d+)(*:225)'
-                    .'|eal/(\\d+)/(\\d+)(*:248)'
+                    .'|raw/(\\d+)(?'
+                        .'|(*:228)'
+                    .')'
+                    .'|eal/(\\d+)/(\\d+)(?'
+                        .'|(*:255)'
+                    .')'
                 .')'
                 .'|/card/deck/d(?'
-                    .'|raw/(\\d+)(*:281)'
-                    .'|eal(?:/(\\d+)(?:/(\\d+))?)?(*:314)'
+                    .'|raw/(\\d+)(*:289)'
+                    .'|eal(?:/(\\d+)(?:/(\\d+))?)?(*:322)'
                 .')'
             .')/?$}sDu',
     ],
@@ -78,10 +80,16 @@ return [
         168 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         181 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        225 => [[['_route' => 'api_deck_draw_number', '_controller' => 'App\\Controller\\CardAPIController::apiDeckDrawNumber'], ['number'], null, null, false, true, null]],
-        248 => [[['_route' => 'api_deck_deal_players_cards', '_controller' => 'App\\Controller\\CardAPIController::apiDeckDealPlayersCards'], ['players', 'cards'], null, null, false, true, null]],
-        281 => [[['_route' => 'card_deck_draw_number', '_controller' => 'App\\Controller\\ProcessController::cardDeckDrawNumber'], ['number'], null, null, false, true, null]],
-        314 => [
+        228 => [
+            [['_route' => 'api_deck_draw_number', '_controller' => 'App\\Controller\\CardAPIController::apiDeckDrawNumber'], ['number'], ['GET' => 0], null, false, true, null],
+            [['_route' => 'api_deck_draw_number_post', '_controller' => 'App\\Controller\\CardAPIController::apiDeckDrawNumberPost'], ['number'], ['POST' => 0], null, false, true, null],
+        ],
+        255 => [
+            [['_route' => 'api_deck_deal_players_cards', '_controller' => 'App\\Controller\\CardAPIController::apiDeckDealPlayersCards'], ['players', 'cards'], ['GET' => 0], null, false, true, null],
+            [['_route' => 'api_deck_deal_players_cards_post', '_controller' => 'App\\Controller\\CardAPIController::apiDeckDealPlayersCardsPost'], ['players', 'cards'], ['POST' => 0], null, false, true, null],
+        ],
+        289 => [[['_route' => 'card_deck_draw_number', '_controller' => 'App\\Controller\\ProcessController::cardDeckDrawNumber'], ['number'], null, null, false, true, null]],
+        322 => [
             [['_route' => 'card_deck_draw_deal_players', 'players' => 0, 'cards' => 0, '_controller' => 'App\\Controller\\ProcessController::cardDeckDealPlayersCards'], ['players', 'cards'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

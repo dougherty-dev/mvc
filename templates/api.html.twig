@@ -15,16 +15,22 @@
                 <td>Visa ordnad kortlek.</td>
             </tr>
             <tr>
-                <th><a href="{{ path('api_deck_shuffle') }}">Blanda lek</a></th>
-                <td>Visa blandad kortlek.</td>
+                <th>Blanda och visa kortlek</th>
+                <td><form method="post" action="{{ path('api_deck_shuffle') }}">
+                    <button type="submit">Visa</button>
+                </form>
+                </td>
             </tr>
             <tr>
-                <th><a href="{{ path('api_deck_draw') }}">Dra kort</a></th>
-                <td>Dra ett kort ur leken.</td>
+                <th>Dra ett kort ur leken</th>
+                <td><form method="post" action="{{ path('api_deck_draw') }}">
+                    <button type="submit">Dra</button>
+                </form>
+                </td>
             </tr>
             <tr>
                 <th>Dra flera kort</th>
-                <td><form method="post" action="{{ path('api_deck_draw_process') }}">
+                <td><form method="post" action="{{ path('api_deck_draw_number_post', {'number': 5}) }}">
                     <input type="number" min="1" name="number" value="5">
                     <button type="submit">Dra</button>
                 </form>
@@ -33,7 +39,7 @@
             <tr>
                 <th>Dela kort till spelare.</th>
                 <td>
-                    <form method="post" action="{{ path('api_deck_deal_process') }}">
+                    <form method="post" action="{{ path('api_deck_deal_players_cards_post', {'players': 3, 'cards': 5}) }}">
                         Spelare
                         <input type="number" min="1" name="players" value="3">
                         Kort

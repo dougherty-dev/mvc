@@ -52,22 +52,4 @@ class ProcessController extends CardController
             'cards' => $request->request->get('cards')
         ]);
     }
-
-    #[Route("/api/deck/draw/process", name: "api_deck_draw_process", methods: ['POST'])]
-    public function apiDeckDrawProcess(Request $request): Response
-    {
-        return $this->redirectToRoute(
-            'api_deck_draw_number',
-            ['number' => $request->request->get('number')]
-        );
-    }
-
-    #[Route("/api/deck/deal/process", name: "api_deck_deal_process", methods: ['POST'])]
-    public function apiDeckDealProcess(Request $request): Response
-    {
-        return $this->redirectToRoute('api_deck_deal_players_cards', [
-            'players' => $request->request->get('players'),
-            'cards' => $request->request->get('cards')
-        ]);
-    }
 }
