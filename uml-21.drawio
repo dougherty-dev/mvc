@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
   <diagram name="Page-1" id="t8CD8iMALCH-X7aD-63t">
-    <mxGraphModel dx="3152" dy="1939" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="800" math="0" shadow="0">
+    <mxGraphModel dx="1501" dy="923" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="800" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -29,16 +29,16 @@
           <mxGeometry y="88" width="180" height="42" as="geometry" />
         </mxCell>
         <mxCell id="618ZvPPxEhpNL2ob_TJ0-14" value="Hand" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="510" y="520" width="300" height="100" as="geometry" />
+          <mxGeometry x="510" y="520" width="300" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="618ZvPPxEhpNL2ob_TJ0-15" value="+ hand: array&amp;lt;CardGraphic&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="618ZvPPxEhpNL2ob_TJ0-14" vertex="1">
+        <mxCell id="618ZvPPxEhpNL2ob_TJ0-15" value="- hand: array&amp;lt;CardGraphic&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="618ZvPPxEhpNL2ob_TJ0-14" vertex="1">
           <mxGeometry y="26" width="300" height="24" as="geometry" />
         </mxCell>
         <mxCell id="618ZvPPxEhpNL2ob_TJ0-16" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="618ZvPPxEhpNL2ob_TJ0-14" vertex="1">
           <mxGeometry y="50" width="300" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="618ZvPPxEhpNL2ob_TJ0-17" value="+ handValues(array&amp;lt;CardGraphic&amp;gt;): array&amp;lt;int&amp;gt;&lt;div&gt;+ handTextValues(array&amp;lt;CardGraphic&amp;gt;): array&amp;lt;str&amp;gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="618ZvPPxEhpNL2ob_TJ0-14" vertex="1">
-          <mxGeometry y="58" width="300" height="42" as="geometry" />
+        <mxCell id="618ZvPPxEhpNL2ob_TJ0-17" value="&lt;div&gt;+ getHand():&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;array&amp;lt;CardGraphic&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ addCard(?&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;CardGraphic&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;):&lt;/span&gt;&lt;/div&gt;+ handValues(array&amp;lt;CardGraphic&amp;gt;): array&amp;lt;str&amp;gt;&lt;div&gt;+ handTextValues(array&amp;lt;CardGraphic&amp;gt;): array&amp;lt;str&amp;gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="618ZvPPxEhpNL2ob_TJ0-14" vertex="1">
+          <mxGeometry y="58" width="300" height="72" as="geometry" />
         </mxCell>
         <mxCell id="618ZvPPxEhpNL2ob_TJ0-18" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=0.998;exitY=0.092;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.001;entryY=0.127;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="618ZvPPxEhpNL2ob_TJ0-9" target="618ZvPPxEhpNL2ob_TJ0-14" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -85,7 +85,7 @@
         <mxCell id="JyPjN7SfxW-CegOgkinv-1" value="Game" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="610" y="100" width="300" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="JyPjN7SfxW-CegOgkinv-2" value="+ deck: Deck&lt;br&gt;+ players: array&amp;lt;Player&amp;gt;&lt;div&gt;+ banker: Banker&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JyPjN7SfxW-CegOgkinv-1" vertex="1">
+        <mxCell id="JyPjN7SfxW-CegOgkinv-2" value="+ deck: Deck&lt;br&gt;+ player: Player&lt;div&gt;+ banker: Banker&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JyPjN7SfxW-CegOgkinv-1" vertex="1">
           <mxGeometry y="26" width="300" height="54" as="geometry" />
         </mxCell>
         <mxCell id="JyPjN7SfxW-CegOgkinv-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="JyPjN7SfxW-CegOgkinv-1" vertex="1">

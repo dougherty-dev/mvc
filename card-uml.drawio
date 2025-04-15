@@ -1,0 +1,82 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
+  <diagram name="Page-1" id="t8CD8iMALCH-X7aD-63t">
+    <mxGraphModel dx="1261" dy="776" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="JAurW-bU4pp33qOmnVLq-1" value="Card" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="30" y="330" width="160" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-2" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- value: int&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JAurW-bU4pp33qOmnVLq-1" vertex="1">
+          <mxGeometry y="26" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="JAurW-bU4pp33qOmnVLq-1" vertex="1">
+          <mxGeometry y="50" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-4" value="+ getValue(): int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JAurW-bU4pp33qOmnVLq-1" vertex="1">
+          <mxGeometry y="58" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-5" value="CardGraphic" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="270" y="330" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-6" value="- SUIT: array&amp;lt;str&amp;gt;&lt;div&gt;- FACES: array&amp;lt;str&amp;gt;&lt;/div&gt;&lt;div&gt;+ DECK_ARRAY: array&amp;lt;str&amp;gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JAurW-bU4pp33qOmnVLq-5" vertex="1">
+          <mxGeometry y="26" width="180" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="JAurW-bU4pp33qOmnVLq-5" vertex="1">
+          <mxGeometry y="80" width="180" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-8" value="+ getStringValue(int): str&lt;div&gt;+ getTextValue(int): str&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JAurW-bU4pp33qOmnVLq-5" vertex="1">
+          <mxGeometry y="88" width="180" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-9" value="Hand" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="510" y="330" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-10" value="- hand: array&amp;lt;CardGraphic&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JAurW-bU4pp33qOmnVLq-9" vertex="1">
+          <mxGeometry y="26" width="300" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="JAurW-bU4pp33qOmnVLq-9" vertex="1">
+          <mxGeometry y="50" width="300" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-12" value="&lt;div&gt;+ getHand():&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;array&amp;lt;CardGraphic&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ addCard(?&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;CardGraphic&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;):&lt;/span&gt;&lt;/div&gt;+ handValues(array&amp;lt;CardGraphic&amp;gt;): array&amp;lt;str&amp;gt;&lt;div&gt;+ handTextValues(array&amp;lt;CardGraphic&amp;gt;): array&amp;lt;str&amp;gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JAurW-bU4pp33qOmnVLq-9" vertex="1">
+          <mxGeometry y="58" width="300" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-13" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=0.998;exitY=0.092;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.001;entryY=0.127;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="JAurW-bU4pp33qOmnVLq-5" target="JAurW-bU4pp33qOmnVLq-9" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="540" y="320" as="sourcePoint" />
+            <mxPoint x="500" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-14" value="Deck" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="540" y="90" width="200" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-15" value="- deck: array&amp;lt;CardGraphic&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JAurW-bU4pp33qOmnVLq-14" vertex="1">
+          <mxGeometry y="26" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-16" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="JAurW-bU4pp33qOmnVLq-14" vertex="1">
+          <mxGeometry y="50" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-17" value="&lt;div&gt;+ getDeck():&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;array&amp;lt;CardGraphic&amp;gt;&lt;/span&gt;&lt;/div&gt;+ resetDeck():&lt;div&gt;+ shuffleDeck():&lt;/div&gt;&lt;div&gt;+ drawCards(int number): Hand&lt;/div&gt;&lt;div&gt;+ deckValues(): array&amp;lt;str&amp;gt;&lt;/div&gt;&lt;div&gt;+ deckTextValues(): array&amp;lt;str&amp;gt;&lt;/div&gt;&lt;div&gt;+ remainingCards(): int&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JAurW-bU4pp33qOmnVLq-14" vertex="1">
+          <mxGeometry y="58" width="200" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-18" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=-0.005;entryY=0.06;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.542;exitY=-0.019;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="JAurW-bU4pp33qOmnVLq-5" target="JAurW-bU4pp33qOmnVLq-14" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="450" y="340" as="sourcePoint" />
+            <mxPoint x="570" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-19" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.995;entryY=0.066;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.937;exitY=-0.003;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="JAurW-bU4pp33qOmnVLq-9" target="JAurW-bU4pp33qOmnVLq-14" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="810" y="590" as="sourcePoint" />
+            <mxPoint x="970" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JAurW-bU4pp33qOmnVLq-20" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=-0.003;exitY=0.101;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.017;entryY=0.161;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="JAurW-bU4pp33qOmnVLq-5" target="JAurW-bU4pp33qOmnVLq-1" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="170" y="290" as="sourcePoint" />
+            <mxPoint x="172" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
