@@ -6,11 +6,11 @@ namespace App\Cards;
 
 class Card
 {
-    public function __construct(private ?int $value = null)
+    public function __construct(private int $value)
     {
     }
 
-    public function getValue(): ?int
+    public function getValue(): int
     {
         return $this->value;
     }

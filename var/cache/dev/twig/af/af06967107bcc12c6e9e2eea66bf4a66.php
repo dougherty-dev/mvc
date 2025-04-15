@@ -108,11 +108,11 @@ class __TwigTemplate_51e6c3e94b813e308392f77862f8bcc6 extends Template
                 <p>Tjugoett är en implementation av det klassiska kortspelet <em>Black Jack</em>. Målet är att med två eller flera kort komma så nära 21 utan att överskrida summan.</p>
                 <h2>Regler</h2>
                 <p>I denna variant finns en spelare och en bank. Både bank och spelare erhåller 100 pengar att satsa, och spelet fortgår tills någon av parterna är bankrutt.</p>
-                <p>Spelaren tilldelas ett kort, och kan välja att satsa ett belopp beroende av valören. Beloppet får inte överstiga bankens saldo. Spelaren kan därefter begära ytterligare kort tills han är nöjd eller blir tjock.</p>
-                <p>Om spelaren blir tjock vinner banken. I annat fall tilldelas banken kort på motsvarande sätt. Banken känner inte spelarens hand. Banken vinner vid lika eller fler poäng. Spelaren vinner om banken blir tjock.</p>
-                <p>Kortleken nyttjas tills den är delad till sista kortet, varvid en ny full lek blandas. Spelaren erhåller statistik beroende av lekens aktuella tillstånd, med skattning av sannolikheten att bli tjock vid ytterligare dragning av kort.</p>
-                <p>Som tillval kan bankiren nyttja samma statistiska resonemang, i annat fall tillämpas en grov strategi utan hjälp av statistik.</p>
-                <p>Valörer för kort är angivna 2–10, 11 för knekt, 12 för dam, 13 för kung samt 1 eller 14 för ess.</p>
+                <p>Spelaren tilldelas ett kort, och kan välja att satsa ett belopp beroende av valören. Beloppet får inte överstiga bankens eller spelarens saldo. Spelaren kan därefter begära ytterligare kort tills han är nöjd eller blir tjock.</p>
+                <p>Om spelaren blir tjock vinner banken. I annat fall tilldelas banken kort på motsvarande sätt. Banken känner inte spelarens hand. Banken vinner vid lika eller fler poäng upp till 21. Spelaren vinner om banken blir tjock.</p>
+                <p>Kortleken nyttjas tills den är delad till sista kortet, varvid fria kort samlas och blandas. Spelaren erhåller statistik beroende av lekens aktuella tillstånd, med skattning av sannolikheten att bli tjock vid ytterligare dragning av kort.</p>
+                <p>Som tillval kan bankiren nyttja samma statistiska resonemang, i annat fall tillämpas en grov strategi utan hjälp av statistik, nämligen att banken stannar vid 17 eller högre värde på handen.</p>
+                <p>Valörer för kort är angivna 2–10, 11 för knekt, 12 för dam, 13 för kung samt 1 eller 14 för ess. En joker är värd vad som helst mellan 1 och 14, för bäst anpassning till summan 21.</p>
                 <h2>Implementation</h2>
                 <p><a href=\"";
         // line 20
@@ -174,11 +174,11 @@ class __TwigTemplate_51e6c3e94b813e308392f77862f8bcc6 extends Template
                 <p>Tjugoett är en implementation av det klassiska kortspelet <em>Black Jack</em>. Målet är att med två eller flera kort komma så nära 21 utan att överskrida summan.</p>
                 <h2>Regler</h2>
                 <p>I denna variant finns en spelare och en bank. Både bank och spelare erhåller 100 pengar att satsa, och spelet fortgår tills någon av parterna är bankrutt.</p>
-                <p>Spelaren tilldelas ett kort, och kan välja att satsa ett belopp beroende av valören. Beloppet får inte överstiga bankens saldo. Spelaren kan därefter begära ytterligare kort tills han är nöjd eller blir tjock.</p>
-                <p>Om spelaren blir tjock vinner banken. I annat fall tilldelas banken kort på motsvarande sätt. Banken känner inte spelarens hand. Banken vinner vid lika eller fler poäng. Spelaren vinner om banken blir tjock.</p>
-                <p>Kortleken nyttjas tills den är delad till sista kortet, varvid en ny full lek blandas. Spelaren erhåller statistik beroende av lekens aktuella tillstånd, med skattning av sannolikheten att bli tjock vid ytterligare dragning av kort.</p>
-                <p>Som tillval kan bankiren nyttja samma statistiska resonemang, i annat fall tillämpas en grov strategi utan hjälp av statistik.</p>
-                <p>Valörer för kort är angivna 2–10, 11 för knekt, 12 för dam, 13 för kung samt 1 eller 14 för ess.</p>
+                <p>Spelaren tilldelas ett kort, och kan välja att satsa ett belopp beroende av valören. Beloppet får inte överstiga bankens eller spelarens saldo. Spelaren kan därefter begära ytterligare kort tills han är nöjd eller blir tjock.</p>
+                <p>Om spelaren blir tjock vinner banken. I annat fall tilldelas banken kort på motsvarande sätt. Banken känner inte spelarens hand. Banken vinner vid lika eller fler poäng upp till 21. Spelaren vinner om banken blir tjock.</p>
+                <p>Kortleken nyttjas tills den är delad till sista kortet, varvid fria kort samlas och blandas. Spelaren erhåller statistik beroende av lekens aktuella tillstånd, med skattning av sannolikheten att bli tjock vid ytterligare dragning av kort.</p>
+                <p>Som tillval kan bankiren nyttja samma statistiska resonemang, i annat fall tillämpas en grov strategi utan hjälp av statistik, nämligen att banken stannar vid 17 eller högre värde på handen.</p>
+                <p>Valörer för kort är angivna 2–10, 11 för knekt, 12 för dam, 13 för kung samt 1 eller 14 för ess. En joker är värd vad som helst mellan 1 och 14, för bäst anpassning till summan 21.</p>
                 <h2>Implementation</h2>
                 <p><a href=\"{{ path('game_doc') }}\">Dokumentation</a> kring implementationen ges separat.</p>
                 <figure>

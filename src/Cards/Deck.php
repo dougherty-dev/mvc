@@ -35,7 +35,10 @@ class Deck
         $hand = new Hand();
         $remaining = $this->remainingCards();
         for ($i = 1; $i <= min($number, $remaining); $i++) {
-            $hand->addCard(array_shift($this->deck));
+            $card = array_shift($this->deck);
+            if ($card) {
+                $hand->addCard($card);
+            }
         }
         return $hand;
     }

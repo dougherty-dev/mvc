@@ -8,16 +8,16 @@ use App\Cards;
 
 class Hand
 {
-    /** @var array<int, CardGraphic|null> $hand */
+    /** @var array<int, CardGraphic> $hand */
     private array $hand = [];
 
-    /** @return array<int, CardGraphic|null> */
+    /** @return array<int, CardGraphic> */
     public function getHand(): array
     {
         return $this->hand;
     }
 
-    public function addCard(?CardGraphic $card): void
+    public function addCard(CardGraphic $card): void
     {
         $this->hand[] = $card;
     }
@@ -27,9 +27,7 @@ class Hand
     {
         $handValues = [];
         foreach ($this->getHand() as $card) {
-            if ($card) {
-                $handValues[] = $card->getStringValue();
-            }
+            $handValues[] = $card->getStringValue();
         }
         return $handValues;
     }
@@ -39,9 +37,7 @@ class Hand
     {
         $handTextValues = [];
         foreach ($this->getHand() as $card) {
-            if ($card) {
-                $handTextValues[] = $card->getTextValue();
-            }
+            $handTextValues[] = $card->getTextValue();
         }
         return $handTextValues;
     }

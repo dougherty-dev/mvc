@@ -110,11 +110,11 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
     <h1>Rapport</h1>
     <section class=\"two-columns\" id=\"kmom03\">
         <h2>Kmom03</h2>
-        <p class=\"initcap\">Introduktion av PHPStan och PHP Mess Detector gör att kortklasserna i tidigare kursmoment måste refaktoreras, samtidigt som de vässas en smula. Detta är hemmaplan, och nu börjar det likna riktig programmering med erforderlig stringens.</p>
+        <p class=\"initcap\">Introduktion av PHPStan och PHP Mess Detector gör att kortklasserna i tidigare kursmoment behöver refaktoreras, samtidigt som de vässas med större mått av inkapsling. Detta är hemmaplan, och nu börjar det likna riktig programmering med erforderlig stringens.</p>
+        <p>Konstruktion av flödesdiagram, pesudokod och UML-diagram av klasser som angreppsvektor för problemet är en rimlig ansats. På så sätt kan man få en grundläggande struktur för kodbasen, observera repetitiv kod som kan förläggas i metoder samt avslöja en del tankefel kring den mentala konstruktionen av modellen. Därmed inte sagt att man får en fullständig bild av problemkomplext med sådan modellering, men det är en bra början.</p>
         <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+        <p>MVC som designmönster är väl i sin ordning, men ramverken är ofta alldeles för rigida. Symfony tycks dock lira bra med PHPStan, vilket är en fördel, inte minst i att hantera sessionsvariabler. Med ramverk är det så att man blir ordentligt fastlåst i en viss ordning, en löpande bandsprincip som passar industrin väl men samtidigt missgynnar mer kreativa angreppsmetoder.</p>
+        <p>TIL är nog att nyttja inkapsling bättre i klasserna, inte minst för att så mycket skräp annars skickas runt i komposition och arv. Mycket givande kurs.</p>
         <p></p>
         <p></p>
         <p></p>
@@ -217,11 +217,11 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
     <h1>Rapport</h1>
     <section class=\"two-columns\" id=\"kmom03\">
         <h2>Kmom03</h2>
-        <p class=\"initcap\">Introduktion av PHPStan och PHP Mess Detector gör att kortklasserna i tidigare kursmoment måste refaktoreras, samtidigt som de vässas en smula. Detta är hemmaplan, och nu börjar det likna riktig programmering med erforderlig stringens.</p>
+        <p class=\"initcap\">Introduktion av PHPStan och PHP Mess Detector gör att kortklasserna i tidigare kursmoment behöver refaktoreras, samtidigt som de vässas med större mått av inkapsling. Detta är hemmaplan, och nu börjar det likna riktig programmering med erforderlig stringens.</p>
+        <p>Konstruktion av flödesdiagram, pesudokod och UML-diagram av klasser som angreppsvektor för problemet är en rimlig ansats. På så sätt kan man få en grundläggande struktur för kodbasen, observera repetitiv kod som kan förläggas i metoder samt avslöja en del tankefel kring den mentala konstruktionen av modellen. Därmed inte sagt att man får en fullständig bild av problemkomplext med sådan modellering, men det är en bra början.</p>
         <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+        <p>MVC som designmönster är väl i sin ordning, men ramverken är ofta alldeles för rigida. Symfony tycks dock lira bra med PHPStan, vilket är en fördel, inte minst i att hantera sessionsvariabler. Med ramverk är det så att man blir ordentligt fastlåst i en viss ordning, en löpande bandsprincip som passar industrin väl men samtidigt missgynnar mer kreativa angreppsmetoder.</p>
+        <p>TIL är nog att nyttja inkapsling bättre i klasserna, inte minst för att så mycket skräp annars skickas runt i komposition och arv. Mycket givande kurs.</p>
         <p></p>
         <p></p>
         <p></p>

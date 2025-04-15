@@ -1,8 +1,9 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Dokumentation{% endblock %}
+{% block title %}21: Dojo{% endblock %}
 
 {% block body %}
+{{ dump(app.session.all) }}
             <section class="dojo">
                 <div class="dojobox">
                     <h1>♠️ Spelare</h1>
@@ -12,11 +13,14 @@
                             <th>Insats</th>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
+                            <td>{{ app.session.get('game').player.balance }}</td>
+                            <td>{{ app.session.get('game').player.bet }}</td>
                         </tr>
                     </table>
-                    <h2>Hand</h2>
+                    <h2>Hand ({{ app.session.get('game').player.score }})</h2>
+                    {% for card in app.session.get('game').player.hand.hand %}
+                    <img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="100" alt="{{ app.session.get('deck_values')[card.value] }}" title="{{ app.session.get('deck_text_values')[card.value] }}">
+                    {% endfor %}
                 </div>
                 <div class="dojobox">
                     <h1>🏦 Bank</h1>

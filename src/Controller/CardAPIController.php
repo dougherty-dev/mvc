@@ -29,6 +29,7 @@ class CardAPIController extends CardController
     #[Route("/api/deck/shuffle", name: "api_deck_shuffle", methods: ['POST'])]
     public function apiDeckShuffle(): Response
     {
+        $session = $this->requestStack->getSession();
         $this->deck->shuffleDeck();
 
         $session = $this->requestStack->getSession();
@@ -42,6 +43,7 @@ class CardAPIController extends CardController
     #[Route("/api/deck/draw", name: "api_deck_draw", methods: ['POST'])]
     public function apiDeckDraw(): Response
     {
+        $session = $this->requestStack->getSession();
         $hand = $this->deck->drawCards()->handValues();
 
         $session = $this->requestStack->getSession();
@@ -58,6 +60,7 @@ class CardAPIController extends CardController
     #[Route("/api/deck/draw/{number<\d+>}", name: "api_deck_draw_number", methods: ['GET'])]
     public function apiDeckDrawNumber(int $number): Response
     {
+        $session = $this->requestStack->getSession();
         $hand = $this->deck->drawCards($number)->handValues();
 
         $session = $this->requestStack->getSession();
@@ -83,6 +86,7 @@ class CardAPIController extends CardController
     #[Route("/api/deck/deal/{players<\d+>}/{cards<\d+>}", name: "api_deck_deal_players_cards", methods: ['GET'])]
     public function apiDeckDealPlayersCards(int $players, int $cards): Response
     {
+        $session = $this->requestStack->getSession();
         $hands = [];
         for ($i = 0; $i < $players; $i++) {
             $hands[$i] = $this->deck->drawCards($cards)->handValues();
