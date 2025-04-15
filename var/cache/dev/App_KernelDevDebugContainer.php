@@ -16,7 +16,7 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerYSV54mu\App_KernelDevDebugContainer([
     'container.build_hash' => 'YSV54mu',
-    'container.build_id' => '5f8f36ba',
-    'container.build_time' => 1744734764,
+    'container.build_id' => 'fec074dd',
+    'container.build_time' => 1744735495,
     'container.runtime_mode' => \in_array(\PHP_SAPI, ['cli', 'phpdbg', 'embed'], true) ? 'web=0' : 'web=1',
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerYSV54mu');
