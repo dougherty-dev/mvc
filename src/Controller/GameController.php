@@ -52,7 +52,7 @@ class GameController extends AbstractController
         }
 
         if ($request->request->get('stay')) {
-            $this->game->playerStays($id);
+            $this->game->playerStays(); // player only
         }
 
         $session = $this->requestStack->getSession();
@@ -90,7 +90,7 @@ class GameController extends AbstractController
     {
         $this->checkSession();
         $this->game->restart();
-        return $this->redirectToRoute('game_dojo');
+        return $this->redirectToRoute('game');
     }
 
     protected function checkSession(): void

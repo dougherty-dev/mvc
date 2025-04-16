@@ -89,17 +89,6 @@
                     {% for card in app.session.get('game').players[1].hand.hand %}
                     <img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="100" alt="{{ app.session.get('deck_values')[card.value] }}" title="{{ app.session.get('deck_text_values')[card.value] }}">
                     {% endfor %}
-                    {% if app.session.get('game').state == app.session.get('game').STATES['bank_draws'] %}
-                    <div>
-                        <form method="POST" action="{{ path('game_player_draws_process') }}">
-                            <input type="hidden" name="player" value="1">
-                            <button type="submit" name="draw" value="draw">Dra</button>
-                            {% if app.session.get('game').players[1].hand.handValues() | length > 1 %}
-                            <button type="submit" name="stay" value="stay">Stanna</button>
-                            {% endif %}
-                        </form>
-                    </div>
-                    {% endif %}
                 </div>
             </section>
             <section class="center">

@@ -7,13 +7,6 @@ namespace App\Game21;
 use App\Game21;
 use App\Cards\Hand;
 
-define('CARDSUIT', 13);
-define('TWENTY_ONE', 21);
-define('WILD_MIN', 1);
-define('WILD_MAX', 14);
-define('DECK_MAX', 51);
-define('BALANCE_DEFAULT', 100);
-
 class Player
 {
     public Hand $hand;

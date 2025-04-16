@@ -280,52 +280,29 @@ class __TwigTemplate_cbd6a0c59a093ce14dc1a96006b5c14d extends Template
         unset($context['_seq'], $context['_key'], $context['card'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 92
-        yield "                    ";
-        if ((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 92, $this->source); })()), "session", [], "any", false, false, false, 92), "get", ["game"], "method", false, false, false, 92), "state", [], "any", false, false, false, 92) == CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 92, $this->source); })()), "session", [], "any", false, false, false, 92), "get", ["game"], "method", false, false, false, 92), "STATES", [], "any", false, false, false, 92), "bank_draws", [], "array", false, false, false, 92))) {
-            // line 93
-            yield "                    <div>
-                        <form method=\"POST\" action=\"";
-            // line 94
-            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("game_player_draws_process");
-            yield "\">
-                            <input type=\"hidden\" name=\"player\" value=\"1\">
-                            <button type=\"submit\" name=\"draw\" value=\"draw\">Dra</button>
-                            ";
-            // line 97
-            if ((Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 97, $this->source); })()), "session", [], "any", false, false, false, 97), "get", ["game"], "method", false, false, false, 97), "players", [], "any", false, false, false, 97), 1, [], "array", false, false, false, 97), "hand", [], "any", false, false, false, 97), "handValues", [], "method", false, false, false, 97)) > 1)) {
-                // line 98
-                yield "                            <button type=\"submit\" name=\"stay\" value=\"stay\">Stanna</button>
-                            ";
-            }
-            // line 100
-            yield "                        </form>
-                    </div>
-                    ";
-        }
-        // line 103
         yield "                </div>
             </section>
             <section class=\"center\">
                 <div>
                 ";
-        // line 107
+        // line 96
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(Twig\Extension\CoreExtension::sort($this->env, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 107, $this->source); })()), "session", [], "any", false, false, false, 107), "get", ["game"], "method", false, false, false, 107), "deck", [], "any", false, false, false, 107), "deck", [], "any", false, false, false, 107)));
+        $context['_seq'] = CoreExtension::ensureTraversable(Twig\Extension\CoreExtension::sort($this->env, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 96, $this->source); })()), "session", [], "any", false, false, false, 96), "get", ["game"], "method", false, false, false, 96), "deck", [], "any", false, false, false, 96), "deck", [], "any", false, false, false, 96)));
         foreach ($context['_seq'] as $context["_key"] => $context["card"]) {
-            // line 108
+            // line 97
             yield "                    <span><img src=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("build/images/cards/" . CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 108)) . ".svg")), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("build/images/cards/" . CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 97)) . ".svg")), "html", null, true);
             yield "\" width=\"50\" alt=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 108, $this->source); })()), "session", [], "any", false, false, false, 108), "get", ["deck_values"], "method", false, false, false, 108), CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 108), [], "array", false, false, false, 108), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 97, $this->source); })()), "session", [], "any", false, false, false, 97), "get", ["deck_values"], "method", false, false, false, 97), CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 97), [], "array", false, false, false, 97), "html", null, true);
             yield "\" title=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 108, $this->source); })()), "session", [], "any", false, false, false, 108), "get", ["deck_text_values"], "method", false, false, false, 108), CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 108), [], "array", false, false, false, 108), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 97, $this->source); })()), "session", [], "any", false, false, false, 97), "get", ["deck_text_values"], "method", false, false, false, 97), CoreExtension::getAttribute($this->env, $this->source, $context["card"], "value", [], "any", false, false, false, 97), [], "array", false, false, false, 97), "html", null, true);
             yield "\"></span>
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['card'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 110
+        // line 99
         yield "                </div>
             </section>
 ";
@@ -359,7 +336,7 @@ class __TwigTemplate_cbd6a0c59a093ce14dc1a96006b5c14d extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  329 => 110,  316 => 108,  312 => 107,  306 => 103,  301 => 100,  297 => 98,  295 => 97,  289 => 94,  286 => 93,  283 => 92,  270 => 90,  266 => 89,  262 => 88,  256 => 85,  252 => 84,  241 => 75,  233 => 70,  230 => 69,  227 => 68,  219 => 63,  216 => 62,  214 => 59,  213 => 58,  212 => 57,  211 => 56,  210 => 55,  206 => 54,  202 => 53,  198 => 51,  190 => 46,  186 => 45,  183 => 44,  180 => 43,  175 => 40,  171 => 38,  169 => 37,  163 => 34,  160 => 33,  157 => 32,  148 => 26,  145 => 25,  142 => 24,  129 => 22,  125 => 21,  121 => 20,  115 => 17,  111 => 16,  100 => 7,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  306 => 99,  293 => 97,  289 => 96,  283 => 92,  270 => 90,  266 => 89,  262 => 88,  256 => 85,  252 => 84,  241 => 75,  233 => 70,  230 => 69,  227 => 68,  219 => 63,  216 => 62,  214 => 59,  213 => 58,  212 => 57,  211 => 56,  210 => 55,  206 => 54,  202 => 53,  198 => 51,  190 => 46,  186 => 45,  183 => 44,  180 => 43,  175 => 40,  171 => 38,  169 => 37,  163 => 34,  160 => 33,  157 => 32,  148 => 26,  145 => 25,  142 => 24,  129 => 22,  125 => 21,  121 => 20,  115 => 17,  111 => 16,  100 => 7,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -455,17 +432,6 @@ class __TwigTemplate_cbd6a0c59a093ce14dc1a96006b5c14d extends Template
                     {% for card in app.session.get('game').players[1].hand.hand %}
                     <img src=\"{{ asset('build/images/cards/'~card.value~'.svg') }}\" width=\"100\" alt=\"{{ app.session.get('deck_values')[card.value] }}\" title=\"{{ app.session.get('deck_text_values')[card.value] }}\">
                     {% endfor %}
-                    {% if app.session.get('game').state == app.session.get('game').STATES['bank_draws'] %}
-                    <div>
-                        <form method=\"POST\" action=\"{{ path('game_player_draws_process') }}\">
-                            <input type=\"hidden\" name=\"player\" value=\"1\">
-                            <button type=\"submit\" name=\"draw\" value=\"draw\">Dra</button>
-                            {% if app.session.get('game').players[1].hand.handValues() | length > 1 %}
-                            <button type=\"submit\" name=\"stay\" value=\"stay\">Stanna</button>
-                            {% endif %}
-                        </form>
-                    </div>
-                    {% endif %}
                 </div>
             </section>
             <section class=\"center\">

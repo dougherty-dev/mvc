@@ -8,6 +8,14 @@ use App\Game21;
 use App\Cards\Deck;
 use App\Cards\Hand;
 
+define('CARDSUIT', 13);
+define('TWENTY_ONE', 21);
+define('WILD_MIN', 1);
+define('WILD_MAX', 14);
+define('BANK_MAX', 17);
+define('DECK_MAX', 51);
+define('BALANCE_DEFAULT', 100);
+
 class GameActions extends Game
 {
     public function reassembleDeck(): void
@@ -33,12 +41,28 @@ class GameActions extends Game
         $this->players[$id]->hand->addCard($this->deck->drawCard());
         $this->players[$id]->__set('score', $this->players[$id]->handScore->calculate($this->players[$id]->hand));
 
-        if ($id === 0 && count($this->players[$id]->hand->handValues()) === 1) {
-            $this->__set('state', self::STATES['player_bets']);
+        if ($id === 0) {
+            if (count($this->players[$id]->hand->handValues()) === 1) {
+                $this->__set('state', self::STATES['player_bets']);
+            }
+
+            if ($this->players[$id]->__get('score') > TWENTY_ONE) {
+                $this->playerBusted($id);
+            }
         }
 
-        if ($this->players[$id]->__get('score') > TWENTY_ONE) {
-            $this->playerBusted($id);
+        if ($id === 1) { // automate bank moves
+            if ($this->players[$id]->__get('score') < BANK_MAX) {
+                $this->playerDraws($id);
+                return;
+            }
+
+            if ($this->players[$id]->__get('score') > TWENTY_ONE) {
+                $this->playerBusted($id);
+                return;
+            }
+
+            $this->determineWinner();
         }
     }
 
@@ -51,12 +75,10 @@ class GameActions extends Game
         $this->__set('state', self::STATES['player_draws']);
     }
 
-    public function playerStays(int $id): void
+    public function playerStays(): void // player only
     {
-        match ($id) {
-            1 => $this->determineWinner(),
-            default => $this->__set('state', self::STATES['bank_draws'])
-        };
+        $this->__set('state', self::STATES['bank_draws']);
+        $this->playerDraws(1);
     }
 
     public function playerBusted(int $id): void
