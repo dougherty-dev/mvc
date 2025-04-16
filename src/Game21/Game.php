@@ -51,5 +51,6 @@ class Game
         $this->players = [new Player(), new Player()];
         $this->deck = new Deck();
         $this->deck->resetDeck();
+        $this->deck->shuffleDeck();
     }
 }
