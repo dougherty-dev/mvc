@@ -417,8 +417,8 @@
       </call>
     </service>
     <service id="App\Game21\Game" class="App\Game21\Game" autowire="true" autoconfigure="true"/>
+    <service id="App\Game21\HandScore" class="App\Game21\HandScore" autowire="true" autoconfigure="true"/>
     <service id="App\Game21\Player" class="App\Game21\Player" autowire="true" autoconfigure="true"/>
-    <service id="App\Game21\ScoreCalc" class="App\Game21\ScoreCalc" autowire="true" autoconfigure="true"/>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="argument_resolver.backed_enum_resolver" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver">
       <tag priority="100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver">controller.argument_value_resolver</tag>

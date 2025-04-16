@@ -19,6 +19,15 @@ class Deck
         }
     }
 
+    /** @param int[] $values */
+    public function addToDeck(array $values): void
+    {
+        $this->deck = [];
+        foreach ($values as $k) {
+            $this->deck[] = new CardGraphic($k);
+        }
+    }
+
     /** @return array<int, CardGraphic> */
     public function getDeck(): array
     {
@@ -41,6 +50,22 @@ class Deck
             }
         }
         return $hand;
+    }
+
+    public function drawCard(): CardGraphic
+    {
+        $hand = $this->drawCards();
+        return $hand->getHand()[0];
+    }
+
+    /** @return int[] */
+    public function intValues(): array
+    {
+        $deckValues = [];
+        foreach ($this->deck as $card) {
+            $deckValues[] = $card->getValue();
+        }
+        return $deckValues;
     }
 
     /** @return string[] */

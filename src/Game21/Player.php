@@ -17,47 +17,32 @@ define('BALANCE_DEFAULT', 100);
 class Player
 {
     public Hand $hand;
-    public ScoreCalc $scoreCalc;
-    private int $score = 0;
-    private float $balance = 0;
-    private float $bet = 0;
+    public HandScore $handScore;
 
-    public function __construct()
-    {
+    public function __construct(
+        private int $score = 0,
+        private int $balance = 0,
+        private int $bet = 0
+    ) {
         $this->hand = new Hand();
-        $this->scoreCalc = new ScoreCalc();
-        $this->setBalance();
-        $this->setBet();
-        $this->setScore();
+        $this->handScore = new HandScore();
+
+        $this->__set('balance', BALANCE_DEFAULT);
+        $this->__set('bet', 0);
     }
 
-    public function setScore(): void
+    public function __get(string $key): int
     {
-        $this->score = $this->scoreCalc->calculateScore($this->hand);
+        return $this->$key;
     }
 
-    public function getScore(): int
+    public function __isset(string $key): bool
     {
-        return $this->score;
+        return isset($this->$key);
     }
 
-    public function getBalance(): float
+    public function __set(string $key, int $value)
     {
-        return $this->balance;
-    }
-
-    public function setBalance(float $balance = BALANCE_DEFAULT): void
-    {
-        $this->balance = $balance;
-    }
-
-    public function getBet(): float
-    {
-        return $this->bet;
-    }
-
-    public function setBet(float $bet = 0): void
-    {
-        $this->bet = $bet;
+        $this->$key = $value;
     }
 }

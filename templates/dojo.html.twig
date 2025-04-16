@@ -3,38 +3,99 @@
 {% block title %}21: Dojo{% endblock %}
 
 {% block body %}
-{{ dump(app.session.all) }}
+{#{ dump(app.session.all) }#}
             <section class="dojo">
                 <div class="dojobox">
-                    <h1>♠️ Spelare</h1>
-                    <table>
+                    <h1>😼 Spelare</h1>
+                    <table class="game_table">
                         <tr>
                             <th>Saldo</th>
                             <th>Insats</th>
                         </tr>
                         <tr>
-                            <td>{{ app.session.get('game').player.balance }}</td>
-                            <td>{{ app.session.get('game').player.bet }}</td>
+                            <td>{{ app.session.get('game').players[0].balance }}</td>
+                            <td>{{ app.session.get('game').players[0].bet }}</td>
                         </tr>
                     </table>
-                    <h2>Hand ({{ app.session.get('game').player.score }})</h2>
-                    {% for card in app.session.get('game').player.hand.hand %}
+                    <h2>Hand ({{ app.session.get('game').players[0].score }})</h2>
+                    {% for card in app.session.get('game').players[0].hand.hand %}
                     <img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="100" alt="{{ app.session.get('deck_values')[card.value] }}" title="{{ app.session.get('deck_text_values')[card.value] }}">
                     {% endfor %}
+                    {% if app.session.get('game').state == app.session.get('game').STATES['player_initiates'] %}
+                    <div>
+                        <form method="POST" action="{{ path('game_player_draws_process') }}">
+                            <input type="hidden" name="player" value="0">
+                            <button type="submit" name="draw" value="draw">Dra</button>
+                        </form>
+                    </div>
+                    {% endif %}
+                    {% if app.session.get('game').state == app.session.get('game').STATES['player_draws'] %}
+                    <div>
+                        <form method="POST" action="{{ path('game_player_draws_process') }}">
+                            <input type="hidden" name="player" value="0">
+                            <button type="submit" name="draw" value="draw">Dra</button>
+                            <button type="submit" name="stay" value="stay">Stanna</button>
+                        </form>
+                    </div>
+                    {% endif %}
+                    {% if app.session.get('game').state == app.session.get('game').STATES['player_bets'] %}
+                    <div>
+                        <form method="POST" action="{{ path('game_player_bets_process') }}">
+                            <input type="number" name="bet" min="1" max="{{ min(app.session.get('game').players[0].balance, app.session.get('game').players[0].balance) }}" value="1">
+                            <button type="submit">Satsa</button>
+                        </form>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="dojo_midsection">
+                    <h1>🃏 {{ app.session.get('game').deck.deck | length }}</h1>
+                    <p>{{ app.session.get('game').state }}</p>
+                    {% if (
+                        app.session.get('game').state == app.session.get('game').STATES['bank_wins']
+                        or app.session.get('game').state == app.session.get('game').STATES['player_wins']
+                        or app.session.get('game').state == app.session.get('game').STATES['player_busted']
+                        or app.session.get('game').state == app.session.get('game').STATES['bank_busted']
+                        )
+                    %}
+                    <div>
+                        <form method="POST" action="{{ path('game_player_wins_process') }}">
+                            <button type="submit" name="continue" value="continue">Fortsätt</button>
+                        </form>
+                    </div>
+                    {% endif %}
                 </div>
                 <div class="dojobox">
                     <h1>🏦 Bank</h1>
-                    <table>
+                    <table class="game_table">
                         <tr>
                             <th>Saldo</th>
                             <th>Insats</th>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
+                            <td>{{ app.session.get('game').players[1].balance }}</td>
+                            <td>{{ app.session.get('game').players[1].bet }}</td>
                         </tr>
                     </table>
-                    <h2>Hand</h2>
+                    <h2>Hand ({{ app.session.get('game').players[1].score }})</h2>
+                    {% for card in app.session.get('game').players[1].hand.hand %}
+                    <img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="100" alt="{{ app.session.get('deck_values')[card.value] }}" title="{{ app.session.get('deck_text_values')[card.value] }}">
+                    {% endfor %}
+                    {% if app.session.get('game').state == app.session.get('game').STATES['bank_draws'] %}
+                    <div>
+                        <form method="POST" action="{{ path('game_player_draws_process') }}">
+                            <input type="hidden" name="player" value="1">
+                            <button type="submit" name="draw" value="draw">Dra</button>
+                            <button type="submit" name="stay" value="stay">Stanna</button>
+                        </form>
+                    </div>
+                    {% endif %}
+                </div>
+            </section>
+            <section>
+                <div>
+                {% for card in app.session.get('game').deck.deck|sort %}
+                    <span><img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="50" alt="{{ app.session.get('deck_values')[card.value] }}" title="{{ app.session.get('deck_text_values')[card.value] }}"></span>
+                {% endfor %}
                 </div>
             </section>
 {% endblock %}

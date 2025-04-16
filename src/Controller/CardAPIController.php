@@ -18,6 +18,7 @@ class CardAPIController extends CardController
     #[Route("/api/deck", name: "api_deck")]
     public function apiDeck(): Response
     {
+        $this->checkSession();
         $sortedDeck = $this->deck->deckValues();
         sort($sortedDeck);
 

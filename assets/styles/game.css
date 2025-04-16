@@ -9,7 +9,22 @@
 }
 
 .dojobox {
-  padding: 1rem;
+  margin: 1rem;
   flex-grow: 1;
-  width: 45%;
+  width: 40%;
+}
+
+.dojo_midsection {
+  margin: 1rem;
+  flex-grow: 1;
+  width: 10%;
+  border-width: 0 thin;
+  border-style: solid;
+  border-color: var(--aqua);
+}
+
+.game_table tr th,
+.game_table tr td {
+  border: thin solid var(--table);
+  padding: 0.7rem;
 }

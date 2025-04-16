@@ -5,20 +5,17 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Cards\Deck;
-use App\Cards\Hand;
 use App\Cards\CardGraphic;
-use App\Game21\Player;
+use App\Cards\Deck;
 use App\Game21\Game;
 
 class GameController extends AbstractController
 {
     protected RequestStack $requestStack;
-    protected Deck $deck;
-    protected Player $player;
     protected Game $game;
 
     public function __construct(RequestStack $requestStack)
@@ -45,25 +42,62 @@ class GameController extends AbstractController
         return $this->render('dojo.html.twig');
     }
 
-    private function checkSession(): void
+    #[Route("/game/player/draws/process", name: "game_player_draws_process", methods: ['POST'])]
+    public function gamePlayerDrawsProcess(Request $request): Response
+    {
+        $this->checkSession();
+        $id = intval($request->request->get('player'));
+        if ($request->request->get('draw')) {
+            $this->game->playerDraws($id);
+        }
+
+        if ($request->request->get('stay')) {
+            $this->game->playerStays($id);
+        }
+
+        $session = $this->requestStack->getSession();
+        $session->set("game", $this->game);
+        return $this->redirectToRoute('game_dojo');
+    }
+
+    #[Route("/game/player/bets/process", name: "game_player_bets_process", methods: ['POST'])]
+    public function gamePlayerBetsProcess(Request $request): Response
+    {
+        $this->checkSession();
+        if ($request->request->get('bet')) {
+            $bet = intval($request->request->get('bet'));
+            $this->game->playerBets($bet);
+            $session = $this->requestStack->getSession();
+            $session->set("game", $this->game);
+        }
+
+        return $this->redirectToRoute('game_dojo');
+    }
+
+    #[Route("/game/player/wins/process", name: "game_player_wins_process", methods: ['POST'])]
+    public function gamePlayerWinsProcess(Request $request): Response
+    {
+        $this->checkSession();
+        if ($request->request->get('continue')) {
+            $this->game->continue();
+        }
+
+        return $this->redirectToRoute('game_dojo');
+    }
+
+    protected function checkSession(): void
     {
         $session = $this->requestStack->getSession();
 
-        if (!$session->get("deck_values")) {
-            $deck = new Deck();
-            $deck->resetDeck();
-
-            $session->set("deck_values", $deck->deckValues());
-            $session->set("deck_text_values", $deck->deckTextValues());
-        }
-
         if (!$session->get("game")) {
             $game = new Game();
-            $game->player->hand->addCard(new CardGraphic(1));
-            $game->player->hand->addCard(new CardGraphic(13));
-            $game->player->hand->addCard(new CardGraphic(53));
+            $session->set("deck_values", $game->deck->deckValues());
+            $session->set("deck_text_values", $game->deck->deckTextValues());
 
-            $game->player->setScore();
+            $game->deck->shuffleDeck();
+            foreach ($game->players as $player) {
+                $player->__set('score', $player->handScore->calculate($player->hand));
+            }
             $session->set("game", $game);
         }
 

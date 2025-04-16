@@ -22,6 +22,16 @@ class Hand
         $this->hand[] = $card;
     }
 
+    /** @return int[] */
+    public function intValues(): array
+    {
+        $handValues = [];
+        foreach ($this->getHand() as $card) {
+            $handValues[] = $card->getValue();
+        }
+        return $handValues;
+    }
+
     /** @return string[] */
     public function handValues(): array
     {

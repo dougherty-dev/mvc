@@ -44,7 +44,7 @@ class ProcessController extends CardController
         );
     }
 
-    #[Route("card/deck/deal/process", name: "card_deck_deal_process", methods: ['POST'])]
+    #[Route("/card/deck/deal/process", name: "card_deck_deal_process", methods: ['POST'])]
     public function cardDeckDealProcess(Request $request): Response
     {
         return $this->redirectToRoute('card_deck_draw_deal_players', [
