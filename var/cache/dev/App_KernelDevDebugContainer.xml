@@ -417,6 +417,7 @@
       </call>
     </service>
     <service id="App\Game21\Game" class="App\Game21\Game" autowire="true" autoconfigure="true"/>
+    <service id="App\Game21\GameActions" class="App\Game21\GameActions" autowire="true" autoconfigure="true"/>
     <service id="App\Game21\HandScore" class="App\Game21\HandScore" autowire="true" autoconfigure="true"/>
     <service id="App\Game21\Player" class="App\Game21\Player" autowire="true" autoconfigure="true"/>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>

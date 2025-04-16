@@ -41,7 +41,7 @@
                     {% if app.session.get('game').state == app.session.get('game').STATES['player_bets'] %}
                     <div>
                         <form method="POST" action="{{ path('game_player_bets_process') }}">
-                            <input type="number" name="bet" min="1" max="{{ min(app.session.get('game').players[0].balance, app.session.get('game').players[0].balance) }}" value="1">
+                            <input type="number" name="bet" min="1" max="{{ min(app.session.get('game').players[0].balance, app.session.get('game').players[1].balance) }}" value="1">
                             <button type="submit">Satsa</button>
                         </form>
                     </div>
@@ -60,6 +60,13 @@
                     <div>
                         <form method="POST" action="{{ path('game_player_wins_process') }}">
                             <button type="submit" name="continue" value="continue">Fortsätt</button>
+                        </form>
+                    </div>
+                    {% endif %}
+                    {% if (app.session.get('game').state == app.session.get('game').STATES['game_over']) %}
+                    <div>
+                        <form method="POST" action="{{ path('game_over_process') }}">
+                            <button type="submit" name="game_over" value="game_over">SLUT</button>
                         </form>
                     </div>
                     {% endif %}
@@ -91,7 +98,7 @@
                     {% endif %}
                 </div>
             </section>
-            <section>
+            <section class="center">
                 <div>
                 {% for card in app.session.get('game').deck.deck|sort %}
                     <span><img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="50" alt="{{ app.session.get('deck_values')[card.value] }}" title="{{ app.session.get('deck_text_values')[card.value] }}"></span>

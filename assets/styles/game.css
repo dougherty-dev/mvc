@@ -10,14 +10,16 @@
 
 .dojobox {
   margin: 1rem;
+  padding: 0.5rem;
   flex-grow: 1;
   width: 40%;
 }
 
 .dojo_midsection {
   margin: 1rem;
+  padding: 0.5rem;
   flex-grow: 1;
-  width: 10%;
+  width: 15%;
   border-width: 0 thin;
   border-style: solid;
   border-color: var(--aqua);

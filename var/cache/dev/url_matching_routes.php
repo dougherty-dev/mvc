@@ -24,6 +24,7 @@ return [
         '/game/player/draws/process' => [[['_route' => 'game_player_draws_process', '_controller' => 'App\\Controller\\GameController::gamePlayerDrawsProcess'], null, ['POST' => 0], null, false, false, null]],
         '/game/player/bets/process' => [[['_route' => 'game_player_bets_process', '_controller' => 'App\\Controller\\GameController::gamePlayerBetsProcess'], null, ['POST' => 0], null, false, false, null]],
         '/game/player/wins/process' => [[['_route' => 'game_player_wins_process', '_controller' => 'App\\Controller\\GameController::gamePlayerWinsProcess'], null, ['POST' => 0], null, false, false, null]],
+        '/game/over/process' => [[['_route' => 'game_over_process', '_controller' => 'App\\Controller\\GameController::gameOverProcess'], null, ['POST' => 0], null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::home'], null, null, null, false, false, null]],
         '/about' => [[['_route' => 'about', '_controller' => 'App\\Controller\\HomeController::about'], null, null, null, false, false, null]],
         '/report' => [[['_route' => 'report', '_controller' => 'App\\Controller\\HomeController::report'], null, null, null, false, false, null]],

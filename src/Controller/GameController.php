@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Cards\CardGraphic;
 use App\Cards\Deck;
-use App\Game21\Game;
+use App\Game21\GameActions;
 
 class GameController extends AbstractController
 {
     protected RequestStack $requestStack;
-    protected Game $game;
+    protected GameActions $game;
 
     public function __construct(RequestStack $requestStack)
     {
@@ -79,9 +79,17 @@ class GameController extends AbstractController
     {
         $this->checkSession();
         if ($request->request->get('continue')) {
-            $this->game->continue();
+            $this->game->continueGame();
         }
 
+        return $this->redirectToRoute('game_dojo');
+    }
+
+    #[Route("/game/over/process", name: "game_over_process", methods: ['POST'])]
+    public function gameOverProcess(): Response
+    {
+        $this->checkSession();
+        $this->game->restart();
         return $this->redirectToRoute('game_dojo');
     }
 
@@ -90,7 +98,7 @@ class GameController extends AbstractController
         $session = $this->requestStack->getSession();
 
         if (!$session->get("game")) {
-            $game = new Game();
+            $game = new GameActions();
             $session->set("deck_values", $game->deck->deckValues());
             $session->set("deck_text_values", $game->deck->deckTextValues());
 
@@ -101,8 +109,8 @@ class GameController extends AbstractController
             $session->set("game", $game);
         }
 
-        $this->game = new Game();
-        if (is_object($session->get("game")) && is_a($session->get("game"), 'App\Game21\Game')) {
+        $this->game = new GameActions();
+        if (is_object($session->get("game")) && is_a($session->get("game"), 'App\Game21\GameActions')) {
             $this->game = $session->get("game");
         }
     }
