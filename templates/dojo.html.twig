@@ -34,7 +34,9 @@
                         <form method="POST" action="{{ path('game_player_draws_process') }}">
                             <input type="hidden" name="player" value="0">
                             <button type="submit" name="draw" value="draw">Dra</button>
+                            {% if app.session.get('game').players[0].hand.handValues() | length > 1 %}
                             <button type="submit" name="stay" value="stay">Stanna</button>
+                            {% endif %}
                         </form>
                     </div>
                     {% endif %}
@@ -48,7 +50,7 @@
                     {% endif %}
                 </div>
                 <div class="dojo_midsection">
-                    <h1>🃏 {{ app.session.get('game').deck.deck | length }}</h1>
+                    <h1>🃏 {{ app.session.get('game').deck.remainingCards() }}</h1>
                     <p>{{ app.session.get('game').state }}</p>
                     {% if (
                         app.session.get('game').state == app.session.get('game').STATES['bank_wins']
@@ -92,7 +94,9 @@
                         <form method="POST" action="{{ path('game_player_draws_process') }}">
                             <input type="hidden" name="player" value="1">
                             <button type="submit" name="draw" value="draw">Dra</button>
+                            {% if app.session.get('game').players[1].hand.handValues() | length > 1 %}
                             <button type="submit" name="stay" value="stay">Stanna</button>
+                            {% endif %}
                         </form>
                     </div>
                     {% endif %}
