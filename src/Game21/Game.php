@@ -14,16 +14,17 @@ class Game
         'player_bets' => '⇦ Spelare satsar',
         'player_draws' => '⇦ Spelare drar',
         'player_busted' => 'Spelare tjock',
-        'bank_draws' => 'Bank drar ⇨',
         'bank_busted' => 'Bank tjock',
         'player_wins' => 'Spelare vinner',
         'bank_wins' => 'Bank vinner',
-        'game_over' => 'Slut',
+        'game_over' => 'Spel slut'
     ];
 
     public Deck $deck;
     /** @var Player[] */
     public array $players = [];
+    /** @var string[] */
+    private array $cardStats = ['0 %', '0 %'];
 
     public function __construct(private string $state = self::STATES['player_initiates'])
     {
@@ -52,5 +53,6 @@ class Game
         $this->deck = new Deck();
         $this->deck->resetDeck();
         $this->deck->shuffleDeck();
+        $this->cardStats = ['0 %', '0 %'];
     }
 }

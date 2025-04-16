@@ -41,6 +41,8 @@ class GameActions extends Game
         $this->players[$id]->hand->addCard($this->deck->drawCard());
         $this->players[$id]->__set('score', $this->players[$id]->handScore->calculate($this->players[$id]->hand));
 
+        $this->cardStats($this->players[$id]->__get('score'));
+
         if ($id === 0) {
             if (count($this->players[$id]->hand->handValues()) === 1) {
                 $this->__set('state', self::STATES['player_bets']);
@@ -75,12 +77,6 @@ class GameActions extends Game
         $this->__set('state', self::STATES['player_draws']);
     }
 
-    public function playerStays(): void // player only
-    {
-        $this->__set('state', self::STATES['bank_draws']);
-        $this->playerDraws(1);
-    }
-
     public function playerBusted(int $id): void
     {
         $nextID = ($id + 1) % 2;
@@ -107,14 +103,6 @@ class GameActions extends Game
         }
     }
 
-    public function restart(): void
-    {
-        $this->__set('state', self::STATES['player_initiates']);
-        $this->players = [new Player(), new Player()];
-        $this->deck = new Deck();
-        $this->deck->resetDeck();
-    }
-
     private function determineWinner(): void
     {
         if ($this->players[0]->__get('score') > $this->players[1]->__get('score')) {
@@ -126,5 +114,37 @@ class GameActions extends Game
             $this->players[1]->__set('balance', $this->players[1]->__get('balance') + 2 * $this->players[1]->__get('bet'));
             $this->__set('state', self::STATES['bank_wins']);
         }
+    }
+
+    public function cardStats(int $handValue): void
+    {
+        $values = array_fill(1, 14, 0);
+        $deckValues = $this->deck->intValues();
+
+        foreach ($deckValues as $card) {
+            $face = $card % 13 + 1;
+            match (true) {
+                $card > 51 => $values = array_map(fn (int $val): int => $val + 1, $values),
+                $face === 1 => [$values[1]++, $values[14]++],
+                default => $values[$face]++
+            };
+        }
+
+        $upTo21 = 0;
+        $over21 = 0;
+        foreach (array_keys($values) as $key) {
+            if ($handValue + $key <= TWENTY_ONE) {
+                $upTo21++;
+            }
+            if ($handValue + $key > TWENTY_ONE) {
+                $over21++;
+            }
+        }
+
+        $cards = count($values);
+        $this->__set('cardStats', [
+            number_format(100 * $upTo21 / $cards, 0) . ' %',
+            number_format(100 * $over21 / $cards, 0) . ' %',
+        ]);
     }
 }

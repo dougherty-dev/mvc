@@ -112,9 +112,10 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <h2>Kmom03</h2>
         <p class=\"initcap\">Introduktion av PHPStan och PHP Mess Detector gör att kortklasserna i tidigare kursmoment behöver refaktoreras, samtidigt som de vässas med större mått av inkapsling. Detta är hemmaplan, och nu börjar det likna riktig programmering med erforderlig stringens.</p>
         <p>Konstruktion av flödesdiagram, pesudokod och UML-diagram av klasser som angreppsvektor för problemet är en rimlig ansats. På så sätt kan man få en grundläggande struktur för kodbasen, observera repetitiv kod som kan förläggas i metoder samt avslöja en del tankefel kring den mentala konstruktionen av modellen. Därmed inte sagt att man får en fullständig bild av problemkomplext med sådan modellering, men det är en bra början.</p>
-        <p>Klassen <code>Banker</code> befanns småningom vara överflödig, eftersom det är en spelare i mängden med samma slags metoder. Ett fält med <code>Player</code> definierar istället de två spelarna, och kan enkelt byggas ut till fler. Här räcker det att hålla kolla på respektive spelare med index.</p>
-        <p>Mallarna ska vara dumma, men det blir ändå ett antal <code>if</code>-satser för att hålla reda på knappar i olika tillstånd. Den huvudsakliga logiken sker ändå i klasserna, med bara ett fåtal rutter som alla ryms i en enda klass <code>GameController</code>.</p>
-        <p></p>
+        <p>Klassen <code>Banker</code> befanns småningom vara överflödig, eftersom det är en spelare i mängden med samma slags metoder. Ett fält med <code>Player</code> definierar istället de två spelarna, och kan enkelt byggas ut till fler. Här räcker det att hålla koll på respektive spelare med index.</p>
+        <p>Mallarna ska vara dumma, men det blir ändå ett antal <code>if</code>-satser för att hålla reda på knappar i olika tillstånd. Den huvudsakliga logiken sker ändå i klasserna, med bara ett fåtal rutter som alla ryms i en enda klass <code>GameController</code>. Mallarna renderas uteslutande med sessionsvariabler.</p>
+        <p>Huvudlogiken finns i <code>GameActions</code>, som ärver magiska getters och setters samt konstanter från föräldraklassen <code>Game</code>. Spelarens aktioner styrs av knappar och inmatning i formulär, medan bankens motsvarande flöde automatiseras.</p>
+        <p>Svåraste moment är kanske något överraskande metoder för att beräkna poängsumma samt sannolikheter, där bruket av två jokrar ökar komplexiteten med en ordning. Dessa rutiner får sina egna klasser <code>HandScore</code> respektive <code>Stats</code>.</p>
         <p>MVC som designmönster är väl i sin ordning, men ramverken är ofta alldeles för rigida. Symfony tycks dock lira bra med PHPStan, vilket är en fördel, inte minst i att hantera sessionsvariabler. Med ramverk är det så att man blir ordentligt fastlåst i en viss ordning, en löpande bandsprincip som passar industrin väl men samtidigt missgynnar mer kreativa angreppsmetoder.</p>
         <p>En intressant egenskap med Symfony är stödet för generella getters/setters via magiska metoder <code>__get()</code><code>__isset()</code> och <code>__set()</code>, vilket reducerar kodmassan en del, inte minst antalet publika metoder. Twig kan då hämta privata egenskaper via dessa metoder, utan att man behöver synliggöra dem.</p>
         <p>TIL är nog att nyttja inkapsling bättre i klasserna, inte minst för att så mycket skräp annars skickas runt i komposition och arv. Mycket givande kurs.</p>
@@ -126,7 +127,7 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <p></p>
         <figure>
             <img src=\"";
-        // line 34
+        // line 35
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom03.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
         </figure>
@@ -144,7 +145,7 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <p>TIL för kursmomentet får sägas vara sessioner i Symfony och Twig, ett smidigt sätt att hantera objekt till skillnad från PHP:s krångliga motsvarigheter.</p>
         <figure>
             <img src=\"";
-        // line 49
+        // line 50
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom02.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
         </figure>
@@ -160,7 +161,7 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <p>TIL får nog sägas vara att nyttja ramverket Symfony, en erfarenhet som kanske är nyttig men som jag aldrig skulle fundera på att använda för egen del. Det är själva definitionen av bloat.</p>
         <figure>
             <img src=\"";
-        // line 62
+        // line 63
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom01.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
             <figcaption>@mos inskärper allvaret i studierna.</figcaption>
@@ -197,7 +198,7 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  164 => 62,  148 => 49,  130 => 34,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  165 => 63,  149 => 50,  131 => 35,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -222,9 +223,10 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <h2>Kmom03</h2>
         <p class=\"initcap\">Introduktion av PHPStan och PHP Mess Detector gör att kortklasserna i tidigare kursmoment behöver refaktoreras, samtidigt som de vässas med större mått av inkapsling. Detta är hemmaplan, och nu börjar det likna riktig programmering med erforderlig stringens.</p>
         <p>Konstruktion av flödesdiagram, pesudokod och UML-diagram av klasser som angreppsvektor för problemet är en rimlig ansats. På så sätt kan man få en grundläggande struktur för kodbasen, observera repetitiv kod som kan förläggas i metoder samt avslöja en del tankefel kring den mentala konstruktionen av modellen. Därmed inte sagt att man får en fullständig bild av problemkomplext med sådan modellering, men det är en bra början.</p>
-        <p>Klassen <code>Banker</code> befanns småningom vara överflödig, eftersom det är en spelare i mängden med samma slags metoder. Ett fält med <code>Player</code> definierar istället de två spelarna, och kan enkelt byggas ut till fler. Här räcker det att hålla kolla på respektive spelare med index.</p>
-        <p>Mallarna ska vara dumma, men det blir ändå ett antal <code>if</code>-satser för att hålla reda på knappar i olika tillstånd. Den huvudsakliga logiken sker ändå i klasserna, med bara ett fåtal rutter som alla ryms i en enda klass <code>GameController</code>.</p>
-        <p></p>
+        <p>Klassen <code>Banker</code> befanns småningom vara överflödig, eftersom det är en spelare i mängden med samma slags metoder. Ett fält med <code>Player</code> definierar istället de två spelarna, och kan enkelt byggas ut till fler. Här räcker det att hålla koll på respektive spelare med index.</p>
+        <p>Mallarna ska vara dumma, men det blir ändå ett antal <code>if</code>-satser för att hålla reda på knappar i olika tillstånd. Den huvudsakliga logiken sker ändå i klasserna, med bara ett fåtal rutter som alla ryms i en enda klass <code>GameController</code>. Mallarna renderas uteslutande med sessionsvariabler.</p>
+        <p>Huvudlogiken finns i <code>GameActions</code>, som ärver magiska getters och setters samt konstanter från föräldraklassen <code>Game</code>. Spelarens aktioner styrs av knappar och inmatning i formulär, medan bankens motsvarande flöde automatiseras.</p>
+        <p>Svåraste moment är kanske något överraskande metoder för att beräkna poängsumma samt sannolikheter, där bruket av två jokrar ökar komplexiteten med en ordning. Dessa rutiner får sina egna klasser <code>HandScore</code> respektive <code>Stats</code>.</p>
         <p>MVC som designmönster är väl i sin ordning, men ramverken är ofta alldeles för rigida. Symfony tycks dock lira bra med PHPStan, vilket är en fördel, inte minst i att hantera sessionsvariabler. Med ramverk är det så att man blir ordentligt fastlåst i en viss ordning, en löpande bandsprincip som passar industrin väl men samtidigt missgynnar mer kreativa angreppsmetoder.</p>
         <p>En intressant egenskap med Symfony är stödet för generella getters/setters via magiska metoder <code>__get()</code><code>__isset()</code> och <code>__set()</code>, vilket reducerar kodmassan en del, inte minst antalet publika metoder. Twig kan då hämta privata egenskaper via dessa metoder, utan att man behöver synliggöra dem.</p>
         <p>TIL är nog att nyttja inkapsling bättre i klasserna, inte minst för att så mycket skräp annars skickas runt i komposition och arv. Mycket givande kurs.</p>

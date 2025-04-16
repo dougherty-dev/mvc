@@ -52,7 +52,7 @@ class GameController extends AbstractController
         }
 
         if ($request->request->get('stay')) {
-            $this->game->playerStays(); // player only
+            $this->game->playerDraws(1); // Shift to bank
         }
 
         $session = $this->requestStack->getSession();

@@ -22,15 +22,15 @@
                     <img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="100" alt="{{ app.session.get('deck_values')[card.value] }}" title="{{ app.session.get('deck_text_values')[card.value] }}">
                     {% endfor %}
                     {% if app.session.get('game').state == app.session.get('game').STATES['player_initiates'] %}
-                    <div>
+                    <p>
                         <form method="POST" action="{{ path('game_player_draws_process') }}">
                             <input type="hidden" name="player" value="0">
                             <button type="submit" name="draw" value="draw">Dra</button>
                         </form>
-                    </div>
+                    </p>
                     {% endif %}
                     {% if app.session.get('game').state == app.session.get('game').STATES['player_draws'] %}
-                    <div>
+                    <p>
                         <form method="POST" action="{{ path('game_player_draws_process') }}">
                             <input type="hidden" name="player" value="0">
                             <button type="submit" name="draw" value="draw">Dra</button>
@@ -38,20 +38,22 @@
                             <button type="submit" name="stay" value="stay">Stanna</button>
                             {% endif %}
                         </form>
-                    </div>
+                    </p>
                     {% endif %}
                     {% if app.session.get('game').state == app.session.get('game').STATES['player_bets'] %}
-                    <div>
+                    <p>
                         <form method="POST" action="{{ path('game_player_bets_process') }}">
                             <input type="number" name="bet" min="1" max="{{ min(app.session.get('game').players[0].balance, app.session.get('game').players[1].balance) }}" value="1">
                             <button type="submit">Satsa</button>
                         </form>
-                    </div>
+                    </p>
                     {% endif %}
                 </div>
                 <div class="dojo_midsection">
                     <h1>🃏 {{ app.session.get('game').deck.remainingCards() }}</h1>
                     <p>{{ app.session.get('game').state }}</p>
+                    <p>P(&le; 21) = {{ app.session.get('game').cardStats[0] }}<br>
+                        P(&gt; 21) = {{ app.session.get('game').cardStats[1] }}</p>
                     {% if (
                         app.session.get('game').state == app.session.get('game').STATES['bank_wins']
                         or app.session.get('game').state == app.session.get('game').STATES['player_wins']
@@ -59,18 +61,18 @@
                         or app.session.get('game').state == app.session.get('game').STATES['bank_busted']
                         )
                     %}
-                    <div>
+                    <p>
                         <form method="POST" action="{{ path('game_player_wins_process') }}">
                             <button type="submit" name="continue" value="continue">Fortsätt</button>
                         </form>
-                    </div>
+                    </p>
                     {% endif %}
                     {% if (app.session.get('game').state == app.session.get('game').STATES['game_over']) %}
-                    <div>
+                    <p>
                         <form method="POST" action="{{ path('game_over_process') }}">
                             <button type="submit" name="game_over" value="game_over">SLUT</button>
                         </form>
-                    </div>
+                    </p>
                     {% endif %}
                 </div>
                 <div class="dojobox">
