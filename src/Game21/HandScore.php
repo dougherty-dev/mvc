@@ -9,7 +9,20 @@ use App\Cards\Hand;
 
 class HandScore
 {
-    public function calculate(Hand $hand): int
+    public function bestScore(Hand $hand): int
+    {
+        $scores = $this->calculate($hand);
+        return $this->findBestScore($scores);
+    }
+
+    public function lowestScore(Hand $hand): int
+    {
+        $scores = $this->calculate($hand);
+        return $this->findLowestScore($scores);
+    }
+
+    /** @return int[] */
+    public function calculate(Hand $hand): array
     {
         $score = 0;
         $jokers = 0;
@@ -29,7 +42,7 @@ class HandScore
             $scores[] = $score + $sum;
         }
 
-        return $this->findBestScore($this->getJokerSums($jokers, $scores));
+        return $this->getJokerSums($jokers, $scores);
     }
 
     /** @return int[] */
@@ -95,6 +108,13 @@ class HandScore
             $playerScore = $score;
         }
 
+        return $playerScore;
+    }
+
+    /** @param int[] $finalScores */
+    private function findLowestScore(array $finalScores): int
+    {
+        $playerScore = ($finalScores) ? min($finalScores) : 0;
         return $playerScore;
     }
 }

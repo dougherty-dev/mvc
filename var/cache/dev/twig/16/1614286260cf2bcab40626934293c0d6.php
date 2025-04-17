@@ -160,10 +160,17 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
                     </form>
                 </td>
             </tr>
+            <tr>
+                <th><a href=\"";
+        // line 52
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_game");
+        yield "\">21</a></th>
+                <td>Aktuell ställning i spelet</td>
+            </tr>
         </table>
         <figure>
             <img src=\"";
-        // line 53
+        // line 57
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-api.avif"), "html", null, true);
         yield "\" width=\"896\" alt=\"Chihiro\">
             <figcaption>@mos fastnar i en loop.</figcaption>
@@ -200,7 +207,7 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  167 => 53,  153 => 42,  141 => 33,  131 => 26,  121 => 19,  113 => 14,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  174 => 57,  166 => 52,  153 => 42,  141 => 33,  131 => 26,  121 => 19,  113 => 14,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -254,6 +261,10 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
                         <button type=\"submit\">Dela</button>
                     </form>
                 </td>
+            </tr>
+            <tr>
+                <th><a href=\"{{ path('api_game') }}\">21</a></th>
+                <td>Aktuell ställning i spelet</td>
             </tr>
         </table>
         <figure>

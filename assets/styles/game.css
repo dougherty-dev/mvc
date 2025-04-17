@@ -30,3 +30,11 @@
   border: thin solid var(--table);
   padding: 0.7rem;
 }
+
+.upto21 {
+  color: var(--aqua);
+}
+
+.over21 {
+  color: var(--orange);
+}

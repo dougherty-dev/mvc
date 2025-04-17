@@ -21,16 +21,12 @@
         <p>Klassen <code>Banker</code> befanns småningom vara överflödig, eftersom det är en spelare i mängden med samma slags metoder. Ett fält med <code>Player</code> definierar istället de två spelarna, och kan enkelt byggas ut till fler. Här räcker det att hålla koll på respektive spelare med index.</p>
         <p>Mallarna ska vara dumma, men det blir ändå ett antal <code>if</code>-satser för att hålla reda på knappar i olika tillstånd. Den huvudsakliga logiken sker ändå i klasserna, med bara ett fåtal rutter som alla ryms i en enda klass <code>GameController</code>. Mallarna renderas uteslutande med sessionsvariabler.</p>
         <p>Huvudlogiken finns i <code>GameActions</code>, som ärver magiska getters och setters samt konstanter från föräldraklassen <code>Game</code>. Spelarens aktioner styrs av knappar och inmatning i formulär, medan bankens motsvarande flöde automatiseras.</p>
-        <p>Svåraste moment är kanske något överraskande metoder för att beräkna poängsumma samt sannolikheter, där bruket av två jokrar ökar komplexiteten med en ordning. Dessa rutiner får sina egna klasser <code>HandScore</code> respektive <code>Stats</code>.</p>
+        <p>Svåraste moment är kanske något överraskande metoder för att beräkna poängsumma (klassen <code>HandScore</code>) samt sannolikheter för att bli tjock, där bruket av två jokrar ökar komplexiteten med en ordning.</p>
+        <h3>Om MVC</h3>
         <p>MVC som designmönster är väl i sin ordning, men ramverken är ofta alldeles för rigida. Symfony tycks dock lira bra med PHPStan, vilket är en fördel, inte minst i att hantera sessionsvariabler. Med ramverk är det så att man blir ordentligt fastlåst i en viss ordning, en löpande bandsprincip som passar industrin väl men samtidigt missgynnar mer kreativa angreppsmetoder.</p>
         <p>En intressant egenskap med Symfony är stödet för generella getters/setters via magiska metoder <code>__get()</code><code>__isset()</code> och <code>__set()</code>, vilket reducerar kodmassan en del, inte minst antalet publika metoder. Twig kan då hämta privata egenskaper via dessa metoder, utan att man behöver synliggöra dem.</p>
         <p>TIL är nog att nyttja inkapsling bättre i klasserna, inte minst för att så mycket skräp annars skickas runt i komposition och arv. Mycket givande kurs.</p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+        <p>Alla obligatoriska och valfia moment är implementerade per specifikation. Inga fel noteras med PHPStan, PHPMD eller PHP CS Fixer.</p>
         <figure>
             <img src="{{ asset('build/images/chihiro-kmom03.avif') }}" width="1536" alt="Chihiro">
         </figure>

@@ -8,17 +8,9 @@ use App\Game21;
 use App\Cards\Deck;
 use App\Cards\Hand;
 
-define('CARDSUIT', 13);
-define('TWENTY_ONE', 21);
-define('WILD_MIN', 1);
-define('WILD_MAX', 14);
-define('BANK_MAX', 17);
-define('DECK_MAX', 51);
-define('BALANCE_DEFAULT', 100);
-
 class GameActions extends Game
 {
-    public function reassembleDeck(): void
+    private function reassembleDeck(): void
     {
         $deck = new Deck();
         $deck->resetDeck();
@@ -39,9 +31,9 @@ class GameActions extends Game
         $this->deck->remainingCards() or $this->reassembleDeck();
 
         $this->players[$id]->hand->addCard($this->deck->drawCard());
-        $this->players[$id]->__set('score', $this->players[$id]->handScore->calculate($this->players[$id]->hand));
+        $this->players[$id]->__set('score', $this->players[$id]->handScore->bestScore($this->players[$id]->hand));
 
-        $this->cardStats($this->players[$id]->__get('score'));
+        $this->cardStats($id);
 
         if ($id === 0) {
             if (count($this->players[$id]->hand->handValues()) === 1) {
@@ -53,19 +45,41 @@ class GameActions extends Game
             }
         }
 
-        if ($id === 1) { // automate bank moves
+        if ($id === 1) {
+            $this->bankMoves($id);
+        }
+
+        $this->deck->remainingCards() or $this->reassembleDeck();
+        $this->cardStats($id);
+    }
+
+    private function bankMoves(int $id): void
+    {
+        if ($this->players[$id]->__get('score') > TWENTY_ONE) {
+            $this->playerBusted($id);
+            return;
+        }
+
+        if ($this->__get('bankIntelligence') != '') {
+            $percentage = 70;
+            if (is_array($this->__get('cardStats'))) {
+                $percentage = $this->__get('cardStats')[1];
+            }
+
+            if (count($this->players[$id]->hand->handValues()) === 1 || $percentage < 60) {
+                $this->playerDraws($id);
+                return;
+            }
+        }
+
+        if ($this->__get('bankIntelligence') == '') {
             if ($this->players[$id]->__get('score') < BANK_MAX) {
                 $this->playerDraws($id);
                 return;
             }
-
-            if ($this->players[$id]->__get('score') > TWENTY_ONE) {
-                $this->playerBusted($id);
-                return;
-            }
-
-            $this->determineWinner();
         }
+
+        $this->determineWinner();
     }
 
     public function playerBets(int $bet): void
@@ -93,7 +107,10 @@ class GameActions extends Game
         foreach ($this->players as $player) {
             $player->hand = new Hand();
         }
+
         $this->__set('state', self::STATES['player_initiates']);
+        $this->__set('cardStats', [0, 0]);
+
         foreach ($this->players as $player) {
             $player->__set('bet', 0);
             $player->__set('score', 0);
@@ -116,35 +133,35 @@ class GameActions extends Game
         }
     }
 
-    public function cardStats(int $handValue): void
+    private function cardStats(int $id): void
     {
-        $values = array_fill(1, 14, 0);
+        $handValue = $this->players[$id]->handScore->lowestScore($this->players[$id]->hand);
+        $values = array_fill(1, WILD_MAX, 0);
         $deckValues = $this->deck->intValues();
+        $cards = max(1, count($deckValues));
 
         foreach ($deckValues as $card) {
-            $face = $card % 13 + 1;
+            $face = $card % CARDSUIT + 1;
             match (true) {
-                $card > 51 => $values = array_map(fn (int $val): int => $val + 1, $values),
-                $face === 1 => [$values[1]++, $values[14]++],
-                default => $values[$face]++
+                $card > DECK_MAX => $values[1]++, // keep jokers = 1
+                default => $values[$face]++ // keep aces = 1
             };
         }
 
         $upTo21 = 0;
         $over21 = 0;
-        foreach (array_keys($values) as $key) {
-            if ($handValue + $key <= TWENTY_ONE) {
-                $upTo21++;
+        foreach ($values as $key => $val) {
+            if ($val && $handValue + $key <= TWENTY_ONE) {
+                $upTo21 += $val;
             }
-            if ($handValue + $key > TWENTY_ONE) {
-                $over21++;
+            if ($val && $handValue + $key > TWENTY_ONE) {
+                $over21 += $val;
             }
         }
 
-        $cards = count($values);
         $this->__set('cardStats', [
-            number_format(100 * $upTo21 / $cards, 0) . ' %',
-            number_format(100 * $over21 / $cards, 0) . ' %',
+            round(100 * $upTo21 / $cards, 0),
+            round(100 * $over21 / $cards, 0)
         ]);
     }
 }

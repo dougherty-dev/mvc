@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
@@ -89,8 +90,53 @@ class GameController extends AbstractController
     public function gameOverProcess(): Response
     {
         $this->checkSession();
-        $this->game->restart();
+        $this->game->init();
+        $this->game->deck->shuffleDeck();
         return $this->redirectToRoute('game');
+    }
+
+    #[Route("/game/options/process", name: "game_options_process", methods: ['POST'])]
+    public function gameOptionsProcess(Request $request): Response
+    {
+        $this->checkSession();
+        if ($request->request->get('options')) {
+            $this->game->__set('bankIntelligence', $request->request->get('bankIntelligence') ? ' checked' : '');
+            $this->game->__set('showDeck', $request->request->get('showDeck') ? ' checked' : '');
+            $session = $this->requestStack->getSession();
+            $session->set("game", $this->game);
+        }
+        return $this->redirectToRoute('game_dojo');
+    }
+
+    #[Route("/api/game", name: "api_game")]
+    public function apiGame(): Response
+    {
+        $this->checkSession();
+        $players = [];
+        foreach ($this->game->players as $player) {
+            $players[] = [
+                "cards" => $player->hand->handValues(),
+                "card values" => $player->hand->handTextValues(),
+                "score" => $player->__get('score'),
+                "bet" => $player->__get('bet'),
+                "balance" => $player->__get('balance'),
+            ];
+        }
+
+        $response = new JsonResponse([
+            "state" => $this->game->__get('state'),
+            "players" => $players,
+            "current probabilities" => $this->game->__get('cardStats'),
+            "remaining cards" => $this->game->deck->remainingCards(),
+            "current deck" => $this->game->deck->deckValues(),
+            "options" => [
+                "bank intelligence" => $this->game->__get('bankIntelligence'),
+                "show deck" => $this->game->__get('showDeck'),
+            ],
+        ]);
+
+        $response->setEncodingOptions(JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+        return $response;
     }
 
     protected function checkSession(): void
@@ -104,7 +150,7 @@ class GameController extends AbstractController
 
             $game->deck->shuffleDeck();
             foreach ($game->players as $player) {
-                $player->__set('score', $player->handScore->calculate($player->hand));
+                $player->__set('score', $player->handScore->bestScore($player->hand));
             }
             $session->set("game", $game);
         }
