@@ -9,7 +9,6 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Cards\Deck;
-use App\Cards\Hand;
 
 class CardController extends AbstractController
 {

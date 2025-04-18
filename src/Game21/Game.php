@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Game21;
 
-use App\Game21;
 use App\Cards\Deck;
 
 define('CARDSUIT', 13);
@@ -31,13 +30,13 @@ class Game
     public Deck $deck;
     /** @var Player[] */
     public array $players = [];
-    /** @var int[] */
-    private array $cardStats;
 
     public function __construct(
         private string $state = self::STATES['player_initiates'],
         private string $bankIntelligence = '',
-        private string $showDeck = ''
+        private string $showDeck = '',
+        /** @var int[] */
+        private array $cardStats = [0, 0]
     ) {
         $this->init();
     }

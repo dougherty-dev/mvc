@@ -173,12 +173,15 @@ END SUB
                 <p>Avseende modellerna följs initialt principen KISS <em>(keep it simple, stupid)</em>, varvid en klass <code>Game</code> får agera huvudklass. Den består i sin tur av en komposition av klassen <code>Player</code>, som håller varje spelares <code>Hand</code>, en rad parametrar för bokföring samt en metod för att beräkna handens momentana värde.</p>
                 <p><code>Game</code> håller även utvidgningen <code>Banker</code> av <code>Player</code>, som för närvarande enbart har begåvats med en boolesk flagga. Denne spelare är så speciell att den förtjänar en egen klass, och man kan misstänka att någon särskild metod kan tillkomma i ett senare skede.</p>
                 <p><code>Game</code> är även en komposition av <code>Deck</code> och <code>Hand</code>, det senare på grund av att beräkningen av sannolikheter kräver värdet av en hand, om än indirekt från <code>Player</code>. Man skulle här kunna tänka sig en utvidgning av <code>Hand</code> för att åstadkomma samma sak, det finns möjligen anledning att återkomma i ämnet vad det lider.</p>
+                <h3>Smart bank</h3>
+                <p>Bankens normala strategi är att ta kort upp till och med handvärdet 17, men via ett tillval kan banken spela efter sannolikheter baserade på aktuell hand och kvarvarande kort i leken. Värdet 17 motsvarar för en full kortlek ungefär 70&nbsp;% sannolikhet att bli tjock, och vi sänker det här till 65&nbsp;% för mer optimalt spel med en lek som används fullt ut. Naturligtvis skulle man kunna bygga en betydligt mer avancerad bank, bland annat med hänsyn till huruvida man har en joker på hand, då man är garanterad handsumman 21.</p>
+                <p>Ytterligare ett tillval visar aktuell kortlek, på det att man kan kontrollera och finjustera funktionen.</p>
             </section>
             <section class=\"center\">
                 <h2>UML-diagram</h2>
                 <figure>
                     <img src=\"";
-        // line 83
+        // line 86
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/game/uml-21.avif"), "html", null, true);
         yield "\" width=\"3000\" alt=\"UML-diagram\">
                 </figure>
@@ -214,7 +217,7 @@ END SUB
      */
     public function getDebugInfo(): array
     {
-        return array (  182 => 83,  111 => 15,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  185 => 86,  111 => 15,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -297,6 +300,9 @@ END SUB
                 <p>Avseende modellerna följs initialt principen KISS <em>(keep it simple, stupid)</em>, varvid en klass <code>Game</code> får agera huvudklass. Den består i sin tur av en komposition av klassen <code>Player</code>, som håller varje spelares <code>Hand</code>, en rad parametrar för bokföring samt en metod för att beräkna handens momentana värde.</p>
                 <p><code>Game</code> håller även utvidgningen <code>Banker</code> av <code>Player</code>, som för närvarande enbart har begåvats med en boolesk flagga. Denne spelare är så speciell att den förtjänar en egen klass, och man kan misstänka att någon särskild metod kan tillkomma i ett senare skede.</p>
                 <p><code>Game</code> är även en komposition av <code>Deck</code> och <code>Hand</code>, det senare på grund av att beräkningen av sannolikheter kräver värdet av en hand, om än indirekt från <code>Player</code>. Man skulle här kunna tänka sig en utvidgning av <code>Hand</code> för att åstadkomma samma sak, det finns möjligen anledning att återkomma i ämnet vad det lider.</p>
+                <h3>Smart bank</h3>
+                <p>Bankens normala strategi är att ta kort upp till och med handvärdet 17, men via ett tillval kan banken spela efter sannolikheter baserade på aktuell hand och kvarvarande kort i leken. Värdet 17 motsvarar för en full kortlek ungefär 70&nbsp;% sannolikhet att bli tjock, och vi sänker det här till 65&nbsp;% för mer optimalt spel med en lek som används fullt ut. Naturligtvis skulle man kunna bygga en betydligt mer avancerad bank, bland annat med hänsyn till huruvida man har en joker på hand, då man är garanterad handsumman 21.</p>
+                <p>Ytterligare ett tillval visar aktuell kortlek, på det att man kan kontrollera och finjustera funktionen.</p>
             </section>
             <section class=\"center\">
                 <h2>UML-diagram</h2>

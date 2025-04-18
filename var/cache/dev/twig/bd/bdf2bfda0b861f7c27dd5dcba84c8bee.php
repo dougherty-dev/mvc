@@ -120,7 +120,7 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <p>MVC som designmönster är väl i sin ordning, men ramverken är ofta alldeles för rigida. Symfony tycks dock lira bra med PHPStan, vilket är en fördel, inte minst i att hantera sessionsvariabler. Med ramverk är det så att man blir ordentligt fastlåst i en viss ordning, en löpande bandsprincip som passar industrin väl men samtidigt missgynnar mer kreativa angreppsmetoder.</p>
         <p>En intressant egenskap med Symfony är stödet för generella getters/setters via magiska metoder <code>__get()</code><code>__isset()</code> och <code>__set()</code>, vilket reducerar kodmassan en del, inte minst antalet publika metoder. Twig kan då hämta privata egenskaper via dessa metoder, utan att man behöver synliggöra dem.</p>
         <p>TIL är nog att nyttja inkapsling bättre i klasserna, inte minst för att så mycket skräp annars skickas runt i komposition och arv. Mycket givande kurs.</p>
-        <p>Inga fel noteras med PHPStan, PHPMD eller PHP CS Fixer.</p>
+        <p>Alla obligatoriska och valfia moment är implementerade per specifikation. Inga fel noteras med PHPStan, PHPMD eller PHP CS Fixer.</p>
         <figure>
             <img src=\"";
         // line 31
@@ -227,7 +227,7 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <p>MVC som designmönster är väl i sin ordning, men ramverken är ofta alldeles för rigida. Symfony tycks dock lira bra med PHPStan, vilket är en fördel, inte minst i att hantera sessionsvariabler. Med ramverk är det så att man blir ordentligt fastlåst i en viss ordning, en löpande bandsprincip som passar industrin väl men samtidigt missgynnar mer kreativa angreppsmetoder.</p>
         <p>En intressant egenskap med Symfony är stödet för generella getters/setters via magiska metoder <code>__get()</code><code>__isset()</code> och <code>__set()</code>, vilket reducerar kodmassan en del, inte minst antalet publika metoder. Twig kan då hämta privata egenskaper via dessa metoder, utan att man behöver synliggöra dem.</p>
         <p>TIL är nog att nyttja inkapsling bättre i klasserna, inte minst för att så mycket skräp annars skickas runt i komposition och arv. Mycket givande kurs.</p>
-        <p>Inga fel noteras med PHPStan, PHPMD eller PHP CS Fixer.</p>
+        <p>Alla obligatoriska och valfia moment är implementerade per specifikation. Inga fel noteras med PHPStan, PHPMD eller PHP CS Fixer.</p>
         <figure>
             <img src=\"{{ asset('build/images/chihiro-kmom03.avif') }}\" width=\"1536\" alt=\"Chihiro\">
         </figure>

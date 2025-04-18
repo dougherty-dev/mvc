@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Game21;
 
-use App\Game21;
 use App\Cards\Deck;
 use App\Cards\Hand;
 
