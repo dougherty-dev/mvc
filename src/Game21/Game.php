@@ -5,12 +5,14 @@ declare(strict_types=1);
 namespace App\Game21;
 
 use App\Cards\Deck;
+use RangeException;
 
 define('CARDSUIT', 13);
 define('TWENTY_ONE', 21);
 define('WILD_MIN', 1);
 define('WILD_MAX', 14);
 define('BANK_MAX', 17);
+define('BANK_MAX_PERCENTAGE_INTELLIGENCE', 60);
 define('DECK_MAX', 51);
 define('BALANCE_DEFAULT', 100);
 
@@ -38,6 +40,14 @@ class Game
         /** @var int[] */
         private array $cardStats = [0, 0]
     ) {
+        if (
+            $this->cardStats[0] < 0 ||
+            $this->cardStats[0] > 100 ||
+            $this->cardStats[1] < 0 ||
+            $this->cardStats[1] > 100
+        ) {
+            throw new RangeException('Sannolikheter utanför tillåtna gränser');
+        }
         $this->init();
     }
 

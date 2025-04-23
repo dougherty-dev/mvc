@@ -9,9 +9,14 @@ class Deck
     /** @var array<int, CardGraphic> $deck */
     private array $deck = [];
 
-    public function resetDeck(): void
+    public function emptyDeck(): void
     {
         $this->deck = [];
+    }
+
+    public function resetDeck(): void
+    {
+        $this->emptyDeck();
         foreach (array_keys(CardGraphic::DECK_ARRAY) as $k) {
             $this->deck[] = new CardGraphic($k);
         }
@@ -20,7 +25,7 @@ class Deck
     /** @param int[] $values */
     public function addToDeck(array $values): void
     {
-        $this->deck = [];
+        $this->emptyDeck();
         foreach ($values as $k) {
             $this->deck[] = new CardGraphic($k);
         }

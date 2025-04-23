@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Game21;
 
+use RangeException;
 use App\Cards\Deck;
 use App\Cards\Hand;
 
@@ -59,19 +60,22 @@ class GameActions extends Game
             return;
         }
 
-        if ($this->__get('bankIntelligence') != '') {
+        if ($this->__get('bankIntelligence') !== '') {
             $percentage = 70;
             if (is_array($this->__get('cardStats'))) {
                 $percentage = $this->__get('cardStats')[1];
             }
 
-            if (count($this->players[$id]->hand->handValues()) === 1 || $percentage < 60) {
+            if (
+                count($this->players[$id]->hand->handValues()) === 1
+                || $percentage < BANK_MAX_PERCENTAGE_INTELLIGENCE
+            ) {
                 $this->playerDraws($id);
                 return;
             }
         }
 
-        if ($this->__get('bankIntelligence') == '') {
+        if ($this->__get('bankIntelligence') === '') {
             if ($this->players[$id]->__get('score') < BANK_MAX) {
                 $this->playerDraws($id);
                 return;
@@ -83,7 +87,15 @@ class GameActions extends Game
 
     public function playerBets(int $bet): void
     {
+        if ($bet < 0) {
+            throw new RangeException('Insats negativ.');
+        }
+
         foreach ($this->players as $player) {
+            if ($bet > $player->__get('balance')) {
+                throw new RangeException('Insats större än saldo.');
+            }
+
             $player->__set('bet', $bet);
             $player->__set('balance', $player->__get('balance') - $bet);
         }

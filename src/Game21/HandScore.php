@@ -21,7 +21,7 @@ class HandScore
     }
 
     /** @return int[] */
-    public function calculate(Hand $hand): array
+    private function calculate(Hand $hand): array
     {
         $score = 0;
         $jokers = 0;
@@ -80,7 +80,8 @@ class HandScore
         }
         $finalScores = [];
         $jokerRange = min(TWENTY_ONE, $jokers * WILD_MAX);
-        for ($i = 1; $i <= $jokerRange; $i++) {
+
+        for ($i = $jokers; $i <= $jokerRange; $i++) {
             foreach ($scores as $scr) {
                 $finalScores[] = $scr + $i;
             }
