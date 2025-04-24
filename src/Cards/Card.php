@@ -1,11 +1,20 @@
 <?php
 
+/**
+ * Basic card class.
+ * Author: nido24
+ */
+
 declare(strict_types=1);
 
 namespace App\Cards;
 
 use RangeException;
 
+/**
+ * Instantiate class within tolerable card values.
+ * Define a getter for the private value.
+*/
 class Card
 {
     private const MIN = 0;

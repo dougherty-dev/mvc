@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Game actions extension class.
+ * Author: nido24
+ */
+
 declare(strict_types=1);
 
 namespace App\Game21;
@@ -8,8 +13,10 @@ use RangeException;
 use App\Cards\Deck;
 use App\Cards\Hand;
 
+/** Action methods for the game. */
 class GameActions extends Game
 {
+    /** Build a new shuffled deck of cards, excluding cards in player hands. */
     private function reassembleDeck(): void
     {
         $deck = new Deck();
@@ -26,6 +33,7 @@ class GameActions extends Game
         $this->deck->shuffleDeck();
     }
 
+    /** Define events when a player draws a card. */
     public function playerDraws(int $id): void
     {
         $this->deck->remainingCards() or $this->reassembleDeck();
@@ -53,6 +61,7 @@ class GameActions extends Game
         $this->cardStats($id);
     }
 
+    /** Define events when bank player draws a card. */
     private function bankMoves(int $id): void
     {
         if ($this->players[$id]->__get('score') > TWENTY_ONE) {
@@ -85,6 +94,7 @@ class GameActions extends Game
         $this->determineWinner();
     }
 
+    /** Define events when a player makes a bet. */
     public function playerBets(int $bet): void
     {
         if ($bet < 0) {
@@ -102,6 +112,7 @@ class GameActions extends Game
         $this->__set('state', self::STATES['player_draws']);
     }
 
+    /** Define events when a player is over 21. */
     public function playerBusted(int $id): void
     {
         $nextID = ($id + 1) % 2;
@@ -113,6 +124,7 @@ class GameActions extends Game
         };
     }
 
+    /** Continue game after button confirmation. */
     public function continueGame(): void
     {
         foreach ($this->players as $player) {
@@ -131,6 +143,7 @@ class GameActions extends Game
         }
     }
 
+    /** Decide who wins based on score, and settle balances. */
     private function determineWinner(): void
     {
         if ($this->players[0]->__get('score') > $this->players[1]->__get('score')) {
@@ -144,6 +157,7 @@ class GameActions extends Game
         }
     }
 
+    /** Calculate probabilities for getting under/over 21 based on remaining cards in deck */
     private function cardStats(int $id): void
     {
         $handValue = $this->players[$id]->handScore->lowestScore($this->players[$id]->hand);

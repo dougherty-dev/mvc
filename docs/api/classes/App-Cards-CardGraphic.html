@@ -129,11 +129,12 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGraphic.php"><a href="files/src-cards-cardgraphic.html"><abbr title="src/Cards/CardGraphic.php">CardGraphic.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">7</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 
     </aside>
 
-        
+            <p class="phpdocumentor-summary">Extend basic Card class with methods for string representations and constants.</p>
+
 
 
 
@@ -170,6 +171,18 @@
     <a class="" href="classes/App-Cards-CardGraphic.html#constant_FACES">FACES</a>
     <span>
         &nbsp;= [&#039;ess&#039;, &#039;två&#039;, &#039;tre&#039;, &#039;fyra&#039;, &#039;fem&#039;, &#039;sex&#039;, &#039;sju&#039;, &#039;åtta&#039;, &#039;nio&#039;, &#039;tio&#039;, &#039;knekt&#039;, &#039;dam&#039;, &#039;kung&#039;]                            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
+    <a class="" href="classes/App-Cards-Card.html#constant_MAX">MAX</a>
+    <span>
+        &nbsp;= 53                            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
+    <a class="" href="classes/App-Cards-Card.html#constant_MIN">MIN</a>
+    <span>
+        &nbsp;= 0                            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -private">
@@ -212,12 +225,14 @@
     <span>
                                 &nbsp;: string    </span>
 </dt>
+<dd>Returns a Unicode symbolic representation of a card face.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Cards-CardGraphic.html#method_getTextValue">getTextValue()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
+<dd>Returns a textual and symbolic representation of a card face.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Cards-Card.html#method_getValue">getValue()</a>
@@ -246,7 +261,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGraphic.php"><a href="files/src-cards-cardgraphic.html"><abbr title="src/Cards/CardGraphic.php">CardGraphic.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
@@ -277,7 +292,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGraphic.php"><a href="files/src-cards-cardgraphic.html"><abbr title="src/Cards/CardGraphic.php">CardGraphic.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 
     </aside>
 
@@ -299,6 +314,68 @@
 
 </article>
                     <article class="phpdocumentor-element -constant -private ">
+    <h4 class="phpdocumentor-element__name" id="constant_MAX">
+        MAX
+        <a href="classes/App-Cards-Card.html#constant_MAX" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Card.php"><a href="files/src-cards-card.html"><abbr title="src/Cards/Card.php">Card.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">21</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">MAX</span>
+    = <span class="phpdocumentor-signature__default-value">53</span>
+</code>
+
+
+    
+    
+    
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -private ">
+    <h4 class="phpdocumentor-element__name" id="constant_MIN">
+        MIN
+        <a href="classes/App-Cards-Card.html#constant_MIN" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Card.php"><a href="files/src-cards-card.html"><abbr title="src/Cards/Card.php">Card.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">20</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">MIN</span>
+    = <span class="phpdocumentor-signature__default-value">0</span>
+</code>
+
+
+    
+    
+    
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -private ">
     <h4 class="phpdocumentor-element__name" id="constant_SUIT">
         SUIT
         <a href="classes/App-Cards-CardGraphic.html#constant_SUIT" class="headerlink"><i class="fas fa-link"></i></a>
@@ -308,7 +385,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGraphic.php"><a href="files/src-cards-cardgraphic.html"><abbr title="src/Cards/CardGraphic.php">CardGraphic.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
@@ -355,7 +432,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Card.php"><a href="files/src-cards-card.html"><abbr title="src/Cards/Card.php">Card.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -396,7 +473,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Card.php"><a href="files/src-cards-card.html"><abbr title="src/Cards/Card.php">Card.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -440,11 +517,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGraphic.php"><a href="files/src-cards-cardgraphic.html"><abbr title="src/Cards/CardGraphic.php">CardGraphic.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns a Unicode symbolic representation of a card face.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getStringValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
@@ -478,11 +556,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGraphic.php"><a href="files/src-cards-cardgraphic.html"><abbr title="src/Cards/CardGraphic.php">CardGraphic.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns a textual and symbolic representation of a card face.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getTextValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
@@ -516,7 +595,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Card.php"><a href="files/src-cards-card.html"><abbr title="src/Cards/Card.php">Card.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
@@ -655,6 +734,8 @@
                     <ul class="phpdocumentor-list -clean">
                                                     <li class=""><a href="classes/App-Cards-CardGraphic.html#constant_DECK_ARRAY">DECK_ARRAY</a></li>
                                                     <li class=""><a href="classes/App-Cards-CardGraphic.html#constant_FACES">FACES</a></li>
+                                                    <li class=""><a href="classes/App-Cards-Card.html#constant_MAX">MAX</a></li>
+                                                    <li class=""><a href="classes/App-Cards-Card.html#constant_MIN">MIN</a></li>
                                                     <li class=""><a href="classes/App-Cards-CardGraphic.html#constant_SUIT">SUIT</a></li>
                                             </ul>
                 </li>

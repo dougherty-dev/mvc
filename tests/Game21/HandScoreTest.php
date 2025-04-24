@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Hand score test class.
+ * Author: nido24
+ */
+
 declare(strict_types=1);
 
 namespace App\Game21;

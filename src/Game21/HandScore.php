@@ -1,26 +1,38 @@
 <?php
 
+/**
+ * HandScore class.
+ * Author: nido24
+ */
+
 declare(strict_types=1);
 
 namespace App\Game21;
 
 use App\Cards\Hand;
 
+/** Calculate best and lowest hand scores based on given cards. */
 class HandScore
 {
+    /** Find highest score ≤ 21. */
     public function bestScore(Hand $hand): int
     {
         $scores = $this->calculate($hand);
         return $this->findBestScore($scores);
     }
 
+    /** Find lowest score possible, for calculating probabilities. */
     public function lowestScore(Hand $hand): int
     {
         $scores = $this->calculate($hand);
         return $this->findLowestScore($scores);
     }
 
-    /** @return int[] */
+    /**
+     * The actual calculation of the hand value.
+     *
+     * @return int[]
+     */
     private function calculate(Hand $hand): array
     {
         $score = 0;
@@ -44,7 +56,11 @@ class HandScore
         return $this->getJokerSums($jokers, $scores);
     }
 
-    /** @return int[] */
+    /**
+     * Calculate all possible values of combinations of aces.
+     *
+     * @return int[]
+     */
     private function getAceSums(int $aces): array
     {
         /*
@@ -69,9 +85,11 @@ class HandScore
     }
 
     /**
+     * Calculate all possible values of combinations of jokers.
+     *
      * @param int[] $scores
      * @return int[]
-     * */
+     */
     private function getJokerSums(int $jokers, array $scores): array
     {
         // Add possible joker values to all scores, get rid of duplicates.
@@ -93,7 +111,11 @@ class HandScore
         return $finalScores;
     }
 
-    /** @param int[] $finalScores */
+    /**
+     * Calculation of score ≤ 21.
+     *
+     * @param int[] $finalScores
+     */
     private function findBestScore(array $finalScores): int
     {
         $playerScore = ($finalScores) ? min($finalScores) : 0;
@@ -111,7 +133,11 @@ class HandScore
         return $playerScore;
     }
 
-    /** @param int[] $finalScores */
+    /**
+     * Calculation of lowest score.
+     *
+     * @param int[] $finalScores
+     */
     private function findLowestScore(array $finalScores): int
     {
         $playerScore = ($finalScores) ? min($finalScores) : 0;

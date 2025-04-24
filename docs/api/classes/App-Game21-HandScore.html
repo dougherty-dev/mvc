@@ -126,11 +126,12 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/HandScore.php"><a href="files/src-game21-handscore.html"><abbr title="src/Game21/HandScore.php">HandScore.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
-        
+            <p class="phpdocumentor-summary">Calculate best and lowest hand scores based on given cards.</p>
+
 
 
 
@@ -165,42 +166,49 @@
     <span>
                                 &nbsp;: int    </span>
 </dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Game21-HandScore.html#method_calculate">calculate()</a>
-    <span>
-                                &nbsp;: array&lt;string|int, int&gt;    </span>
-</dt>
+<dd>Find highest score ≤ 21.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Game21-HandScore.html#method_lowestScore">lowestScore()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
+<dd>Find lowest score possible, for calculating probabilities.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/App-Game21-HandScore.html#method_calculate">calculate()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, int&gt;    </span>
+</dt>
+<dd>The actual calculation of the hand value.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a class="" href="classes/App-Game21-HandScore.html#method_findBestScore">findBestScore()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
+<dd>Calculation of score ≤ 21.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a class="" href="classes/App-Game21-HandScore.html#method_findLowestScore">findLowestScore()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
+<dd>Calculation of lowest score.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a class="" href="classes/App-Game21-HandScore.html#method_getAceSums">getAceSums()</a>
     <span>
                                 &nbsp;: array&lt;string|int, int&gt;    </span>
 </dt>
+<dd>Calculate all possible values of combinations of aces.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a class="" href="classes/App-Game21-HandScore.html#method_getJokerSums">getJokerSums()</a>
     <span>
                                 &nbsp;: array&lt;string|int, int&gt;    </span>
 </dt>
+<dd>Calculate all possible values of combinations of jokers.</dd>
 
     </dl>
 
@@ -230,11 +238,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/HandScore.php"><a href="files/src-game21-handscore.html"><abbr title="src/Game21/HandScore.php">HandScore.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Find highest score ≤ 21.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">bestScore</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Cards-Hand.html"><abbr title="\App\Cards\Hand">Hand</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
@@ -270,54 +279,6 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_calculate">
-        calculate()
-        <a href="classes/App-Game21-HandScore.html#method_calculate" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/HandScore.php"><a href="files/src-game21-handscore.html"><abbr title="src/Game21/HandScore.php">HandScore.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">24</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">calculate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Cards-Hand.html"><abbr title="\App\Cards\Hand">Hand</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$hand</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Cards-Hand.html"><abbr title="\App\Cards\Hand">Hand</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_lowestScore">
         lowestScore()
         <a href="classes/App-Game21-HandScore.html#method_lowestScore" class="headerlink"><i class="fas fa-link"></i></a>
@@ -326,11 +287,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/HandScore.php"><a href="files/src-game21-handscore.html"><abbr title="src/Game21/HandScore.php">HandScore.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Find lowest score possible, for calculating probabilities.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">lowestScore</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Cards-Hand.html"><abbr title="\App\Cards\Hand">Hand</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
@@ -366,6 +328,55 @@
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_calculate">
+        calculate()
+        <a href="classes/App-Game21-HandScore.html#method_calculate" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/HandScore.php"><a href="files/src-game21-handscore.html"><abbr title="src/Game21/HandScore.php">HandScore.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">36</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The actual calculation of the hand value.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">calculate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Cards-Hand.html"><abbr title="\App\Cards\Hand">Hand</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$hand</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Cards-Hand.html"><abbr title="\App\Cards\Hand">Hand</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_findBestScore">
         findBestScore()
         <a href="classes/App-Game21-HandScore.html#method_findBestScore" class="headerlink"><i class="fas fa-link"></i></a>
@@ -374,11 +385,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/HandScore.php"><a href="files/src-game21-handscore.html"><abbr title="src/Game21/HandScore.php">HandScore.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">96</span>
+    <span class="phpdocumentor-element-found-in__line">119</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Calculation of score ≤ 21.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">findBestScore</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, int&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$finalScores</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
@@ -422,11 +434,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/HandScore.php"><a href="files/src-game21-handscore.html"><abbr title="src/Game21/HandScore.php">HandScore.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">114</span>
+    <span class="phpdocumentor-element-found-in__line">141</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Calculation of lowest score.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">findLowestScore</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, int&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$finalScores</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
@@ -470,11 +483,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/HandScore.php"><a href="files/src-game21-handscore.html"><abbr title="src/Game21/HandScore.php">HandScore.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Calculate all possible values of combinations of aces.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">getAceSums</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$aces</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span></code>
@@ -518,11 +532,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/HandScore.php"><a href="files/src-game21-handscore.html"><abbr title="src/Game21/HandScore.php">HandScore.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Calculate all possible values of combinations of jokers.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">getJokerSums</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$jokers</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, int&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$scores</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span></code>
@@ -673,8 +688,8 @@
             <li>
                 <ul class="phpdocumentor-list -clean">
                                             <li class=""><a href="classes/App-Game21-HandScore.html#method_bestScore">bestScore()</a></li>
-                                            <li class=""><a href="classes/App-Game21-HandScore.html#method_calculate">calculate()</a></li>
                                             <li class=""><a href="classes/App-Game21-HandScore.html#method_lowestScore">lowestScore()</a></li>
+                                            <li class=""><a href="classes/App-Game21-HandScore.html#method_calculate">calculate()</a></li>
                                             <li class=""><a href="classes/App-Game21-HandScore.html#method_findBestScore">findBestScore()</a></li>
                                             <li class=""><a href="classes/App-Game21-HandScore.html#method_findLowestScore">findLowestScore()</a></li>
                                             <li class=""><a href="classes/App-Game21-HandScore.html#method_getAceSums">getAceSums()</a></li>

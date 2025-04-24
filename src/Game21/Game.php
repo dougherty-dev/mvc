@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Game class.
+ * Author: nido24
+ */
+
 declare(strict_types=1);
 
 namespace App\Game21;
@@ -16,6 +21,7 @@ define('BANK_MAX_PERCENTAGE_INTELLIGENCE', 60);
 define('DECK_MAX', 51);
 define('BALANCE_DEFAULT', 100);
 
+/** Define methods for the Game class. */
 class Game
 {
     public const STATES = [
@@ -51,6 +57,7 @@ class Game
         $this->init();
     }
 
+    /** Initiate players and states in game. */
     public function init(): void
     {
         $this->__set('state', self::STATES['player_initiates']);
@@ -60,16 +67,19 @@ class Game
         $this->deck->resetDeck();
     }
 
+    /** Magic get. */
     public function __get(string $key): mixed
     {
         return $this->$key;
     }
 
+    /** Magic isset. */
     public function __isset(string $key): bool
     {
         return isset($this->$key);
     }
 
+    /** Magic set. */
     public function __set(string $key, mixed $value)
     {
         $this->$key = $value;

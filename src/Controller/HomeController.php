@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Home controller class.
+ * Author: nido24
+ */
+
 declare(strict_types=1);
 
 namespace App\Controller;

@@ -16,7 +16,7 @@ if (!\class_exists(App_KernelTestDebugContainer::class, false)) {
 
 return new \ContainerBr2Gohz\App_KernelTestDebugContainer([
     'container.build_hash' => 'Br2Gohz',
-    'container.build_id' => '7aee7c4b',
-    'container.build_time' => 1745446628,
+    'container.build_id' => 'c216ea78',
+    'container.build_time' => 1745479557,
     'container.runtime_mode' => \in_array(\PHP_SAPI, ['cli', 'phpdbg', 'embed'], true) ? 'web=0' : 'web=1',
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerBr2Gohz');
