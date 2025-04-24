@@ -3,7 +3,7 @@
         'name' => 'nido24/noname',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '114a31ed2a8a03e608fe787897e2595892293377',
+        'reference' => '7cbc77ca9c68df1b9c2180d835498a0f759b8980',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -184,7 +184,7 @@
         'nido24/noname' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '114a31ed2a8a03e608fe787897e2595892293377',
+            'reference' => '7cbc77ca9c68df1b9c2180d835498a0f759b8980',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

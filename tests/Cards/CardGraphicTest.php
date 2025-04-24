@@ -16,19 +16,17 @@ class CardGraphicTest extends TestCase
         $card = new CardGraphic(5);
         $this->assertInstanceOf("\App\Cards\Cardgraphic", $card);
 
-        $res = $card->getValue();
-        $exp = 5;
-        $this->assertEquals($exp, $res);
+        $this->assertEquals($card->getValue(), 5);
     }
 
     /** Verify that method returns correct string values for card. */
     public function testStringValues(): void
     {
-        $exp = CardGraphic::DECK_ARRAY;
-        foreach (array_keys($exp) as $key) {
+        $deck = CardGraphic::DECK_ARRAY;
+        foreach (array_keys($deck) as $key) {
             $card = new CardGraphic($key);
             $res = $card->getStringValue();
-            $this->assertEquals($exp[$key], $res);
+            $this->assertEquals($deck[$key], $res);
         }
     }
 

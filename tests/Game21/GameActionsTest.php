@@ -121,7 +121,6 @@ class GameActionsTest extends TestCase
         $banker->hand->addCard(new CardGraphic(5));
         $gameActions->deck->emptyDeck();
         $gameActions->deck->addToDeck([0, 10, 11, 12]); // 0 % after ace is drawn, bank stays
-        print_r($gameActions->deck->deckValues());
         $gameActions->playerDraws(1); // Ace
         $this->assertEquals($gameActions::STATES['player_wins'], $gameActions->__get('state'));
         $gameActions->continueGame();

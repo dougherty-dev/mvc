@@ -7,7 +7,7 @@ namespace App\Game21;
 use PHPUnit\Framework\TestCase;
 use RangeException;
 
-/** Test cases for class Card. */
+/** Test cases for class Game. */
 class GameTest extends TestCase
 {
     /** Construct object with argument and verify that the object has the expected properties. */

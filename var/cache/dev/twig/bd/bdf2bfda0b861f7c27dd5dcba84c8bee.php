@@ -102,12 +102,28 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <option value=\"#kmom01\">km01</option>
         <option value=\"#kmom02\">km02</option>
         <option value=\"#kmom03\">km03</option>
-        <!-- option value=\"#kmom04\">km04</option>
-        <option value=\"#kmom05\">km05</option>
+        <option value=\"#kmom04\">km04</option>
+        <!-- option value=\"#kmom05\">km05</option>
         <option value=\"#kmom06\">km06</option>
         <option value=\"#kmom10\">km10</option -->
     </select>
     <h1>Rapport</h1>
+    <section class=\"two-columns\" id=\"kmom04\">
+        <h2>Kmom04</h2>
+        <p class=\"initcap\">Enhetstestning med PHPUnit och XDebug introduceras, tillsammans med automatisk dokumentation via PHPDoc. Här noteras att verktygen i fråga ligger en generation efter aktuell PHP-version (8.6.4), vilket fordrar en del åtgärder för att slippa onödig felrapportering.</p>
+        <p>Själva förfarandet att skriva enhetstester följer samma mall som i Python och andra språk, och bereder inga större svårigheter i grunden. Däremot kan det vara en del arbete att samtidigt få testkoden att samspela med PHPStan och andra linters, samt förstås att formulera tester för en mängd klasser och metoder.</p>
+        <p>Hundra procent täckning uppnås förvisso i testerna, men till priset av att någon enstaka funktion fick modifieras och någon läggas till. Specifikt befanns vara nödvändigt att ordna en metod <code>emptyDeck()</code> i klassen <code>Deck</code> för att kunna lägga till enstaka kort i en tom kortlek. Detta för att kunna simulera situationer med given utgång, exempelvis att bank eller spelare vinner eller förlorar med säkerhet.</p>
+        <p>Svårast att testa var inte oväntat mer komplex kod, särskilt kedjad sådan utan returnerade resultat. I metoden för poängberäkning upptäcktes faktiskt en bugg tack vare testningen, vilket visar att den har potential att förbättra kod. Givet att man har testning i bakhuvudet redan i ett tidigt skede kan det hända att man vinnlägger sig om att skriva renare och mindre komplex kod, en erfarenhet man gott kan ta med sig från momentet (TIL).</p>
+        <p>Däremot är det osäkert om enhetstestning ger «snyggare» kod. Upplevelsen här är att PHPStan är det primära verktyget för att ordna både logiskt felfri och snygg kod, men det kan hända att testbarheten bidrar en smula.</p>
+        <p>Enhetstestning är inte heller ett universalverktyg. Med en hammare ska man inte dra i skruv, och på samma sätt är det föga givande att enhetstesta sådant som controllers i ramverket. Funktionella tester är i regel bättre för sådana klasser, varvid vi <a href=\"https://symfony.com/doc/current/testing.html#application-tests\">nyttjar</a> Symfonys utvidgning <code>WebTestCase</code> för att testa router och i förekommande fall vissa egenskaper som sessionsvariabler.</p>
+        <p>Summa summarum nås därmed hundra procent täckning även för controllerklasserna, om än av begränsat värde. Tillsammans med felfri lint via PHPStan och PHPMD föreligger därför förhoppningsvis en någorlunda god kodbas.</p>
+        <figure>
+            <img src=\"";
+        // line 27
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom04.avif"), "html", null, true);
+        yield "\" width=\"1536\" alt=\"Chihiro enhetstestar\">
+        </figure>
+    </section>
     <section class=\"two-columns\" id=\"kmom03\">
         <h2>Kmom03</h2>
         <p class=\"initcap\">Introduktion av PHPStan och PHP Mess Detector gör att kortklasserna i tidigare kursmoment behöver refaktoreras, samtidigt som de vässas med större mått av inkapsling. Detta är hemmaplan, och nu börjar det likna riktig programmering med erforderlig stringens.</p>
@@ -123,7 +139,7 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <p>Alla obligatoriska och valfia moment är implementerade per specifikation. Inga fel noteras med PHPStan, PHPMD eller PHP CS Fixer.</p>
         <figure>
             <img src=\"";
-        // line 31
+        // line 44
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom03.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
         </figure>
@@ -141,7 +157,7 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <p>TIL för kursmomentet får sägas vara sessioner i Symfony och Twig, ett smidigt sätt att hantera objekt till skillnad från PHP:s krångliga motsvarigheter.</p>
         <figure>
             <img src=\"";
-        // line 46
+        // line 59
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom02.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
         </figure>
@@ -157,7 +173,7 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <p>TIL får nog sägas vara att nyttja ramverket Symfony, en erfarenhet som kanske är nyttig men som jag aldrig skulle fundera på att använda för egen del. Det är själva definitionen av bloat.</p>
         <figure>
             <img src=\"";
-        // line 59
+        // line 72
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom01.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
             <figcaption>@mos inskärper allvaret i studierna.</figcaption>
@@ -194,7 +210,7 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  161 => 59,  145 => 46,  127 => 31,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  177 => 72,  161 => 59,  143 => 44,  123 => 27,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -209,12 +225,25 @@ class __TwigTemplate_0fe6ad600a3d9b9a608ebf307654a14b extends Template
         <option value=\"#kmom01\">km01</option>
         <option value=\"#kmom02\">km02</option>
         <option value=\"#kmom03\">km03</option>
-        <!-- option value=\"#kmom04\">km04</option>
-        <option value=\"#kmom05\">km05</option>
+        <option value=\"#kmom04\">km04</option>
+        <!-- option value=\"#kmom05\">km05</option>
         <option value=\"#kmom06\">km06</option>
         <option value=\"#kmom10\">km10</option -->
     </select>
     <h1>Rapport</h1>
+    <section class=\"two-columns\" id=\"kmom04\">
+        <h2>Kmom04</h2>
+        <p class=\"initcap\">Enhetstestning med PHPUnit och XDebug introduceras, tillsammans med automatisk dokumentation via PHPDoc. Här noteras att verktygen i fråga ligger en generation efter aktuell PHP-version (8.6.4), vilket fordrar en del åtgärder för att slippa onödig felrapportering.</p>
+        <p>Själva förfarandet att skriva enhetstester följer samma mall som i Python och andra språk, och bereder inga större svårigheter i grunden. Däremot kan det vara en del arbete att samtidigt få testkoden att samspela med PHPStan och andra linters, samt förstås att formulera tester för en mängd klasser och metoder.</p>
+        <p>Hundra procent täckning uppnås förvisso i testerna, men till priset av att någon enstaka funktion fick modifieras och någon läggas till. Specifikt befanns vara nödvändigt att ordna en metod <code>emptyDeck()</code> i klassen <code>Deck</code> för att kunna lägga till enstaka kort i en tom kortlek. Detta för att kunna simulera situationer med given utgång, exempelvis att bank eller spelare vinner eller förlorar med säkerhet.</p>
+        <p>Svårast att testa var inte oväntat mer komplex kod, särskilt kedjad sådan utan returnerade resultat. I metoden för poängberäkning upptäcktes faktiskt en bugg tack vare testningen, vilket visar att den har potential att förbättra kod. Givet att man har testning i bakhuvudet redan i ett tidigt skede kan det hända att man vinnlägger sig om att skriva renare och mindre komplex kod, en erfarenhet man gott kan ta med sig från momentet (TIL).</p>
+        <p>Däremot är det osäkert om enhetstestning ger «snyggare» kod. Upplevelsen här är att PHPStan är det primära verktyget för att ordna både logiskt felfri och snygg kod, men det kan hända att testbarheten bidrar en smula.</p>
+        <p>Enhetstestning är inte heller ett universalverktyg. Med en hammare ska man inte dra i skruv, och på samma sätt är det föga givande att enhetstesta sådant som controllers i ramverket. Funktionella tester är i regel bättre för sådana klasser, varvid vi <a href=\"https://symfony.com/doc/current/testing.html#application-tests\">nyttjar</a> Symfonys utvidgning <code>WebTestCase</code> för att testa router och i förekommande fall vissa egenskaper som sessionsvariabler.</p>
+        <p>Summa summarum nås därmed hundra procent täckning även för controllerklasserna, om än av begränsat värde. Tillsammans med felfri lint via PHPStan och PHPMD föreligger därför förhoppningsvis en någorlunda god kodbas.</p>
+        <figure>
+            <img src=\"{{ asset('build/images/chihiro-kmom04.avif') }}\" width=\"1536\" alt=\"Chihiro enhetstestar\">
+        </figure>
+    </section>
     <section class=\"two-columns\" id=\"kmom03\">
         <h2>Kmom03</h2>
         <p class=\"initcap\">Introduktion av PHPStan och PHP Mess Detector gör att kortklasserna i tidigare kursmoment behöver refaktoreras, samtidigt som de vässas med större mått av inkapsling. Detta är hemmaplan, och nu börjar det likna riktig programmering med erforderlig stringens.</p>
