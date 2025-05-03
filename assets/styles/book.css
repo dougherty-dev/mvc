@@ -1,0 +1,18 @@
+.booktable {
+  min-width: 60%;
+}
+
+.booktable_row > th,
+.booktable_row > td {
+  border: thin solid var(--table);
+  padding: 0 0.5rem;
+}
+
+.adjacent {
+  font-size: 2rem;
+  color: var(--orange);
+}
+
+.adjacent a {
+  text-decoration: none;
+}

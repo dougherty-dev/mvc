@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Redigera bok{% endblock %}
+
+{% block body %}
+{% include 'book/library_template.html.twig' %}
+    <section class="center">
+        <h2>Redigera <em>{{ book.getTitle }}</em></h2>
+        <form method="post" action="{{ path('library_update') }}">
+            <table class="left booktable">
+                <tr class="booktable_row">
+                    <th>ID</th>
+                    <td>{{ book.getId }} <input type="hidden" name="id" value="{{ book.getId }}"></td>
+                    {% if book.getImage %}
+                    <td rowspan="5" class="center"><img src="{{ asset('build/images/books/'~book.getImage~'.avif') }}" width="300" alt="{{ book.getTitle }}"></td>
+                    {% else %}
+                    <td rowspan="5" class="center"><img src="{{ asset('build/images/books/placeholder.avif') }}" width="300" alt="{{ book.getTitle }}"></td>
+                    {% endif %}
+                </tr>
+                <tr class="booktable_row">
+                    <th>Titel</th>
+                    <td><input type="text" size="50" name="title" value="{{ book.getTitle }}" required></td>
+                </tr>
+                <tr class="booktable_row">
+                    <th>Författare</th>
+                    <td><input type="text" size="50" name="author" value="{{ book.getAuthor }}" required></td>
+                </tr>
+                <tr class="booktable_row">
+                    <th>ISBN-13</th>
+                    <td><input type="text" size="50" name="isbn" value="{{ book.getIsbn }}" minlength="13" maxlength="13" required></td>
+                </tr>
+                <tr class="booktable_row">
+                    <th>⚠️</th>
+                    <td><input type="checkbox" name="delete"> Radera bok</td>
+                </tr>
+            </table>
+            <button type="submit">Uppdatera</button>
+        </form>
+    </section>
+{% endblock %}

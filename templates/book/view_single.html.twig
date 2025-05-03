@@ -5,9 +5,21 @@
 {% block body %}
 {% include 'book/library_template.html.twig' %}
     <section class="center">
-        <h2>{{ book.getTitle }} / {{ book.getAuthor }}</h2>
-        <table class="left">
-            <tr class="booktable">
+        <h2><em>{{ book.getTitle }}</em></h2>
+        <table class="left booktable">
+            <tr>
+                {% if prev %}
+                <th colspan="2" class="adjacent"><a href="{{ path('library_view_id', {'id': prev}) }}">🡄</a></th>
+                {% else %}
+                <th colspan="2"></th>
+                {% endif %}
+                {% if next %}
+                <th class="right adjacent"><a href="{{ path('library_view_id', {'id': next}) }}">🡆</a></th>
+                {% else %}
+                <th></th>
+                {% endif %}
+            </tr>
+            <tr class="booktable_row">
                 <th>ID</th>
                 <td>{{ book.getId }}</td>
                 {% if book.getImage %}
@@ -16,17 +28,22 @@
                 <td rowspan="4" class="center"><img src="{{ asset('build/images/books/placeholder.avif') }}" width="300" alt="{{ book.getTitle }}"></td>
                 {% endif %}
             </tr>
-            <tr class="booktable">
+            <tr class="booktable_row">
                 <th>Titel</th>
                 <td>{{ book.getTitle }}</td>
             </tr>
-            <tr class="booktable">
+            <tr class="booktable_row">
                 <th>Författare</th>
                 <td>{{ book.getAuthor }}</td>
             </tr>
-            <tr class="booktable">
+            <tr class="booktable_row">
                 <th>ISBN-13</th>
                 <td>{{ book.getIsbn }}</td>
+            </tr>
+            <tr>
+                <th colspan="3" class="center">
+                    <button type="button"><a href="{{ path('library_edit_id', {'id': book.getId}) }}">Redigera</a></button>
+                </th>
             </tr>
         </table>
     </section>

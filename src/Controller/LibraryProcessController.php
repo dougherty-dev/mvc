@@ -67,7 +67,34 @@ class LibraryProcessController extends AbstractController
         $entityManager->remove($book);
         $entityManager->flush();
 
-        return $this->redirectToRoute('library_show');
+        return $this->redirectToRoute('library_view');
+    }
+
+    #[Route('/library/update', name: 'library_update')]
+    public function libraryUpdate(
+        Request $request,
+        ManagerRegistry $doctrine
+    ): Response {
+        $entityManager = $doctrine->getManager();
+        $form = $request->request->all();
+
+        $book = $entityManager->getRepository(Book::class)->find($form['id']);
+        if (!$book) {
+            throw $this->createNotFoundException(
+                'Ingen bok med ID ' . $form['id']
+            );
+        }
+
+        if (isset($form['delete'])) {
+            return $this->redirectToRoute('library_delete_id', ['id' => $form['id']]);
+        }
+
+        $book->setTitle($form['title'])
+            ->setAuthor($form['author'])
+            ->setIsbn($form['isbn']);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('library_view_id', ['id' => $form['id']]);
     }
 
     #[Route('/library/update/title/{id}/{value}', name: 'library_update_title')]

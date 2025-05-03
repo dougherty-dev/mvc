@@ -1,9 +1,9 @@
 <section class="center">
-                <h1><a href="{{ path('library') }}">Bibliotek</a></h1>
 {% for message in app.flashes('notice') %}
                 <p class="flash-notice">{{ message }}</p>
 {% endfor %}
                 <ul class="inline">
+                    <li><a href="{{ path('library') }}">Bibliotek</a></li> |
                     <li><a href="{{ path('library_view') }}">Böcker</a> |</li>
                     <li><a href="{{ path('library_reset') }}">Återställ</a></li>
                     <!-- li><a href="{{ path('card_deck_shuffle') }}">Blanda lek</a> |</li>

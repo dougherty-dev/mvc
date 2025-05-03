@@ -74,11 +74,29 @@ class LibraryController extends AbstractController
     ): Response {
         $book = $bookRepository->find($id);
 
+        [$prev, $next] = $bookRepository->adjacentRecords($id);
+
+        $data = [
+            'book' => $book,
+            'prev' => $prev,
+            'next' => $next
+        ];
+
+        return $this->render('book/view_single.html.twig', $data);
+    }
+
+    #[Route('/library/edit/{id}', name: 'library_edit_id')]
+    public function libraryEditID(
+        BookRepository $bookRepository,
+        int $id
+    ): Response {
+        $book = $bookRepository->find($id);
+
         $data = [
             'book' => $book
         ];
 
-        return $this->render('book/view_single.html.twig', $data);
+        return $this->render('book/edit.html.twig', $data);
     }
 
     #[Route("/library/reset", name: "library_reset", methods: ['GET'])]

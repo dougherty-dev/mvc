@@ -6,8 +6,8 @@
 {% include 'book/library_template.html.twig' %}
     <section class="center">
         <h2>Böcker</h2>
-        <table class="left">
-            <tr class="booktable">
+        <table class="left booktable">
+            <tr class="booktable_row">
                 <th>ID</th>
                 <th>Titel</th>
                 <th>Författare</th>
@@ -15,7 +15,7 @@
                 <th>Omslag</th>
             </tr>
             {% for book in books %}
-            <tr class="booktable">
+            <tr class="booktable_row">
                 <td>{{ book.getId }}</td>
                 <td><a href="{{ path('library_view_id', {'id': book.getId}) }}">{{ book.getTitle }}</a></td>
                 <td>{{ book.getAuthor }}</td>

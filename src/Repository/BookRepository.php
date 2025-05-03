@@ -25,6 +25,29 @@ class BookRepository extends ServiceEntityRepository
         $connection->executeUpdate($platform->getTruncateTableSQL('book', true));
     }
 
+    /**
+     * @return int[]
+     */
+    public function adjacentRecords(int $id): array
+    {
+        $connection = $this->getEntityManager()->getConnection();
+
+        $res = [];
+        $sqlStmt = [
+            "SELECT `id` FROM `book` WHERE `id` = (SELECT MAX(`id`) FROM `book` WHERE `id` < $id)",
+            "SELECT `id` FROM `book` WHERE `id` = (SELECT MIN(`id`) FROM `book` WHERE `id` > $id)"
+        ];
+
+        foreach ($sqlStmt as $sql) {
+            $response = $connection->executeQuery($sql, ['id' => $id])
+                ->fetchAllAssociative()[0]['id'] ?? null;
+
+            $res[] = is_int($response) ? $response : 0;
+        }
+
+        return $res;
+    }
+
     //    /**
     //     * @return Book[] Returns an array of Book objects
     //     */
