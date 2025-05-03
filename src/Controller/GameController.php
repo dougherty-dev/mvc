@@ -30,20 +30,20 @@ class GameController extends AbstractController
     #[Route("/game", name: "game")]
     public function game(): Response
     {
-        return $this->render('game.html.twig');
+        return $this->render('game/game.html.twig');
     }
 
     #[Route("/game/doc", name: "game_doc")]
     public function gameDoc(): Response
     {
-        return $this->render('doc.html.twig');
+        return $this->render('game/doc.html.twig');
     }
 
     #[Route("/game/dojo", name: "game_dojo")]
     public function gameDojo(): Response
     {
         $this->checkSession();
-        return $this->render('dojo.html.twig');
+        return $this->render('game/dojo.html.twig');
     }
 
     #[Route("/game/player/draws/process", name: "game_player_draws_process", methods: ['POST'])]

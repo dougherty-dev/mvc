@@ -54,3 +54,7 @@ ul.inline li {
 input[type="number"] {
   width: 3rem;
 }
+
+.humongous {
+  font-size: 3em;
+}

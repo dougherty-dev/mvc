@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Återställ bibliotek{% endblock %}
+
+{% block body %}
+{% include 'book/library_template.html.twig' %}
+    <section class="center">
+        <h1>Återställ bibliotek</h1>
+        <p>Biblioteket återskapas i sitt ursprungliga skick.<br>
+        Alla ändringar försvinner.</p>
+        <form method="post" action="{{ path('library_reset_post') }}">
+            <button type="submit" class="humongous">⚠️ Återställ</button>
+        </form>
+    </section>
+{% endblock %}

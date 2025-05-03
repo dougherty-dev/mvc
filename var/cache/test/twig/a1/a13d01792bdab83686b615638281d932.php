@@ -85,33 +85,33 @@ class __TwigTemplate_7cc07e472a65e855ca94d153dd972cf1 extends Template
                     <li><a href=\"";
         // line 22
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("report");
-        yield "\">Rapport</a> ·</li>
+        yield "\">Rapport</a> 🔸</li>
                     <li><a href=\"";
         // line 23
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("lucky");
         yield "\">Tur</a> ·</li>
                     <li><a href=\"";
         // line 24
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("card");
-        yield "\">Kort</a> ·</li>
-                    <li><a href=\"";
-        // line 25
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("game");
-        yield "\">21</a> ·</li>
-                    <li><a href=\"";
-        // line 26
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api");
-        yield "\">API:n</a></li>
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("library");
+        yield "\">Bibliotek</a></li>
                 </ul>
                 <ul>
                     <li><a href=\"";
+        // line 27
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("card");
+        yield "\">Kort</a> ·</li>
+                    <li><a href=\"";
+        // line 28
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("game");
+        yield "\">21</a> 🔸</li>
+                    <li><a href=\"";
         // line 29
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("session");
-        yield "\">session</a> |<li>
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api");
+        yield "\">API:n</a> 🔸</li>
                     <li><a href=\"";
         // line 30
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("session_delete");
-        yield "\">förstör</a></li>
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("session");
+        yield "\">Session</a><li>
                 </ul>
             </nav>
         </header>
@@ -266,7 +266,7 @@ class __TwigTemplate_7cc07e472a65e855ca94d153dd972cf1 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  227 => 35,  213 => 13,  200 => 12,  186 => 10,  173 => 9,  150 => 7,  123 => 36,  121 => 35,  113 => 30,  109 => 29,  103 => 26,  99 => 25,  95 => 24,  91 => 23,  87 => 22,  83 => 21,  79 => 20,  72 => 15,  70 => 12,  68 => 9,  64 => 8,  60 => 7,  52 => 1,);
+        return array (  227 => 35,  213 => 13,  200 => 12,  186 => 10,  173 => 9,  150 => 7,  123 => 36,  121 => 35,  113 => 30,  109 => 29,  105 => 28,  101 => 27,  95 => 24,  91 => 23,  87 => 22,  83 => 21,  79 => 20,  72 => 15,  70 => 12,  68 => 9,  64 => 8,  60 => 7,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -292,15 +292,15 @@ class __TwigTemplate_7cc07e472a65e855ca94d153dd972cf1 extends Template
                 <ul>
                     <li><a href=\"{{ path('home') }}\">Hem</a> ·</li>
                     <li><a href=\"{{ path('about') }}\">Om</a> ·</li>
-                    <li><a href=\"{{ path('report') }}\">Rapport</a> ·</li>
+                    <li><a href=\"{{ path('report') }}\">Rapport</a> 🔸</li>
                     <li><a href=\"{{ path('lucky') }}\">Tur</a> ·</li>
-                    <li><a href=\"{{ path('card') }}\">Kort</a> ·</li>
-                    <li><a href=\"{{ path('game') }}\">21</a> ·</li>
-                    <li><a href=\"{{ path('api') }}\">API:n</a></li>
+                    <li><a href=\"{{ path('library') }}\">Bibliotek</a></li>
                 </ul>
                 <ul>
-                    <li><a href=\"{{ path('session') }}\">session</a> |<li>
-                    <li><a href=\"{{ path('session_delete') }}\">förstör</a></li>
+                    <li><a href=\"{{ path('card') }}\">Kort</a> ·</li>
+                    <li><a href=\"{{ path('game') }}\">21</a> 🔸</li>
+                    <li><a href=\"{{ path('api') }}\">API:n</a> 🔸</li>
+                    <li><a href=\"{{ path('session') }}\">Session</a><li>
                 </ul>
             </nav>
         </header>

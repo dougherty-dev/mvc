@@ -28,14 +28,14 @@ class CardController extends AbstractController
     #[Route("/card", name: "card")]
     public function card(): Response
     {
-        return $this->render('card.html.twig');
+        return $this->render('card/card.html.twig');
     }
 
     #[Route("/card/deck", name: "card_deck")]
     public function cardDeck(): Response
     {
         $this->checkSession();
-        return $this->render('deck.html.twig');
+        return $this->render('card/deck.html.twig');
     }
 
     #[Route("/card/deck/reset", name: "card_deck_reset")]
@@ -57,7 +57,7 @@ class CardController extends AbstractController
         $session = $this->requestStack->getSession();
         $session->set("deck", $this->deck);
 
-        return $this->render('shuffle.html.twig');
+        return $this->render('card/shuffle.html.twig');
     }
 
     #[Route("/card/deck/draw", name: "card_deck_draw")]
@@ -75,7 +75,7 @@ class CardController extends AbstractController
             "remaining" => $this->deck->remainingCards()
         ];
 
-        return $this->render('draw.html.twig', $data);
+        return $this->render('card/draw.html.twig', $data);
     }
 
     #[Route("/card/deck/draw/{number<\d+>}", name: "card_deck_draw_number")]
@@ -104,7 +104,7 @@ class CardController extends AbstractController
             'remaining' => $this->deck->remainingCards()
         ];
 
-        return $this->render('deal.html.twig', $data);
+        return $this->render('card/deal.html.twig', $data);
     }
 
     protected function checkSession(): void

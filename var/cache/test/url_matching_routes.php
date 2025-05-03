@@ -25,6 +25,10 @@ return [
         '/report' => [[['_route' => 'report', '_controller' => 'App\\Controller\\HomeController::report'], null, null, null, false, false, null]],
         '/lucky' => [[['_route' => 'lucky', '_controller' => 'App\\Controller\\HomeController::number'], null, null, null, false, false, null]],
         '/api' => [[['_route' => 'api', '_controller' => 'App\\Controller\\HomeController::api'], null, null, null, false, false, null]],
+        '/library' => [[['_route' => 'library', '_controller' => 'App\\Controller\\LibraryController::library'], null, null, null, false, false, null]],
+        '/library/create' => [[['_route' => 'library_create', '_controller' => 'App\\Controller\\LibraryController::libraryCreate'], null, null, null, false, false, null]],
+        '/library/show' => [[['_route' => 'library_show', '_controller' => 'App\\Controller\\LibraryController::libraryShow'], null, null, null, false, false, null]],
+        '/library/view' => [[['_route' => 'library_view', '_controller' => 'App\\Controller\\LibraryController::libraryView'], null, null, null, false, false, null]],
         '/session' => [[['_route' => 'session', '_controller' => 'App\\Controller\\ProcessController::session'], null, null, null, false, false, null]],
         '/session/delete' => [[['_route' => 'session_delete', '_controller' => 'App\\Controller\\ProcessController::sessionDelete'], null, null, null, false, false, null]],
         '/card/deck/draw/process' => [[['_route' => 'card_deck_draw_process', '_controller' => 'App\\Controller\\ProcessController::cardDeckDrawProcess'], null, ['POST' => 0], null, false, false, null]],
@@ -46,9 +50,14 @@ return [
                         .'|(*:59)'
                     .')'
                 .')'
+                .'|/library/(?'
+                    .'|show/([^/]++)(*:93)'
+                    .'|delete/([^/]++)(*:115)'
+                    .'|update/title/([^/]++)/([^/]++)(*:153)'
+                .')'
                 .'|/card/deck/d(?'
-                    .'|raw/(\\d+)(*:92)'
-                    .'|eal(?:/(\\d+)(?:/(\\d+))?)?(*:124)'
+                    .'|raw/(\\d+)(*:186)'
+                    .'|eal(?:/(\\d+)(?:/(\\d+))?)?(*:219)'
                 .')'
             .')/?$}sDu',
     ],
@@ -61,8 +70,11 @@ return [
             [['_route' => 'api_deck_deal_players_cards', '_controller' => 'App\\Controller\\CardAPIController::apiDeckDealPlayersCards'], ['players', 'cards'], ['GET' => 0], null, false, true, null],
             [['_route' => 'api_deck_deal_players_cards_post', '_controller' => 'App\\Controller\\CardAPIController::apiDeckDealPlayersCardsPost'], ['players', 'cards'], ['POST' => 0], null, false, true, null],
         ],
-        92 => [[['_route' => 'card_deck_draw_number', '_controller' => 'App\\Controller\\ProcessController::cardDeckDrawNumber'], ['number'], null, null, false, true, null]],
-        124 => [
+        93 => [[['_route' => 'library_show_id', '_controller' => 'App\\Controller\\LibraryController::libraryShowID'], ['id'], null, null, false, true, null]],
+        115 => [[['_route' => 'library_delete_id', '_controller' => 'App\\Controller\\LibraryController::libraryDeleteID'], ['id'], null, null, false, true, null]],
+        153 => [[['_route' => 'library_update_title', '_controller' => 'App\\Controller\\LibraryController::libraryUpdateTitle'], ['id', 'value'], null, null, false, true, null]],
+        186 => [[['_route' => 'card_deck_draw_number', '_controller' => 'App\\Controller\\ProcessController::cardDeckDrawNumber'], ['number'], null, null, false, true, null]],
+        219 => [
             [['_route' => 'card_deck_draw_deal_players', 'players' => 0, 'cards' => 0, '_controller' => 'App\\Controller\\ProcessController::cardDeckDealPlayersCards'], ['players', 'cards'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

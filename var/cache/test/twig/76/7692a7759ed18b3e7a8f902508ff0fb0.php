@@ -103,11 +103,27 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <option value=\"#kmom02\">km02</option>
         <option value=\"#kmom03\">km03</option>
         <option value=\"#kmom04\">km04</option>
-        <!-- option value=\"#kmom05\">km05</option>
-        <option value=\"#kmom06\">km06</option>
+        <option value=\"#kmom05\">km05</option>
+        <!-- option value=\"#kmom06\">km06</option>
         <option value=\"#kmom10\">km10</option -->
     </select>
     <h1>Rapport</h1>
+    <section class=\"two-columns\" id=\"kmom05\">
+        <h2>Kmom05</h2>
+        <p class=\"initcap\">ORM</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <figure>
+            <img src=\"";
+        // line 27
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom05.avif"), "html", null, true);
+        yield "\" width=\"1536\" alt=\"Chihiro knåpar ORM\">
+        </figure>
+    </section>
     <section class=\"two-columns\" id=\"kmom04\">
         <h2>Kmom04</h2>
         <p class=\"initcap\">Enhetstestning med PHPUnit och Xdebug introduceras, tillsammans med automatisk dokumentation via PHPDoc. Här noteras att verktygen i fråga ligger en generation efter aktuell PHP-version (8.6.4), vilket fordrar en del åtgärder för att slippa onödig felrapportering.</p>
@@ -119,7 +135,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p>Summa summarum nås därmed hundra procent täckning även för controllerklasserna, om än av begränsat värde. Tillsammans med felfri lint via PHPStan och PHPMD föreligger därför förhoppningsvis en någorlunda god kodbas.</p>
         <figure>
             <img src=\"";
-        // line 27
+        // line 40
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom04.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro enhetstestar\">
         </figure>
@@ -136,10 +152,10 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p>MVC som designmönster är väl i sin ordning, men ramverken är ofta alldeles för rigida. Symfony tycks dock lira bra med PHPStan, vilket är en fördel, inte minst i att hantera sessionsvariabler. Med ramverk är det så att man blir ordentligt fastlåst i en viss ordning, en löpande bandsprincip som passar industrin väl men samtidigt missgynnar mer kreativa angreppsmetoder.</p>
         <p>En intressant egenskap med Symfony är stödet för generella getters/setters via magiska metoder <code>__get()</code><code>__isset()</code> och <code>__set()</code>, vilket reducerar kodmassan en del, inte minst antalet publika metoder. Twig kan då hämta privata egenskaper via dessa metoder, utan att man behöver synliggöra dem.</p>
         <p>TIL är nog att nyttja inkapsling bättre i klasserna, inte minst för att så mycket skräp annars skickas runt i komposition och arv. Mycket givande kurs.</p>
-        <p>Alla obligatoriska och valfia moment är implementerade per specifikation. Inga fel noteras med PHPStan, PHPMD eller PHP CS Fixer.</p>
+        <p>Alla obligatoriska och valfria moment är implementerade per specifikation. Inga fel noteras med PHPStan, PHPMD eller PHP CS Fixer.</p>
         <figure>
             <img src=\"";
-        // line 44
+        // line 57
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom03.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
         </figure>
@@ -157,7 +173,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p>TIL för kursmomentet får sägas vara sessioner i Symfony och Twig, ett smidigt sätt att hantera objekt till skillnad från PHP:s krångliga motsvarigheter.</p>
         <figure>
             <img src=\"";
-        // line 59
+        // line 72
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom02.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
         </figure>
@@ -173,7 +189,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p>TIL får nog sägas vara att nyttja ramverket Symfony, en erfarenhet som kanske är nyttig men som jag aldrig skulle fundera på att använda för egen del. Det är själva definitionen av bloat.</p>
         <figure>
             <img src=\"";
-        // line 72
+        // line 85
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom01.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
             <figcaption>@mos inskärper allvaret i studierna.</figcaption>
@@ -210,7 +226,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  177 => 72,  161 => 59,  143 => 44,  123 => 27,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  193 => 85,  177 => 72,  159 => 57,  139 => 40,  123 => 27,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -226,11 +242,24 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <option value=\"#kmom02\">km02</option>
         <option value=\"#kmom03\">km03</option>
         <option value=\"#kmom04\">km04</option>
-        <!-- option value=\"#kmom05\">km05</option>
-        <option value=\"#kmom06\">km06</option>
+        <option value=\"#kmom05\">km05</option>
+        <!-- option value=\"#kmom06\">km06</option>
         <option value=\"#kmom10\">km10</option -->
     </select>
     <h1>Rapport</h1>
+    <section class=\"two-columns\" id=\"kmom05\">
+        <h2>Kmom05</h2>
+        <p class=\"initcap\">ORM</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <figure>
+            <img src=\"{{ asset('build/images/chihiro-kmom05.avif') }}\" width=\"1536\" alt=\"Chihiro knåpar ORM\">
+        </figure>
+    </section>
     <section class=\"two-columns\" id=\"kmom04\">
         <h2>Kmom04</h2>
         <p class=\"initcap\">Enhetstestning med PHPUnit och Xdebug introduceras, tillsammans med automatisk dokumentation via PHPDoc. Här noteras att verktygen i fråga ligger en generation efter aktuell PHP-version (8.6.4), vilket fordrar en del åtgärder för att slippa onödig felrapportering.</p>
@@ -256,7 +285,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p>MVC som designmönster är väl i sin ordning, men ramverken är ofta alldeles för rigida. Symfony tycks dock lira bra med PHPStan, vilket är en fördel, inte minst i att hantera sessionsvariabler. Med ramverk är det så att man blir ordentligt fastlåst i en viss ordning, en löpande bandsprincip som passar industrin väl men samtidigt missgynnar mer kreativa angreppsmetoder.</p>
         <p>En intressant egenskap med Symfony är stödet för generella getters/setters via magiska metoder <code>__get()</code><code>__isset()</code> och <code>__set()</code>, vilket reducerar kodmassan en del, inte minst antalet publika metoder. Twig kan då hämta privata egenskaper via dessa metoder, utan att man behöver synliggöra dem.</p>
         <p>TIL är nog att nyttja inkapsling bättre i klasserna, inte minst för att så mycket skräp annars skickas runt i komposition och arv. Mycket givande kurs.</p>
-        <p>Alla obligatoriska och valfia moment är implementerade per specifikation. Inga fel noteras med PHPStan, PHPMD eller PHP CS Fixer.</p>
+        <p>Alla obligatoriska och valfria moment är implementerade per specifikation. Inga fel noteras med PHPStan, PHPMD eller PHP CS Fixer.</p>
         <figure>
             <img src=\"{{ asset('build/images/chihiro-kmom03.avif') }}\" width=\"1536\" alt=\"Chihiro\">
         </figure>

@@ -3,12 +3,29 @@
 {% block title %}Bibliotek{% endblock %}
 
 {% block body %}
-{% include 'library_template.html.twig' %}
-    <section class="two-columns">
-        <ul>
+{% include 'book/library_template.html.twig' %}
+    <section class="center">
+        <table class="left">
+            <tr>
+                <th>ID</th>
+                <th>Titel</th>
+                <th>Författare</th>
+                <th>ISBN-13</th>
+                <th>Omslag</th>
+            </tr>
             {% for book in books %}
-                <li>{{ book.getName|e }} ({{ book.getId|e }}) {{ book.getValue|e }}</li>
+            <tr>
+                <td>{{ book.getId }}</td>
+                <td>{{ book.getTitle }}</td>
+                <td>{{ book.getAuthor }}</td>
+                <td>{{ book.getIsbn }}</td>
+                {% if book.getImage %}
+                <td><img src="{{ asset('build/images/books/'~book.getImage~'-s.avif') }}" width="50" alt="{{ book.getTitle }}"></td>
+                {% else %}
+                <td><img src="{{ asset('build/images/books/placeholder-s.avif') }}" width="50" alt="{{ book.getTitle }}"></td>
+                {% endif %}
+            </tr>
             {% endfor %}
-        </ul>
+        </table>
     </section>
 {% endblock %}
