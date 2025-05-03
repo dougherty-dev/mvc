@@ -58,3 +58,9 @@ input[type="number"] {
 .humongous {
   font-size: 3em;
 }
+
+.booktable > th,
+.booktable > td {
+  border: thin solid gray;
+  padding: 0 0.5rem;
+}

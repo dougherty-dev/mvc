@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Bok{% endblock %}
+
+{% block body %}
+{% include 'book/library_template.html.twig' %}
+    <section class="center">
+        <h2>{{ book.getTitle }} / {{ book.getAuthor }}</h2>
+        <table class="left">
+            <tr class="booktable">
+                <th>ID</th>
+                <td>{{ book.getId }}</td>
+                {% if book.getImage %}
+                <td rowspan="4" class="center"><img src="{{ asset('build/images/books/'~book.getImage~'.avif') }}" width="300" alt="{{ book.getTitle }}"></td>
+                {% else %}
+                <td rowspan="4" class="center"><img src="{{ asset('build/images/books/placeholder.avif') }}" width="300" alt="{{ book.getTitle }}"></td>
+                {% endif %}
+            </tr>
+            <tr class="booktable">
+                <th>Titel</th>
+                <td>{{ book.getTitle }}</td>
+            </tr>
+            <tr class="booktable">
+                <th>Författare</th>
+                <td>{{ book.getAuthor }}</td>
+            </tr>
+            <tr class="booktable">
+                <th>ISBN-13</th>
+                <td>{{ book.getIsbn }}</td>
+            </tr>
+        </table>
+    </section>
+{% endblock %}

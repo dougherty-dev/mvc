@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Library controller class.
+ * Library process controller class.
  * Author: nido24
  */
 
@@ -93,15 +93,11 @@ class LibraryProcessController extends AbstractController
 
     #[Route('/library/reset', name: 'library_reset_post', methods: ['POST'])]
     public function libraryResetPost(
-        ManagerRegistry $doctrine
+        ManagerRegistry $doctrine,
+        BookRepository $bookRepository
     ): Response {
         $entityManager = $doctrine->getManager();
-        $books = $entityManager->getRepository(Book::class)->findAll();
-
-        foreach ($books as $book) {
-            $entityManager->remove($book);
-            $entityManager->flush();
-        }
+        $bookRepository->truncateTable();
 
         $bookList = [
             [
@@ -138,10 +134,10 @@ class LibraryProcessController extends AbstractController
 
         foreach ($bookList as $book) {
             $vol = new Book();
-            $vol->setTitle($book['title']);
-            $vol->setAuthor($book['author']);
-            $vol->setIsbn($book['isbn']);
-            $vol->setImage($book['image']);
+            $vol->setTitle($book['title'])
+                ->setAuthor($book['author'])
+                ->setIsbn($book['isbn'])
+                ->setImage($book['image']);
 
             $entityManager->persist($vol);
             $entityManager->flush();

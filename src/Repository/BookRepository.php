@@ -18,6 +18,13 @@ class BookRepository extends ServiceEntityRepository
         parent::__construct($registry, Book::class);
     }
 
+    public function truncateTable(): void
+    {
+        $connection = $this->getEntityManager()->getConnection();
+        $platform = $connection->getDatabasePlatform();
+        $connection->executeUpdate($platform->getTruncateTableSQL('book', true));
+    }
+
     //    /**
     //     * @return Book[] Returns an array of Book objects
     //     */

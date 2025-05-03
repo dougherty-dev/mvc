@@ -67,6 +67,20 @@ class LibraryController extends AbstractController
         return $this->render('book/view.html.twig', $data);
     }
 
+    #[Route('/library/view/{id}', name: 'library_view_id')]
+    public function libraryViewID(
+        BookRepository $bookRepository,
+        int $id
+    ): Response {
+        $book = $bookRepository->find($id);
+
+        $data = [
+            'book' => $book
+        ];
+
+        return $this->render('book/view_single.html.twig', $data);
+    }
+
     #[Route("/library/reset", name: "library_reset", methods: ['GET'])]
     public function libraryReset(): Response
     {

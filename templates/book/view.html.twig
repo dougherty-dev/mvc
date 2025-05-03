@@ -1,12 +1,13 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Bibliotek{% endblock %}
+{% block title %}Böcker{% endblock %}
 
 {% block body %}
 {% include 'book/library_template.html.twig' %}
     <section class="center">
+        <h2>Böcker</h2>
         <table class="left">
-            <tr>
+            <tr class="booktable">
                 <th>ID</th>
                 <th>Titel</th>
                 <th>Författare</th>
@@ -14,15 +15,15 @@
                 <th>Omslag</th>
             </tr>
             {% for book in books %}
-            <tr>
+            <tr class="booktable">
                 <td>{{ book.getId }}</td>
-                <td>{{ book.getTitle }}</td>
+                <td><a href="{{ path('library_view_id', {'id': book.getId}) }}">{{ book.getTitle }}</a></td>
                 <td>{{ book.getAuthor }}</td>
                 <td>{{ book.getIsbn }}</td>
                 {% if book.getImage %}
-                <td><img src="{{ asset('build/images/books/'~book.getImage~'-s.avif') }}" width="50" alt="{{ book.getTitle }}"></td>
+                <td class="center"><img src="{{ asset('build/images/books/'~book.getImage~'-s.avif') }}" width="50" alt="{{ book.getTitle }}"></td>
                 {% else %}
-                <td><img src="{{ asset('build/images/books/placeholder-s.avif') }}" width="50" alt="{{ book.getTitle }}"></td>
+                <td class="center"><img src="{{ asset('build/images/books/placeholder-s.avif') }}" width="50" alt="{{ book.getTitle }}"></td>
                 {% endif %}
             </tr>
             {% endfor %}
