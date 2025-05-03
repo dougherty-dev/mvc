@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Bibliotek{% endblock %}
+
+{% block body %}
+{% include 'library_template.html.twig' %}
+    <section class="two-columns">
+        <ul>
+            {% for book in books %}
+                <li>{{ book.getName|e }} ({{ book.getId|e }}) {{ book.getValue|e }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

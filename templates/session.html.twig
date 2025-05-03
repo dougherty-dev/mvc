@@ -5,6 +5,7 @@
 {% block body %}
     <section class="columns">
         <h1>Sessionen</h1>
+        <p>⚠️ <a href="{{ path('session_delete') }}">Förstör session.</a></p>
         {% for message in app.flashes('notice') %}
             <p class="flash-notice">{{ message }}</p>
         {% endfor %}

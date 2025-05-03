@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Bibliotek{% endblock %}
+
+{% block body %}
+{% include 'library_template.html.twig' %}
+    <section class="two-columns">
+        <p class="initcap">En databastillämpning för mitt digitala bibliotek ges här i begränsad version, med en handfull av 8935 tillgängliga böcker i format epub respektive PDF.</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <img src="{{ asset('build/images/chihiro-library.avif') }}" width="1536" alt="Chihiro i biblioteket">
+    </section>
+{% endblock %}

@@ -401,6 +401,13 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\HomeController"/>
       </call>
     </service>
+    <service id="App\Controller\LibraryController" class="App\Controller\LibraryController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\LibraryController"/>
+      </call>
+    </service>
     <service id="App\Controller\ProcessController" class="App\Controller\ProcessController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -420,6 +427,10 @@
     <service id="App\Game21\GameActions" class="App\Game21\GameActions" autowire="true" autoconfigure="true"/>
     <service id="App\Game21\HandScore" class="App\Game21\HandScore" autowire="true" autoconfigure="true"/>
     <service id="App\Game21\Player" class="App\Game21\Player" autowire="true" autoconfigure="true"/>
+    <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="argument_resolver.backed_enum_resolver" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver">
       <tag priority="100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver">controller.argument_value_resolver</tag>
@@ -448,7 +459,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.F6vdjrP"/>
+      <argument type="service" id=".service_locator.K75MUDV"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3456,7 +3467,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.F6vdjrP"/>
+      <argument type="service" id=".service_locator.K75MUDV"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -5331,7 +5342,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.GIuJv7e"/>
+      <argument type="service" id=".service_locator.jsQVJSp"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -7450,12 +7461,17 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LibraryController" class="App\Controller\LibraryController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LibraryController" class="App\Controller\LibraryController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\LibraryController" class="App\Controller\LibraryController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProcessController" class="App\Controller\ProcessController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProcessController" class="App\Controller\ProcessController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProcessController" class="App\Controller\ProcessController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.pRu6x_4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7593,7 +7609,7 @@
       </call>
     </service>
     <service id="maker.auto_command.make_twig_component" class="Symfony\Bundle\MakerBundle\Command\MakerCommand">
-      <tag name="console.command" command="make:twig-component" description="Create a twig (or live) component"/>
+      <tag name="console.command" command="make:twig-component" description="Create a Twig (or Live) component"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="maker.maker.make_twig_component"/>
       <argument type="service" id="maker.file_manager"/>
@@ -7603,7 +7619,7 @@
         <argument>make:twig-component</argument>
       </call>
       <call method="setDescription">
-        <argument>Create a twig (or live) component</argument>
+        <argument>Create a Twig (or Live) component</argument>
       </call>
     </service>
     <service id="maker.auto_command.make_controller" class="Symfony\Bundle\MakerBundle\Command\MakerCommand">
@@ -7974,15 +7990,81 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.zHyJIs5" method="withContext"/>
     </service>
-    <service id=".service_locator.F6vdjrP" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.E7ajBy2" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="doctrine" type="service_closure" id="doctrine"/>
+      </argument>
+    </service>
+    <service id=".service_locator.E7ajBy2.App\Controller\LibraryController::libraryCreate()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\LibraryController::libraryCreate()"/>
+      <argument>App\Controller\LibraryController::libraryCreate()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.E7ajBy2" method="withContext"/>
+    </service>
+    <service id=".service_locator.ErcxNfJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="bookRepository" type="service_closure" id="App\Repository\BookRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ErcxNfJ.App\Controller\LibraryController::libraryShow()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\LibraryController::libraryShow()"/>
+      <argument>App\Controller\LibraryController::libraryShow()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ErcxNfJ" method="withContext"/>
+    </service>
+    <service id=".service_locator.ErcxNfJ.App\Controller\LibraryController::libraryShowID()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\LibraryController::libraryShowID()"/>
+      <argument>App\Controller\LibraryController::libraryShowID()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ErcxNfJ" method="withContext"/>
+    </service>
+    <service id=".service_locator.E7ajBy2.App\Controller\LibraryController::libraryDeleteID()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\LibraryController::libraryDeleteID()"/>
+      <argument>App\Controller\LibraryController::libraryDeleteID()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.E7ajBy2" method="withContext"/>
+    </service>
+    <service id=".service_locator.E7ajBy2.App\Controller\LibraryController::libraryUpdate()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\LibraryController::libraryUpdate()"/>
+      <argument>App\Controller\LibraryController::libraryUpdate()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.E7ajBy2" method="withContext"/>
+    </service>
+    <service id=".service_locator.1PmNm0b" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="productRepository" type="service_closure" id="App\Repository\BookRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.1PmNm0b.App\Controller\LibraryController::libraryView()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\LibraryController::libraryView()"/>
+      <argument>App\Controller\LibraryController::libraryView()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.1PmNm0b" method="withContext"/>
+    </service>
+    <service id=".service_locator.K75MUDV" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
+        <argument key="App\Controller\LibraryController::libraryCreate" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\LibraryController::libraryCreate()"/>
+        <argument key="App\Controller\LibraryController::libraryShow" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\LibraryController::libraryShow()"/>
+        <argument key="App\Controller\LibraryController::libraryShowID" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\LibraryController::libraryShowID()"/>
+        <argument key="App\Controller\LibraryController::libraryDeleteID" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\LibraryController::libraryDeleteID()"/>
+        <argument key="App\Controller\LibraryController::libraryUpdate" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\LibraryController::libraryUpdate()"/>
+        <argument key="App\Controller\LibraryController::libraryView" type="service_closure" id=".service_locator.1PmNm0b.App\Controller\LibraryController::libraryView()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
+        <argument key="App\Controller\LibraryController:libraryCreate" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\LibraryController::libraryCreate()"/>
+        <argument key="App\Controller\LibraryController:libraryShow" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\LibraryController::libraryShow()"/>
+        <argument key="App\Controller\LibraryController:libraryShowID" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\LibraryController::libraryShowID()"/>
+        <argument key="App\Controller\LibraryController:libraryDeleteID" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\LibraryController::libraryDeleteID()"/>
+        <argument key="App\Controller\LibraryController:libraryUpdate" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\LibraryController::libraryUpdate()"/>
+        <argument key="App\Controller\LibraryController:libraryView" type="service_closure" id=".service_locator.1PmNm0b.App\Controller\LibraryController::libraryView()"/>
       </argument>
     </service>
     <service id=".service_locator.ea.H0ae" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -8297,9 +8379,11 @@
         <argument key="turbo.doctrine.event_listener" type="service_closure" id="turbo.doctrine.event_listener"/>
       </argument>
     </service>
-    <service id=".service_locator.GIuJv7e" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.jsQVJSp" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="App\Repository\BookRepository" type="service_closure" id="App\Repository\BookRepository"/>
+      </argument>
     </service>
     <service id=".service_locator.BxSdgVt" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -8575,6 +8659,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\LibraryController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\LibraryController"/>
+      <argument>App\Controller\LibraryController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
     <service id=".service_locator.ZyP9f7K.App\Controller\ProcessController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ProcessController"/>
       <argument>App\Controller\ProcessController</argument>
@@ -8659,6 +8749,10 @@
       <argument type="collection">
         <argument key="reverse_container" type="service_closure" id="reverse_container" on-invalid="ignore_uninitialized"/>
       </argument>
+    </service>
+    <service id=".service_locator.GIuJv7e" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
     </service>
     <service id=".service_locator.DOrA4Nm" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -8772,6 +8866,7 @@
           <argument>App\Controller\CardController</argument>
           <argument>App\Controller\GameController</argument>
           <argument>App\Controller\HomeController</argument>
+          <argument>App\Controller\LibraryController</argument>
           <argument>App\Controller\ProcessController</argument>
           <argument>App\Controller\QuotationsController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
@@ -9511,7 +9606,7 @@
     <service id=".maker.auto_command.make_twig_component.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>make:twig-component</argument>
       <argument type="collection"/>
-      <argument>Create a twig (or live) component</argument>
+      <argument>Create a Twig (or Live) component</argument>
       <argument>false</argument>
       <argument type="service_closure" id="maker.auto_command.make_twig_component"/>
     </service>
@@ -10182,7 +10277,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.F6vdjrP"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.K75MUDV"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10227,6 +10322,9 @@
     <service id="messenger.bus.default" alias="debug.traced.messenger.bus.default"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.n_ENPtW" alias=".service_locator.zHyJIs5"/>
+    <service id=".service_locator.8o9hjmt" alias=".service_locator.E7ajBy2"/>
+    <service id=".service_locator.RTRo_vd" alias=".service_locator.ErcxNfJ"/>
+    <service id=".service_locator.k88aE7I" alias=".service_locator.1PmNm0b"/>
     <service id=".service_locator.9nvaCmp" alias=".service_locator.ZyP9f7K"/>
   </services>
 </container>

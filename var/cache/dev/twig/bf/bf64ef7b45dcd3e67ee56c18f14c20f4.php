@@ -104,9 +104,8 @@ class __TwigTemplate_36cd26bc423fd6a4a857f779086bef76 extends Template
         <p>Chihiro är bara tio år, men intelligent som få. MVC-kursen blir en enkel resa för henne, i alla fall med hjälp av <em>kami</em>. Det handlar om fantasi mer än logik, och Chihiros föreställningsvärld är ovanligt rik.</p>
         <h2>Om sajten</h2>
         <p>Symfony nyttjas för att rendera sidor och annat innehåll, med PHP som ryggrad. GPT-4o respektive DALL·E 3 används för att generera bilder, ur vilka en lämplig palett för CSS extraheras. Bilder föreligger genomgående i 10-bitars HEIF/AVIF för bästa prestanda. Utvecklingsmiljön består av MacOS Sequoia 15.4 med AMP-stack och erforderliga paket via brew, composer och npm.</p>
-        <p></p>
         <img src=\"";
-        // line 14
+        // line 13
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
     </section>
@@ -141,7 +140,7 @@ class __TwigTemplate_36cd26bc423fd6a4a857f779086bef76 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  110 => 14,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  109 => 13,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -158,7 +157,6 @@ class __TwigTemplate_36cd26bc423fd6a4a857f779086bef76 extends Template
         <p>Chihiro är bara tio år, men intelligent som få. MVC-kursen blir en enkel resa för henne, i alla fall med hjälp av <em>kami</em>. Det handlar om fantasi mer än logik, och Chihiros föreställningsvärld är ovanligt rik.</p>
         <h2>Om sajten</h2>
         <p>Symfony nyttjas för att rendera sidor och annat innehåll, med PHP som ryggrad. GPT-4o respektive DALL·E 3 används för att generera bilder, ur vilka en lämplig palett för CSS extraheras. Bilder föreligger genomgående i 10-bitars HEIF/AVIF för bästa prestanda. Utvecklingsmiljön består av MacOS Sequoia 15.4 med AMP-stack och erforderliga paket via brew, composer och npm.</p>
-        <p></p>
         <img src=\"{{ asset('build/images/chihiro.avif') }}\" width=\"1536\" alt=\"Chihiro\">
     </section>
 {% endblock %}
