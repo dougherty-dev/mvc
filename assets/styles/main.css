@@ -58,3 +58,33 @@ input[type="number"] {
 .humongous {
   font-size: 3em;
 }
+
+.striped {
+  border: thin var(--table);
+}
+
+.striped tbody:nth-child(odd) > tr {
+  background-color: var(--green);
+}
+
+.striped tbody:nth-child(even) > tr {
+  background-color: var(--footer);
+}
+
+.flash-notice {
+  background-color: var(--brown);
+	opacity: 1;
+	animation-name: fade-in;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

@@ -12,7 +12,6 @@ namespace App\Controller;
 use App\Entity\Book;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,33 +20,28 @@ use App\Repository\BookRepository;
 
 class LibraryProcessController extends AbstractController
 {
-    #[Route('/library/create', name: 'library_create')]
-    public function libraryCreate(
+    #[Route('/library/new/post', name: 'library_new_post', methods: ['POST'])]
+    public function libraryNewPost(
+        Request $request,
         ManagerRegistry $doctrine
     ): Response {
         $entityManager = $doctrine->getManager();
+        $form = $request->request->all();
 
         $book = new Book();
-        // $book->setName('Keyboard_num_' . rand(1, 9));
-        // $book->setValue(rand(100, 999));
+        $book->setTitle($form['title'])
+            ->setAuthor($form['author'])
+            ->setIsbn($form['isbn']);
 
         $entityManager->persist($book);
         $entityManager->flush();
 
-        return new Response('Lade till ny bok med ID ' . $book->getId());
-    }
-
-    #[Route('/library/show', name: 'library_show')]
-    public function libraryShow(
-        BookRepository $bookRepository
-    ): Response {
-        $books = $bookRepository->findAll();
-
-        $response = $this->json($books);
-        $response->setEncodingOptions(
-            $response->getEncodingOptions() | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT
+        $this->addFlash(
+            'notice',
+            'Lade till boken ' . $form['title']
         );
-        return $response;
+
+        return $this->redirectToRoute('library_view_id', ['id' => $book->getId()]);
     }
 
     #[Route('/library/delete/{id}', name: 'library_delete_id')]
@@ -67,10 +61,15 @@ class LibraryProcessController extends AbstractController
         $entityManager->remove($book);
         $entityManager->flush();
 
+        $this->addFlash(
+            'notice',
+            'Boken "' . $book->getTitle() . '" raderades.'
+        );
+
         return $this->redirectToRoute('library_view');
     }
 
-    #[Route('/library/update', name: 'library_update')]
+    #[Route('/library/update', name: 'library_update', methods: ['POST'])]
     public function libraryUpdate(
         Request $request,
         ManagerRegistry $doctrine
@@ -94,31 +93,15 @@ class LibraryProcessController extends AbstractController
             ->setIsbn($form['isbn']);
         $entityManager->flush();
 
+        $this->addFlash(
+            'notice',
+            'Bokdata uppdaterades för "' . $form['title'] . '".'
+        );
+
         return $this->redirectToRoute('library_view_id', ['id' => $form['id']]);
     }
 
-    #[Route('/library/update/title/{id}/{value}', name: 'library_update_title')]
-    public function libraryUpdateTitle(
-        ManagerRegistry $doctrine,
-        int $id,
-        string $value
-    ): Response {
-        $entityManager = $doctrine->getManager();
-        $book = $entityManager->getRepository(Book::class)->find($id);
-
-        if (!$book) {
-            throw $this->createNotFoundException(
-                'Ingen bok med ID ' . $id
-            );
-        }
-
-        $book->setTitle($value);
-        $entityManager->flush();
-
-        return $this->redirectToRoute('library_show');
-    }
-
-    #[Route('/library/reset', name: 'library_reset_post', methods: ['POST'])]
+    #[Route('/library/reset/post', name: 'library_reset_post', methods: ['POST'])]
     public function libraryResetPost(
         ManagerRegistry $doctrine,
         BookRepository $bookRepository
@@ -169,6 +152,11 @@ class LibraryProcessController extends AbstractController
             $entityManager->persist($vol);
             $entityManager->flush();
         }
+
+        $this->addFlash(
+            'notice',
+            'Biblioteket återställdes.'
+        );
 
         return $this->redirectToRoute('library_view');
     }

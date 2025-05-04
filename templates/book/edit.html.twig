@@ -27,7 +27,7 @@
                 </tr>
                 <tr class="booktable_row">
                     <th>ISBN-13</th>
-                    <td><input type="text" size="50" name="isbn" value="{{ book.getIsbn }}" minlength="13" maxlength="13" required></td>
+                    <td><input type="text" size="50" name="isbn" value="{{ book.getIsbn }}" pattern="[0-9]{13}" required></td>
                 </tr>
                 <tr class="booktable_row">
                     <th>⚠️</th>

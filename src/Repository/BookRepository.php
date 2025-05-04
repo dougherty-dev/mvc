@@ -48,6 +48,17 @@ class BookRepository extends ServiceEntityRepository
         return $res;
     }
 
+    public function findBookFromIsbn(string $isbn): ?Book
+    {
+        $res = $this->createQueryBuilder('b')
+            ->andWhere('b.isbn = :val')
+            ->setParameter('val', $isbn)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+        return is_object($res) && is_a($res, 'App\Entity\Book') ? $res : null;
+    }
+
     //    /**
     //     * @return Book[] Returns an array of Book objects
     //     */

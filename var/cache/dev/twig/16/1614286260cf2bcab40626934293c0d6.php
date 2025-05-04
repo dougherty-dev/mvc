@@ -99,78 +99,104 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
         // line 6
         yield "    <section class=\"center\">
         <h1>Tillgängliga API:n</h1>
-        <table class=\"left\">
-            <tr>
-                <th><a href=\"";
-        // line 10
+        <table class=\"left striped\">
+            <tbody>
+                <tr>
+                    <th>Citat</th>
+                    <td><button type=\"button\"><a href=\"";
+        // line 12
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("quotation");
-        yield "\">Citat</a></th>
-                <td>Slumpar fram välformulerade citat.</td>
-            </tr>
-            <tr>
-                <th><a href=\"";
-        // line 14
+        yield "\">Slumpa citat.</a></button></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>Kortlek</th>
+                    <td><button type=\"button\"><a href=\"";
+        // line 18
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_deck");
-        yield "\">Kortlek</a></th>
-                <td>Visa ordnad kortlek.</td>
-            </tr>
-            <tr>
-                <th>Blanda och visa kortlek</th>
-                <td><form method=\"post\" action=\"";
-        // line 19
+        yield "\">Visa ordnad kortlek</a></button></td>
+                </tr>
+                <tr>
+                    <th>Blanda kortlek</th>
+                    <td><form method=\"post\" action=\"";
+        // line 22
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_deck_shuffle");
         yield "\">
-                    <button type=\"submit\">Visa</button>
-                </form>
-                </td>
-            </tr>
-            <tr>
-                <th>Dra ett kort ur leken</th>
-                <td><form method=\"post\" action=\"";
-        // line 26
+                        <button type=\"submit\">Visa blandad kortlek</button>
+                    </form>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Dra ett kort ur leken</th>
+                    <td><form method=\"post\" action=\"";
+        // line 29
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_deck_draw");
         yield "\">
-                    <button type=\"submit\">Dra</button>
-                </form>
-                </td>
-            </tr>
-            <tr>
-                <th>Dra flera kort</th>
-                <td><form method=\"post\" action=\"";
-        // line 33
+                        <button type=\"submit\">Dra kort</button>
+                    </form>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Dra flera kort</th>
+                    <td><form method=\"post\" action=\"";
+        // line 36
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_deck_draw_number_post", ["number" => 5]);
         yield "\">
-                    <input type=\"number\" min=\"1\" name=\"number\" value=\"5\">
-                    <button type=\"submit\">Dra</button>
-                </form>
-                </td>
-            </tr>
-            <tr>
-                <th>Dela kort till spelare.</th>
-                <td>
-                    <form method=\"post\" action=\"";
-        // line 42
+                        <input type=\"number\" min=\"1\" name=\"number\" value=\"5\">
+                        <button type=\"submit\">Dra kort</button>
+                    </form>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Dela kort till spelare</th>
+                    <td>
+                        <form method=\"post\" action=\"";
+        // line 45
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_deck_deal_players_cards_post", ["players" => 3, "cards" => 5]), "html", null, true);
         yield "\">
-                        Spelare
-                        <input type=\"number\" min=\"1\" name=\"players\" value=\"3\">
-                        Kort
-                        <input type=\"number\" min=\"1\" name=\"cards\" value=\"5\">
-                        <button type=\"submit\">Dela</button>
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <th><a href=\"";
-        // line 52
+                            Spelare
+                            <input type=\"number\" min=\"1\" name=\"players\" value=\"3\">
+                            Kort
+                            <input type=\"number\" min=\"1\" name=\"cards\" value=\"5\">
+                            <button type=\"submit\">Dela kort</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>Kortspelet 21</a></th>
+                    <td><button type=\"button\"><a href=\"";
+        // line 58
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_game");
-        yield "\">21</a></th>
-                <td>Aktuell ställning i spelet</td>
-            </tr>
+        yield "\">Aktuell ställning</a></button></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>Bibliotek</a></th>
+                    <td><button type=\"button\"><a href=\"";
+        // line 64
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_library_books");
+        yield "\">Visa böcker</a></button></td>
+                </tr>
+                <tr>
+                    <th>ISBN: Visa bok</th>
+                    <td><button type=\"button\"><a href=\"";
+        // line 68
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_library_book_isbn", ["isbn" => "9782876837539"]);
+        yield "\">9782876837539</a></button> <button type=\"button\"><a href=\"";
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_library_book_isbn", ["isbn" => "9780380807345"]);
+        yield "\">9780380807345</a></button> <button type=\"button\"><a href=\"";
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_library_book_isbn", ["isbn" => "9781111111111"]);
+        yield "\">❌ 9781111111111</a></button></td>
+                </tr>
+            </tbody>
         </table>
         <figure>
             <img src=\"";
-        // line 57
+        // line 73
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-api.avif"), "html", null, true);
         yield "\" width=\"896\" alt=\"Chihiro\">
             <figcaption>@mos fastnar i en loop.</figcaption>
@@ -207,7 +233,7 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  174 => 57,  166 => 52,  153 => 42,  141 => 33,  131 => 26,  121 => 19,  113 => 14,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  200 => 73,  188 => 68,  181 => 64,  172 => 58,  156 => 45,  144 => 36,  134 => 29,  124 => 22,  117 => 18,  108 => 12,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -219,53 +245,69 @@ class __TwigTemplate_22f4ba80e54987595f8b81cd358fd73d extends Template
 {% block body %}
     <section class=\"center\">
         <h1>Tillgängliga API:n</h1>
-        <table class=\"left\">
-            <tr>
-                <th><a href=\"{{ path('quotation') }}\">Citat</a></th>
-                <td>Slumpar fram välformulerade citat.</td>
-            </tr>
-            <tr>
-                <th><a href=\"{{ path('api_deck') }}\">Kortlek</a></th>
-                <td>Visa ordnad kortlek.</td>
-            </tr>
-            <tr>
-                <th>Blanda och visa kortlek</th>
-                <td><form method=\"post\" action=\"{{ path('api_deck_shuffle') }}\">
-                    <button type=\"submit\">Visa</button>
-                </form>
-                </td>
-            </tr>
-            <tr>
-                <th>Dra ett kort ur leken</th>
-                <td><form method=\"post\" action=\"{{ path('api_deck_draw') }}\">
-                    <button type=\"submit\">Dra</button>
-                </form>
-                </td>
-            </tr>
-            <tr>
-                <th>Dra flera kort</th>
-                <td><form method=\"post\" action=\"{{ path('api_deck_draw_number_post', {'number': 5}) }}\">
-                    <input type=\"number\" min=\"1\" name=\"number\" value=\"5\">
-                    <button type=\"submit\">Dra</button>
-                </form>
-                </td>
-            </tr>
-            <tr>
-                <th>Dela kort till spelare.</th>
-                <td>
-                    <form method=\"post\" action=\"{{ path('api_deck_deal_players_cards_post', {'players': 3, 'cards': 5}) }}\">
-                        Spelare
-                        <input type=\"number\" min=\"1\" name=\"players\" value=\"3\">
-                        Kort
-                        <input type=\"number\" min=\"1\" name=\"cards\" value=\"5\">
-                        <button type=\"submit\">Dela</button>
+        <table class=\"left striped\">
+            <tbody>
+                <tr>
+                    <th>Citat</th>
+                    <td><button type=\"button\"><a href=\"{{ path('quotation') }}\">Slumpa citat.</a></button></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>Kortlek</th>
+                    <td><button type=\"button\"><a href=\"{{ path('api_deck') }}\">Visa ordnad kortlek</a></button></td>
+                </tr>
+                <tr>
+                    <th>Blanda kortlek</th>
+                    <td><form method=\"post\" action=\"{{ path('api_deck_shuffle') }}\">
+                        <button type=\"submit\">Visa blandad kortlek</button>
                     </form>
-                </td>
-            </tr>
-            <tr>
-                <th><a href=\"{{ path('api_game') }}\">21</a></th>
-                <td>Aktuell ställning i spelet</td>
-            </tr>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Dra ett kort ur leken</th>
+                    <td><form method=\"post\" action=\"{{ path('api_deck_draw') }}\">
+                        <button type=\"submit\">Dra kort</button>
+                    </form>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Dra flera kort</th>
+                    <td><form method=\"post\" action=\"{{ path('api_deck_draw_number_post', {'number': 5}) }}\">
+                        <input type=\"number\" min=\"1\" name=\"number\" value=\"5\">
+                        <button type=\"submit\">Dra kort</button>
+                    </form>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Dela kort till spelare</th>
+                    <td>
+                        <form method=\"post\" action=\"{{ path('api_deck_deal_players_cards_post', {'players': 3, 'cards': 5}) }}\">
+                            Spelare
+                            <input type=\"number\" min=\"1\" name=\"players\" value=\"3\">
+                            Kort
+                            <input type=\"number\" min=\"1\" name=\"cards\" value=\"5\">
+                            <button type=\"submit\">Dela kort</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>Kortspelet 21</a></th>
+                    <td><button type=\"button\"><a href=\"{{ path('api_game') }}\">Aktuell ställning</a></button></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>Bibliotek</a></th>
+                    <td><button type=\"button\"><a href=\"{{ path('api_library_books') }}\">Visa böcker</a></button></td>
+                </tr>
+                <tr>
+                    <th>ISBN: Visa bok</th>
+                    <td><button type=\"button\"><a href=\"{{ path('api_library_book_isbn', {'isbn': '9782876837539'}) }}\">9782876837539</a></button> <button type=\"button\"><a href=\"{{ path('api_library_book_isbn', {'isbn': '9780380807345'}) }}\">9780380807345</a></button> <button type=\"button\"><a href=\"{{ path('api_library_book_isbn', {'isbn': '9781111111111'}) }}\">❌ 9781111111111</a></button></td>
+                </tr>
+            </tbody>
         </table>
         <figure>
             <img src=\"{{ asset('build/images/chihiro-api.avif') }}\" width=\"896\" alt=\"Chihiro\">
