@@ -42,7 +42,7 @@ class LibraryProcessControllerTest extends WebTestCase
         $title = $this->randString();
         $author = $this->randString();
         $isbn = $this->randString(13);
-        $response = $client->request('POST', '/library/new/post', [
+        $client->request('POST', '/library/new/post', [
             'title' => $title,
             'author' => $author,
             'isbn' => $isbn

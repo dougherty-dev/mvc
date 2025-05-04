@@ -76,7 +76,7 @@ class HandScore
         $powers = array_map(fn (int $num): int => 2 ** $num - 1, range(0, $aces));
         foreach ($powers as $power) {
             $binaryString = sprintf("%0{$aces}d", decbin($power));
-            $binaryArray = str_split($binaryString);
+            $binaryArray = (array) str_split($binaryString);
             $distribution = array_map(fn (string $num): int => $num === '0' ?
                 WILD_MIN : intval($num) * WILD_MAX, $binaryArray);
             $aceSums[] = array_sum($distribution);

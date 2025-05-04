@@ -101,7 +101,7 @@
         ],
         "phpdoc": "php -d error_reporting='^E_ALL' tools/phpdoc/phpdoc --config=tools/phpdoc/phpdoc.xml",
         "phpunit": "XDEBUG_MODE=coverage vendor/bin/phpunit",
-        "phpmetrics": "tools/phpmetrics/vendor/bin/phpmetrics --config=tools/phpmetrics/phpmetrics.json"
+        "phpmetrics": "php -d error_reporting='E_ALL & ~E_DEPRECATED' tools/phpmetrics/vendor/bin/phpmetrics --config=tools/phpmetrics/phpmetrics.json"
     },
     "conflict": {
         "symfony/symfony": "*"

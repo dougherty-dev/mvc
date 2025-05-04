@@ -119,8 +119,8 @@ class GameActions extends Game
         $this->players[$nextID]->__set('balance', $this->players[$nextID]->__get('balance') + 2 * $this->players[$nextID]->__get('bet'));
 
         match ($id) {
-            0 => $this->__set('state', self::STATES['player_busted']),
-            default => $this->__set('state', self::STATES['bank_busted'])
+            0 => $this->__set('state', parent::STATES['player_busted']),
+            default => $this->__set('state', parent::STATES['bank_busted'])
         };
     }
 
