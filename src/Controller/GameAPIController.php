@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * Game controller class.
+ * Author: nido24
+ */
+
+declare (strict_types=1);
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class GameAPIController extends GameController
+{
+    /** API route for current game stats. */
+    #[Route("/api/game", name: "api_game")]
+    public function apiGame(): Response
+    {
+        $this->checkSession();
+        $players = [];
+        foreach ($this->game->players as $player) {
+            $players[] = [
+                "cards" => $player->hand->handValues(),
+                "card values" => $player->hand->handTextValues(),
+                "score" => $player->__get('score'),
+                "bet" => $player->__get('bet'),
+                "balance" => $player->__get('balance'),
+            ];
+        }
+
+        $response = new JsonResponse([
+            "state" => $this->game->__get('state'),
+            "players" => $players,
+            "current probabilities" => $this->game->__get('cardStats'),
+            "remaining cards" => $this->game->deck->remainingCards(),
+            "current deck" => $this->game->deck->deckValues(),
+            "options" => [
+                "bank intelligence" => $this->game->__get('bankIntelligence'),
+                "show deck" => $this->game->__get('showDeck'),
+            ],
+        ]);
+
+        $response->setEncodingOptions(JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+        return $response;
+    }
+}

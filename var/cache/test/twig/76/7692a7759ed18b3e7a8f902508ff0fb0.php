@@ -104,8 +104,8 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <option value=\"#kmom03\">km03</option>
         <option value=\"#kmom04\">km04</option>
         <option value=\"#kmom05\">km05</option>
-        <!-- option value=\"#kmom06\">km06</option>
-        <option value=\"#kmom10\">km10</option -->
+        <option value=\"#kmom06\">km06</option>
+        <!-- option value=\"#kmom10\">km10</option -->
     </select>
     <h1>Rapport</h1>
     <section class=\"two-columns\" id=\"kmom06\">
@@ -118,7 +118,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <figure>
             <img src=\"";
         // line 22
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/metrics/phpmetrics-scrutinizer.avif"), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/phpmetrics-scrutinizer.avif"), "html", null, true);
         yield "\" width=\"1356\" alt=\"Scrutinizer och PhpMetrics\">
         </figure>
         <p>Motsvarande körning med <strong>Scrutinizer</strong> gav som resultat «passed» för «build», 100&nbsp;% för täckning (vilket redan var känt) samt 9.89 för «Scrutinizer». Inte så pjåkigt. Verktyget fann fem punkter, bland annat outnyttjade variabler (som linten inte upptäckte) jämte en del udda problem, varav två härrör till extern kod. Sex metoder fick betyg B, medan resten samt alla klasser nådde A. Strävan här är förstås den perfekta tian, men i huvudsak är detta moment redan avklarat. Scrutinizer berättar dessutom hur man kan gå till väga för att åtgärda berörda problem.</p>
@@ -265,8 +265,8 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <option value=\"#kmom03\">km03</option>
         <option value=\"#kmom04\">km04</option>
         <option value=\"#kmom05\">km05</option>
-        <!-- option value=\"#kmom06\">km06</option>
-        <option value=\"#kmom10\">km10</option -->
+        <option value=\"#kmom06\">km06</option>
+        <!-- option value=\"#kmom10\">km10</option -->
     </select>
     <h1>Rapport</h1>
     <section class=\"two-columns\" id=\"kmom06\">
@@ -274,7 +274,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p class=\"initcap\">Metrik är ämnet för detta kursmoment, vars huvudsakliga <a href=\"{{ path('metrics') }}\">rapport</a> publiceras separat. Tvenne verktyg brukas primärt, varav det ena utgörs av <strong>PhpMetrics</strong>, med en diger ansamling mätmetoder. Första körningen gav sex varningar, varav två utgjordes av svårbegripliga «package violations» och fyra ansågs vara klasser som är «probably bugged» på grund av komplexitetsgraden. Förmodligen är det en rimlig skattning, som ligger i linje med min egen tidigare redovisade ståndpunkt, särskilt avseende poängberäkning i kort- och spelklasserna</p>
         <p>Grafiskt kommer det till uttryck i ett diagram av färgade cirklar i trafikljusets palett, varvid den stora klassen <code>GameActions</code> för «21» är ett rött skynke tillsammans med dess kontrollerklass, tätt följt av <code>HandScore</code> med dess villkorsfyllda rutiner. Det är från början givet var krutet ska läggas, och på så vis fyller instrumentet sin funktion.
         <figure>
-            <img src=\"{{ asset('build/images/metrics/phpmetrics-scrutinizer.avif') }}\" width=\"1356\" alt=\"Scrutinizer och PhpMetrics\">
+            <img src=\"{{ asset('build/images/phpmetrics-scrutinizer.avif') }}\" width=\"1356\" alt=\"Scrutinizer och PhpMetrics\">
         </figure>
         <p>Motsvarande körning med <strong>Scrutinizer</strong> gav som resultat «passed» för «build», 100&nbsp;% för täckning (vilket redan var känt) samt 9.89 för «Scrutinizer». Inte så pjåkigt. Verktyget fann fem punkter, bland annat outnyttjade variabler (som linten inte upptäckte) jämte en del udda problem, varav två härrör till extern kod. Sex metoder fick betyg B, medan resten samt alla klasser nådde A. Strävan här är förstås den perfekta tian, men i huvudsak är detta moment redan avklarat. Scrutinizer berättar dessutom hur man kan gå till väga för att åtgärda berörda problem.</p>
         <p>Den egna personliga hållningen är att kodkvalitet i någon mening är avgörande för att kunna hålla större system vid god kvalitet och i underhållbarbart skick. <em>Bloat</em> och buggar är ofelbara konsekvenser när man tappar kontrollen över en stor kodmassa, men då är det redan försent, och man måste skriva om kodbasen från början.</p>

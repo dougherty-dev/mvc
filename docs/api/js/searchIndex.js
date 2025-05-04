@@ -278,47 +278,47 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003AgameDoc\u0028\u0029",
             "name": "gameDoc",
-            "summary": "",
+            "summary": "Route\u0020for\u0020documentation\u0020page.",
             "url": "classes/App-Controller-GameController.html#method_gameDoc"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003AgameDojo\u0028\u0029",
             "name": "gameDojo",
-            "summary": "",
+            "summary": "Route\u0020for\u0020the\u0020game\u0020arena,\u0020which\u0020is\u0020the\u0020primary\u0020view.",
             "url": "classes/App-Controller-GameController.html#method_gameDojo"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003AgamePlayerDrawsProcess\u0028\u0029",
             "name": "gamePlayerDrawsProcess",
-            "summary": "",
+            "summary": "POST\u0020route\u0020for\u0020player\u0020drawing\u0020a\u0020card.",
             "url": "classes/App-Controller-GameController.html#method_gamePlayerDrawsProcess"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003AgamePlayerBetsProcess\u0028\u0029",
             "name": "gamePlayerBetsProcess",
-            "summary": "",
+            "summary": "POST\u0020route\u0020for\u0020player\u0020making\u0020a\u0020bet.",
             "url": "classes/App-Controller-GameController.html#method_gamePlayerBetsProcess"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003AgamePlayerWinsProcess\u0028\u0029",
             "name": "gamePlayerWinsProcess",
-            "summary": "",
+            "summary": "POST\u0020route\u0020for\u0020confirmation\u0020of\u0020winning\u0020player.",
             "url": "classes/App-Controller-GameController.html#method_gamePlayerWinsProcess"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003AgameOverProcess\u0028\u0029",
             "name": "gameOverProcess",
-            "summary": "",
+            "summary": "POST\u0020route\u0020for\u0020resetting\u0020game\u0020after\u0020finishing\u0020a\u0020round.",
             "url": "classes/App-Controller-GameController.html#method_gameOverProcess"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003AgameOptionsProcess\u0028\u0029",
             "name": "gameOptionsProcess",
-            "summary": "",
+            "summary": "POST\u0020route\u0020for\u0020handling\u0020options\u0020during\u0020the\u0020game.",
             "url": "classes/App-Controller-GameController.html#method_gameOptionsProcess"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003AapiGame\u0028\u0029",
             "name": "apiGame",
-            "summary": "",
+            "summary": "API\u0020route\u0020for\u0020current\u0020game\u0020stats.",
             "url": "classes/App-Controller-GameController.html#method_apiGame"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003AcheckSession\u0028\u0029",
             "name": "checkSession",
-            "summary": "",
+            "summary": "Protected\u0020method\u0020for\u0020handling\u0020session\u0020data.",
             "url": "classes/App-Controller-GameController.html#method_checkSession"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003A\u0024requestStack",
@@ -355,6 +355,11 @@ Search.appendIndex(
             "name": "api",
             "summary": "",
             "url": "classes/App-Controller-HomeController.html#method_api"
+        },                {
+            "fqsen": "\\App\\Controller\\HomeController\u003A\u003Ametrics\u0028\u0029",
+            "name": "metrics",
+            "summary": "",
+            "url": "classes/App-Controller-HomeController.html#method_metrics"
         },                {
             "fqsen": "\\App\\Controller\\LibraryController",
             "name": "LibraryController",

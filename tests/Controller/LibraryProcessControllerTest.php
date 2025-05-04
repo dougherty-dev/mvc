@@ -91,7 +91,7 @@ class LibraryProcessControllerTest extends WebTestCase
         $this->assertResponseStatusCodeSame(404);
 
         /** Delete book with non-existing id = 7, direct method. */
-        $response = $client->request('GET', '/library/delete/7');
+        $client->request('GET', '/library/delete/7');
         $this->assertResponseStatusCodeSame(404);
     }
 }

@@ -10,7 +10,6 @@ declare (strict_types=1);
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,18 +26,21 @@ class GameController extends AbstractController
         $this->requestStack = $requestStack;
     }
 
+    /** Route for introduction page. */
     #[Route("/game", name: "game")]
     public function game(): Response
     {
         return $this->render('game/game.html.twig');
     }
 
+    /** Route for documentation page. */
     #[Route("/game/doc", name: "game_doc")]
     public function gameDoc(): Response
     {
         return $this->render('game/doc.html.twig');
     }
 
+    /** Route for the game arena, which is the primary view. */
     #[Route("/game/dojo", name: "game_dojo")]
     public function gameDojo(): Response
     {
@@ -46,6 +48,7 @@ class GameController extends AbstractController
         return $this->render('game/dojo.html.twig');
     }
 
+    /** POST route for player drawing a card. */
     #[Route("/game/player/draws/process", name: "game_player_draws_process", methods: ['POST'])]
     public function gamePlayerDrawsProcess(Request $request): Response
     {
@@ -64,6 +67,7 @@ class GameController extends AbstractController
         return $this->redirectToRoute('game_dojo');
     }
 
+    /** POST route for player making a bet. */
     #[Route("/game/player/bets/process", name: "game_player_bets_process", methods: ['POST'])]
     public function gamePlayerBetsProcess(Request $request): Response
     {
@@ -78,6 +82,7 @@ class GameController extends AbstractController
         return $this->redirectToRoute('game_dojo');
     }
 
+    /** POST route for confirmation of winning player. */
     #[Route("/game/player/wins/process", name: "game_player_wins_process", methods: ['POST'])]
     public function gamePlayerWinsProcess(Request $request): Response
     {
@@ -89,6 +94,7 @@ class GameController extends AbstractController
         return $this->redirectToRoute('game_dojo');
     }
 
+    /** POST route for resetting game after finishing a round. */
     #[Route("/game/over/process", name: "game_over_process", methods: ['POST'])]
     public function gameOverProcess(): Response
     {
@@ -98,6 +104,7 @@ class GameController extends AbstractController
         return $this->redirectToRoute('game');
     }
 
+    /** POST route for handling options during the game. */
     #[Route("/game/options/process", name: "game_options_process", methods: ['POST'])]
     public function gameOptionsProcess(Request $request): Response
     {
@@ -111,37 +118,7 @@ class GameController extends AbstractController
         return $this->redirectToRoute('game_dojo');
     }
 
-    #[Route("/api/game", name: "api_game")]
-    public function apiGame(): Response
-    {
-        $this->checkSession();
-        $players = [];
-        foreach ($this->game->players as $player) {
-            $players[] = [
-                "cards" => $player->hand->handValues(),
-                "card values" => $player->hand->handTextValues(),
-                "score" => $player->__get('score'),
-                "bet" => $player->__get('bet'),
-                "balance" => $player->__get('balance'),
-            ];
-        }
-
-        $response = new JsonResponse([
-            "state" => $this->game->__get('state'),
-            "players" => $players,
-            "current probabilities" => $this->game->__get('cardStats'),
-            "remaining cards" => $this->game->deck->remainingCards(),
-            "current deck" => $this->game->deck->deckValues(),
-            "options" => [
-                "bank intelligence" => $this->game->__get('bankIntelligence'),
-                "show deck" => $this->game->__get('showDeck'),
-            ],
-        ]);
-
-        $response->setEncodingOptions(JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-        return $response;
-    }
-
+    /** Protected method for handling session data. */
     protected function checkSession(): void
     {
         $session = $this->requestStack->getSession();

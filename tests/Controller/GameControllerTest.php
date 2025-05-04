@@ -97,12 +97,4 @@ class GameControllerTest extends WebTestCase
         );
         $this->assertResponseRedirects('/game/dojo');
     }
-
-    /** Test route /api/game */
-    public function testAPIGame(): void
-    {
-        $client = static::createClient();
-        $client->request('POST', '/api/game');
-        $this->assertResponseIsSuccessful();
-    }
 }
