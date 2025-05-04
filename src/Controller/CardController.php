@@ -107,7 +107,7 @@ class CardController extends AbstractController
         return $this->render('card/deal.html.twig', $data);
     }
 
-    protected function checkSession(): void
+    public function checkSession(): void
     {
         $session = $this->requestStack->getSession();
 

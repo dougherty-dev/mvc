@@ -7,7 +7,7 @@
 
 declare (strict_types=1);
 
-namespace App\Entity;
+namespace App\Tests\Repository;
 
 use PHPUnit\Framework\TestCase;
 use Doctrine\Persistence\ManagerRegistry;

@@ -7,14 +7,22 @@
 
 declare (strict_types=1);
 
-namespace App\Controller;
+namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Entity\Book;
+use App\Controller\LibraryController;
 
 /** Test cases for class LibraryController. */
 class LibraryControllerTest extends WebTestCase
 {
+    /** Test instantiation of the class itself. */
+    public function testLibraryController(): void
+    {
+        $cls = new LibraryController();
+        $this->assertInstanceOf("\App\Controller\LibraryController", $cls);
+    }
+
     /** Test route /library */
     public function testLibrary(): void
     {

@@ -7,13 +7,14 @@
 
 declare (strict_types=1);
 
-namespace App\Game21;
+namespace App\Tests\Game21;
 
 use PHPUnit\Framework\TestCase;
 use RangeException;
 use App\Cards\Deck;
 use App\Cards\CardGraphic;
 use App\Cards\Hand;
+use App\Game21\GameActions;
 
 /** Test cases for class Card. */
 class GameActionsTest extends TestCase

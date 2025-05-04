@@ -7,14 +7,23 @@
 
 declare (strict_types=1);
 
-namespace App\Controller;
+namespace App\Tests\Controller;
 
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Cards\Deck;
+use App\Controller\CardController;
 
 /** Test cases for class CardController. */
 class CardControllerTest extends WebTestCase
 {
+    /** Test instantiation of the class itself. */
+    public function testCardController(): void
+    {
+        $cls = new CardController(new RequestStack());
+        $this->assertInstanceOf("\App\Controller\CardController", $cls);
+    }
+
     /** Test route /card */
     public function testCard(): void
     {

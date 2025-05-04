@@ -7,14 +7,23 @@
 
 declare (strict_types=1);
 
-namespace App\Controller;
+namespace App\Tests\Controller;
 
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Cards\Deck;
+use App\Controller\CardAPIController;
 
 /** Test cases for class CardAPIController. */
 class CardAPIControllerTest extends WebTestCase
 {
+    /** Test instantiation of the class itself. */
+    public function testCardAPIController(): void
+    {
+        $cls = new CardAPIController(new RequestStack());
+        $this->assertInstanceOf("\App\Controller\CardAPIController", $cls);
+    }
+
     /** Test route /api/deck and deck properties in session */
     public function testAPIDeck(): void
     {

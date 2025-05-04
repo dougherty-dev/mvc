@@ -7,10 +7,11 @@
 
 declare (strict_types=1);
 
-namespace App\Game21;
+namespace App\Tests\Game21;
 
 use PHPUnit\Framework\TestCase;
 use RangeException;
+use App\Game21\Game;
 
 /** Test cases for class Game. */
 class GameTest extends TestCase

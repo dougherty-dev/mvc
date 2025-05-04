@@ -7,11 +7,12 @@
 
 declare (strict_types=1);
 
-namespace App\Controller;
+namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Entity\Book;
 use App\Repository\BookRepository;
+use App\Controller\LibraryProcessController;
 
 /** Test cases for class LibraryProcessController. */
 class LibraryProcessControllerTest extends WebTestCase
@@ -20,6 +21,13 @@ class LibraryProcessControllerTest extends WebTestCase
     {
         $randString = md5(microtime(true).mt_Rand());
         return $chars ? substr($randString, 0, $chars) : $randString;
+    }
+
+    /** Test instantiation of the class itself. */
+    public function testLibraryProcessController(): void
+    {
+        $cls = new LibraryProcessController();
+        $this->assertInstanceOf("\App\Controller\LibraryProcessController", $cls);
     }
 
     /** Test all process routes, using test DB. */
@@ -76,7 +84,7 @@ class LibraryProcessControllerTest extends WebTestCase
         $client->followRedirects(false);
 
         /** Delete book with non-existing id = 7. */
-        $response = $client->request('POST', '/library/update', [
+        $client->request('POST', '/library/update', [
             'id' => 7,
             'delete' => true
         ]);

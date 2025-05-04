@@ -7,13 +7,22 @@
 
 declare (strict_types=1);
 
-namespace App\Controller;
+namespace App\Tests\Controller;
 
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use App\Controller\ProcessController;
 
 /** Test cases for class ProcessController. */
 class ProcessControllerTest extends WebTestCase
 {
+    /** Test instantiation of the class itself. */
+    public function testProcessController(): void
+    {
+        $cls = new ProcessController(new RequestStack());
+        $this->assertInstanceOf("\App\Controller\ProcessController", $cls);
+    }
+
     /** Test route /session */
     public function testSession(): void
     {

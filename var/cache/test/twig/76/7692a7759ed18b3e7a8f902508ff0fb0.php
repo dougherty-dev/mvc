@@ -108,6 +108,29 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <option value=\"#kmom10\">km10</option -->
     </select>
     <h1>Rapport</h1>
+    <section class=\"two-columns\" id=\"kmom06\">
+        <h2>Kmom06</h2>
+        <p class=\"initcap\">Metrik är ämnet för detta kursmoment, vars huvudsakliga <a href=\"";
+        // line 19
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("metrics");
+        yield "\">rapport</a> publiceras separat. Tvenne verktyg brukas primärt, varav det ena utgörs av <strong>PhpMetrics</strong>, med en diger ansamling mätmetoder. Första körningen gav sex varningar, varav två utgjordes av svårbegripliga «package violations» och fyra ansågs vara klasser som är «probably bugged» på grund av komplexitetsgraden. Förmodligen är det en rimlig skattning, som ligger i linje med min egen tidigare redovisade ståndpunkt, särskilt avseende poängberäkning i kort- och spelklasserna</p>
+        <p>Grafiskt kommer det till uttryck i ett diagram av färgade cirklar i trafikljusets palett, varvid den stora klassen <code>GameActions</code> för «21» är ett rött skynke tillsammans med dess kontrollerklass, tätt följt av <code>HandScore</code> med dess villkorsfyllda rutiner. Det är från början givet var krutet ska läggas, och på så vis fyller instrumentet sin funktion.
+        <figure>
+            <img src=\"";
+        // line 22
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/metrics/phpmetrics-scrutinizer.avif"), "html", null, true);
+        yield "\" width=\"1356\" alt=\"Scrutinizer och PhpMetrics\">
+        </figure>
+        <p>Motsvarande körning med <strong>Scrutinizer</strong> gav som resultat «passed» för «build», 100&nbsp;% för täckning (vilket redan var känt) samt 9.89 för «Scrutinizer». Inte så pjåkigt. Verktyget fann fem punkter, bland annat outnyttjade variabler (som linten inte upptäckte) jämte en del udda problem, varav två härrör till extern kod. Sex metoder fick betyg B, medan resten samt alla klasser nådde A. Strävan här är förstås den perfekta tian, men i huvudsak är detta moment redan avklarat. Scrutinizer berättar dessutom hur man kan gå till väga för att åtgärda berörda problem.</p>
+        <p>Den egna personliga hållningen är att kodkvalitet i någon mening är avgörande för att kunna hålla större system vid god kvalitet och i underhållbarbart skick. <em>Bloat</em> och buggar är ofelbara konsekvenser när man tappar kontrollen över en stor kodmassa, men då är det redan försent, och man måste skriva om kodbasen från början.</p>
+        <p>För egen del är PHPStan ett uppskattat verktyg för att hålla ordning på typer och vilka data man skyfflar runt, och den arsenalen har nu vidgats med ytterligare några värdefulla instrument (TIL). Samtidigt måste sägas att det lätt kan bli lite av en fix idé att jaga poäng, tid och resurser som man istället hade kunnat använda på verklig kodning och kreativa lösningar.</p>
+        <figure>
+            <img src=\"";
+        // line 28
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom06.avif"), "html", null, true);
+        yield "\" width=\"1536\" alt=\"Chihiro förbättrar kodens kvalitet\">
+        </figure>
+    </section>
     <section class=\"two-columns\" id=\"kmom05\">
         <h2>Kmom05</h2>
         <p class=\"initcap\">Objekt-relationell mappning (ORM) avhandlas via Doctrine i Symfony, kanske mest för att illustrera ännu ett koncept relaterat till databaser. I själva verket vinner man nog inte så mycket på en dylik abstraktion, eftersom man ändå måste ha detaljkännedom om sina tabeller och komma åt data via SQL-liknande satser. Även i andra modeller har man objektorientering på sista raden i PHP via getters, setters och andra mekanismer. MariaDB? <em>Defeats the purpose.</em></p>
@@ -118,7 +141,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p>Denna gång har aspekter av testning funnits med från första stund, men det mest komplexa återfinns alltjämt i kontrollklasserna, som här egentligen är de enda klasserna av relevans. För att kunna testa metoder som förändrar databasen nyttjas en fristående testdatabas (angiven i <code>.env.test.local</code>) för att inte förstöra något i den ordinarie databasen. Därmed kan en återställning först göras, på det att exakta data är kända för ID med mera. Alternativet med mockning är inte så givande i denna enkla modell, eftersom metoderna är få.</p>
         <figure>
             <img src=\"";
-        // line 26
+        // line 40
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom05.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro knåpar ORM\">
         </figure>
@@ -134,7 +157,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p>Summa summarum nås därmed hundra procent täckning även för controllerklasserna, om än av begränsat värde. Tillsammans med felfri lint via PHPStan och PHPMD föreligger därför förhoppningsvis en någorlunda god kodbas.</p>
         <figure>
             <img src=\"";
-        // line 39
+        // line 53
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom04.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro enhetstestar\">
         </figure>
@@ -154,9 +177,9 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p>Alla obligatoriska och valfria moment är implementerade per specifikation. Inga fel noteras med PHPStan, PHPMD eller PHP CS Fixer.</p>
         <figure>
             <img src=\"";
-        // line 56
+        // line 70
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom03.avif"), "html", null, true);
-        yield "\" width=\"1536\" alt=\"Chihiro\">
+        yield "\" width=\"1536\" alt=\"Chihiro bekantar sig med magiska metoder\">
         </figure>
     </section>
     <section class=\"two-columns\" id=\"kmom02\">
@@ -172,9 +195,9 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p>TIL för kursmomentet får sägas vara sessioner i Symfony och Twig, ett smidigt sätt att hantera objekt till skillnad från PHP:s krångliga motsvarigheter.</p>
         <figure>
             <img src=\"";
-        // line 71
+        // line 85
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom02.avif"), "html", null, true);
-        yield "\" width=\"1536\" alt=\"Chihiro\">
+        yield "\" width=\"1536\" alt=\"Chihiro spelar kort\">
         </figure>
     </section>
     <section class=\"two-columns\" id=\"kmom01\">
@@ -188,9 +211,9 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p>TIL får nog sägas vara att nyttja ramverket Symfony, en erfarenhet som kanske är nyttig men som jag aldrig skulle fundera på att använda för egen del. Det är själva definitionen av bloat.</p>
         <figure>
             <img src=\"";
-        // line 84
+        // line 98
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom01.avif"), "html", null, true);
-        yield "\" width=\"1536\" alt=\"Chihiro\">
+        yield "\" width=\"1536\" alt=\"Chihiro introduceras i PHP\">
             <figcaption>@mos inskärper allvaret i studierna.</figcaption>
         </figure>
     </section>
@@ -225,7 +248,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  192 => 84,  176 => 71,  158 => 56,  138 => 39,  122 => 26,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  215 => 98,  199 => 85,  181 => 70,  161 => 53,  145 => 40,  130 => 28,  121 => 22,  115 => 19,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -246,6 +269,20 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <option value=\"#kmom10\">km10</option -->
     </select>
     <h1>Rapport</h1>
+    <section class=\"two-columns\" id=\"kmom06\">
+        <h2>Kmom06</h2>
+        <p class=\"initcap\">Metrik är ämnet för detta kursmoment, vars huvudsakliga <a href=\"{{ path('metrics') }}\">rapport</a> publiceras separat. Tvenne verktyg brukas primärt, varav det ena utgörs av <strong>PhpMetrics</strong>, med en diger ansamling mätmetoder. Första körningen gav sex varningar, varav två utgjordes av svårbegripliga «package violations» och fyra ansågs vara klasser som är «probably bugged» på grund av komplexitetsgraden. Förmodligen är det en rimlig skattning, som ligger i linje med min egen tidigare redovisade ståndpunkt, särskilt avseende poängberäkning i kort- och spelklasserna</p>
+        <p>Grafiskt kommer det till uttryck i ett diagram av färgade cirklar i trafikljusets palett, varvid den stora klassen <code>GameActions</code> för «21» är ett rött skynke tillsammans med dess kontrollerklass, tätt följt av <code>HandScore</code> med dess villkorsfyllda rutiner. Det är från början givet var krutet ska läggas, och på så vis fyller instrumentet sin funktion.
+        <figure>
+            <img src=\"{{ asset('build/images/metrics/phpmetrics-scrutinizer.avif') }}\" width=\"1356\" alt=\"Scrutinizer och PhpMetrics\">
+        </figure>
+        <p>Motsvarande körning med <strong>Scrutinizer</strong> gav som resultat «passed» för «build», 100&nbsp;% för täckning (vilket redan var känt) samt 9.89 för «Scrutinizer». Inte så pjåkigt. Verktyget fann fem punkter, bland annat outnyttjade variabler (som linten inte upptäckte) jämte en del udda problem, varav två härrör till extern kod. Sex metoder fick betyg B, medan resten samt alla klasser nådde A. Strävan här är förstås den perfekta tian, men i huvudsak är detta moment redan avklarat. Scrutinizer berättar dessutom hur man kan gå till väga för att åtgärda berörda problem.</p>
+        <p>Den egna personliga hållningen är att kodkvalitet i någon mening är avgörande för att kunna hålla större system vid god kvalitet och i underhållbarbart skick. <em>Bloat</em> och buggar är ofelbara konsekvenser när man tappar kontrollen över en stor kodmassa, men då är det redan försent, och man måste skriva om kodbasen från början.</p>
+        <p>För egen del är PHPStan ett uppskattat verktyg för att hålla ordning på typer och vilka data man skyfflar runt, och den arsenalen har nu vidgats med ytterligare några värdefulla instrument (TIL). Samtidigt måste sägas att det lätt kan bli lite av en fix idé att jaga poäng, tid och resurser som man istället hade kunnat använda på verklig kodning och kreativa lösningar.</p>
+        <figure>
+            <img src=\"{{ asset('build/images/chihiro-kmom06.avif') }}\" width=\"1536\" alt=\"Chihiro förbättrar kodens kvalitet\">
+        </figure>
+    </section>
     <section class=\"two-columns\" id=\"kmom05\">
         <h2>Kmom05</h2>
         <p class=\"initcap\">Objekt-relationell mappning (ORM) avhandlas via Doctrine i Symfony, kanske mest för att illustrera ännu ett koncept relaterat till databaser. I själva verket vinner man nog inte så mycket på en dylik abstraktion, eftersom man ändå måste ha detaljkännedom om sina tabeller och komma åt data via SQL-liknande satser. Även i andra modeller har man objektorientering på sista raden i PHP via getters, setters och andra mekanismer. MariaDB? <em>Defeats the purpose.</em></p>
@@ -285,7 +322,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p>TIL är nog att nyttja inkapsling bättre i klasserna, inte minst för att så mycket skräp annars skickas runt i komposition och arv. Mycket givande kurs.</p>
         <p>Alla obligatoriska och valfria moment är implementerade per specifikation. Inga fel noteras med PHPStan, PHPMD eller PHP CS Fixer.</p>
         <figure>
-            <img src=\"{{ asset('build/images/chihiro-kmom03.avif') }}\" width=\"1536\" alt=\"Chihiro\">
+            <img src=\"{{ asset('build/images/chihiro-kmom03.avif') }}\" width=\"1536\" alt=\"Chihiro bekantar sig med magiska metoder\">
         </figure>
     </section>
     <section class=\"two-columns\" id=\"kmom02\">
@@ -300,7 +337,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p>Icke desto mindre är det tillfredsställande när man väl kommer över den jobbiga tröskeln och kan börja bygga applikationer. Koden med kontroller, mallar och vyer blir ganska liten och kompakt, även om man är mer begränsad än med rå PHP.</p>
         <p>TIL för kursmomentet får sägas vara sessioner i Symfony och Twig, ett smidigt sätt att hantera objekt till skillnad från PHP:s krångliga motsvarigheter.</p>
         <figure>
-            <img src=\"{{ asset('build/images/chihiro-kmom02.avif') }}\" width=\"1536\" alt=\"Chihiro\">
+            <img src=\"{{ asset('build/images/chihiro-kmom02.avif') }}\" width=\"1536\" alt=\"Chihiro spelar kort\">
         </figure>
     </section>
     <section class=\"two-columns\" id=\"kmom01\">
@@ -313,7 +350,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p>Det finns i princip inget i <em>PHP The Right Way</em> som är särskilt intressant eller tilltalande. Artikeln är förlegad och därtill väldigt rörig. Särskilt upprörande är att man förespråkar en kodstandard som skiljer sig från PHP:s egna (1TBS, K&amp;R).</p>
         <p>TIL får nog sägas vara att nyttja ramverket Symfony, en erfarenhet som kanske är nyttig men som jag aldrig skulle fundera på att använda för egen del. Det är själva definitionen av bloat.</p>
         <figure>
-            <img src=\"{{ asset('build/images/chihiro-kmom01.avif') }}\" width=\"1536\" alt=\"Chihiro\">
+            <img src=\"{{ asset('build/images/chihiro-kmom01.avif') }}\" width=\"1536\" alt=\"Chihiro introduceras i PHP\">
             <figcaption>@mos inskärper allvaret i studierna.</figcaption>
         </figure>
     </section>

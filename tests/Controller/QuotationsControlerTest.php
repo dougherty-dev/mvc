@@ -7,13 +7,21 @@
 
 declare (strict_types=1);
 
-namespace App\Controller;
+namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use App\Controller\QuotationsController;
 
 /** Test cases for class QuotationsController. */
 class QuotationsControllerTest extends WebTestCase
 {
+    /** Test instantiation of the class itself. */
+    public function testQuotationsController(): void
+    {
+        $cls = new QuotationsController();
+        $this->assertInstanceOf("\App\Controller\QuotationsController", $cls);
+    }
+
     /** Test route /api/quotation */
     public function testAPIDeck(): void
     {

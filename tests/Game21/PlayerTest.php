@@ -7,9 +7,10 @@
 
 declare(strict_types=1);
 
-namespace App\Game21;
+namespace App\Tests\Game21;
 
 use PHPUnit\Framework\TestCase;
+use App\Game21\Player;
 
 /** Test cases for class Card. */
 class PlayerTest extends TestCase

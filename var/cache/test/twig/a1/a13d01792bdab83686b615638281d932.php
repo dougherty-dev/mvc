@@ -107,9 +107,13 @@ class __TwigTemplate_7cc07e472a65e855ca94d153dd972cf1 extends Template
                     <li><a href=\"";
         // line 29
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api");
-        yield "\">API:n</a> 🔸</li>
+        yield "\">API:n</a> ·</li>
                     <li><a href=\"";
         // line 30
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("metrics");
+        yield "\">Metrik</a> 🔸</li>
+                    <li><a href=\"";
+        // line 31
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("session");
         yield "\">Session</a><li>
                 </ul>
@@ -117,9 +121,9 @@ class __TwigTemplate_7cc07e472a65e855ca94d153dd972cf1 extends Template
         </header>
         <main class=\"main\">
             ";
-        // line 35
-        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
         // line 36
+        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
+        // line 37
         yield "        </main>
         <footer>
             <p><a href=\"https://dougherty-dev.github.io/webapp-lager/\">Webapp</a>&nbsp;|
@@ -223,7 +227,7 @@ class __TwigTemplate_7cc07e472a65e855ca94d153dd972cf1 extends Template
         yield from [];
     }
 
-    // line 35
+    // line 36
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -266,7 +270,7 @@ class __TwigTemplate_7cc07e472a65e855ca94d153dd972cf1 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  227 => 35,  213 => 13,  200 => 12,  186 => 10,  173 => 9,  150 => 7,  123 => 36,  121 => 35,  113 => 30,  109 => 29,  105 => 28,  101 => 27,  95 => 24,  91 => 23,  87 => 22,  83 => 21,  79 => 20,  72 => 15,  70 => 12,  68 => 9,  64 => 8,  60 => 7,  52 => 1,);
+        return array (  231 => 36,  217 => 13,  204 => 12,  190 => 10,  177 => 9,  154 => 7,  127 => 37,  125 => 36,  117 => 31,  113 => 30,  109 => 29,  105 => 28,  101 => 27,  95 => 24,  91 => 23,  87 => 22,  83 => 21,  79 => 20,  72 => 15,  70 => 12,  68 => 9,  64 => 8,  60 => 7,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -299,7 +303,8 @@ class __TwigTemplate_7cc07e472a65e855ca94d153dd972cf1 extends Template
                 <ul>
                     <li><a href=\"{{ path('card') }}\">Kort</a> ·</li>
                     <li><a href=\"{{ path('game') }}\">21</a> 🔸</li>
-                    <li><a href=\"{{ path('api') }}\">API:n</a> 🔸</li>
+                    <li><a href=\"{{ path('api') }}\">API:n</a> ·</li>
+                    <li><a href=\"{{ path('metrics') }}\">Metrik</a> 🔸</li>
                     <li><a href=\"{{ path('session') }}\">Session</a><li>
                 </ul>
             </nav>

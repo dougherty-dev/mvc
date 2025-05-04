@@ -7,11 +7,12 @@
 
 declare (strict_types=1);
 
-namespace App\Game21;
+namespace App\Tests\Game21;
 
 use PHPUnit\Framework\TestCase;
 use App\Cards\CardGraphic;
 use App\Cards\Hand;
+use App\Game21\HandScore;
 
 /** Test cases for class Card. */
 class HandScoreTest extends TestCase

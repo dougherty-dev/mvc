@@ -7,13 +7,21 @@
 
 declare (strict_types=1);
 
-namespace App\Controller;
+namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use App\Controller\HomeController;
 
 /** Test cases for class HomeController. */
 class HomeControllerTest extends WebTestCase
 {
+    /** Test instantiation of the class itself. */
+    public function testHomeController(): void
+    {
+        $cls = new HomeController();
+        $this->assertInstanceOf("\App\Controller\HomeController", $cls);
+    }
+
     /** Test route / */
     public function testHome(): void
     {
@@ -27,6 +35,14 @@ class HomeControllerTest extends WebTestCase
     {
         $client = static::createClient();
         $client->request('GET', '/about');
+        $this->assertResponseIsSuccessful();
+    }
+
+    /** Test route /metrics */
+    public function testMetrics(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', '/metrics');
         $this->assertResponseIsSuccessful();
     }
 

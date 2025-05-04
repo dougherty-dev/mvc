@@ -7,10 +7,11 @@
 
 declare (strict_types=1);
 
-namespace App\Entity;
+namespace App\Tests\Entity;
 
 use PHPUnit\Framework\TestCase;
 use RangeException;
+use App\Entity\Book;
 
 /** Test cases for class Book. */
 class BookTest extends TestCase

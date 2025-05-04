@@ -50,4 +50,10 @@ class HomeController extends AbstractController
     {
         return $this->render('api.html.twig');
     }
+
+    #[Route("/metrics", name: "metrics")]
+    public function metrics(): Response
+    {
+        return $this->render('metrics.html.twig');
+    }
 }

@@ -7,14 +7,23 @@
 
 declare (strict_types=1);
 
-namespace App\Controller;
+namespace App\Tests\Controller;
 
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Game21\GameActions;
+use App\Controller\GameController;
 
 /** Test cases for class GameController. */
 class GameControllerTest extends WebTestCase
 {
+    /** Test instantiation of the class itself. */
+    public function testGameController(): void
+    {
+        $cls = new GameController(new RequestStack());
+        $this->assertInstanceOf("\App\Controller\GameController", $cls);
+    }
+
     /** Test route /game */
     public function testGame(): void
     {
