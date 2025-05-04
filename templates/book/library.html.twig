@@ -5,11 +5,9 @@
 {% block body %}
 {% include 'book/library_template.html.twig' %}
     <section class="two-columns">
-        <p class="initcap">En databastillämpning för ett digitalt eller fysiskt bibliotek gestaltas här i rudimentär form. Endast en tabell <code>book</code> definieras, med fyra fält <code>title</code>, <code>author</code>, <code>isbn</code> och <code>image</code>. Det sistnämnda fältet är egentligen överflödigt, och skulle kunna få unik identitet via ISBN.</p>
-        <p>Filuppladdning är inte definierat i denna applikation, varför man får nöja sig med en platshållare för omslag för nya böcker. Av samma skäl är fältet <code>image</code> för närvarande inte öppet för redigering.</p>
-        <p>De tre övriga fälten är obligatoriska, varvid <code>isbn</code> kräver exakt 13 siffror.</p>
-        <p></p>
-        <p></p>
+        <p class="initcap">En databastillämpning för ett digitalt (eller fysiskt) bibliotek gestaltas här i rudimentär form. Endast en tabell <code>book</code> definieras, med fyra fält <code>title</code>, <code>author</code>, <code>isbn</code> och <code>image</code>. Det sistnämnda fältet är egentligen överflödigt, och skulle kunna få unik identitet via ISBN.</p>
+        <p>Filuppladdning är inte definierat i denna applikation, varför man får nöja sig med en platshållare för omslag för nya böcker. Av samma skäl är fältet <code>image</code> för närvarande inte öppet för redigering. De tre övriga fälten är obligatoriska, varvid <code>isbn</code> kräver exakt 13 siffror.</p>
+        <p>Böcker redigeras eller raderas ledigt i enskilda vyer, och på samma sätt kan nya volymer läggas till. En återställningsfunktion underlättar för att utvärdera funktionaliteten.</p>
         <img src="{{ asset('build/images/chihiro-library.avif') }}" width="1536" alt="Chihiro i biblioteket">
     </section>
 {% endblock %}

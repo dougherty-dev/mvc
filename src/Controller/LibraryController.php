@@ -18,12 +18,14 @@ use App\Repository\BookRepository;
 
 class LibraryController extends AbstractController
 {
+    /** Display library main page. */
     #[Route("/library", name: "library")]
     public function library(): Response
     {
         return $this->render('book/library.html.twig');
     }
 
+    /** Display book list. */
     #[Route('/library/view', name: 'library_view')]
     public function libraryView(
         BookRepository $bookRepository
@@ -37,12 +39,21 @@ class LibraryController extends AbstractController
         return $this->render('book/view.html.twig', $data);
     }
 
+    /** Display single book. */
     #[Route('/library/view/{id}', name: 'library_view_id')]
     public function libraryViewID(
         BookRepository $bookRepository,
         int $id
     ): Response {
         $book = $bookRepository->find($id);
+
+        if (!$book) {
+            $this->addFlash(
+                'notice',
+                'Bok med ID ' . $id . ' finns inte.'
+            );
+            return $this->redirectToRoute('library_view');
+        }
 
         [$prev, $next] = $bookRepository->adjacentRecords($id);
 
@@ -55,12 +66,21 @@ class LibraryController extends AbstractController
         return $this->render('book/view_single.html.twig', $data);
     }
 
+    /** Display page for editing book. */
     #[Route('/library/edit/{id}', name: 'library_edit_id')]
     public function libraryEditID(
         BookRepository $bookRepository,
         int $id
     ): Response {
         $book = $bookRepository->find($id);
+
+        if (!$book) {
+            $this->addFlash(
+                'notice',
+                'Bok med ID ' . $id . ' finns inte.'
+            );
+            return $this->redirectToRoute('library_view');
+        }
 
         $data = [
             'book' => $book
@@ -69,19 +89,22 @@ class LibraryController extends AbstractController
         return $this->render('book/edit.html.twig', $data);
     }
 
+    /** Display page for adding new book. */
     #[Route("/library/new", name: "library_new")]
     public function libraryNew(): Response
     {
         return $this->render('book/new.html.twig');
     }
 
+    /** Display page for reseting library. */
     #[Route("/library/reset", name: "library_reset")]
     public function libraryReset(): Response
     {
         return $this->render('book/reset.html.twig');
     }
 
-    #[Route('api/library/books', name: 'api_library_books')]
+    /** Display API data for books in library. */
+    #[Route('/api/library/books', name: 'api_library_books')]
     public function apiLibraryBooks(
         BookRepository $bookRepository
     ): Response {
@@ -94,7 +117,8 @@ class LibraryController extends AbstractController
         return $response;
     }
 
-    #[Route('api/library/book/{isbn}', name: 'api_library_book_isbn')]
+    /** Display API data for single book from ISBN. */
+    #[Route('/api/library/book/{isbn}', name: 'api_library_book_isbn')]
     public function apiLibraryBookIsbn(
         BookRepository $bookRepository,
         string $isbn

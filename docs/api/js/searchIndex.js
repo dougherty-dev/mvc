@@ -363,38 +363,68 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\LibraryController\u003A\u003Alibrary\u0028\u0029",
             "name": "library",
-            "summary": "",
+            "summary": "Display\u0020library\u0020main\u0020page.",
             "url": "classes/App-Controller-LibraryController.html#method_library"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AlibraryCreate\u0028\u0029",
-            "name": "libraryCreate",
-            "summary": "",
-            "url": "classes/App-Controller-LibraryController.html#method_libraryCreate"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AlibraryShow\u0028\u0029",
-            "name": "libraryShow",
-            "summary": "",
-            "url": "classes/App-Controller-LibraryController.html#method_libraryShow"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AlibraryShowID\u0028\u0029",
-            "name": "libraryShowID",
-            "summary": "",
-            "url": "classes/App-Controller-LibraryController.html#method_libraryShowID"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AlibraryDeleteID\u0028\u0029",
-            "name": "libraryDeleteID",
-            "summary": "",
-            "url": "classes/App-Controller-LibraryController.html#method_libraryDeleteID"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AlibraryUpdateTitle\u0028\u0029",
-            "name": "libraryUpdateTitle",
-            "summary": "",
-            "url": "classes/App-Controller-LibraryController.html#method_libraryUpdateTitle"
         },                {
             "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AlibraryView\u0028\u0029",
             "name": "libraryView",
-            "summary": "",
+            "summary": "Display\u0020book\u0020list.",
             "url": "classes/App-Controller-LibraryController.html#method_libraryView"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AlibraryViewID\u0028\u0029",
+            "name": "libraryViewID",
+            "summary": "Display\u0020single\u0020book.",
+            "url": "classes/App-Controller-LibraryController.html#method_libraryViewID"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AlibraryEditID\u0028\u0029",
+            "name": "libraryEditID",
+            "summary": "Display\u0020page\u0020for\u0020editing\u0020book.",
+            "url": "classes/App-Controller-LibraryController.html#method_libraryEditID"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AlibraryNew\u0028\u0029",
+            "name": "libraryNew",
+            "summary": "Display\u0020page\u0020for\u0020adding\u0020new\u0020book.",
+            "url": "classes/App-Controller-LibraryController.html#method_libraryNew"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AlibraryReset\u0028\u0029",
+            "name": "libraryReset",
+            "summary": "Display\u0020page\u0020for\u0020reseting\u0020library.",
+            "url": "classes/App-Controller-LibraryController.html#method_libraryReset"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AapiLibraryBooks\u0028\u0029",
+            "name": "apiLibraryBooks",
+            "summary": "Display\u0020API\u0020data\u0020for\u0020books\u0020in\u0020library.",
+            "url": "classes/App-Controller-LibraryController.html#method_apiLibraryBooks"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AapiLibraryBookIsbn\u0028\u0029",
+            "name": "apiLibraryBookIsbn",
+            "summary": "Display\u0020API\u0020data\u0020for\u0020single\u0020book\u0020from\u0020ISBN.",
+            "url": "classes/App-Controller-LibraryController.html#method_apiLibraryBookIsbn"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryProcessController",
+            "name": "LibraryProcessController",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryProcessController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryProcessController\u003A\u003AlibraryNewPost\u0028\u0029",
+            "name": "libraryNewPost",
+            "summary": "Process\u0020form\u0020data\u0020for\u0020new\u0020book.",
+            "url": "classes/App-Controller-LibraryProcessController.html#method_libraryNewPost"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryProcessController\u003A\u003AlibraryDeleteID\u0028\u0029",
+            "name": "libraryDeleteID",
+            "summary": "Delete\u0020book.",
+            "url": "classes/App-Controller-LibraryProcessController.html#method_libraryDeleteID"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryProcessController\u003A\u003AlibraryUpdate\u0028\u0029",
+            "name": "libraryUpdate",
+            "summary": "Process\u0020form\u0020data\u0020for\u0020existing\u0020book.",
+            "url": "classes/App-Controller-LibraryProcessController.html#method_libraryUpdate"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryProcessController\u003A\u003AlibraryResetPost\u0028\u0029",
+            "name": "libraryResetPost",
+            "summary": "Reset\u0020library.",
+            "url": "classes/App-Controller-LibraryProcessController.html#method_libraryResetPost"
         },                {
             "fqsen": "\\App\\Controller\\ProcessController",
             "name": "ProcessController",
@@ -488,7 +518,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\Book\u003A\u003AsetImage\u0028\u0029",
             "name": "setImage",
-            "summary": "",
+            "summary": "This\u0020is\u0020never\u0020used.\u0020PHPStan\u0020fix.",
             "url": "classes/App-Entity-Book.html#method_setImage"
         },                {
             "fqsen": "\\App\\Entity\\Book\u003A\u003A\u0024id",
@@ -770,6 +800,21 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "",
             "url": "classes/App-Repository-BookRepository.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Repository\\BookRepository\u003A\u003AtruncateTable\u0028\u0029",
+            "name": "truncateTable",
+            "summary": "Reset\u0020book\u0020table.",
+            "url": "classes/App-Repository-BookRepository.html#method_truncateTable"
+        },                {
+            "fqsen": "\\App\\Repository\\BookRepository\u003A\u003AadjacentRecords\u0028\u0029",
+            "name": "adjacentRecords",
+            "summary": "Find\u0020previous\u0020and\u0020next\u0020records\u0020of\u0020id.",
+            "url": "classes/App-Repository-BookRepository.html#method_adjacentRecords"
+        },                {
+            "fqsen": "\\App\\Repository\\BookRepository\u003A\u003AfindBookFromIsbn\u0028\u0029",
+            "name": "findBookFromIsbn",
+            "summary": "Find\u0020book\u0020from\u0020ISBN.",
+            "url": "classes/App-Repository-BookRepository.html#method_findBookFromIsbn"
         },                {
             "fqsen": "\\",
             "name": "\\",

@@ -9,17 +9,18 @@ declare (strict_types=1);
 
 namespace App\Controller;
 
-use App\Entity\Book;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Book;
 use App\Repository\BookRepository;
 
 class LibraryProcessController extends AbstractController
 {
+    /** Process form data for new book. */
     #[Route('/library/new/post', name: 'library_new_post', methods: ['POST'])]
     public function libraryNewPost(
         Request $request,
@@ -44,6 +45,7 @@ class LibraryProcessController extends AbstractController
         return $this->redirectToRoute('library_view_id', ['id' => $book->getId()]);
     }
 
+    /** Delete book. */
     #[Route('/library/delete/{id}', name: 'library_delete_id')]
     public function libraryDeleteID(
         ManagerRegistry $doctrine,
@@ -69,6 +71,7 @@ class LibraryProcessController extends AbstractController
         return $this->redirectToRoute('library_view');
     }
 
+    /** Process form data for existing book. */
     #[Route('/library/update', name: 'library_update', methods: ['POST'])]
     public function libraryUpdate(
         Request $request,
@@ -101,6 +104,7 @@ class LibraryProcessController extends AbstractController
         return $this->redirectToRoute('library_view_id', ['id' => $form['id']]);
     }
 
+    /** Reset library. */
     #[Route('/library/reset/post', name: 'library_reset_post', methods: ['POST'])]
     public function libraryResetPost(
         ManagerRegistry $doctrine,

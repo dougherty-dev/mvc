@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Entity class for ORM book library.
+ * DB field definitions. Getters and setters.
+ * Author: nido24
+ */
+
 declare (strict_types=1);
 
 namespace App\Entity;
@@ -80,6 +86,7 @@ class Book
         return $this->image;
     }
 
+    /** This is never used. PHPStan fix. */
     public function setImage(?string $image): static
     {
         $this->image = $image;

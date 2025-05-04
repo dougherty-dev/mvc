@@ -1,12 +1,17 @@
 <?php
 
+/**
+ * Repository class for ORM book library.
+ * Author: nido24
+ */
+
 declare (strict_types=1);
 
 namespace App\Repository;
 
-use App\Entity\Book;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use App\Entity\Book;
 
 /**
  * @extends ServiceEntityRepository<Book>
@@ -18,14 +23,17 @@ class BookRepository extends ServiceEntityRepository
         parent::__construct($registry, Book::class);
     }
 
+    /** Reset book table. */
     public function truncateTable(): void
     {
         $connection = $this->getEntityManager()->getConnection();
         $platform = $connection->getDatabasePlatform();
-        $connection->executeUpdate($platform->getTruncateTableSQL('book', true));
+        $connection->executeStatement($platform->getTruncateTableSQL('book', true));
     }
 
     /**
+     * Find previous and next records of id.
+     *
      * @return int[]
      */
     public function adjacentRecords(int $id): array
@@ -48,6 +56,7 @@ class BookRepository extends ServiceEntityRepository
         return $res;
     }
 
+    /** Find book from ISBN. */
     public function findBookFromIsbn(string $isbn): ?Book
     {
         $res = $this->createQueryBuilder('b')
@@ -58,29 +67,4 @@ class BookRepository extends ServiceEntityRepository
         ;
         return is_object($res) && is_a($res, 'App\Entity\Book') ? $res : null;
     }
-
-    //    /**
-    //     * @return Book[] Returns an array of Book objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('b')
-    //            ->andWhere('b.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('b.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
-
-    //    public function findOneBySomeField($value): ?Book
-    //    {
-    //        return $this->createQueryBuilder('b')
-    //            ->andWhere('b.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
 }

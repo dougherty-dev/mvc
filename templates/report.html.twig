@@ -16,13 +16,12 @@
     <h1>Rapport</h1>
     <section class="two-columns" id="kmom05">
         <h2>Kmom05</h2>
-        <p class="initcap">ORM</p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+        <p class="initcap">Objekt-relationell mappning (ORM) avhandlas via Doctrine i Symfony, kanske mest för att illustrera ännu ett koncept relaterat till databaser. I själva verket vinner man nog inte så mycket på en dylik abstraktion, eftersom man ändå måste ha detaljkännedom om sina tabeller och komma åt data via SQL-liknande satser. Även i andra modeller har man objektorientering på sista raden i PHP via getters, setters och andra mekanismer. MariaDB? <em>Defeats the purpose.</em></p>
+        <p>Till yttermera visso tillkommer onödig abstraktion, exempelvis för att uppdatera tabeller, även om det blir lite mindre kod att hantera. Det är inte troligt att förstahandsvalet faller på ORM i någon som helst tillämpning.</p>
+        <p>Givet databasens litenhet fordrades ändå en hel del arbete för att få funktionaliteten på plats, kanske mest för att få det att passa med Symfonys gränssnitt. Men CRUD är CRUD, om än i annan tappning, och efter en del inledande svårigheter gick det relativt enkelt att bygga biblioteket.</p>
+        <p>För ändamålet kopierades konceptet från den tidigare kortleksmodellen, med en inre twigmall omfattande en inre meny för att få ett enhetligt gränssnitt för biblioteket. En centrerad vy med tabeller för boklistor, enskilda böcker och formulär definierar biblioteket, tillsammans med en frontsida. Enskilda detaljvyer har försetts med ytterligare navigering till nästa och föregående objekt.</p>
+        <p>Då filuppladdning inte fungerar på studentservern skippas den biten – utöver att det skulle ta ytterligare tid i anspråk – och av det skälet kan bilder inte hanteras i nuvarande version. Man får nöja sig med att ange titel, författare och ISBN för verken, för vilka en generisk bild definieras i förekommande fall. Grundläggande felhantering och kontroller i formulär har implementerats.</p>
+        <p>Denna gång har aspekter av testning funnits med från första stund, men det mest komplexa återfinns alltjämt i kontrollklasserna, som här egentligen är de enda klasserna av relevans. För att kunna testa metoder som förändrar databasen nyttjas en fristående testdatabas (angiven i <code>.env.test.local</code>) för att inte förstöra något i den ordinarie databasen. Därmed kan en återställning först göras, på det att exakta data är kända för ID med mera. Alternativet med mockning är inte så givande i denna enkla modell, eftersom metoderna är få.</p>
         <figure>
             <img src="{{ asset('build/images/chihiro-kmom05.avif') }}" width="1536" alt="Chihiro knåpar ORM">
         </figure>

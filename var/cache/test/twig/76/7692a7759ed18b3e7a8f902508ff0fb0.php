@@ -110,16 +110,15 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
     <h1>Rapport</h1>
     <section class=\"two-columns\" id=\"kmom05\">
         <h2>Kmom05</h2>
-        <p class=\"initcap\">ORM</p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+        <p class=\"initcap\">Objekt-relationell mappning (ORM) avhandlas via Doctrine i Symfony, kanske mest för att illustrera ännu ett koncept relaterat till databaser. I själva verket vinner man nog inte så mycket på en dylik abstraktion, eftersom man ändå måste ha detaljkännedom om sina tabeller och komma åt data via SQL-liknande satser. Även i andra modeller har man objektorientering på sista raden i PHP via getters, setters och andra mekanismer. MariaDB? <em>Defeats the purpose.</em></p>
+        <p>Till yttermera visso tillkommer onödig abstraktion, exempelvis för att uppdatera tabeller, även om det blir lite mindre kod att hantera. Det är inte troligt att förstahandsvalet faller på ORM i någon som helst tillämpning.</p>
+        <p>Givet databasens litenhet fordrades ändå en hel del arbete för att få funktionaliteten på plats, kanske mest för att få det att passa med Symfonys gränssnitt. Men CRUD är CRUD, om än i annan tappning, och efter en del inledande svårigheter gick det relativt enkelt att bygga biblioteket.</p>
+        <p>För ändamålet kopierades konceptet från den tidigare kortleksmodellen, med en inre twigmall omfattande en inre meny för att få ett enhetligt gränssnitt för biblioteket. En centrerad vy med tabeller för boklistor, enskilda böcker och formulär definierar biblioteket, tillsammans med en frontsida. Enskilda detaljvyer har försetts med ytterligare navigering till nästa och föregående objekt.</p>
+        <p>Då filuppladdning inte fungerar på studentservern skippas den biten – utöver att det skulle ta ytterligare tid i anspråk – och av det skälet kan bilder inte hanteras i nuvarande version. Man får nöja sig med att ange titel, författare och ISBN för verken, för vilka en generisk bild definieras i förekommande fall. Grundläggande felhantering och kontroller i formulär har implementerats.</p>
+        <p>Denna gång har aspekter av testning funnits med från första stund, men det mest komplexa återfinns alltjämt i kontrollklasserna, som här egentligen är de enda klasserna av relevans. För att kunna testa metoder som förändrar databasen nyttjas en fristående testdatabas (angiven i <code>.env.test.local</code>) för att inte förstöra något i den ordinarie databasen. Därmed kan en återställning först göras, på det att exakta data är kända för ID med mera. Alternativet med mockning är inte så givande i denna enkla modell, eftersom metoderna är få.</p>
         <figure>
             <img src=\"";
-        // line 27
+        // line 26
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom05.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro knåpar ORM\">
         </figure>
@@ -135,7 +134,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p>Summa summarum nås därmed hundra procent täckning även för controllerklasserna, om än av begränsat värde. Tillsammans med felfri lint via PHPStan och PHPMD föreligger därför förhoppningsvis en någorlunda god kodbas.</p>
         <figure>
             <img src=\"";
-        // line 40
+        // line 39
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom04.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro enhetstestar\">
         </figure>
@@ -155,7 +154,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p>Alla obligatoriska och valfria moment är implementerade per specifikation. Inga fel noteras med PHPStan, PHPMD eller PHP CS Fixer.</p>
         <figure>
             <img src=\"";
-        // line 57
+        // line 56
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom03.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
         </figure>
@@ -173,7 +172,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p>TIL för kursmomentet får sägas vara sessioner i Symfony och Twig, ett smidigt sätt att hantera objekt till skillnad från PHP:s krångliga motsvarigheter.</p>
         <figure>
             <img src=\"";
-        // line 72
+        // line 71
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom02.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
         </figure>
@@ -189,7 +188,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
         <p>TIL får nog sägas vara att nyttja ramverket Symfony, en erfarenhet som kanske är nyttig men som jag aldrig skulle fundera på att använda för egen del. Det är själva definitionen av bloat.</p>
         <figure>
             <img src=\"";
-        // line 85
+        // line 84
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/chihiro-kmom01.avif"), "html", null, true);
         yield "\" width=\"1536\" alt=\"Chihiro\">
             <figcaption>@mos inskärper allvaret i studierna.</figcaption>
@@ -226,7 +225,7 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  193 => 85,  177 => 72,  159 => 57,  139 => 40,  123 => 27,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  192 => 84,  176 => 71,  158 => 56,  138 => 39,  122 => 26,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -249,13 +248,12 @@ class __TwigTemplate_613ba043a5cd782a09b993562b744cb8 extends Template
     <h1>Rapport</h1>
     <section class=\"two-columns\" id=\"kmom05\">
         <h2>Kmom05</h2>
-        <p class=\"initcap\">ORM</p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+        <p class=\"initcap\">Objekt-relationell mappning (ORM) avhandlas via Doctrine i Symfony, kanske mest för att illustrera ännu ett koncept relaterat till databaser. I själva verket vinner man nog inte så mycket på en dylik abstraktion, eftersom man ändå måste ha detaljkännedom om sina tabeller och komma åt data via SQL-liknande satser. Även i andra modeller har man objektorientering på sista raden i PHP via getters, setters och andra mekanismer. MariaDB? <em>Defeats the purpose.</em></p>
+        <p>Till yttermera visso tillkommer onödig abstraktion, exempelvis för att uppdatera tabeller, även om det blir lite mindre kod att hantera. Det är inte troligt att förstahandsvalet faller på ORM i någon som helst tillämpning.</p>
+        <p>Givet databasens litenhet fordrades ändå en hel del arbete för att få funktionaliteten på plats, kanske mest för att få det att passa med Symfonys gränssnitt. Men CRUD är CRUD, om än i annan tappning, och efter en del inledande svårigheter gick det relativt enkelt att bygga biblioteket.</p>
+        <p>För ändamålet kopierades konceptet från den tidigare kortleksmodellen, med en inre twigmall omfattande en inre meny för att få ett enhetligt gränssnitt för biblioteket. En centrerad vy med tabeller för boklistor, enskilda böcker och formulär definierar biblioteket, tillsammans med en frontsida. Enskilda detaljvyer har försetts med ytterligare navigering till nästa och föregående objekt.</p>
+        <p>Då filuppladdning inte fungerar på studentservern skippas den biten – utöver att det skulle ta ytterligare tid i anspråk – och av det skälet kan bilder inte hanteras i nuvarande version. Man får nöja sig med att ange titel, författare och ISBN för verken, för vilka en generisk bild definieras i förekommande fall. Grundläggande felhantering och kontroller i formulär har implementerats.</p>
+        <p>Denna gång har aspekter av testning funnits med från första stund, men det mest komplexa återfinns alltjämt i kontrollklasserna, som här egentligen är de enda klasserna av relevans. För att kunna testa metoder som förändrar databasen nyttjas en fristående testdatabas (angiven i <code>.env.test.local</code>) för att inte förstöra något i den ordinarie databasen. Därmed kan en återställning först göras, på det att exakta data är kända för ID med mera. Alternativet med mockning är inte så givande i denna enkla modell, eftersom metoderna är få.</p>
         <figure>
             <img src=\"{{ asset('build/images/chihiro-kmom05.avif') }}\" width=\"1536\" alt=\"Chihiro knåpar ORM\">
         </figure>

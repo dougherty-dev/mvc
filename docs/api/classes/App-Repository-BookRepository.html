@@ -137,7 +137,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/BookRepository.php"><a href="files/src-repository-bookrepository.html"><abbr title="src/Repository/BookRepository.php">BookRepository.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 
     </aside>
 
@@ -191,6 +191,27 @@
                                 &nbsp;: mixed    </span>
 </dt>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Repository-BookRepository.html#method_adjacentRecords">adjacentRecords()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, int&gt;    </span>
+</dt>
+<dd>Find previous and next records of id.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Repository-BookRepository.html#method_findBookFromIsbn">findBookFromIsbn()</a>
+    <span>
+                                &nbsp;: <a href="classes/App-Entity-Book.html"><abbr title="\App\Entity\Book">Book</abbr></a>|null    </span>
+</dt>
+<dd>Find book from ISBN.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Repository-BookRepository.html#method_truncateTable">truncateTable()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Reset book table.</dd>
+
     </dl>
 
 
@@ -219,7 +240,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/BookRepository.php"><a href="files/src-repository-bookrepository.html"><abbr title="src/Repository/BookRepository.php">BookRepository.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -243,6 +264,139 @@
             </dd>
             </dl>
 
+    
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_adjacentRecords">
+        adjacentRecords()
+        <a href="classes/App-Repository-BookRepository.html#method_adjacentRecords" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/BookRepository.php"><a href="files/src-repository-bookrepository.html"><abbr title="src/Repository/BookRepository.php">BookRepository.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">39</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Find previous and next records of id.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">adjacentRecords</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$id</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_findBookFromIsbn">
+        findBookFromIsbn()
+        <a href="classes/App-Repository-BookRepository.html#method_findBookFromIsbn" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/BookRepository.php"><a href="files/src-repository-bookrepository.html"><abbr title="src/Repository/BookRepository.php">BookRepository.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">60</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Find book from ISBN.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">findBookFromIsbn</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$isbn</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/App-Entity-Book.html"><abbr title="\App\Entity\Book">Book</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$isbn</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/App-Entity-Book.html"><abbr title="\App\Entity\Book">Book</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_truncateTable">
+        truncateTable()
+        <a href="classes/App-Repository-BookRepository.html#method_truncateTable" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/BookRepository.php"><a href="files/src-repository-bookrepository.html"><abbr title="src/Repository/BookRepository.php">BookRepository.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">27</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Reset book table.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">truncateTable</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
     
 
     
@@ -363,6 +517,9 @@
             <li>
                 <ul class="phpdocumentor-list -clean">
                                             <li class=""><a href="classes/App-Repository-BookRepository.html#method___construct">__construct()</a></li>
+                                            <li class=""><a href="classes/App-Repository-BookRepository.html#method_adjacentRecords">adjacentRecords()</a></li>
+                                            <li class=""><a href="classes/App-Repository-BookRepository.html#method_findBookFromIsbn">findBookFromIsbn()</a></li>
+                                            <li class=""><a href="classes/App-Repository-BookRepository.html#method_truncateTable">truncateTable()</a></li>
                                     </ul>
             </li>
                     </ul>

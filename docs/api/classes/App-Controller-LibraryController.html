@@ -137,7 +137,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/LibraryController.php"><a href="files/src-controller-librarycontroller.html"><abbr title="src/Controller/LibraryController.php">LibraryController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 
     </aside>
 
@@ -172,46 +172,60 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Controller-LibraryController.html#method_apiLibraryBookIsbn">apiLibraryBookIsbn()</a>
+    <span>
+                                &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
+</dt>
+<dd>Display API data for single book from ISBN.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Controller-LibraryController.html#method_apiLibraryBooks">apiLibraryBooks()</a>
+    <span>
+                                &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
+</dt>
+<dd>Display API data for books in library.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Controller-LibraryController.html#method_library">library()</a>
     <span>
                                 &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
 </dt>
+<dd>Display library main page.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Controller-LibraryController.html#method_libraryCreate">libraryCreate()</a>
+    <a class="" href="classes/App-Controller-LibraryController.html#method_libraryEditID">libraryEditID()</a>
     <span>
                                 &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
 </dt>
+<dd>Display page for editing book.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Controller-LibraryController.html#method_libraryDeleteID">libraryDeleteID()</a>
+    <a class="" href="classes/App-Controller-LibraryController.html#method_libraryNew">libraryNew()</a>
     <span>
                                 &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
 </dt>
+<dd>Display page for adding new book.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Controller-LibraryController.html#method_libraryShow">libraryShow()</a>
+    <a class="" href="classes/App-Controller-LibraryController.html#method_libraryReset">libraryReset()</a>
     <span>
                                 &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
 </dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Controller-LibraryController.html#method_libraryShowID">libraryShowID()</a>
-    <span>
-                                &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
-</dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Controller-LibraryController.html#method_libraryUpdateTitle">libraryUpdateTitle()</a>
-    <span>
-                                &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
-</dt>
+<dd>Display page for reseting library.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Controller-LibraryController.html#method_libraryView">libraryView()</a>
     <span>
                                 &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
 </dt>
+<dd>Display book list.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Controller-LibraryController.html#method_libraryViewID">libraryViewID()</a>
+    <span>
+                                &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
+</dt>
+<dd>Display single book.</dd>
 
     </dl>
 
@@ -233,6 +247,145 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_apiLibraryBookIsbn">
+        apiLibraryBookIsbn()
+        <a href="classes/App-Controller-LibraryController.html#method_apiLibraryBookIsbn" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/LibraryController.php"><a href="files/src-controller-librarycontroller.html"><abbr title="src/Controller/LibraryController.php">LibraryController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">121</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Display API data for single book from ISBN.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">apiLibraryBookIsbn</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-BookRepository.html"><abbr title="\App\Repository\BookRepository">BookRepository</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$bookRepository</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$isbn</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$bookRepository</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-BookRepository.html"><abbr title="\App\Repository\BookRepository">BookRepository</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$isbn</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+    <section class="phpdocumentor-attributes">
+        <h5 class="phpdocumentor-elements__header" id="attributes">
+            Attributes <a href="classes/App-Controller-LibraryController.html#method_apiLibraryBookIsbn#attributes" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h5>
+                    <dl class="phpdocumentor-argument-list">
+    <dt class="phpdocumentor-argument-list__entry">
+        #[<abbr title="\Symfony\Component\Routing\Annotation\Route">Route</abbr>]
+    </dt>
+        <dd class="phpdocumentor-argument-list__entry">
+        &#039;/api/library/book/{isbn}&#039;
+    </dd>
+        <dd class="phpdocumentor-argument-list__entry">
+        $name: &#039;api_library_book_isbn&#039;
+    </dd>
+    </dl>
+            </section>
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_apiLibraryBooks">
+        apiLibraryBooks()
+        <a href="classes/App-Controller-LibraryController.html#method_apiLibraryBooks" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/LibraryController.php"><a href="files/src-controller-librarycontroller.html"><abbr title="src/Controller/LibraryController.php">LibraryController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">107</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Display API data for books in library.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">apiLibraryBooks</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-BookRepository.html"><abbr title="\App\Repository\BookRepository">BookRepository</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$bookRepository</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$bookRepository</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-BookRepository.html"><abbr title="\App\Repository\BookRepository">BookRepository</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+    <section class="phpdocumentor-attributes">
+        <h5 class="phpdocumentor-elements__header" id="attributes">
+            Attributes <a href="classes/App-Controller-LibraryController.html#method_apiLibraryBooks#attributes" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h5>
+                    <dl class="phpdocumentor-argument-list">
+    <dt class="phpdocumentor-argument-list__entry">
+        #[<abbr title="\Symfony\Component\Routing\Annotation\Route">Route</abbr>]
+    </dt>
+        <dd class="phpdocumentor-argument-list__entry">
+        &#039;/api/library/books&#039;
+    </dd>
+        <dd class="phpdocumentor-argument-list__entry">
+        $name: &#039;api_library_books&#039;
+    </dd>
+    </dl>
+            </section>
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_library">
         library()
         <a href="classes/App-Controller-LibraryController.html#method_library" class="headerlink"><i class="fas fa-link"></i></a>
@@ -245,7 +398,8 @@
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Display library main page.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">library</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
@@ -288,224 +442,23 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_libraryCreate">
-        libraryCreate()
-        <a href="classes/App-Controller-LibraryController.html#method_libraryCreate" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_libraryEditID">
+        libraryEditID()
+        <a href="classes/App-Controller-LibraryController.html#method_libraryEditID" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/LibraryController.php"><a href="files/src-controller-librarycontroller.html"><abbr title="src/Controller/LibraryController.php">LibraryController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">70</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Display page for editing book.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">libraryCreate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Doctrine\Persistence\ManagerRegistry">ManagerRegistry</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$doctrine</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$doctrine</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Doctrine\Persistence\ManagerRegistry">ManagerRegistry</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-    
-    <section class="phpdocumentor-attributes">
-        <h5 class="phpdocumentor-elements__header" id="attributes">
-            Attributes <a href="classes/App-Controller-LibraryController.html#method_libraryCreate#attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-        </h5>
-                    <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Symfony\Component\Routing\Annotation\Route">Route</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;/library/create&#039;
-    </dd>
-        <dd class="phpdocumentor-argument-list__entry">
-        $name: &#039;library_create&#039;
-    </dd>
-    </dl>
-            </section>
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_libraryDeleteID">
-        libraryDeleteID()
-        <a href="classes/App-Controller-LibraryController.html#method_libraryDeleteID" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/LibraryController.php"><a href="files/src-controller-librarycontroller.html"><abbr title="src/Controller/LibraryController.php">LibraryController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">69</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">libraryDeleteID</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Doctrine\Persistence\ManagerRegistry">ManagerRegistry</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$doctrine</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$doctrine</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Doctrine\Persistence\ManagerRegistry">ManagerRegistry</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$id</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-    
-    <section class="phpdocumentor-attributes">
-        <h5 class="phpdocumentor-elements__header" id="attributes">
-            Attributes <a href="classes/App-Controller-LibraryController.html#method_libraryDeleteID#attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-        </h5>
-                    <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Symfony\Component\Routing\Annotation\Route">Route</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;/library/delete/{id}&#039;
-    </dd>
-        <dd class="phpdocumentor-argument-list__entry">
-        $name: &#039;library_delete_id&#039;
-    </dd>
-    </dl>
-            </section>
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_libraryShow">
-        libraryShow()
-        <a href="classes/App-Controller-LibraryController.html#method_libraryShow" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/LibraryController.php"><a href="files/src-controller-librarycontroller.html"><abbr title="src/Controller/LibraryController.php">LibraryController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">46</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">libraryShow</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-BookRepository.html"><abbr title="\App\Repository\BookRepository">BookRepository</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$bookRepository</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$bookRepository</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-BookRepository.html"><abbr title="\App\Repository\BookRepository">BookRepository</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-    
-    <section class="phpdocumentor-attributes">
-        <h5 class="phpdocumentor-elements__header" id="attributes">
-            Attributes <a href="classes/App-Controller-LibraryController.html#method_libraryShow#attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-        </h5>
-                    <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Symfony\Component\Routing\Annotation\Route">Route</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;/library/show&#039;
-    </dd>
-        <dd class="phpdocumentor-argument-list__entry">
-        $name: &#039;library_show&#039;
-    </dd>
-    </dl>
-            </section>
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_libraryShowID">
-        libraryShowID()
-        <a href="classes/App-Controller-LibraryController.html#method_libraryShowID" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/LibraryController.php"><a href="files/src-controller-librarycontroller.html"><abbr title="src/Controller/LibraryController.php">LibraryController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">57</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">libraryShowID</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-BookRepository.html"><abbr title="\App\Repository\BookRepository">BookRepository</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$bookRepository</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">libraryEditID</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-BookRepository.html"><abbr title="\App\Repository\BookRepository">BookRepository</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$bookRepository</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -534,7 +487,7 @@
     
     <section class="phpdocumentor-attributes">
         <h5 class="phpdocumentor-elements__header" id="attributes">
-            Attributes <a href="classes/App-Controller-LibraryController.html#method_libraryShowID#attributes" class="headerlink"><i class="fas fa-link"></i></a>
+            Attributes <a href="classes/App-Controller-LibraryController.html#method_libraryEditID#attributes" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h5>
                     <dl class="phpdocumentor-argument-list">
@@ -542,10 +495,10 @@
         #[<abbr title="\Symfony\Component\Routing\Annotation\Route">Route</abbr>]
     </dt>
         <dd class="phpdocumentor-argument-list__entry">
-        &#039;/library/show/{id}&#039;
+        &#039;/library/edit/{id}&#039;
     </dd>
         <dd class="phpdocumentor-argument-list__entry">
-        $name: &#039;library_show_id&#039;
+        $name: &#039;library_edit_id&#039;
     </dd>
     </dl>
             </section>
@@ -562,58 +515,35 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_libraryUpdateTitle">
-        libraryUpdateTitle()
-        <a href="classes/App-Controller-LibraryController.html#method_libraryUpdateTitle" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_libraryNew">
+        libraryNew()
+        <a href="classes/App-Controller-LibraryController.html#method_libraryNew" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/LibraryController.php"><a href="files/src-controller-librarycontroller.html"><abbr title="src/Controller/LibraryController.php">LibraryController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Display page for adding new book.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">libraryUpdateTitle</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Doctrine\Persistence\ManagerRegistry">ManagerRegistry</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$doctrine</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">libraryNew</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
     
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$doctrine</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Doctrine\Persistence\ManagerRegistry">ManagerRegistry</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$id</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$value</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
+    
     
 
     
     <section class="phpdocumentor-attributes">
         <h5 class="phpdocumentor-elements__header" id="attributes">
-            Attributes <a href="classes/App-Controller-LibraryController.html#method_libraryUpdateTitle#attributes" class="headerlink"><i class="fas fa-link"></i></a>
+            Attributes <a href="classes/App-Controller-LibraryController.html#method_libraryNew#attributes" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h5>
                     <dl class="phpdocumentor-argument-list">
@@ -621,10 +551,66 @@
         #[<abbr title="\Symfony\Component\Routing\Annotation\Route">Route</abbr>]
     </dt>
         <dd class="phpdocumentor-argument-list__entry">
-        &#039;/library/update/title/{id}/{value}&#039;
+        &quot;/library/new&quot;
     </dd>
         <dd class="phpdocumentor-argument-list__entry">
-        $name: &#039;library_update_title&#039;
+        $name: &quot;library_new&quot;
+    </dd>
+    </dl>
+            </section>
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_libraryReset">
+        libraryReset()
+        <a href="classes/App-Controller-LibraryController.html#method_libraryReset" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/LibraryController.php"><a href="files/src-controller-librarycontroller.html"><abbr title="src/Controller/LibraryController.php">LibraryController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">100</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Display page for reseting library.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">libraryReset</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+    <section class="phpdocumentor-attributes">
+        <h5 class="phpdocumentor-elements__header" id="attributes">
+            Attributes <a href="classes/App-Controller-LibraryController.html#method_libraryReset#attributes" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h5>
+                    <dl class="phpdocumentor-argument-list">
+    <dt class="phpdocumentor-argument-list__entry">
+        #[<abbr title="\Symfony\Component\Routing\Annotation\Route">Route</abbr>]
+    </dt>
+        <dd class="phpdocumentor-argument-list__entry">
+        &quot;/library/reset&quot;
+    </dd>
+        <dd class="phpdocumentor-argument-list__entry">
+        $name: &quot;library_reset&quot;
     </dd>
     </dl>
             </section>
@@ -649,14 +635,15 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/LibraryController.php"><a href="files/src-controller-librarycontroller.html"><abbr title="src/Controller/LibraryController.php">LibraryController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">110</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Display book list.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">libraryView</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-BookRepository.html"><abbr title="\App\Repository\BookRepository">BookRepository</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$productRepository</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">libraryView</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-BookRepository.html"><abbr title="\App\Repository\BookRepository">BookRepository</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$bookRepository</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -665,7 +652,7 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$productRepository</span>
+                <span class="phpdocumentor-signature__argument__name">$bookRepository</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-BookRepository.html"><abbr title="\App\Repository\BookRepository">BookRepository</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -690,6 +677,79 @@
     </dd>
         <dd class="phpdocumentor-argument-list__entry">
         $name: &#039;library_view&#039;
+    </dd>
+    </dl>
+            </section>
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_libraryViewID">
+        libraryViewID()
+        <a href="classes/App-Controller-LibraryController.html#method_libraryViewID" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/LibraryController.php"><a href="files/src-controller-librarycontroller.html"><abbr title="src/Controller/LibraryController.php">LibraryController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">43</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Display single book.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">libraryViewID</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-BookRepository.html"><abbr title="\App\Repository\BookRepository">BookRepository</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$bookRepository</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$bookRepository</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-BookRepository.html"><abbr title="\App\Repository\BookRepository">BookRepository</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$id</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+    <section class="phpdocumentor-attributes">
+        <h5 class="phpdocumentor-elements__header" id="attributes">
+            Attributes <a href="classes/App-Controller-LibraryController.html#method_libraryViewID#attributes" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h5>
+                    <dl class="phpdocumentor-argument-list">
+    <dt class="phpdocumentor-argument-list__entry">
+        #[<abbr title="\Symfony\Component\Routing\Annotation\Route">Route</abbr>]
+    </dt>
+        <dd class="phpdocumentor-argument-list__entry">
+        &#039;/library/view/{id}&#039;
+    </dd>
+        <dd class="phpdocumentor-argument-list__entry">
+        $name: &#039;library_view_id&#039;
     </dd>
     </dl>
             </section>
@@ -813,13 +873,14 @@
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
+                                            <li class=""><a href="classes/App-Controller-LibraryController.html#method_apiLibraryBookIsbn">apiLibraryBookIsbn()</a></li>
+                                            <li class=""><a href="classes/App-Controller-LibraryController.html#method_apiLibraryBooks">apiLibraryBooks()</a></li>
                                             <li class=""><a href="classes/App-Controller-LibraryController.html#method_library">library()</a></li>
-                                            <li class=""><a href="classes/App-Controller-LibraryController.html#method_libraryCreate">libraryCreate()</a></li>
-                                            <li class=""><a href="classes/App-Controller-LibraryController.html#method_libraryDeleteID">libraryDeleteID()</a></li>
-                                            <li class=""><a href="classes/App-Controller-LibraryController.html#method_libraryShow">libraryShow()</a></li>
-                                            <li class=""><a href="classes/App-Controller-LibraryController.html#method_libraryShowID">libraryShowID()</a></li>
-                                            <li class=""><a href="classes/App-Controller-LibraryController.html#method_libraryUpdateTitle">libraryUpdateTitle()</a></li>
+                                            <li class=""><a href="classes/App-Controller-LibraryController.html#method_libraryEditID">libraryEditID()</a></li>
+                                            <li class=""><a href="classes/App-Controller-LibraryController.html#method_libraryNew">libraryNew()</a></li>
+                                            <li class=""><a href="classes/App-Controller-LibraryController.html#method_libraryReset">libraryReset()</a></li>
                                             <li class=""><a href="classes/App-Controller-LibraryController.html#method_libraryView">libraryView()</a></li>
+                                            <li class=""><a href="classes/App-Controller-LibraryController.html#method_libraryViewID">libraryViewID()</a></li>
                                     </ul>
             </li>
                     </ul>
