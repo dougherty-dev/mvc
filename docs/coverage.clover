@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1746341305">
-  <project timestamp="1746341305">
+<coverage generated="1746368261">
+  <project timestamp="1746368261">
     <file name="/Users/nik/Sites/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="4" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
@@ -727,8 +727,8 @@
       <line num="83" type="stmt" count="1"/>
       <line num="87" type="stmt" count="2"/>
       <line num="88" type="stmt" count="2"/>
-      <line num="89" type="stmt" count="1"/>
-      <line num="90" type="stmt" count="1"/>
+      <line num="89" type="stmt" count="2"/>
+      <line num="90" type="stmt" count="2"/>
       <line num="94" type="stmt" count="2"/>
       <line num="98" type="method" name="playerBets" visibility="public" complexity="4" crap="4" count="5"/>
       <line num="100" type="stmt" count="5"/>
