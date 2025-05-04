@@ -18,6 +18,39 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Book;
 use App\Repository\BookRepository;
 
+define('BOOKLIST', [
+    [
+        'title' => 'Klara and the Sun',
+        'author' => 'Ishiguro Kazuo (石黒一雄)',
+        'isbn' => '9780571364879',
+        'image' => '9780571364879-ishiguro-kazuo-klara-and-the-sun'
+    ],
+    [
+        'title' => 'Coraline',
+        'author' => 'Neil Gaiman',
+        'isbn' => '9780380807345',
+        'image' => '9780380807345-neil-gaiman-coraline'
+    ],
+    [
+        'title' => '三体',
+        'author' => '刘慈欣',
+        'isbn' => '9787536692930',
+        'image' => '9787536692930-liu-cixin-santi'
+    ],
+    [
+        'title' => 'El cuaderno de Maya',
+        'author' => 'Isabel Allende',
+        'isbn' => '9780307947949',
+        'image' => '9780307947949-isabel-allende-el-cuaderno-de-maya'
+    ],
+    [
+        'title' => 'La poupée de porcelaine',
+        'author' => 'Maxence Fermine',
+        'isbn' => '9782876837539',
+        'image' => '9782876837539-maxence-fermine-la-poupee-de-porcelaine'
+    ],
+]);
+
 class LibraryProcessController extends AbstractController
 {
     /** Process form data for new book. */
@@ -113,40 +146,7 @@ class LibraryProcessController extends AbstractController
         $entityManager = $doctrine->getManager();
         $bookRepository->truncateTable();
 
-        $bookList = [
-            [
-                'title' => 'Klara and the Sun',
-                'author' => 'Ishiguro Kazuo (石黒一雄)',
-                'isbn' => '9780571364879',
-                'image' => '9780571364879-ishiguro-kazuo-klara-and-the-sun'
-            ],
-            [
-                'title' => 'Coraline',
-                'author' => 'Neil Gaiman',
-                'isbn' => '9780380807345',
-                'image' => '9780380807345-neil-gaiman-coraline'
-            ],
-            [
-                'title' => '三体',
-                'author' => '刘慈欣',
-                'isbn' => '9787536692930',
-                'image' => '9787536692930-liu-cixin-santi'
-            ],
-            [
-                'title' => 'El cuaderno de Maya',
-                'author' => 'Isabel Allende',
-                'isbn' => '9780307947949',
-                'image' => '9780307947949-isabel-allende-el-cuaderno-de-maya'
-            ],
-            [
-                'title' => 'La poupée de porcelaine',
-                'author' => 'Maxence Fermine',
-                'isbn' => '9782876837539',
-                'image' => '9782876837539-maxence-fermine-la-poupee-de-porcelaine'
-            ],
-        ];
-
-        foreach ($bookList as $book) {
+        foreach (BOOKLIST as $book) {
             $vol = new Book();
             $vol->setTitle($book['title'])
                 ->setAuthor($book['author'])

@@ -83,8 +83,8 @@ class GameActionsTest extends TestCase
         $this->assertEquals($gameActions->players[0]->__get('bet'), 50);
     }
 
-    /** Test states. */
-    public function testWinningHand(): void
+    /** Test winning states with intelligence. */
+    public function testWinningHandWithIntelligence(): void
     {
         /** With intelligence. */
         $gameActions = new GameActions(bankIntelligence: ' checked');
@@ -130,7 +130,11 @@ class GameActionsTest extends TestCase
         $gameActions->playerDraws(1); // Ace
         $this->assertEquals($gameActions::STATES['player_wins'], $gameActions->__get('state'));
         $gameActions->continueGame();
+    }
 
+    /** Test winning states with intelligence. */
+    public function testWinningHandWithoutIntelligence(): void
+    {
         /** Without intelligence. */
         $gameActions = new GameActions();
         $player = $gameActions->players[0];
@@ -157,6 +161,23 @@ class GameActionsTest extends TestCase
         $gameActions->continueGame();
 
         /** Test game over */
+        $gameActions = new GameActions();
+        $gameActions->playerBets(100);
+        $player = $gameActions->players[0];
+        $banker = $gameActions->players[1];
+
+        $player->hand->addCard(new CardGraphic(1));
+        $gameActions->playerDraws(0);
+        $banker->hand->addCard(new CardGraphic(53));
+        $banker->hand->addCard(new CardGraphic(52));
+        $gameActions->playerDraws(1);
+        $gameActions->continueGame();
+        $this->assertEquals($gameActions::STATES['game_over'], $gameActions->__get('state'));
+    }
+
+    /** Test game over. */
+    public function testGameOver(): void
+    {
         $gameActions = new GameActions();
         $gameActions->playerBets(100);
         $player = $gameActions->players[0];

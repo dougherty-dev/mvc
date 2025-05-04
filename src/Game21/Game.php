@@ -82,8 +82,6 @@ class Game
     /** Magic set. */
     public function __set(string $key, mixed $value)
     {
-        if ($value !== null) {
-            $this->$key = $value;
-        }
+        $this->$key = $value;
     }
 }

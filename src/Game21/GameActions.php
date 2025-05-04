@@ -12,10 +12,12 @@ namespace App\Game21;
 use RangeException;
 use App\Cards\Deck;
 use App\Cards\Hand;
+use App\Game21\GameCardStats;
 
 /** Action methods for the game. */
 class GameActions extends Game
 {
+    use GameCardStats;
     /** Build a new shuffled deck of cards, excluding cards in player hands. */
     private function reassembleDeck(): void
     {
@@ -155,38 +157,5 @@ class GameActions extends Game
             $this->players[1]->__set('balance', $this->players[1]->__get('balance') + 2 * $this->players[1]->__get('bet'));
             $this->__set('state', self::STATES['bank_wins']);
         }
-    }
-
-    /** Calculate probabilities for getting under/over 21 based on remaining cards in deck */
-    private function cardStats(int $id): void
-    {
-        $handValue = $this->players[$id]->handScore->lowestScore($this->players[$id]->hand);
-        $values = array_fill(1, WILD_MAX, 0);
-        $deckValues = $this->deck->intValues();
-        $cards = max(1, count($deckValues));
-
-        foreach ($deckValues as $card) {
-            $face = $card % CARDSUIT + 1;
-            match (true) {
-                $card > DECK_MAX => $values[1]++, // keep jokers = 1
-                default => $values[$face]++ // keep aces = 1
-            };
-        }
-
-        $upTo21 = 0;
-        $over21 = 0;
-        foreach ($values as $key => $val) {
-            if ($val && $handValue + $key <= TWENTY_ONE) {
-                $upTo21 += $val;
-            }
-            if ($val && $handValue + $key > TWENTY_ONE) {
-                $over21 += $val;
-            }
-        }
-
-        $this->__set('cardStats', [
-            round(100 * $upTo21 / $cards, 0),
-            round(100 * $over21 / $cards, 0)
-        ]);
     }
 }
