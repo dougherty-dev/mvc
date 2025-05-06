@@ -23,12 +23,8 @@ class Deck extends CardDeck
     {
         $hand = new Hand();
         $remaining = $this->remainingCards();
-        for ($i = 1; $i <= min($number, $remaining); $i++) {
-            $card = array_shift($this->deck);
-            if ($card) {
-                $hand->addCard($card);
-            }
-        }
+        $deck = array_splice($this->deck, 0, min($number, $remaining));
+        array_map(fn ($card): null => $hand->addCard($card), $deck);
         return $hand;
     }
 
