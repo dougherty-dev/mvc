@@ -12,9 +12,9 @@
                     <th>ID</th>
                     <td>{{ book.getId }} <input type="hidden" name="id" value="{{ book.getId }}"></td>
                     {% if book.getImage %}
-                    <td rowspan="5" class="center"><img src="{{ asset('build/images/books/'~book.getImage~'.avif') }}" width="300" alt="{{ book.getTitle }}"></td>
+                    <td rowspan="4" class="center"><img src="{{ asset('build/images/books/'~book.getImage~'.avif') }}" width="300" alt="{{ book.getTitle }}"></td>
                     {% else %}
-                    <td rowspan="5" class="center"><img src="{{ asset('build/images/books/placeholder.avif') }}" width="300" alt="{{ book.getTitle }}"></td>
+                    <td rowspan="4" class="center"><img src="{{ asset('build/images/books/placeholder.avif') }}" width="300" alt="{{ book.getTitle }}"></td>
                     {% endif %}
                 </tr>
                 <tr class="booktable_row">
@@ -29,12 +29,14 @@
                     <th>ISBN-13</th>
                     <td><input type="text" size="50" name="isbn" value="{{ book.getIsbn }}" pattern="[0-9]{13}" required></td>
                 </tr>
-                <tr class="booktable_row">
-                    <th>⚠️</th>
-                    <td><input type="checkbox" name="delete"> Radera bok</td>
+                <tr>
+                    <th colspan="3"><button type="submit">Uppdatera</button></th>
                 </tr>
             </table>
-            <button type="submit">Uppdatera</button>
+        </form>
+        <form method="post" action="{{ path('library_delete_confirm') }}">
+            <input type="hidden" name="id" value="{{ book.getId }}">
+            <p><button type="submit">Radera bok</button></p>
         </form>
     </section>
 {% endblock %}

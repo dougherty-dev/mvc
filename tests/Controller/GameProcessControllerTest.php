@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Game21\GameActions;
 use App\Controller\GameProcessController;
+use App\Controller\GamePlayerController;
 
 /** Test cases for class GameProcessController. */
 class GameProcessControllerTest extends WebTestCase
@@ -22,6 +23,9 @@ class GameProcessControllerTest extends WebTestCase
     {
         $cls = new GameProcessController(new RequestStack());
         $this->assertInstanceOf("\App\Controller\GameProcessController", $cls);
+
+        $cls = new GamePlayerController(new RequestStack());
+        $this->assertInstanceOf("\App\Controller\GamePlayerController", $cls);
     }
 
     /** Test POST route /game/player/draws/process */

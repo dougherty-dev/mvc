@@ -25,6 +25,9 @@ class DeckTest extends TestCase
         /** Deck has right count on reset? */
         $deck->resetDeck();
         $this->assertCount(54, $deck->getDeck());
+
+        $deck = new CardDeck();
+        $this->assertInstanceOf("\App\Cards\CardDeck", $deck);
     }
 
     /** Construct deck and verify its shuffle functionality. */

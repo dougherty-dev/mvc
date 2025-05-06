@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/** The array holding the quotations. */
 define('QUOTATIONS', [
     ['Det finns ingen bättre utbildning än motgångar.',
     'Benjamin Disraeli'],
@@ -95,8 +96,10 @@ define('QUOTATIONS', [
     'Maya Angelou'],
 ]);
 
+/** The QuotationsController class. */
 class QuotationsController extends AbstractController
 {
+    /** The API route. */
     #[Route("/api/quotation", name: "quotation")]
     public function quotation(): Response
     {

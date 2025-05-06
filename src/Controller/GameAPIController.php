@@ -14,9 +14,10 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/** The GameAPIController class. */
 class GameAPIController extends GameController
 {
-    /** API route for current game stats. */
+    /** The API route for current game stats. */
     #[Route("/api/game", name: "api_game")]
     public function apiGame(): Response
     {

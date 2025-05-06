@@ -13,6 +13,10 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Game21\GameActions;
 use App\Controller\GameController;
+use App\Controller\GameSessionController;
+use App\Controller\GamePlayerController;
+use App\Controller\GameContinueController;
+use App\Controller\GameBetController;
 
 /** Test cases for class GameController. */
 class GameControllerTest extends WebTestCase
@@ -22,6 +26,18 @@ class GameControllerTest extends WebTestCase
     {
         $cls = new GameController(new RequestStack());
         $this->assertInstanceOf("\App\Controller\GameController", $cls);
+
+        $cls = new GameSessionController(new RequestStack());
+        $this->assertInstanceOf("\App\Controller\GameSessionController", $cls);
+
+        $cls = new GamePlayerController(new RequestStack());
+        $this->assertInstanceOf("\App\Controller\GamePlayerController", $cls);
+
+        $cls = new GameContinueController(new RequestStack());
+        $this->assertInstanceOf("\App\Controller\GameContinueController", $cls);
+
+        $cls = new GameBetController(new RequestStack());
+        $this->assertInstanceOf("\App\Controller\GameBetController", $cls);
     }
 
     /** Test route /game */

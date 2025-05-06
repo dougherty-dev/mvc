@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Entity class for ORM book library.
+ * Entity class for ORM Book in BookRepository library.
  * DB field definitions. Getters and setters.
  * Author: nido24
  */
@@ -13,6 +13,9 @@ namespace App\Entity;
 use App\Repository\BookRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * The Book class.
+ */
 #[ORM\Entity(repositoryClass: BookRepository::class)]
 class Book
 {
@@ -33,23 +36,33 @@ class Book
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
 
+    /**
+     * Getter for ID.
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function setId(int $id): self
+    /**
+     * Setter for ID.
+     */
+    public function setId(int $id): void
     {
         $this->id = $id;
-
-        return $this;
     }
 
+    /**
+     * Getter for title
+     */
     public function getTitle(): ?string
     {
         return $this->title;
     }
 
+    /**
+     * Setter for title.
+     */
     public function setTitle(string $title): static
     {
         $this->title = $title;
@@ -57,11 +70,17 @@ class Book
         return $this;
     }
 
+    /**
+     * Getter for author.
+     */
     public function getAuthor(): ?string
     {
         return $this->author;
     }
 
+    /**
+     * Setter for author.
+     */
     public function setAuthor(string $author): static
     {
         $this->author = $author;
@@ -69,11 +88,17 @@ class Book
         return $this;
     }
 
+    /**
+     * Getter for ISBN.
+     */
     public function getIsbn(): ?string
     {
         return $this->isbn;
     }
 
+    /**
+     * Setter for ISBN.
+     */
     public function setIsbn(string $isbn): static
     {
         $this->isbn = $isbn;
@@ -81,12 +106,17 @@ class Book
         return $this;
     }
 
+    /**
+     * Getter for image.
+     */
     public function getImage(): ?string
     {
         return $this->image;
     }
 
-    /** This is never used. PHPStan fix. */
+    /**
+     * Setter for image.
+     */
     public function setImage(?string $image): static
     {
         $this->image = $image;

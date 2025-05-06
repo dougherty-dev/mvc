@@ -54,7 +54,8 @@
             "symfony/runtime": true
         },
         "bump-after-update": true,
-        "sort-packages": true
+        "sort-packages": true,
+        "process-timeout": 900
     },
     "autoload": {
         "psr-4": {
@@ -90,8 +91,8 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
-        "csfix": "PHP_CS_FIXER_IGNORE_ENV=1 tools/php-cs-fixer/vendor/bin/php-cs-fixer --config=tools/php-cs-fixer/.php-cs-fixer.php fix src tests",
-        "csfix:dry": "PHP_CS_FIXER_IGNORE_ENV=1 tools/php-cs-fixer/vendor/bin/php-cs-fixer --config=tools/php-cs-fixer/.php-cs-fixer.php fix src tests --dry-run",
+        "csfix": "PHP_CS_FIXER_IGNORE_ENV=1 tools/php-cs-fixer/vendor/bin/php-cs-fixer --quiet --config=tools/php-cs-fixer/.php-cs-fixer.php fix src tests",
+        "csfix:dry": "PHP_CS_FIXER_IGNORE_ENV=1 tools/php-cs-fixer/vendor/bin/php-cs-fixer --quiet --config=tools/php-cs-fixer/.php-cs-fixer.php fix src tests --dry-run",
         "phpmd": "php -d error_reporting='E_ALL & ~E_DEPRECATED' tools/phpmd/vendor/bin/phpmd . text tools/phpmd/phpmd.xml || true",
         "phpstan": "tools/phpstan/vendor/bin/phpstan analyse -c tools/phpstan/phpstan.neon || true",
         "lint": [

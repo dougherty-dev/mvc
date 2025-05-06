@@ -9,19 +9,27 @@ declare(strict_types=1);
 
 namespace App\Cards;
 
-/** Define methods for the Hand class. */
+/**
+ * Define methods for the Hand class.
+ */
 class Hand
 {
-    /** @var array<int, CardGraphic> $hand */
+    /**
+     * @var array<int, CardGraphic> $hand
+     */
     private array $hand = [];
 
-    /** @return array<int, CardGraphic> */
+    /**
+     * @return array<int, CardGraphic>
+     */
     public function getHand(): array
     {
         return $this->hand;
     }
 
-    /** Add a card to hand. */
+    /**
+     * Add a card to hand.
+     */
     public function addCard(CardGraphic $card): void
     {
         $this->hand[] = $card;

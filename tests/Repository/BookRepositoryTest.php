@@ -21,7 +21,6 @@ class BookRepositoryTest extends TestCase
     public function testCreateObject(): void
     {
         $registry = $this->createMock(ManagerRegistry::class);
-        $library = new BookRepository($registry);
-        $this->assertInstanceOf("\App\Repository\BookRepository", $library);
+        $this->assertInstanceOf("\App\Repository\BookRepository", new BookRepository($registry));
     }
 }

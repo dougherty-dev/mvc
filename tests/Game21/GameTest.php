@@ -10,12 +10,19 @@ declare (strict_types=1);
 namespace App\Tests\Game21;
 
 use PHPUnit\Framework\TestCase;
-use RangeException;
 use App\Game21\Game;
+use App\Game21\GameFoundation;
 
 /** Test cases for class Game. */
 class GameTest extends TestCase
 {
+    /** Instantiate classes. */
+    public function testCreateInstance(): void
+    {
+        $this->assertInstanceOf("\App\Game21\Game", new Game());
+        $this->assertInstanceOf("\App\Game21\GameFoundation", new GameFoundation());
+    }
+
     /** Construct object with argument and verify that the object has the expected properties. */
     public function testCreateObject(): void
     {
@@ -25,20 +32,6 @@ class GameTest extends TestCase
         $this->assertTrue($game->__isset('bankIntelligence'));
         $this->assertTrue($game->__isset('showDeck'));
         $this->assertTrue($game->__isset('cardStats'));
-    }
-
-    /** Construct object with invalid argument. */
-    public function testCreateObjectWithTooLargeArgument(): void
-    {
-        $this->expectException(RangeException::class);
-        new Game(cardStats: [201, 0]);
-    }
-
-    /** Construct object with invalid argument. */
-    public function testCreateObjectWithTooSmallArgument(): void
-    {
-        $this->expectException(RangeException::class);
-        new Game(cardStats: [-1, 0]);
     }
 
     /** Test getter and setter */

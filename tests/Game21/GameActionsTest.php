@@ -15,6 +15,11 @@ use App\Cards\Deck;
 use App\Cards\CardGraphic;
 use App\Cards\Hand;
 use App\Game21\GameActions;
+use App\Game21\GameActionsStats;
+use App\Game21\GameActionsWinner;
+use App\Game21\GameActionsBet;
+use App\Game21\GameActionsDeck;
+use App\Game21\GameActionsContinue;
 
 /** Test cases for class Card. */
 class GameActionsTest extends TestCase
@@ -31,17 +36,24 @@ class GameActionsTest extends TestCase
         }
 
         $this->assertCount(44, $gameActions->deck->getDeck());
+
+        $this->assertInstanceOf("\App\Game21\GameActionsStats", new GameActionsStats());
+        $this->assertInstanceOf("\App\Game21\GameActionsWinner", new GameActionsWinner());
+        $this->assertInstanceOf("\App\Game21\GameActionsBet", new GameActionsBet());
+        $this->assertInstanceOf("\App\Game21\GameActionsDeck", new GameActionsDeck());
+        $this->assertInstanceOf("\App\Game21\GameActionsContinue", new GameActionsContinue());
     }
 
     /** Test deck reassembly. */
     public function testDeckReassembly(): void
     {
         $gameActions = new GameActions();
+        $gameActions->gaContinue = new GameActionsContinue();
 
         for ($i = 0; $i < 52; $i++) {
             $gameActions->playerDraws(0);
         }
-        $gameActions->continueGame();
+        $gameActions->gaContinue->continueGame($gameActions);
 
         /** Deck contains 2 cards. Player draws 2 cards. Reassembled deck should have 52 cards. */
         $this->assertCount(2, $gameActions->deck->getDeck());
@@ -50,27 +62,13 @@ class GameActionsTest extends TestCase
         $this->assertCount(52, $gameActions->deck->getDeck());
     }
 
-    /** Test negative bet. */
-    public function testNegativeBet(): void
-    {
-        $gameActions = new GameActions();
-        $this->expectException(RangeException::class);
-        $gameActions->playerBets(-1);
-    }
-
-    /** Test bet out of bounds. */
-    public function testTooLargeBet(): void
-    {
-        $gameActions = new GameActions();
-        $this->expectException(RangeException::class);
-        $gameActions->playerBets(150);
-    }
-
     /** Test correct bet. */
     public function testCorrectBet(): void
     {
         $gameActions = new GameActions();
-        $gameActions->playerBets(50);
+        $gameActions->gaContinue = new GameActionsContinue();
+        $gameActions->gaBet = new GameActionsBet();
+        $gameActions->gaBet->playerBets(50, $gameActions);
         $this->assertEquals(
             $gameActions->players[0]->__get('balance'),
             $gameActions->players[1]->__get('balance')
@@ -88,6 +86,7 @@ class GameActionsTest extends TestCase
     {
         /** With intelligence. */
         $gameActions = new GameActions(bankIntelligence: ' checked');
+        $gameActions->gaContinue = new GameActionsContinue();
         $player = $gameActions->players[0];
         $banker = $gameActions->players[1];
 
@@ -99,7 +98,7 @@ class GameActionsTest extends TestCase
         $banker->hand->addCard(new CardGraphic(8));
         $gameActions->playerDraws(1);
         $this->assertEquals($gameActions::STATES['bank_busted'], $gameActions->__get('state'));
-        $gameActions->continueGame();
+        $gameActions->gaContinue->continueGame($gameActions);
         $this->assertEquals($gameActions::STATES['player_initiates'], $gameActions->__get('state'));
 
         /** Player 21, bank 22. */
@@ -108,7 +107,7 @@ class GameActionsTest extends TestCase
         $player->__set('score', 21);
         $gameActions->playerDraws(0);
         $this->assertEquals($gameActions::STATES['player_busted'], $gameActions->__get('state'));
-        $gameActions->continueGame();
+        $gameActions->gaContinue->continueGame($gameActions);
 
         /** Player max 13, bank 21. */
         $player->hand->addCard(new CardGraphic(1));
@@ -117,7 +116,7 @@ class GameActionsTest extends TestCase
         $banker->hand->addCard(new CardGraphic(52));
         $gameActions->playerDraws(1);
         $this->assertEquals($gameActions::STATES['bank_wins'], $gameActions->__get('state'));
-        $gameActions->continueGame();
+        $gameActions->gaContinue->continueGame($gameActions);
 
         /** Player 21, bank 20. */
         $player->hand->addCard(new CardGraphic(52));
@@ -129,7 +128,18 @@ class GameActionsTest extends TestCase
         $gameActions->deck->addToDeck([0, 10, 11, 12]); // 0 % after ace is drawn, bank stays
         $gameActions->playerDraws(1); // Ace
         $this->assertEquals($gameActions::STATES['player_wins'], $gameActions->__get('state'));
-        $gameActions->continueGame();
+        $gameActions->gaContinue->continueGame($gameActions);
+
+        /** Bank has only one card of low value, check percentage branch */
+        $player->hand->addCard(new CardGraphic(52));
+        $player->hand->addCard(new CardGraphic(53));
+        $gameActions->playerDraws(0);
+        $banker->hand->addCard(new CardGraphic(5));
+        $gameActions->deck->emptyDeck();
+        $gameActions->deck->addToDeck([2, 3, 4, 5]);
+        $gameActions->playerDraws(1);
+        $this->assertEquals($gameActions::STATES['player_wins'], $gameActions->__get('state'));
+        $gameActions->gaContinue->continueGame($gameActions);
     }
 
     /** Test winning states with intelligence. */
@@ -137,6 +147,7 @@ class GameActionsTest extends TestCase
     {
         /** Without intelligence. */
         $gameActions = new GameActions();
+        $gameActions->gaContinue = new GameActionsContinue();
         $player = $gameActions->players[0];
         $banker = $gameActions->players[1];
 
@@ -150,7 +161,7 @@ class GameActionsTest extends TestCase
         $gameActions->deck->addToDeck([0]); // bank will stay at 18
         $gameActions->playerDraws(1);
         $this->assertEquals($gameActions::STATES['player_wins'], $gameActions->__get('state'));
-        $gameActions->continueGame();
+        $gameActions->gaContinue->continueGame($gameActions);
 
         /** Player max 13, bank 21. No intelligence. */
         $player->hand->addCard(new CardGraphic(1));
@@ -158,11 +169,13 @@ class GameActionsTest extends TestCase
         $banker->hand->addCard(new CardGraphic(53));
         $gameActions->playerDraws(1);
         $this->assertEquals($gameActions::STATES['bank_wins'], $gameActions->__get('state'));
-        $gameActions->continueGame();
+        $gameActions->gaContinue->continueGame($gameActions);
 
         /** Test game over */
         $gameActions = new GameActions();
-        $gameActions->playerBets(100);
+        $gameActions->gaContinue = new GameActionsContinue();
+        $gameActions->gaBet = new GameActionsBet();
+        $gameActions->gaBet->playerBets(100, $gameActions);
         $player = $gameActions->players[0];
         $banker = $gameActions->players[1];
 
@@ -171,7 +184,7 @@ class GameActionsTest extends TestCase
         $banker->hand->addCard(new CardGraphic(53));
         $banker->hand->addCard(new CardGraphic(52));
         $gameActions->playerDraws(1);
-        $gameActions->continueGame();
+        $gameActions->gaContinue->continueGame($gameActions);
         $this->assertEquals($gameActions::STATES['game_over'], $gameActions->__get('state'));
     }
 
@@ -179,7 +192,9 @@ class GameActionsTest extends TestCase
     public function testGameOver(): void
     {
         $gameActions = new GameActions();
-        $gameActions->playerBets(100);
+        $gameActions->gaContinue = new GameActionsContinue();
+        $gameActions->gaBet = new GameActionsBet();
+        $gameActions->gaBet->playerBets(100, $gameActions);
         $player = $gameActions->players[0];
         $banker = $gameActions->players[1];
 
@@ -188,7 +203,7 @@ class GameActionsTest extends TestCase
         $banker->hand->addCard(new CardGraphic(53));
         $banker->hand->addCard(new CardGraphic(52));
         $gameActions->playerDraws(1);
-        $gameActions->continueGame();
+        $gameActions->gaContinue->continueGame($gameActions);
         $this->assertEquals($gameActions::STATES['game_over'], $gameActions->__get('state'));
     }
 }

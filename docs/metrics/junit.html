@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2025-05-05 00:36:58        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2025-05-06 07:44:10        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -60,24 +60,24 @@
         <div class="bloc bloc-number">
             <div class="label">Test suites</div>
             <div class="number">
-                20            </div>
+                24            </div>
         </div>
     </div>
     <div class="column">
         <div class="bloc bloc-number">
             <div class="label">Assertions</div>
             <div class="number">
-                513            </div>
+                558            </div>
         </div>
     </div>
     <div class="column">
         <div class="bloc bloc-number">
             <div class="label">
                 classes never called by tests
-                <small>(9.09 %)</small>
+                <small>(1.92 %)</small>
             </div>
             <div class="number">
-                2            </div>
+                1            </div>
         </div>
     </div>
 </div>
@@ -103,17 +103,6 @@
                         </thead>
                         <tbody id="contentAreaJunitNeverCalled" class="clusterize-content">
                                                     <tr>
-                                <td><span class="path">App\Game21\GameCardStats</span></td>
-                                                                    <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.27);">
-                                        7                                        </span>
-                                    </td>
-                                                                    <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.12);">
-                                        0.12                                        </span>
-                                    </td>
-                                                            </tr>
-                                                        <tr>
                                 <td><span class="path">App\Kernel</span></td>
                                                                     <td>
                                         <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0);">
@@ -190,8 +179,11 @@
                                             -                                        </span>
                                         <span class="path">PHPUnit\Framework\TestCase</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            8                                        </span>
+                                            3                                        </span>
                                         <span class="path">App\Cards\Deck</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            6                                        </span>
+                                        <span class="path">App\Cards\CardDeck</span>
                                                                     </td>
                             </tr>
                                                     <tr>
@@ -207,12 +199,29 @@
                                             2                                        </span>
                                         <span class="path">App\Cards\CardGraphic</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            8                                        </span>
+                                            3                                        </span>
                                         <span class="path">App\Cards\Deck</span>
                                                                     </td>
                             </tr>
                                                     <tr>
-                                <td valign="top"><span class="path">App\Tests\Controller\CardAPIControllerTest</span></td>
+                                <td valign="top"><span class="path">App\Tests\Controller\CardAPIDealControllerTest</span></td>
+                                <td style="padding-bottom: 1em;">
+                                                                                                                    <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">App\Tests\Controller\CardAPIDeckControllerTest</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">Symfony\Component\HttpFoundation\RequestStack</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Controller\CardAPIDealController</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">static</span>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <td valign="top"><span class="path">App\Tests\Controller\CardAPIDeckControllerTest</span></td>
                                 <td style="padding-bottom: 1em;">
                                                                                                                     <span class="badge" title="Cyclomatic complexity of class">
                                             -                                        </span>
@@ -221,14 +230,34 @@
                                             -                                        </span>
                                         <span class="path">Symfony\Component\HttpFoundation\RequestStack</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            2                                        </span>
-                                        <span class="path">App\Controller\CardAPIController</span>
+                                            1                                        </span>
+                                        <span class="path">App\Controller\CardAPIDeckController</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             -                                        </span>
                                         <span class="path">static</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            8                                        </span>
+                                            3                                        </span>
                                         <span class="path">App\Cards\Deck</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">Symfony\Component\HttpFoundation\Session\SessionInterface</span>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <td valign="top"><span class="path">App\Tests\Controller\CardAPIDrawControllerTest</span></td>
+                                <td style="padding-bottom: 1em;">
+                                                                                                                    <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">App\Tests\Controller\CardAPIDeckControllerTest</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">Symfony\Component\HttpFoundation\RequestStack</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            1                                        </span>
+                                        <span class="path">App\Controller\CardAPIDrawController</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">static</span>
                                                                     </td>
                             </tr>
                                                     <tr>
@@ -241,13 +270,19 @@
                                             -                                        </span>
                                         <span class="path">Symfony\Component\HttpFoundation\RequestStack</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            6                                        </span>
+                                            1                                        </span>
                                         <span class="path">App\Controller\CardController</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            4                                        </span>
+                                        <span class="path">App\Controller\CardSessionController</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Controller\CardDrawController</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             -                                        </span>
                                         <span class="path">static</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            8                                        </span>
+                                            3                                        </span>
                                         <span class="path">App\Cards\Deck</span>
                                                                     </td>
                             </tr>
@@ -295,8 +330,20 @@
                                             -                                        </span>
                                         <span class="path">Symfony\Component\HttpFoundation\RequestStack</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            5                                        </span>
+                                            1                                        </span>
                                         <span class="path">App\Controller\GameController</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            4                                        </span>
+                                        <span class="path">App\Controller\GameSessionController</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            3                                        </span>
+                                        <span class="path">App\Controller\GamePlayerController</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Controller\GameContinueController</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Controller\GameBetController</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             -                                        </span>
                                         <span class="path">static</span>
@@ -312,8 +359,11 @@
                                             -                                        </span>
                                         <span class="path">Symfony\Component\HttpFoundation\RequestStack</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            8                                        </span>
+                                            3                                        </span>
                                         <span class="path">App\Controller\GameProcessController</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            3                                        </span>
+                                        <span class="path">App\Controller\GamePlayerController</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             -                                        </span>
                                         <span class="path">static</span>
@@ -340,25 +390,51 @@
                                             -                                        </span>
                                         <span class="path">Symfony\Bundle\FrameworkBundle\Test\WebTestCase</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            4                                        </span>
+                                            2                                        </span>
                                         <span class="path">App\Controller\LibraryController</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Controller\LibraryAPIController</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Controller\LibraryViewController</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             -                                        </span>
                                         <span class="path">static</span>
                                                                     </td>
                             </tr>
                                                     <tr>
-                                <td valign="top"><span class="path">App\Tests\Controller\LibraryProcessControllerTest</span></td>
+                                <td valign="top"><span class="path">App\Tests\Controller\LibraryAddControllerTest</span></td>
                                 <td style="padding-bottom: 1em;">
                                                                                                                     <span class="badge" title="Cyclomatic complexity of class">
                                             -                                        </span>
                                         <span class="path">Symfony\Bundle\FrameworkBundle\Test\WebTestCase</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            5                                        </span>
-                                        <span class="path">App\Controller\LibraryProcessController</span>
+                                            -                                        </span>
+                                        <span class="path">Symfony\Bundle\FrameworkBundle\KernelBrowser</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             -                                        </span>
                                         <span class="path">static</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            1                                        </span>
+                                        <span class="path">App\Controller\LibraryAddController</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Controller\LibraryDeleteController</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Controller\LibraryUpdateController</span>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <td valign="top"><span class="path">App\Tests\Controller\LibraryResetControllerTest</span></td>
+                                <td style="padding-bottom: 1em;">
+                                                                                                                    <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">Symfony\Bundle\FrameworkBundle\Test\WebTestCase</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Controller\LibraryResetController</span>
                                                                     </td>
                             </tr>
                                                     <tr>
@@ -387,14 +463,55 @@
                                                                     </td>
                             </tr>
                                                     <tr>
+                                <td valign="top"><span class="path">App\Tests\Game21\GameActionsBankMovesTest</span></td>
+                                <td style="padding-bottom: 1em;">
+                                                                                                                    <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">PHPUnit\Framework\TestCase</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            1                                        </span>
+                                        <span class="path">App\Game21\GameActionsBusted</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            3                                        </span>
+                                        <span class="path">App\Game21\GameActionsBankMoves</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            3                                        </span>
+                                        <span class="path">App\Game21\GameActionsPlayerMoves</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Game21\GameActionsBankDone</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            4                                        </span>
+                                        <span class="path">App\Game21\GameActionsBankIQDone</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            1                                        </span>
+                                        <span class="path">App\Game21\GameActionsPlayerDraws</span>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
                                 <td valign="top"><span class="path">App\Tests\Game21\GameActionsTest</span></td>
                                 <td style="padding-bottom: 1em;">
                                                                                                                     <span class="badge" title="Cyclomatic complexity of class">
                                             -                                        </span>
                                         <span class="path">PHPUnit\Framework\TestCase</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            23                                        </span>
+                                            3                                        </span>
                                         <span class="path">App\Game21\GameActions</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            3                                        </span>
+                                        <span class="path">App\Game21\GameActionsStats</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            3                                        </span>
+                                        <span class="path">App\Game21\GameActionsWinner</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Game21\GameActionsBet</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            3                                        </span>
+                                        <span class="path">App\Game21\GameActionsDeck</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            3                                        </span>
+                                        <span class="path">App\Game21\GameActionsContinue</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             2                                        </span>
                                         <span class="path">App\Cards\CardGraphic</span>
@@ -407,8 +524,11 @@
                                             -                                        </span>
                                         <span class="path">PHPUnit\Framework\TestCase</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            5                                        </span>
+                                            1                                        </span>
                                         <span class="path">App\Game21\Game</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            1                                        </span>
+                                        <span class="path">App\Game21\GameFoundation</span>
                                                                     </td>
                             </tr>
                                                     <tr>
@@ -418,8 +538,23 @@
                                             -                                        </span>
                                         <span class="path">PHPUnit\Framework\TestCase</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            20                                        </span>
+                                            2                                        </span>
                                         <span class="path">App\Game21\HandScore</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            4                                        </span>
+                                        <span class="path">App\Game21\HandScoreAces</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            4                                        </span>
+                                        <span class="path">App\Game21\HandScoreJokers</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Game21\HandScoreBest</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            3                                        </span>
+                                        <span class="path">App\Game21\HandScoreCalculate</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            6                                        </span>
+                                        <span class="path">App\Game21\HandScoreAdd</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             4                                        </span>
                                         <span class="path">App\Cards\Hand</span>
@@ -446,7 +581,7 @@
                                             -                                        </span>
                                         <span class="path">PHPUnit\Framework\TestCase</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            6                                        </span>
+                                            5                                        </span>
                                         <span class="path">App\Repository\BookRepository</span>
                                                                     </td>
                             </tr>
@@ -694,7 +829,7 @@
 
 
             
-            var json = {"name":"Execution time","children":[{"name":"App\\Cards\\CardGraphicTest","time":0.010214},{"name":"App\\Cards\\CardTest","time":0.003758},{"name":"App\\Cards\\DeckTest","time":0.016623},{"name":"App\\Cards\\HandTest","time":0.006694},{"name":"App\\Tests\\Controller\\CardAPIControllerTest","time":2.961455},{"name":"App\\Tests\\Controller\\CardControllerTest","time":0.163776},{"name":"App\\Tests\\Controller\\CardProcessControllerTest","time":0.047105},{"name":"App\\Tests\\Controller\\GameAPIControllerTest","time":0.011022},{"name":"App\\Tests\\Controller\\GameControllerTest","time":0.051195},{"name":"App\\Tests\\Controller\\GameProcessControllerTest","time":0.076068},{"name":"App\\Tests\\Controller\\HomeControllerTest","time":0.086516},{"name":"App\\Tests\\Controller\\LibraryControllerTest","time":0.240945},{"name":"App\\Tests\\Controller\\LibraryProcessControllerTest","time":0.470304},{"name":"App\\Tests\\Controller\\QuotationsControllerTest","time":0.007851},{"name":"App\\Tests\\Entity\\BookTest","time":0.000422},{"name":"App\\Tests\\Game21\\GameActionsTest","time":0.077745},{"name":"App\\Tests\\Game21\\GameTest","time":0.002434},{"name":"App\\Tests\\Game21\\HandScoreTest","time":0.001097},{"name":"App\\Tests\\Game21\\PlayerTest","time":0.00074},{"name":"App\\Tests\\Repository\\BookRepositoryTest","time":0.010939}]};
+            var json = {"name":"Execution time","children":[{"name":"App\\Cards\\CardGraphicTest","time":0.010433},{"name":"App\\Cards\\CardTest","time":0.002604},{"name":"App\\Cards\\DeckTest","time":0.016672},{"name":"App\\Cards\\HandTest","time":0.006684},{"name":"App\\Tests\\Controller\\CardAPIDealControllerTest","time":2.724216},{"name":"App\\Tests\\Controller\\CardAPIDeckControllerTest","time":0.040807},{"name":"App\\Tests\\Controller\\CardAPIDrawControllerTest","time":0.08234},{"name":"App\\Tests\\Controller\\CardControllerTest","time":0.164613},{"name":"App\\Tests\\Controller\\CardProcessControllerTest","time":0.044175},{"name":"App\\Tests\\Controller\\GameAPIControllerTest","time":0.010533},{"name":"App\\Tests\\Controller\\GameControllerTest","time":0.053308},{"name":"App\\Tests\\Controller\\GameProcessControllerTest","time":0.070351},{"name":"App\\Tests\\Controller\\HomeControllerTest","time":0.085587},{"name":"App\\Tests\\Controller\\LibraryControllerTest","time":0.256572},{"name":"App\\Tests\\Controller\\LibraryAddControllerTest","time":0.227579},{"name":"App\\Tests\\Controller\\LibraryResetControllerTest","time":0.000382},{"name":"App\\Tests\\Controller\\QuotationsControllerTest","time":0.010346},{"name":"App\\Tests\\Entity\\BookTest","time":0.000372},{"name":"App\\Tests\\Game21\\GameActionsBankMovesTest","time":0.001117},{"name":"App\\Tests\\Game21\\GameActionsTest","time":0.105203},{"name":"App\\Tests\\Game21\\GameTest","time":0.002188},{"name":"App\\Tests\\Game21\\HandScoreTest","time":0.001743},{"name":"App\\Tests\\Game21\\PlayerTest","time":0.000785},{"name":"App\\Tests\\Repository\\BookRepositoryTest","time":0.01056}]};
             root = json;
             var nodes = treemap.nodes(json)
                 .filter(function (d) {

@@ -12,6 +12,8 @@ namespace App\Tests\Controller;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Entity\Book;
 use App\Controller\LibraryController;
+use App\Controller\LibraryAPIController;
+use App\Controller\LibraryViewController;
 
 /** Test cases for class LibraryController. */
 class LibraryControllerTest extends WebTestCase
@@ -19,8 +21,9 @@ class LibraryControllerTest extends WebTestCase
     /** Test instantiation of the class itself. */
     public function testLibraryController(): void
     {
-        $cls = new LibraryController();
-        $this->assertInstanceOf("\App\Controller\LibraryController", $cls);
+        $this->assertInstanceOf("\App\Controller\LibraryController", new LibraryController());
+        $this->assertInstanceOf("\App\Controller\LibraryAPIController", new LibraryAPIController());
+        $this->assertInstanceOf("\App\Controller\LibraryViewController", new LibraryViewController());
     }
 
     /** Test route /library */

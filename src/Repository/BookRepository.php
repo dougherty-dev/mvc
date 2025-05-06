@@ -65,6 +65,6 @@ class BookRepository extends ServiceEntityRepository
             ->getQuery()
             ->getOneOrNullResult()
         ;
-        return is_object($res) && is_a($res, 'App\Entity\Book') ? $res : null;
+        return $res instanceof Book ? $res : null;
     }
 }

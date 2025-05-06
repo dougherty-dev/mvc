@@ -18,8 +18,7 @@ class QuotationsControllerTest extends WebTestCase
     /** Test instantiation of the class itself. */
     public function testQuotationsController(): void
     {
-        $cls = new QuotationsController();
-        $this->assertInstanceOf("\App\Controller\QuotationsController", $cls);
+        $this->assertInstanceOf("\App\Controller\QuotationsController", new QuotationsController());
     }
 
     /** Test route /api/quotation */

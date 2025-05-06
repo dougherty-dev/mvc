@@ -13,6 +13,8 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Cards\Deck;
 use App\Controller\CardController;
+use App\Controller\CardSessionController;
+use App\Controller\CardDrawController;
 
 /** Test cases for class CardController. */
 class CardControllerTest extends WebTestCase
@@ -22,6 +24,12 @@ class CardControllerTest extends WebTestCase
     {
         $cls = new CardController(new RequestStack());
         $this->assertInstanceOf("\App\Controller\CardController", $cls);
+
+        $cls = new CardSessionController(new RequestStack());
+        $this->assertInstanceOf("\App\Controller\CardSessionController", $cls);
+
+        $cls = new CardDrawController(new RequestStack());
+        $this->assertInstanceOf("\App\Controller\CardDrawController", $cls);
     }
 
     /** Test route /card */
@@ -46,7 +54,7 @@ class CardControllerTest extends WebTestCase
 
         $session = $client->getRequest()->getSession();
         $sessionDeck = new Deck();
-        if (is_object($session->get("deck")) && is_a($session->get("deck"), 'App\Cards\Deck')) {
+        if ($session->get("deck") instanceof Deck) {
             $sessionDeck = $session->get("deck");
         }
 
@@ -74,7 +82,7 @@ class CardControllerTest extends WebTestCase
 
         $session = $client->getRequest()->getSession();
         $sessionDeck = new Deck();
-        if (is_object($session->get("deck")) && is_a($session->get("deck"), 'App\Cards\Deck')) {
+        if ($session->get("deck") instanceof Deck) {
             $sessionDeck = $session->get("deck");
         }
 
@@ -90,7 +98,7 @@ class CardControllerTest extends WebTestCase
 
         $session = $client->getRequest()->getSession();
         $sessionDeck = new Deck();
-        if (is_object($session->get("deck")) && is_a($session->get("deck"), 'App\Cards\Deck')) {
+        if ($session->get("deck") instanceof Deck) {
             $sessionDeck = $session->get("deck");
         }
 
@@ -106,7 +114,7 @@ class CardControllerTest extends WebTestCase
 
         $session = $client->getRequest()->getSession();
         $sessionDeck = new Deck();
-        if (is_object($session->get("deck")) && is_a($session->get("deck"), 'App\Cards\Deck')) {
+        if ($session->get("deck") instanceof Deck) {
             $sessionDeck = $session->get("deck");
         }
 
@@ -122,7 +130,7 @@ class CardControllerTest extends WebTestCase
 
         $session = $client->getRequest()->getSession();
         $sessionDeck = new Deck();
-        if (is_object($session->get("deck")) && is_a($session->get("deck"), 'App\Cards\Deck')) {
+        if ($session->get("deck") instanceof Deck) {
             $sessionDeck = $session->get("deck");
         }
 

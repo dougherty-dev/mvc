@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Radera bok{% endblock %}
+
+{% block body %}
+{% include 'book/library_template.html.twig' %}
+    <section class="center">
+        <h2>Radera bok</h2>
+        <form method="post" action="{{ path('library_delete') }}">
+            <input type="hidden" name="id" value="{{ id }}">
+            <p><button type="submit" name="delete">⚠️ Radera bok</button></p>
+        </form>
+    </section>
+{% endblock %}

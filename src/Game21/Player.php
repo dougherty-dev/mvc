@@ -14,22 +14,18 @@ use App\Cards\Hand;
 /** Methods for the Player class. */
 class Player
 {
-    public Hand $hand;
-    public HandScore $handScore;
-
     public function __construct(
+        public Hand $hand = new Hand(),
+        public HandScore $handScore = new HandScore(),
         private int $score = 0,
         private int $balance = 0,
         private int $bet = 0
     ) {
-        $this->hand = new Hand();
-        $this->handScore = new HandScore();
-
         $this->__set('balance', BALANCE_DEFAULT);
         $this->__set('bet', 0);
     }
 
-    /** Magic get. */
+    /** Magic get, for Twig. */
     public function __get(string $key): int
     {
         return $this->$key;
@@ -41,7 +37,7 @@ class Player
         return isset($this->$key);
     }
 
-    /** Magic set. */
+    /** Magic set, for Twig. */
     public function __set(string $key, int $value)
     {
         $this->$key = $value;

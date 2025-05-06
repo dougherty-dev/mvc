@@ -18,8 +18,7 @@ class HomeControllerTest extends WebTestCase
     /** Test instantiation of the class itself. */
     public function testHomeController(): void
     {
-        $cls = new HomeController();
-        $this->assertInstanceOf("\App\Controller\HomeController", $cls);
+        $this->assertInstanceOf("\App\Controller\HomeController", new HomeController());
     }
 
     /** Test route / */
