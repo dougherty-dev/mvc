@@ -12,7 +12,7 @@ namespace App\Game21;
 /**
  * Game action method for deciding winner.
  */
-class GameActionsWinner extends Game
+class GameActionsWinner extends GameFoundation
 {
     /**
      * Decide who wins based on score, and settle balances.

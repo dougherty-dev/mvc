@@ -12,16 +12,22 @@ namespace App\Tests\Controller;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Controller\HomeController;
 
-/** Test cases for class HomeController. */
+/**
+ * Test cases for class HomeController.
+ */
 class HomeControllerTest extends WebTestCase
 {
-    /** Test instantiation of the class itself. */
+    /**
+     * Test instantiation of the class itself.
+     */
     public function testHomeController(): void
     {
         $this->assertInstanceOf("\App\Controller\HomeController", new HomeController());
     }
 
-    /** Test route / */
+    /**
+     * Test route /
+     */
     public function testHome(): void
     {
         $client = static::createClient();
@@ -29,7 +35,9 @@ class HomeControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
     }
 
-    /** Test route /about */
+    /**
+     * Test route /about
+     */
     public function testAbout(): void
     {
         $client = static::createClient();
@@ -37,7 +45,9 @@ class HomeControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
     }
 
-    /** Test route /metrics */
+    /**
+     * Test route /metrics
+     */
     public function testMetrics(): void
     {
         $client = static::createClient();
@@ -45,7 +55,9 @@ class HomeControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
     }
 
-    /** Test route /report */
+    /**
+     * Test route /report
+     */
     public function testReport(): void
     {
         $client = static::createClient();
@@ -53,7 +65,9 @@ class HomeControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
     }
 
-    /** Test route /lucky */
+    /**
+     * Test route /lucky
+     */
     public function testLucky(): void
     {
         $client = static::createClient();
@@ -61,7 +75,9 @@ class HomeControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
     }
 
-    /** Test route /api */
+    /**
+     * Test route /api
+     */
     public function testAPI(): void
     {
         $client = static::createClient();

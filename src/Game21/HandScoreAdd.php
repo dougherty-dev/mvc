@@ -9,10 +9,14 @@ declare (strict_types=1);
 
 namespace App\Game21;
 
-/** Add to subtotals. */
-class HandScoreAdd
+/**
+ * Add to subtotals.
+ */
+class HandScoreAdd extends GameFoundation
 {
-    /** Handling conditions for jokers and aces. */
+    /**
+     * Handling conditions for jokers and aces.
+     */
     public function addScores(int $value, int $face, int &$jokers, int &$aces, int &$score): void
     {
         $jokers += $value > DECK_MAX ? 1 : 0;

@@ -9,7 +9,11 @@ declare (strict_types=1);
 
 namespace App\Game21;
 
-/** Numerical constants. */
+use App\Cards\Deck;
+
+/**
+ * Common constants.
+ */
 define('CARDSUIT', 13);
 define('TWENTY_ONE', 21);
 define('WILD_MIN', 1);
@@ -19,7 +23,9 @@ define('BANK_MAX_PERCENTAGE_INTELLIGENCE', 60);
 define('DECK_MAX', 51);
 define('BALANCE_DEFAULT', 100);
 
-/** Define basic methods for the Game class. */
+/**
+ * Define basic access methods for the Game class.
+ */
 class GameFoundation
 {
     public const STATES = [
@@ -33,19 +39,31 @@ class GameFoundation
         'game_over' => 'Spel slut'
     ];
 
-    /** Magic get. */
+    public Deck $deck;
+    /** @var Player[] */
+    public array $players = [];
+    /** @var int[] */
+    protected array $cardStats = [0, 0];
+
+    /**
+     * Magic get.
+     */
     public function __get(string $key): mixed
     {
         return $this->$key;
     }
 
-    /** Magic isset. */
+    /**
+     * Magic isset.
+     */
     public function __isset(string $key): bool
     {
         return isset($this->$key);
     }
 
-    /** Magic set. */
+    /**
+     * Magic set.
+     */
     public function __set(string $key, mixed $value)
     {
         $this->$key = $value;

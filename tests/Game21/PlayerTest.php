@@ -12,10 +12,14 @@ namespace App\Tests\Game21;
 use PHPUnit\Framework\TestCase;
 use App\Game21\Player;
 
-/** Test cases for class Card. */
+/**
+ * Test cases for class Card.
+ */
 class PlayerTest extends TestCase
 {
-    /** Construct object with argument and verify that the object has the expected properties. */
+    /**
+     * Construct object with argument and verify that the object has the expected properties.
+     */
     public function testCreateObject(): void
     {
         $player = new Player();
@@ -24,7 +28,9 @@ class PlayerTest extends TestCase
         $this->assertTrue($player->__isset('balance'));
     }
 
-    /** Test getter and setter */
+    /**
+     * Test getter and setter
+     */
     public function testGetterAndSetter(): void
     {
         $player = new Player();

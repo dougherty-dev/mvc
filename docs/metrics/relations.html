@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2025-05-06 07:44:10        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2025-05-06 15:11:35        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -332,16 +332,16 @@
         "relations": []
     },
     {
-        "name": "\\App\\Controller\\CardAPIDeckController",
+        "name": "\\App\\Controller\\Cards\\CardAPIDeckController",
         "size": 3000,
         "relations": [
-            "\\App\\Controller\\CardSessionController",
+            "\\App\\Controller\\Cards\\CardSessionController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
     },
     {
-        "name": "\\App\\Controller\\CardSessionController",
+        "name": "\\App\\Controller\\Cards\\CardSessionController",
         "size": 3000,
         "relations": []
     },
@@ -351,23 +351,12 @@
         "relations": []
     },
     {
-        "name": "\\App\\Controller\\GameAPIController",
+        "name": "\\App\\Controller\\Cards\\CardController",
         "size": 3000,
         "relations": [
-            "\\App\\Controller\\GameController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
+            "\\App\\Controller\\Cards\\CardSessionController",
+            "\\Symfony\\Component\\HttpFoundation\\Response"
         ]
-    },
-    {
-        "name": "\\App\\Controller\\GameController",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Controller\\GameSessionController",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "\\Symfony\\Component\\HttpFoundation\\RequestStack",
@@ -375,17 +364,49 @@
         "relations": []
     },
     {
-        "name": "\\App\\Game21\\GameActions",
+        "name": "\\App\\Controller\\Cards\\CardAPIDealController",
+        "size": 3000,
+        "relations": [
+            "\\App\\Controller\\Cards\\CardSessionController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
+            "\\Symfony\\Component\\HttpFoundation\\Request"
+        ]
+    },
+    {
+        "name": "\\Symfony\\Component\\HttpFoundation\\Request",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\App\\Controller\\CardController",
+        "name": "\\App\\Controller\\Cards\\CardProcessController",
         "size": 3000,
-        "relations": []
+        "relations": [
+            "\\App\\Controller\\Cards\\CardSessionController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Request"
+        ]
     },
     {
-        "name": "\\App\\Controller\\LibraryAPIController",
+        "name": "\\App\\Controller\\Cards\\CardDrawController",
+        "size": 3000,
+        "relations": [
+            "\\App\\Controller\\Cards\\CardSessionController",
+            "\\Symfony\\Component\\HttpFoundation\\Response"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\Cards\\CardAPIDrawController",
+        "size": 3000,
+        "relations": [
+            "\\App\\Controller\\Cards\\CardSessionController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
+            "\\Symfony\\Component\\HttpFoundation\\Request"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\Library\\LibraryAPIController",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
@@ -395,31 +416,7 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\GameContinueController",
-        "size": 3000,
-        "relations": [
-            "\\App\\Controller\\GameController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Request",
-            "\\App\\Game21\\GameActionsContinue"
-        ]
-    },
-    {
-        "name": "\\Symfony\\Component\\HttpFoundation\\Request",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Game21\\GameActionsContinue",
-        "size": 3000,
-        "relations": [
-            "\\App\\Game21\\Game",
-            "\\App\\Game21\\GameActions",
-            "\\App\\Cards\\Hand"
-        ]
-    },
-    {
-        "name": "\\App\\Controller\\LibraryResetController",
+        "name": "\\App\\Controller\\Library\\LibraryResetController",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
@@ -430,17 +427,7 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\CardAPIDealController",
-        "size": 3000,
-        "relations": [
-            "\\App\\Controller\\CardSessionController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
-            "\\Symfony\\Component\\HttpFoundation\\Request"
-        ]
-    },
-    {
-        "name": "\\App\\Controller\\LibraryViewController",
+        "name": "\\App\\Controller\\Library\\LibraryViewController",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
@@ -449,7 +436,7 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\LibraryUpdateController",
+        "name": "\\App\\Controller\\Library\\LibraryUpdateController",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
@@ -459,7 +446,7 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\LibraryAddController",
+        "name": "\\App\\Controller\\Library\\LibraryAddController",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
@@ -470,57 +457,22 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\GamePlayerController",
-        "size": 3000,
-        "relations": [
-            "\\App\\Controller\\GameController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Request"
-        ]
-    },
-    {
-        "name": "\\App\\Controller\\CardProcessController",
-        "size": 3000,
-        "relations": [
-            "\\App\\Controller\\CardController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Request"
-        ]
-    },
-    {
-        "name": "\\App\\Controller\\GameProcessController",
-        "size": 3000,
-        "relations": [
-            "\\App\\Controller\\GameController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Request"
-        ]
-    },
-    {
-        "name": "\\App\\Controller\\GameBetController",
-        "size": 3000,
-        "relations": [
-            "\\App\\Controller\\GameController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Request",
-            "\\App\\Game21\\GameActionsBet"
-        ]
-    },
-    {
-        "name": "\\App\\Game21\\GameActionsBet",
-        "size": 3000,
-        "relations": [
-            "\\App\\Game21\\Game",
-            "\\App\\Game21\\GameActions"
-        ]
-    },
-    {
-        "name": "\\App\\Controller\\LibraryController",
+        "name": "\\App\\Controller\\Library\\LibraryController",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\App\\Repository\\BookRepository"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\Library\\LibraryDeleteController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\Doctrine\\Persistence\\ManagerRegistry"
         ]
     },
     {
@@ -533,31 +485,85 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\LibraryDeleteController",
+        "name": "\\App\\Controller\\Game21\\GameAPIController",
         "size": 3000,
         "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\App\\Controller\\Game21\\GameSessionController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\Request",
-            "\\Doctrine\\Persistence\\ManagerRegistry"
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse"
         ]
     },
     {
-        "name": "\\App\\Controller\\CardDrawController",
+        "name": "\\App\\Controller\\Game21\\GameSessionController",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Game21\\GameActions",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Controller\\Game21\\GameController",
         "size": 3000,
         "relations": [
-            "\\App\\Controller\\CardSessionController",
+            "\\App\\Controller\\Game21\\GameSessionController",
             "\\Symfony\\Component\\HttpFoundation\\Response"
         ]
     },
     {
-        "name": "\\App\\Controller\\CardAPIDrawController",
+        "name": "\\App\\Controller\\Game21\\GameContinueController",
         "size": 3000,
         "relations": [
-            "\\App\\Controller\\CardSessionController",
+            "\\App\\Controller\\Game21\\GameSessionController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\App\\Game21\\GameActionsContinue"
+        ]
+    },
+    {
+        "name": "\\App\\Game21\\GameActionsContinue",
+        "size": 3000,
+        "relations": [
+            "\\App\\Game21\\GameFoundation",
+            "\\App\\Game21\\GameActions",
+            "\\App\\Cards\\Hand"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\Game21\\GamePlayerController",
+        "size": 3000,
+        "relations": [
+            "\\App\\Controller\\Game21\\GameSessionController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Request"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\Game21\\GameProcessController",
+        "size": 3000,
+        "relations": [
+            "\\App\\Controller\\Game21\\GameSessionController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Request"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\Game21\\GameBetController",
+        "size": 3000,
+        "relations": [
+            "\\App\\Controller\\Game21\\GameSessionController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\App\\Game21\\GameActionsBet"
+        ]
+    },
+    {
+        "name": "\\App\\Game21\\GameActionsBet",
+        "size": 3000,
+        "relations": [
+            "\\App\\Game21\\GameFoundation",
+            "\\App\\Game21\\GameActions"
         ]
     },
     {
@@ -566,7 +572,7 @@
         "relations": []
     },
     {
-        "name": "\\App\\Game21\\Game",
+        "name": "\\App\\Game21\\GameFoundation",
         "size": 3000,
         "relations": []
     },
@@ -586,7 +592,7 @@
         "relations": []
     },
     {
-        "name": "\\App\\Game21\\GameFoundation",
+        "name": "\\App\\Game21\\Game",
         "size": 3000,
         "relations": []
     },
@@ -616,7 +622,9 @@
     {
         "name": "\\App\\Game21\\HandScoreJokers",
         "size": 3000,
-        "relations": []
+        "relations": [
+            "\\App\\Game21\\GameFoundation"
+        ]
     },
     {
         "name": "\\App\\Game21\\HandScore",

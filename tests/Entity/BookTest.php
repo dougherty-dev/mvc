@@ -16,7 +16,9 @@ use App\Entity\Book;
 /** Test cases for class Book. */
 class BookTest extends TestCase
 {
-    /** Construct object with argument and verify that the object has the expected properties. */
+    /**
+     * Construct object with argument and verify that the object has the expected properties.
+     */
     public function testCreateObject(): void
     {
         $book = new Book();

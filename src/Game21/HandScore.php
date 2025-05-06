@@ -13,8 +13,10 @@ use App\Cards\Hand;
 use App\Game21\HandScoreBest;
 use App\Game21\HandScoreCalculate;
 
-/** Calculate best and lowest hand scores based on given cards. */
-class HandScore
+/**
+ * Calculate best and lowest hand scores based on given cards.
+ */
+class HandScore extends GameFoundation
 {
     public function __construct(
         private HandScoreBest $handScoreBest = new HandScoreBest(),
@@ -22,14 +24,18 @@ class HandScore
     ) {
     }
 
-    /** Find highest score ≤ 21. */
+    /**
+     * Find highest score ≤ 21.
+     */
     public function bestScore(Hand $hand): int
     {
         $scores = $this->handScoreCalculate->calculate($hand);
         return $this->handScoreBest->findBestScore($scores);
     }
 
-    /** Find lowest score possible, for calculating probabilities. */
+    /**
+     * Find lowest score possible, for calculating probabilities.
+     */
     public function lowestScore(Hand $hand): int
     {
         $scores = $this->handScoreCalculate->calculate($hand);

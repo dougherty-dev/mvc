@@ -9,8 +9,10 @@ declare (strict_types=1);
 
 namespace App\Game21;
 
-/** Calculate hand scores for pure combinations of aces. */
-class HandScoreAces
+/**
+ * Calculate hand scores for pure combinations of aces.
+ */
+class HandScoreAces extends GameFoundation
 {
     /**
      * Calculate all possible values of combinations of aces.
@@ -19,11 +21,11 @@ class HandScoreAces
      */
     public function getAceSums(int $aces): array
     {
-        /*
-        Pick powers of 2 (minus 1) of 0 to number of aces, convert to binary strings and then arrays,
-        and finally distribute 1 or 14 over the result in order to get all possible sums.
-        Example: 2 aces => [2^0 - 1, 2^1 - 1, 2^2 - 1] = [0, 1, 3] => ['00', '01', '11']
-        => [ [0, 0], [0, 1], [1, 1] ] => [ [1, 1], [1, 14], [14, 14] ] => [2, 15, 28].
+        /**
+        * Pick powers of 2 (minus 1) of 0 to number of aces, convert to binary strings and then arrays,
+        * and finally distribute 1 or 14 over the result in order to get all possible sums.
+        * Example: 2 aces => [2^0 - 1, 2^1 - 1, 2^2 - 1] = [0, 1, 3] => ['00', '01', '11']
+        * => [ [0, 0], [0, 1], [1, 1] ] => [ [1, 1], [1, 14], [14, 14] ] => [2, 15, 28].
         */
         if ($aces === 0) {
             return [0];

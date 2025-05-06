@@ -9,10 +9,14 @@ declare (strict_types=1);
 
 namespace App\Game21;
 
-/** Action methods for player moves. */
+/**
+ * Action methods for player moves.
+ */
 class GameActionsPlayerMoves extends Game
 {
-    /** Define events when player draws a card. */
+    /**
+     * Define events when player draws a card.
+     */
     public function playerMoves(int $id, GameActions &$gameActions): void
     {
         if (count($gameActions->players[$id]->hand->handValues()) === 1) {

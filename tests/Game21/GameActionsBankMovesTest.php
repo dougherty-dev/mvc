@@ -17,10 +17,14 @@ use App\Game21\GameActionsBankDone;
 use App\Game21\GameActionsBankIQDone;
 use App\Game21\GameActionsPlayerDraws;
 
-/** Test cases for class Card. */
+/**
+ * Test cases for class Card.
+ */
 class GameActionsBankMovesTest extends TestCase
 {
-    /** Construct object and check player draw methods. */
+    /**
+     * Construct object and check player draw methods.
+     */
     public function testPlayerDraws(): void
     {
         $this->assertInstanceOf("\App\Game21\GameActionsBusted", new GameActionsBusted());

@@ -9,10 +9,14 @@ declare (strict_types=1);
 
 namespace App\Game21;
 
-/** Game action method for making a bet. */
-class GameActionsBet extends Game
+/**
+ * Game action method for making a bet.
+ */
+class GameActionsBet extends GameFoundation
 {
-    /** Handle bets. */
+    /**
+     * Handle bets.
+     */
     public function playerBets(int $bet, GameActions &$gameActions): void
     {
         foreach ($gameActions->players as $player) {

@@ -343,116 +343,116 @@
     </service>
     <service id="App\Cards\Deck" class="App\Cards\Deck" autowire="true" autoconfigure="true"/>
     <service id="App\Cards\Hand" class="App\Cards\Hand" autowire="true" autoconfigure="true"/>
-    <service id="App\Controller\CardAPIDealController" class="App\Controller\CardAPIDealController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Cards\CardAPIDealController" class="App\Controller\Cards\CardAPIDealController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\CardAPIDealController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Cards\CardAPIDealController"/>
       </call>
     </service>
-    <service id="App\Controller\CardAPIDeckController" class="App\Controller\CardAPIDeckController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Cards\CardAPIDeckController" class="App\Controller\Cards\CardAPIDeckController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\CardAPIDeckController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Cards\CardAPIDeckController"/>
       </call>
     </service>
-    <service id="App\Controller\CardAPIDrawController" class="App\Controller\CardAPIDrawController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Cards\CardAPIDrawController" class="App\Controller\Cards\CardAPIDrawController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\CardAPIDrawController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Cards\CardAPIDrawController"/>
       </call>
     </service>
-    <service id="App\Controller\CardController" class="App\Controller\CardController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Cards\CardController" class="App\Controller\Cards\CardController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\CardController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Cards\CardController"/>
       </call>
     </service>
-    <service id="App\Controller\CardDrawController" class="App\Controller\CardDrawController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Cards\CardDrawController" class="App\Controller\Cards\CardDrawController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\CardDrawController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Cards\CardDrawController"/>
       </call>
     </service>
-    <service id="App\Controller\CardProcessController" class="App\Controller\CardProcessController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Cards\CardProcessController" class="App\Controller\Cards\CardProcessController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\CardProcessController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Cards\CardProcessController"/>
       </call>
     </service>
-    <service id="App\Controller\CardSessionController" class="App\Controller\CardSessionController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Cards\CardSessionController" class="App\Controller\Cards\CardSessionController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\CardSessionController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Cards\CardSessionController"/>
       </call>
     </service>
-    <service id="App\Controller\GameAPIController" class="App\Controller\GameAPIController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Game21\GameAPIController" class="App\Controller\Game21\GameAPIController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\GameAPIController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Game21\GameAPIController"/>
       </call>
     </service>
-    <service id="App\Controller\GameBetController" class="App\Controller\GameBetController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Game21\GameBetController" class="App\Controller\Game21\GameBetController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\GameBetController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Game21\GameBetController"/>
       </call>
     </service>
-    <service id="App\Controller\GameContinueController" class="App\Controller\GameContinueController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Game21\GameContinueController" class="App\Controller\Game21\GameContinueController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\GameContinueController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Game21\GameContinueController"/>
       </call>
     </service>
-    <service id="App\Controller\GameController" class="App\Controller\GameController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Game21\GameController" class="App\Controller\Game21\GameController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\GameController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Game21\GameController"/>
       </call>
     </service>
-    <service id="App\Controller\GamePlayerController" class="App\Controller\GamePlayerController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Game21\GamePlayerController" class="App\Controller\Game21\GamePlayerController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\GamePlayerController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Game21\GamePlayerController"/>
       </call>
     </service>
-    <service id="App\Controller\GameProcessController" class="App\Controller\GameProcessController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Game21\GameProcessController" class="App\Controller\Game21\GameProcessController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\GameProcessController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Game21\GameProcessController"/>
       </call>
     </service>
-    <service id="App\Controller\GameSessionController" class="App\Controller\GameSessionController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Game21\GameSessionController" class="App\Controller\Game21\GameSessionController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\GameSessionController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Game21\GameSessionController"/>
       </call>
     </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
@@ -462,53 +462,53 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\HomeController"/>
       </call>
     </service>
-    <service id="App\Controller\LibraryAPIController" class="App\Controller\LibraryAPIController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Library\LibraryAPIController" class="App\Controller\Library\LibraryAPIController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\LibraryAPIController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryAPIController"/>
       </call>
     </service>
-    <service id="App\Controller\LibraryAddController" class="App\Controller\LibraryAddController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Library\LibraryAddController" class="App\Controller\Library\LibraryAddController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\LibraryAddController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryAddController"/>
       </call>
     </service>
-    <service id="App\Controller\LibraryController" class="App\Controller\LibraryController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Library\LibraryController" class="App\Controller\Library\LibraryController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\LibraryController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryController"/>
       </call>
     </service>
-    <service id="App\Controller\LibraryDeleteController" class="App\Controller\LibraryDeleteController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Library\LibraryDeleteController" class="App\Controller\Library\LibraryDeleteController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\LibraryDeleteController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryDeleteController"/>
       </call>
     </service>
-    <service id="App\Controller\LibraryResetController" class="App\Controller\LibraryResetController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Library\LibraryResetController" class="App\Controller\Library\LibraryResetController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\LibraryResetController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryResetController"/>
       </call>
     </service>
-    <service id="App\Controller\LibraryUpdateController" class="App\Controller\LibraryUpdateController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Library\LibraryUpdateController" class="App\Controller\Library\LibraryUpdateController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\LibraryUpdateController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryUpdateController"/>
       </call>
     </service>
-    <service id="App\Controller\LibraryViewController" class="App\Controller\LibraryViewController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Library\LibraryViewController" class="App\Controller\Library\LibraryViewController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\LibraryViewController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryViewController"/>
       </call>
     </service>
     <service id="App\Controller\QuotationsController" class="App\Controller\QuotationsController" public="true" autowire="true" autoconfigure="true">
@@ -581,7 +581,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.tMph8zY"/>
+      <argument type="service" id=".service_locator.ZbasKQL"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -2718,7 +2718,7 @@
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" type="service_closure" id="webpack_encore.entrypoint_lookup_collection" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" type="service_closure" id="webpack_encore.entrypoint_lookup[_default]" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader.filesystem" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
-        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.tMph8zY" on-invalid="ignore_uninitialized"/>
+        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.ZbasKQL" on-invalid="ignore_uninitialized"/>
         <argument key="doctrine.id_generator_locator" type="service_closure" id=".service_locator.BxSdgVt" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
         <argument key="Psr\Log\LoggerInterface $requestLogger" type="service_closure" id="monolog.logger.request" on-invalid="ignore_uninitialized"/>
@@ -4436,7 +4436,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.tMph8zY"/>
+      <argument type="service" id=".service_locator.ZbasKQL"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -8090,72 +8090,72 @@
         <argument key="_default" type="service_closure" id="webpack_encore.entrypoint_lookup[_default]"/>
       </argument>
     </service>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CardAPIDealController" class="App\Controller\CardAPIDealController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CardAPIDealController" class="App\Controller\CardAPIDealController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\CardAPIDealController" class="App\Controller\CardAPIDealController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CardAPIDeckController" class="App\Controller\CardAPIDeckController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CardAPIDeckController" class="App\Controller\CardAPIDeckController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\CardAPIDeckController" class="App\Controller\CardAPIDeckController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CardAPIDrawController" class="App\Controller\CardAPIDrawController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CardAPIDrawController" class="App\Controller\CardAPIDrawController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\CardAPIDrawController" class="App\Controller\CardAPIDrawController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CardController" class="App\Controller\CardController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CardController" class="App\Controller\CardController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\CardController" class="App\Controller\CardController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CardDrawController" class="App\Controller\CardDrawController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CardDrawController" class="App\Controller\CardDrawController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\CardDrawController" class="App\Controller\CardDrawController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CardProcessController" class="App\Controller\CardProcessController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CardProcessController" class="App\Controller\CardProcessController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\CardProcessController" class="App\Controller\CardProcessController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CardSessionController" class="App\Controller\CardSessionController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CardSessionController" class="App\Controller\CardSessionController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\CardSessionController" class="App\Controller\CardSessionController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GameAPIController" class="App\Controller\GameAPIController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GameAPIController" class="App\Controller\GameAPIController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\GameAPIController" class="App\Controller\GameAPIController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GameBetController" class="App\Controller\GameBetController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GameBetController" class="App\Controller\GameBetController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\GameBetController" class="App\Controller\GameBetController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GameContinueController" class="App\Controller\GameContinueController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GameContinueController" class="App\Controller\GameContinueController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\GameContinueController" class="App\Controller\GameContinueController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GameController" class="App\Controller\GameController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GameController" class="App\Controller\GameController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\GameController" class="App\Controller\GameController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GamePlayerController" class="App\Controller\GamePlayerController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GamePlayerController" class="App\Controller\GamePlayerController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\GamePlayerController" class="App\Controller\GamePlayerController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GameProcessController" class="App\Controller\GameProcessController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GameProcessController" class="App\Controller\GameProcessController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\GameProcessController" class="App\Controller\GameProcessController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GameSessionController" class="App\Controller\GameSessionController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GameSessionController" class="App\Controller\GameSessionController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\GameSessionController" class="App\Controller\GameSessionController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Cards\CardAPIDealController" class="App\Controller\Cards\CardAPIDealController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Cards\CardAPIDealController" class="App\Controller\Cards\CardAPIDealController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Cards\CardAPIDealController" class="App\Controller\Cards\CardAPIDealController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Cards\CardAPIDeckController" class="App\Controller\Cards\CardAPIDeckController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Cards\CardAPIDeckController" class="App\Controller\Cards\CardAPIDeckController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Cards\CardAPIDeckController" class="App\Controller\Cards\CardAPIDeckController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Cards\CardAPIDrawController" class="App\Controller\Cards\CardAPIDrawController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Cards\CardAPIDrawController" class="App\Controller\Cards\CardAPIDrawController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Cards\CardAPIDrawController" class="App\Controller\Cards\CardAPIDrawController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Cards\CardController" class="App\Controller\Cards\CardController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Cards\CardController" class="App\Controller\Cards\CardController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Cards\CardController" class="App\Controller\Cards\CardController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Cards\CardDrawController" class="App\Controller\Cards\CardDrawController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Cards\CardDrawController" class="App\Controller\Cards\CardDrawController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Cards\CardDrawController" class="App\Controller\Cards\CardDrawController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Cards\CardProcessController" class="App\Controller\Cards\CardProcessController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Cards\CardProcessController" class="App\Controller\Cards\CardProcessController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Cards\CardProcessController" class="App\Controller\Cards\CardProcessController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Cards\CardSessionController" class="App\Controller\Cards\CardSessionController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Cards\CardSessionController" class="App\Controller\Cards\CardSessionController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Cards\CardSessionController" class="App\Controller\Cards\CardSessionController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Game21\GameAPIController" class="App\Controller\Game21\GameAPIController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Game21\GameAPIController" class="App\Controller\Game21\GameAPIController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Game21\GameAPIController" class="App\Controller\Game21\GameAPIController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Game21\GameBetController" class="App\Controller\Game21\GameBetController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Game21\GameBetController" class="App\Controller\Game21\GameBetController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Game21\GameBetController" class="App\Controller\Game21\GameBetController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Game21\GameContinueController" class="App\Controller\Game21\GameContinueController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Game21\GameContinueController" class="App\Controller\Game21\GameContinueController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Game21\GameContinueController" class="App\Controller\Game21\GameContinueController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Game21\GameController" class="App\Controller\Game21\GameController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Game21\GameController" class="App\Controller\Game21\GameController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Game21\GameController" class="App\Controller\Game21\GameController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Game21\GamePlayerController" class="App\Controller\Game21\GamePlayerController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Game21\GamePlayerController" class="App\Controller\Game21\GamePlayerController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Game21\GamePlayerController" class="App\Controller\Game21\GamePlayerController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Game21\GameProcessController" class="App\Controller\Game21\GameProcessController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Game21\GameProcessController" class="App\Controller\Game21\GameProcessController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Game21\GameProcessController" class="App\Controller\Game21\GameProcessController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Game21\GameSessionController" class="App\Controller\Game21\GameSessionController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Game21\GameSessionController" class="App\Controller\Game21\GameSessionController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Game21\GameSessionController" class="App\Controller\Game21\GameSessionController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LibraryAPIController" class="App\Controller\LibraryAPIController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LibraryAPIController" class="App\Controller\LibraryAPIController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\LibraryAPIController" class="App\Controller\LibraryAPIController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LibraryAddController" class="App\Controller\LibraryAddController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LibraryAddController" class="App\Controller\LibraryAddController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\LibraryAddController" class="App\Controller\LibraryAddController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LibraryController" class="App\Controller\LibraryController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LibraryController" class="App\Controller\LibraryController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\LibraryController" class="App\Controller\LibraryController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LibraryDeleteController" class="App\Controller\LibraryDeleteController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LibraryDeleteController" class="App\Controller\LibraryDeleteController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\LibraryDeleteController" class="App\Controller\LibraryDeleteController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LibraryResetController" class="App\Controller\LibraryResetController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LibraryResetController" class="App\Controller\LibraryResetController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\LibraryResetController" class="App\Controller\LibraryResetController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LibraryUpdateController" class="App\Controller\LibraryUpdateController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LibraryUpdateController" class="App\Controller\LibraryUpdateController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\LibraryUpdateController" class="App\Controller\LibraryUpdateController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LibraryViewController" class="App\Controller\LibraryViewController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LibraryViewController" class="App\Controller\LibraryViewController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\LibraryViewController" class="App\Controller\LibraryViewController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Library\LibraryAPIController" class="App\Controller\Library\LibraryAPIController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Library\LibraryAPIController" class="App\Controller\Library\LibraryAPIController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Library\LibraryAPIController" class="App\Controller\Library\LibraryAPIController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Library\LibraryAddController" class="App\Controller\Library\LibraryAddController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Library\LibraryAddController" class="App\Controller\Library\LibraryAddController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Library\LibraryAddController" class="App\Controller\Library\LibraryAddController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Library\LibraryController" class="App\Controller\Library\LibraryController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Library\LibraryController" class="App\Controller\Library\LibraryController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Library\LibraryController" class="App\Controller\Library\LibraryController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Library\LibraryDeleteController" class="App\Controller\Library\LibraryDeleteController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Library\LibraryDeleteController" class="App\Controller\Library\LibraryDeleteController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Library\LibraryDeleteController" class="App\Controller\Library\LibraryDeleteController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Library\LibraryResetController" class="App\Controller\Library\LibraryResetController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Library\LibraryResetController" class="App\Controller\Library\LibraryResetController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Library\LibraryResetController" class="App\Controller\Library\LibraryResetController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Library\LibraryUpdateController" class="App\Controller\Library\LibraryUpdateController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Library\LibraryUpdateController" class="App\Controller\Library\LibraryUpdateController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Library\LibraryUpdateController" class="App\Controller\Library\LibraryUpdateController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Library\LibraryViewController" class="App\Controller\Library\LibraryViewController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Library\LibraryViewController" class="App\Controller\Library\LibraryViewController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Library\LibraryViewController" class="App\Controller\Library\LibraryViewController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -8293,15 +8293,15 @@
         <argument key="bookRepository" type="service_closure" id="App\Repository\BookRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.ErcxNfJ.App\Controller\LibraryAPIController::apiLibraryBooks()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\LibraryAPIController::apiLibraryBooks()"/>
-      <argument>App\Controller\LibraryAPIController::apiLibraryBooks()</argument>
+    <service id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryAPIController::apiLibraryBooks()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Library\LibraryAPIController::apiLibraryBooks()"/>
+      <argument>App\Controller\Library\LibraryAPIController::apiLibraryBooks()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ErcxNfJ" method="withContext"/>
     </service>
-    <service id=".service_locator.ErcxNfJ.App\Controller\LibraryAPIController::apiLibraryBookIsbn()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\LibraryAPIController::apiLibraryBookIsbn()"/>
-      <argument>App\Controller\LibraryAPIController::apiLibraryBookIsbn()</argument>
+    <service id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryAPIController::apiLibraryBookIsbn()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Library\LibraryAPIController::apiLibraryBookIsbn()"/>
+      <argument>App\Controller\Library\LibraryAPIController::apiLibraryBookIsbn()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ErcxNfJ" method="withContext"/>
     </service>
@@ -8311,21 +8311,21 @@
         <argument key="doctrine" type="service_closure" id="doctrine"/>
       </argument>
     </service>
-    <service id=".service_locator.E7ajBy2.App\Controller\LibraryAddController::libraryNewPost()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\LibraryAddController::libraryNewPost()"/>
-      <argument>App\Controller\LibraryAddController::libraryNewPost()</argument>
+    <service id=".service_locator.E7ajBy2.App\Controller\Library\LibraryAddController::libraryNewPost()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Library\LibraryAddController::libraryNewPost()"/>
+      <argument>App\Controller\Library\LibraryAddController::libraryNewPost()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.E7ajBy2" method="withContext"/>
     </service>
-    <service id=".service_locator.ErcxNfJ.App\Controller\LibraryController::libraryEditID()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\LibraryController::libraryEditID()"/>
-      <argument>App\Controller\LibraryController::libraryEditID()</argument>
+    <service id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryController::libraryEditID()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Library\LibraryController::libraryEditID()"/>
+      <argument>App\Controller\Library\LibraryController::libraryEditID()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ErcxNfJ" method="withContext"/>
     </service>
-    <service id=".service_locator.E7ajBy2.App\Controller\LibraryDeleteController::libraryDelete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\LibraryDeleteController::libraryDelete()"/>
-      <argument>App\Controller\LibraryDeleteController::libraryDelete()</argument>
+    <service id=".service_locator.E7ajBy2.App\Controller\Library\LibraryDeleteController::libraryDelete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Library\LibraryDeleteController::libraryDelete()"/>
+      <argument>App\Controller\Library\LibraryDeleteController::libraryDelete()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.E7ajBy2" method="withContext"/>
     </service>
@@ -8336,57 +8336,57 @@
         <argument key="bookRepository" type="service_closure" id="App\Repository\BookRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.We7mjzh.App\Controller\LibraryResetController::libraryResetPost()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\LibraryResetController::libraryResetPost()"/>
-      <argument>App\Controller\LibraryResetController::libraryResetPost()</argument>
+    <service id=".service_locator.We7mjzh.App\Controller\Library\LibraryResetController::libraryResetPost()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Library\LibraryResetController::libraryResetPost()"/>
+      <argument>App\Controller\Library\LibraryResetController::libraryResetPost()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.We7mjzh" method="withContext"/>
     </service>
-    <service id=".service_locator.E7ajBy2.App\Controller\LibraryUpdateController::libraryUpdate()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\LibraryUpdateController::libraryUpdate()"/>
-      <argument>App\Controller\LibraryUpdateController::libraryUpdate()</argument>
+    <service id=".service_locator.E7ajBy2.App\Controller\Library\LibraryUpdateController::libraryUpdate()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Library\LibraryUpdateController::libraryUpdate()"/>
+      <argument>App\Controller\Library\LibraryUpdateController::libraryUpdate()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.E7ajBy2" method="withContext"/>
     </service>
-    <service id=".service_locator.ErcxNfJ.App\Controller\LibraryViewController::libraryView()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\LibraryViewController::libraryView()"/>
-      <argument>App\Controller\LibraryViewController::libraryView()</argument>
+    <service id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryViewController::libraryView()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Library\LibraryViewController::libraryView()"/>
+      <argument>App\Controller\Library\LibraryViewController::libraryView()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ErcxNfJ" method="withContext"/>
     </service>
-    <service id=".service_locator.ErcxNfJ.App\Controller\LibraryViewController::libraryViewID()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\LibraryViewController::libraryViewID()"/>
-      <argument>App\Controller\LibraryViewController::libraryViewID()</argument>
+    <service id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryViewController::libraryViewID()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Library\LibraryViewController::libraryViewID()"/>
+      <argument>App\Controller\Library\LibraryViewController::libraryViewID()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ErcxNfJ" method="withContext"/>
     </service>
-    <service id=".service_locator.tMph8zY" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.ZbasKQL" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
-        <argument key="App\Controller\LibraryAPIController::apiLibraryBooks" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\LibraryAPIController::apiLibraryBooks()"/>
-        <argument key="App\Controller\LibraryAPIController::apiLibraryBookIsbn" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\LibraryAPIController::apiLibraryBookIsbn()"/>
-        <argument key="App\Controller\LibraryAddController::libraryNewPost" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\LibraryAddController::libraryNewPost()"/>
-        <argument key="App\Controller\LibraryController::libraryEditID" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\LibraryController::libraryEditID()"/>
-        <argument key="App\Controller\LibraryDeleteController::libraryDelete" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\LibraryDeleteController::libraryDelete()"/>
-        <argument key="App\Controller\LibraryResetController::libraryResetPost" type="service_closure" id=".service_locator.We7mjzh.App\Controller\LibraryResetController::libraryResetPost()"/>
-        <argument key="App\Controller\LibraryUpdateController::libraryUpdate" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\LibraryUpdateController::libraryUpdate()"/>
-        <argument key="App\Controller\LibraryViewController::libraryView" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\LibraryViewController::libraryView()"/>
-        <argument key="App\Controller\LibraryViewController::libraryViewID" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\LibraryViewController::libraryViewID()"/>
+        <argument key="App\Controller\Library\LibraryAPIController::apiLibraryBooks" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryAPIController::apiLibraryBooks()"/>
+        <argument key="App\Controller\Library\LibraryAPIController::apiLibraryBookIsbn" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryAPIController::apiLibraryBookIsbn()"/>
+        <argument key="App\Controller\Library\LibraryAddController::libraryNewPost" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Library\LibraryAddController::libraryNewPost()"/>
+        <argument key="App\Controller\Library\LibraryController::libraryEditID" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryController::libraryEditID()"/>
+        <argument key="App\Controller\Library\LibraryDeleteController::libraryDelete" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Library\LibraryDeleteController::libraryDelete()"/>
+        <argument key="App\Controller\Library\LibraryResetController::libraryResetPost" type="service_closure" id=".service_locator.We7mjzh.App\Controller\Library\LibraryResetController::libraryResetPost()"/>
+        <argument key="App\Controller\Library\LibraryUpdateController::libraryUpdate" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Library\LibraryUpdateController::libraryUpdate()"/>
+        <argument key="App\Controller\Library\LibraryViewController::libraryView" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryViewController::libraryView()"/>
+        <argument key="App\Controller\Library\LibraryViewController::libraryViewID" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryViewController::libraryViewID()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
-        <argument key="App\Controller\LibraryAPIController:apiLibraryBooks" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\LibraryAPIController::apiLibraryBooks()"/>
-        <argument key="App\Controller\LibraryAPIController:apiLibraryBookIsbn" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\LibraryAPIController::apiLibraryBookIsbn()"/>
-        <argument key="App\Controller\LibraryAddController:libraryNewPost" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\LibraryAddController::libraryNewPost()"/>
-        <argument key="App\Controller\LibraryController:libraryEditID" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\LibraryController::libraryEditID()"/>
-        <argument key="App\Controller\LibraryDeleteController:libraryDelete" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\LibraryDeleteController::libraryDelete()"/>
-        <argument key="App\Controller\LibraryResetController:libraryResetPost" type="service_closure" id=".service_locator.We7mjzh.App\Controller\LibraryResetController::libraryResetPost()"/>
-        <argument key="App\Controller\LibraryUpdateController:libraryUpdate" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\LibraryUpdateController::libraryUpdate()"/>
-        <argument key="App\Controller\LibraryViewController:libraryView" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\LibraryViewController::libraryView()"/>
-        <argument key="App\Controller\LibraryViewController:libraryViewID" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\LibraryViewController::libraryViewID()"/>
+        <argument key="App\Controller\Library\LibraryAPIController:apiLibraryBooks" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryAPIController::apiLibraryBooks()"/>
+        <argument key="App\Controller\Library\LibraryAPIController:apiLibraryBookIsbn" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryAPIController::apiLibraryBookIsbn()"/>
+        <argument key="App\Controller\Library\LibraryAddController:libraryNewPost" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Library\LibraryAddController::libraryNewPost()"/>
+        <argument key="App\Controller\Library\LibraryController:libraryEditID" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryController::libraryEditID()"/>
+        <argument key="App\Controller\Library\LibraryDeleteController:libraryDelete" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Library\LibraryDeleteController::libraryDelete()"/>
+        <argument key="App\Controller\Library\LibraryResetController:libraryResetPost" type="service_closure" id=".service_locator.We7mjzh.App\Controller\Library\LibraryResetController::libraryResetPost()"/>
+        <argument key="App\Controller\Library\LibraryUpdateController:libraryUpdate" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Library\LibraryUpdateController::libraryUpdate()"/>
+        <argument key="App\Controller\Library\LibraryViewController:libraryView" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryViewController::libraryView()"/>
+        <argument key="App\Controller\Library\LibraryViewController:libraryViewID" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryViewController::libraryViewID()"/>
       </argument>
     </service>
     <service id=".service_locator.ea.H0ae" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -8811,87 +8811,87 @@
         <argument key="web_link.http_header_serializer" type="service_closure" id="web_link.http_header_serializer" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\CardAPIDealController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\CardAPIDealController"/>
-      <argument>App\Controller\CardAPIDealController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Cards\CardAPIDealController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Cards\CardAPIDealController"/>
+      <argument>App\Controller\Cards\CardAPIDealController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\CardAPIDeckController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\CardAPIDeckController"/>
-      <argument>App\Controller\CardAPIDeckController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Cards\CardAPIDeckController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Cards\CardAPIDeckController"/>
+      <argument>App\Controller\Cards\CardAPIDeckController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\CardAPIDrawController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\CardAPIDrawController"/>
-      <argument>App\Controller\CardAPIDrawController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Cards\CardAPIDrawController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Cards\CardAPIDrawController"/>
+      <argument>App\Controller\Cards\CardAPIDrawController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\CardController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\CardController"/>
-      <argument>App\Controller\CardController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Cards\CardController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Cards\CardController"/>
+      <argument>App\Controller\Cards\CardController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\CardDrawController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\CardDrawController"/>
-      <argument>App\Controller\CardDrawController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Cards\CardDrawController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Cards\CardDrawController"/>
+      <argument>App\Controller\Cards\CardDrawController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\CardProcessController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\CardProcessController"/>
-      <argument>App\Controller\CardProcessController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Cards\CardProcessController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Cards\CardProcessController"/>
+      <argument>App\Controller\Cards\CardProcessController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\CardSessionController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\CardSessionController"/>
-      <argument>App\Controller\CardSessionController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Cards\CardSessionController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Cards\CardSessionController"/>
+      <argument>App\Controller\Cards\CardSessionController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\GameAPIController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\GameAPIController"/>
-      <argument>App\Controller\GameAPIController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Game21\GameAPIController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Game21\GameAPIController"/>
+      <argument>App\Controller\Game21\GameAPIController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\GameBetController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\GameBetController"/>
-      <argument>App\Controller\GameBetController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Game21\GameBetController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Game21\GameBetController"/>
+      <argument>App\Controller\Game21\GameBetController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\GameContinueController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\GameContinueController"/>
-      <argument>App\Controller\GameContinueController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Game21\GameContinueController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Game21\GameContinueController"/>
+      <argument>App\Controller\Game21\GameContinueController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\GameController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\GameController"/>
-      <argument>App\Controller\GameController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Game21\GameController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Game21\GameController"/>
+      <argument>App\Controller\Game21\GameController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\GamePlayerController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\GamePlayerController"/>
-      <argument>App\Controller\GamePlayerController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Game21\GamePlayerController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Game21\GamePlayerController"/>
+      <argument>App\Controller\Game21\GamePlayerController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\GameProcessController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\GameProcessController"/>
-      <argument>App\Controller\GameProcessController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Game21\GameProcessController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Game21\GameProcessController"/>
+      <argument>App\Controller\Game21\GameProcessController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\GameSessionController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\GameSessionController"/>
-      <argument>App\Controller\GameSessionController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Game21\GameSessionController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Game21\GameSessionController"/>
+      <argument>App\Controller\Game21\GameSessionController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
@@ -8901,45 +8901,45 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\LibraryAPIController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\LibraryAPIController"/>
-      <argument>App\Controller\LibraryAPIController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryAPIController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Library\LibraryAPIController"/>
+      <argument>App\Controller\Library\LibraryAPIController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\LibraryAddController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\LibraryAddController"/>
-      <argument>App\Controller\LibraryAddController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryAddController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Library\LibraryAddController"/>
+      <argument>App\Controller\Library\LibraryAddController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\LibraryController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\LibraryController"/>
-      <argument>App\Controller\LibraryController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Library\LibraryController"/>
+      <argument>App\Controller\Library\LibraryController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\LibraryDeleteController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\LibraryDeleteController"/>
-      <argument>App\Controller\LibraryDeleteController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryDeleteController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Library\LibraryDeleteController"/>
+      <argument>App\Controller\Library\LibraryDeleteController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\LibraryResetController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\LibraryResetController"/>
-      <argument>App\Controller\LibraryResetController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryResetController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Library\LibraryResetController"/>
+      <argument>App\Controller\Library\LibraryResetController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\LibraryUpdateController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\LibraryUpdateController"/>
-      <argument>App\Controller\LibraryUpdateController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryUpdateController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Library\LibraryUpdateController"/>
+      <argument>App\Controller\Library\LibraryUpdateController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\LibraryViewController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\LibraryViewController"/>
-      <argument>App\Controller\LibraryViewController</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryViewController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Library\LibraryViewController"/>
+      <argument>App\Controller\Library\LibraryViewController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
@@ -9131,28 +9131,28 @@
       <call method="allowControllers">
         <argument type="collection">
           <argument>App\Kernel</argument>
-          <argument>App\Controller\CardAPIDealController</argument>
-          <argument>App\Controller\CardAPIDeckController</argument>
-          <argument>App\Controller\CardAPIDrawController</argument>
-          <argument>App\Controller\CardController</argument>
-          <argument>App\Controller\CardDrawController</argument>
-          <argument>App\Controller\CardProcessController</argument>
-          <argument>App\Controller\CardSessionController</argument>
-          <argument>App\Controller\GameAPIController</argument>
-          <argument>App\Controller\GameBetController</argument>
-          <argument>App\Controller\GameContinueController</argument>
-          <argument>App\Controller\GameController</argument>
-          <argument>App\Controller\GamePlayerController</argument>
-          <argument>App\Controller\GameProcessController</argument>
-          <argument>App\Controller\GameSessionController</argument>
+          <argument>App\Controller\Cards\CardAPIDealController</argument>
+          <argument>App\Controller\Cards\CardAPIDeckController</argument>
+          <argument>App\Controller\Cards\CardAPIDrawController</argument>
+          <argument>App\Controller\Cards\CardController</argument>
+          <argument>App\Controller\Cards\CardDrawController</argument>
+          <argument>App\Controller\Cards\CardProcessController</argument>
+          <argument>App\Controller\Cards\CardSessionController</argument>
+          <argument>App\Controller\Game21\GameAPIController</argument>
+          <argument>App\Controller\Game21\GameBetController</argument>
+          <argument>App\Controller\Game21\GameContinueController</argument>
+          <argument>App\Controller\Game21\GameController</argument>
+          <argument>App\Controller\Game21\GamePlayerController</argument>
+          <argument>App\Controller\Game21\GameProcessController</argument>
+          <argument>App\Controller\Game21\GameSessionController</argument>
           <argument>App\Controller\HomeController</argument>
-          <argument>App\Controller\LibraryAPIController</argument>
-          <argument>App\Controller\LibraryAddController</argument>
-          <argument>App\Controller\LibraryController</argument>
-          <argument>App\Controller\LibraryDeleteController</argument>
-          <argument>App\Controller\LibraryResetController</argument>
-          <argument>App\Controller\LibraryUpdateController</argument>
-          <argument>App\Controller\LibraryViewController</argument>
+          <argument>App\Controller\Library\LibraryAPIController</argument>
+          <argument>App\Controller\Library\LibraryAddController</argument>
+          <argument>App\Controller\Library\LibraryController</argument>
+          <argument>App\Controller\Library\LibraryDeleteController</argument>
+          <argument>App\Controller\Library\LibraryResetController</argument>
+          <argument>App\Controller\Library\LibraryUpdateController</argument>
+          <argument>App\Controller\Library\LibraryViewController</argument>
           <argument>App\Controller\QuotationsController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>
@@ -10137,7 +10137,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.tMph8zY"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.ZbasKQL"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

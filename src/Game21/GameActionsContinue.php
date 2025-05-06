@@ -14,7 +14,7 @@ use App\Cards\Hand;
 /**
  * Action methods for the game.
  */
-class GameActionsContinue extends Game
+class GameActionsContinue extends GameFoundation
 {
     /**
      * Continue game after button confirmation.

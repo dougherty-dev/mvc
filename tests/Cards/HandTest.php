@@ -7,14 +7,21 @@
 
 declare (strict_types=1);
 
-namespace App\Cards;
+namespace App\Tests\Cards;
 
 use PHPUnit\Framework\TestCase;
+use App\Cards\CardGraphic;
+use App\Cards\Hand;
+use App\Cards\Deck;
 
-/** Test cases for class Hand. */
+/**
+ * Test cases for class Hand.
+ */
 class HandTest extends TestCase
 {
-    /** Construct object with argument and verify that the object has the expected properties. */
+    /**
+     * Construct object with argument and verify that the object has the expected properties.
+     */
     public function testCreateObject(): void
     {
         $hand = new Hand();

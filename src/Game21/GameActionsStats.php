@@ -14,7 +14,7 @@ use App\Cards\Deck;
 /**
  * Action methods for the game.
  */
-class GameActionsStats extends Game
+class GameActionsStats extends GameFoundation
 {
     /**
      * Calculate probabilities for getting under/over 21 based on remaining cards in deck.

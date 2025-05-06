@@ -7,15 +7,20 @@
 
 declare (strict_types=1);
 
-namespace App\Cards;
+namespace App\Tests\Cards;
 
 use PHPUnit\Framework\TestCase;
 use ReflectionObject;
+use App\Cards\CardGraphic;
 
-/** Test cases for class CardGraphic. */
+/**
+ * Test cases for class CardGraphic.
+ */
 class CardGraphicTest extends TestCase
 {
-    /** Construct object with argument and verify that the object has the expected properties. */
+    /**
+     * Construct object with argument and verify that the object has the expected properties.
+     */
     public function testCreateObject(): void
     {
         $card = new CardGraphic(5);
@@ -24,7 +29,9 @@ class CardGraphicTest extends TestCase
         $this->assertEquals($card->getValue(), 5);
     }
 
-    /** Verify that method returns correct string values for card. */
+    /**
+     * Verify that method returns correct string values for card.
+     */
     public function testStringValues(): void
     {
         $deck = CardGraphic::DECK_ARRAY;
@@ -35,7 +42,9 @@ class CardGraphicTest extends TestCase
         }
     }
 
-    /** Verify that method returns correct text value for card. */
+    /**
+     * Verify that method returns correct text value for card.
+     */
     public function testTextValues(): void
     {
         $card = new CardGraphic(0);

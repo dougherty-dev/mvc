@@ -14,7 +14,7 @@ use App\Cards\Deck;
 /**
  * Game action method for reassembling the deck.
  */
-class GameActionsDeck
+class GameActionsDeck extends GameFoundation
 {
     /**
      * Build a new shuffled deck of cards, excluding cards in players’ hands.

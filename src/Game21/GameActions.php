@@ -18,12 +18,12 @@ use App\Game21\GameActionsBusted;
  */
 class GameActions extends Game
 {
-    public GameActionsContinue $gaContinue;
-    public GameActionsBankMoves $gaBankMoves;
-    public GameActionsPlayerMoves $gaPlayerMoves;
+    protected GameActionsBankMoves $gaBankMoves;
+    protected GameActionsPlayerMoves $gaPlayerMoves;
+    protected GameActionsPlayerDraws $gaPlayerDraws;
     public GameActionsBet $gaBet;
     public GameActionsBusted $gaBusted;
-    private GameActionsPlayerDraws $gaPlayerDraws;
+    public GameActionsContinue $gaContinue;
 
     /**
      * Define events when a player draws a card.

@@ -9,8 +9,10 @@ declare (strict_types=1);
 
 namespace App\Game21;
 
-/** Calculate hand scores for pure combinations of jokers. */
-class HandScoreJokers
+/**
+ * Calculate hand scores for pure combinations of jokers.
+ */
+class HandScoreJokers extends GameFoundation
 {
     /**
      * Calculate all possible values of combinations of jokers.
@@ -20,7 +22,6 @@ class HandScoreJokers
      */
     public function getJokerSums(int $jokers, array $scores): array
     {
-        // Add possible joker values to all scores, get rid of duplicates.
         if ($jokers === 0) {
             return $scores;
         }

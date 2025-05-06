@@ -7,22 +7,32 @@
 
 declare (strict_types=1);
 
-namespace App\Cards;
+namespace App\Tests\Cards;
 
 use PHPUnit\Framework\TestCase;
+use App\Cards\CardDeck;
+use App\Cards\Deck;
 
-/** Test cases for class Deck. */
+/**
+ * Test cases for class Deck.
+ */
 class DeckTest extends TestCase
 {
-    /** Construct deck and verify its size. */
+    /**
+     * Construct deck and verify its size.
+     */
     public function testCreateDeck(): void
     {
-        /** Deck is empty on instantiation? */
+        /**
+         * Deck is empty on instantiation?
+         */
         $deck = new Deck();
         $this->assertInstanceOf("\App\Cards\Deck", $deck);
         $this->assertCount(0, $deck->getDeck());
 
-        /** Deck has right count on reset? */
+        /**
+         * Deck has right count on reset?
+         */
         $deck->resetDeck();
         $this->assertCount(54, $deck->getDeck());
 
@@ -30,7 +40,9 @@ class DeckTest extends TestCase
         $this->assertInstanceOf("\App\Cards\CardDeck", $deck);
     }
 
-    /** Construct deck and verify its shuffle functionality. */
+    /**
+     * Construct deck and verify its shuffle functionality.
+     */
     public function testShuffleDeck(): void
     {
         $deck1 = new Deck();
@@ -60,7 +72,9 @@ class DeckTest extends TestCase
         $this->assertCount(53, $arr); // Joker values equal
     }
 
-    /** Construct deck and verify its card drawing functionality. */
+    /**
+     * Construct deck and verify its card drawing functionality.
+     */
     public function testDrawCardsFromDeck(): void
     {
         $deck = new Deck();
@@ -74,7 +88,9 @@ class DeckTest extends TestCase
         }
     }
 
-    /** Construct deck manually from individual cards */
+    /**
+     * Construct deck manually from individual cards
+     */
     public function testAddCardsToDeck(): void
     {
         $deck1 = new Deck();

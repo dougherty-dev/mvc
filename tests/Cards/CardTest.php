@@ -7,15 +7,20 @@
 
 declare (strict_types=1);
 
-namespace App\Cards;
+namespace App\Tests\Cards;
 
 use PHPUnit\Framework\TestCase;
 use RangeException;
+use App\Cards\Card;
 
-/** Test cases for class Card. */
+/**
+ * Test cases for class Card.
+ */
 class CardTest extends TestCase
 {
-    /** Construct object with argument and verify that the object has the expected properties. */
+    /**
+     * Construct object with argument and verify that the object has the expected properties.
+     */
     public function testCreateObject(): void
     {
         foreach (range(0, 53) as $key) {
@@ -27,14 +32,18 @@ class CardTest extends TestCase
         }
     }
 
-    /** Construct object with invalid argument. */
+    /**
+     * Construct object with invalid argument.
+     */
     public function testCreateObjectWithTooLargeArgument(): void
     {
         $this->expectException(RangeException::class);
         new Card(54);
     }
 
-    /** Construct object with invalid argument. */
+    /**
+     * Construct object with invalid argument.
+     */
     public function testCreateObjectWithTooSmallArgument(): void
     {
         $this->expectException(RangeException::class);

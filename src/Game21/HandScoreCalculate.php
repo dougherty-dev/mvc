@@ -14,8 +14,10 @@ use App\Game21\HandScoreAces;
 use App\Game21\HandScoreJokers;
 use App\Game21\HandScoreAdd;
 
-/** Calculate best hand score. */
-class HandScoreCalculate
+/**
+ * Calculate best hand score.
+ */
+class HandScoreCalculate extends GameFoundation
 {
     public function __construct(
         private HandScoreAces $handScoreAces = new HandScoreAces(),

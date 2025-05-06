@@ -23,7 +23,9 @@ class BookRepository extends ServiceEntityRepository
         parent::__construct($registry, Book::class);
     }
 
-    /** Reset book table. */
+    /**
+     * Reset book table.¨
+     */
     public function truncateTable(): void
     {
         $connection = $this->getEntityManager()->getConnection();
@@ -56,7 +58,9 @@ class BookRepository extends ServiceEntityRepository
         return $res;
     }
 
-    /** Find book from ISBN. */
+    /**
+     * Find book from ISBN.
+     */
     public function findBookFromIsbn(string $isbn): ?Book
     {
         $res = $this->createQueryBuilder('b')

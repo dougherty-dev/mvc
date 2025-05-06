@@ -13,17 +13,23 @@ use PHPUnit\Framework\TestCase;
 use App\Game21\Game;
 use App\Game21\GameFoundation;
 
-/** Test cases for class Game. */
+/**
+ * Test cases for class Game.
+ */
 class GameTest extends TestCase
 {
-    /** Instantiate classes. */
+    /**
+     * Instantiate classes.
+     */
     public function testCreateInstance(): void
     {
         $this->assertInstanceOf("\App\Game21\Game", new Game());
         $this->assertInstanceOf("\App\Game21\GameFoundation", new GameFoundation());
     }
 
-    /** Construct object with argument and verify that the object has the expected properties. */
+    /**
+     * Construct object with argument and verify that the object has the expected properties.
+     */
     public function testCreateObject(): void
     {
         $game = new Game();
@@ -34,7 +40,9 @@ class GameTest extends TestCase
         $this->assertTrue($game->__isset('cardStats'));
     }
 
-    /** Test getter and setter */
+    /**
+     * Test getter and setter
+     */
     public function testGetterAndSetter(): void
     {
         $game = new Game();

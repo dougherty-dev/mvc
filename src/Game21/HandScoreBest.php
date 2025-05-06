@@ -9,8 +9,10 @@ declare (strict_types=1);
 
 namespace App\Game21;
 
-/** Calculate best hand score. */
-class HandScoreBest
+/**
+ * Calculate best hand score.
+ */
+class HandScoreBest extends GameFoundation
 {
     /**
      * Calculation of score ≤ 21.

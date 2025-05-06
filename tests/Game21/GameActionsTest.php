@@ -21,10 +21,14 @@ use App\Game21\GameActionsBet;
 use App\Game21\GameActionsDeck;
 use App\Game21\GameActionsContinue;
 
-/** Test cases for class Card. */
+/**
+ * Test cases for class Card.
+ */
 class GameActionsTest extends TestCase
 {
-    /** Construct object and check player draw methods. */
+    /**
+     * Construct object and check player draw methods.
+     */
     public function testPlayerDraws(): void
     {
         $gameActions = new GameActions();
@@ -44,7 +48,9 @@ class GameActionsTest extends TestCase
         $this->assertInstanceOf("\App\Game21\GameActionsContinue", new GameActionsContinue());
     }
 
-    /** Test deck reassembly. */
+    /**
+     * Test deck reassembly.
+     */
     public function testDeckReassembly(): void
     {
         $gameActions = new GameActions();
@@ -62,7 +68,9 @@ class GameActionsTest extends TestCase
         $this->assertCount(52, $gameActions->deck->getDeck());
     }
 
-    /** Test correct bet. */
+    /**
+     * Test correct bet.
+     */
     public function testCorrectBet(): void
     {
         $gameActions = new GameActions();
@@ -81,7 +89,9 @@ class GameActionsTest extends TestCase
         $this->assertEquals($gameActions->players[0]->__get('bet'), 50);
     }
 
-    /** Test winning states with intelligence. */
+    /**
+     * Test winning states with intelligence.
+     */
     public function testWinningHandWithIntelligence(): void
     {
         /** With intelligence. */
@@ -142,7 +152,9 @@ class GameActionsTest extends TestCase
         $gameActions->gaContinue->continueGame($gameActions);
     }
 
-    /** Test winning states with intelligence. */
+    /**
+     * Test winning states with intelligence.
+     */
     public function testWinningHandWithoutIntelligence(): void
     {
         /** Without intelligence. */
@@ -188,7 +200,9 @@ class GameActionsTest extends TestCase
         $this->assertEquals($gameActions::STATES['game_over'], $gameActions->__get('state'));
     }
 
-    /** Test game over. */
+    /**
+     * Test game over.
+     */
     public function testGameOver(): void
     {
         $gameActions = new GameActions();

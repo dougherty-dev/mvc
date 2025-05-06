@@ -19,10 +19,14 @@ use App\Game21\HandScoreBest;
 use App\Game21\HandScoreCalculate;
 use App\Game21\HandScoreAdd;
 
-/** Test cases for class Card. */
+/**
+ * Test cases for class Card.
+ */
 class HandScoreTest extends TestCase
 {
-    /** Instantiate Handscore classes. */
+    /**
+     * Instantiate Handscore classes.
+     */
     public function testCreateInstance(): void
     {
         $this->assertInstanceOf("\App\Game21\HandScore", new HandScore());
@@ -33,7 +37,9 @@ class HandScoreTest extends TestCase
         $this->assertInstanceOf("\App\Game21\HandScoreAdd", new HandScoreAdd());
     }
 
-    /** Construct object and check scores for some hands. */
+    /**
+     * Construct object and check scores for some hands.
+     */
     public function testCreateObject(): void
     {
         $handscore = new HandScore();
