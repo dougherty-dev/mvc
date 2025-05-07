@@ -47,9 +47,11 @@ class Book
     /**
      * Setter for ID.
      */
-    public function setId(int $id): void
+    public function setId(int $id): static
     {
         $this->id = $id;
+
+        return $this;
     }
 
     /**

@@ -13,7 +13,6 @@ use RangeException;
 
 /**
  * Instantiate class within tolerable card values.
- * Define a getter for the private value.
 */
 class Card
 {
@@ -23,10 +22,13 @@ class Card
     public function __construct(private int $value)
     {
         if ($this->value < self::MIN || $this->value > self::MAX) {
-            throw new RangeException('Kortvalör utanför tillåten vidd');
+            throw new RangeException('Kortvalör utanför tillåten vidd.');
         }
     }
 
+    /**
+     * Define a getter for the private value.
+    */
     public function getValue(): int
     {
         return $this->value;

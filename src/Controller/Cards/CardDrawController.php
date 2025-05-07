@@ -45,29 +45,4 @@ class CardDrawController extends CardSessionController
     {
         return $this->cardDeckDraw($number);
     }
-
-    /**
-     * The route for dealing cards to player.
-     */
-    #[Route("/card/deck/deal/{players<\d+>}/{cards<\d+>}", name: "card_deck_draw_deal_players")]
-    public function cardDeckDealPlayersCards(int $players = 0, int $cards = 0): Response
-    {
-        $this->checkSession();
-
-        $hands = [];
-        for ($i = 0; $i < $players; $i++) {
-            $hands[$i] = $this->deck->drawCards($cards);
-        }
-
-        $this->session->set("deck", $this->deck);
-
-        $data = [
-            'players' => $players,
-            'cards' => $cards,
-            'hands' => $hands,
-            'remaining' => $this->deck->remainingCards()
-        ];
-
-        return $this->render('card/deal.html.twig', $data);
-    }
 }

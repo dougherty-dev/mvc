@@ -20,24 +20,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class CardAPIDrawController extends CardSessionController
 {
     /**
-     * The POST API route to draw a single card from the deck.
-     */
-    #[Route("/api/deck/draw", name: "api_deck_draw", methods: ['POST'])]
-    public function apiDeckDraw(): Response
-    {
-        $this->checkSession();
-        $hand = $this->deck->drawCards()->handValues();
-        $this->session->set("deck", $this->deck);
-
-        $response = new JsonResponse([
-            "hand" => $hand,
-            "remaining" => $this->deck->remainingCards()
-        ]);
-        $response->setEncodingOptions(JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-        return $response;
-    }
-
-    /**
      * The POST API route to draw several cards from the deck.
      */
     #[Route("/api/deck/draw/{number<\d+>}", name: "api_deck_draw_number_post", methods: ['POST'])]

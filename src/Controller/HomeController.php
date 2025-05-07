@@ -51,13 +51,7 @@ class HomeController extends AbstractController
     #[Route("/lucky", name: "lucky")]
     public function number(): Response
     {
-        $number = random_int(1, 46);
-
-        $data = [
-            'number' => $number
-        ];
-
-        return $this->render('lucky.html.twig', $data);
+        return $this->render('lucky.html.twig', ['number' => random_int(1, 46)]);
     }
 
     /**

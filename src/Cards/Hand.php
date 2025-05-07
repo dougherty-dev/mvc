@@ -42,11 +42,7 @@ class Hand
      */
     public function intValues(): array
     {
-        $handValues = [];
-        foreach ($this->getHand() as $card) {
-            $handValues[] = $card->getValue();
-        }
-        return $handValues;
+        return array_map(fn ($card): int => $card->getValue(), $this->getHand());
     }
 
     /**
@@ -56,11 +52,7 @@ class Hand
      */
     public function handValues(): array
     {
-        $handValues = [];
-        foreach ($this->getHand() as $card) {
-            $handValues[] = $card->getStringValue();
-        }
-        return $handValues;
+        return array_map(fn ($card): string => $card->getStringValue(), $this->getHand());
     }
 
     /**
@@ -70,10 +62,6 @@ class Hand
      */
     public function handTextValues(): array
     {
-        $handTextValues = [];
-        foreach ($this->getHand() as $card) {
-            $handTextValues[] = $card->getTextValue();
-        }
-        return $handTextValues;
+        return array_map(fn ($card): string => $card->getTextValue(), $this->getHand());
     }
 }

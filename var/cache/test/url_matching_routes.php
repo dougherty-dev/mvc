@@ -10,7 +10,7 @@ return [
     [ // $staticRoutes
         '/api/deck' => [[['_route' => 'api_deck', '_controller' => 'App\\Controller\\Cards\\CardAPIDeckController::apiDeck'], null, null, null, false, false, null]],
         '/api/deck/shuffle' => [[['_route' => 'api_deck_shuffle', '_controller' => 'App\\Controller\\Cards\\CardAPIDeckController::apiDeckShuffle'], null, ['POST' => 0], null, false, false, null]],
-        '/api/deck/draw' => [[['_route' => 'api_deck_draw', '_controller' => 'App\\Controller\\Cards\\CardAPIDrawController::apiDeckDraw'], null, ['POST' => 0], null, false, false, null]],
+        '/api/deck/draw' => [[['_route' => 'api_deck_draw', '_controller' => 'App\\Controller\\Cards\\CardAPIDrawSingleController::apiDeckDraw'], null, ['POST' => 0], null, false, false, null]],
         '/card' => [[['_route' => 'card', '_controller' => 'App\\Controller\\Cards\\CardController::card'], null, null, null, false, false, null]],
         '/card/deck' => [[['_route' => 'card_deck', '_controller' => 'App\\Controller\\Cards\\CardController::cardDeck'], null, null, null, false, false, null]],
         '/card/deck/reset' => [[['_route' => 'card_deck_reset', '_controller' => 'App\\Controller\\Cards\\CardController::cardDeckReset'], null, null, null, false, false, null]],
@@ -61,8 +61,8 @@ return [
                     .'|library/book/([^/]++)(*:92)'
                 .')'
                 .'|/card/deck/d(?'
-                    .'|raw/(\\d+)(*:124)'
-                    .'|eal(?:/(\\d+)(?:/(\\d+))?)?(*:157)'
+                    .'|eal(?:/(\\d+)(?:/(\\d+))?)?(*:140)'
+                    .'|raw/(\\d+)(*:157)'
                 .')'
                 .'|/library/(?'
                     .'|edit/([^/]++)(*:191)'
@@ -80,8 +80,8 @@ return [
             [['_route' => 'api_deck_draw_number', '_controller' => 'App\\Controller\\Cards\\CardAPIDrawController::apiDeckDrawNumber'], ['number'], ['GET' => 0], null, false, true, null],
         ],
         92 => [[['_route' => 'api_library_book_isbn', '_controller' => 'App\\Controller\\Library\\LibraryAPIController::apiLibraryBookIsbn'], ['isbn'], null, null, false, true, null]],
-        124 => [[['_route' => 'card_deck_draw_number', '_controller' => 'App\\Controller\\Cards\\CardDrawController::cardDeckDrawNumber'], ['number'], null, null, false, true, null]],
-        157 => [[['_route' => 'card_deck_draw_deal_players', 'players' => 0, 'cards' => 0, '_controller' => 'App\\Controller\\Cards\\CardDrawController::cardDeckDealPlayersCards'], ['players', 'cards'], null, null, false, true, null]],
+        140 => [[['_route' => 'card_deck_draw_deal_players', 'players' => 0, 'cards' => 0, '_controller' => 'App\\Controller\\Cards\\CardDealController::cardDeckDealPlayersCards'], ['players', 'cards'], null, null, false, true, null]],
+        157 => [[['_route' => 'card_deck_draw_number', '_controller' => 'App\\Controller\\Cards\\CardDrawController::cardDeckDrawNumber'], ['number'], null, null, false, true, null]],
         191 => [[['_route' => 'library_edit_id', '_controller' => 'App\\Controller\\Library\\LibraryController::libraryEditID'], ['id'], null, null, false, true, null]],
         212 => [
             [['_route' => 'library_view_id', '_controller' => 'App\\Controller\\Library\\LibraryViewController::libraryViewID'], ['id'], null, null, false, true, null],

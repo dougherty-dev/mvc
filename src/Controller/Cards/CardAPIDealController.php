@@ -26,10 +26,7 @@ class CardAPIDealController extends CardSessionController
     public function apiDeckDealPlayersCards(int $players, int $cards): Response
     {
         $this->checkSession();
-        $hands = [];
-        for ($i = 0; $i < $players; $i++) {
-            $hands[$i] = $this->deck->drawCards($cards)->handValues();
-        }
+        $hands = array_map(fn (): array => $this->deck->drawCards($cards)->handValues(), range(0, $players - 1));
 
         $this->session->set("deck", $this->deck);
 

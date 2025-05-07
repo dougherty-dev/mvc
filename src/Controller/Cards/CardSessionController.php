@@ -17,15 +17,8 @@ use App\Cards\Deck;
 /**
  * The CardSessionController class.
  */
-class CardSessionController extends AbstractController
+class CardSessionController extends CardSessionDeckController
 {
-    protected Deck $deck;
-    protected SessionInterface $session;
-
-    public function __construct(protected RequestStack $requestStack)
-    {
-    }
-
     /**
      * Helper function to handle the session.
      */
@@ -40,28 +33,5 @@ class CardSessionController extends AbstractController
         if ($this->session->get("deck") instanceof Deck) {
             $this->deck = $this->session->get("deck");
         }
-    }
-
-    /**
-     * Private method for initiating deck values in session.
-     */
-    private function newDeckValues(): void
-    {
-        $deck = new Deck();
-        $deck->resetDeck();
-
-        $this->session->set("deck_values", $deck->deckValues());
-        $this->session->set("deck_text_values", $deck->deckTextValues());
-    }
-
-    /**
-     * Private method for initiating deck in session.
-     */
-    private function newSessionDeck(): void
-    {
-        $this->deck->resetDeck();
-        $this->deck->shuffleDeck();
-
-        $this->session->set("deck", $this->deck);
     }
 }

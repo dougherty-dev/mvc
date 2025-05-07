@@ -13,8 +13,10 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Cards\Deck;
 use App\Controller\Cards\CardController;
+use App\Controller\Cards\CardSessionDeckController;
 use App\Controller\Cards\CardSessionController;
 use App\Controller\Cards\CardDrawController;
+use App\Controller\Cards\CardDealController;
 
 /**
  * Test cases for class CardController.
@@ -29,11 +31,17 @@ class CardControllerTest extends WebTestCase
         $cls = new CardController(new RequestStack());
         $this->assertInstanceOf("\App\Controller\Cards\CardController", $cls);
 
+        $cls = new CardSessionDeckController(new RequestStack());
+        $this->assertInstanceOf("\App\Controller\Cards\CardSessionDeckController", $cls);
+
         $cls = new CardSessionController(new RequestStack());
         $this->assertInstanceOf("\App\Controller\Cards\CardSessionController", $cls);
 
         $cls = new CardDrawController(new RequestStack());
         $this->assertInstanceOf("\App\Controller\Cards\CardDrawController", $cls);
+
+        $cls = new CardDealController(new RequestStack());
+        $this->assertInstanceOf("\App\Controller\Cards\CardDealController", $cls);
     }
 
     /**

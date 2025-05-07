@@ -22,6 +22,8 @@ class HandScoreCalculate extends GameFoundation
     public function __construct(
         private HandScoreAces $handScoreAces = new HandScoreAces(),
         private HandScoreJokers $handScoreJokers = new HandScoreJokers(),
+        private HandScoreAddJokers $handScoreAddJokers = new HandScoreAddJokers(),
+        private HandScoreAddAces $handScoreAddAces = new HandScoreAddAces(),
         private HandScoreAdd $handScoreAdd = new HandScoreAdd()
     ) {
     }
@@ -40,13 +42,12 @@ class HandScoreCalculate extends GameFoundation
         foreach ($hand->getHand() as $card) {
             $value = $card->getValue();
             $face = $value % CARDSUIT + 1;
-            $this->handScoreAdd->addScores($value, $face, $jokers, $aces, $score);
+            $this->handScoreAddJokers->addJokerScores($value, $jokers);
+            $this->handScoreAddAces->addAceScores($value, $face, $aces);
+            $this->handScoreAdd->addScores($value, $face, $score);
         }
 
-        $scores = [];
-        foreach ($this->handScoreAces->getAceSums($aces) as $sum) {
-            $scores[] = $score + $sum;
-        }
+        $scores = array_map(fn ($sum): int => $score + $sum, $this->handScoreAces->getAceSums($aces));
 
         return $this->handScoreJokers->getJokerSums($jokers, $scores);
     }

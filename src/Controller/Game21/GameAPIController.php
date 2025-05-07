@@ -26,16 +26,13 @@ class GameAPIController extends GameSessionController
     public function apiGame(): Response
     {
         $this->checkSession();
-        $players = [];
-        foreach ($this->game->players as $player) {
-            $players[] = [
-                "cards" => $player->hand->handValues(),
-                "card values" => $player->hand->handTextValues(),
-                "score" => $player->__get('score'),
-                "bet" => $player->__get('bet'),
-                "balance" => $player->__get('balance'),
-            ];
-        }
+        $players = array_map(fn ($player): array => [
+            "cards" => $player->hand->handValues(),
+            "card values" => $player->hand->handTextValues(),
+            "score" => $player->__get('score'),
+            "bet" => $player->__get('bet'),
+            "balance" => $player->__get('balance'),
+        ], $this->game->players);
 
         $response = new JsonResponse([
             "state" => $this->game->__get('state'),

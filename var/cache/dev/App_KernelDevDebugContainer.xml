@@ -365,11 +365,13 @@
     <service id="App\Cards\Card" class="App\Cards\Card" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;App\Cards\Card&quot;: argument &quot;$value&quot; of method &quot;__construct()&quot; is type-hinted &quot;int&quot;, you should configure its value explicitly."/>
     </service>
-    <service id="App\Cards\CardDeck" class="App\Cards\CardDeck" autowire="true" autoconfigure="true"/>
     <service id="App\Cards\CardGraphic" class="App\Cards\CardGraphic" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;App\Cards\CardGraphic&quot;: argument &quot;$value&quot; of method &quot;App\Cards\Card::__construct()&quot; is type-hinted &quot;int&quot;, you should configure its value explicitly."/>
     </service>
     <service id="App\Cards\Deck" class="App\Cards\Deck" autowire="true" autoconfigure="true"/>
+    <service id="App\Cards\DeckFoundation" class="App\Cards\DeckFoundation" autowire="true" autoconfigure="true"/>
+    <service id="App\Cards\DeckMethods" class="App\Cards\DeckMethods" autowire="true" autoconfigure="true"/>
+    <service id="App\Cards\DeckRepresentations" class="App\Cards\DeckRepresentations" autowire="true" autoconfigure="true"/>
     <service id="App\Cards\Hand" class="App\Cards\Hand" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\Cards\CardAPIDealController" class="App\Controller\Cards\CardAPIDealController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
@@ -395,12 +397,28 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Cards\CardAPIDrawController"/>
       </call>
     </service>
+    <service id="App\Controller\Cards\CardAPIDrawSingleController" class="App\Controller\Cards\CardAPIDrawSingleController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="request_stack"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Cards\CardAPIDrawSingleController"/>
+      </call>
+    </service>
     <service id="App\Controller\Cards\CardController" class="App\Controller\Cards\CardController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Cards\CardController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Cards\CardDealController" class="App\Controller\Cards\CardDealController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="request_stack"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Cards\CardDealController"/>
       </call>
     </service>
     <service id="App\Controller\Cards\CardDrawController" class="App\Controller\Cards\CardDrawController" public="true" autowire="true" autoconfigure="true">
@@ -425,6 +443,14 @@
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Cards\CardSessionController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Cards\CardSessionDeckController" class="App\Controller\Cards\CardSessionDeckController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="request_stack"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Cards\CardSessionDeckController"/>
       </call>
     </service>
     <service id="App\Controller\Game21\GameAPIController" class="App\Controller\Game21\GameAPIController" public="true" autowire="true" autoconfigure="true">
@@ -566,10 +592,14 @@
     </service>
     <service id="App\Game21\HandScoreAces" class="App\Game21\HandScoreAces" autowire="true" autoconfigure="true"/>
     <service id="App\Game21\HandScoreAdd" class="App\Game21\HandScoreAdd" autowire="true" autoconfigure="true"/>
+    <service id="App\Game21\HandScoreAddAces" class="App\Game21\HandScoreAddAces" autowire="true" autoconfigure="true"/>
+    <service id="App\Game21\HandScoreAddJokers" class="App\Game21\HandScoreAddJokers" autowire="true" autoconfigure="true"/>
     <service id="App\Game21\HandScoreBest" class="App\Game21\HandScoreBest" autowire="true" autoconfigure="true"/>
     <service id="App\Game21\HandScoreCalculate" class="App\Game21\HandScoreCalculate" autowire="true" autoconfigure="true">
       <argument type="service" id="App\Game21\HandScoreAces"/>
       <argument type="service" id="App\Game21\HandScoreJokers"/>
+      <argument type="service" id="App\Game21\HandScoreAddJokers"/>
+      <argument type="service" id="App\Game21\HandScoreAddAces"/>
       <argument type="service" id="App\Game21\HandScoreAdd"/>
     </service>
     <service id="App\Game21\HandScoreJokers" class="App\Game21\HandScoreJokers" autowire="true" autoconfigure="true"/>
@@ -7608,9 +7638,15 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Cards\CardAPIDrawController" class="App\Controller\Cards\CardAPIDrawController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Cards\CardAPIDrawController" class="App\Controller\Cards\CardAPIDrawController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Cards\CardAPIDrawController" class="App\Controller\Cards\CardAPIDrawController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Cards\CardAPIDrawSingleController" class="App\Controller\Cards\CardAPIDrawSingleController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Cards\CardAPIDrawSingleController" class="App\Controller\Cards\CardAPIDrawSingleController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Cards\CardAPIDrawSingleController" class="App\Controller\Cards\CardAPIDrawSingleController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Cards\CardController" class="App\Controller\Cards\CardController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Cards\CardController" class="App\Controller\Cards\CardController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Cards\CardController" class="App\Controller\Cards\CardController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Cards\CardDealController" class="App\Controller\Cards\CardDealController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Cards\CardDealController" class="App\Controller\Cards\CardDealController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Cards\CardDealController" class="App\Controller\Cards\CardDealController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Cards\CardDrawController" class="App\Controller\Cards\CardDrawController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Cards\CardDrawController" class="App\Controller\Cards\CardDrawController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Cards\CardDrawController" class="App\Controller\Cards\CardDrawController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7620,6 +7656,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Cards\CardSessionController" class="App\Controller\Cards\CardSessionController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Cards\CardSessionController" class="App\Controller\Cards\CardSessionController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Cards\CardSessionController" class="App\Controller\Cards\CardSessionController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Cards\CardSessionDeckController" class="App\Controller\Cards\CardSessionDeckController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Cards\CardSessionDeckController" class="App\Controller\Cards\CardSessionDeckController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Cards\CardSessionDeckController" class="App\Controller\Cards\CardSessionDeckController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Game21\GameAPIController" class="App\Controller\Game21\GameAPIController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Game21\GameAPIController" class="App\Controller\Game21\GameAPIController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Game21\GameAPIController" class="App\Controller\Game21\GameAPIController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -8876,9 +8915,21 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Cards\CardAPIDrawSingleController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Cards\CardAPIDrawSingleController"/>
+      <argument>App\Controller\Cards\CardAPIDrawSingleController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
     <service id=".service_locator.ZyP9f7K.App\Controller\Cards\CardController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Cards\CardController"/>
       <argument>App\Controller\Cards\CardController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Cards\CardDealController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Cards\CardDealController"/>
+      <argument>App\Controller\Cards\CardDealController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
@@ -8897,6 +8948,12 @@
     <service id=".service_locator.ZyP9f7K.App\Controller\Cards\CardSessionController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Cards\CardSessionController"/>
       <argument>App\Controller\Cards\CardSessionController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Cards\CardSessionDeckController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Cards\CardSessionDeckController"/>
+      <argument>App\Controller\Cards\CardSessionDeckController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
@@ -9184,10 +9241,13 @@
           <argument>App\Controller\Cards\CardAPIDealController</argument>
           <argument>App\Controller\Cards\CardAPIDeckController</argument>
           <argument>App\Controller\Cards\CardAPIDrawController</argument>
+          <argument>App\Controller\Cards\CardAPIDrawSingleController</argument>
           <argument>App\Controller\Cards\CardController</argument>
+          <argument>App\Controller\Cards\CardDealController</argument>
           <argument>App\Controller\Cards\CardDrawController</argument>
           <argument>App\Controller\Cards\CardProcessController</argument>
           <argument>App\Controller\Cards\CardSessionController</argument>
+          <argument>App\Controller\Cards\CardSessionDeckController</argument>
           <argument>App\Controller\Game21\GameAPIController</argument>
           <argument>App\Controller\Game21\GameBetController</argument>
           <argument>App\Controller\Game21\GameContinueController</argument>

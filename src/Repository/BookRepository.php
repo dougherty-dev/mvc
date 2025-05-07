@@ -24,7 +24,7 @@ class BookRepository extends ServiceEntityRepository
     }
 
     /**
-     * Reset book table.¨
+     * Reset book table.
      */
     public function truncateTable(): void
     {
@@ -50,7 +50,7 @@ class BookRepository extends ServiceEntityRepository
 
         foreach ($sqlStmt as $sql) {
             $response = $connection->executeQuery($sql, ['id' => $id])
-                ->fetchAllAssociative()[0]['id'] ?? null;
+                ->fetchAllAssociative()[0]['id'] ?? 0;
 
             $res[] = is_int($response) ? $response : 0;
         }

@@ -55,9 +55,7 @@ class GameSessionController extends AbstractController
         $this->session->set("deck_text_values", $game->deck->deckTextValues());
 
         $game->deck->shuffleDeck();
-        foreach ($game->players as $player) {
-            $player->__set('score', $player->handScore->bestScore($player->hand));
-        }
+        array_map(fn ($player): null => $player->__set('score', $player->handScore->bestScore($player->hand)), $game->players);
         $this->session->set("game", $game);
     }
 }

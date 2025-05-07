@@ -14,6 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\RequestStack;
 use App\Cards\Deck;
 use App\Controller\Cards\CardAPIDrawController;
+use App\Controller\Cards\CardAPIDrawSingleController;
 
 /**
  * Test cases for class CardAPIDrawControllerTest.
@@ -27,6 +28,9 @@ class CardAPIDrawControllerTest extends CardAPIDeckControllerTest
     {
         $cls = new CardAPIDrawController(new RequestStack());
         $this->assertInstanceOf("\App\Controller\Cards\CardAPIDrawController", $cls);
+
+        $cls = new CardAPIDrawSingleController(new RequestStack());
+        $this->assertInstanceOf("\App\Controller\Cards\CardAPIDrawSingleController", $cls);
     }
 
     /**

@@ -17,6 +17,11 @@ use App\Cards\Deck;
 class GameActionsStats extends GameFoundation
 {
     /**
+     * @var int[] $values
+     */
+    private array $values;
+
+    /**
      * Calculate probabilities for getting under/over 21 based on remaining cards in deck.
      *
      * @param Player[] $players
@@ -25,30 +30,48 @@ class GameActionsStats extends GameFoundation
     public function cardStats(int $id, array $players, Deck $deck): array
     {
         $handValue = $players[$id]->handScore->lowestScore($players[$id]->hand);
-        $values = array_fill(1, WILD_MAX, 0);
+        $this->values = array_fill(1, WILD_MAX, 0);
         $deckValues = $deck->intValues();
         $cards = max(1, count($deckValues));
 
-        foreach ($deckValues as $card) {
-            $face = $card % CARDSUIT + 1;
-            match (true) {
-                $card > DECK_MAX => $values[1]++, // keep jokers = 1
-                default => $values[$face]++ // keep aces = 1
-            };
-        }
+        array_map(fn ($card): null => $this->keepWildsSmall($card), $deckValues);
 
+        [$upTo21, $over21] = $this->count21($handValue);
+
+        return [
+            (int) round(100 * $upTo21 / $cards, 0),
+            (int) round(100 * $over21 / $cards, 0)
+        ];
+    }
+
+    /**
+     * Count aces and jokers as 1.
+     */
+    private function keepWildsSmall(int $card): void
+    {
+        $face = $card % CARDSUIT + 1;
+        match (true) {
+            $card > DECK_MAX => $this->values[1]++,
+            default => $this->values[$face]++
+        };
+    }
+
+    /**
+     * Count distribution under and over 21.
+     *
+     * @return int[]
+     */
+    private function count21(int $handValue): array
+    {
         $upTo21 = 0;
         $over21 = 0;
-        foreach ($values as $key => $val) {
+        foreach ($this->values as $key => $val) {
             match (true) {
                 $handValue + $key <= TWENTY_ONE => $upTo21 += $val,
                 default => $over21 += $val
             };
         }
 
-        return [
-            (int) round(100 * $upTo21 / $cards, 0),
-            (int) round(100 * $over21 / $cards, 0)
-        ];
+        return [$upTo21, $over21];
     }
 }

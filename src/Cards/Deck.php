@@ -10,14 +10,12 @@ declare(strict_types=1);
 namespace App\Cards;
 
 /**
- * Define methods for a deck of cards of class CardGraphic.
+ * Define the Deck class.
  */
-class Deck extends CardDeck
+class Deck extends DeckMethods
 {
     /**
      * Draw $number cards from deck, while removing from deck.
-     * Check if deck is empty before drawing.
-     * Method does NOT reassemble the deck if empty.
      */
     public function drawCards(int $number = 1): Hand
     {

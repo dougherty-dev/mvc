@@ -39,10 +39,8 @@ class LibraryAPIController extends AbstractController
      * Display API data for single book from ISBN.
      */
     #[Route('/api/library/book/{isbn}', name: 'api_library_book_isbn')]
-    public function apiLibraryBookIsbn(
-        BookRepository $bookRepository,
-        string $isbn
-    ): Response {
+    public function apiLibraryBookIsbn(BookRepository $bookRepository, string $isbn): Response
+    {
         $id = $bookRepository->findBookFromIsbn($isbn);
         $book = $id ? $bookRepository->find($id) : new Book();
 

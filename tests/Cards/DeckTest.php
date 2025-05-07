@@ -10,7 +10,9 @@ declare (strict_types=1);
 namespace App\Tests\Cards;
 
 use PHPUnit\Framework\TestCase;
-use App\Cards\CardDeck;
+use App\Cards\DeckFoundation;
+use App\Cards\DeckRepresentations;
+use App\Cards\DeckMethods;
 use App\Cards\Deck;
 
 /**
@@ -36,8 +38,9 @@ class DeckTest extends TestCase
         $deck->resetDeck();
         $this->assertCount(54, $deck->getDeck());
 
-        $deck = new CardDeck();
-        $this->assertInstanceOf("\App\Cards\CardDeck", $deck);
+        $this->assertInstanceOf("\App\Cards\DeckFoundation", new DeckFoundation());
+        $this->assertInstanceOf("\App\Cards\DeckRepresentations", new DeckRepresentations());
+        $this->assertInstanceOf("\App\Cards\DeckMethods", new DeckMethods());
     }
 
     /**
