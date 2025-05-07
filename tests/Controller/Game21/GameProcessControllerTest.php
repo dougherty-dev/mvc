@@ -11,7 +11,6 @@ namespace App\Tests\Controller\Game21;
 
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use App\Controller\Game21\GameActions;
 use App\Controller\Game21\GameProcessController;
 use App\Controller\Game21\GamePlayerController;
 

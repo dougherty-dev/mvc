@@ -115,6 +115,9 @@
         <h2 class="phpdocumentor-content__title">
     Deck
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/App-Cards-DeckMethods.html"><abbr title="\App\Cards\DeckMethods">DeckMethods</abbr></a>
+    </span>
     
             <div class="phpdocumentor-element__package">
             in package
@@ -134,11 +137,11 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Deck.php"><a href="files/src-cards-deck.html"><abbr title="src/Cards/Deck.php">Deck.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Define methods for a deck of cards of class CardGraphic,</p>
+            <p class="phpdocumentor-summary">Define the Deck class.</p>
 
 
 
@@ -168,8 +171,8 @@
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/App-Cards-Deck.html#property_deck">$deck</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Cards-DeckFoundation.html#property_deck">$deck</a>
     <span>
                         &nbsp;: array&lt;int, <a href="classes/App-Cards-CardGraphic.html"><abbr title="\App\Cards\CardGraphic">CardGraphic</abbr></a>&gt;            </span>
 </dt>
@@ -183,21 +186,21 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Cards-Deck.html#method_addToDeck">addToDeck()</a>
+    <a class="" href="classes/App-Cards-DeckMethods.html#method_addToDeck">addToDeck()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>Add cards to deck by serial value 0–53.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Cards-Deck.html#method_deckTextValues">deckTextValues()</a>
+    <a class="" href="classes/App-Cards-DeckRepresentations.html#method_deckTextValues">deckTextValues()</a>
     <span>
                                 &nbsp;: array&lt;string|int, string&gt;    </span>
 </dt>
 <dd>Return string representations of cards in deck.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Cards-Deck.html#method_deckValues">deckValues()</a>
+    <a class="" href="classes/App-Cards-DeckRepresentations.html#method_deckValues">deckValues()</a>
     <span>
                                 &nbsp;: array&lt;string|int, string&gt;    </span>
 </dt>
@@ -218,21 +221,21 @@
 <dd>Draw $number cards from deck, while removing from deck.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Cards-Deck.html#method_emptyDeck">emptyDeck()</a>
+    <a class="" href="classes/App-Cards-DeckFoundation.html#method_emptyDeck">emptyDeck()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>Zero the deck.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Cards-Deck.html#method_getDeck">getDeck()</a>
+    <a class="" href="classes/App-Cards-DeckFoundation.html#method_getDeck">getDeck()</a>
     <span>
                                 &nbsp;: array&lt;int, <a href="classes/App-Cards-CardGraphic.html"><abbr title="\App\Cards\CardGraphic">CardGraphic</abbr></a>&gt;    </span>
 </dt>
 <dd>Access the deck.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Cards-Deck.html#method_intValues">intValues()</a>
+    <a class="" href="classes/App-Cards-DeckRepresentations.html#method_intValues">intValues()</a>
     <span>
                                 &nbsp;: array&lt;string|int, int&gt;    </span>
 </dt>
@@ -246,14 +249,14 @@
 <dd>Count cards in deck.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Cards-Deck.html#method_resetDeck">resetDeck()</a>
+    <a class="" href="classes/App-Cards-DeckMethods.html#method_resetDeck">resetDeck()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>New full deck, in order.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Cards-Deck.html#method_shuffleDeck">shuffleDeck()</a>
+    <a class="" href="classes/App-Cards-DeckMethods.html#method_shuffleDeck">shuffleDeck()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
@@ -276,27 +279,27 @@
         class="
             phpdocumentor-element
             -property
-            -private
+            -protected
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="property_deck">
         $deck
-        <a href="classes/App-Cards-Deck.html#property_deck" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Cards-DeckFoundation.html#property_deck" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Deck.php"><a href="files/src-cards-deck.html"><abbr title="src/Cards/Deck.php">Deck.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/DeckFoundation.php"><a href="files/src-cards-deckfoundation.html"><abbr title="src/Cards/DeckFoundation.php">DeckFoundation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">array&lt;int, <a href="classes/App-Cards-CardGraphic.html"><abbr title="\App\Cards\CardGraphic">CardGraphic</abbr></a>&gt;</span>
     <span class="phpdocumentor-signature__name">$deck</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
@@ -324,13 +327,13 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_addToDeck">
         addToDeck()
-        <a href="classes/App-Cards-Deck.html#method_addToDeck" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Cards-DeckMethods.html#method_addToDeck" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Deck.php"><a href="files/src-cards-deck.html"><abbr title="src/Cards/Deck.php">Deck.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/DeckMethods.php"><a href="files/src-cards-deckmethods.html"><abbr title="src/Cards/DeckMethods.php">DeckMethods.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -369,13 +372,13 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_deckTextValues">
         deckTextValues()
-        <a href="classes/App-Cards-Deck.html#method_deckTextValues" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Cards-DeckRepresentations.html#method_deckTextValues" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Deck.php"><a href="files/src-cards-deck.html"><abbr title="src/Cards/Deck.php">Deck.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/DeckRepresentations.php"><a href="files/src-cards-deckrepresentations.html"><abbr title="src/Cards/DeckRepresentations.php">DeckRepresentations.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">120</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
@@ -408,13 +411,13 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_deckValues">
         deckValues()
-        <a href="classes/App-Cards-Deck.html#method_deckValues" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Cards-DeckRepresentations.html#method_deckValues" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Deck.php"><a href="files/src-cards-deck.html"><abbr title="src/Cards/Deck.php">Deck.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/DeckRepresentations.php"><a href="files/src-cards-deckrepresentations.html"><abbr title="src/Cards/DeckRepresentations.php">DeckRepresentations.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">106</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -453,7 +456,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Deck.php"><a href="files/src-cards-deck.html"><abbr title="src/Cards/Deck.php">Deck.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -492,7 +495,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Deck.php"><a href="files/src-cards-deck.html"><abbr title="src/Cards/Deck.php">Deck.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">67</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
@@ -505,10 +508,7 @@
     <div class="phpdocumentor-label-line">
         </div>
     
-        <section class="phpdocumentor-description"><p>Check if deck is empty before drawing.
-Method does NOT reassemble the deck if empty.</p>
-</section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -538,13 +538,13 @@ Method does NOT reassemble the deck if empty.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_emptyDeck">
         emptyDeck()
-        <a href="classes/App-Cards-Deck.html#method_emptyDeck" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Cards-DeckFoundation.html#method_emptyDeck" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Deck.php"><a href="files/src-cards-deck.html"><abbr title="src/Cards/Deck.php">Deck.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/DeckFoundation.php"><a href="files/src-cards-deckfoundation.html"><abbr title="src/Cards/DeckFoundation.php">DeckFoundation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 
     </aside>
 
@@ -573,13 +573,13 @@ Method does NOT reassemble the deck if empty.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_getDeck">
         getDeck()
-        <a href="classes/App-Cards-Deck.html#method_getDeck" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Cards-DeckFoundation.html#method_getDeck" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Deck.php"><a href="files/src-cards-deck.html"><abbr title="src/Cards/Deck.php">Deck.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/DeckFoundation.php"><a href="files/src-cards-deckfoundation.html"><abbr title="src/Cards/DeckFoundation.php">DeckFoundation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 
     </aside>
 
@@ -612,13 +612,13 @@ Method does NOT reassemble the deck if empty.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_intValues">
         intValues()
-        <a href="classes/App-Cards-Deck.html#method_intValues" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Cards-DeckRepresentations.html#method_intValues" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Deck.php"><a href="files/src-cards-deck.html"><abbr title="src/Cards/Deck.php">Deck.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/DeckRepresentations.php"><a href="files/src-cards-deckrepresentations.html"><abbr title="src/Cards/DeckRepresentations.php">DeckRepresentations.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">92</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
@@ -657,7 +657,7 @@ Method does NOT reassemble the deck if empty.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Deck.php"><a href="files/src-cards-deck.html"><abbr title="src/Cards/Deck.php">Deck.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">130</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 
     </aside>
 
@@ -690,13 +690,13 @@ Method does NOT reassemble the deck if empty.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_resetDeck">
         resetDeck()
-        <a href="classes/App-Cards-Deck.html#method_resetDeck" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Cards-DeckMethods.html#method_resetDeck" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Deck.php"><a href="files/src-cards-deck.html"><abbr title="src/Cards/Deck.php">Deck.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/DeckMethods.php"><a href="files/src-cards-deckmethods.html"><abbr title="src/Cards/DeckMethods.php">DeckMethods.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
@@ -725,13 +725,13 @@ Method does NOT reassemble the deck if empty.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_shuffleDeck">
         shuffleDeck()
-        <a href="classes/App-Cards-Deck.html#method_shuffleDeck" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Cards-DeckMethods.html#method_shuffleDeck" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/Deck.php"><a href="files/src-cards-deck.html"><abbr title="src/Cards/Deck.php">Deck.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/DeckMethods.php"><a href="files/src-cards-deckmethods.html"><abbr title="src/Cards/DeckMethods.php">DeckMethods.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 
     </aside>
 
@@ -865,24 +865,24 @@ Method does NOT reassemble the deck if empty.</p>
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="classes/App-Cards-Deck.html#property_deck">$deck</a></li>
+                                                    <li class=""><a href="classes/App-Cards-DeckFoundation.html#property_deck">$deck</a></li>
                                             </ul>
                 </li>
             
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li class=""><a href="classes/App-Cards-Deck.html#method_addToDeck">addToDeck()</a></li>
-                                            <li class=""><a href="classes/App-Cards-Deck.html#method_deckTextValues">deckTextValues()</a></li>
-                                            <li class=""><a href="classes/App-Cards-Deck.html#method_deckValues">deckValues()</a></li>
+                                            <li class=""><a href="classes/App-Cards-DeckMethods.html#method_addToDeck">addToDeck()</a></li>
+                                            <li class=""><a href="classes/App-Cards-DeckRepresentations.html#method_deckTextValues">deckTextValues()</a></li>
+                                            <li class=""><a href="classes/App-Cards-DeckRepresentations.html#method_deckValues">deckValues()</a></li>
                                             <li class=""><a href="classes/App-Cards-Deck.html#method_drawCard">drawCard()</a></li>
                                             <li class=""><a href="classes/App-Cards-Deck.html#method_drawCards">drawCards()</a></li>
-                                            <li class=""><a href="classes/App-Cards-Deck.html#method_emptyDeck">emptyDeck()</a></li>
-                                            <li class=""><a href="classes/App-Cards-Deck.html#method_getDeck">getDeck()</a></li>
-                                            <li class=""><a href="classes/App-Cards-Deck.html#method_intValues">intValues()</a></li>
+                                            <li class=""><a href="classes/App-Cards-DeckFoundation.html#method_emptyDeck">emptyDeck()</a></li>
+                                            <li class=""><a href="classes/App-Cards-DeckFoundation.html#method_getDeck">getDeck()</a></li>
+                                            <li class=""><a href="classes/App-Cards-DeckRepresentations.html#method_intValues">intValues()</a></li>
                                             <li class=""><a href="classes/App-Cards-Deck.html#method_remainingCards">remainingCards()</a></li>
-                                            <li class=""><a href="classes/App-Cards-Deck.html#method_resetDeck">resetDeck()</a></li>
-                                            <li class=""><a href="classes/App-Cards-Deck.html#method_shuffleDeck">shuffleDeck()</a></li>
+                                            <li class=""><a href="classes/App-Cards-DeckMethods.html#method_resetDeck">resetDeck()</a></li>
+                                            <li class=""><a href="classes/App-Cards-DeckMethods.html#method_shuffleDeck">shuffleDeck()</a></li>
                                     </ul>
             </li>
                     </ul>

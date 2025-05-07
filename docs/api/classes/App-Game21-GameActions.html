@@ -137,7 +137,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameActions.php"><a href="files/src-game21-gameactions.html"><abbr title="src/Game21/GameActions.php">GameActions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 
     </aside>
 
@@ -170,7 +170,7 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a class="" href="classes/App-Game21-Game.html#constant_STATES">STATES</a>
+    <a class="" href="classes/App-Game21-GameFoundation.html#constant_STATES">STATES</a>
     <span>
         &nbsp;= [&#039;player_initiates&#039; =&gt; &#039;⇦ Spelare inleder&#039;, &#039;player_bets&#039; =&gt; &#039;⇦ Spelare satsar&#039;, &#039;player_draws&#039; =&gt; &#039;⇦ Spelare drar&#039;, &#039;player_busted&#039; =&gt; &#039;Spelare tjock&#039;, &#039;bank_busted&#039; =&gt; &#039;Bank tjock&#039;, &#039;player_wins&#039; =&gt; &#039;Spelare vinner&#039;, &#039;bank_wins&#039; =&gt; &#039;Bank vinner&#039;, &#039;game_over&#039; =&gt; &#039;Spel slut&#039;]                            </span>
 </dt>
@@ -185,36 +185,72 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
-    <a class="" href="classes/App-Game21-Game.html#property_deck">$deck</a>
+    <a class="" href="classes/App-Game21-GameFoundation.html#property_deck">$deck</a>
     <span>
                         &nbsp;: <a href="classes/App-Cards-Deck.html"><abbr title="\App\Cards\Deck">Deck</abbr></a>            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
-    <a class="" href="classes/App-Game21-Game.html#property_players">$players</a>
+    <a class="" href="classes/App-Game21-GameActions.html#property_gaBet">$gaBet</a>
+    <span>
+                        &nbsp;: <a href="classes/App-Game21-GameActionsBet.html"><abbr title="\App\Game21\GameActionsBet">GameActionsBet</abbr></a>            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a class="" href="classes/App-Game21-GameActions.html#property_gaBusted">$gaBusted</a>
+    <span>
+                        &nbsp;: <a href="classes/App-Game21-GameActionsBusted.html"><abbr title="\App\Game21\GameActionsBusted">GameActionsBusted</abbr></a>            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a class="" href="classes/App-Game21-GameActions.html#property_gaContinue">$gaContinue</a>
+    <span>
+                        &nbsp;: <a href="classes/App-Game21-GameActionsContinue.html"><abbr title="\App\Game21\GameActionsContinue">GameActionsContinue</abbr></a>            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a class="" href="classes/App-Game21-GameFoundation.html#property_players">$players</a>
     <span>
                         &nbsp;: array&lt;string|int, <a href="classes/App-Game21-Player.html"><abbr title="\App\Game21\Player">Player</abbr></a>&gt;            </span>
 </dt>
 
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/App-Game21-Game.html#property_bankIntelligence">$bankIntelligence</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
 
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/App-Game21-Game.html#property_cardStats">$cardStats</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Game21-GameFoundation.html#property_cardStats">$cardStats</a>
     <span>
                         &nbsp;: array&lt;string|int, int&gt;            </span>
 </dt>
 
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Game21-GameActions.html#property_gaBankMoves">$gaBankMoves</a>
+    <span>
+                        &nbsp;: <a href="classes/App-Game21-GameActionsBankMoves.html"><abbr title="\App\Game21\GameActionsBankMoves">GameActionsBankMoves</abbr></a>            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Game21-GameActions.html#property_gaPlayerDraws">$gaPlayerDraws</a>
+    <span>
+                        &nbsp;: <a href="classes/App-Game21-GameActionsPlayerDraws.html"><abbr title="\App\Game21\GameActionsPlayerDraws">GameActionsPlayerDraws</abbr></a>            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Game21-GameActions.html#property_gaPlayerMoves">$gaPlayerMoves</a>
+    <span>
+                        &nbsp;: <a href="classes/App-Game21-GameActionsPlayerMoves.html"><abbr title="\App\Game21\GameActionsPlayerMoves">GameActionsPlayerMoves</abbr></a>            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/App-Game21-Game.html#property_showDeck">$showDeck</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
 
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/App-Game21-Game.html#property_state">$state</a>
     <span>
                         &nbsp;: string            </span>
@@ -235,32 +271,25 @@
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Game21-Game.html#method___get">__get()</a>
+    <a class="" href="classes/App-Game21-GameFoundation.html#method___get">__get()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 <dd>Magic get.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Game21-Game.html#method___isset">__isset()</a>
+    <a class="" href="classes/App-Game21-GameFoundation.html#method___isset">__isset()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
 <dd>Magic isset.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Game21-Game.html#method___set">__set()</a>
+    <a class="" href="classes/App-Game21-GameFoundation.html#method___set">__set()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 <dd>Magic set.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Game21-GameActions.html#method_continueGame">continueGame()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>Continue game after button confirmation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Game21-Game.html#method_init">init()</a>
@@ -270,53 +299,11 @@
 <dd>Initiate players and states in game.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Game21-GameActions.html#method_playerBets">playerBets()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>Define events when a player makes a bet.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Game21-GameActions.html#method_playerBusted">playerBusted()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>Define events when a player is over 21.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Game21-GameActions.html#method_playerDraws">playerDraws()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>Define events when a player draws a card.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a class="" href="classes/App-Game21-GameActions.html#method_bankMoves">bankMoves()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>Define events when bank player draws a card.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a class="" href="classes/App-Game21-GameActions.html#method_cardStats">cardStats()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>Calculate probabilities for getting under/over 21 based on remaining cards in deck</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a class="" href="classes/App-Game21-GameActions.html#method_determineWinner">determineWinner()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>Decide who wins based on score, and settle balances.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a class="" href="classes/App-Game21-GameActions.html#method_reassembleDeck">reassembleDeck()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>Build a new shuffled deck of cards, excluding cards in player hands.</dd>
 
     </dl>
 
@@ -332,14 +319,14 @@
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_STATES">
         STATES
-        <a href="classes/App-Game21-Game.html#constant_STATES" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Game21-GameFoundation.html#constant_STATES" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/Game.php"><a href="files/src-game21-game.html"><abbr title="src/Game21/Game.php">Game.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameFoundation.php"><a href="files/src-game21-gamefoundation.html"><abbr title="src/Game21/GameFoundation.php">GameFoundation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
@@ -378,15 +365,15 @@
 >
     <h4 class="phpdocumentor-element__name" id="property_deck">
         $deck
-        <a href="classes/App-Game21-Game.html#property_deck" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Game21-GameFoundation.html#property_deck" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/Game.php"><a href="files/src-game21-game.html"><abbr title="src/Game21/Game.php">Game.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameFoundation.php"><a href="files/src-game21-gamefoundation.html"><abbr title="src/Game21/GameFoundation.php">GameFoundation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
@@ -412,17 +399,125 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_players">
-        $players
-        <a href="classes/App-Game21-Game.html#property_players" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_gaBet">
+        $gaBet
+        <a href="classes/App-Game21-GameActions.html#property_gaBet" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/Game.php"><a href="files/src-game21-game.html"><abbr title="src/Game21/Game.php">Game.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameActions.php"><a href="files/src-game21-gameactions.html"><abbr title="src/Game21/GameActions.php">GameActions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Game21-GameActionsBet.html"><abbr title="\App\Game21\GameActionsBet">GameActionsBet</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$gaBet</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_gaBusted">
+        $gaBusted
+        <a href="classes/App-Game21-GameActions.html#property_gaBusted" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameActions.php"><a href="files/src-game21-gameactions.html"><abbr title="src/Game21/GameActions.php">GameActions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">25</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Game21-GameActionsBusted.html"><abbr title="\App\Game21\GameActionsBusted">GameActionsBusted</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$gaBusted</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_gaContinue">
+        $gaContinue
+        <a href="classes/App-Game21-GameActions.html#property_gaContinue" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameActions.php"><a href="files/src-game21-gameactions.html"><abbr title="src/Game21/GameActions.php">GameActions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">26</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Game21-GameActionsContinue.html"><abbr title="\App\Game21\GameActionsContinue">GameActionsContinue</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$gaContinue</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_players">
+        $players
+        <a href="classes/App-Game21-GameFoundation.html#property_players" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameFoundation.php"><a href="files/src-game21-gamefoundation.html"><abbr title="src/Game21/GameFoundation.php">GameFoundation.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
@@ -445,7 +540,7 @@
         class="
             phpdocumentor-element
             -property
-            -private
+            -protected
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="property_bankIntelligence">
@@ -458,14 +553,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/Game.php"><a href="files/src-game21-game.html"><abbr title="src/Game21/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$bankIntelligence</span>
      = <span class="phpdocumentor-signature__default-value">&#039;&#039;</span></code>
@@ -481,27 +576,27 @@
         class="
             phpdocumentor-element
             -property
-            -private
+            -protected
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="property_cardStats">
         $cardStats
-        <a href="classes/App-Game21-Game.html#property_cardStats" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Game21-GameFoundation.html#property_cardStats" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/Game.php"><a href="files/src-game21-game.html"><abbr title="src/Game21/Game.php">Game.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameFoundation.php"><a href="files/src-game21-gamefoundation.html"><abbr title="src/Game21/GameFoundation.php">GameFoundation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, int&gt;</span>
     <span class="phpdocumentor-signature__name">$cardStats</span>
      = <span class="phpdocumentor-signature__default-value">[0, 0]</span></code>
@@ -517,7 +612,115 @@
         class="
             phpdocumentor-element
             -property
-            -private
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_gaBankMoves">
+        $gaBankMoves
+        <a href="classes/App-Game21-GameActions.html#property_gaBankMoves" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameActions.php"><a href="files/src-game21-gameactions.html"><abbr title="src/Game21/GameActions.php">GameActions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">21</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Game21-GameActionsBankMoves.html"><abbr title="\App\Game21\GameActionsBankMoves">GameActionsBankMoves</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$gaBankMoves</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_gaPlayerDraws">
+        $gaPlayerDraws
+        <a href="classes/App-Game21-GameActions.html#property_gaPlayerDraws" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameActions.php"><a href="files/src-game21-gameactions.html"><abbr title="src/Game21/GameActions.php">GameActions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Game21-GameActionsPlayerDraws.html"><abbr title="\App\Game21\GameActionsPlayerDraws">GameActionsPlayerDraws</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$gaPlayerDraws</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_gaPlayerMoves">
+        $gaPlayerMoves
+        <a href="classes/App-Game21-GameActions.html#property_gaPlayerMoves" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameActions.php"><a href="files/src-game21-gameactions.html"><abbr title="src/Game21/GameActions.php">GameActions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">22</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Game21-GameActionsPlayerMoves.html"><abbr title="\App\Game21\GameActionsPlayerMoves">GameActionsPlayerMoves</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$gaPlayerMoves</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="property_showDeck">
@@ -530,14 +733,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/Game.php"><a href="files/src-game21-game.html"><abbr title="src/Game21/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$showDeck</span>
      = <span class="phpdocumentor-signature__default-value">&#039;&#039;</span></code>
@@ -553,7 +756,7 @@
         class="
             phpdocumentor-element
             -property
-            -private
+            -protected
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="property_state">
@@ -566,14 +769,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/Game.php"><a href="files/src-game21-game.html"><abbr title="src/Game21/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$state</span>
      = <span class="phpdocumentor-signature__default-value">self::STATES[&#039;player_initiates&#039;]</span></code>
@@ -607,14 +810,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/Game.php"><a href="files/src-game21-game.html"><abbr title="src/Game21/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$state</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">self::STATES[&#039;player_initiates&#039;]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$bankIntelligence</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$showDeck</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cardStats</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[0, 0]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$state</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">self::STATES[&#039;player_initiates&#039;]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$bankIntelligence</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$showDeck</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -643,13 +846,6 @@
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$cardStats</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[0, 0]</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
             </dl>
 
     
@@ -666,13 +862,13 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___get">
         __get()
-        <a href="classes/App-Game21-Game.html#method___get" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Game21-GameFoundation.html#method___get" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/Game.php"><a href="files/src-game21-game.html"><abbr title="src/Game21/Game.php">Game.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameFoundation.php"><a href="files/src-game21-gamefoundation.html"><abbr title="src/Game21/GameFoundation.php">GameFoundation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">71</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
@@ -711,13 +907,13 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___isset">
         __isset()
-        <a href="classes/App-Game21-Game.html#method___isset" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Game21-GameFoundation.html#method___isset" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/Game.php"><a href="files/src-game21-game.html"><abbr title="src/Game21/Game.php">Game.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameFoundation.php"><a href="files/src-game21-gamefoundation.html"><abbr title="src/Game21/GameFoundation.php">GameFoundation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
@@ -760,13 +956,13 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___set">
         __set()
-        <a href="classes/App-Game21-Game.html#method___set" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Game21-GameFoundation.html#method___set" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/Game.php"><a href="files/src-game21-game.html"><abbr title="src/Game21/Game.php">Game.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameFoundation.php"><a href="files/src-game21-gamefoundation.html"><abbr title="src/Game21/GameFoundation.php">GameFoundation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">83</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 
     </aside>
 
@@ -810,41 +1006,6 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_continueGame">
-        continueGame()
-        <a href="classes/App-Game21-GameActions.html#method_continueGame" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameActions.php"><a href="files/src-game21-gameactions.html"><abbr title="src/Game21/GameActions.php">GameActions.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">128</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Continue game after button confirmation.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">continueGame</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-    
-
-    
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_init">
         init()
         <a href="classes/App-Game21-Game.html#method_init" class="headerlink"><i class="fas fa-link"></i></a>
@@ -853,7 +1014,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/Game.php"><a href="files/src-game21-game.html"><abbr title="src/Game21/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
@@ -880,96 +1041,6 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_playerBets">
-        playerBets()
-        <a href="classes/App-Game21-GameActions.html#method_playerBets" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameActions.php"><a href="files/src-game21-gameactions.html"><abbr title="src/Game21/GameActions.php">GameActions.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">98</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Define events when a player makes a bet.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">playerBets</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$bet</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$bet</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-    
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_playerBusted">
-        playerBusted()
-        <a href="classes/App-Game21-GameActions.html#method_playerBusted" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameActions.php"><a href="files/src-game21-gameactions.html"><abbr title="src/Game21/GameActions.php">GameActions.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">116</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Define events when a player is over 21.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">playerBusted</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$id</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-    
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_playerDraws">
         playerDraws()
         <a href="classes/App-Game21-GameActions.html#method_playerDraws" class="headerlink"><i class="fas fa-link"></i></a>
@@ -978,7 +1049,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameActions.php"><a href="files/src-game21-gameactions.html"><abbr title="src/Game21/GameActions.php">GameActions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
@@ -1003,166 +1074,6 @@
             </dd>
             </dl>
 
-    
-
-    
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_bankMoves">
-        bankMoves()
-        <a href="classes/App-Game21-GameActions.html#method_bankMoves" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameActions.php"><a href="files/src-game21-gameactions.html"><abbr title="src/Game21/GameActions.php">GameActions.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">65</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Define events when bank player draws a card.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">bankMoves</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$id</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-    
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_cardStats">
-        cardStats()
-        <a href="classes/App-Game21-GameActions.html#method_cardStats" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameActions.php"><a href="files/src-game21-gameactions.html"><abbr title="src/Game21/GameActions.php">GameActions.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">161</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Calculate probabilities for getting under/over 21 based on remaining cards in deck</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">cardStats</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$id</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-    
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_determineWinner">
-        determineWinner()
-        <a href="classes/App-Game21-GameActions.html#method_determineWinner" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameActions.php"><a href="files/src-game21-gameactions.html"><abbr title="src/Game21/GameActions.php">GameActions.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">147</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Decide who wins based on score, and settle balances.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">determineWinner</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-    
-
-    
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_reassembleDeck">
-        reassembleDeck()
-        <a href="classes/App-Game21-GameActions.html#method_reassembleDeck" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game21/GameActions.php"><a href="files/src-game21-gameactions.html"><abbr title="src/Game21/GameActions.php">GameActions.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">20</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Build a new shuffled deck of cards, excluding cards in player hands.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">reassembleDeck</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
     
 
     
@@ -1282,17 +1193,23 @@
                             <li class="phpdocumentor-on-this-page-section__title">Constants</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="classes/App-Game21-Game.html#constant_STATES">STATES</a></li>
+                                                    <li class=""><a href="classes/App-Game21-GameFoundation.html#constant_STATES">STATES</a></li>
                                             </ul>
                 </li>
             
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="classes/App-Game21-Game.html#property_deck">$deck</a></li>
-                                                    <li class=""><a href="classes/App-Game21-Game.html#property_players">$players</a></li>
+                                                    <li class=""><a href="classes/App-Game21-GameFoundation.html#property_deck">$deck</a></li>
+                                                    <li class=""><a href="classes/App-Game21-GameActions.html#property_gaBet">$gaBet</a></li>
+                                                    <li class=""><a href="classes/App-Game21-GameActions.html#property_gaBusted">$gaBusted</a></li>
+                                                    <li class=""><a href="classes/App-Game21-GameActions.html#property_gaContinue">$gaContinue</a></li>
+                                                    <li class=""><a href="classes/App-Game21-GameFoundation.html#property_players">$players</a></li>
                                                     <li class=""><a href="classes/App-Game21-Game.html#property_bankIntelligence">$bankIntelligence</a></li>
-                                                    <li class=""><a href="classes/App-Game21-Game.html#property_cardStats">$cardStats</a></li>
+                                                    <li class=""><a href="classes/App-Game21-GameFoundation.html#property_cardStats">$cardStats</a></li>
+                                                    <li class=""><a href="classes/App-Game21-GameActions.html#property_gaBankMoves">$gaBankMoves</a></li>
+                                                    <li class=""><a href="classes/App-Game21-GameActions.html#property_gaPlayerDraws">$gaPlayerDraws</a></li>
+                                                    <li class=""><a href="classes/App-Game21-GameActions.html#property_gaPlayerMoves">$gaPlayerMoves</a></li>
                                                     <li class=""><a href="classes/App-Game21-Game.html#property_showDeck">$showDeck</a></li>
                                                     <li class=""><a href="classes/App-Game21-Game.html#property_state">$state</a></li>
                                             </ul>
@@ -1302,18 +1219,11 @@
             <li>
                 <ul class="phpdocumentor-list -clean">
                                             <li class=""><a href="classes/App-Game21-Game.html#method___construct">__construct()</a></li>
-                                            <li class=""><a href="classes/App-Game21-Game.html#method___get">__get()</a></li>
-                                            <li class=""><a href="classes/App-Game21-Game.html#method___isset">__isset()</a></li>
-                                            <li class=""><a href="classes/App-Game21-Game.html#method___set">__set()</a></li>
-                                            <li class=""><a href="classes/App-Game21-GameActions.html#method_continueGame">continueGame()</a></li>
+                                            <li class=""><a href="classes/App-Game21-GameFoundation.html#method___get">__get()</a></li>
+                                            <li class=""><a href="classes/App-Game21-GameFoundation.html#method___isset">__isset()</a></li>
+                                            <li class=""><a href="classes/App-Game21-GameFoundation.html#method___set">__set()</a></li>
                                             <li class=""><a href="classes/App-Game21-Game.html#method_init">init()</a></li>
-                                            <li class=""><a href="classes/App-Game21-GameActions.html#method_playerBets">playerBets()</a></li>
-                                            <li class=""><a href="classes/App-Game21-GameActions.html#method_playerBusted">playerBusted()</a></li>
                                             <li class=""><a href="classes/App-Game21-GameActions.html#method_playerDraws">playerDraws()</a></li>
-                                            <li class=""><a href="classes/App-Game21-GameActions.html#method_bankMoves">bankMoves()</a></li>
-                                            <li class=""><a href="classes/App-Game21-GameActions.html#method_cardStats">cardStats()</a></li>
-                                            <li class=""><a href="classes/App-Game21-GameActions.html#method_determineWinner">determineWinner()</a></li>
-                                            <li class=""><a href="classes/App-Game21-GameActions.html#method_reassembleDeck">reassembleDeck()</a></li>
                                     </ul>
             </li>
                     </ul>

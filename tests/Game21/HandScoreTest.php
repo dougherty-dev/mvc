@@ -18,6 +18,8 @@ use App\Game21\HandScoreJokers;
 use App\Game21\HandScoreBest;
 use App\Game21\HandScoreCalculate;
 use App\Game21\HandScoreAdd;
+use App\Game21\HandScoreAddAces;
+use App\Game21\HandScoreAddJokers;
 
 /**
  * Test cases for class Card.
@@ -35,6 +37,8 @@ class HandScoreTest extends TestCase
         $this->assertInstanceOf("\App\Game21\HandScoreBest", new HandScoreBest());
         $this->assertInstanceOf("\App\Game21\HandScoreCalculate", new HandScoreCalculate());
         $this->assertInstanceOf("\App\Game21\HandScoreAdd", new HandScoreAdd());
+        $this->assertInstanceOf("\App\Game21\HandScoreAddAces", new HandScoreAddAces());
+        $this->assertInstanceOf("\App\Game21\HandScoreAddJokers", new HandScoreAddJokers());
     }
 
     /**

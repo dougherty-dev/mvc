@@ -564,10 +564,14 @@
     </service>
     <service id="App\Game21\HandScoreAces" class="App\Game21\HandScoreAces" autowire="true" autoconfigure="true"/>
     <service id="App\Game21\HandScoreAdd" class="App\Game21\HandScoreAdd" autowire="true" autoconfigure="true"/>
+    <service id="App\Game21\HandScoreAddAces" class="App\Game21\HandScoreAddAces" autowire="true" autoconfigure="true"/>
+    <service id="App\Game21\HandScoreAddJokers" class="App\Game21\HandScoreAddJokers" autowire="true" autoconfigure="true"/>
     <service id="App\Game21\HandScoreBest" class="App\Game21\HandScoreBest" autowire="true" autoconfigure="true"/>
     <service id="App\Game21\HandScoreCalculate" class="App\Game21\HandScoreCalculate" autowire="true" autoconfigure="true">
       <argument type="service" id="App\Game21\HandScoreAces"/>
       <argument type="service" id="App\Game21\HandScoreJokers"/>
+      <argument type="service" id="App\Game21\HandScoreAddJokers"/>
+      <argument type="service" id="App\Game21\HandScoreAddAces"/>
       <argument type="service" id="App\Game21\HandScoreAdd"/>
     </service>
     <service id="App\Game21\HandScoreJokers" class="App\Game21\HandScoreJokers" autowire="true" autoconfigure="true"/>
@@ -1917,6 +1921,8 @@
         <argument key="App\Game21\HandScore" type="service_closure" id="App\Game21\HandScore" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game21\HandScoreAces" type="service_closure" id="App\Game21\HandScoreAces" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game21\HandScoreAdd" type="service_closure" id="App\Game21\HandScoreAdd" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Game21\HandScoreAddAces" type="service_closure" id="App\Game21\HandScoreAddAces" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Game21\HandScoreAddJokers" type="service_closure" id="App\Game21\HandScoreAddJokers" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game21\HandScoreBest" type="service_closure" id="App\Game21\HandScoreBest" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game21\HandScoreCalculate" type="service_closure" id="App\Game21\HandScoreCalculate" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game21\HandScoreJokers" type="service_closure" id="App\Game21\HandScoreJokers" on-invalid="ignore_uninitialized"/>
