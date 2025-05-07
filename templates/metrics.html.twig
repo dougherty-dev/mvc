@@ -1,60 +1,123 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Metrik{% endblock %}
+{% block title %}Metrik &amp; kodanalys{% endblock %}
 
 {% block body %}
-    <h1>Metrik</h1>
-    <section class="two-columns">
+    <select id="kmom" aria-label="metrik" class="tilt" onChange="window.document.location.href=this.options[this.selectedIndex].value;">
+        <option value="#navbar">Topp</option>
+        <option value="#introduktion">Introduktion</option>
+        <option value="#phpmetrics">PhpMetrics</option>
+        <option value="#scrutinizer">Scrutinizer</option>
+        <option value="#förbättringar">Förbättringar</option>
+        <option value="#diskussion">Diskussion</option>
+    </select>
+    <h1>Metrik &amp; kodanalys</h1>
+    <section class="two-columns" id="introduktion">
         <h2>Introduktion</h2>
-        <p class="initcap">Objekt-relationell mappning (ORM) avhandlas via Doctrine i Symfony, kanske mest för att illustrera ännu ett koncept relaterat till databaser. I själva verket vinner man nog inte så mycket på en dylik abstraktion, eftersom man ändå måste ha detaljkännedom om sina tabeller och komma åt data via SQL-liknande satser. Även i andra modeller har man objektorientering på sista raden i PHP via getters, setters och andra mekanismer. MariaDB? <em>Defeats the purpose.</em></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <figure>
-            <img src="{{ asset('build/images/chihiro-kmom05.avif') }}" width="1536" alt="Chihiro knåpar ORM">
+        <p class="initcap">Utifrån ett paradigm benämnt 6/7C analyseras här aktuell kodbas i syfte att finna potential för förbättring med avseende på underhåll, renhet och effektivitet. I grunden ligger en <code>kodstil</code> (<em>1. coding style</em>)  som kännetecknas av enhetlighet och elegans, med vilket menas lättlästhet för eget och andras vidkommande. Stilarten kan kvitta så länge den följs konsekvent, men i lagarbete av olika slag finns i regel en given standard att följa. För ändamålet brukas lintning av olika slag, hjälpmedel som kan påvisa både stilistiska och syntaktiska fel i koden.</p>
+        <p>Medelst enhetstestning önskas enskilda delar av programkoden utvärderas, på det att buggar kan finnas och elimineras. I sammanhanget önskar man uppnå en så hög <code>täckningsgrad</code> (<em>2. coverage</em>) som möjligt, för att åstadkomma en så fullständig testning av kodbasen som möjligt. I praktiken finns det sällan anledning eller ens möjlighet att meningsfullt testa all kod, men man bör i vart fall ha hög målsättning att angripa all funktionell kod.</p>
+        <p>Av relevans för både lättlöst kod och testning är begreppet <code>komplexitet</code> (<em>3. complexity</em>), det vill säga ett mått för kodens grad av inveckling eller svårighet. Genom <code>inkapsling</code> (<em>encapsulation</em>) och andra tekniker kan man frigöra sammantvinnade algoritmer och nå en högre grad av enskilt ansvar för en modul, i vad man benämner <em>single responsibility principle</em> (SRP). Med det menas att en enskild del av ett program ska ha en klart avgränsad funktion.</p>
+        <p>Utöver sådan avgränsning finns även en strävan mot <code>kohesion</code> (<em>4. cohesion</em>) eller sammanhållning i ett visst kodparti. Metoder i en klass bör vara relaterade till varandra och till klassens egenskaper, och i den mån man finner diskrepans härvidlag bör man refaktorera koden genom att flytta berörda metoder till en annan klass.</p>
+        <p>I kontrast härtill vill man ha låg grad av <code>koppling</code> (<em>5. coupling</em>) mellan olika moduler, eftersom alltför starka band riskerar att påverka programvarans effektivitet och pålitlighet. Binder man upp sig alltför mycket till en modul som sedan ändras blir systemet instabilt. I praktiken måste man ändå tillämpa koppling för att kunna spearera programkod enligt ovan, men det får då ske på ett lösare sätt, medelst arv snarare än delad programkod.</p>
+        <p>En användbar metrik för att i någon mån mäta några av ovanstående kriterier utgörs av <code>CRAP</code> (<em>6. CRAP</em>), som definieras av en stel formel <code>cc² · (1 - cov/100)³ + cc</code>, där <code>cc</code> betecknar cyklomatisk komplexitet och <code>cov</code> täckningsgraden i procent. Poängsumman kan enkelt implementeras i linters, och blir därmed en måttstock att bruka vid programmeringen.</p>
+        <p>En mer subjektiv metod utgörs av <code>programröta </code> (<em>7. code smell</em>), det vill säga en intuitiv känsla för att ett kodparti är riskabelt i något hänseende och därför en potentiell bugg. Exempel på sådan röta är förekomsten av magiska tal som inte är korrekt definierade, eller funktioner med mängder av parametrar. Stora kodblock och komplicerade metoder hör till samma kategori av rutten kod.</p>
+    </section>
+    <section class="two-columns" id="phpmetrics">
+        <h2>PhpMetrics</h2>
+        <p class="initcap">Det praktiska analysarbetet nyttjar bland annat <a href="https://phpmetrics.github.io/website/">PhpMetrics</a> som ett verktyg för att undersöka koden med avseende på en tämligen stor mängd parametrar. En övergripande sammanfattning ges i grafisk form genom en symbolisk avbildning av modulerna i form av cirklar i olika storlek och färg. Storleken på cirkeln motsvarar modulens <code>cyklomatiska komplexitet</code>, ett tal som man av hävd vill ha lägre än tio, i vart fall i viktad mening. Färgen är trafikljusens rött, gult och grönt med hävdvunnen symbolisk mening, men här motsvaras av graden av <code>underhållbarhet</code> (<em>maintainability</em>).</p>
+        <p>Vid en första körning noterades för innevarande kodbas en salig blandning färger och storlekar, mestadels i rött och gult. De då nitton klasserna bedömdes ha värdena 9.79 för viktat antal metoder per klass (<em>weighted method count</em>) och 5.95 för den viktade cyklomatiska komplexiteten. Siffrorna säger inte så mycket i sig själva men är några mått som brukas av analysverktyget.</p>
+        <p>Den visuella sammanfattningen ger en vink om vad som bör angripas, nämligen de klasser som motsvaras av stora (komplexa) och röda (svårunderhållna) cirklar. För aktuell kodbas motsvarar de största cirklarna längst ut i spiralen klasser som dirgerar logik i kortspelet «21», det vill säga klasser med metoder som dryper av beräkningar och villkor för att styra flödet under spelets gång.</p>
+        <p>Andra parametrar berättar om sådant som antal metoder och grad av komplexitet per klass, antal fysiska och logiska kodrader per klass samt mer esoteriska begrepp som volym och potentiella buggar per klass. Det tycks vara dessa parametrar som bör angripas för att hyfsa kodkvaliteten.</p>
+        <figure class="center">
+            <img src="{{ asset('build/images/metrics/phpm1.avif') }}" width="400" alt="PhpMetrics 1">
         </figure>
     </section>
-    <section class="two-columns">
-        <h2>PhpMetrics</h2>
-        <p class="initcap">Objekt-relationell mappning (ORM) avhandlas via Doctrine i Symfony, kanske mest för att illustrera ännu ett koncept relaterat till databaser. I själva verket vinner man nog inte så mycket på en dylik abstraktion, eftersom man ändå måste ha detaljkännedom om sina tabeller och komma åt data via SQL-liknande satser. Även i andra modeller har man objektorientering på sista raden i PHP via getters, setters och andra mekanismer. MariaDB? <em>Defeats the purpose.</em></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-    </section>
-    <section class="two-columns">
+    <section class="two-columns" id="scrutinizer">
         <h2>Scrutinizer</h2>
-        <p class="initcap">Objekt-relationell mappning (ORM) avhandlas via Doctrine i Symfony, kanske mest för att illustrera ännu ett koncept relaterat till databaser. I själva verket vinner man nog inte så mycket på en dylik abstraktion, eftersom man ändå måste ha detaljkännedom om sina tabeller och komma åt data via SQL-liknande satser. Även i andra modeller har man objektorientering på sista raden i PHP via getters, setters och andra mekanismer. MariaDB? <em>Defeats the purpose.</em></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+        <figure class="center">
+            <img src="{{ asset('build/images/metrics/scrutinizer1.avif') }}" width="400" alt="Scrutinizer 1">
+        </figure>
+        <p class="initcap">Ytterligare ett verktyg utgörs av <a href="https://scrutinizer-ci.com/docs/">Scrutinizer</a>, som utirfrån ett repo på Github kan utföra liknande analys av kodbasen, men i något mer begränsat utförande. Dess grafiska sammanfattning består i emblem med grad av «scrutinizer»-poäng (upp till 10), täckning (upp till 100&nbsp;%) samt huruvida «build» passerade eller fallerade i den mån det är relevant. För denna kod finns inget att bygga.</p>
+        <p>Initial körning gav 9.89 i poäng samt 100&nbsp;% täckning, vilket får sägas vara en mer smakfull start än den för PhpMetrics. Uppenbarligen finns inte så mycket mer att göra här, annat än att se det som ett mindre komplement till föregående verktyg. Nytta finns dock i att Scrutinizer hittar buggar som linten har överseende med, exempelvis vid felaktigt klassnamn, eller mer esoteriska fel.</p>
+        <p>Sex metoder befanns vara av betyg B, medan resten passerade med högsta vitsord. Av det kan man emellertid inte utläsa någon förbättringspotential, och det är uppenbart att PhpMetrics är av mer relevans här.</p>
+        <hr>
+        <table>
+            <tr>
+                <td style="text-align: left;">
+                    <a href="#" data-url="https://scrutinizer-ci.com/g/dougherty-dev/mvc/badges/quality-score.png?b=main" data-alt="Scrutinizer Code Quality" data-repository-url="https://scrutinizer-ci.com/g/dougherty-dev/mvc/?branch=main"></a>
+                </td>
+                <td style="padding-left:10px;">
+                    <a href="https://scrutinizer-ci.com/g/dougherty-dev/mvc/build-status/main"><img src="https://scrutinizer-ci.com/g/dougherty-dev/mvc/badges/quality-score.png?b=main" title="Scrutinizer Code Quality"></a>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">
+                    <a href="#" data-url="https://scrutinizer-ci.com/g/dougherty-dev/mvc/badges/coverage.png?b=main" data-alt="Code Coverage" data-repository-url="https://scrutinizer-ci.com/g/dougherty-dev/mvc/?branch=main"></a>
+                </td>
+                <td style="padding-left:10px;">
+                    <a href="https://scrutinizer-ci.com/g/dougherty-dev/mvc/build-status/main"><img src="https://scrutinizer-ci.com/g/dougherty-dev/mvc/badges/coverage.png?b=main" alt="Code Coverage"></a>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">
+                    <a href="#" data-url="https://scrutinizer-ci.com/g/dougherty-dev/mvc/badges/build.png?b=main" data-alt="Build Status" data-repository-url="https://scrutinizer-ci.com/g/dougherty-dev/mvc/build-status/main"></a>
+                </td>
+                <td style="padding-left:10px;">
+                    <a href="https://scrutinizer-ci.com/g/dougherty-dev/mvc/build-status/main"><img src="https://scrutinizer-ci.com/g/dougherty-dev/mvc/badges/build.png?b=main" alt="Build Status"></a>
+                </td>
+            </tr>
+        </table>
     </section>
-    <section class="two-columns">
+    <section class="two-columns" id="förbättringar">
         <h2>Förbättringar</h2>
-        <p class="initcap">Objekt-relationell mappning (ORM) avhandlas via Doctrine i Symfony, kanske mest för att illustrera ännu ett koncept relaterat till databaser. I själva verket vinner man nog inte så mycket på en dylik abstraktion, eftersom man ändå måste ha detaljkännedom om sina tabeller och komma åt data via SQL-liknande satser. Även i andra modeller har man objektorientering på sista raden i PHP via getters, setters och andra mekanismer. MariaDB? <em>Defeats the purpose.</em></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+        <p class="initcap">Av den ovan förda diskussionen kan därför slutledas att förbättringspotential för koden finns i nedan skissade faktorer, och att det främst är PhpMetrics som bör nyttjas. Scrutinizer bör hitta till tian i takt med att koden vässas, samtidigt som kodtäckningen redan är all. Listan så:</p>
+        <ol>
+            <li>reducera antal metoder per klass baserat på grad av kohesion</li>
+            <li>refaktorera komplicerad kod genom lämpligt arv och komposition</li>
+            <li>bryta ned större klasser i mindre</li>
+            <li>finna SRP för varje klass och metod</li>
+            <li>reducera komplexiteten i enskilda metoder</li>
+        </ol>
+        <p>Resonemanget tar sin grund i de parametrar PhpMetrics tydligt skissar för problematiska klasser, värden som bestämmer kodkvaliteten i stort. Samtidigt ska koden alltjämt gå igenom PHPMD och PHPStans stränga krav, vilket är motstridiga kriterier. För exempelvis PHPStan krävs en del kontroller av variablers typ, vilket ökar den cyklomatiska komplexiteten med en pinne för varje kontroll. Även felhantering som <code>throw</code> kostar i komplexitet.</p>
+        <p>Uppenbart är också att beräkning av poäng, handvärden med mera i kortspelet har en omfattande komplexitet med dessa mått, varför en nedbrytning borde ge resultat. Delberäkningar och delflöden kan läggas i enskilda metoder, samt i förekommande fall flyttas till en egen modul om de utgör en logisk helhet.</p>
+        <figure class="center">
+            <img src="{{ asset('build/images/metrics/php-1a.avif') }}" width="898" alt="Iteration">
+        </figure>
+        <p>Ytterligare en metod för att minska komplexiteten är att nyttja PHP:s egna funktioner istället för iterationer, exempelvis <code>array_map</code> och <code>array_reduce</code>. Det innebär att komplexiteten förflyttas till en svart låda någon annanstans och därför inte påverkar den lokala komplexiteten. Varje <code>foreach</code>, <code>while</code> och <code>for</code> kan alltså enkelt ersättas med en <code>array_map</code>, som dessutom plockar ned antalet rader från fyra till en samt minskar antalet variabler med en – båda är faktorer i den beräkningsmodell PhpMetrics anför.</p>
+        <figure class="center">
+            <img src="{{ asset('build/images/metrics/php-1b.avif') }}" width="1479" alt="Funktion">
+        </figure>
+        <p>Faktum är att samma metod är tillämpbar genom att anropa egna funktioner definierade i andra klasser, även om det tillkommer straffpoäng för varje extern koppling. Men om man kan förflytta ett mer komplicerat segment sålunda kan man snabbt ta ned cirklarna i omfång, det vill säga reducera komplexiteten. På en och samma gång ökar även måttet för underhållbarhet, varför nyansen bör gå i mer kortvågig riktning.</p>
+        <p>Underhållbarhet tar för övrigt även kommentarvikt i beräkning, enligt PhpMetrics <a href="https://phpmetrics.github.io/website/metrics/#maintainability-index">dokumentation</a>. Det innebär att man bör strössla rikligt med kommentarer för att få upp måttet, men samtidigt är det en form av billigt fusk om man inte samtidigt vinnlägger sig om att tillföra relevanta kommentarer. I själva verket är en kommentar i ett Docblock om tre rader mer värt en en enskild kommentarsrad, vilket är ganska bakvänt – läsbarheten påverkas negativt av för mycket boilerplate och kommentarer.</p>
+        <h3>Implementation</h3>
+        <p>Hantverket lärdes genom upprepad tillämpning, varvid nyttjades lämplig nedbrytning i successiva arv för grundläggande klasser. Exempelvis en klass <code>DeckFoundation</code> håller blott variabeln <code>$deck</code> tillsammans med en getter och en metod för att tömma leken. En klass <code>DeckRepresentations</code> ärver sedan <code>DeckFoundation</code> och definierar tre metoder för olika slags representation av leken. Därefter definieras <code>DeckMethods</code>, som ärver <code>DeckRepresentations</code> samt tillför några metoder för att blanda och tömma leken samt lägga till kort. Den slutliga (och ursprungliga) klassen <code>Deck</code> ärver således <code>DeckMethods</code> och tidigare föräldraklasser i succession, vilket resulterar i rad gröna små cirklar och markant förbättrade värden.</p>
+        <figure class="center">
+            <img src="{{ asset('build/images/metrics/wmc.avif') }}" width="1479" alt="Viktat antal metoder">
+        </figure>
+        <p>För beräkningsklasserna har istället komposition nyttjats flitigt, vilket inte ger samma utdelning. Men även här kommer omfånget ned samtidigt som nyansen blir trevligare. PhpMetrics sparar JSON-filer över historiska värden, vilka sammanfogade i en tabell resulterar i några trevliga grafer över förloppet. Man ser hur medelvärdet av antal metoder per klass successivt sjunker, likväl som den viktade komplexiteten, men till priset av att antalet klasser kontinuerligt ökar. Man får välja sin komplexitet, och uppgiften här ligger i poängjakt.</p>
+        <figure class="center">
+            <img src="{{ asset('build/images/metrics/classes.avif') }}" width="1479" alt="Klasser per paket">
+        </figure>
+        <p>Många av måtten är uttryck för ungefär samma sak, varför de naturligt följs åt vid förändringar. Även antalet metoder ökar, men mer beskedligt, givet att målet är att reducera metodtätheten. I de avslutande momenten tillförs kommentarer för att ta ned nivån ytterligare ett snäpp. Man frestas kanske att börja i den änden, men då riskerar man att missa mer värdefulla optimeringar och nöja sig med att bollen blir grön.</p>
+        <figure class="center">
+            <img src="{{ asset('build/images/metrics/lines.avif') }}" width="1479" alt="Kodrader">
+        </figure>
+        <p>Faktum är att man kan välja att se grafiken utan kommentarsvikt, varvid det mesta åter blir gult och rött. Under sådana hårda kriterier är det nästan enbart enkla klasser med någon getter som passerar nålsögat. Men för den ordinarie metoden ser progressionen ut som följer. Cellerna bantas succesivt ned i storlek och antar en allt grönare färg.</p>
+        <figure class="center">
+            <img src="{{ asset('build/images/metrics/phpm2.avif') }}" width="2000" alt="PhpMetrics 2">
+        </figure>
+        <p>Till slut är allt grönt, och som förutspått blir det även 10.0 för Scrutinizer. Även PHPStan och andra linters visar grönt, och momentet får därför anses vara utfört. Funktionaliteten för koden är givetvis oförändrad, och testerna passerar lika bra som tidigare.</p>
     </section>
-    <section class="two-columns">
+    <section class="two-columns" id="diskussion">
         <h2>Diskussion</h2>
-        <p class="initcap">Objekt-relationell mappning (ORM) avhandlas via Doctrine i Symfony, kanske mest för att illustrera ännu ett koncept relaterat till databaser. I själva verket vinner man nog inte så mycket på en dylik abstraktion, eftersom man ändå måste ha detaljkännedom om sina tabeller och komma åt data via SQL-liknande satser. Även i andra modeller har man objektorientering på sista raden i PHP via getters, setters och andra mekanismer. MariaDB? <em>Defeats the purpose.</em></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+        <figure class="center">
+            <img src="{{ asset('build/images/metrics/phpm3.avif') }}" width="400" alt="PhpMetrics 2">
+        </figure>
+        <p class="initcap">Lärdomen av analysen och implementationen ovan är att det mycket väl går att reducera komplexitet och öka underhållbarheten genom att metodiskt angripa koden enligt 6/7C, även om man då samtidigt ökar komplexiteten i antal klasser och filer samt förstås lägger mer tid på själva optimeringen. Men ytterligare en erfarenhet är att man med dessa kunskaper i ryggen nog tar höjd redan från början, istället för att försöka rädda i efterhand.</p>
+        <p>Uppenbart är nämligen att kortspelet borde ha byggts annorlunda redan från början, för att undvika att trassla in sig i en komplicerad väv av kod. Här har vi dessutom rekursiva anrop mitt i den snåriga spaghettin, vilket komplicerar. Ett solklart fall av <em>rewrite</em> i den hårda verkligheten, men här nöjer vi oss med erfarenheten.</p>
+        <p>I samma verklighet är man dock inte lika nitisk som här, eftersom man då som sagt ökar komplexiteten betänkligt i vertikalt led i stället. Översatt till den visuella representation som kännetecknar denna övning kanske man nöjer sig med gult och till och med någon enstaka röd boll.</p>
+        <figure class="center">
+            <img src="{{ asset('build/images/metrics/scrutinizer2.avif') }}" width="400" alt="Scrutinizer 2">
+        </figure>
     </section>
 {% endblock %}
