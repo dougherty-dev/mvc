@@ -537,6 +537,22 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryViewController"/>
       </call>
     </service>
+    <service id="App\Controller\Poker\PokerSessionController" class="App\Controller\Poker\PokerSessionController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="request_stack"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Poker\PokerSessionController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Poker\ProjectHomeController" class="App\Controller\Poker\ProjectHomeController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="request_stack"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Poker\ProjectHomeController"/>
+      </call>
+    </service>
     <service id="App\Controller\QuotationsController" class="App\Controller\QuotationsController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -579,6 +595,15 @@
       <argument type="service" id="App\Cards\Hand"/>
       <argument type="service" id="App\Game21\HandScore"/>
     </service>
+    <service id="App\Poker\Card" class="App\Poker\Card" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;App\Poker\Card&quot;: argument &quot;$value&quot; of method &quot;__construct()&quot; is type-hinted &quot;int&quot;, you should configure its value explicitly."/>
+    </service>
+    <service id="App\Poker\Deck" class="App\Poker\Deck" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\DeckFoundation" class="App\Poker\DeckFoundation" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\DeckMethods" class="App\Poker\DeckMethods" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\FaceMethods" class="App\Poker\FaceMethods" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\Hand" class="App\Poker\Hand" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\HandFoundation" class="App\Poker\HandFoundation" autowire="true" autoconfigure="true"/>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -1927,6 +1952,12 @@
         <argument key="App\Game21\HandScoreCalculate" type="service_closure" id="App\Game21\HandScoreCalculate" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game21\HandScoreJokers" type="service_closure" id="App\Game21\HandScoreJokers" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game21\Player" type="service_closure" id="App\Game21\Player" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Poker\Deck" type="service_closure" id="App\Poker\Deck" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Poker\DeckFoundation" type="service_closure" id="App\Poker\DeckFoundation" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Poker\DeckMethods" type="service_closure" id="App\Poker\DeckMethods" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Poker\FaceMethods" type="service_closure" id="App\Poker\FaceMethods" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Poker\Hand" type="service_closure" id="App\Poker\Hand" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Poker\HandFoundation" type="service_closure" id="App\Poker\HandFoundation" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\BookRepository" type="service_closure" id="App\Repository\BookRepository" on-invalid="ignore_uninitialized"/>
         <argument key="argument_metadata_factory" type="service_closure" id="argument_metadata_factory" on-invalid="ignore_uninitialized"/>
         <argument key="argument_resolver.backed_enum_resolver" type="service_closure" id="argument_resolver.backed_enum_resolver" on-invalid="ignore_uninitialized"/>
@@ -6820,7 +6851,7 @@
       </call>
     </service>
     <service id="doctrine_migrations.schema_filter_listener" class="Doctrine\Bundle\MigrationsBundle\EventListener\SchemaFilterListener">
-      <tag name="doctrine.dbal.schema_filter"/>
+      <tag name="doctrine.dbal.schema_filter" connection="default"/>
       <tag name="kernel.event_listener" event="console.command" method="onConsoleCommand"/>
       <tag name="container.no_preload"/>
       <argument>doctrine_migration_versions</argument>
@@ -8199,6 +8230,12 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Library\LibraryViewController" class="App\Controller\Library\LibraryViewController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Library\LibraryViewController" class="App\Controller\Library\LibraryViewController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Library\LibraryViewController" class="App\Controller\Library\LibraryViewController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Poker\PokerSessionController" class="App\Controller\Poker\PokerSessionController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Poker\PokerSessionController" class="App\Controller\Poker\PokerSessionController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Poker\PokerSessionController" class="App\Controller\Poker\PokerSessionController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Poker\ProjectHomeController" class="App\Controller\Poker\ProjectHomeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Poker\ProjectHomeController" class="App\Controller\Poker\ProjectHomeController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Poker\ProjectHomeController" class="App\Controller\Poker\ProjectHomeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -9004,6 +9041,18 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Poker\PokerSessionController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Poker\PokerSessionController"/>
+      <argument>App\Controller\Poker\PokerSessionController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Poker\ProjectHomeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Poker\ProjectHomeController"/>
+      <argument>App\Controller\Poker\ProjectHomeController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
     <service id=".service_locator.ZyP9f7K.App\Controller\QuotationsController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\QuotationsController"/>
       <argument>App\Controller\QuotationsController</argument>
@@ -9217,6 +9266,8 @@
           <argument>App\Controller\Library\LibraryResetController</argument>
           <argument>App\Controller\Library\LibraryUpdateController</argument>
           <argument>App\Controller\Library\LibraryViewController</argument>
+          <argument>App\Controller\Poker\PokerSessionController</argument>
+          <argument>App\Controller\Poker\ProjectHomeController</argument>
           <argument>App\Controller\QuotationsController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>

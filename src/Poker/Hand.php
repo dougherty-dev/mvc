@@ -25,7 +25,7 @@ class Hand extends HandFoundation
      */
     public function handIntValues(): array
     {
-        return array_map(fn ($card): int => $card->get(), $this->getHand());
+        return array_map(fn ($card): int => $card->get(), $this->get());
     }
 
     /**
@@ -35,7 +35,7 @@ class Hand extends HandFoundation
      */
     public function handFaceValues(): array
     {
-        return array_map(fn ($card): int => FaceMethods::deckFaceValues()[$card->get()], $this->getHand());
+        return array_map(fn ($card): int => FaceMethods::deckFaceValues()[$card->get()], $this->get());
     }
 
     /**
@@ -45,7 +45,7 @@ class Hand extends HandFoundation
      */
     public function handUnicodeValues(): array
     {
-        return array_map(fn ($card): string => Faces::UNICODE_FACE_ARRAY[$card->get()], $this->getHand());
+        return array_map(fn ($card): string => Faces::UNICODE_FACE_ARRAY[$card->get()], $this->get());
     }
 
     /**
@@ -55,7 +55,7 @@ class Hand extends HandFoundation
      */
     public function handSymbolValues(): array
     {
-        return array_map(fn ($card): string => FaceMethods::deckSymbolValues()[$card->get()], $this->getHand());
+        return array_map(fn ($card): string => FaceMethods::deckSymbolValues()[$card->get()], $this->get());
     }
 
     /**
@@ -65,6 +65,6 @@ class Hand extends HandFoundation
      */
     public function handTextValues(): array
     {
-        return array_map(fn ($card): string => FaceMethods::deckTextValues()[$card->get()], $this->getHand());
+        return array_map(fn ($card): string => FaceMethods::deckTextValues()[$card->get()], $this->get());
     }
 }

@@ -22,7 +22,7 @@ class HandFoundation
     /**
      * @return array<int, Card>
      */
-    public function getHand(): array
+    public function get(): array
     {
         return $this->hand;
     }

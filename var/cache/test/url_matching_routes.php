@@ -45,6 +45,9 @@ return [
         '/library/reset/post' => [[['_route' => 'library_reset_post', '_controller' => 'App\\Controller\\Library\\LibraryResetController::libraryResetPost'], null, ['POST' => 0], null, false, false, null]],
         '/library/update' => [[['_route' => 'library_update', '_controller' => 'App\\Controller\\Library\\LibraryUpdateController::libraryUpdate'], null, ['POST' => 0], null, false, false, null]],
         '/library/view' => [[['_route' => 'library_view', '_controller' => 'App\\Controller\\Library\\LibraryViewController::libraryView'], null, null, null, false, false, null]],
+        '/proj' => [[['_route' => 'proj', '_controller' => 'App\\Controller\\Poker\\ProjectHomeController::proj'], null, null, null, false, false, null]],
+        '/proj/about' => [[['_route' => 'proj_about', '_controller' => 'App\\Controller\\Poker\\ProjectHomeController::projAbout'], null, null, null, false, false, null]],
+        '/proj/poker' => [[['_route' => 'proj_poker', '_controller' => 'App\\Controller\\Poker\\ProjectHomeController::projPoker'], null, null, null, false, false, null]],
         '/api/quotation' => [[['_route' => 'quotation', '_controller' => 'App\\Controller\\QuotationsController::quotation'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
