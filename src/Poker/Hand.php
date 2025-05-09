@@ -45,7 +45,7 @@ class Hand extends HandFoundation
      */
     public function handUnicodeValues(): array
     {
-        return array_map(fn ($card): string => FaceMethods::UNICODE_FACE_ARRAY[$card->get()], $this->getHand());
+        return array_map(fn ($card): string => Faces::UNICODE_FACE_ARRAY[$card->get()], $this->getHand());
     }
 
     /**

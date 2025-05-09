@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 namespace App\Poker;
 
+use App\Poker\Faces;
+
 /**
  * Define methods for a deck of cards of class Card.
  */
@@ -21,7 +23,7 @@ class DeckMethods extends DeckFoundation
     {
         $this->empty();
         $this->deck = array_map(fn ($key): Card =>
-            new Card($key), array_keys(FaceMethods::UNICODE_FACE_ARRAY));
+            new Card($key), array_keys(Faces::UNICODE_FACE_ARRAY));
     }
 
     /**
