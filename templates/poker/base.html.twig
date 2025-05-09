@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Texas Hold’em No Limit">
+        <title>{% block title %}Texas Hold’em No Limit{% endblock %}</title>
+        <link rel="icon" href="{{ asset('build/images/favicon.ico') }}">
+{% block stylesheets %}
+    {{ encore_entry_link_tags('project') }}
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('project') }}
+{% endblock %}
+    </head>
+    <body>
+        <header>
+            <span class="home"><a href="{{ path('home') }}">🏠</a></span>
+            <nav id="project-navbar">
+                <h4 class="header-text">♠️ Texas Hold’em No Limit ♥️</h4>
+                <div>
+                    <a href="{{ path('proj') }}">projekt</a> |
+                    <a href="{{ path('proj_about') }}">om</a> |
+                    <a href="{{ path('proj_poker') }}">poker</a>
+                </div>
+            </nav>
+        </header>
+        <main class="main">
+            {% block body %}{% endblock %}
+        </main>
+        <footer>
+            <span>© 2025 <span style="color: var(--deep-blush);">nido24</span>: <a href="https://dougherty-dev.github.io/webapp-lager/">Webapp</a>&nbsp;|
+                <a href="https://www.student.bth.se/~nido24/dbwebb-kurser/mvc/me/report/public/">MVC</a> (<a href="https://www.student.bth.se/~nido24/dbwebb-kurser/mvc/me/report/public/proj">projekt</a>)&nbsp;|
+                <a href="https://www.student.bth.se/~nido24/dbwebb-kurser/oopython/me/kmom06/yahtzee5/app.cgi">OOPython</a>
+                (<a href="https://www.student.bth.se/~nido24/dbwebb-kurser/oopython/me/kmom10/spellchecker/app.cgi/">projekt</a>)&nbsp;|
+                <a href="https://www.student.bth.se/~nido24/dbwebb-kurser/databas/me/redovisa/me.php">DB</a>&nbsp;|
+                <a href="https://www.student.bth.se/~nido24/dbwebb-kurser/js/me/public/">JS</a>&nbsp;|
+                <a href="https://www.student.bth.se/~nido24/dbwebb-kurser/design/me/portfolio/">Design</a>
+                (<a href="https://www.student.bth.se/~nido24/dbwebb-kurser/design/me/kmom10/">projekt</a>)&nbsp;|
+                <a href="https://www.student.bth.se/~nido24/dbwebb-kurser/webtec/me/report/public/me.php">Webtec</a>
+                (<a href="https://www.student.bth.se/~nido24/dbwebb-kurser/webtec/me/proj/public/home.php">projekt</a>)</span>
+        </footer>
+    </body>
+</html>

@@ -11,7 +11,9 @@ namespace App\Game21;
 
 use App\Cards\Hand;
 
-/** Methods for the Player class. */
+/**
+ * Methods for the Player class.
+ */
 class Player
 {
     public function __construct(
@@ -25,19 +27,25 @@ class Player
         $this->__set('bet', 0);
     }
 
-    /** Magic get, for Twig. */
+    /**
+     * Magic get, for Twig.
+     */
     public function __get(string $key): int
     {
         return $this->$key;
     }
 
-    /** Magic isset. */
+    /**
+     * Magic isset.
+     */
     public function __isset(string $key): bool
     {
         return isset($this->$key);
     }
 
-    /** Magic set, for Twig. */
+    /**
+     * Magic set, for Twig.
+     */
     public function __set(string $key, int $value)
     {
         $this->$key = $value;

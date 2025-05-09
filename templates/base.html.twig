@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="An MVC app.">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}MVC{% endblock %}</title>
         <link rel="icon" href="{{ asset('build/images/favicon.ico') }}">
 {% block stylesheets %}
     {{ encore_entry_link_tags('app') }}
@@ -20,6 +20,7 @@
                     <li><a href="{{ path('home') }}">Hem</a> ·</li>
                     <li><a href="{{ path('about') }}">Om</a> ·</li>
                     <li><a href="{{ path('report') }}">Rapport</a> 🔸</li>
+                    <li><a href="{{ path('proj') }}">Projekt</a> 🔸</li>
                     <li><a href="{{ path('lucky') }}">Tur</a> ·</li>
                     <li><a href="{{ path('library') }}">Bibliotek</a></li>
                 </ul>

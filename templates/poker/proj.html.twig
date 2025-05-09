@@ -1,0 +1,17 @@
+{% extends "poker/base.html.twig" %}
+
+{% block title %}Texas Hold’em{% endblock %}
+
+{% block body %}
+    <section class="three-columns">
+        <h1>Projekt</h1>
+        <p class="initcap">Klassiska pokerspelet Texas Hold’em erbjuds här i en lättsam utformning, med spel mot två autonoma programspelare av varierande intelligens. Kan du mäta dig med AI:n, eller får du bita i gräset? Har du vad som krävs för att analysera spelet korrekt och avgå med segern? Pröva nu!</p>
+        <p>Den variant som spelar här är <em>no limit</em>, och var och en av spelarna börjar med ett fiktivt kapital om ₿1000. Minsta insats är ₿1</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <img src="{{ asset('build/images/poker/poker-1.avif') }}" width="1000" alt="Poker">
+    </section>
+    <section class="center">
+        <a href="{{ path('proj_poker') }}"><button type="button" class="humongous">♦️ Spela poker ♣️</button></a>
+    </section>
+{% endblock %}

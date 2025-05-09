@@ -1,0 +1,10 @@
+{% extends "poker/base.html.twig" %}
+
+{% block title %}Om{% endblock %}
+
+{% block body %}
+    <section class="center">
+        <h1>Poker</h1>
+        {{ dump(app.session.all) }}
+    </section>
+{% endblock %}

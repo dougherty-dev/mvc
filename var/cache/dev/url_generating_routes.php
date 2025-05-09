@@ -64,6 +64,9 @@ return [
     'library_update' => [[], ['_controller' => 'App\\Controller\\Library\\LibraryUpdateController::libraryUpdate'], [], [['text', '/library/update']], [], [], []],
     'library_view' => [[], ['_controller' => 'App\\Controller\\Library\\LibraryViewController::libraryView'], [], [['text', '/library/view']], [], [], []],
     'library_view_id' => [['id'], ['_controller' => 'App\\Controller\\Library\\LibraryViewController::libraryViewID'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/library/view']], [], [], []],
+    'proj' => [[], ['_controller' => 'App\\Controller\\Poker\\ProjectHomeController::proj'], [], [['text', '/proj']], [], [], []],
+    'proj_about' => [[], ['_controller' => 'App\\Controller\\Poker\\ProjectHomeController::projAbout'], [], [['text', '/proj/about']], [], [], []],
+    'proj_poker' => [[], ['_controller' => 'App\\Controller\\Poker\\ProjectHomeController::projPoker'], [], [['text', '/proj/poker']], [], [], []],
     'quotation' => [[], ['_controller' => 'App\\Controller\\QuotationsController::quotation'], [], [['text', '/api/quotation']], [], [], []],
     'App\Controller\Cards\CardAPIDealController::apiDeckDealPlayersCards' => [['players', 'cards'], ['_controller' => 'App\\Controller\\Cards\\CardAPIDealController::apiDeckDealPlayersCards'], ['players' => '\\d+', 'cards' => '\\d+'], [['variable', '/', '\\d+', 'cards', true], ['variable', '/', '\\d+', 'players', true], ['text', '/api/deck/deal']], [], [], []],
     'App\Controller\Cards\CardAPIDealController::apiDeckDealPlayersCardsPost' => [['players', 'cards'], ['_controller' => 'App\\Controller\\Cards\\CardAPIDealController::apiDeckDealPlayersCardsPost'], ['players' => '\\d+', 'cards' => '\\d+'], [['variable', '/', '\\d+', 'cards', true], ['variable', '/', '\\d+', 'players', true], ['text', '/api/deck/deal']], [], [], []],
@@ -111,5 +114,8 @@ return [
     'App\Controller\Library\LibraryUpdateController::libraryUpdate' => [[], ['_controller' => 'App\\Controller\\Library\\LibraryUpdateController::libraryUpdate'], [], [['text', '/library/update']], [], [], []],
     'App\Controller\Library\LibraryViewController::libraryView' => [[], ['_controller' => 'App\\Controller\\Library\\LibraryViewController::libraryView'], [], [['text', '/library/view']], [], [], []],
     'App\Controller\Library\LibraryViewController::libraryViewID' => [['id'], ['_controller' => 'App\\Controller\\Library\\LibraryViewController::libraryViewID'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/library/view']], [], [], []],
+    'App\Controller\Poker\ProjectHomeController::proj' => [[], ['_controller' => 'App\\Controller\\Poker\\ProjectHomeController::proj'], [], [['text', '/proj']], [], [], []],
+    'App\Controller\Poker\ProjectHomeController::projAbout' => [[], ['_controller' => 'App\\Controller\\Poker\\ProjectHomeController::projAbout'], [], [['text', '/proj/about']], [], [], []],
+    'App\Controller\Poker\ProjectHomeController::projPoker' => [[], ['_controller' => 'App\\Controller\\Poker\\ProjectHomeController::projPoker'], [], [['text', '/proj/poker']], [], [], []],
     'App\Controller\QuotationsController::quotation' => [[], ['_controller' => 'App\\Controller\\QuotationsController::quotation'], [], [['text', '/api/quotation']], [], [], []],
 ];

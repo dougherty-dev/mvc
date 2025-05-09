@@ -1,0 +1,47 @@
+:root {
+  --velour: #b7a8bf;
+  --highlighter-lavender: #8954a7;
+  --orb-of-discord: #6f219a;
+  --invasive-indigo: #51067a;
+  --cotinga-purple: #390258;
+
+  --light-blush: #eed0d7;
+  --deep-blush: #e46c8a;
+  --electrifying-kiss: #d2244f;
+  --incarnadine: #a6002a;
+  --evil-forces: #78001e;
+
+  --noble-purple: #aeb0c4;
+  --bellflower: #5e64ad;
+  --depths-of-night: #2d369f;
+  --galactic-cruise: #10187e;
+  --prussian-nights: #040b5b;
+
+  --white: #fff;
+  --gray-05: hsl(0 0% 95%);
+  --gray-10: hsl(0 0% 90%);
+  --gray-15: hsl(0 0% 85%);
+  --gray-20: hsl(0 0% 80%);
+  --gray-25: hsl(0 0% 75%);
+  --gray-30: hsl(0 0% 70%);
+  --gray-35: hsl(0 0% 65%);
+  --gray-40: hsl(0 0% 60%);
+  --gray-45: hsl(0 0% 55%);
+  --gray-50: hsl(0 0% 50%);
+  --gray-55: hsl(0 0% 45%);
+  --gray-60: hsl(0 0% 40%);
+  --gray-65: hsl(0 0% 35%);
+  --gray-70: hsl(0 0% 30%);
+  --gray-75: hsl(0 0% 25%);
+  --gray-80: hsl(0 0% 20%);
+  --gray-85: hsl(0 0% 15%);
+  --gray-90: hsl(0 0% 10%);
+  --gray-95: hsl(0 0% 5%);
+  --black: hsl(0 0% 0%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
