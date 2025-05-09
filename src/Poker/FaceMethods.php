@@ -28,7 +28,7 @@ readonly class FaceMethods
         return array_merge(
             ...array_map(
                 fn (): array =>
-                array_map(fn ($face): int => $face->faceValue(), Faces::cases()),
+                array_map(fn ($face): int => $face->faceValue(), FaceMethods::cases()),
                 Suits::cases()
             )
         );

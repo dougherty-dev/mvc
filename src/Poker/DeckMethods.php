@@ -21,7 +21,7 @@ class DeckMethods extends DeckFoundation
     {
         $this->empty();
         $this->deck = array_map(fn ($key): Card =>
-            new Card($key), array_keys(Faces::UNICODE_FACE_ARRAY));
+            new Card($key), array_keys(FaceMethods::UNICODE_FACE_ARRAY));
     }
 
     /**
