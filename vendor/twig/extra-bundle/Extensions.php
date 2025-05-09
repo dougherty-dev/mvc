@@ -99,7 +99,7 @@ final class Extensions
     public static function getFilter(string $name): array
     {
         foreach (self::EXTENSIONS as $extension) {
-            if (\in_array($name, $extension['filters'], true)) {
+            if (\in_array($name, $extension['filters'])) {
                 return [$extension['class_name'], $extension['package']];
             }
         }
@@ -110,7 +110,7 @@ final class Extensions
     public static function getFunction(string $name): array
     {
         foreach (self::EXTENSIONS as $extension) {
-            if (\in_array($name, $extension['functions'], true)) {
+            if (\in_array($name, $extension['functions'])) {
                 return [$extension['class_name'], $extension['package']];
             }
         }
@@ -121,7 +121,7 @@ final class Extensions
     public static function getTag(string $name): array
     {
         foreach (self::EXTENSIONS as $extension) {
-            if (\in_array($name, $extension['tags'], true)) {
+            if (\in_array($name, $extension['tags'])) {
                 return [$extension['class_name'], $extension['package']];
             }
         }
