@@ -26,7 +26,7 @@
 .initcap:first-letter {
   color: var(--incarnadine);
   initial-letter: 4;
-  margin-right: 0.15em;
+  margin-right: 0.15rem;
   font-family: Bembo-Bold, serif;
   /* Firefox */
   float: left;
@@ -46,7 +46,7 @@ input[type="number"] {
 }
 
 .humongous {
-  font-size: 3em;
+  font-size: 3rem;
 }
 
 .flash-notice {

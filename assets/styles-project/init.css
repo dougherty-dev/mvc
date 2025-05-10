@@ -38,6 +38,8 @@
   --gray-90: hsl(0 0% 10%);
   --gray-95: hsl(0 0% 5%);
   --black: hsl(0 0% 0%);
+
+  --transparent: rgba(0, 0, 0, 0);
 }
 
 * {

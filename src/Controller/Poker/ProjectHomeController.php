@@ -45,4 +45,13 @@ class ProjectHomeController extends PokerSessionController
         $this->checkSession();
         return $this->render('poker/poker.html.twig');
     }
+
+    /**
+     * The route for the poker session page.
+     */
+    #[Route("/proj/session", name: "proj_session")]
+    public function projSession(): Response
+    {
+        return $this->render('poker/session.html.twig');
+    }
 }

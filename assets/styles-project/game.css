@@ -1,36 +1,271 @@
-.dojo {
+.poker-grid {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 3fr 7fr;
+  grid-template-areas:
+    'info info info'
+    'player1 pot player2'
+    'player1 community player2'
+    'player1 player0 player2';
+  grid-gap: 0;
+
+  align-content: space-between;
+  justify-content: space-around;
+
+  background-color: var(--cotinga-purple);
+  color: var(--white);
+
+  border: 2rem solid var(--black);
+  border-radius: 15% / 40%;
+
+  height: calc(100vh - 150px);
+  width: 100%;
+  min-width: 400px;
+  min-height: 400px;
+}
+
+.grid-player0 {
+  grid-area: player0;
+  text-align: center;
+  max-height: 35vh;
+  border-top: thin dashed var(--invasive-indigo);
+}
+
+.grid-player1 {
+  grid-area: player1;
+  text-align: left;
+  max-height: 65vh;
+  border-right: thin dashed var(--invasive-indigo);
+}
+
+.grid-player2 {
+  grid-area: player2;
+  text-align: right;
+  max-height: 65vh;
+  border-left: thin dashed var(--invasive-indigo);
+}
+
+.grid-pot {
+  grid-area: pot;
+  align-content: center;
+  justify-content: center;
+  background: radial-gradient(circle closest-side, var(--orb-of-discord) 80%, var(--deep-blush) 99%, var(--transparent) 100%);
+}
+
+.grid-info {
+  grid-area: info;
+  align-content: center;
+  justify-content: center;
+  color: var(--noble-purple);
+  font-size: 130%;
+}
+
+.grid-community {
+  grid-area: community;
+  align-content: center;
+  justify-content: center;
+  max-height: 30vh;
+}
+
+.grid-player0,
+.grid-player1,
+.grid-player2,
+.grid-pot,
+.grid-community,
+.grid-info {
+  margin: 0.2rem;
+  padding: 0.2rem;
+}
+
+/* grid for player 1 */
+
+.player1-grid {
+  display: grid;
+  grid-template-rows: 1fr 6fr 1fr;
+  grid-template-areas:
+    'p1-bet'
+    'p1-cards'
+    'p1-info';
+  height: 100%;
+}
+
+.grid-p1-info {
+  grid-area: p1-info;
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-p1-bet {
+  grid-area: p1-bet;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-p1-cards {
+  grid-area: p1-cards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+}
+
+/* grid for player 2 */
+
+.player2-grid {
+  display: grid;
+  grid-template-rows: 1fr 6fr 1fr;
+  grid-template-areas:
+    'p2-bet'
+    'p2-cards'
+    'p2-info';
+  height: 100%;
+}
+
+.grid-p2-info {
+  grid-area: p2-info;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-p2-bet {
+  grid-area: p2-bet;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-p2-cards {
+  grid-area: p2-cards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+}
+
+/* grid for player 0 */
+
+.player0-grid {
+  display: grid;
+  grid-template-rows: 2fr 4fr 1fr;
+  grid-template-areas:
+    'p0-bet'
+    'p0-cards'
+    'p0-info';
+  height: 100%;
+}
+
+.grid-p0-info {
+  grid-area: p0-info;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-p0-bet {
+  grid-area: p0-bet;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-p0-cards {
+  grid-area: p0-cards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-p0-bet,
+.grid-p1-bet,
+.grid-p2-bet {
+  color: var(--velour);
+  background: radial-gradient(circle closest-side, var(--evil-forces) 80%, var(--black) 99%, var(--transparent) 100%);
+}
+
+/* miscellanous */
+
+.poker-card {
+  border-radius: 0;
+  width: min(200px, min(7vw, 7vh));
+  padding: 0.1rem;
+}
+
+.info-table {
+  margin: 0;
+  padding: 0;
+  width: 100%;
   text-align: center;
 }
 
-.dojobox {
-  margin: 1rem;
-  padding: 0.5rem;
-  flex-grow: 1;
-  width: 40%;
+.td-badge {
+  width: 50%;
 }
 
-.dojo_midsection {
-  margin: 1rem;
-  padding: 0.5rem;
-  flex-grow: 1;
-  width: 15%;
-  border-width: 0 thin;
-  border-style: solid;
-  border-color: var(--aqua);
+.td-chips {
+  position: relative;
+  display: inline-grid;
+
+  place-content: center;
+
+  color: var(--deep-blush);
+  background: radial-gradient(circle closest-side, var(--prussian-nights) 80%, var(--white) 99%, var(--transparent) 100%);
+
+  width: 50%;
+  aspect-ratio: 1;
 }
 
-.game_table tr th,
-.game_table tr td {
-  border: thin solid var(--table);
-  padding: 0.7rem;
+.td-chips::after {
+  position: absolute;
+  content: "";
+
+  background: var(--evil-forces);
+
+  inset: 0;
+  padding: 5px;
+  border-radius: 50%;
+
+  --n: 16;
+  --d: 8deg;
+  mask:
+    linear-gradient(var(--transparent) 0 0) content-box,
+    repeating-conic-gradient(from calc(var(--d)/2),
+      var(--black) 0 calc(360deg/var(--n) - var(--d)),
+      var(--transparent) 0 calc(360deg/var(--n)));
+  mask-composite: intersect;
 }
 
-.upto21 {
-  color: var(--aqua);
+.dojo {
+  overflow: hidden;
 }
 
-.over21 {
-  color: var(--orange);
+.player0,
+.player1,
+.player2 {
+  position: absolute;
+  display: inline-block;
+  font-size: 400%;
+  filter: grayscale(0.5);
+}
+
+.player0 {
+  bottom: -1rem;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.player1 {
+  left: -1rem;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.player2 {
+  right: -1rem;
+  top: 50%;
+  transform: translate(50%, -50%);
 }

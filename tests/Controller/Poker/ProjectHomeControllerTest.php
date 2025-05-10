@@ -24,7 +24,9 @@ class ProjectHomeControllerTest extends WebTestCase
      */
     public function testProjectHomeController(): void
     {
-//        $this->assertInstanceOf("\App\Controller\Poker\ProjectHomeController", new ProjectHomeController());
+        $cls = new ProjectHomeController(new RequestStack());
+        $this->assertInstanceOf("\App\Controller\Poker\ProjectHomeController", $cls);
+
         $cls = new PokerSessionController(new RequestStack());
         $this->assertInstanceOf("\App\Controller\Poker\PokerSessionController", $cls);
     }

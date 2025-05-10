@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1746801380">
-  <project timestamp="1746801380">
+<coverage generated="1746802384">
+  <project timestamp="1746802384">
     <file name="/Users/nik/Sites/dbwebb-kurser/mvc/me/report/src/Cards/Card.php">
       <class name="App\Cards\Card" namespace="global">
         <metrics complexity="4" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
@@ -811,7 +811,7 @@
       <line num="22" type="stmt" count="3"/>
       <line num="23" type="stmt" count="1"/>
       <line num="24" type="stmt" count="1"/>
-      <line num="27" type="stmt" count="3"/>
+      <line num="27" type="stmt" count="2"/>
       <metrics loc="30" ncloc="20" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
     </file>
     <file name="/Users/nik/Sites/dbwebb-kurser/mvc/me/report/src/Game21/GameActionsBankIQDone.php">
@@ -837,16 +837,16 @@
       <line num="28" type="stmt" count="4"/>
       <line num="29" type="stmt" count="4"/>
       <line num="31" type="stmt" count="4"/>
-      <line num="32" type="stmt" count="1"/>
-      <line num="33" type="stmt" count="1"/>
+      <line num="32" type="stmt" count="2"/>
+      <line num="33" type="stmt" count="2"/>
       <line num="36" type="stmt" count="4"/>
       <line num="37" type="stmt" count="4"/>
       <line num="38" type="stmt" count="4"/>
       <line num="39" type="stmt" count="4"/>
       <line num="41" type="stmt" count="4"/>
       <line num="42" type="stmt" count="2"/>
-      <line num="45" type="stmt" count="4"/>
-      <line num="46" type="stmt" count="4"/>
+      <line num="45" type="stmt" count="3"/>
+      <line num="46" type="stmt" count="3"/>
       <metrics loc="49" ncloc="39" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="14" coveredelements="14"/>
     </file>
     <file name="/Users/nik/Sites/dbwebb-kurser/mvc/me/report/src/Game21/GameActionsBet.php">
@@ -866,14 +866,14 @@
       <class name="App\Game21\GameActionsBusted" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
       </class>
-      <line num="20" type="method" name="playerBusted" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="22" type="stmt" count="3"/>
-      <line num="23" type="stmt" count="3"/>
-      <line num="25" type="stmt" count="3"/>
-      <line num="26" type="stmt" count="3"/>
-      <line num="27" type="stmt" count="3"/>
-      <line num="28" type="stmt" count="3"/>
-      <line num="30" type="stmt" count="3"/>
+      <line num="20" type="method" name="playerBusted" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="22" type="stmt" count="4"/>
+      <line num="23" type="stmt" count="4"/>
+      <line num="25" type="stmt" count="4"/>
+      <line num="26" type="stmt" count="4"/>
+      <line num="27" type="stmt" count="4"/>
+      <line num="28" type="stmt" count="4"/>
+      <line num="30" type="stmt" count="4"/>
       <metrics loc="33" ncloc="23" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="8" coveredelements="8"/>
     </file>
     <file name="/Users/nik/Sites/dbwebb-kurser/mvc/me/report/src/Game21/GameActionsContinue.php">
@@ -974,19 +974,19 @@
       <class name="App\Game21\GameActionsWinner" namespace="global">
         <metrics complexity="3" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="13" coveredelements="13"/>
       </class>
-      <line num="20" type="method" name="determineWinner" visibility="public" complexity="3" crap="3" count="4"/>
-      <line num="22" type="stmt" count="4"/>
+      <line num="20" type="method" name="determineWinner" visibility="public" complexity="3" crap="3" count="3"/>
+      <line num="22" type="stmt" count="3"/>
       <line num="23" type="stmt" count="2"/>
       <line num="24" type="stmt" count="2"/>
       <line num="25" type="stmt" count="2"/>
       <line num="26" type="stmt" count="2"/>
       <line num="27" type="stmt" count="2"/>
-      <line num="30" type="stmt" count="4"/>
-      <line num="31" type="stmt" count="4"/>
-      <line num="32" type="stmt" count="4"/>
-      <line num="33" type="stmt" count="4"/>
-      <line num="34" type="stmt" count="4"/>
-      <line num="35" type="stmt" count="4"/>
+      <line num="30" type="stmt" count="3"/>
+      <line num="31" type="stmt" count="3"/>
+      <line num="32" type="stmt" count="3"/>
+      <line num="33" type="stmt" count="3"/>
+      <line num="34" type="stmt" count="3"/>
+      <line num="35" type="stmt" count="3"/>
       <metrics loc="39" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="13" coveredelements="13"/>
     </file>
     <file name="/Users/nik/Sites/dbwebb-kurser/mvc/me/report/src/Game21/GameFoundation.php">
@@ -1106,14 +1106,14 @@
       <line num="23" type="method" name="getJokerSums" visibility="public" complexity="4" crap="4" count="13"/>
       <line num="25" type="stmt" count="13"/>
       <line num="26" type="stmt" count="13"/>
-      <line num="29" type="stmt" count="5"/>
-      <line num="30" type="stmt" count="5"/>
-      <line num="32" type="stmt" count="5"/>
-      <line num="33" type="stmt" count="5"/>
-      <line num="34" type="stmt" count="5"/>
-      <line num="38" type="stmt" count="5"/>
-      <line num="39" type="stmt" count="5"/>
-      <line num="41" type="stmt" count="5"/>
+      <line num="29" type="stmt" count="6"/>
+      <line num="30" type="stmt" count="6"/>
+      <line num="32" type="stmt" count="6"/>
+      <line num="33" type="stmt" count="6"/>
+      <line num="34" type="stmt" count="6"/>
+      <line num="38" type="stmt" count="6"/>
+      <line num="39" type="stmt" count="6"/>
+      <line num="41" type="stmt" count="6"/>
       <metrics loc="44" ncloc="31" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="11" coveredelements="11"/>
     </file>
     <file name="/Users/nik/Sites/dbwebb-kurser/mvc/me/report/src/Game21/Player.php">

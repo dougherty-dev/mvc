@@ -55,6 +55,7 @@ return [
         '/proj' => [[['_route' => 'proj', '_controller' => 'App\\Controller\\Poker\\ProjectHomeController::proj'], null, null, null, false, false, null]],
         '/proj/about' => [[['_route' => 'proj_about', '_controller' => 'App\\Controller\\Poker\\ProjectHomeController::projAbout'], null, null, null, false, false, null]],
         '/proj/poker' => [[['_route' => 'proj_poker', '_controller' => 'App\\Controller\\Poker\\ProjectHomeController::projPoker'], null, null, null, false, false, null]],
+        '/proj/session' => [[['_route' => 'proj_session', '_controller' => 'App\\Controller\\Poker\\ProjectHomeController::projSession'], null, null, null, false, false, null]],
         '/api/quotation' => [[['_route' => 'quotation', '_controller' => 'App\\Controller\\QuotationsController::quotation'], null, null, null, false, false, null]],
     ],
     [ // $regexpList

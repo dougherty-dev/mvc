@@ -632,6 +632,7 @@
     <service id="App\Poker\FaceMethods" class="App\Poker\FaceMethods" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Hand" class="App\Poker\Hand" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\HandFoundation" class="App\Poker\HandFoundation" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\PokerTableSeats" class="App\Poker\PokerTableSeats" autowire="true" autoconfigure="true"/>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>

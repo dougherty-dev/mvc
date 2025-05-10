@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Texas Hold’em No Limit">
+        <meta name="description" content="Texas Hold’em">
         <title>{% block title %}Texas Hold’em No Limit{% endblock %}</title>
         <link rel="icon" href="{{ asset('build/images/favicon.ico') }}">
 {% block stylesheets %}
@@ -17,11 +17,12 @@
         <header>
             <span class="home"><a href="{{ path('home') }}">🏠</a></span>
             <nav id="project-navbar">
-                <h4 class="header-text">♠️ Texas Hold’em No Limit ♥️</h4>
+                <h2 class="header-text">♠️ Texas Hold’em ♥️</h2>
                 <div>
                     <a href="{{ path('proj') }}">projekt</a> |
                     <a href="{{ path('proj_about') }}">om</a> |
-                    <a href="{{ path('proj_poker') }}">poker</a>
+                    <a href="{{ path('proj_poker') }}">poker</a> |
+                    <a href="{{ path('proj_session') }}">session</a>
                 </div>
             </nav>
         </header>

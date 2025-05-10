@@ -1,10 +1,79 @@
-{% extends "poker/base.html.twig" %}
+{% extends "poker/dojo.html.twig" %}
 
-{% block title %}Om{% endblock %}
+{% block title %}Texas Hold’em{% endblock %}
 
 {% block body %}
-    <section class="center">
-        <h1>Poker</h1>
-        {{ dump(app.session.all) }}
+    <section>
+        <div class="poker-grid center">
+            <div class="player0">👩🏼‍💼</div>
+            <div class="player1">👩🏼‍💻</div>
+            <div class="player2">🧑🏼‍💻</div>
+            <div class="grid-player0">
+                <div class="player0-grid">
+                    <div class="grid-p0-info">
+                        <table class="info-table">
+                            <tr>
+                                <td class="td-badge"><img src="{{ asset('build/images/poker/badge-big-blind.png') }}" width="70"></td>
+                                <td class="td-chips">100</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="grid-p0-bet">4</div>
+                    <div class="grid-p0-cards">
+                        <img src="{{ asset('build/images/cards/back.svg') }}" width="50" class="poker-card">
+                        <img src="{{ asset('build/images/cards/back.svg') }}" width="50" class="poker-card">
+                    </div>
+                </div>
+            </div>
+            <div class="grid-player1">
+                <div class="player1-grid">
+                    <div class="grid-p1-info">
+                        <table class="info-table">
+                            <tr>
+                                <td class="td-chips">100</td>
+                                <td class="td-badge"><img src="{{ asset('build/images/poker/badge-small-blind.png') }}" width="70"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="grid-p1-bet">4</div>
+                    <div class="grid-p1-cards">
+                        <img src="{{ asset('build/images/cards/0.svg') }}" width="50" class="poker-card">
+                        <img src="{{ asset('build/images/cards/2.svg') }}" width="50" class="poker-card">
+                        <img src="{{ asset('build/images/cards/37.svg') }}" width="50" class="poker-card">
+                        <img src="{{ asset('build/images/cards/13.svg') }}" width="50" class="poker-card">
+                        <img src="{{ asset('build/images/cards/50.svg') }}" width="50" class="poker-card">
+                    </div>
+                </div>
+            </div>
+            <div class="grid-player2">
+                <div class="player2-grid">
+                    <div class="grid-p2-info">
+                        <table class="info-table">
+                            <tr>
+                                <td class="td-badge"><img src="{{ asset('build/images/poker/badge-dealer.png') }}" width="70"></td>
+                                <td class="td-chips">100</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="grid-p2-bet">4</div>
+                    <div class="grid-p2-cards">
+                        <img src="{{ asset('build/images/cards/0.svg') }}" width="50" class="poker-card">
+                        <img src="{{ asset('build/images/cards/2.svg') }}" width="50" class="poker-card">
+                        <img src="{{ asset('build/images/cards/37.svg') }}" width="50" class="poker-card">
+                        <img src="{{ asset('build/images/cards/13.svg') }}" width="50" class="poker-card">
+                        <img src="{{ asset('build/images/cards/50.svg') }}" width="50" class="poker-card">
+                    </div>
+                </div>
+            </div>
+            <div class="grid-pot">5000</div>
+            <div class="grid-info">info</div>
+            <div class="grid-community">
+                <img src="{{ asset('build/images/cards/0.svg') }}" width="50" class="poker-card">
+                <img src="{{ asset('build/images/cards/2.svg') }}" width="50" class="poker-card">
+                <img src="{{ asset('build/images/cards/37.svg') }}" width="50" class="poker-card">
+                <img src="{{ asset('build/images/cards/13.svg') }}" width="50" class="poker-card">
+                <img src="{{ asset('build/images/cards/50.svg') }}" width="50" class="poker-card">
+            </div>
+        </div>
     </section>
 {% endblock %}
