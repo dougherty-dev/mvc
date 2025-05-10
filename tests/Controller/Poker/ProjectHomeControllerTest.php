@@ -60,4 +60,14 @@ class ProjectHomeControllerTest extends WebTestCase
         $client->request('GET', '/proj/poker');
         $this->assertResponseIsSuccessful();
     }
+
+    /**
+     * Test route /proj/session
+     */
+    public function testSession(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', '/proj/session');
+        $this->assertResponseIsSuccessful();
+    }
 }

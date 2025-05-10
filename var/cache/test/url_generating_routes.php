@@ -52,6 +52,7 @@ return [
     'proj' => [[], ['_controller' => 'App\\Controller\\Poker\\ProjectHomeController::proj'], [], [['text', '/proj']], [], [], []],
     'proj_about' => [[], ['_controller' => 'App\\Controller\\Poker\\ProjectHomeController::projAbout'], [], [['text', '/proj/about']], [], [], []],
     'proj_poker' => [[], ['_controller' => 'App\\Controller\\Poker\\ProjectHomeController::projPoker'], [], [['text', '/proj/poker']], [], [], []],
+    'proj_session' => [[], ['_controller' => 'App\\Controller\\Poker\\ProjectHomeController::projSession'], [], [['text', '/proj/session']], [], [], []],
     'quotation' => [[], ['_controller' => 'App\\Controller\\QuotationsController::quotation'], [], [['text', '/api/quotation']], [], [], []],
     'App\Controller\Cards\CardAPIDealController::apiDeckDealPlayersCards' => [['players', 'cards'], ['_controller' => 'App\\Controller\\Cards\\CardAPIDealController::apiDeckDealPlayersCards'], ['players' => '\\d+', 'cards' => '\\d+'], [['variable', '/', '\\d+', 'cards', true], ['variable', '/', '\\d+', 'players', true], ['text', '/api/deck/deal']], [], [], []],
     'App\Controller\Cards\CardAPIDealController::apiDeckDealPlayersCardsPost' => [['players', 'cards'], ['_controller' => 'App\\Controller\\Cards\\CardAPIDealController::apiDeckDealPlayersCardsPost'], ['players' => '\\d+', 'cards' => '\\d+'], [['variable', '/', '\\d+', 'cards', true], ['variable', '/', '\\d+', 'players', true], ['text', '/api/deck/deal']], [], [], []],
@@ -102,5 +103,6 @@ return [
     'App\Controller\Poker\ProjectHomeController::proj' => [[], ['_controller' => 'App\\Controller\\Poker\\ProjectHomeController::proj'], [], [['text', '/proj']], [], [], []],
     'App\Controller\Poker\ProjectHomeController::projAbout' => [[], ['_controller' => 'App\\Controller\\Poker\\ProjectHomeController::projAbout'], [], [['text', '/proj/about']], [], [], []],
     'App\Controller\Poker\ProjectHomeController::projPoker' => [[], ['_controller' => 'App\\Controller\\Poker\\ProjectHomeController::projPoker'], [], [['text', '/proj/poker']], [], [], []],
+    'App\Controller\Poker\ProjectHomeController::projSession' => [[], ['_controller' => 'App\\Controller\\Poker\\ProjectHomeController::projSession'], [], [['text', '/proj/session']], [], [], []],
     'App\Controller\QuotationsController::quotation' => [[], ['_controller' => 'App\\Controller\\QuotationsController::quotation'], [], [['text', '/api/quotation']], [], [], []],
 ];

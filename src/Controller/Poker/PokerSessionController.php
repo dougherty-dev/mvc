@@ -18,7 +18,6 @@ use App\Poker\FaceMethods;
 use App\Poker\Deck;
 use App\Poker\Hand;
 use App\Poker\Card;
-use App\Poker\PokerTableSeats;
 
 /**
  * The PokerSessionController class.
