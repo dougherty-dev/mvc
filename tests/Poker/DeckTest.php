@@ -145,6 +145,8 @@ class DeckTest extends TestCase
         $this->assertContainsOnly('string', $hand->handTextValues());
         $this->assertContainsOnly('string', $hand->handUnicodeValues());
         $this->assertContainsOnly('string', $hand->handSymbolValues());
-    }
 
+        $hand->empty();
+        $this->assertCount(0, $hand->get());
+    }
 }

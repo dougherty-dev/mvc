@@ -4,8 +4,117 @@
 
 return [[
 
+'App__Entity__Book__CLASSMETADATA__' => 0,
 
 ], [
 
+0 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+            clone ($p['Doctrine\\ORM\\Mapping\\FieldMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\FieldMapping')),
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'namespace' => [
+                    'App\\Entity',
+                ],
+                'rootEntityName' => [
+                    'App\\Entity\\Book',
+                ],
+                'customRepositoryClassName' => [
+                    'App\\Repository\\BookRepository',
+                ],
+                'identifier' => [
+                    [
+                        'id',
+                    ],
+                ],
+                'generatorType' => [
+                    4,
+                ],
+                'fieldMappings' => [
+                    [
+                        'id' => $o[1],
+                        'title' => $o[2],
+                        'author' => $o[3],
+                        'isbn' => $o[4],
+                        'image' => $o[5],
+                    ],
+                ],
+                'fieldNames' => [
+                    [
+                        'id' => 'id',
+                        'title' => 'title',
+                        'author' => 'author',
+                        'isbn' => 'isbn',
+                        'image' => 'image',
+                    ],
+                ],
+                'columnNames' => [
+                    [
+                        'id' => 'id',
+                        'title' => 'title',
+                        'author' => 'author',
+                        'isbn' => 'isbn',
+                        'image' => 'image',
+                    ],
+                ],
+                'table' => [
+                    [
+                        'name' => 'book',
+                    ],
+                ],
+                'idGenerator' => [
+                    $o[6],
+                ],
+                'name' => [
+                    'App\\Entity\\Book',
+                ],
+                'id' => [
+                    1 => true,
+                ],
+                'type' => [
+                    1 => 'integer',
+                    'string',
+                    'string',
+                    'string',
+                    'string',
+                ],
+                'fieldName' => [
+                    1 => 'id',
+                    'title',
+                    'author',
+                    'isbn',
+                    'image',
+                ],
+                'columnName' => [
+                    1 => 'id',
+                    'title',
+                    'author',
+                    'isbn',
+                    'image',
+                ],
+                'length' => [
+                    2 => 255,
+                    255,
+                    13,
+                    255,
+                ],
+                'nullable' => [
+                    5 => true,
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+},
 
 ]];

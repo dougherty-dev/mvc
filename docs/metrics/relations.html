@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2025-05-11 01:39:59        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2025-05-11 18:39:20        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -262,7 +262,7 @@
 
     var relations = [
     {
-        "name": "\\App\\Repository\\BookRepository",
+        "name": "\\App\\Repository\\CommunityRepository",
         "size": 3000,
         "relations": []
     },
@@ -275,6 +275,27 @@
         "name": "\\Doctrine\\Persistence\\ManagerRegistry",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "\\App\\Repository\\PlayersRepository",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "\\Doctrine\\Persistence\\ManagerRegistry"
+        ]
+    },
+    {
+        "name": "\\App\\Repository\\BookRepository",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Repository\\LogRepository",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "\\Doctrine\\Persistence\\ManagerRegistry"
+        ]
     },
     {
         "name": "\\App\\Poker\\Card",
@@ -297,9 +318,18 @@
         "relations": []
     },
     {
-        "name": "\\App\\Poker\\HandFoundation",
+        "name": "\\App\\Poker\\Community",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Deck",
+        "size": 3000,
+        "relations": [
+            "\\App\\Poker\\DeckMethods",
+            "\\App\\Poker\\Hand",
+            "\\App\\Poker\\Card"
+        ]
     },
     {
         "name": "\\App\\Poker\\Hand",
@@ -307,7 +337,7 @@
         "relations": []
     },
     {
-        "name": "\\App\\Poker\\Deck",
+        "name": "\\App\\Poker\\HandFoundation",
         "size": 3000,
         "relations": []
     },
@@ -320,7 +350,29 @@
         ]
     },
     {
+        "name": "\\App\\Poker\\Log",
+        "size": 3000,
+        "relations": [
+            "\\DateTime"
+        ]
+    },
+    {
+        "name": "\\DateTime",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\GameFoundation",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Poker\\DeckFoundation",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Player",
         "size": 3000,
         "relations": []
     },
@@ -328,6 +380,23 @@
         "name": "\\App\\Entity\\Book",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "\\App\\Entity\\Community",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Entity\\Players",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Entity\\Log",
+        "size": 3000,
+        "relations": [
+            "\\DateTime"
+        ]
     },
     {
         "name": "\\App\\Cards\\Card",
@@ -391,6 +460,18 @@
         "relations": []
     },
     {
+        "name": "\\App\\Controller\\Poker\\PokerResetController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Repository\\CommunityRepository",
+            "\\App\\Entity\\Players",
+            "\\App\\Entity\\Community"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\Poker\\PokerSessionController",
         "size": 3000,
         "relations": []
@@ -401,7 +482,18 @@
         "relations": []
     },
     {
-        "name": "\\App\\Controller\\Poker\\ProjectHomeController",
+        "name": "\\App\\Controller\\Poker\\PokerGameController",
+        "size": 3000,
+        "relations": [
+            "\\App\\Controller\\Poker\\PokerSessionController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Poker\\Community",
+            "\\App\\Poker\\Player"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\Poker\\PokerHomeController",
         "size": 3000,
         "relations": [
             "\\App\\Controller\\Poker\\PokerSessionController",

@@ -1,0 +1,145 @@
+html {
+  font-size: 100%;
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Poppins-Regular, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  hyphens: auto;
+  text-wrap: balance;
+}
+
+header {
+  padding: 1rem;
+  background-color: var(--green);
+  min-height: 75px;
+  background-image: url("../images/chihiro-nav-yurIfup.avif");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: contain;
+  background-blend-mode: multiply;
+}
+
+nav {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 60%;
+}
+
+nav ul li {
+  display: inline;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ol,
+ul {
+  margin-left: 2rem;
+  margin-bottom: 1rem;;
+}
+
+main {
+  flex-grow: 1;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+footer {
+  flex-shrink: 0;
+  z-index: 100;
+  background-color: var(--darkgreen);
+  color: var(--beige);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem 4rem 0;
+}
+
+* a, * a:link, * a:visited, * a:hover {
+  color: inherit;
+  opacity: 0.8;
+}
+
+a.active {
+  text-decoration: underline double currentcolor;
+  color: var(--orange) !important;
+}
+
+img {
+  max-width: 100% !important;
+  max-height: 100%;
+  object-fit: scale-down;
+  border-radius: 0.1rem;
+  padding: 0.5rem 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Poppins-Bold, sans-serif;
+  color: var(--light);
+  margin-bottom: 1.4rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+em, figcaption {
+  font-family: Poppins-Italic, sans-serif;
+}
+
+figcaption {
+  color: var(--beige);
+}
+
+strong, th {
+  font-family: Poppins-Bold, sans-serif;
+}
+
+code {
+  font-family: "Courier New", Courier, monospace;
+  color: var(--beige);
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+figure {
+  margin-top: 2rem;
+}
+
+button, input, textarea {
+  color: var(--light);
+  background-color: var(--dark);
+  font-size: 1rem;;
+}
+
+button {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+table {
+  margin: 1rem auto;
+}
+
+th, td {
+  margin: 1rem;
+  padding: 0.2rem;
+}

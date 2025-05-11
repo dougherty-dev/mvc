@@ -28,6 +28,24 @@ class HandFoundation
     }
 
     /**
+     * Zero the hand.
+     */
+    public function empty(): void
+    {
+        $this->hand = [];
+    }
+
+    /**
+     * Add cards to hand by serial value 0–51.
+     *
+     * @param int[] $values
+     */
+    public function addToHand(array $values): void
+    {
+        $this->hand = array_map(fn ($key): Card => new Card($key), $values);
+    }
+
+    /**
      * Add a card to hand.
      */
     public function addCard(Card $card): void

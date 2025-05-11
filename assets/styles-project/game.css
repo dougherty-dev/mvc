@@ -5,7 +5,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 2fr 3fr 7fr;
   grid-template-areas:
-    'info info info'
+    'action action action'
     'player1 pot player2'
     'player1 community player2'
     'player1 player0 player2';
@@ -23,7 +23,7 @@
   height: calc(100vh - 150px);
   width: 100%;
   min-width: 400px;
-  min-height: 400px;
+  min-height: 500px;
 }
 
 .grid-player0 {
@@ -54,8 +54,8 @@
   background: radial-gradient(circle closest-side, var(--orb-of-discord) 80%, var(--deep-blush) 99%, var(--transparent) 100%);
 }
 
-.grid-info {
-  grid-area: info;
+.grid-action {
+  grid-area: action;
   align-content: center;
   justify-content: center;
   color: var(--noble-purple);
@@ -74,7 +74,7 @@
 .grid-player2,
 .grid-pot,
 .grid-community,
-.grid-info {
+.grid-action {
   margin: 0.2rem;
   padding: 0.2rem;
 }
@@ -202,6 +202,18 @@
   text-align: center;
 }
 
+.action-table {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.td-action {
+  width: 50%;
+  padding: 0 2rem;
+}
+
 .td-badge {
   width: 50%;
 }
@@ -268,4 +280,8 @@
   right: -1rem;
   top: 50%;
   transform: translate(50%, -50%);
+}
+
+.dealer {
+  width: 4rem;
 }

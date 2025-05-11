@@ -63,8 +63,8 @@ class LibraryResetController extends AbstractController
     #[Route('/library/reset/post', name: 'library_reset_post', methods: ['POST'])]
     public function libraryResetPost(ManagerRegistry $doctrine, BookRepository $bookRepository): Response
     {
-        $entityManager = $doctrine->getManager();
         $bookRepository->truncateTable();
+        $entityManager = $doctrine->getManager();
 
         foreach (BOOKLIST as $book) {
             $vol = new Book();

@@ -33,7 +33,6 @@ class DeckMethods extends DeckFoundation
      */
     public function addToDeck(array $values): void
     {
-        $this->empty();
         $this->deck = array_map(fn ($key): Card => new Card($key), $values);
     }
 

@@ -1,0 +1,14 @@
+{% extends "poker/dojo.html.twig" %}
+
+{% block title %}Återställ spel{% endblock %}
+
+{% block body %}
+    <section class="center">
+        <h2>Återställ spel</h2>
+        <p>Spelet nollställs.<br>
+        Alla nuvarande parametrar försvinner.</p>
+        <form method="post" action="{{ path('proj_reset_post') }}">
+            <button type="submit" class="humongous">⚠️ Återställ</button>
+        </form>
+    </section>
+{% endblock %}

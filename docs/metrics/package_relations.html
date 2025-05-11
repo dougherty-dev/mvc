@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2025-05-11 01:39:59        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2025-05-11 18:39:20        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -282,16 +282,6 @@
     {
         "name": "App\\Poker",
         "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "App\\Entity",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "App\\Cards",
-        "size": 3000,
         "relations": [
             "global"
         ]
@@ -300,6 +290,20 @@
         "name": "global",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "App\\Entity",
+        "size": 3000,
+        "relations": [
+            "global"
+        ]
+    },
+    {
+        "name": "App\\Cards",
+        "size": 3000,
+        "relations": [
+            "global"
+        ]
     },
     {
         "name": "App\\Controller",
@@ -325,6 +329,9 @@
         "relations": [
             "Symfony\\Bundle\\FrameworkBundle\\Controller",
             "Symfony\\Component\\HttpFoundation",
+            "Doctrine\\Persistence",
+            "App\\Repository",
+            "App\\Entity",
             "App\\Poker"
         ]
     },

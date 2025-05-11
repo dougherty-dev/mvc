@@ -3,15 +3,35 @@
 {% block title %}Texas Hold’em{% endblock %}
 
 {% block body %}
-    <section class="three-columns">
+    <section class="columns">
         <h1>Projekt</h1>
         <p class="initcap">Klassiska pokerspelet Texas Hold’em erbjuds här i en lättsam utformning, med spel mot två autonoma programspelare av varierande intelligens. Kan du mäta dig med AI:n, eller får du bita i gräset? Har du vad som krävs för att analysera spelet korrekt och avgå med segern? Pröva nu!</p>
-        <p>Den variant som spelar här är <em>no limit</em>, och var och en av spelarna börjar med ett fiktivt kapital om ₿1000. Minsta insats är ₿1</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="center">
+            <a href="{{ path('proj_poker') }}"><button type="button" class="humongous">♦️ Spela ♣️</button></a>
+        </p>
+        <p>Den variant som spelas här är <strong>limiterad 4/8</strong>, och var och en av spelarna börjar med ett fiktivt kapital om 1000 penningar. <strong>Minsta insats</strong> är således 4 pengar. För varje runda tillåts <strong>två höjningar</strong>, under inledning och <em>flop</em> med minsta vad (4) som inkrement: 4, 8 och 12.</p>
+        <p>Under <em>turn</em> och <em>river</em> gäller istället största vad (8) som inkrement: 8, 16, 24. Efter två höjningar i en enskild runda kan man bara syna eller lägga sig. Eftersom antalet spelare här är högst tre är det meningslöst med fler höjningar än två.</p>
+        <p>Vid spelstart ges varje spelare ett öppet kort. Spelare med högst kortvalör tar given. Spelaren till vänster om croupieren ges <strong>lilla mörken</strong> (2), spelaren till vänster om denna <strong>stora mörken</strong> (4), kapital som går in i potten. Finns bara två spelare tar croupieren lilla mörken. Därefter delas två ovända <strong>hålkort</strong> ut till varje spelare, ett i taget, med början hos spelaren till vänster om croupieren.</p>
+        <p>Spelaren till vänster om stora mörken inleder <strong>vadrundan</strong>. Sker inga höjningar avslutas vadrundan, i annat fall sker ytterligare rundor tills alla spelare synar/passar eller bara en spelare återstår efter läggning.</p>
+        <p>Spelare som inte har täckning för sina vad kan skriva en IOU och låna pengar, vilket markeras med negativt saldo. Vinner spelaren är han åter solid, och kan fortsätta spela. I annat fall förlorar spelaren, vars negativa kapital omvandlas till positivt dito och läggs på potten.</p>
         <img src="{{ asset('build/images/poker/poker-1.avif') }}" width="1000" alt="Poker">
-    </section>
-    <section class="center">
-        <a href="{{ path('proj_poker') }}"><button type="button" class="humongous">♦️ Spela poker ♣️</button></a>
+        <p>Croupieren <strong>bränner</strong> nu ett kort, som återförs till leken av kastade kort. Därefter rullas floppen ut, tre öppna kort som spelarna kan kombinera till en lämplig hand. Spelarnas vad i andra rundan baseras på denna analys, och proceduren är identisk som under <strong>pre-flop</strong>, men med skillnad att spelaren till vänster om croupieren inleder satsningen.</p>
+        <p>Croupieren bränner ytterligare ett kort, som återförs till kastleken. Därefter visas ett fjärde gemensamt kort (turn), varefter ännu en satsningsrunda sker. Proceduren återupprepas med ett femte kort (river) och en avslutande satsningsrunda.</p>
+        <p>Därefter sker <strong>visning</strong> (showdown), om minst två spelare återstår, i annat fall vinner enda kvarvarande spelare. Under visningen vänds alla kort, varvid bästa hand tar hem hela potten. Vid oavgjort delas potten mellan vinnande spelare.</p>
+        <p>Bästa hand ges i fallande ordning av:</p>
+        <ul>
+            <li>färgstege</li>
+            <li>fyrtal</li>
+            <li>kåk</li>
+            <li>färg</li>
+            <li>stege</li>
+            <li>triss</li>
+            <li>tvåpar</li>
+            <li>par</li>
+            <li>högsta kort</li>
+        </ul>
+        <p>Vid lika, exempelvis par eller tvåpar av lika valörer, blir övriga kort (kickers) avgörande. Vid helt lika delas potten.</p>
+        <p>Ess räknas som 14 i poängvärde, utom i fall då den kan nyttjas för en stege eller färgstege, då kortet kan ta värdet 1. Kortleken är en standardlek om 52 kort utan jokrar.</p>
+        <p>Kort från spelare som lägger sig läggs i kastleken. Efter avslutad omgång förs bordets kort och kastleken samman med kortleken, som blandas på nytt. Spelet avslutas när bara en spelare återstår.</p>
     </section>
 {% endblock %}

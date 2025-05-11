@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 use App\Game21\Player;
 
 /**
- * Test cases for class Card.
+ * Test cases for class Player.
  */
 class PlayerTest extends TestCase
 {

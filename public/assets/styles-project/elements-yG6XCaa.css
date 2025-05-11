@@ -1,0 +1,149 @@
+html {
+  font-size: 100%;
+  background-color: var(--velour);
+  color: var(--cotinga-purple);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Bembo-Regular, serif;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  hyphens: auto;
+  text-wrap: balance;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ol,
+ul {
+  margin-left: 2rem;
+  margin-bottom: 1rem;;
+}
+
+main {
+  flex-grow: 1;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+footer {
+  flex-shrink: 0;
+  z-index: 100;
+  background-color: var(--depths-of-night);
+  background-image: radial-gradient(circle farthest-corner, var(--depths-of-night) 20%, var(--bellflower) 80%);
+  color: var(--white);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0.5rem;
+  position: sticky;
+  bottom: 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  padding: 0.5rem;
+  color: var(--white);
+  font-weight: bold;
+  font-variant: small-caps;
+  font-family: Bembo-Bold, serif;
+  background-image: radial-gradient(circle farthest-corner, var(--incarnadine) 20%, var(--highlighter-lavender) 80%);
+}
+
+nav {
+  text-align: center;
+  margin: 0 auto;
+}
+
+nav ul li {
+  display: inline;
+}
+
+* a, * a:link, * a:visited, * a:hover {
+  color: inherit;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+a.active {
+  color: var(--incarnadine) !important;
+}
+
+img {
+  max-width: 100% !important;
+  max-height: 100%;
+  object-fit: scale-down;
+  border-radius: 2rem;
+  padding: 0.5rem 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Bembo-Bold, serif;
+  color: var(--galactic-cruise);
+  margin-bottom: 1rem;
+  border-bottom: thin double var(--incarnadine);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 1.4rem;
+}
+
+em, figcaption {
+  font-family: Bembo-Italic, serif;
+}
+
+figcaption {
+  color: var(--evil-forces);
+}
+
+strong, th {
+  font-family: Bembo-Bold, serif;
+}
+
+code {
+  font-family: "Courier New", Courier, monospace;
+  color: var(--evil-forces);
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+figure {
+  margin-top: 2rem;
+}
+
+button, input, textarea {
+  font-family: Bembo-Regular, serif;
+  color: var(--noble-purple);
+  background-color: var(--prussian-nights);
+  font-size: 1rem;;
+}
+
+button {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+table {
+  margin: 1rem auto;
+}
+
+th, td {
+  margin: 1rem;
+  padding: 0.2rem;
+}

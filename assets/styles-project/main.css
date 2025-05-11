@@ -19,7 +19,7 @@
 }
 
 .columns {
-  columns: auto auto;
+  columns: auto 18rem;
   column-gap: 1rem;
 }
 
@@ -80,5 +80,5 @@ input[type="number"] {
   position: absolute;
   top: 0.4rem;
   right: 0.4rem;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
