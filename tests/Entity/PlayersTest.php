@@ -24,10 +24,8 @@ class PlayersTest extends TestCase
         $players = new Players();
         $this->assertInstanceOf("\App\Entity\Players", $players);
 
-        $id = rand(0, 10);
-        $players->setId($id);
         $getId = $players->getId();
-        $this->assertEquals($id, $getId);
+        $this->assertEquals(null, $getId);
 
         $handle = rand(0, 10);
         $players->setHandle($handle);

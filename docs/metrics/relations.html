@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2025-05-11 18:39:20        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2025-05-13 02:24:54        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -318,18 +318,32 @@
         "relations": []
     },
     {
+        "name": "\\App\\Poker\\PlayerButtons",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Poker\\Community",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\App\\Poker\\Deck",
+        "name": "\\App\\Poker\\CommunityCards",
         "size": 3000,
         "relations": [
-            "\\App\\Poker\\DeckMethods",
-            "\\App\\Poker\\Hand",
-            "\\App\\Poker\\Card"
+            "\\App\\Poker\\Deck",
+            "\\App\\Poker\\Hand"
         ]
+    },
+    {
+        "name": "\\App\\Poker\\GameStates",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\HandFoundation",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Poker\\Hand",
@@ -337,7 +351,12 @@
         "relations": []
     },
     {
-        "name": "\\App\\Poker\\HandFoundation",
+        "name": "\\App\\Poker\\PlayerVars",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Deck",
         "size": 3000,
         "relations": []
     },
@@ -373,6 +392,11 @@
     },
     {
         "name": "\\App\\Poker\\Player",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\PlayerStates",
         "size": 3000,
         "relations": []
     },
@@ -460,6 +484,11 @@
         "relations": []
     },
     {
+        "name": "\\App\\Controller\\Poker\\PokerFetchCommunityController",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Controller\\Poker\\PokerResetController",
         "size": 3000,
         "relations": [
@@ -470,6 +499,11 @@
             "\\App\\Entity\\Players",
             "\\App\\Entity\\Community"
         ]
+    },
+    {
+        "name": "\\App\\Controller\\Poker\\PokerFetchPlayersController",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Controller\\Poker\\PokerSessionController",
@@ -488,8 +522,8 @@
             "\\App\\Controller\\Poker\\PokerSessionController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Doctrine\\Persistence\\ManagerRegistry",
-            "\\App\\Poker\\Community",
-            "\\App\\Poker\\Player"
+            "\\App\\Controller\\Poker\\PokerFetchCommunityController",
+            "\\App\\Controller\\Poker\\PokerFetchPlayersController"
         ]
     },
     {

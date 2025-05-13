@@ -15,14 +15,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Poker as Poker;
 use App\Entity as Entity;
-use App\Poker\Deck;
-use App\Poker\Player;
-use App\Poker\GameFoundation;
+use App\Controller\Poker as Controller;
 
 /**
  * The PokerGameController class.
  */
-class PokerGameController extends PokerSessionController
+class PokerGameController extends Controller\PokerSessionController
 {
     /**
      * The route for the poker game page.
@@ -30,41 +28,19 @@ class PokerGameController extends PokerSessionController
     #[Route("/proj/poker", name: "proj_poker")]
     public function projPoker(ManagerRegistry $doctrine): Response
     {
-        $entityManager = $doctrine->getManager();
-
-        $community = new Poker\Community();
-
-        $repository = $entityManager->getRepository(Entity\Community::class);
-        $res = $repository->findAll()[0];
-        $community->deck->addToDeck(array_map('intval', $res->getDeck()));
-        $community->discarded->addToDeck(array_map('intval', $res->getDiscarded()));
-        $community->hand->addToHand(array_map('intval', $res->getHand()));
-        $community->__set("status", (int) $res->getStatus());
-        $community->__set("pot", (int) $res->getPot());
-        $community->__set("raises", (int) $res->getRaises());
-
-        $players = [];
-
-        $repository = $entityManager->getRepository(Entity\Players::class);
-        $results = $repository->findAll();
-
-        foreach ($results as $res) {
-            $player = new Player();
-            $player->__set("handle", $res->getHandle());
-            $player->hand->addToHand(array_map('intval', $res->getHand()));
-            $player->__set("handle", $res->getHandle());
-            $player->__set("cash", $res->getCash());
-            $player->__set("bet", $res->getBet());
-            $player->__set("latestAction", $res->getLatestAction());
-            $player->__set("dealer", $res->isDealer());
-            $player->__set("smallBlind", $res->isSmallBlind());
-            $player->__set("bigBlind", $res->isBigBlind());
-            $players[] = $player;
-        }
-
         $this->checkSession();
-        return $this->render('poker/poker.html.twig', ["community" => $community, "players" => $players]);
+
+        $community = new Controller\PokerFetchCommunityController();
+        $players = new Controller\PokerFetchPlayersController();
+
+        $data = [
+            "community" => $community->fetchCommunity($doctrine),
+            "players" => $players->fetchPlayers($doctrine)
+        ];
+
+        return $this->render('poker/poker.html.twig', $data);
     }
+
 
     /**
      * POST route for branching action.

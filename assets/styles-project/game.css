@@ -3,12 +3,12 @@
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 2fr 3fr 7fr;
+  grid-template-rows: 2fr 3fr 7fr 1fr;
   grid-template-areas:
-    'action action action'
-    'player1 pot player2'
-    'player1 community player2'
-    'player1 player0 player2';
+    'player1  pot       player2'
+    'player1  community player2'
+    'player1  player0   player2'
+    'action   action    action';
   grid-gap: 0;
 
   align-content: space-between;
@@ -22,7 +22,7 @@
 
   height: calc(100vh - 150px);
   width: 100%;
-  min-width: 400px;
+  min-width: 300px;
   min-height: 500px;
 }
 
@@ -31,20 +31,23 @@
   text-align: center;
   max-height: 35vh;
   border-top: thin dashed var(--invasive-indigo);
+  z-index: 1000;
 }
 
 .grid-player1 {
   grid-area: player1;
   text-align: left;
-  max-height: 65vh;
+  max-height: 75vh;
   border-right: thin dashed var(--invasive-indigo);
+  z-index: 1000;
 }
 
 .grid-player2 {
   grid-area: player2;
   text-align: right;
-  max-height: 65vh;
+  max-height: 75vh;
   border-left: thin dashed var(--invasive-indigo);
+  z-index: 1000;
 }
 
 .grid-pot {
@@ -59,7 +62,6 @@
   align-content: center;
   justify-content: center;
   color: var(--noble-purple);
-  font-size: 130%;
 }
 
 .grid-community {
@@ -196,6 +198,7 @@
 }
 
 .info-table {
+  table-layout: fixed;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -212,6 +215,7 @@
 .td-action {
   width: 50%;
   padding: 0 2rem;
+  padding: 1rem;
 }
 
 .td-badge {
@@ -267,7 +271,7 @@
 .player0 {
   bottom: -1rem;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, 60%);
 }
 
 .player1 {
@@ -284,4 +288,15 @@
 
 .dealer {
   width: 4rem;
+}
+
+.statustext {
+  text-shadow:
+    1px 1px 2px var(--evil-forces),
+    0 0 1rem var(--deep-blush),
+    0 0 0.4rem var(--depths-of-night);
+}
+
+.divider {
+  border-right: thin solid var(--evil-forces);
 }

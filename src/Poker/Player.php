@@ -9,51 +9,74 @@ declare (strict_types=1);
 
 namespace App\Poker;
 
-use App\Poker\Hand;
-
 /**
  * Properties and methods for the Player class.
  */
-class Player
+class Player extends PlayerVars
 {
-    private bool $dealer;
-    private bool $smallBlind;
-    private bool $bigBlind;
-    public Hand $hand;
+    private Hand $hand;
+    private PlayerStates $state;
+    private string $stateText;
 
-    public function __construct(
-        private int $handle = 0,
-        private int $cash = 0,
-        private int $bet = 0,
-        private int $latestAction = 0,
-    ) {
+    /**
+     * Convenient to make a hand at construction.
+     */
+    public function __construct()
+    {
         $this->hand = new Hand();
-        $this->dealer = false;
-        $this->smallBlind = false;
-        $this->bigBlind = false;
     }
 
     /**
-     * Magic get, for Twig.
+     * Get for hand.
      */
-    public function __get(string $key): mixed
+    public function gethand(): Hand
     {
-        return $this->$key;
+        return $this->hand;
     }
 
     /**
-     * Magic isset.
+     * Set for hand.
      */
-    public function __isset(string $key): bool
+    public function setHand(Hand $hand): static
     {
-        return isset($this->$key);
+        $this->hand = $hand;
+
+        return $this;
     }
 
     /**
-     * Magic set, for Twig.
+     * Get for state.
      */
-    public function __set(string $key, mixed $value)
+    public function getState(): PlayerStates
     {
-        $this->$key = $value;
+        return $this->state;
+    }
+
+    /**
+     * Set for state.
+     */
+    public function setState(PlayerStates $state): static
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+
+    /**
+     * Get for state text.
+     */
+    public function getStateText(): string
+    {
+        return $this->stateText;
+    }
+
+    /**
+     * Set for state text.
+     */
+    public function setStateText(string $stateText): static
+    {
+        $this->stateText = $stateText;
+
+        return $this;
     }
 }

@@ -10,8 +10,10 @@ declare(strict_types=1);
 namespace App\Tests\Poker;
 
 use PHPUnit\Framework\TestCase;
-use App\Poker\Hand;
 use App\Poker\Community;
+use App\Poker\CommunityCards;
+use App\Poker\Deck;
+use App\Poker\Hand;
 
 /**
  * Test cases for class Community.
@@ -25,30 +27,26 @@ class CommunityTest extends TestCase
     {
         $community = new Community();
         $this->assertInstanceOf("\App\Poker\Community", $community);
-        $this->assertTrue($community->__isset('status'));
-        $this->assertTrue($community->__isset('deck'));
-        $this->assertTrue($community->__isset('discarded'));
-        $this->assertTrue($community->__isset('hand'));
-        $this->assertTrue($community->__isset('pot'));
-        $this->assertTrue($community->__isset('raises'));
-    }
+        $this->assertEquals($community->getRaises(), 0);
 
-    /**
-     * Test getter and setter
-     */
-    public function testGetterAndSetter(): void
-    {
-        $community = new Community();
-        $status = $community->__get('status');
-        $community->__set('status', 50);
-        $this->assertNotEquals($status, $community->__get('status'));
+        $cards = new CommunityCards();
+        $this->assertInstanceOf("\App\Poker\CommunityCards", $cards);
+        $this->assertCount(0, $cards->getDeck()->get());
+        $this->assertCount(0, $cards->getDiscarded()->get());
+        $this->assertCount(0, $cards->getHand()->get());
 
-        $pot = $community->__get('pot');
-        $community->__set('pot', 50);
-        $this->assertNotEquals($pot, $community->__get('pot'));
+        $deck = new Deck();
+        $deck->resetDeck();
 
-        $raises = $community->__get('raises');
-        $community->__set('raises', 50);
-        $this->assertNotEquals($raises, $community->__get('raises'));
+        $cards->setDeck($deck);
+        $this->assertCount(52, $cards->getDeck()->get());
+
+        $cards->setDiscarded($deck);
+        $this->assertCount(52, $cards->getDiscarded()->get());
+
+        $hand = new Hand();
+        $hand->addToHand(array_keys($deck->get()));
+        $cards->setHand($hand);
+        $this->assertCount(52, $cards->getHand()->get());
     }
 }

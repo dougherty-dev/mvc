@@ -15,6 +15,7 @@ use App\Poker\DeckMethods;
 use App\Poker\Deck;
 use App\Poker\FaceMethods;
 use App\Poker\Card;
+use App\Poker\HandFoundation;
 use App\Poker\Hand;
 
 /**
@@ -45,6 +46,7 @@ class DeckTest extends TestCase
         $this->assertInstanceOf("\App\Poker\DeckMethods", new DeckMethods());
         $this->assertInstanceOf("\App\Poker\FaceMethods", new FaceMethods());
         $this->assertInstanceOf("\App\Poker\Card", new Card(1));
+        $this->assertInstanceOf("\App\Poker\HandFoundation", new HandFoundation());
         $this->assertInstanceOf("\App\Poker\Hand", new Hand());
     }
 

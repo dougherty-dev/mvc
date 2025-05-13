@@ -3,7 +3,8 @@
 {% block title %}Texas Hold’em{% endblock %}
 
 {% block body %}
-{{ dump(community) }}
+    {{ dump(community) }}
+    {{ dump(players) }}
     <section>
         <div class="poker-grid center">
             <div class="player0">👱🏻‍♀️</div>
@@ -12,7 +13,7 @@
             <div class="grid-action">
                 <table class="action-table">
                     <tr>
-                        <td class="td-action right">info</td>
+                        <td class="td-action right divider">{{ community.stateText }}</td>
                         <td class="td-action left">action</td>
                     </tr>
                 </table>
@@ -33,6 +34,9 @@
                                 <td class="td-badge"><img src="{{ asset('build/images/poker/badge-big-blind.avif') }}" width="70" alt="Big Blind"></td>
                                 <td class="td-chips">{{ players[0].cash }}</td>
                             </tr>
+                            <tr>
+                                <td colspan="2" class="statustext">{{ players[0].stateText }}</td>
+                            </tr>
                         </table>
                     </div>
                     <div class="grid-p0-bet">{{ players[0].bet }}</div>
@@ -49,6 +53,9 @@
                             <tr>
                                 <td class="td-chips">{{ players[1].cash }}</td>
                                 <td class="td-badge"><img src="{{ asset('build/images/poker/badge-small-blind.avif') }}" width="70" alt="Small Blind"></td>
+                            <tr>
+                                <td colspan="2" class="statustext">{{ players[1].stateText }}</td>
+                            </tr>
                             </tr>
                         </table>
                     </div>
@@ -69,6 +76,9 @@
                             <tr>
                                 <td class="td-badge"></td>
                                 <td class="td-chips">{{ players[2].cash }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="statustext">{{ players[0].stateText }}</td>
                             </tr>
                         </table>
                     </div>

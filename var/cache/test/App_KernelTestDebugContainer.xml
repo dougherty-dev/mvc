@@ -537,6 +537,8 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryViewController"/>
       </call>
     </service>
+    <service id="App\Controller\Poker\PokerFetchCommunityController" class="App\Controller\Poker\PokerFetchCommunityController" autowire="true" autoconfigure="true"/>
+    <service id="App\Controller\Poker\PokerFetchPlayersController" class="App\Controller\Poker\PokerFetchPlayersController" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\Poker\PokerGameController" class="App\Controller\Poker\PokerGameController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -613,12 +615,8 @@
     <service id="App\Poker\Card" class="App\Poker\Card" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;App\Poker\Card&quot;: argument &quot;$value&quot; of method &quot;__construct()&quot; is type-hinted &quot;int&quot;, you should configure its value explicitly."/>
     </service>
-    <service id="App\Poker\Community" class="App\Poker\Community" autowire="true" autoconfigure="true">
-      <argument>0</argument>
-      <argument type="service" id="App\Poker\Deck"/>
-      <argument type="service" id="App\Poker\Deck"/>
-      <argument type="service" id="App\Poker\Hand"/>
-    </service>
+    <service id="App\Poker\Community" class="App\Poker\Community" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\CommunityCards" class="App\Poker\CommunityCards" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Deck" class="App\Poker\Deck" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\DeckFoundation" class="App\Poker\DeckFoundation" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\DeckMethods" class="App\Poker\DeckMethods" autowire="true" autoconfigure="true"/>
@@ -630,6 +628,8 @@
       <tag name="container.error" message="Cannot autowire service &quot;App\Poker\Log&quot;: argument &quot;$time&quot; of method &quot;__construct()&quot; references class &quot;DateTime&quot; but no such service exists."/>
     </service>
     <service id="App\Poker\Player" class="App\Poker\Player" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\PlayerButtons" class="App\Poker\PlayerButtons" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\PlayerVars" class="App\Poker\PlayerVars" autowire="true" autoconfigure="true"/>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -1967,6 +1967,8 @@
         <argument key="App\Cards\DeckMethods" type="service_closure" id="App\Cards\DeckMethods" on-invalid="ignore_uninitialized"/>
         <argument key="App\Cards\DeckRepresentations" type="service_closure" id="App\Cards\DeckRepresentations" on-invalid="ignore_uninitialized"/>
         <argument key="App\Cards\Hand" type="service_closure" id="App\Cards\Hand" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Controller\Poker\PokerFetchCommunityController" type="service_closure" id="App\Controller\Poker\PokerFetchCommunityController" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Controller\Poker\PokerFetchPlayersController" type="service_closure" id="App\Controller\Poker\PokerFetchPlayersController" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game21\Game" type="service_closure" id="App\Game21\Game" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game21\GameActions" type="service_closure" id="App\Game21\GameActions" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game21\GameActionsBankDone" type="service_closure" id="App\Game21\GameActionsBankDone" on-invalid="ignore_uninitialized"/>
@@ -1991,6 +1993,7 @@
         <argument key="App\Game21\HandScoreJokers" type="service_closure" id="App\Game21\HandScoreJokers" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game21\Player" type="service_closure" id="App\Game21\Player" on-invalid="ignore_uninitialized"/>
         <argument key="App\Poker\Community" type="service_closure" id="App\Poker\Community" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Poker\CommunityCards" type="service_closure" id="App\Poker\CommunityCards" on-invalid="ignore_uninitialized"/>
         <argument key="App\Poker\Deck" type="service_closure" id="App\Poker\Deck" on-invalid="ignore_uninitialized"/>
         <argument key="App\Poker\DeckFoundation" type="service_closure" id="App\Poker\DeckFoundation" on-invalid="ignore_uninitialized"/>
         <argument key="App\Poker\DeckMethods" type="service_closure" id="App\Poker\DeckMethods" on-invalid="ignore_uninitialized"/>
@@ -1999,6 +2002,8 @@
         <argument key="App\Poker\Hand" type="service_closure" id="App\Poker\Hand" on-invalid="ignore_uninitialized"/>
         <argument key="App\Poker\HandFoundation" type="service_closure" id="App\Poker\HandFoundation" on-invalid="ignore_uninitialized"/>
         <argument key="App\Poker\Player" type="service_closure" id="App\Poker\Player" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Poker\PlayerButtons" type="service_closure" id="App\Poker\PlayerButtons" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Poker\PlayerVars" type="service_closure" id="App\Poker\PlayerVars" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\BookRepository" type="service_closure" id="App\Repository\BookRepository" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\CommunityRepository" type="service_closure" id="App\Repository\CommunityRepository" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\LogRepository" type="service_closure" id="App\Repository\LogRepository" on-invalid="ignore_uninitialized"/>

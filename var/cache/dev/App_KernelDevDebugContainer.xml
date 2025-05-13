@@ -565,6 +565,8 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryViewController"/>
       </call>
     </service>
+    <service id="App\Controller\Poker\PokerFetchCommunityController" class="App\Controller\Poker\PokerFetchCommunityController" autowire="true" autoconfigure="true"/>
+    <service id="App\Controller\Poker\PokerFetchPlayersController" class="App\Controller\Poker\PokerFetchPlayersController" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\Poker\PokerGameController" class="App\Controller\Poker\PokerGameController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -641,12 +643,8 @@
     <service id="App\Poker\Card" class="App\Poker\Card" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;App\Poker\Card&quot;: argument &quot;$value&quot; of method &quot;__construct()&quot; is type-hinted &quot;int&quot;, you should configure its value explicitly."/>
     </service>
-    <service id="App\Poker\Community" class="App\Poker\Community" autowire="true" autoconfigure="true">
-      <argument>0</argument>
-      <argument type="service" id="App\Poker\Deck"/>
-      <argument type="service" id="App\Poker\Deck"/>
-      <argument type="service" id="App\Poker\Hand"/>
-    </service>
+    <service id="App\Poker\Community" class="App\Poker\Community" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\CommunityCards" class="App\Poker\CommunityCards" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Deck" class="App\Poker\Deck" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\DeckFoundation" class="App\Poker\DeckFoundation" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\DeckMethods" class="App\Poker\DeckMethods" autowire="true" autoconfigure="true"/>
@@ -658,6 +656,8 @@
       <tag name="container.error" message="Cannot autowire service &quot;App\Poker\Log&quot;: argument &quot;$time&quot; of method &quot;__construct()&quot; references class &quot;DateTime&quot; but no such service exists."/>
     </service>
     <service id="App\Poker\Player" class="App\Poker\Player" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\PlayerButtons" class="App\Poker\PlayerButtons" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\PlayerVars" class="App\Poker\PlayerVars" autowire="true" autoconfigure="true"/>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>

@@ -1,8 +1,9 @@
 <?php
 
 /**
- * Entity class for ORM Players in PlayersRepository poker.
- * DB field definitions. Getters and setters.
+ * Entity class for ORM DB layer Players in PlayersRepository poker.
+ * DB field definitions.
+ * Getters and setters.
  * Author: nido24
  */
 
@@ -15,7 +16,9 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * dromedarCase not used in SQL…
+ * Class Players for ORM DB layer.
+ *
+ * Note: dromedarCase not used in SQL.
  * @SuppressWarnings("CamelCase")
  */
 #[ORM\Entity(repositoryClass: PlayersRepository::class)]
@@ -24,8 +27,14 @@ class Players
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    /**
+     * @phpstan-ignore-next-line
+     */
     private ?int $id = null;
 
+    /**
+     * handle: player id, here just [0, 1, 2].
+     */
     #[ORM\Column(type: Types::SMALLINT)]
     private ?int $handle = null;
 
@@ -35,21 +44,39 @@ class Players
     #[ORM\Column(type: Types::SIMPLE_ARRAY)]
     private array $hand = [];
 
+    /**
+     * cash: how much money a player has.
+     */
     #[ORM\Column]
     private ?int $cash = null;
 
+    /**
+     * bet: the current total bet for a player.
+     */
     #[ORM\Column]
     private ?int $bet = null;
 
+    /**
+     * latest action: numerical index for a set of states.
+     */
     #[ORM\Column(type: Types::SMALLINT)]
     private ?int $latest_action = null;
 
+    /**
+     * dealer: whether a player is dealer.
+     */
     #[ORM\Column]
     private ?bool $dealer = null;
 
+    /**
+     * small_blind: whether a player has the small blind.
+     */
     #[ORM\Column]
     private ?bool $small_blind = null;
 
+    /**
+     * big_blind: whether a player has the big blind.
+     */
     #[ORM\Column]
     private ?bool $big_blind = null;
 
@@ -59,16 +86,6 @@ class Players
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    /**
-     * Setter for ID.
-     */
-    public function setId(int $id): static
-    {
-        $this->id = $id;
-
-        return $this;
     }
 
     /**

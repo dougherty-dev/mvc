@@ -9,45 +9,104 @@ declare (strict_types=1);
 
 namespace App\Poker;
 
-use App\Poker\Hand;
-use App\Poker\Deck;
-
 /**
  * Properties and methods for the Community class.
  */
-class Community
+class Community extends CommunityCards
 {
-    public function __construct(
-        public int $status = 0,
-        public Deck $deck = new Deck(),
-        public Deck $discarded = new Deck(),
-        public Hand $hand = new Hand(),
-        private int $pot = 0,
-        private int $raises = 0,
-    ) {
+    private GameStates $state;
+    private string $stateText;
+    private int $status = 0;
+    private int $pot = 0;
+    private int $raises = 0;
+
+    /**
+     * Get for state.
+     */
+    public function getState(): GameStates
+    {
+        return $this->state;
     }
 
     /**
-     * Magic get, for Twig.
+     * Set for state.
      */
-    public function __get(string $key): int
+    public function setState(GameStates $state): static
     {
-        return $this->$key;
+        $this->state = $state;
+
+        return $this;
     }
 
     /**
-     * Magic isset.
+     * Get for state text.
      */
-    public function __isset(string $key): bool
+    public function getStateText(): string
     {
-        return isset($this->$key);
+        return $this->stateText;
     }
 
     /**
-     * Magic set, for Twig.
+     * Set for state text.
      */
-    public function __set(string $key, int $value)
+    public function setStateText(string $stateText): static
     {
-        $this->$key = $value;
+        $this->stateText = $stateText;
+
+        return $this;
+    }
+
+    /**
+     * Get for status.
+     */
+    public function getStatus(): int
+    {
+        return $this->status;
+    }
+
+    /**
+     * Set for status.
+     */
+    public function setStatus(int $status): static
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get for pot.
+     */
+    public function getPot(): int
+    {
+        return $this->pot;
+    }
+
+    /**
+     * Set for pot.
+     */
+    public function setPot(int $pot): static
+    {
+        $this->pot = $pot;
+
+        return $this;
+    }
+
+    /**
+     * Get for raises.
+     */
+    public function getRaises(): int
+    {
+        return $this->raises;
+    }
+
+    /**
+     * Set for raises.
+     */
+    public function setRaises(int $raises): static
+    {
+        $this->raises = $raises;
+
+        return $this;
     }
 }

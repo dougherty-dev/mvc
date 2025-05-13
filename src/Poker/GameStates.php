@@ -14,26 +14,28 @@ namespace App\Poker;
  */
 enum GameStates: int
 {
-    case NewGame =      10;
+    case None = 0;
+    case NewGame = 10;
     case ChooseDealer = 20;
-    case PreFlop =      30;
-    case Flop =         40;
-    case Turn =         50;
-    case River =        60;
-    case Showdown =     70;
-    case EndGame =      80;
+    case PreFlop = 30;
+    case Flop = 40;
+    case Turn = 50;
+    case River = 60;
+    case Showdown = 70;
+    case EndGame = 80;
 
     public function stateText(): string
     {
         return match($this) {
-            GameStates::NewGame =>      'Nytt spel',
-            GameStates::ChooseDealer => 'Välj croupier',
-            GameStates::PreFlop =>      'Pre-flop',
-            GameStates::Flop =>         'Flop',
-            GameStates::Turn =>         'Turn',
-            GameStates::River =>        'River',
-            GameStates::Showdown =>     'Showdown',
-            GameStates::EndGame =>      'Spel slut',
+            GameStates::None            => 'Inget spel pågår',
+            GameStates::NewGame         => 'Nytt spel',
+            GameStates::ChooseDealer    => 'Välj croupier',
+            GameStates::PreFlop         => 'Pre-flop',
+            GameStates::Flop            => 'Flop',
+            GameStates::Turn            => 'Turn',
+            GameStates::River           => 'River',
+            GameStates::Showdown        => 'Showdown',
+            GameStates::EndGame         => 'Spel slut',
         };
     }
 }

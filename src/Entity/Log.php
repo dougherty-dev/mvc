@@ -13,6 +13,9 @@ namespace App\Entity;
 use App\Repository\LogRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * Class Log for ORM DB layer.
+ */
 #[ORM\Entity(repositoryClass: LogRepository::class)]
 class Log
 {
@@ -41,7 +44,6 @@ class Log
     public function setId(int $id): static
     {
         $this->id = $id;
-
         return $this;
     }
 
@@ -59,7 +61,6 @@ class Log
     public function setEvent(string $event): static
     {
         $this->event = $event;
-
         return $this;
     }
 
@@ -77,7 +78,6 @@ class Log
     public function setTime(\DateTime $time): static
     {
         $this->time = $time;
-
         return $this;
     }
 }

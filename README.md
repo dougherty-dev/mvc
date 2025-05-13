@@ -13,7 +13,7 @@ Här ges en gaffel av kursrepo för MVC @ BTH, omfattande kursmoment 01–06+10.
 - Enhetstestning: PHPUnit och WebTestCase
 - ORM/Databas: Doctrine, med tillämpning i CRUD för ett litet bibliotek
 - Automatiserad testning: PhpMetrics och Scrutinizer
-- Projekt: Texas Hold’em, implementation av en mer komplicerat struktur
+- Projekt: Texas Hold’em, implementation av en mer komplicerad struktur
 
 ### Klona repo
 

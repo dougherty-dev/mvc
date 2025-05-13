@@ -14,6 +14,12 @@ use App\Repository\CommunityRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * Class Players for ORM DB layer.
+ *
+ * Note: dromedarCase not used in SQL.
+ * @SuppressWarnings("CamelCase")
+ */
 #[ORM\Entity(repositoryClass: CommunityRepository::class)]
 class Community
 {
