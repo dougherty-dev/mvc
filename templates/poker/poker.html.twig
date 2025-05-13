@@ -3,46 +3,98 @@
 {% block title %}Texas Hold’em{% endblock %}
 
 {% block body %}
-    {{ dump(community) }}
-    {{ dump(players) }}
     <section>
         <div class="poker-grid center">
-            <div class="player0">👱🏻‍♀️</div>
-            <div class="player1">👩🏼‍💻</div>
-            <div class="player2">🧑🏼‍💻<br><img class="dealer" src="{{ asset('build/images/poker/badge-dealer.avif') }}" width="60" alt="Dealer"></div>
+            <div class="player0">
+                <table>
+                    <tr>
+                        <td>👱🏻‍♀️</td>
+                        <td>
+                        {% if players[0].dealer %}
+                            <img class="badge" src="{{ asset('build/images/poker/badge-dealer.avif') }}" width="60" alt="Dealer">
+                        {% endif %}
+                        {% if players[0].smallBlind %}
+                            <img class="badge" src="{{ asset('build/images/poker/badge-small-blind.avif') }}" width="70" alt="Small Blind">
+                        {% elseif players[0].bigBlind %}
+                            <img class="badge" src="{{ asset('build/images/poker/badge-big-blind.avif') }}" width="70" alt="Big Blind">
+                        {% endif %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="player1">
+                <table>
+                    <tr>
+                        <td>👩🏼‍💻</td>
+                    </tr>
+                    <tr>
+                        <td>
+                        {% if players[1].dealer %}
+                            <img class="badge" src="{{ asset('build/images/poker/badge-dealer.avif') }}" width="60" alt="Dealer">
+                        {% endif %}
+                        {% if players[1].smallBlind %}
+                            <img class="badge" src="{{ asset('build/images/poker/badge-small-blind.avif') }}" width="70" alt="Small Blind">
+                        {% elseif players[1].bigBlind %}
+                            <img class="badge" src="{{ asset('build/images/poker/badge-big-blind.avif') }}" width="70" alt="Big Blind">
+                        {% endif %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="player2">
+                <table>
+                    <tr>
+                        <td>🧑🏼‍💻</td>
+                    </tr>
+                    <tr>
+                        <td>
+                        {% if players[2].dealer %}
+                            <img class="badge" src="{{ asset('build/images/poker/badge-dealer.avif') }}" width="60" alt="Dealer">
+                        {% endif %}
+                        {% if players[2].smallBlind %}
+                            <img class="badge" src="{{ asset('build/images/poker/badge-small-blind.avif') }}" width="70" alt="Small Blind">
+                        {% elseif players[2].bigBlind %}
+                            <img class="badge" src="{{ asset('build/images/poker/badge-big-blind.avif') }}" width="70" alt="Big Blind">
+                        {% endif %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
             <div class="grid-action">
                 <table class="action-table">
                     <tr>
-                        <td class="td-action right divider">{{ community.stateText }}</td>
-                        <td class="td-action left">action</td>
+                        <td class="action right divider">{{ community.stateText }}</td>
+                        <td class="action left">
+                            <form method="POST" action="{{ path(action[2]) }}">
+                                <button type="submit">{{ action[0] }}</button>
+                            </form>
+                        </td>
                     </tr>
                 </table>
             </div>
             <div class="grid-pot">{{ community.pot }}</div>
             <div class="grid-community">
-                <img src="{{ asset('build/images/cards/0.svg') }}" width="50" class="poker-card" alt="card">
-                <img src="{{ asset('build/images/cards/2.svg') }}" width="50" class="poker-card" alt="card">
-                <img src="{{ asset('build/images/cards/37.svg') }}" width="50" class="poker-card" alt="card">
-                <img src="{{ asset('build/images/cards/13.svg') }}" width="50" class="poker-card" alt="card">
-                <img src="{{ asset('build/images/cards/50.svg') }}" width="50" class="poker-card" alt="card">
+                {% for card in community.hand.hand %}
+                <img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="50" class="poker-card" alt="{{ app.session.get('deckIntValues')[card.value] }}" title="{{ app.session.get('deckTextValues')[card.value] }}">
+                {% endfor %}
             </div>
             <div class="grid-player0">
                 <div class="player0-grid">
                     <div class="grid-p0-info">
                         <table class="info-table">
                             <tr>
-                                <td class="td-badge"><img src="{{ asset('build/images/poker/badge-big-blind.avif') }}" width="70" alt="Big Blind"></td>
-                                <td class="td-chips">{{ players[0].cash }}</td>
+                                <td class="chips">{{ players[0].cash }}</td>
                             </tr>
                             <tr>
-                                <td colspan="2" class="statustext">{{ players[0].stateText }}</td>
+                                <td class="statustext">{{ players[0].stateText }}</td>
                             </tr>
                         </table>
                     </div>
                     <div class="grid-p0-bet">{{ players[0].bet }}</div>
                     <div class="grid-p0-cards">
-                        <img src="{{ asset('build/images/cards/back.svg') }}" width="50" class="poker-card" alt="card">
-                        <img src="{{ asset('build/images/cards/back.svg') }}" width="50" class="poker-card" alt="card">
+                        {% for card in players[0].hand.hand %}
+                        <img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="50" class="poker-card" alt="{{ app.session.get('deckIntValues')[card.value] }}" title="{{ app.session.get('deckTextValues')[card.value] }}">
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -51,21 +103,18 @@
                     <div class="grid-p1-info">
                         <table class="info-table">
                             <tr>
-                                <td class="td-chips">{{ players[1].cash }}</td>
-                                <td class="td-badge"><img src="{{ asset('build/images/poker/badge-small-blind.avif') }}" width="70" alt="Small Blind"></td>
-                            <tr>
-                                <td colspan="2" class="statustext">{{ players[1].stateText }}</td>
+                                <td class="chips">{{ players[1].cash }}</td>
                             </tr>
+                            <tr>
+                                <td class="statustext">{{ players[1].stateText }}</td>
                             </tr>
                         </table>
                     </div>
                     <div class="grid-p1-bet">{{ players[1].bet }}</div>
                     <div class="grid-p1-cards">
-                        <img src="{{ asset('build/images/cards/0.svg') }}" width="50" class="poker-card" alt="card">
-                        <img src="{{ asset('build/images/cards/2.svg') }}" width="50" class="poker-card" alt="card">
-                        <img src="{{ asset('build/images/cards/37.svg') }}" width="50" class="poker-card" alt="card">
-                        <img src="{{ asset('build/images/cards/13.svg') }}" width="50" class="poker-card" alt="card">
-                        <img src="{{ asset('build/images/cards/50.svg') }}" width="50" class="poker-card" alt="card">
+                        {% for card in players[1].hand.hand %}
+                        <img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="50" class="poker-card" alt="{{ app.session.get('deckIntValues')[card.value] }}" title="{{ app.session.get('deckTextValues')[card.value] }}">
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -74,24 +123,24 @@
                     <div class="grid-p2-info">
                         <table class="info-table">
                             <tr>
-                                <td class="td-badge"></td>
-                                <td class="td-chips">{{ players[2].cash }}</td>
+                                <td class="chips">{{ players[2].cash }}</td>
                             </tr>
                             <tr>
-                                <td colspan="2" class="statustext">{{ players[0].stateText }}</td>
+                                <td class="statustext">{{ players[2].stateText }}</td>
                             </tr>
                         </table>
                     </div>
                     <div class="grid-p2-bet">{{ players[2].bet }}</div>
                     <div class="grid-p2-cards">
-                        <img src="{{ asset('build/images/cards/0.svg') }}" width="50" class="poker-card" alt="card">
-                        <img src="{{ asset('build/images/cards/2.svg') }}" width="50" class="poker-card" alt="card">
-                        <img src="{{ asset('build/images/cards/37.svg') }}" width="50" class="poker-card" alt="card">
-                        <img src="{{ asset('build/images/cards/13.svg') }}" width="50" class="poker-card" alt="card">
-                        <img src="{{ asset('build/images/cards/50.svg') }}" width="50" class="poker-card" alt="card">
+                        {% for card in players[2].hand.hand %}
+                        <img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="50" class="poker-card" alt="{{ app.session.get('deckIntValues')[card.value] }}" title="{{ app.session.get('deckTextValues')[card.value] }}">
+                        {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    {{ dump(community) }}
+    {{ dump(players) }}
+    {{ dump(action) }}
 {% endblock %}

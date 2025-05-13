@@ -23,6 +23,7 @@ enum Faces: string
         '🂱', '🂲', '🂳', '🂴', '🂵', '🂶', '🂷', '🂸', '🂹', '🂺', '🂻', '🂽', '🂾'
     ];
 
+    case Ace =      'A';
     case Two =      '2';
     case Three =    '3';
     case Four =     '4';
@@ -35,11 +36,11 @@ enum Faces: string
     case Jack =     'J';
     case Queen =    'Q';
     case King =     'K';
-    case Ace =      'A';
 
     public function faceValue(): int
     {
         return match($this) {
+            Faces::Ace =>      14,
             Faces::Two =>      2,
             Faces::Three =>    3,
             Faces::Four =>     4,
@@ -52,7 +53,6 @@ enum Faces: string
             Faces::Jack =>     11,
             Faces::Queen =>    12,
             Faces::King =>     13,
-            Faces::Ace =>      14
         };
     }
 

@@ -1,3 +1,7 @@
+.dojo {
+  overflow: hidden;
+}
+
 .poker-grid {
   position: relative;
 
@@ -54,7 +58,11 @@
   grid-area: pot;
   align-content: center;
   justify-content: center;
-  background: radial-gradient(circle closest-side, var(--orb-of-discord) 80%, var(--deep-blush) 99%, var(--transparent) 100%);
+  background:
+    radial-gradient(circle closest-side,
+    var(--orb-of-discord) 80%,
+    var(--deep-blush) 99%,
+    var(--transparent) 100%);
 }
 
 .grid-action {
@@ -69,6 +77,9 @@
   align-content: center;
   justify-content: center;
   max-height: 30vh;
+  background-color: var(--invasive-indigo);
+  border: thin solid var(--evil-forces);
+  border-radius: 2rem;
 }
 
 .grid-player0,
@@ -212,17 +223,13 @@
   text-align: center;
 }
 
-.td-action {
+.action {
   width: 50%;
   padding: 0 2rem;
   padding: 1rem;
 }
 
-.td-badge {
-  width: 50%;
-}
-
-.td-chips {
+.chips {
   position: relative;
   display: inline-grid;
 
@@ -231,11 +238,11 @@
   color: var(--deep-blush);
   background: radial-gradient(circle closest-side, var(--prussian-nights) 80%, var(--white) 99%, var(--transparent) 100%);
 
-  width: 50%;
+  width: min(16vw, 9vh);
   aspect-ratio: 1;
 }
 
-.td-chips::after {
+.chips::after {
   position: absolute;
   content: "";
 
@@ -253,10 +260,6 @@
       var(--black) 0 calc(360deg/var(--n) - var(--d)),
       var(--transparent) 0 calc(360deg/var(--n)));
   mask-composite: intersect;
-}
-
-.dojo {
-  overflow: hidden;
 }
 
 .player0,
@@ -286,8 +289,9 @@
   transform: translate(50%, -50%);
 }
 
-.dealer {
+.badge {
   width: 4rem;
+  margin-top: 0.5rem;
 }
 
 .statustext {

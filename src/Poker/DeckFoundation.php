@@ -24,7 +24,7 @@ class DeckFoundation
     /**
      * Zero the deck.
      */
-    public function empty(): void
+    public function emptyDeck(): void
     {
         $this->deck = [];
     }
@@ -34,7 +34,7 @@ class DeckFoundation
      *
      * @return array<int, Card>
      */
-    public function get(): array
+    public function getDeck(): array
     {
         return $this->deck;
     }

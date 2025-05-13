@@ -14,28 +14,28 @@ namespace App\Poker;
  */
 enum Suits: string
 {
-    case Clubs =    'C';
-    case Diamonds = 'D';
-    case Hearts =   'H';
-    case Spades =   'S';
+    case Clubs      = 'C';
+    case Diamonds   = 'D';
+    case Hearts     = 'H';
+    case Spades     = 'S';
 
     public function suitSymbol(): string
     {
         return match($this) {
-            Suits::Clubs =>    '♣️',
+            Suits::Clubs    => '♣️',
             Suits::Diamonds => '♦️',
-            Suits::Hearts =>   '♥️',
-            Suits::Spades =>   '♠️',
+            Suits::Hearts   => '♥️',
+            Suits::Spades   => '♠️',
         };
     }
 
     public function suitText(): string
     {
         return match($this) {
-            Suits::Clubs =>    'klöver ',
+            Suits::Clubs    => 'klöver ',
             Suits::Diamonds => 'ruter ',
-            Suits::Hearts =>   'hjärter ',
-            Suits::Spades =>   'spader ',
+            Suits::Hearts   => 'hjärter ',
+            Suits::Spades   => 'spader ',
         };
     }
 }

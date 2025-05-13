@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Controller\Poker\PokerHomeController;
 use App\Controller\Poker\PokerSessionController;
+use App\Kernel;
 
 /**
  * Test cases for class PokerHomeController.

@@ -31,22 +31,22 @@ class CommunityTest extends TestCase
 
         $cards = new CommunityCards();
         $this->assertInstanceOf("\App\Poker\CommunityCards", $cards);
-        $this->assertCount(0, $cards->getDeck()->get());
-        $this->assertCount(0, $cards->getDiscarded()->get());
-        $this->assertCount(0, $cards->getHand()->get());
+        $this->assertCount(0, $cards->getDeck()->getDeck());
+        $this->assertCount(0, $cards->getDiscarded()->getDeck());
+        $this->assertCount(0, $cards->getHand()->getHand());
 
         $deck = new Deck();
         $deck->resetDeck();
 
         $cards->setDeck($deck);
-        $this->assertCount(52, $cards->getDeck()->get());
+        $this->assertCount(52, $cards->getDeck()->getDeck());
 
         $cards->setDiscarded($deck);
-        $this->assertCount(52, $cards->getDiscarded()->get());
+        $this->assertCount(52, $cards->getDiscarded()->getDeck());
 
         $hand = new Hand();
-        $hand->addToHand(array_keys($deck->get()));
+        $hand->addToHand(array_keys($deck->getDeck()));
         $cards->setHand($hand);
-        $this->assertCount(52, $cards->getHand()->get());
+        $this->assertCount(52, $cards->getHand()->getHand());
     }
 }

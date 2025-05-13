@@ -22,7 +22,7 @@ class HandFoundation
     /**
      * @return array<int, Card>
      */
-    public function get(): array
+    public function getHand(): array
     {
         return $this->hand;
     }
@@ -30,7 +30,7 @@ class HandFoundation
     /**
      * Zero the hand.
      */
-    public function empty(): void
+    public function emptyHand(): void
     {
         $this->hand = [];
     }

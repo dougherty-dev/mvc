@@ -537,8 +537,19 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryViewController"/>
       </call>
     </service>
-    <service id="App\Controller\Poker\PokerFetchCommunityController" class="App\Controller\Poker\PokerFetchCommunityController" autowire="true" autoconfigure="true"/>
-    <service id="App\Controller\Poker\PokerFetchPlayersController" class="App\Controller\Poker\PokerFetchPlayersController" autowire="true" autoconfigure="true"/>
+    <service id="App\Controller\Poker\Begin\PokerGameBeginController" class="App\Controller\Poker\Begin\PokerGameBeginController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Poker\Begin\PokerGameBeginController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Poker\Begin\PokerGameBeginDetermineBadges" class="App\Controller\Poker\Begin\PokerGameBeginDetermineBadges" autowire="true" autoconfigure="true"/>
+    <service id="App\Controller\Poker\Begin\PokerGameBeginGetDeck" class="App\Controller\Poker\Begin\PokerGameBeginGetDeck" autowire="true" autoconfigure="true"/>
+    <service id="App\Controller\Poker\Begin\PokerGameBeginUpdatePlayers" class="App\Controller\Poker\Begin\PokerGameBeginUpdatePlayers" autowire="true" autoconfigure="true"/>
+    <service id="App\Controller\Poker\Helpers\PokerFetchCommunity" class="App\Controller\Poker\Helpers\PokerFetchCommunity" autowire="true" autoconfigure="true"/>
+    <service id="App\Controller\Poker\Helpers\PokerFetchPlayers" class="App\Controller\Poker\Helpers\PokerFetchPlayers" autowire="true" autoconfigure="true"/>
+    <service id="App\Controller\Poker\Helpers\PokerGameGetDeck" class="App\Controller\Poker\Helpers\PokerGameGetDeck" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\Poker\PokerGameController" class="App\Controller\Poker\PokerGameController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -568,6 +579,13 @@
       <argument type="service" id="request_stack"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Poker\PokerSessionController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Poker\Preflop\PokerGamePreflopController" class="App\Controller\Poker\Preflop\PokerGamePreflopController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Poker\Preflop\PokerGamePreflopController"/>
       </call>
     </service>
     <service id="App\Controller\QuotationsController" class="App\Controller\QuotationsController" public="true" autowire="true" autoconfigure="true">
@@ -674,7 +692,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.jOZWRpa"/>
+      <argument type="service" id=".service_locator.FB19LD8"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1967,8 +1985,12 @@
         <argument key="App\Cards\DeckMethods" type="service_closure" id="App\Cards\DeckMethods" on-invalid="ignore_uninitialized"/>
         <argument key="App\Cards\DeckRepresentations" type="service_closure" id="App\Cards\DeckRepresentations" on-invalid="ignore_uninitialized"/>
         <argument key="App\Cards\Hand" type="service_closure" id="App\Cards\Hand" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Controller\Poker\PokerFetchCommunityController" type="service_closure" id="App\Controller\Poker\PokerFetchCommunityController" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Controller\Poker\PokerFetchPlayersController" type="service_closure" id="App\Controller\Poker\PokerFetchPlayersController" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Controller\Poker\Begin\PokerGameBeginDetermineBadges" type="service_closure" id="App\Controller\Poker\Begin\PokerGameBeginDetermineBadges" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Controller\Poker\Begin\PokerGameBeginGetDeck" type="service_closure" id="App\Controller\Poker\Begin\PokerGameBeginGetDeck" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Controller\Poker\Begin\PokerGameBeginUpdatePlayers" type="service_closure" id="App\Controller\Poker\Begin\PokerGameBeginUpdatePlayers" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Controller\Poker\Helpers\PokerFetchCommunity" type="service_closure" id="App\Controller\Poker\Helpers\PokerFetchCommunity" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Controller\Poker\Helpers\PokerFetchPlayers" type="service_closure" id="App\Controller\Poker\Helpers\PokerFetchPlayers" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Controller\Poker\Helpers\PokerGameGetDeck" type="service_closure" id="App\Controller\Poker\Helpers\PokerGameGetDeck" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game21\Game" type="service_closure" id="App\Game21\Game" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game21\GameActions" type="service_closure" id="App\Game21\GameActions" on-invalid="ignore_uninitialized"/>
         <argument key="App\Game21\GameActionsBankDone" type="service_closure" id="App\Game21\GameActionsBankDone" on-invalid="ignore_uninitialized"/>
@@ -2832,7 +2854,7 @@
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" type="service_closure" id="webpack_encore.entrypoint_lookup_collection" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" type="service_closure" id="webpack_encore.entrypoint_lookup[_default]" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader.filesystem" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
-        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.jOZWRpa" on-invalid="ignore_uninitialized"/>
+        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.FB19LD8" on-invalid="ignore_uninitialized"/>
         <argument key="doctrine.id_generator_locator" type="service_closure" id=".service_locator.BxSdgVt" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
         <argument key="Psr\Log\LoggerInterface $requestLogger" type="service_closure" id="monolog.logger.request" on-invalid="ignore_uninitialized"/>
@@ -4550,7 +4572,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.jOZWRpa"/>
+      <argument type="service" id=".service_locator.FB19LD8"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -8279,6 +8301,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Library\LibraryViewController" class="App\Controller\Library\LibraryViewController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Library\LibraryViewController" class="App\Controller\Library\LibraryViewController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Library\LibraryViewController" class="App\Controller\Library\LibraryViewController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Poker\Begin\PokerGameBeginController" class="App\Controller\Poker\Begin\PokerGameBeginController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Poker\Begin\PokerGameBeginController" class="App\Controller\Poker\Begin\PokerGameBeginController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Poker\Begin\PokerGameBeginController" class="App\Controller\Poker\Begin\PokerGameBeginController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Poker\PokerGameController" class="App\Controller\Poker\PokerGameController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Poker\PokerGameController" class="App\Controller\Poker\PokerGameController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Poker\PokerGameController" class="App\Controller\Poker\PokerGameController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -8291,6 +8316,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Poker\PokerSessionController" class="App\Controller\Poker\PokerSessionController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Poker\PokerSessionController" class="App\Controller\Poker\PokerSessionController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Poker\PokerSessionController" class="App\Controller\Poker\PokerSessionController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Poker\Preflop\PokerGamePreflopController" class="App\Controller\Poker\Preflop\PokerGamePreflopController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Poker\Preflop\PokerGamePreflopController" class="App\Controller\Poker\Preflop\PokerGamePreflopController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Poker\Preflop\PokerGamePreflopController" class="App\Controller\Poker\Preflop\PokerGamePreflopController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -8501,6 +8529,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ErcxNfJ" method="withContext"/>
     </service>
+    <service id=".service_locator.E7ajBy2.App\Controller\Poker\Begin\PokerGameBeginController::projPokerBegin()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Poker\Begin\PokerGameBeginController::projPokerBegin()"/>
+      <argument>App\Controller\Poker\Begin\PokerGameBeginController::projPokerBegin()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.E7ajBy2" method="withContext"/>
+    </service>
     <service id=".service_locator.E7ajBy2.App\Controller\Poker\PokerGameController::projPoker()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Poker\PokerGameController::projPoker()"/>
       <argument>App\Controller\Poker\PokerGameController::projPoker()</argument>
@@ -8520,7 +8554,13 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.Y.u6NW0" method="withContext"/>
     </service>
-    <service id=".service_locator.jOZWRpa" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.E7ajBy2.App\Controller\Poker\Preflop\PokerGamePreflopController::projPokerPreflop()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Poker\Preflop\PokerGamePreflopController::projPokerPreflop()"/>
+      <argument>App\Controller\Poker\Preflop\PokerGamePreflopController::projPokerPreflop()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.E7ajBy2" method="withContext"/>
+    </service>
+    <service id=".service_locator.FB19LD8" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
@@ -8536,8 +8576,10 @@
         <argument key="App\Controller\Library\LibraryUpdateController::libraryUpdate" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Library\LibraryUpdateController::libraryUpdate()"/>
         <argument key="App\Controller\Library\LibraryViewController::libraryView" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryViewController::libraryView()"/>
         <argument key="App\Controller\Library\LibraryViewController::libraryViewID" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryViewController::libraryViewID()"/>
+        <argument key="App\Controller\Poker\Begin\PokerGameBeginController::projPokerBegin" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\Begin\PokerGameBeginController::projPokerBegin()"/>
         <argument key="App\Controller\Poker\PokerGameController::projPoker" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\PokerGameController::projPoker()"/>
         <argument key="App\Controller\Poker\PokerResetController::projResetPost" type="service_closure" id=".service_locator.Y.u6NW0.App\Controller\Poker\PokerResetController::projResetPost()"/>
+        <argument key="App\Controller\Poker\Preflop\PokerGamePreflopController::projPokerPreflop" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\Preflop\PokerGamePreflopController::projPokerPreflop()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
         <argument key="App\Controller\Library\LibraryAPIController:apiLibraryBooks" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryAPIController::apiLibraryBooks()"/>
@@ -8549,8 +8591,10 @@
         <argument key="App\Controller\Library\LibraryUpdateController:libraryUpdate" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Library\LibraryUpdateController::libraryUpdate()"/>
         <argument key="App\Controller\Library\LibraryViewController:libraryView" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryViewController::libraryView()"/>
         <argument key="App\Controller\Library\LibraryViewController:libraryViewID" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryViewController::libraryViewID()"/>
+        <argument key="App\Controller\Poker\Begin\PokerGameBeginController:projPokerBegin" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\Begin\PokerGameBeginController::projPokerBegin()"/>
         <argument key="App\Controller\Poker\PokerGameController:projPoker" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\PokerGameController::projPoker()"/>
         <argument key="App\Controller\Poker\PokerResetController:projResetPost" type="service_closure" id=".service_locator.Y.u6NW0.App\Controller\Poker\PokerResetController::projResetPost()"/>
+        <argument key="App\Controller\Poker\Preflop\PokerGamePreflopController:projPokerPreflop" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\Preflop\PokerGamePreflopController::projPokerPreflop()"/>
       </argument>
     </service>
     <service id=".service_locator.ea.H0ae" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -9128,6 +9172,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Poker\Begin\PokerGameBeginController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Poker\Begin\PokerGameBeginController"/>
+      <argument>App\Controller\Poker\Begin\PokerGameBeginController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
     <service id=".service_locator.ZyP9f7K.App\Controller\Poker\PokerGameController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Poker\PokerGameController"/>
       <argument>App\Controller\Poker\PokerGameController</argument>
@@ -9149,6 +9199,12 @@
     <service id=".service_locator.ZyP9f7K.App\Controller\Poker\PokerSessionController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Poker\PokerSessionController"/>
       <argument>App\Controller\Poker\PokerSessionController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Poker\Preflop\PokerGamePreflopController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Poker\Preflop\PokerGamePreflopController"/>
+      <argument>App\Controller\Poker\Preflop\PokerGamePreflopController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
@@ -9365,10 +9421,12 @@
           <argument>App\Controller\Library\LibraryResetController</argument>
           <argument>App\Controller\Library\LibraryUpdateController</argument>
           <argument>App\Controller\Library\LibraryViewController</argument>
+          <argument>App\Controller\Poker\Begin\PokerGameBeginController</argument>
           <argument>App\Controller\Poker\PokerGameController</argument>
           <argument>App\Controller\Poker\PokerHomeController</argument>
           <argument>App\Controller\Poker\PokerResetController</argument>
           <argument>App\Controller\Poker\PokerSessionController</argument>
+          <argument>App\Controller\Poker\Preflop\PokerGamePreflopController</argument>
           <argument>App\Controller\QuotationsController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>
@@ -10353,7 +10411,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.jOZWRpa"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.FB19LD8"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

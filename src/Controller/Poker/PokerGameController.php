@@ -10,17 +10,17 @@ declare (strict_types=1);
 namespace App\Controller\Poker;
 
 use Doctrine\Persistence\ManagerRegistry;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Poker as Poker;
-use App\Entity as Entity;
-use App\Controller\Poker as Controller;
+use App\Controller\Poker\PokerSessionController;
+use App\Controller\Poker\Helpers\PokerFetchCommunity;
+use App\Controller\Poker\Helpers\PokerFetchPlayers;
+use App\Poker\GameStates;
 
 /**
  * The PokerGameController class.
  */
-class PokerGameController extends Controller\PokerSessionController
+class PokerGameController extends PokerSessionController
 {
     /**
      * The route for the poker game page.
@@ -30,28 +30,24 @@ class PokerGameController extends Controller\PokerSessionController
     {
         $this->checkSession();
 
-        $community = new Controller\PokerFetchCommunityController();
-        $players = new Controller\PokerFetchPlayersController();
+        $communityController = new PokerFetchCommunity();
+        $community = $communityController->fetchCommunity($doctrine);
+
+        $playersController = new PokerFetchPlayers();
+        $players = $playersController->fetchPlayers($doctrine);
+
+        $action = match($community->getState()) {
+            GameStates::None => ['Spela', 'spela', 'proj_poker_begin'],
+            GameStates::NewGame => ['Dela kort', 'preflop', 'proj_poker_preflop'],
+            default => ['Odefinierat', 'odefinierat', 'proj_poker']
+        };
 
         $data = [
-            "community" => $community->fetchCommunity($doctrine),
-            "players" => $players->fetchPlayers($doctrine)
+            "community" => $community,
+            "players" => $players,
+            "action" => $action
         ];
 
         return $this->render('poker/poker.html.twig', $data);
     }
-
-
-    /**
-     * POST route for branching action.
-     */
-    // #[Route("/proj/poker/continue", name: "proj_poker_continue", methods: ['POST'])]
-    // public function projPokerContinue(): Response
-    // {
-    //     // get form data, update poker DB
-    //     $this->checkSession();
-    //     $this->game->init();
-    //     $this->game->deck->shuffleDeck();
-    //     return $this->redirectToRoute('proj_poker');
-    // }
 }

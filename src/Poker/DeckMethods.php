@@ -21,7 +21,7 @@ class DeckMethods extends DeckFoundation
      */
     public function resetDeck(): void
     {
-        $this->empty();
+        $this->emptyDeck();
         $this->deck = array_map(fn ($key): Card =>
             new Card($key), array_keys(Faces::UNICODE_FACE_ARRAY));
     }
@@ -42,5 +42,15 @@ class DeckMethods extends DeckFoundation
     public function shuffleDeck(): void
     {
         shuffle($this->deck);
+    }
+
+    /**
+     * Return serial card values 0–51 of cards in hand.
+     *
+     * @return int[]
+     */
+    public function deckIntValues(): array
+    {
+        return array_map(fn ($card): int => $card->getCard(), $this->getDeck());
     }
 }

@@ -34,13 +34,13 @@ class DeckTest extends TestCase
          */
         $deck = new Deck();
         $this->assertInstanceOf("\App\Poker\Deck", $deck);
-        $this->assertCount(0, $deck->get());
+        $this->assertCount(0, $deck->getDeck());
 
         /**
          * Deck has right count on reset?
          */
         $deck->resetDeck();
-        $this->assertCount(52, $deck->get());
+        $this->assertCount(52, $deck->getDeck());
 
         $this->assertInstanceOf("\App\Poker\DeckFoundation", new DeckFoundation());
         $this->assertInstanceOf("\App\Poker\DeckMethods", new DeckMethods());
@@ -63,7 +63,7 @@ class DeckTest extends TestCase
 
         /** Shuffled deck is of right type? */
         $deck2->shuffleDeck();
-        $this->assertCount(52, $deck2->get());
+        $this->assertCount(52, $deck2->getDeck());
         $this->assertInstanceOf("\App\Poker\Deck", $deck2);
     }
 
@@ -76,8 +76,8 @@ class DeckTest extends TestCase
         $deck->resetDeck();
 
         /** Cards are drawn correctly? */
-        foreach ($deck->get() as $key => $card) {
-            $this->assertCount(52 - $key, $deck->get());
+        foreach ($deck->getDeck() as $key => $card) {
+            $this->assertCount(52 - $key, $deck->getDeck());
             $deck->drawCard();
             $this->assertInstanceOf("\App\Poker\Card", $card);
         }
@@ -90,13 +90,13 @@ class DeckTest extends TestCase
     {
         $deck1 = new Deck();
         $deck1->addToDeck(range(0, 51));
-        $this->assertCount(52, $deck1->get());
+        $this->assertCount(52, $deck1->getDeck());
 
         $deck2 = new Deck();
         $deck2->resetDeck();
 
         /** Decks equal? */
-        $this->assertEquals($deck1->get(), $deck2->get());
+        $this->assertEquals($deck1->getDeck(), $deck2->getDeck());
     }
 
     /**
@@ -128,13 +128,13 @@ class DeckTest extends TestCase
             $hand->addCard($card);
         }
 
-        $this->assertCount(52, $hand->get());
+        $this->assertCount(52, $hand->getHand());
 
         $deck = new Deck();
         $deck->resetDeck();
 
         /** Deck and hand methods behave identically? */
-        $this->assertEquals($deck->get(), $hand->get());
+        $this->assertEquals($deck->getDeck(), $hand->getHand());
 
         $this->assertEquals(FaceMethods::deckTextValues(), $hand->handTextValues());
         $this->assertEquals(FaceMethods::deckFaceValues(), $hand->handFaceValues());
@@ -148,7 +148,7 @@ class DeckTest extends TestCase
         $this->assertContainsOnly('string', $hand->handUnicodeValues());
         $this->assertContainsOnly('string', $hand->handSymbolValues());
 
-        $hand->empty();
-        $this->assertCount(0, $hand->get());
+        $hand->emptyHand();
+        $this->assertCount(0, $hand->getHand());
     }
 }

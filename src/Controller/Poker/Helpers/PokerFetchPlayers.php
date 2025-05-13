@@ -7,7 +7,7 @@
 
 declare (strict_types=1);
 
-namespace App\Controller\Poker;
+namespace App\Controller\Poker\Helpers;
 
 use Doctrine\Persistence\ManagerRegistry;
 use App\Poker as Poker;
@@ -17,7 +17,7 @@ use App\Entity as Entity;
  * The PokerFetchCommunityController class.
  * @SuppressWarnings("StaticAccess")
  */
-class PokerFetchPlayersController
+class PokerFetchPlayers
 {
     /**
      * Helper method for populating the Player class from DB.
@@ -43,7 +43,7 @@ class PokerFetchPlayersController
                 ->setDealer((bool) $res->isDealer())
                 ->setSmallBlind((bool) $res->isSmallBlind())
                 ->setBigBlind((bool) $res->isBigBlind())
-                ->setState(Poker\PlayerStates::tryFrom($player->getLatestAction()) ?? Poker\PlayerStates::tryFrom(0))
+                ->setState(Poker\PlayerStates::tryFrom($player->getLatestAction()) ?? Poker\PlayerStates::from(0))
                 ->setStateText($player->getState()->stateText());
 
             $players[] = $player;

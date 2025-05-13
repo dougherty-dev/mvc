@@ -24,7 +24,15 @@ class Card
     /**
      * Define a getter for the private value.
     */
-    public function get(): int
+    public function getCard(): int
+    {
+        return $this->value;
+    }
+
+    /**
+     * Define a getter for the private value.
+    */
+    public function getValue(): int
     {
         return $this->value;
     }

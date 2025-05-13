@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use App\Poker\Faces;
 use App\Poker\FaceMethods;
 
 /**
@@ -35,6 +36,7 @@ class PokerSessionController extends AbstractController
     {
         $this->session = $this->requestStack->getSession();
         if (!$this->session->get("deckFaceValues")) {
+            $this->session->set("deckIntValues", array_keys(Faces::UNICODE_FACE_ARRAY));
             $this->session->set("deckFaceValues", FaceMethods::deckFaceValues());
             $this->session->set("deckUnicodeValues", FaceMethods::deckUnicodeValues());
             $this->session->set("deckSymbolValues", FaceMethods::deckSymbolValues());

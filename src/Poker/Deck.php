@@ -32,7 +32,7 @@ class Deck extends DeckMethods
     public function drawCard(): Card
     {
         $hand = $this->drawCards();
-        return $hand->get()[0];
+        return $hand->getHand()[0];
     }
 
     /**
