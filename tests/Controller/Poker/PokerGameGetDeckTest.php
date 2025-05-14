@@ -7,11 +7,11 @@
 
 declare (strict_types=1);
 
-namespace App\Tests\Controller\Poker\Helpers;
+namespace App\Tests\Controller\Poker;
 
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use App\Controller\Poker\Helpers\PokerGameGetDeck;
+use App\Poker\Helpers\GetDeck;
 
 /**
  * Test cases for class PokerGameBeginController.
@@ -21,9 +21,9 @@ class PokerGameGetDeckTest extends WebTestCase
     /**
      * Test instantiation of the class itself.
      */
-    public function testPokerGameGetDeck(): void
+    public function testGameGetDeck(): void
     {
-        $cls = new PokerGameGetDeck();
-        $this->assertInstanceOf("\App\Controller\Poker\Helpers\PokerGameGetDeck", $cls);
+        $cls = new GetDeck();
+        $this->assertInstanceOf("\App\Poker\Helpers\GetDeck", $cls);
     }
 }

@@ -52,4 +52,21 @@ class HandFoundation
     {
         $this->hand[] = $card;
     }
+
+    /**
+     * Draw and remove card from hand.
+     */
+    public function drawCard(): Card
+    {
+        $card = array_splice($this->hand, 0, min(1, $this->remainingCards()));
+        return new Card($card[0]->getValue());
+    }
+
+    /**
+     * Count cards in deck.
+     */
+    public function remainingCards(): int
+    {
+        return count($this->hand);
+    }
 }

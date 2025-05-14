@@ -1,33 +1,34 @@
 <?php
 
 /**
- * Poker game controller class.
+ * FetchCommunity class.
  * Author: nido24
  */
 
 declare (strict_types=1);
 
-namespace App\Controller\Poker\Helpers;
+namespace App\Poker\Helpers;
 
 use Doctrine\Persistence\ManagerRegistry;
-use App\Poker as Poker;
+use App\Poker\GameStates;
+use App\Poker\Community;
 use App\Entity as Entity;
 
 /**
- * The PokerFetchCommunityController class.
+ * The FetchCommunity class.
  * @SuppressWarnings("StaticAccess")
  */
-class PokerFetchCommunity
+class FetchCommunity
 {
     /**
      * Helper method for populating the Community class from DB.
      * This is done before every new game action.
      */
-    public function fetchCommunity(ManagerRegistry $doctrine): Poker\Community
+    public function fetchCommunity(ManagerRegistry $doctrine): Community
     {
         $res = $doctrine->getManager()->getRepository(Entity\Community::class)->findAll()[0];
 
-        $community = new Poker\Community();
+        $community = new Community();
 
         $community->getDeck()->addToDeck(array_map('intval', $res->getDeck()));
         $community->getDiscarded()->addToDeck(array_map('intval', $res->getDiscarded()));
@@ -36,7 +37,7 @@ class PokerFetchCommunity
         $community->setStatus((int) $res->getStatus())
             ->setPot((int) $res->getPot())
             ->setRaises((int) $res->getRaises())
-            ->setState(Poker\GameStates::tryFrom($community->getStatus()) ?? Poker\GameStates::from(0))
+            ->setState(GameStates::tryFrom($community->getStatus()) ?? GameStates::from(0))
             ->setStateText($community->getState()->stateText());
 
         return $community;

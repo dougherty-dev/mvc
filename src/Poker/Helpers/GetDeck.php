@@ -1,21 +1,21 @@
 <?php
 
 /**
- * PokerGameGetDeck helper class.
+ * GetDeck helper class.
  * Author: nido24
  */
 
 declare (strict_types=1);
 
-namespace App\Controller\Poker\Helpers;
+namespace App\Poker\Helpers;
 
 use App\Poker as Poker;
 use App\Entity as Entity;
 
 /**
- * The PokerGameGetDeck helper class.
+ * The GetDeck helper class.
  */
-class PokerGameGetDeck
+class GetDeck
 {
     /**
      * Get deck from Community entity DB, construct real Deck class object.

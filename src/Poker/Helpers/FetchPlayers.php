@@ -1,39 +1,40 @@
 <?php
 
 /**
- * Poker game controller class.
+ * FetchPlayers class.
  * Author: nido24
  */
 
 declare (strict_types=1);
 
-namespace App\Controller\Poker\Helpers;
+namespace App\Poker\Helpers;
 
 use Doctrine\Persistence\ManagerRegistry;
-use App\Poker as Poker;
-use App\Entity as Entity;
+use App\Poker\Player;
+use App\Poker\PlayerStates;
+use App\Entity\Players;
 
 /**
- * The PokerFetchCommunityController class.
+ * The FetchPlayers class.
  * @SuppressWarnings("StaticAccess")
  */
-class PokerFetchPlayers
+class FetchPlayers
 {
     /**
      * Helper method for populating the Player class from DB.
      * This is done before every new game action.
-     * @return Poker\Player[] $players
+     * @return Player[] $players
      */
     public function fetchPlayers(ManagerRegistry $doctrine): array
     {
         $players = [];
 
         $results = $doctrine->getManager()
-            ->getRepository(Entity\Players::class)
+            ->getRepository(Players::class)
             ->findAll();
 
         foreach ($results as $res) {
-            $player = new Poker\Player();
+            $player = new Player();
             $player->getHand()->addToHand(array_map('intval', $res->getHand()));
 
             $player->setHandle((int) $res->getHandle())
@@ -43,7 +44,7 @@ class PokerFetchPlayers
                 ->setDealer((bool) $res->isDealer())
                 ->setSmallBlind((bool) $res->isSmallBlind())
                 ->setBigBlind((bool) $res->isBigBlind())
-                ->setState(Poker\PlayerStates::tryFrom($player->getLatestAction()) ?? Poker\PlayerStates::from(0))
+                ->setState(PlayerStates::tryFrom($player->getLatestAction()) ?? PlayerStates::from(0))
                 ->setStateText($player->getState()->stateText());
 
             $players[] = $player;

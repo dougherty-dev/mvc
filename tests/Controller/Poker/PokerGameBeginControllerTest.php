@@ -7,13 +7,13 @@
 
 declare (strict_types=1);
 
-namespace App\Tests\Controller\Poker\Begin;
+namespace App\Tests\Controller\Poker;
 
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use App\Controller\Poker\Begin\PokerGameBeginController;
-use App\Controller\Poker\Begin\PokerGameBeginUpdatePlayers;
-use App\Controller\Poker\Begin\PokerGameBeginDetermineBadges;
+use App\Controller\Poker\PokerGameBeginController;
+use App\Poker\Helpers\UpdatePlayers;
+use App\Poker\Helpers\DetermineBadges;
 
 /**
  * Test cases for class PokerGameBeginController.
@@ -26,13 +26,13 @@ class PokerGameBeginControllerTest extends WebTestCase
     public function testPokerGameBeginController(): void
     {
         $cls = new PokerGameBeginController();
-        $this->assertInstanceOf("\App\Controller\Poker\Begin\PokerGameBeginController", $cls);
+        $this->assertInstanceOf("\App\Controller\Poker\PokerGameBeginController", $cls);
 
-        $cls = new PokerGameBeginUpdatePlayers();
-        $this->assertInstanceOf("\App\Controller\Poker\Begin\PokerGameBeginUpdatePlayers", $cls);
+        $cls = new UpdatePlayers();
+        $this->assertInstanceOf("\App\Poker\Helpers\UpdatePlayers", $cls);
 
-        $cls = new PokerGameBeginDetermineBadges();
-        $this->assertInstanceOf("\App\Controller\Poker\Begin\PokerGameBeginDetermineBadges", $cls);
+        $cls = new DetermineBadges();
+        $this->assertInstanceOf("\App\Poker\Helpers\DetermineBadges", $cls);
     }
 
     /**

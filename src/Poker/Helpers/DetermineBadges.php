@@ -1,20 +1,20 @@
 <?php
 
 /**
- * PokerGameBeginDetermineBadges helper class.
+ * DetermineBadges helper class.
  * Author: nido24
  */
 
 declare (strict_types=1);
 
-namespace App\Controller\Poker\Begin;
+namespace App\Poker\Helpers;
 
 use App\Poker\Hand;
 
 /**
- * The PokerGameBeginDetermineBadges helper class.
+ * The DetermineBadges helper class.
  */
-class PokerGameBeginDetermineBadges
+class DetermineBadges
 {
     /**
      * Collect face values (2–14), integer values (0–51) and sort.
@@ -31,7 +31,7 @@ class PokerGameBeginDetermineBadges
             array_keys($handValues)
         );
 
-        array_multisort($handRanks, \SORT_DESC);
+        array_multisort($handRanks, /** @scrutinizer ignore-type */ SORT_DESC);
         $dealer = $handRanks[0][2];
         $smallBlind = ($dealer + 1) % 3;
         $bigBlind = ($dealer + 2) % 3;

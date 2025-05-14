@@ -7,10 +7,10 @@
         <title>{% block title %}Texas Hold’em No Limit{% endblock %}</title>
         <link rel="icon" href="{{ asset('build/images/favicon.ico') }}">
 {% block stylesheets %}
-    {{ encore_entry_link_tags('project') }}
+        {{ encore_entry_link_tags('project') }}
 {% endblock %}
 {% block javascripts %}
-    {{ encore_entry_script_tags('project') }}
+        {{ encore_entry_script_tags('project') }}
 {% endblock %}
     </head>
     <body>
@@ -28,7 +28,7 @@
             </nav>
         </header>
         <main class="main dojo">
-            {% block body %}{% endblock %}
+{% block body %}{% endblock %}
         </main>
     </body>
 </html>

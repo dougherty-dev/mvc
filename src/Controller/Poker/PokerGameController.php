@@ -13,8 +13,8 @@ use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Controller\Poker\PokerSessionController;
-use App\Controller\Poker\Helpers\PokerFetchCommunity;
-use App\Controller\Poker\Helpers\PokerFetchPlayers;
+use App\Poker\Helpers\FetchCommunity;
+use App\Poker\Helpers\FetchPlayers;
 use App\Poker\GameStates;
 
 /**
@@ -30,16 +30,21 @@ class PokerGameController extends PokerSessionController
     {
         $this->checkSession();
 
-        $communityController = new PokerFetchCommunity();
-        $community = $communityController->fetchCommunity($doctrine);
+        $pokerCommunity = new FetchCommunity();
+        $community = $pokerCommunity->fetchCommunity($doctrine);
 
-        $playersController = new PokerFetchPlayers();
-        $players = $playersController->fetchPlayers($doctrine);
+        $pokerPlayers = new FetchPlayers();
+        $players = $pokerPlayers->fetchPlayers($doctrine);
 
         $action = match($community->getState()) {
             GameStates::None => ['Spela', 'spela', 'proj_poker_begin'],
             GameStates::NewGame => ['Dela kort', 'preflop', 'proj_poker_preflop'],
-            default => ['Odefinierat', 'odefinierat', 'proj_poker']
+            GameStates::PreFlop => ['Satsa', 'preflop', 'proj_poker_preflop'],
+            GameStates::Flop => ['Satsa', 'flop', 'proj_poker'],
+            GameStates::Turn => ['Satsa', 'turn', 'proj_poker'],
+            GameStates::River => ['Satsa', 'river', 'proj_poker'],
+            GameStates::Showdown => ['Nästa runda', 'showdown', 'proj_poker'],
+            GameStates::EndGame => ['Nytt spel', 'endgame', 'proj_poker'],
         };
 
         $data = [

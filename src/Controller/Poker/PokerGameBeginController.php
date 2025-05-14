@@ -7,15 +7,17 @@
 
 declare (strict_types=1);
 
-namespace App\Controller\Poker\Begin;
+namespace App\Controller\Poker;
 
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Poker\Helpers\GetDeck;
+use App\Poker\Helpers\DetermineBadges;
+use App\Poker\Helpers\UpdatePlayers;
 use App\Poker as Poker;
 use App\Entity as Entity;
-use App\Controller\Poker\Helpers\PokerGameGetDeck;
 
 /**
  * The PokerGameBeginController class.
@@ -34,16 +36,16 @@ class PokerGameBeginController extends AbstractController
         $entityManager = $doctrine->getManager();
         $entityCommunity = $entityManager->getRepository(Entity\Community::class)->findAll()[0];
 
-        $deckHelper = new PokerGameGetDeck();
+        $deckHelper = new GetDeck();
         $deck = $deckHelper->getDeck($entityCommunity);
         $deck->shuffleDeck();
         $hand = $deck->drawCards(3);
 
-        $badges = new PokerGameBeginDetermineBadges();
+        $badges = new DetermineBadges();
         [$dealer, $smallBlind, $bigBlind] = $badges->determineBadges($hand);
 
-        $players = new PokerGameBeginUpdatePlayers();
-        $players->updatePlayers($entityManager, $hand, $dealer, $smallBlind, $bigBlind);
+        $players = new UpdatePlayers();
+        $players->updatePlayers($doctrine, $hand, $dealer, $smallBlind, $bigBlind);
 
         $deck->resetDeck();
         $deck->shuffleDeck();

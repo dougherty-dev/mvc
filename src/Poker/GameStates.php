@@ -14,14 +14,14 @@ namespace App\Poker;
  */
 enum GameStates: int
 {
-    case None = 0;
-    case NewGame = 10;
-    case PreFlop = 20;
-    case Flop = 30;
-    case Turn = 40;
-    case River = 50;
-    case Showdown = 60;
-    case EndGame = 70;
+    case None       = 0;
+    case NewGame    = 10;
+    case PreFlop    = 20;
+    case Flop       = 30;
+    case Turn       = 40;
+    case River      = 50;
+    case Showdown   = 60;
+    case EndGame    = 70;
 
     public function stateText(): string
     {

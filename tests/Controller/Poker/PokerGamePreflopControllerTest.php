@@ -7,11 +7,11 @@
 
 declare (strict_types=1);
 
-namespace App\Tests\Controller\Poker\Preflop;
+namespace App\Tests\Controller\Poker;
 
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use App\Controller\Poker\Preflop\PokerGamePreflopController;
+use App\Controller\Poker\PokerGamePreflopController;
 
 /**
  * Test cases for class PokerGamePreflopControllerTest.
@@ -24,7 +24,7 @@ class PokerGamePreflopControllerTest extends WebTestCase
     public function testPokerGamePreflopController(): void
     {
         $cls = new PokerGamePreflopController();
-        $this->assertInstanceOf("\App\Controller\Poker\Preflop\PokerGamePreflopController", $cls);
+        $this->assertInstanceOf("\App\Controller\Poker\PokerGamePreflopController", $cls);
     }
 
     /**

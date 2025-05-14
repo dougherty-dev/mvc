@@ -3,9 +3,9 @@
 {% block title %}Sessionen{% endblock %}
 
 {% block body %}
-    <section class="center">
-        <h1>Sessionen</h1>
-        <p>⚠️ <a href="{{ path('session_delete') }}">Förstör session.</a></p>
-        {{ dump(app.session.all) }}
-    </section>
+            <section class="center">
+                <h1>Sessionen</h1>
+                <p>⚠️ <a href="{{ path('session_delete') }}">Förstör session.</a></p>
+                {{ dump(app.session.all) }}
+            </section>
 {% endblock %}
