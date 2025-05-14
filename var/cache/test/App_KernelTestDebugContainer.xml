@@ -545,7 +545,6 @@
       </call>
     </service>
     <service id="App\Controller\Poker\Begin\PokerGameBeginDetermineBadges" class="App\Controller\Poker\Begin\PokerGameBeginDetermineBadges" autowire="true" autoconfigure="true"/>
-    <service id="App\Controller\Poker\Begin\PokerGameBeginGetDeck" class="App\Controller\Poker\Begin\PokerGameBeginGetDeck" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\Poker\Begin\PokerGameBeginUpdatePlayers" class="App\Controller\Poker\Begin\PokerGameBeginUpdatePlayers" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\Poker\Helpers\PokerFetchCommunity" class="App\Controller\Poker\Helpers\PokerFetchCommunity" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\Poker\Helpers\PokerFetchPlayers" class="App\Controller\Poker\Helpers\PokerFetchPlayers" autowire="true" autoconfigure="true"/>
@@ -1986,7 +1985,6 @@
         <argument key="App\Cards\DeckRepresentations" type="service_closure" id="App\Cards\DeckRepresentations" on-invalid="ignore_uninitialized"/>
         <argument key="App\Cards\Hand" type="service_closure" id="App\Cards\Hand" on-invalid="ignore_uninitialized"/>
         <argument key="App\Controller\Poker\Begin\PokerGameBeginDetermineBadges" type="service_closure" id="App\Controller\Poker\Begin\PokerGameBeginDetermineBadges" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Controller\Poker\Begin\PokerGameBeginGetDeck" type="service_closure" id="App\Controller\Poker\Begin\PokerGameBeginGetDeck" on-invalid="ignore_uninitialized"/>
         <argument key="App\Controller\Poker\Begin\PokerGameBeginUpdatePlayers" type="service_closure" id="App\Controller\Poker\Begin\PokerGameBeginUpdatePlayers" on-invalid="ignore_uninitialized"/>
         <argument key="App\Controller\Poker\Helpers\PokerFetchCommunity" type="service_closure" id="App\Controller\Poker\Helpers\PokerFetchCommunity" on-invalid="ignore_uninitialized"/>
         <argument key="App\Controller\Poker\Helpers\PokerFetchPlayers" type="service_closure" id="App\Controller\Poker\Helpers\PokerFetchPlayers" on-invalid="ignore_uninitialized"/>

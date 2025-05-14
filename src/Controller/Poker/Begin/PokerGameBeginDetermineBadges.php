@@ -31,7 +31,7 @@ class PokerGameBeginDetermineBadges
             array_keys($handValues)
         );
 
-        array_multisort($handRanks, SORT_DESC);
+        array_multisort($handRanks, \SORT_DESC);
         $dealer = $handRanks[0][2];
         $smallBlind = ($dealer + 1) % 3;
         $bigBlind = ($dealer + 2) % 3;

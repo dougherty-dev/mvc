@@ -13,7 +13,6 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Controller\Poker\Begin\PokerGameBeginController;
 use App\Controller\Poker\Begin\PokerGameBeginUpdatePlayers;
-use App\Controller\Poker\Begin\PokerGameBeginGetDeck;
 use App\Controller\Poker\Begin\PokerGameBeginDetermineBadges;
 
 /**
@@ -31,9 +30,6 @@ class PokerGameBeginControllerTest extends WebTestCase
 
         $cls = new PokerGameBeginUpdatePlayers();
         $this->assertInstanceOf("\App\Controller\Poker\Begin\PokerGameBeginUpdatePlayers", $cls);
-
-        $cls = new PokerGameBeginGetDeck();
-        $this->assertInstanceOf("\App\Controller\Poker\Begin\PokerGameBeginGetDeck", $cls);
 
         $cls = new PokerGameBeginDetermineBadges();
         $this->assertInstanceOf("\App\Controller\Poker\Begin\PokerGameBeginDetermineBadges", $cls);

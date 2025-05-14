@@ -41,8 +41,6 @@ class PokerGamePreflopController extends AbstractController
         $playersController = new PokerFetchPlayers();
         $players = $playersController->fetchPlayers($doctrine);
 
-        $hand = $community->getHand();
-
         $current = -1;
         foreach ($players as $key => $player) {
             if ($player->isBigBlind()) {
@@ -54,7 +52,7 @@ class PokerGamePreflopController extends AbstractController
         $order = [($current + 1) % 3, ($current + 2) % 3, ($current + 3) % 3];
         $playerOrdered = array_combine($order, $players);
         foreach ($playerOrdered as $key => $player) {
-            $playerHand = array_map(fn ($card): int => $card->getValue() % $key, $hand->getHand());
+            $playerHand = array_map(fn ($card): int => $card->getValue() % ($key + 1), $hand->getHand());
             $hand->emptyHand();
             $hand->addToHand($playerHand);
             $player->setHand($hand);

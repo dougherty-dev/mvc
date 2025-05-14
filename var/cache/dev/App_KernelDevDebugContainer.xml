@@ -573,7 +573,6 @@
       </call>
     </service>
     <service id="App\Controller\Poker\Begin\PokerGameBeginDetermineBadges" class="App\Controller\Poker\Begin\PokerGameBeginDetermineBadges" autowire="true" autoconfigure="true"/>
-    <service id="App\Controller\Poker\Begin\PokerGameBeginGetDeck" class="App\Controller\Poker\Begin\PokerGameBeginGetDeck" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\Poker\Begin\PokerGameBeginUpdatePlayers" class="App\Controller\Poker\Begin\PokerGameBeginUpdatePlayers" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\Poker\Helpers\PokerFetchCommunity" class="App\Controller\Poker\Helpers\PokerFetchCommunity" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\Poker\Helpers\PokerFetchPlayers" class="App\Controller\Poker\Helpers\PokerFetchPlayers" autowire="true" autoconfigure="true"/>
