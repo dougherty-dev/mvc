@@ -14,14 +14,11 @@ use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Poker\Helpers\FetchCommunity;
 use App\Poker\Helpers\FetchPlayers;
-use App\Poker\Helpers\PreflopDeal;
 use App\Poker\Helpers\DealHoleCards;
+use App\Poker\Helpers\UpdatePlayer;
 use App\Poker\PlayerStates;
 use App\Poker\Player;
-use App\Poker\Community;
-use App\Entity as Entity;
 
 /**
  * The PokerGamePreflopController class.
@@ -29,12 +26,6 @@ use App\Entity as Entity;
  */
 class PokerGamePreflopController extends AbstractController
 {
-    public ObjectManager $entityManager;
-    public Community $community;
-    public Entity\Community $entityCommunity;
-    /** @var Entity\Players[] */
-    public array $entityPlayers;
-
     /**
      * POST route for preflop.
      * Dealer deals one card to each player, twice, from fresh deck.
@@ -45,41 +36,53 @@ class PokerGamePreflopController extends AbstractController
     #[Route("/proj/poker/preflop", name: "proj_poker_preflop", methods: ['POST'])]
     public function projPokerPreflop(ManagerRegistry $doctrine): Response
     {
+        $entityManager = $doctrine->getManager();
+        $update = new UpdatePlayer($entityManager);
+
         $pokerPlayers = new FetchPlayers();
-        $players = $pokerPlayers->fetchPlayers($doctrine);
+        $players = $pokerPlayers->fetchPlayers($entityManager);
 
         $playerActions = array_map(fn ($player): string =>
             PlayerStates::from($player->getLatestAction())->name, $players);
 
-        $this->entityManager = $doctrine->getManager();
+        if (array_unique($playerActions) === [PlayerStates::None->name]) {
+            $holeCards = new DealHoleCards();
+            $holeCards->deal($entityManager);
 
-        $pokerCommunity = new FetchCommunity();
-        $this->community = $pokerCommunity->fetchCommunity($doctrine);
+            array_map(fn ($player): Player => $player->setState(PlayerStates::Bets), $players);
+            array_map(fn ($player): null =>
+                $update->saveState($player->getId(), $player->getState()->value), $players);
 
-        match (true) {
-            array_unique($playerActions)[0] === 'None' => $this->dealHoleCards($doctrine),
-            default => $this->bet()
-        };
+            array_map(fn ($player): null =>
+                $update->saveBet($player->getId(), $player->getBet()), $players);
+            array_map(fn ($player): null =>
+                $update->saveCash($player->getId(), $player->getCash()), $players);
+        }
+
+        $this->betPreflop($players);
 
         return $this->redirectToRoute('proj_poker');
     }
 
     /**
-     * Branch for dealing hole cards in preflop route.
-     */
-    public function dealHoleCards(ManagerRegistry $doctrine): void
-    {
-        $holeCards = new DealHoleCards();
-        $holeCards->deal($doctrine);
-    }
-
-    /**
      * Branch for betting in preflop route.
+     * @param Player[] $players
      */
-    public function bet(): void
+    public function betPreflop($players): void
     {
         /** Find player with big blind */
-        $bigBlind = (int) array_search(true, array_map(fn ($player): bool => $player->isBigBlind(), $this->players));
+        $bigBlind = (int) array_search(true, array_map(fn ($player): bool => $player->isBigBlind(), $players));
         $bettingOrder = array_map(fn ($key): int => ($bigBlind + $key) % 3, [1, 2, 3]);
+        //        $bets = array_map(fn ($player): int => $player->getBet(), $players);
+
+        foreach ($bettingOrder as $key) {
+            if ($players[$key]->getState() === PlayerStates::Bets) {
+                if ($key === 0) {
+                    return;
+                }
+
+
+            }
+        }
     }
 }

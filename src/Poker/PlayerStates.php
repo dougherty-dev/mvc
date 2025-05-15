@@ -15,16 +15,18 @@ namespace App\Poker;
 enum PlayerStates: int
 {
     case None   = 0;
-    case Passes = 10;
-    case Calls  = 20;
-    case Raises = 30;
-    case Folds  = 40;
-    case Out    = 50;
+    case Bets   = 10;
+    case Passes = 20;
+    case Calls  = 30;
+    case Raises = 40;
+    case Folds  = 50;
+    case Out    = 60;
 
     public function stateText(): string
     {
         return match($this) {
             PlayerStates::None      => 'Väntar',
+            PlayerStates::Bets      => 'Satsar',
             PlayerStates::Passes    => 'Passar',
             PlayerStates::Calls     => 'Synar',
             PlayerStates::Raises    => 'Höjer',

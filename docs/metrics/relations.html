@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2025-05-14 17:28:09        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2025-05-15 07:40:29        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -386,12 +386,12 @@
         "relations": []
     },
     {
-        "name": "\\App\\Poker\\Helpers\\DetermineBadges",
+        "name": "\\App\\Poker\\Helpers\\SetBadges",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\App\\Poker\\Helpers\\UpdatePlayers",
+        "name": "\\Doctrine\\Persistence\\ObjectManager",
         "size": 3000,
         "relations": []
     },
@@ -406,6 +406,11 @@
         "relations": []
     },
     {
+        "name": "\\App\\Poker\\Helpers\\DetermineBadges",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Poker\\Player",
         "size": 3000,
         "relations": [
@@ -416,6 +421,11 @@
     },
     {
         "name": "\\App\\Poker\\PlayerStates",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Helpers\\UpdatePlayer",
         "size": 3000,
         "relations": []
     },
@@ -537,9 +547,9 @@
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Poker\\Helpers\\UpdatePlayer",
             "\\App\\Poker\\Helpers\\FetchPlayers",
             "\\App\\Poker\\PlayerStates",
-            "\\App\\Poker\\Helpers\\FetchCommunity",
             "\\App\\Poker\\Helpers\\DealHoleCards"
         ]
     },
@@ -574,7 +584,7 @@
             "\\Doctrine\\Persistence\\ManagerRegistry",
             "\\App\\Poker\\Helpers\\GetDeck",
             "\\App\\Poker\\Helpers\\DetermineBadges",
-            "\\App\\Poker\\Helpers\\UpdatePlayers"
+            "\\App\\Poker\\Helpers\\SetBadges"
         ]
     },
     {

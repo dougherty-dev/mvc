@@ -29,6 +29,7 @@ class GameFoundationTest extends TestCase
 
         foreach (GameStates::cases() as $state) {
             $this->assertNotEquals($state->stateText(), uniqid());
+            $this->assertNotEquals($state->betCost(), rand(9, 100));
         }
     }
 }

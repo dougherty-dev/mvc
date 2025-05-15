@@ -9,7 +9,7 @@ declare (strict_types=1);
 
 namespace App\Poker\Helpers;
 
-use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ObjectManager;
 use App\Poker\GameStates;
 use App\Poker\Community;
 use App\Entity as Entity;
@@ -24,9 +24,9 @@ class FetchCommunity
      * Helper method for populating the Community class from DB.
      * This is done before every new game action.
      */
-    public function fetchCommunity(ManagerRegistry $doctrine): Community
+    public function fetchCommunity(ObjectManager $entityManager): Community
     {
-        $res = $doctrine->getManager()->getRepository(Entity\Community::class)->findAll()[0];
+        $res = $entityManager->getRepository(Entity\Community::class)->findAll()[0];
 
         $community = new Community();
 

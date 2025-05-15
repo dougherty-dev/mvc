@@ -9,7 +9,7 @@ declare (strict_types=1);
 
 namespace App\Poker\Helpers;
 
-use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ObjectManager;
 use App\Poker\Player;
 use App\Poker\PlayerStates;
 use App\Entity\Players;
@@ -25,19 +25,18 @@ class FetchPlayers
      * This is done before every new game action.
      * @return Player[] $players
      */
-    public function fetchPlayers(ManagerRegistry $doctrine): array
+    public function fetchPlayers(ObjectManager $entityManager): array
     {
         $players = [];
 
-        $results = $doctrine->getManager()
-            ->getRepository(Players::class)
-            ->findAll();
+        $results = $entityManager->getRepository(Players::class)->findAll();
 
         foreach ($results as $res) {
             $player = new Player();
             $player->getHand()->addToHand(array_map('intval', $res->getHand()));
 
-            $player->setHandle((int) $res->getHandle())
+            $player->setId((int) $res->getId())
+                ->setHandle((int) $res->getHandle())
                 ->setCash((int) $res->getCash())
                 ->setBet((int) $res->getBet())
                 ->setLatestAction((int) $res->getLatestAction())

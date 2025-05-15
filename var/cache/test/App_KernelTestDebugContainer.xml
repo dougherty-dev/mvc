@@ -643,7 +643,10 @@
     <service id="App\Poker\Helpers\FetchPlayers" class="App\Poker\Helpers\FetchPlayers" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Helpers\GetDeck" class="App\Poker\Helpers\GetDeck" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Helpers\PreflopDeal" class="App\Poker\Helpers\PreflopDeal" autowire="true" autoconfigure="true"/>
-    <service id="App\Poker\Helpers\UpdatePlayers" class="App\Poker\Helpers\UpdatePlayers" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\Helpers\SetBadges" class="App\Poker\Helpers\SetBadges" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\Helpers\UpdatePlayer" class="App\Poker\Helpers\UpdatePlayer" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;App\Poker\Helpers\UpdatePlayer&quot;: argument &quot;$entityManager&quot; of method &quot;__construct()&quot; references interface &quot;Doctrine\Persistence\ObjectManager&quot; but no such service exists. You should maybe alias this interface to the existing &quot;doctrine.orm.default_entity_manager&quot; service."/>
+    </service>
     <service id="App\Poker\Log" class="App\Poker\Log" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;App\Poker\Log&quot;: argument &quot;$time&quot; of method &quot;__construct()&quot; references class &quot;DateTime&quot; but no such service exists."/>
     </service>
@@ -694,7 +697,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.VRPuXm1"/>
+      <argument type="service" id=".service_locator.by_CjZ_"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -2026,7 +2029,7 @@
         <argument key="App\Poker\Helpers\FetchPlayers" type="service_closure" id="App\Poker\Helpers\FetchPlayers" on-invalid="ignore_uninitialized"/>
         <argument key="App\Poker\Helpers\GetDeck" type="service_closure" id="App\Poker\Helpers\GetDeck" on-invalid="ignore_uninitialized"/>
         <argument key="App\Poker\Helpers\PreflopDeal" type="service_closure" id="App\Poker\Helpers\PreflopDeal" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Poker\Helpers\UpdatePlayers" type="service_closure" id="App\Poker\Helpers\UpdatePlayers" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Poker\Helpers\SetBadges" type="service_closure" id="App\Poker\Helpers\SetBadges" on-invalid="ignore_uninitialized"/>
         <argument key="App\Poker\Player" type="service_closure" id="App\Poker\Player" on-invalid="ignore_uninitialized"/>
         <argument key="App\Poker\PlayerButtons" type="service_closure" id="App\Poker\PlayerButtons" on-invalid="ignore_uninitialized"/>
         <argument key="App\Poker\PlayerVars" type="service_closure" id="App\Poker\PlayerVars" on-invalid="ignore_uninitialized"/>
@@ -2858,7 +2861,7 @@
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" type="service_closure" id="webpack_encore.entrypoint_lookup_collection" on-invalid="ignore_uninitialized"/>
         <argument key="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" type="service_closure" id="webpack_encore.entrypoint_lookup[_default]" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader.filesystem" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
-        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.VRPuXm1" on-invalid="ignore_uninitialized"/>
+        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.by_CjZ_" on-invalid="ignore_uninitialized"/>
         <argument key="doctrine.id_generator_locator" type="service_closure" id=".service_locator.BxSdgVt" on-invalid="ignore_uninitialized"/>
         <argument key="twig.loader" type="service_closure" id="twig.loader.native_filesystem" on-invalid="ignore_uninitialized"/>
         <argument key="Psr\Log\LoggerInterface $requestLogger" type="service_closure" id="monolog.logger.request" on-invalid="ignore_uninitialized"/>
@@ -4576,7 +4579,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.VRPuXm1"/>
+      <argument type="service" id=".service_locator.by_CjZ_"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -8551,12 +8554,6 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.E7ajBy2" method="withContext"/>
     </service>
-    <service id=".service_locator.E7ajBy2.App\Controller\Poker\PokerGamePreflopController::dealHoleCards()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Poker\PokerGamePreflopController::dealHoleCards()"/>
-      <argument>App\Controller\Poker\PokerGamePreflopController::dealHoleCards()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.E7ajBy2" method="withContext"/>
-    </service>
     <service id=".service_locator.Y.u6NW0" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8570,7 +8567,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.Y.u6NW0" method="withContext"/>
     </service>
-    <service id=".service_locator.VRPuXm1" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.by_CjZ_" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
@@ -8589,7 +8586,6 @@
         <argument key="App\Controller\Poker\PokerGameBeginController::projPokerBegin" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\PokerGameBeginController::projPokerBegin()"/>
         <argument key="App\Controller\Poker\PokerGameController::projPoker" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\PokerGameController::projPoker()"/>
         <argument key="App\Controller\Poker\PokerGamePreflopController::projPokerPreflop" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\PokerGamePreflopController::projPokerPreflop()"/>
-        <argument key="App\Controller\Poker\PokerGamePreflopController::dealHoleCards" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\PokerGamePreflopController::dealHoleCards()"/>
         <argument key="App\Controller\Poker\PokerResetController::projResetPost" type="service_closure" id=".service_locator.Y.u6NW0.App\Controller\Poker\PokerResetController::projResetPost()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
@@ -8605,7 +8601,6 @@
         <argument key="App\Controller\Poker\PokerGameBeginController:projPokerBegin" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\PokerGameBeginController::projPokerBegin()"/>
         <argument key="App\Controller\Poker\PokerGameController:projPoker" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\PokerGameController::projPoker()"/>
         <argument key="App\Controller\Poker\PokerGamePreflopController:projPokerPreflop" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\PokerGamePreflopController::projPokerPreflop()"/>
-        <argument key="App\Controller\Poker\PokerGamePreflopController:dealHoleCards" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\PokerGamePreflopController::dealHoleCards()"/>
         <argument key="App\Controller\Poker\PokerResetController:projResetPost" type="service_closure" id=".service_locator.Y.u6NW0.App\Controller\Poker\PokerResetController::projResetPost()"/>
       </argument>
     </service>
@@ -10423,7 +10418,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.VRPuXm1"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.by_CjZ_"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

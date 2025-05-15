@@ -14,10 +14,29 @@ namespace App\Poker;
  */
 class PlayerVars extends PlayerButtons
 {
+    private int $id;
     private int $handle = 0;
     private int $cash = 0;
     private int $bet = 0;
     private int $latestAction = 0;
+
+    /**
+     * Get for ID.
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set for ID.
+     */
+    public function setId(int $id): static
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
     /**
      * Get for handle.

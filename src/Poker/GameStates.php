@@ -36,4 +36,18 @@ enum GameStates: int
             GameStates::EndGame         => 'Spel slut.',
         };
     }
+
+    public function betCost(): int
+    {
+        return match($this) {
+            GameStates::None            => 0,
+            GameStates::NewGame         => 0,
+            GameStates::PreFlop         => 4,
+            GameStates::Flop            => 4,
+            GameStates::Turn            => 8,
+            GameStates::River           => 8,
+            GameStates::Showdown        => 0,
+            GameStates::EndGame         => 0,
+        };
+    }
 }

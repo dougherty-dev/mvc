@@ -29,7 +29,7 @@ class Player extends PlayerVars
     /**
      * Get for hand.
      */
-    public function gethand(): Hand
+    public function getHand(): Hand
     {
         return $this->hand;
     }

@@ -29,14 +29,15 @@ class PokerGameController extends PokerSessionController
     public function projPoker(ManagerRegistry $doctrine): Response
     {
         $this->checkSession();
+        $entityManager = $doctrine->getManager();
 
         $pokerCommunity = new FetchCommunity();
-        $community = $pokerCommunity->fetchCommunity($doctrine);
+        $community = $pokerCommunity->fetchCommunity($entityManager);
 
         $pokerPlayers = new FetchPlayers();
-        $players = $pokerPlayers->fetchPlayers($doctrine);
+        $players = $pokerPlayers->fetchPlayers($entityManager);
 
-        $action = match($community->getState()) {
+        $action = match ($community->getState()) {
             GameStates::None => ['Spela', 'spela', 'proj_poker_begin'],
             GameStates::NewGame => ['Dela kort', 'preflop', 'proj_poker_preflop'],
             GameStates::PreFlop => ['Satsa', 'preflop', 'proj_poker_preflop'],

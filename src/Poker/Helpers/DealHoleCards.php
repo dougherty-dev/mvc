@@ -9,7 +9,7 @@ declare (strict_types=1);
 
 namespace App\Poker\Helpers;
 
-use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ObjectManager;
 use App\Poker\Helpers\FetchCommunity;
 use App\Poker\Helpers\FetchPlayers;
 use App\Poker\Helpers\PreflopDeal;
@@ -25,15 +25,13 @@ class DealHoleCards
     /**
      * Deal two hole cards to each player, in totem 6 cards.
      */
-    public function deal(ManagerRegistry $doctrine): void
+    public function deal(ObjectManager $entityManager): void
     {
-        $entityManager = $doctrine->getManager();
-
         $pokerPlayers = new FetchPlayers();
-        $players = $pokerPlayers->fetchPlayers($doctrine);
+        $players = $pokerPlayers->fetchPlayers($entityManager);
 
         $pokerCommunity = new FetchCommunity();
-        $community = $pokerCommunity->fetchCommunity($doctrine);
+        $community = $pokerCommunity->fetchCommunity($entityManager);
 
         $deal = new PreflopDeal();
         $deal->dealHoleCards($players, $community->getDeck()->drawCards(6));

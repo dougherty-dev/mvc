@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Poker\Helpers\GetDeck;
 use App\Poker\Helpers\DetermineBadges;
-use App\Poker\Helpers\UpdatePlayers;
+use App\Poker\Helpers\SetBadges;
 use App\Poker as Poker;
 use App\Entity as Entity;
 
@@ -44,8 +44,8 @@ class PokerGameBeginController extends AbstractController
         $badges = new DetermineBadges();
         [$dealer, $smallBlind, $bigBlind] = $badges->determineBadges($hand);
 
-        $players = new UpdatePlayers();
-        $players->updatePlayers($doctrine, $hand, $dealer, $smallBlind, $bigBlind);
+        $players = new SetBadges();
+        $players->updatePlayers($entityManager, $hand, $dealer, $smallBlind, $bigBlind);
 
         $deck->resetDeck();
         $deck->shuffleDeck();

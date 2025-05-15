@@ -11,14 +11,16 @@ namespace App\Tests\Poker;
 
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Doctrine\Persistence\ObjectManager;
 use App\Poker\Helpers\DealOrder;
 use App\Poker\Helpers\DetermineBadges;
 use App\Poker\Helpers\FetchCommunity;
 use App\Poker\Helpers\FetchPlayers;
 use App\Poker\Helpers\GetDeck;
 use App\Poker\Helpers\PreflopDeal;
-use App\Poker\Helpers\UpdatePlayers;
+use App\Poker\Helpers\SetBadges;
 use App\Poker\Helpers\DealHoleCards;
+use App\Poker\Helpers\UpdatePlayer;
 
 /**
  * Test cases for class DealOrderTest.
@@ -48,10 +50,14 @@ class DealOrderTest extends WebTestCase
         $cls = new PreflopDeal();
         $this->assertInstanceOf("\App\Poker\Helpers\PreflopDeal", $cls);
 
-        $cls = new UpdatePlayers();
-        $this->assertInstanceOf("\App\Poker\Helpers\UpdatePlayers", $cls);
+        $cls = new SetBadges();
+        $this->assertInstanceOf("\App\Poker\Helpers\SetBadges", $cls);
 
         $cls = new DealHoleCards();
         $this->assertInstanceOf("\App\Poker\Helpers\DealHoleCards", $cls);
+
+        $entityManager = $this->createMock(ObjectManager::class);
+        $cls = new UpdatePlayer($entityManager);
+        $this->assertInstanceOf("\App\Poker\Helpers\UpdatePlayer", $cls);
     }
 }
