@@ -20,7 +20,6 @@ use App\Poker\Helpers\GetDeck;
 use App\Poker\Helpers\PreflopDeal;
 use App\Poker\Helpers\SetBadges;
 use App\Poker\Helpers\DealHoleCards;
-use App\Poker\Helpers\UpdatePlayer;
 
 /**
  * Test cases for class DealOrderTest.
@@ -55,9 +54,5 @@ class DealOrderTest extends WebTestCase
 
         $cls = new DealHoleCards();
         $this->assertInstanceOf("\App\Poker\Helpers\DealHoleCards", $cls);
-
-        $entityManager = $this->createMock(ObjectManager::class);
-        $cls = new UpdatePlayer($entityManager);
-        $this->assertInstanceOf("\App\Poker\Helpers\UpdatePlayer", $cls);
     }
 }

@@ -40,10 +40,10 @@ class PokerGameController extends PokerSessionController
         $action = match ($community->getState()) {
             GameStates::None => ['Spela', 'spela', 'proj_poker_begin'],
             GameStates::NewGame => ['Dela kort', 'preflop', 'proj_poker_preflop'],
-            GameStates::PreFlop => ['Satsa', 'preflop', 'proj_poker_preflop'],
-            GameStates::Flop => ['Satsa', 'flop', 'proj_poker'],
-            GameStates::Turn => ['Satsa', 'turn', 'proj_poker'],
-            GameStates::River => ['Satsa', 'river', 'proj_poker'],
+            GameStates::PreFlop => ['Fortsätt', 'preflop', 'proj_poker_preflop'],
+            GameStates::Flop => ['Fortsätt', 'flop', 'proj_poker'],
+            GameStates::Turn => ['Fortsätt', 'turn', 'proj_poker'],
+            GameStates::River => ['Fortsätt', 'river', 'proj_poker'],
             GameStates::Showdown => ['Nästa runda', 'showdown', 'proj_poker'],
             GameStates::EndGame => ['Nytt spel', 'endgame', 'proj_poker'],
         };

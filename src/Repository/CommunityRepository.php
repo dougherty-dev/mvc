@@ -33,29 +33,4 @@ class CommunityRepository extends ServiceEntityRepository
         $connection->executeStatement($platform->getTruncateTableSQL('community', true));
         $connection->executeStatement($platform->getTruncateTableSQL('players', true));
     }
-
-    //    /**
-    //     * @return Community[] Returns an array of Community objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('c')
-    //            ->andWhere('c.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('c.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
-
-    //    public function findOneBySomeField($value): ?Community
-    //    {
-    //        return $this->createQueryBuilder('c')
-    //            ->andWhere('c.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
 }

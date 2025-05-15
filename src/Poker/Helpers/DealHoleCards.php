@@ -10,9 +10,6 @@ declare (strict_types=1);
 namespace App\Poker\Helpers;
 
 use Doctrine\Persistence\ObjectManager;
-use App\Poker\Helpers\FetchCommunity;
-use App\Poker\Helpers\FetchPlayers;
-use App\Poker\Helpers\PreflopDeal;
 use App\Poker\Player;
 use App\Entity\Community;
 use App\Entity\Players;
@@ -40,7 +37,7 @@ class DealHoleCards
         $entityCommunity->setStatus(20)
             ->setDeck($community->getDeck()->deckIntValues());
 
-        $entityPlayers = $entityManager->getRepository(Players::class)->findAll();
+        $entityPlayers = $entityManager->getRepository(Players::class)->findBy([], ['handle' => 'ASC']);
         foreach ($entityPlayers as $player) {
             $player->setHand($players[$player->getHandle()]->getHand()->handIntvalues());
 

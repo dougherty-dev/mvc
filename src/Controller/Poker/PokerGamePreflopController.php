@@ -10,15 +10,12 @@ declare (strict_types=1);
 namespace App\Controller\Poker;
 
 use Doctrine\Persistence\ManagerRegistry;
-use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Poker\Helpers\FetchPlayers;
-use App\Poker\Helpers\DealHoleCards;
-use App\Poker\Helpers\UpdatePlayer;
-use App\Poker\PlayerStates;
-use App\Poker\Player;
+use App\Poker\Helpers as Helpers;
+use App\Poker as Poker;
 
 /**
  * The PokerGamePreflopController class.
@@ -34,55 +31,36 @@ class PokerGamePreflopController extends AbstractController
      * Betting begins at 4, and can be raised by 4 two times.
      */
     #[Route("/proj/poker/preflop", name: "proj_poker_preflop", methods: ['POST'])]
-    public function projPokerPreflop(ManagerRegistry $doctrine): Response
+    public function projPokerPreflop(Request $request, ManagerRegistry $doctrine): Response
     {
         $entityManager = $doctrine->getManager();
-        $update = new UpdatePlayer($entityManager);
 
-        $pokerPlayers = new FetchPlayers();
+        $pokerPlayers = new Helpers\FetchPlayers();
         $players = $pokerPlayers->fetchPlayers($entityManager);
 
-        $playerActions = array_map(fn ($player): string =>
-            PlayerStates::from($player->getLatestAction())->name, $players);
+        $update = new Helpers\UpdatePlayer($entityManager);
 
-        if (array_unique($playerActions) === [PlayerStates::None->name]) {
-            $holeCards = new DealHoleCards();
+        $playerActions = array_map(fn ($player): string =>
+            Poker\PlayerStates::from($player->getLatestAction())->name, $players);
+
+        if (array_unique($playerActions) === [Poker\PlayerStates::None->name]) {
+            $holeCards = new Helpers\DealHoleCards();
             $holeCards->deal($entityManager);
 
-            array_map(fn ($player): Player => $player->setState(PlayerStates::Bets), $players);
+            array_map(fn ($player): Poker\Player => $player->setState(Poker\PlayerStates::Bets), $players);
             array_map(fn ($player): null =>
                 $update->saveState($player->getId(), $player->getState()->value), $players);
-
-            array_map(fn ($player): null =>
-                $update->saveBet($player->getId(), $player->getBet()), $players);
-            array_map(fn ($player): null =>
-                $update->saveCash($player->getId(), $player->getCash()), $players);
         }
 
-        $this->betPreflop($players);
+        $form = $request->request->all();
+        // if ($form) {
+        $handlePB = new Helpers\HandlePlayerBet($entityManager);
+        $handlePB->processForm($form, $players[0]);
+        // }
+
+        $handleCB = new Helpers\HandleComputerBet($entityManager);
+        $handleCB->handleBets($players);
 
         return $this->redirectToRoute('proj_poker');
-    }
-
-    /**
-     * Branch for betting in preflop route.
-     * @param Player[] $players
-     */
-    public function betPreflop($players): void
-    {
-        /** Find player with big blind */
-        $bigBlind = (int) array_search(true, array_map(fn ($player): bool => $player->isBigBlind(), $players));
-        $bettingOrder = array_map(fn ($key): int => ($bigBlind + $key) % 3, [1, 2, 3]);
-        //        $bets = array_map(fn ($player): int => $player->getBet(), $players);
-
-        foreach ($bettingOrder as $key) {
-            if ($players[$key]->getState() === PlayerStates::Bets) {
-                if ($key === 0) {
-                    return;
-                }
-
-
-            }
-        }
     }
 }

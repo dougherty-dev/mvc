@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2025-05-15 07:40:29        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2025-05-15 17:45:20        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -411,6 +411,16 @@
         "relations": []
     },
     {
+        "name": "\\App\\Poker\\Helpers\\UpdateCommunity",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Helpers\\HandlePlayerBet",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Poker\\Player",
         "size": 3000,
         "relations": [
@@ -420,17 +430,22 @@
         ]
     },
     {
-        "name": "\\App\\Poker\\PlayerStates",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\App\\Poker\\Helpers\\UpdatePlayer",
         "size": 3000,
         "relations": []
     },
     {
+        "name": "\\App\\Poker\\Helpers\\HandleComputerBet",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Poker\\Helpers\\FetchCommunity",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\PlayerStates",
         "size": 3000,
         "relations": []
     },
@@ -546,12 +561,20 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
             "\\Doctrine\\Persistence\\ManagerRegistry",
-            "\\App\\Poker\\Helpers\\UpdatePlayer",
             "\\App\\Poker\\Helpers\\FetchPlayers",
+            "\\App\\Poker\\Helpers\\UpdatePlayer",
             "\\App\\Poker\\PlayerStates",
-            "\\App\\Poker\\Helpers\\DealHoleCards"
+            "\\App\\Poker\\Helpers\\DealHoleCards",
+            "\\App\\Poker\\Helpers\\HandlePlayerBet",
+            "\\App\\Poker\\Helpers\\HandleComputerBet"
         ]
+    },
+    {
+        "name": "\\Symfony\\Component\\HttpFoundation\\Request",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Controller\\Poker\\PokerResetController",
@@ -659,11 +682,6 @@
             "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
             "\\Symfony\\Component\\HttpFoundation\\Request"
         ]
-    },
-    {
-        "name": "\\Symfony\\Component\\HttpFoundation\\Request",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "\\App\\Controller\\Cards\\CardAPIDrawSingleController",

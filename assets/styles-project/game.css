@@ -35,7 +35,6 @@
   text-align: center;
   max-height: 35vh;
   border-top: thin dashed var(--invasive-indigo);
-  z-index: 1000;
 }
 
 .grid-player1 {
@@ -43,7 +42,6 @@
   text-align: left;
   max-height: 75vh;
   border-right: thin dashed var(--invasive-indigo);
-  z-index: 1000;
 }
 
 .grid-player2 {
@@ -51,7 +49,6 @@
   text-align: right;
   max-height: 75vh;
   border-left: thin dashed var(--invasive-indigo);
-  z-index: 1000;
 }
 
 .grid-pot {
@@ -269,6 +266,7 @@
   display: inline-block;
   font-size: 400%;
   filter: grayscale(0.5);
+  pointer-events: none;
 }
 
 .player0 {

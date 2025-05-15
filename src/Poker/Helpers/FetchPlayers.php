@@ -29,7 +29,7 @@ class FetchPlayers
     {
         $players = [];
 
-        $results = $entityManager->getRepository(Players::class)->findAll();
+        $results = $entityManager->getRepository(Players::class)->findBy([], ['handle' => 'ASC']);
 
         foreach ($results as $res) {
             $player = new Player();

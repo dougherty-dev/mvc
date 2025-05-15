@@ -642,8 +642,17 @@
     <service id="App\Poker\Helpers\FetchCommunity" class="App\Poker\Helpers\FetchCommunity" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Helpers\FetchPlayers" class="App\Poker\Helpers\FetchPlayers" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Helpers\GetDeck" class="App\Poker\Helpers\GetDeck" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\Helpers\HandleComputerBet" class="App\Poker\Helpers\HandleComputerBet" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;App\Poker\Helpers\HandleComputerBet&quot;: argument &quot;$entityManager&quot; of method &quot;__construct()&quot; references interface &quot;Doctrine\Persistence\ObjectManager&quot; but no such service exists. You should maybe alias this interface to the existing &quot;doctrine.orm.default_entity_manager&quot; service."/>
+    </service>
+    <service id="App\Poker\Helpers\HandlePlayerBet" class="App\Poker\Helpers\HandlePlayerBet" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;App\Poker\Helpers\HandlePlayerBet&quot;: argument &quot;$entityManager&quot; of method &quot;__construct()&quot; references interface &quot;Doctrine\Persistence\ObjectManager&quot; but no such service exists. You should maybe alias this interface to the existing &quot;doctrine.orm.default_entity_manager&quot; service."/>
+    </service>
     <service id="App\Poker\Helpers\PreflopDeal" class="App\Poker\Helpers\PreflopDeal" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Helpers\SetBadges" class="App\Poker\Helpers\SetBadges" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\Helpers\UpdateCommunity" class="App\Poker\Helpers\UpdateCommunity" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;App\Poker\Helpers\UpdateCommunity&quot;: argument &quot;$entityManager&quot; of method &quot;__construct()&quot; references interface &quot;Doctrine\Persistence\ObjectManager&quot; but no such service exists. You should maybe alias this interface to the existing &quot;doctrine.orm.default_entity_manager&quot; service."/>
+    </service>
     <service id="App\Poker\Helpers\UpdatePlayer" class="App\Poker\Helpers\UpdatePlayer" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;App\Poker\Helpers\UpdatePlayer&quot;: argument &quot;$entityManager&quot; of method &quot;__construct()&quot; references interface &quot;Doctrine\Persistence\ObjectManager&quot; but no such service exists. You should maybe alias this interface to the existing &quot;doctrine.orm.default_entity_manager&quot; service."/>
     </service>

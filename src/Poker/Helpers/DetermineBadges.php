@@ -32,7 +32,7 @@ class DetermineBadges
             array_keys($handValues)
         );
 
-        array_multisort($handRanks, SORT_DESC, $handRanks); // scrutinizer trick
+        array_multisort($handRanks, SORT_DESC);
         $dealer = $handRanks[0][2];
         $smallBlind = ($dealer + 1) % 3;
         $bigBlind = ($dealer + 2) % 3;
