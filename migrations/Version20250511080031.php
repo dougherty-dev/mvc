@@ -24,10 +24,11 @@ final class Version20250511080031 extends AbstractMigration
             CREATE TABLE community (id INTEGER PRIMARY KEY NOT NULL, status SMALLINT NOT NULL, deck CLOB --(DC2Type:simple_array)
             , discarded CLOB --(DC2Type:simple_array)
             , hand CLOB --(DC2Type:simple_array)
+            , betorder CLOB --(DC2Type:simple_array)
             , pot INTEGER NOT NULL, raises SMALLINT NOT NULL)
         SQL);
         $this->addSql(<<<'SQL'
-            CREATE TABLE log (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, event VARCHAR(255) NOT NULL, time DATETIME NOT NULL)
+            CREATE TABLE log (id INTEGER PRIMARY KEY NOT NULL, event VARCHAR(255) NOT NULL, time DATETIME NOT NULL)
         SQL);
         $this->addSql(<<<'SQL'
             CREATE TABLE players (id INTEGER PRIMARY KEY NOT NULL, handle SMALLINT NOT NULL, hand CLOB --(DC2Type:simple_array)

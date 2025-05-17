@@ -10,8 +10,10 @@ declare (strict_types=1);
 namespace App\Poker\Helpers;
 
 use Doctrine\Persistence\ObjectManager;
-use App\Poker as Poker;
 use App\Poker\GameStates;
+use App\Poker\Community;
+use App\Poker\PlayerStates;
+use App\Poker\Player;
 
 /**
  * The HandleComputerBet class.
@@ -19,72 +21,59 @@ use App\Poker\GameStates;
  */
 class HandleComputerBet
 {
-    private Poker\Community $community;
+    private Community $community;
     private UpdatePlayer $updatePlayer;
     private UpdateCommunity $updateCommunity;
 
-    public function __construct(private ObjectManager $entityManager)
-    {
-    }
-
     /**
      * Computer betting.
-     * @param Poker\Player[] $players
+     * @param Player[] $players
      */
-    public function handleBets(array $players): void
-    {
-        $this->updatePlayer = new UpdatePlayer($this->entityManager);
-        $this->updateCommunity = new UpdateCommunity($this->entityManager);
+    public function handleBet(
+        array &$players,
+        Community &$community,
+        UpdatePlayer $updatePlayer,
+        UpdateCommunity $updateCommunity,
+        int $currentPlayer
+    ): void {
+        $player = $players[$currentPlayer];
+        $id = $player->getId();
 
-        $bets = array_map(fn ($player): int => $player->getBet(), $players);
-        if (count(array_unique($bets)) === 1) {
-            // round done;
-        }
+        $this->updatePlayer = $updatePlayer;
+        $this->updateCommunity = $updateCommunity;
 
-        /** Find player with big blind, establish betting order */
-        $bigBlind = (int) array_search(true, array_map(fn ($player): bool => $player->isBigBlind(), $players));
-        $bettingOrder = array_map(fn ($key): int => ($bigBlind + $key) % 3, [1, 2, 3]);
-
-        $pokerCommunity = new FetchCommunity();
-        $this->community = $pokerCommunity->fetchCommunity($this->entityManager);
+        $this->community = $community;
         $betCost = $this->community->getState()->betCost();
 
+        $bets = array_map(fn ($player): int => $player->getBet(), $players);
+        $maxBet = max([0, ...$bets]);
 
-        foreach ($bettingOrder as $key) {
-            /** Break for human player’s interaction */
-            if ($key === 0 && $players[$key]->getState() === Poker\PlayerStates::Bets) {
-                return;
-            }
+        /** For now, raise until can't raise more, then call or pass */
+        $raises = $this->community->getRaises();
+        if ($raises <= 2) {
+            $bet = $maxBet + $betCost;
+            $betDiff = $bet - $player->getBet();
+            $cash = $player->getCash() - $betDiff;
 
-            // if ($key === 0) {
-            if ($key > 1) {
-                continue;
-            }
-
-            $bets = array_map(fn ($player): int => $player->getBet(), $players);
-            $maxBet = max([0, ...$bets]);
-
-            /** For now, raise until can't raise more, then call or pass */
-            $raises = $this->community->getRaises();
-            if ($raises <= 2) {
-                $bet = $maxBet + $betCost;
-                $this->updatePlayer->saveCash($players[$key]->getId(), $players[$key]->getCash() - $bet);
-                $this->updatePlayer->saveBet($players[$key]->getId(), $bet);
-                $this->updatePlayer->saveState($players[$key]->getId(), Poker\PlayerStates::Raises->value);
-                $this->community->setRaises($raises + 1);
-                $this->updateCommunity->saveRaises($raises + 1);
-                $players[$key]->setBet($bet);
-            }
-
-            // if ($raises > 2) {
-            if ($raises < 2) {
-                $bet = $maxBet;
-                $this->updatePlayer->saveCash($players[$key]->getId(), $players[$key]->getCash() - $bet);
-                $this->updatePlayer->saveBet($players[$key]->getId(), $bet);
-                $this->updatePlayer->saveState($players[$key]->getId(), Poker\PlayerStates::Calls->value);
-                $players[$key]->setBet($bet);
-            }
-
+            $this->updatePlayer->saveCash($id, $cash);
+            $this->updatePlayer->saveBet($id, $bet);
+            $this->updatePlayer->saveState($id, PlayerStates::Raises->value);
+            $this->community->setRaises($raises + 1);
+            $this->updateCommunity->saveRaises($raises + 1);
+            $player->setBet($bet);
         }
+
+        if ($raises > 2) { // when not Call
+            $bet = $maxBet;
+            $betDiff = $bet - $player->getBet();
+            $cash = $player->getCash() - $betDiff;
+
+            $this->updatePlayer->saveCash($id, $cash);
+            $this->updatePlayer->saveBet($id, $bet);
+            $this->updatePlayer->saveState($id, PlayerStates::Calls->value);
+            $player->setBet($bet);
+        }
+
+        $players[$currentPlayer] = $player;
     }
 }

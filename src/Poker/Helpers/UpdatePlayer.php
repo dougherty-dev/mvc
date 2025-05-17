@@ -54,6 +54,17 @@ class UpdatePlayer
     }
 
     /**
+     * Save player hand.
+     * @param int[] $hand
+     */
+    public function saveHand(int $id, array $hand): void
+    {
+        $this->setPlayer($id);
+        $this->entityPlayer->setHand($hand);
+        $this->save();
+    }
+
+    /**
      * Get player from repository.
      */
     private function setPlayer(int $id): void

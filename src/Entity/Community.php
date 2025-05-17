@@ -49,6 +49,12 @@ class Community
     #[ORM\Column(type: Types::SIMPLE_ARRAY)]
     private array $hand = [];
 
+    /**
+     * @var int[] $betorder
+     */
+    #[ORM\Column(type: Types::SIMPLE_ARRAY)]
+    private array $betorder = [];
+
     #[ORM\Column]
     private ?int $pot = null;
 
@@ -147,6 +153,26 @@ class Community
     public function setHand(array $hand): static
     {
         $this->hand = $hand;
+
+        return $this;
+    }
+
+    /**
+     * Getter for betorder.
+     * @return int[]
+     */
+    public function getBetorder(): array
+    {
+        return $this->betorder;
+    }
+
+    /**
+     * Setter for betorder.
+     * @param int[] $betorder
+     */
+    public function setBetorder(array $betorder): static
+    {
+        $this->betorder = $betorder;
 
         return $this;
     }

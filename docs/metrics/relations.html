@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2025-05-15 17:45:20        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2025-05-17 14:14:30        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -93,7 +93,7 @@
                             <path d="M0 0h24v24H0z" fill="none">
                             <path d="M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z">
                         </svg>
-                        Violations (5)
+                        Violations (6)
                     </a>
                 </li>
                                     <li>
@@ -386,7 +386,7 @@
         "relations": []
     },
     {
-        "name": "\\App\\Poker\\Helpers\\SetBadges",
+        "name": "\\App\\Poker\\Helpers\\UpdateCommunity",
         "size": 3000,
         "relations": []
     },
@@ -396,27 +396,22 @@
         "relations": []
     },
     {
-        "name": "\\App\\Poker\\Helpers\\FetchPlayers",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Poker\\Helpers\\DealOrder",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Poker\\Helpers\\DetermineBadges",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Poker\\Helpers\\UpdateCommunity",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\App\\Poker\\Helpers\\HandlePlayerBet",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Helpers\\UpdatePlayer",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Helpers\\HandleComputerBet",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Helpers\\FetchPlayers",
         "size": 3000,
         "relations": []
     },
@@ -430,12 +425,7 @@
         ]
     },
     {
-        "name": "\\App\\Poker\\Helpers\\UpdatePlayer",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Poker\\Helpers\\HandleComputerBet",
+        "name": "\\App\\Poker\\PlayerStates",
         "size": 3000,
         "relations": []
     },
@@ -445,30 +435,113 @@
         "relations": []
     },
     {
-        "name": "\\App\\Poker\\PlayerStates",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Poker\\Helpers\\DealHoleCards",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Poker\\Helpers\\PreflopDeal",
-        "size": 3000,
-        "relations": [
-            "\\App\\Poker\\Hand",
-            "\\App\\Poker\\Helpers\\DealOrder"
-        ]
-    },
-    {
         "name": "\\App\\Poker\\Helpers\\GetDeck",
         "size": 3000,
         "relations": []
     },
     {
         "name": "\\App\\Entity\\Community",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Round\\BettingOrder",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Round\\HumanPlayer",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Symfony\\Component\\HttpFoundation\\Request",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Round\\DealCards",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Round\\HoleCards",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Persistence\\ObjectManager",
+            "\\App\\Poker\\Community",
+            "\\App\\Poker\\Helpers\\UpdatePlayer",
+            "\\App\\Poker\\Helpers\\UpdateCommunity",
+            "\\App\\Poker\\PlayerStates",
+            "\\App\\Poker\\Round\\DealHoleCards",
+            "\\App\\Poker\\Round\\BettingOrder"
+        ]
+    },
+    {
+        "name": "\\App\\Poker\\Round\\CommunityCards",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Persistence\\ObjectManager",
+            "\\App\\Poker\\Community",
+            "\\App\\Poker\\Helpers\\UpdatePlayer",
+            "\\App\\Poker\\Helpers\\UpdateCommunity",
+            "\\App\\Poker\\PlayerStates",
+            "\\App\\Poker\\Round\\DealCommunityCards",
+            "\\App\\Poker\\Round\\BettingOrder"
+        ]
+    },
+    {
+        "name": "\\App\\Poker\\Round\\ResetRound",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Round\\CheckBadges",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Round\\SetBadges",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Round\\BeginSetBadges",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Round\\DealCommunityCards",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Round\\PrepareNextRound",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Round\\RoundDone",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Round\\DealerLottery",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Round\\DealHoleCardsHelper",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Round\\SetNewDealer",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\Round\\DealHoleCards",
         "size": 3000,
         "relations": []
     },
@@ -556,28 +629,72 @@
         "relations": []
     },
     {
-        "name": "\\App\\Controller\\Poker\\PokerGamePreflopController",
+        "name": "\\App\\Controller\\Poker\\GameBeginController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Poker\\Helpers\\FetchCommunity",
+            "\\App\\Poker\\Helpers\\GetDeck",
+            "\\App\\Poker\\Round\\DealerLottery",
+            "\\App\\Poker\\Round\\BeginSetBadges",
+            "\\App\\Poker\\Hand"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\Poker\\HomeController",
+        "size": 3000,
+        "relations": [
+            "\\App\\Controller\\Poker\\SessionController",
+            "\\Symfony\\Component\\HttpFoundation\\Response"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\Poker\\SessionController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\RequestStack",
+            "\\App\\Poker\\FaceMethods"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\Poker\\GameController",
+        "size": 3000,
+        "relations": [
+            "\\App\\Controller\\Poker\\SessionController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Poker\\Helpers\\FetchCommunity",
+            "\\App\\Poker\\Helpers\\FetchPlayers"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\Poker\\GameRoundController",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Request",
             "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Poker\\Helpers\\FetchCommunity",
             "\\App\\Poker\\Helpers\\FetchPlayers",
+            "\\App\\Poker\\Helpers\\UpdateCommunity",
             "\\App\\Poker\\Helpers\\UpdatePlayer",
-            "\\App\\Poker\\PlayerStates",
-            "\\App\\Poker\\Helpers\\DealHoleCards",
-            "\\App\\Poker\\Helpers\\HandlePlayerBet",
-            "\\App\\Poker\\Helpers\\HandleComputerBet"
+            "\\App\\Poker\\Round\\DealCards",
+            "\\App\\Poker\\Round\\HumanPlayer",
+            "\\App\\Poker\\Helpers\\HandleComputerBet",
+            "\\App\\Poker\\Round\\RoundDone"
         ]
     },
     {
-        "name": "\\Symfony\\Component\\HttpFoundation\\Request",
+        "name": "\\Symfony\\Component\\HttpFoundation\\RequestStack",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\App\\Controller\\Poker\\PokerResetController",
+        "name": "\\App\\Controller\\Poker\\ResetController",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
@@ -589,44 +706,20 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\Poker\\PokerSessionController",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Symfony\\Component\\HttpFoundation\\RequestStack",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Controller\\Poker\\PokerGameBeginController",
+        "name": "\\App\\Controller\\Poker\\GameNextController",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Doctrine\\Persistence\\ManagerRegistry",
-            "\\App\\Poker\\Helpers\\GetDeck",
-            "\\App\\Poker\\Helpers\\DetermineBadges",
-            "\\App\\Poker\\Helpers\\SetBadges"
-        ]
-    },
-    {
-        "name": "\\App\\Controller\\Poker\\PokerGameController",
-        "size": 3000,
-        "relations": [
-            "\\App\\Controller\\Poker\\PokerSessionController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Doctrine\\Persistence\\ManagerRegistry",
             "\\App\\Poker\\Helpers\\FetchCommunity",
-            "\\App\\Poker\\Helpers\\FetchPlayers"
-        ]
-    },
-    {
-        "name": "\\App\\Controller\\Poker\\PokerHomeController",
-        "size": 3000,
-        "relations": [
-            "\\App\\Controller\\Poker\\PokerSessionController",
-            "\\Symfony\\Component\\HttpFoundation\\Response"
+            "\\App\\Poker\\Helpers\\FetchPlayers",
+            "\\App\\Poker\\Helpers\\UpdateCommunity",
+            "\\App\\Poker\\Helpers\\UpdatePlayer",
+            "\\App\\Poker\\Round\\PrepareNextRound",
+            "\\App\\Poker\\Round\\SetNewDealer",
+            "\\App\\Poker\\Round\\SetBadges",
+            "\\App\\Poker\\Round\\DealCards"
         ]
     },
     {

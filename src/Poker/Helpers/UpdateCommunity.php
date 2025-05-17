@@ -21,7 +21,6 @@ class UpdateCommunity
 
     public function __construct(private ObjectManager $entityManager)
     {
-        // $this->entityCommunity = $this->entityManager->getRepository(Community::class)->findAll()[0];
     }
 
     /**
@@ -31,6 +30,37 @@ class UpdateCommunity
     {
         $this->entityCommunity = $this->entityManager->getRepository(Community::class)->findAll()[0];
         $this->entityCommunity->setRaises($raises);
+        $this->save();
+    }
+
+    /**
+     * Save betorder.
+     * @param int[] $betorder
+     */
+    public function saveBetorder(array $betorder): void
+    {
+        $this->entityCommunity = $this->entityManager->getRepository(Community::class)->findAll()[0];
+        $this->entityCommunity->setBetorder($betorder);
+        $this->save();
+    }
+
+    /**
+     * Save pot.
+     */
+    public function savePot(int $pot): void
+    {
+        $this->entityCommunity = $this->entityManager->getRepository(Community::class)->findAll()[0];
+        $this->entityCommunity->setPot($pot);
+        $this->save();
+    }
+
+    /**
+     * Save state.
+     */
+    public function saveState(int $status): void
+    {
+        $this->entityCommunity = $this->entityManager->getRepository(Community::class)->findAll()[0];
+        $this->entityCommunity->setStatus($status);
         $this->save();
     }
 

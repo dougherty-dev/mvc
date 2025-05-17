@@ -15,10 +15,32 @@ namespace App\Poker;
 class Community extends CommunityCards
 {
     private GameStates $state;
+    /** @var int[] */
+    private array $betorder = [];
     private string $stateText;
     private int $status = 0;
     private int $pot = 0;
     private int $raises = 0;
+
+    /**
+     * Get for betorder.
+     * @return int[]
+     */
+    public function getBetorder(): array
+    {
+        return $this->betorder;
+    }
+
+    /**
+     * Set for betorder.
+     * @param int[] $betorder
+     */
+    public function setBetorder(array $betorder): static
+    {
+        $this->betorder = $betorder;
+
+        return $this;
+    }
 
     /**
      * Get for state.

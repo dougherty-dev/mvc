@@ -63,12 +63,12 @@
                 <div class="grid-action">
                     <table class="action-table">
                         <tr>
-                            <td class="action right divider">{{ community.stateText }}</td>
+                            <td class="action right divider">{{ community.stateText }} {{ community.betorder|join('|') }}</td>
                             <td class="action left">
                                 <form method="POST" action="{{ path(action[2]) }}">
-                                    {%- if players[0].state.name == 'Bets' -%}
+                                    {%- if players[0].state.name in ['Bets', 'Calls', 'Raises', "Passes"] and community.betorder[0] is defined and community.betorder[0] == 0 -%}
                                     {%- if community.raises <= 2 -%}
-                                    <input type="number" name="bet" min="1" max="{{ community.state.betCost() }}">
+                                    <input type="number" name="bet" min="0" max="{{ community.state.betCost() }}" value="{{ community.state.betCost() }}">
                                     <button type="submit" name="raise">Höj</button>
                                     {%- endif -%}
                                     {%- if players[1].bet > 0 or players[2].bet > 0 -%}

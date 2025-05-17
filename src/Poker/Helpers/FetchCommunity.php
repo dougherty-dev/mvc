@@ -35,6 +35,7 @@ class FetchCommunity
         $community->getHand()->addToHand(array_map('intval', $res->getHand()));
 
         $community->setStatus((int) $res->getStatus())
+            ->setBetorder($res->getBetorder())
             ->setPot((int) $res->getPot())
             ->setRaises((int) $res->getRaises())
             ->setState(GameStates::tryFrom($community->getStatus()) ?? GameStates::from(0))

@@ -9,8 +9,9 @@ declare (strict_types=1);
 
 namespace App\Poker\Helpers;
 
-use Doctrine\Persistence\ObjectManager;
-use App\Poker as Poker;
+use App\Poker\Player;
+use App\Poker\Community;
+use App\Poker\PlayerStates;
 
 /**
  * The HandlePlayerBet class.
@@ -18,25 +19,42 @@ use App\Poker as Poker;
  */
 class HandlePlayerBet
 {
-    // private Poker\Community $community;
-    private Poker\Player $player;
-    private UpdatePlayer $update;
+    private Community $community;
+    private Player $player;
+    private UpdatePlayer $updatePlayer;
+    private UpdateCommunity $updateCommunity;
+    private int $id;
+    private int $maxBet;
+    //    private int $betCost;
+    private int $raises;
 
-    public function __construct(private ObjectManager $entityManager)
+    public function __construct()
     {
-        // $pokerCommunity = new FetchCommunity();
-        // $this->community = $pokerCommunity->fetchCommunity($this->entityManager);
     }
 
     /**
      * Handle form input for betting.
+     * @param Player[] $players
      * @param string[] $form
      */
-    public function processForm(array $form, Poker\Player $player): void
-    {
-        $this->player = $player;
+    public function processForm(
+        array &$players,
+        Community &$community,
+        UpdatePlayer $updatePlayer,
+        UpdateCommunity $updateCommunity,
+        array $form
+    ): void {
+        $this->updatePlayer = $updatePlayer;
+        $this->updateCommunity = $updateCommunity;
+        $this->community = $community;
 
-        $this->update = new UpdatePlayer($this->entityManager);
+        $this->player = $players[0];
+        $this->id = $this->player->getId();
+
+        $bets = array_map(fn ($player): int => $player->getBet(), $players);
+        $this->maxBet = max([0, ...$bets]);
+        //        $this->betCost = $this->community->getState()->betCost();
+        $this->raises = $this->community->getRaises();
 
         match (true) {
             isset($form["fold"]) => $this->fold(),
@@ -45,12 +63,6 @@ class HandlePlayerBet
             isset($form["raise"], $form["bet"]) => $this->raise(intval($form["bet"])),
             default => null
         };
-
-        $this->fold();
-        $this->call();
-        $this->check();
-        $this->raise(0);
-
     }
 
     /**
@@ -58,7 +70,7 @@ class HandlePlayerBet
      */
     private function fold(): void
     {
-        $this->update->saveState($this->player->getId(), Poker\PlayerStates::Folds->value);
+        $this->updatePlayer->saveState($this->id, PlayerStates::Folds->value);
     }
 
     /**
@@ -66,7 +78,17 @@ class HandlePlayerBet
      */
     private function call(): void
     {
-        $this->update->saveState($this->player->getId(), Poker\PlayerStates::Calls->value);
+        $bet = $this->maxBet;
+        $betDiff = $bet - $this->player->getBet();
+        $cash = $this->player->getCash() - $betDiff;
+
+        $this->player->setBet($bet);
+        $this->updatePlayer->saveBet($this->id, $bet);
+
+        $this->player->setCash($cash);
+        $this->updatePlayer->saveCash($this->id, $cash);
+
+        $this->updatePlayer->saveState($this->id, PlayerStates::Calls->value);
     }
 
     /**
@@ -74,17 +96,28 @@ class HandlePlayerBet
      */
     private function check(): void
     {
-        $this->update->saveState($this->player->getId(), Poker\PlayerStates::Passes->value);
+        $this->updatePlayer->saveState($this->id, PlayerStates::Passes->value);
     }
 
     /**
-     * Routines for player folding raising bet.
+     * Routines for player raising bet.
      */
     private function raise(int $bet): void
     {
-        $this->update->saveState($this->player->getId(), Poker\PlayerStates::Raises->value);
-        if ($bet) {
+        $bet = $bet + $this->maxBet;
+        $betDiff = $bet - $this->player->getBet();
+        $cash = $this->player->getCash() - $betDiff;
 
-        };
+        $this->player->setBet($bet);
+        $this->updatePlayer->saveBet($this->id, $bet);
+
+        $this->player->setCash($cash);
+        $this->updatePlayer->saveCash($this->id, $cash);
+
+        $this->player->setState(PlayerStates::Raises);
+        $this->updatePlayer->saveState($this->id, PlayerStates::Raises->value);
+
+        $this->updateCommunity->saveRaises($this->raises + 1);
+        $this->community->setRaises($this->raises + 1);
     }
 }

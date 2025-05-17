@@ -24,14 +24,14 @@ enum PlayerStates: int
 
     public function stateText(): string
     {
-        return match($this) {
+        return match ($this) {
             PlayerStates::None      => 'Väntar',
             PlayerStates::Bets      => 'Satsar',
             PlayerStates::Passes    => 'Passar',
             PlayerStates::Calls     => 'Synar',
             PlayerStates::Raises    => 'Höjer',
             PlayerStates::Folds     => 'Lägger sig',
-            PlayerStates::Out       => 'Ute',
+            PlayerStates::Out       => 'Ute'
         };
     }
 }

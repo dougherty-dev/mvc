@@ -10,17 +10,21 @@ declare (strict_types=1);
 namespace App\Tests\Poker;
 
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use PHPUnit\Framework\TestCase;
 use Doctrine\Persistence\ObjectManager;
 use App\Poker\Helpers\UpdatePlayer;
+use App\Poker\Helpers\UpdateCommunity;
+use App\Poker\Helpers\FetchPlayers;
+use App\Poker\Helpers\FetchCommunity;
 use App\Poker\Helpers\HandlePlayerBet;
 use App\Poker\Helpers\HandleComputerBet;
-use App\Poker\Helpers\UpdateCommunity;
+use App\Poker\Player;
+use App\Poker\Community;
 
 /**
  * Test cases for class HandlePlayerBet.
  */
-class HandlePlayerBetTest extends WebTestCase
+class HandlePlayerBetTest extends TestCase
 {
     /**
      * Test instantiation of the class itself.
@@ -28,12 +32,14 @@ class HandlePlayerBetTest extends WebTestCase
     public function testHelpers(): void
     {
         $entityManager = $this->createMock(ObjectManager::class);
-        $cls = new HandlePlayerBet($entityManager);
+
+        $cls = new HandlePlayerBet();
         $this->assertInstanceOf("\App\Poker\Helpers\HandlePlayerBet", $cls);
 
-        $cls = new HandleComputerBet($entityManager);
+        $cls = new HandleComputerBet();
         $this->assertInstanceOf("\App\Poker\Helpers\HandleComputerBet", $cls);
 
+        $entityManager = $this->createMock(ObjectManager::class);
         $cls = new UpdatePlayer($entityManager);
         $this->assertInstanceOf("\App\Poker\Helpers\UpdatePlayer", $cls);
 
