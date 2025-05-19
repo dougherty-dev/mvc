@@ -25,7 +25,7 @@ class HomeControllerTest extends WebTestCase
      */
     public function testHomeController(): void
     {
-        $cls = new HomeController(new RequestStack());
+        $cls = new HomeController();
         $this->assertInstanceOf("\App\Controller\Poker\HomeController", $cls);
 
         $cls = new SessionController(new RequestStack());
@@ -53,22 +53,22 @@ class HomeControllerTest extends WebTestCase
     }
 
     /**
-     * Test route /proj/session
-     */
-    public function testSession(): void
-    {
-        $client = static::createClient();
-        $client->request('GET', '/proj/session');
-        $this->assertResponseIsSuccessful();
-    }
-
-    /**
      * Test route /proj/reset
      */
     public function testReset(): void
     {
         $client = static::createClient();
         $client->request('GET', '/proj/reset');
+        $this->assertResponseIsSuccessful();
+    }
+
+    /**
+     * Test route /proj/about/database
+     */
+    public function testAboutDatabase(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', '/proj/about/database');
         $this->assertResponseIsSuccessful();
     }
 }

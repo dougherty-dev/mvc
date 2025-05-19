@@ -31,8 +31,6 @@ class HandlePlayerBetTest extends TestCase
      */
     public function testHelpers(): void
     {
-        $entityManager = $this->createMock(ObjectManager::class);
-
         $cls = new HandlePlayerBet();
         $this->assertInstanceOf("\App\Poker\Helpers\HandlePlayerBet", $cls);
 

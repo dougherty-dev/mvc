@@ -37,19 +37,15 @@ class GameBeginController extends AbstractController
         $entityManager = $doctrine->getManager();
         $entityCommunity = $entityManager->getRepository(Community::class)->findAll()[0];
 
-        $pokerCommunity = new FetchCommunity();
-        $community = $pokerCommunity->fetchCommunity($entityManager);
+        $community = (new FetchCommunity())->fetchCommunity($entityManager);
 
-        $deckHelper = new GetDeck();
-        $deck = $deckHelper->getDeck($entityCommunity);
+        $deck = (new GetDeck())->getDeck($entityCommunity);
         $deck->shuffleDeck();
         $hand = $deck->drawCards(3);
 
-        $lottery = new DealerLottery();
-        [$dealer, $smallBlind, $bigBlind] = $lottery->determineDealer($hand);
+        [$dealer, $smallBlind, $bigBlind] = (new DealerLottery())->determineDealer($hand);
 
-        $setBadges = new BeginSetBadges();
-        $setBadges->updateBadges($entityManager, $community, $hand, $dealer, $smallBlind, $bigBlind);
+        (new BeginSetBadges())->updateBadges($entityManager, $community, $hand, $dealer, $smallBlind, $bigBlind);
 
         $deck->resetDeck();
         $deck->shuffleDeck();

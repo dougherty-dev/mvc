@@ -1,0 +1,23 @@
+{% extends "poker/base.html.twig" %}
+
+{% block title %}Databasen{% endblock %}
+
+{% block body %}
+            <section class="three-columns">
+                <h1>Om databasen</h1>
+                <p class="initcap">Kortspelet Texas Hold’em implementeras med en databas snarare än bruk av sessionsdata. Detta ger en mer beständig koppling, men också en del mer huvudbry. För implementationen nyttjades migration i Doctrine, i ganska okomplicerat förfarande. Tabellerna är också mycket riktigt enkla och rättframma.</p>
+                <p>Dels finns en tabell <code>community</code>, som håller data om själva spelrundan. Det rör sig om sådant som aktuell kortlek, motsvarande lek med kastade ocb brända kort, aktuell hand på bordet (community cards), hur mycket som ligger i den gemensamma potten samt hur många höjningar som har gjorts under en delrunda. Fältet <code>betorder</code> sparar aktuell ordning för budgivning, medan <code>status</code> berättar om vilket tillstånd spelet befinner sig i – motsvarande en enum <code>GameState</code> i modellen.</p>
+                <p>Vidare finns en tabell <code>players</code>, som ger aktuella data för var och en av de tre spelarna. Dels ID <code>handle</code> för att inte förväxla med databasens interna ID; den aktuella handen med två kort; hur mycket spelaren förfogar över i pengar; hurt stor det aktuella budet är (<code>pot</code>); senaste aktion, motsvarande en enum <code>PlayerStates</code> i modellen; samt tre booleska flaggor för respektive roll: croupier samt lilla och stora mörken.</p>
+                <p>Även en oanvänd tabell <code>log</code> finns, med ursprungligt syfte att spara händelser vid bordet för retroaktiv analys. Några kopplingar finns inte mellan dessa enkla relationer.</p>
+                <img src="{{ asset('build/images/poker/data.avif') }}" width="1500" alt="ER-diagram">
+                <p>Som motor har SQLite nyttjats, för att det är mindre krångligt och passar ändamålet bäst. När pokersajten får 100k användare per dag kan man fundera på en annan lösning.</p>
+                <p>Enhetstester mot databasen har skett indirekt genom att via testcontroller med WebTestCase (vidgning av PHPUnits TestCase) undersöka rutter som inbegriper databasanrop samt motsvarande direkta anrop av relevanta metoder, via mockning.</p>
+                <h3>Analys</h3>
+                <p>ORM som sådant kan i grunden inte mäta sig med traditionell hantering. Det är måhända enklare att definiera fält via migration i en terminal, men man måste ändå veta vad man håller på med och vad fälten ska ha för relationer. Men samtidigt blir det mer komplext att ändra via migrationsrutinen, och att hantera kopplingar är inte heller enklare.</p>
+                <p>Ytterligare nackdelar ges av att man inte får in lagrade procedurer och funktioner i denna modell, och att man blir väldigt uppbunden av Doctrines schema. Bäst nyttjar man förmodligen konceptet genom att göra den inledande migrationen sålunda, bara för att senare övergå till hantering via en mer hanterbar klient.</p>
+                <p>Databaser är inte heller optimala för att nyttja objekt, även om det är vad som är syftet med OMR. Man måste därför ha parallella modellstrukturer i PHP samt konvertera fram och tillbaka mellan de två, vilket blir en gnutta merarbete samt mer kod. Å andra sidan gör Doctrine mycket av jobbet genom att tillhandahålla entiteter som motsvarigheter till modellklasser, samt repon för samling av databasrutiner. SQL-satser i kedjade objektmetoder är förvisso trevligare och mer expressivt, men innebär ytterligare syntax att lära, och det är nog inte snabbare än traditionell hantering.</p>
+                <p>Fördelar med ORM är kanske främst portabilitet och att man inte behöver bli inlåst – man låser sig istället till Doctrine i det här fallet. Samtidigt är PDO i PHP en motsvarande portabel lösning som fungerar mot olika motorer.</p>
+                <p>Som med alla ramverk erfar man förluster i prestanda, vilket är särskilt allvarligt då det gäller databaser, som ofta är den kritiska faktorn i webbapplikationer. Extra lager innebär dessutom i princip alltid större sårbarhet och benägenhet till fel.</p>
+                <p>Vad man kan förstå föreligger en lång rad olika ORM, med vitt skilda egenskaper och implementationer, medan SQL är en standard med få variationer. Vidare är det viss ironi i att man använder SQL-satser även i Doctrine. Paradigmet har säkert sina förespråkare, men till dem hör inte undertecknad.</p>
+            </section>
+{% endblock %}

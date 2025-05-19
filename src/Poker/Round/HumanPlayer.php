@@ -33,19 +33,18 @@ class HumanPlayer
      */
     public function handlePlayer(
         array &$players,
-        Community $community,
+        Community &$community,
         UpdatePlayer $updatePlayer,
         UpdateCommunity $updateCommunity,
         Request $request
     ): bool {
         $form = $request->request->all();
 
-        if ($form) {
-            $handlePB = new HandlePlayerBet();
-            $handlePB->processForm($players, $community, $updatePlayer, $updateCommunity, $form);
+        if ($form != []) {
+            (new HandlePlayerBet())->processForm($players, $community, $updatePlayer, $updateCommunity, $form);
         }
 
-        if (!$form) {
+        if ($form === []) {
             $bets = array_map(fn ($player): int => $player->getBet(), $players);
             $maxBet = max([0, ...$bets]);
             if (!in_array($players[0]->getState(), [PlayerStates::Folds, PlayerStates::Out])

@@ -23,7 +23,7 @@ class GameNextControllerTest extends WebTestCase
      */
     public function testGameNextController(): void
     {
-        $cls = new GameNextController();
+        $cls = new GameNextController(new RequestStack());
         $this->assertInstanceOf("\App\Controller\Poker\GameNextController", $cls);
     }
 

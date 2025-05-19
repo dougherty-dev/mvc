@@ -36,24 +36,24 @@ class ResetRound
     ): void {
 
         $bets = array_map(fn ($player): int => $player->getBet(), $players);
-        $updateCommunity->savePot($community->getPot() + array_sum($bets));
+        $updateCommunity->savePot($community->getPot() + (int) array_sum($bets));
         $updateCommunity->saveRaises(0);
 
         array_map(fn ($player): null => $updatePlayer->saveBet($player->getId(), 0), $players);
 
-        $checkBadges = new CheckBadges();
-        [$dealer, $smallBlind, $bigBlind] = $checkBadges->check($players);
+        [$dealer, $smallBlind, $bigBlind] = (new CheckBadges())->check($players);
 
-        $setBadges = new SetBadges();
-        $setBadges->set($entityManager, $community, $dealer, $smallBlind, $bigBlind);
+        (new SetBadges())->set($entityManager, $community, $dealer, $smallBlind, $bigBlind);
 
         foreach ($players as $player) {
-            if ($player->getState() != PlayerStates::Out) {
-                $updatePlayer->saveState($player->getId(), PlayerStates::Bets->value);
+            if (!in_array($player->getState(), [PlayerStates::Folds, PlayerStates::Out])) {
+                $updatePlayer->saveState($player->getId(), PlayerStates::Waits->value);
             }
         }
 
-        $bettingOrder = new BettingOrder();
-        $bettingOrder->setOrder($players, $community, $updateCommunity);
+        $community->setState($community->getState()->nextState());
+        $updateCommunity->saveState($community->getState()->value);
+
+        (new BettingOrder())->setOrder($players, $community, $updateCommunity);
     }
 }

@@ -34,21 +34,18 @@
   grid-area: player0;
   text-align: center;
   max-height: 35vh;
-  border-top: thin dashed var(--invasive-indigo);
 }
 
 .grid-player1 {
   grid-area: player1;
   text-align: left;
   max-height: 75vh;
-  border-right: thin dashed var(--invasive-indigo);
 }
 
 .grid-player2 {
   grid-area: player2;
   text-align: right;
   max-height: 75vh;
-  border-left: thin dashed var(--invasive-indigo);
 }
 
 .grid-pot {
@@ -77,6 +74,7 @@
   background-color: var(--invasive-indigo);
   border: thin solid var(--evil-forces);
   border-radius: 2rem;
+  padding-left: 1.5rem !important;
 }
 
 .grid-player0,
@@ -120,6 +118,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: 1.5rem;
   transform: rotate(90deg);
 }
 
@@ -154,6 +153,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: 1.5rem;
   transform: rotate(-90deg);
 }
 
@@ -188,6 +188,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: 1.5rem;
 }
 
 .grid-p0-bet,
@@ -203,6 +204,7 @@
   border-radius: 0;
   width: min(200px, min(7vw, 7vh));
   padding: 0.1rem;
+  margin-left: -1.5rem;
 }
 
 .info-table {
@@ -301,4 +303,23 @@
 
 .divider {
   border-right: thin solid var(--evil-forces);
+}
+
+.pagelink {
+  text-decoration: underline !important;
+}
+
+.winner {
+  border-radius: 2rem;
+  filter: drop-shadow(16px 16px 20px var(--electrifying-kiss));
+}
+
+.player_handle {
+  opacity: 0.4;
+  font-size: 3rem;
+  color: var(--noble-purple);
+  text-shadow:
+    1px 1px 2px var(--electrifying-kiss),
+    0 0 1rem var(--depths-of-night),
+    0 0 0.2rem var(--gray-75);
 }

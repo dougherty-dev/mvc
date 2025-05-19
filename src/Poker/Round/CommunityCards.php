@@ -36,13 +36,16 @@ class CommunityCards
         $playerActions = array_map(fn ($player): string =>
             PlayerStates::from($player->getLatestAction())->name, $players);
 
-        if (array_unique($playerActions) === [PlayerStates::Bets->name]) {
+        if (in_array(PlayerStates::Waits->name, $playerActions)) {
             $dealCards = new DealCommunityCards();
             $dealCards->deal($entityManager, $community);
 
-            array_map(fn ($player): Player => $player->setState(PlayerStates::Bets), $players);
-            array_map(fn ($player): null =>
-                $updatePlayer->saveState($player->getId(), $player->getState()->value), $players);
+            foreach ($players as $player) {
+                if (!in_array($player->getState(), [PlayerStates::Folds, PlayerStates::Out])) {
+                    $player->setState(PlayerStates::Bets);
+                    $updatePlayer->saveState($player->getId(), $player->getState()->value);
+                }
+            }
 
             $bettingOrder = new BettingOrder();
             $bettingOrder->setOrder($players, $community, $updateCommunity);

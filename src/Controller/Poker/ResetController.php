@@ -21,7 +21,7 @@ use App\Poker\Faces;
 /**
  * The ResetController class.
  */
-class ResetController extends AbstractController
+class ResetController extends SessionController
 {
     /**
      * Route for resetting game.
@@ -31,6 +31,9 @@ class ResetController extends AbstractController
         ManagerRegistry $doctrine,
         CommunityRepository $communityRepository
     ): Response {
+        $this->checkSession();
+        $this->session->set("bestPokerHand", []);
+
         $communityRepository->truncateTables();
         $entityManager = $doctrine->getManager();
 

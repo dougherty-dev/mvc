@@ -197,6 +197,13 @@
 <dd>Add cards to deck by serial value 0–51.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Poker-DeckMethods.html#method_deckIntValues">deckIntValues()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, int&gt;    </span>
+</dt>
+<dd>Return serial card values 0–51 of cards in hand.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Poker-Deck.html#method_drawCard">drawCard()</a>
     <span>
                                 &nbsp;: <a href="classes/App-Poker-Card.html"><abbr title="\App\Poker\Card">Card</abbr></a>    </span>
@@ -211,14 +218,14 @@
 <dd>Draw $number cards from deck, while removing from deck.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Poker-DeckFoundation.html#method_empty">empty()</a>
+    <a class="" href="classes/App-Poker-DeckFoundation.html#method_emptyDeck">emptyDeck()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>Zero the deck.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Poker-DeckFoundation.html#method_get">get()</a>
+    <a class="" href="classes/App-Poker-DeckFoundation.html#method_getDeck">getDeck()</a>
     <span>
                                 &nbsp;: array&lt;int, <a href="classes/App-Poker-Card.html"><abbr title="\App\Poker\Card">Card</abbr></a>&gt;    </span>
 </dt>
@@ -353,6 +360,45 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_deckIntValues">
+        deckIntValues()
+        <a href="classes/App-Poker-DeckMethods.html#method_deckIntValues" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/DeckMethods.php"><a href="files/src-poker-deckmethods.html"><abbr title="src/Poker/DeckMethods.php">DeckMethods.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">52</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Return serial card values 0–51 of cards in hand.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">deckIntValues</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_drawCard">
         drawCard()
         <a href="classes/App-Poker-Deck.html#method_drawCard" class="headerlink"><i class="fas fa-link"></i></a>
@@ -441,9 +487,9 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_empty">
-        empty()
-        <a href="classes/App-Poker-DeckFoundation.html#method_empty" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_emptyDeck">
+        emptyDeck()
+        <a href="classes/App-Poker-DeckFoundation.html#method_emptyDeck" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
@@ -457,7 +503,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">empty</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">emptyDeck</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -476,9 +522,9 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_get">
-        get()
-        <a href="classes/App-Poker-DeckFoundation.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getDeck">
+        getDeck()
+        <a href="classes/App-Poker-DeckFoundation.html#method_getDeck" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
@@ -492,7 +538,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">get</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, <a href="classes/App-Poker-Card.html"><abbr title="\App\Poker\Card">Card</abbr></a>&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">getDeck</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, <a href="classes/App-Poker-Card.html"><abbr title="\App\Poker\Card">Card</abbr></a>&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -739,10 +785,11 @@
             <li>
                 <ul class="phpdocumentor-list -clean">
                                             <li class=""><a href="classes/App-Poker-DeckMethods.html#method_addToDeck">addToDeck()</a></li>
+                                            <li class=""><a href="classes/App-Poker-DeckMethods.html#method_deckIntValues">deckIntValues()</a></li>
                                             <li class=""><a href="classes/App-Poker-Deck.html#method_drawCard">drawCard()</a></li>
                                             <li class=""><a href="classes/App-Poker-Deck.html#method_drawCards">drawCards()</a></li>
-                                            <li class=""><a href="classes/App-Poker-DeckFoundation.html#method_empty">empty()</a></li>
-                                            <li class=""><a href="classes/App-Poker-DeckFoundation.html#method_get">get()</a></li>
+                                            <li class=""><a href="classes/App-Poker-DeckFoundation.html#method_emptyDeck">emptyDeck()</a></li>
+                                            <li class=""><a href="classes/App-Poker-DeckFoundation.html#method_getDeck">getDeck()</a></li>
                                             <li class=""><a href="classes/App-Poker-Deck.html#method_remainingCards">remainingCards()</a></li>
                                             <li class=""><a href="classes/App-Poker-DeckMethods.html#method_resetDeck">resetDeck()</a></li>
                                             <li class=""><a href="classes/App-Poker-DeckMethods.html#method_shuffleDeck">shuffleDeck()</a></li>

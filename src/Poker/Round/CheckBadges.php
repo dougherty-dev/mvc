@@ -29,29 +29,37 @@ class CheckBadges
         $smallBlind = (int) array_search(true, array_map(fn ($player): bool => (bool) $player->isSmallBlind(), $players));
         $bigBlind = (int) array_search(true, array_map(fn ($player): bool => (bool) $player->isBigBlind(), $players));
 
-        if (count($players) === 3) {
-            $smallBlind = ($dealer + 1) % 3;
-            $bigBlind = ($dealer + 2) % 3;
-        }
+        $dealerPlayer = $players[$dealer];
+        $smallBlindPlayer = $players[$smallBlind];
+        $bigBlindPlayer = $players[$bigBlind];
 
-        /** dealer is out */
-        if ($players[$dealer]->getState() === PlayerStates::Out) {
-            $dealer = ($dealer + 1) % 3;
-            $smallBlind = $dealer;
-            $bigBlind = ($dealer + 2) % 3;
-        }
+        [$dealer, $smallBlind, $bigBlind] = match (true) {
+            count($players) === 3 => [
+                $dealer,
+                $smallBlind = ($dealer + 1) % 3,
+                $bigBlind = ($dealer + 2) % 3
+            ],
 
-        /** small blind is out */
-        if ($players[$smallBlind]->getState() === PlayerStates::Out) {
-            $smallBlind = $dealer;
-            $bigBlind = ($dealer + 2) % 3;
-        }
+            $dealerPlayer->getState() === PlayerStates::Out => [
+                $dealer = ($dealer + 1) % 3,
+                $smallBlind = $dealer,
+                $bigBlind = ($dealer + 2) % 3
+            ],
 
-        /** big blind is out */
-        if ($players[$bigBlind]->getState() === PlayerStates::Out) {
-            $smallBlind = $dealer;
-            $bigBlind = ($dealer + 1) % 3;
-        }
+            $smallBlindPlayer->getState() === PlayerStates::Out => [
+                $dealer,
+                $smallBlind = $dealer,
+                $bigBlind = ($dealer + 2) % 3
+            ],
+
+            $bigBlindPlayer->getState() === PlayerStates::Out => [
+                $dealer,
+                $smallBlind = $dealer,
+                $bigBlind = ($dealer + 1) % 3
+            ],
+
+            default => [$dealer, $smallBlind, $bigBlind]
+        };
 
         return [$dealer, $smallBlind, $bigBlind];
     }

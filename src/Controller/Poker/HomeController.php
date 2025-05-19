@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * The HomeController class.
  */
-class HomeController extends SessionController
+class HomeController extends AbstractController
 {
     /**
      * The route for the project home page.
@@ -37,20 +37,20 @@ class HomeController extends SessionController
     }
 
     /**
-     * The route for the poker session page.
-     */
-    #[Route("/proj/session", name: "proj_session")]
-    public function projSession(): Response
-    {
-        return $this->render('poker/session.html.twig');
-    }
-
-    /**
      * The route for the poker reset page.
      */
     #[Route("/proj/reset", name: "proj_reset")]
     public function projReset(): Response
     {
         return $this->render('poker/reset.html.twig');
+    }
+
+    /**
+     * The route for the database description.
+     */
+    #[Route("/proj/about/database", name: "proj_about_database")]
+    public function projAboutDatabase(): Response
+    {
+        return $this->render('poker/database.html.twig');
     }
 }

@@ -119,6 +119,9 @@
         <h2 class="phpdocumentor-content__title">
     Community
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/App-Poker-CommunityCards.html"><abbr title="\App\Poker\CommunityCards">CommunityCards</abbr></a>
+    </span>
     
             <div class="phpdocumentor-element__package">
             in package
@@ -138,7 +141,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
@@ -172,28 +175,28 @@
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -property -public">
-    <a class="" href="classes/App-Poker-Community.html#property_deck">$deck</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/App-Poker-Community.html#property_betorder">$betorder</a>
+    <span>
+                        &nbsp;: array&lt;string|int, int&gt;            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/App-Poker-CommunityCards.html#property_deck">$deck</a>
     <span>
                         &nbsp;: <a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a>            </span>
 </dt>
 
-            <dt class="phpdocumentor-table-of-contents__entry -property -public">
-    <a class="" href="classes/App-Poker-Community.html#property_discarded">$discarded</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/App-Poker-CommunityCards.html#property_discarded">$discarded</a>
     <span>
                         &nbsp;: <a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a>            </span>
 </dt>
 
-            <dt class="phpdocumentor-table-of-contents__entry -property -public">
-    <a class="" href="classes/App-Poker-Community.html#property_hand">$hand</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/App-Poker-CommunityCards.html#property_hand">$hand</a>
     <span>
                         &nbsp;: <a href="classes/App-Poker-Hand.html"><abbr title="\App\Poker\Hand">Hand</abbr></a>            </span>
-</dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -public">
-    <a class="" href="classes/App-Poker-Community.html#property_status">$status</a>
-    <span>
-                        &nbsp;: int            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
@@ -208,6 +211,24 @@
                         &nbsp;: int            </span>
 </dt>
 
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/App-Poker-Community.html#property_state">$state</a>
+    <span>
+                        &nbsp;: <a href="classes/App-Poker-GameStates.html"><abbr title="\App\Poker\GameStates">GameStates</abbr></a>            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/App-Poker-Community.html#property_stateText">$stateText</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/App-Poker-Community.html#property_status">$status</a>
+    <span>
+                        &nbsp;: int            </span>
+</dt>
+
     </dl>
 
 <h4 id="toc-methods">
@@ -217,31 +238,136 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Poker-Community.html#method___construct">__construct()</a>
+    <a class="" href="classes/App-Poker-CommunityCards.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Poker-Community.html#method___get">__get()</a>
+    <a class="" href="classes/App-Poker-Community.html#method_getBetorder">getBetorder()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, int&gt;    </span>
+</dt>
+<dd>Get for betorder.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Poker-CommunityCards.html#method_getDeck">getDeck()</a>
+    <span>
+                                &nbsp;: <a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a>    </span>
+</dt>
+<dd>Get for deck.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Poker-CommunityCards.html#method_getDiscarded">getDiscarded()</a>
+    <span>
+                                &nbsp;: <a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a>    </span>
+</dt>
+<dd>Get for discarded.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Poker-CommunityCards.html#method_getHand">getHand()</a>
+    <span>
+                                &nbsp;: <a href="classes/App-Poker-Hand.html"><abbr title="\App\Poker\Hand">Hand</abbr></a>    </span>
+</dt>
+<dd>Get for hand.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Poker-Community.html#method_getPot">getPot()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd>Magic get, for Twig.</dd>
+<dd>Get for pot.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Poker-Community.html#method___isset">__isset()</a>
+    <a class="" href="classes/App-Poker-Community.html#method_getRaises">getRaises()</a>
     <span>
-                                &nbsp;: bool    </span>
+                                &nbsp;: int    </span>
 </dt>
-<dd>Magic isset.</dd>
+<dd>Get for raises.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Poker-Community.html#method___set">__set()</a>
+    <a class="" href="classes/App-Poker-Community.html#method_getState">getState()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: <a href="classes/App-Poker-GameStates.html"><abbr title="\App\Poker\GameStates">GameStates</abbr></a>    </span>
 </dt>
-<dd>Magic set, for Twig.</dd>
+<dd>Get for state.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Poker-Community.html#method_getStateText">getStateText()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>Get for state text.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Poker-Community.html#method_getStatus">getStatus()</a>
+    <span>
+                                &nbsp;: int    </span>
+</dt>
+<dd>Get for status.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Poker-Community.html#method_setBetorder">setBetorder()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Set for betorder.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Poker-CommunityCards.html#method_setDeck">setDeck()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Set for dealer.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Poker-CommunityCards.html#method_setDiscarded">setDiscarded()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Set for discarded.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Poker-CommunityCards.html#method_setHand">setHand()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Set for hand.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Poker-Community.html#method_setPot">setPot()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Set for pot.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Poker-Community.html#method_setRaises">setRaises()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Set for raises.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Poker-Community.html#method_setState">setState()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Set for state.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Poker-Community.html#method_setStateText">setStateText()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Set for state text.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Poker-Community.html#method_setStatus">setStatus()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Set for status.</dd>
 
     </dl>
 
@@ -260,126 +386,54 @@
         class="
             phpdocumentor-element
             -property
-            -public
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_betorder">
+        $betorder
+        <a href="classes/App-Poker-Community.html#property_betorder" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">19</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, int&gt;</span>
+    <span class="phpdocumentor-signature__name">$betorder</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="property_deck">
         $deck
-        <a href="classes/App-Poker-Community.html#property_deck" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Poker-CommunityCards.html#property_deck" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">22</span>
-
-    </aside>
-
-    
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a></span>
-    <span class="phpdocumentor-signature__name">$deck</span>
-     = <span class="phpdocumentor-signature__default-value">new Deck()</span></code>
-
-    
-    
-    
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_discarded">
-        $discarded
-        <a href="classes/App-Poker-Community.html#property_discarded" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">23</span>
-
-    </aside>
-
-    
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a></span>
-    <span class="phpdocumentor-signature__name">$discarded</span>
-     = <span class="phpdocumentor-signature__default-value">new Deck()</span></code>
-
-    
-    
-    
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_hand">
-        $hand
-        <a href="classes/App-Poker-Community.html#property_hand" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">24</span>
-
-    </aside>
-
-    
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/App-Poker-Hand.html"><abbr title="\App\Poker\Hand">Hand</abbr></a></span>
-    <span class="phpdocumentor-signature__name">$hand</span>
-     = <span class="phpdocumentor-signature__default-value">new Hand()</span></code>
-
-    
-    
-    
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_status">
-        $status
-        <a href="classes/App-Poker-Community.html#property_status" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/CommunityCards.php"><a href="files/src-poker-communitycards.html"><abbr title="src/Poker/CommunityCards.php">CommunityCards.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">21</span>
 
@@ -388,10 +442,82 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">int</span>
-    <span class="phpdocumentor-signature__name">$status</span>
-     = <span class="phpdocumentor-signature__default-value">0</span></code>
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$deck</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_discarded">
+        $discarded
+        <a href="classes/App-Poker-CommunityCards.html#property_discarded" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/CommunityCards.php"><a href="files/src-poker-communitycards.html"><abbr title="src/Poker/CommunityCards.php">CommunityCards.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">22</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$discarded</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_hand">
+        $hand
+        <a href="classes/App-Poker-CommunityCards.html#property_hand" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/CommunityCards.php"><a href="files/src-poker-communitycards.html"><abbr title="src/Poker/CommunityCards.php">CommunityCards.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Poker-Hand.html"><abbr title="\App\Poker\Hand">Hand</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$hand</span>
+    </code>
 
     
     
@@ -417,7 +543,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
@@ -453,7 +579,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -463,6 +589,114 @@
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">int</span>
     <span class="phpdocumentor-signature__name">$raises</span>
+     = <span class="phpdocumentor-signature__default-value">0</span></code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_state">
+        $state
+        <a href="classes/App-Poker-Community.html#property_state" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">17</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Poker-GameStates.html"><abbr title="\App\Poker\GameStates">GameStates</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$state</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_stateText">
+        $stateText
+        <a href="classes/App-Poker-Community.html#property_stateText" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">20</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$stateText</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_status">
+        $status
+        <a href="classes/App-Poker-Community.html#property_status" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">21</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$status</span>
      = <span class="phpdocumentor-signature__default-value">0</span></code>
 
     
@@ -488,71 +722,26 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/App-Poker-Community.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Poker-CommunityCards.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/CommunityCards.php"><a href="files/src-poker-communitycards.html"><abbr title="src/Poker/CommunityCards.php">CommunityCards.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$status</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new Deck()</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$discarded</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new Deck()</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Poker-Hand.html"><abbr title="\App\Poker\Hand">Hand</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">new Hand()</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pot</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$raises</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
     
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$status</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">0</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$deck</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a></span>
-                 = <span class="phpdocumentor-signature__argument__default-value">new Deck()</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$discarded</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a></span>
-                 = <span class="phpdocumentor-signature__argument__default-value">new Deck()</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$hand</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Poker-Hand.html"><abbr title="\App\Poker\Hand">Hand</abbr></a></span>
-                 = <span class="phpdocumentor-signature__argument__default-value">new Hand()</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$pot</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">0</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$raises</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">0</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
+    
     
 
     
@@ -565,39 +754,185 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method___get">
-        __get()
-        <a href="classes/App-Poker-Community.html#method___get" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getBetorder">
+        getBetorder()
+        <a href="classes/App-Poker-Community.html#method_getBetorder" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Magic get, for Twig.</p>
+        <p class="phpdocumentor-summary">Get for betorder.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+                    <span class="phpdocumentor-signature__name">getBetorder</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
     
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$key</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
+    
+    
 
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getDeck">
+        getDeck()
+        <a href="classes/App-Poker-CommunityCards.html#method_getDeck" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/CommunityCards.php"><a href="files/src-poker-communitycards.html"><abbr title="src/Poker/CommunityCards.php">CommunityCards.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">35</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get for deck.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getDeck</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getDiscarded">
+        getDiscarded()
+        <a href="classes/App-Poker-CommunityCards.html#method_getDiscarded" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/CommunityCards.php"><a href="files/src-poker-communitycards.html"><abbr title="src/Poker/CommunityCards.php">CommunityCards.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">53</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get for discarded.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getDiscarded</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getHand">
+        getHand()
+        <a href="classes/App-Poker-CommunityCards.html#method_getHand" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/CommunityCards.php"><a href="files/src-poker-communitycards.html"><abbr title="src/Poker/CommunityCards.php">CommunityCards.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">71</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get for hand.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getHand</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/App-Poker-Hand.html"><abbr title="\App\Poker\Hand">Hand</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/App-Poker-Hand.html"><abbr title="\App\Poker\Hand">Hand</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getPot">
+        getPot()
+        <a href="classes/App-Poker-Community.html#method_getPot" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">102</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get for pot.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getPot</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
     
 
     
@@ -614,23 +949,179 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method___isset">
-        __isset()
-        <a href="classes/App-Poker-Community.html#method___isset" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getRaises">
+        getRaises()
+        <a href="classes/App-Poker-Community.html#method_getRaises" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">120</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Magic isset.</p>
+        <p class="phpdocumentor-summary">Get for raises.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__isset</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">getRaises</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getState">
+        getState()
+        <a href="classes/App-Poker-Community.html#method_getState" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">48</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get for state.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getState</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/App-Poker-GameStates.html"><abbr title="\App\Poker\GameStates">GameStates</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/App-Poker-GameStates.html"><abbr title="\App\Poker\GameStates">GameStates</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getStateText">
+        getStateText()
+        <a href="classes/App-Poker-Community.html#method_getStateText" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">66</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get for state text.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getStateText</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getStatus">
+        getStatus()
+        <a href="classes/App-Poker-Community.html#method_getStatus" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">84</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get for status.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getStatus</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setBetorder">
+        setBetorder()
+        <a href="classes/App-Poker-Community.html#method_setBetorder" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">38</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Set for betorder.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setBetorder</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, int&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$betorder</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -639,7 +1130,350 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$key</span>
+                <span class="phpdocumentor-signature__argument__name">$betorder</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, int&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">static</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setDeck">
+        setDeck()
+        <a href="classes/App-Poker-CommunityCards.html#method_setDeck" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/CommunityCards.php"><a href="files/src-poker-communitycards.html"><abbr title="src/Poker/CommunityCards.php">CommunityCards.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">43</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Set for dealer.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setDeck</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$deck</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">static</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setDiscarded">
+        setDiscarded()
+        <a href="classes/App-Poker-CommunityCards.html#method_setDiscarded" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/CommunityCards.php"><a href="files/src-poker-communitycards.html"><abbr title="src/Poker/CommunityCards.php">CommunityCards.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">61</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Set for discarded.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setDiscarded</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$discarded</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$discarded</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Poker-Deck.html"><abbr title="\App\Poker\Deck">Deck</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">static</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setHand">
+        setHand()
+        <a href="classes/App-Poker-CommunityCards.html#method_setHand" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/CommunityCards.php"><a href="files/src-poker-communitycards.html"><abbr title="src/Poker/CommunityCards.php">CommunityCards.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">79</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Set for hand.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setHand</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Poker-Hand.html"><abbr title="\App\Poker\Hand">Hand</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hand</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$hand</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Poker-Hand.html"><abbr title="\App\Poker\Hand">Hand</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">static</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setPot">
+        setPot()
+        <a href="classes/App-Poker-Community.html#method_setPot" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">110</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Set for pot.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setPot</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pot</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$pot</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">static</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setRaises">
+        setRaises()
+        <a href="classes/App-Poker-Community.html#method_setRaises" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">128</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Set for raises.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setRaises</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$raises</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$raises</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">static</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setState">
+        setState()
+        <a href="classes/App-Poker-Community.html#method_setState" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">56</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Set for state.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setState</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Poker-GameStates.html"><abbr title="\App\Poker\GameStates">GameStates</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$state</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$state</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Poker-GameStates.html"><abbr title="\App\Poker\GameStates">GameStates</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">static</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setStateText">
+        setStateText()
+        <a href="classes/App-Poker-Community.html#method_setStateText" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">74</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Set for state text.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setStateText</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$stateText</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$stateText</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -653,7 +1487,7 @@
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">bool</span>
+        <span class="phpdocumentor-signature__response_type">static</span>
             </section>
 
 </article>
@@ -663,23 +1497,23 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method___set">
-        __set()
-        <a href="classes/App-Poker-Community.html#method___set" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_setStatus">
+        setStatus()
+        <a href="classes/App-Poker-Community.html#method_setStatus" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Community.php"><a href="files/src-poker-community.html"><abbr title="src/Poker/Community.php">Community.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">92</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Magic set, for Twig.</p>
+        <p class="phpdocumentor-summary">Set for status.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__set</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">setStatus</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$status</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -688,14 +1522,7 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$key</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$value</span>
+                <span class="phpdocumentor-signature__argument__name">$status</span>
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -707,7 +1534,11 @@
 
     
 
-    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">static</span>
+            </section>
+
 </article>
             </section>
 
@@ -822,22 +1653,40 @@
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="classes/App-Poker-Community.html#property_deck">$deck</a></li>
-                                                    <li class=""><a href="classes/App-Poker-Community.html#property_discarded">$discarded</a></li>
-                                                    <li class=""><a href="classes/App-Poker-Community.html#property_hand">$hand</a></li>
-                                                    <li class=""><a href="classes/App-Poker-Community.html#property_status">$status</a></li>
+                                                    <li class=""><a href="classes/App-Poker-Community.html#property_betorder">$betorder</a></li>
+                                                    <li class=""><a href="classes/App-Poker-CommunityCards.html#property_deck">$deck</a></li>
+                                                    <li class=""><a href="classes/App-Poker-CommunityCards.html#property_discarded">$discarded</a></li>
+                                                    <li class=""><a href="classes/App-Poker-CommunityCards.html#property_hand">$hand</a></li>
                                                     <li class=""><a href="classes/App-Poker-Community.html#property_pot">$pot</a></li>
                                                     <li class=""><a href="classes/App-Poker-Community.html#property_raises">$raises</a></li>
+                                                    <li class=""><a href="classes/App-Poker-Community.html#property_state">$state</a></li>
+                                                    <li class=""><a href="classes/App-Poker-Community.html#property_stateText">$stateText</a></li>
+                                                    <li class=""><a href="classes/App-Poker-Community.html#property_status">$status</a></li>
                                             </ul>
                 </li>
             
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li class=""><a href="classes/App-Poker-Community.html#method___construct">__construct()</a></li>
-                                            <li class=""><a href="classes/App-Poker-Community.html#method___get">__get()</a></li>
-                                            <li class=""><a href="classes/App-Poker-Community.html#method___isset">__isset()</a></li>
-                                            <li class=""><a href="classes/App-Poker-Community.html#method___set">__set()</a></li>
+                                            <li class=""><a href="classes/App-Poker-CommunityCards.html#method___construct">__construct()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Community.html#method_getBetorder">getBetorder()</a></li>
+                                            <li class=""><a href="classes/App-Poker-CommunityCards.html#method_getDeck">getDeck()</a></li>
+                                            <li class=""><a href="classes/App-Poker-CommunityCards.html#method_getDiscarded">getDiscarded()</a></li>
+                                            <li class=""><a href="classes/App-Poker-CommunityCards.html#method_getHand">getHand()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Community.html#method_getPot">getPot()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Community.html#method_getRaises">getRaises()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Community.html#method_getState">getState()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Community.html#method_getStateText">getStateText()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Community.html#method_getStatus">getStatus()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Community.html#method_setBetorder">setBetorder()</a></li>
+                                            <li class=""><a href="classes/App-Poker-CommunityCards.html#method_setDeck">setDeck()</a></li>
+                                            <li class=""><a href="classes/App-Poker-CommunityCards.html#method_setDiscarded">setDiscarded()</a></li>
+                                            <li class=""><a href="classes/App-Poker-CommunityCards.html#method_setHand">setHand()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Community.html#method_setPot">setPot()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Community.html#method_setRaises">setRaises()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Community.html#method_setState">setState()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Community.html#method_setStateText">setStateText()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Community.html#method_setStatus">setStatus()</a></li>
                                     </ul>
             </li>
                     </ul>

@@ -33,9 +33,10 @@ class BettingOrder
         /** Find player with big blind, establish betting order */
         $betorder = array_map('intval', $community->getBetorder());
         if ($betorder === [] && $community->getState() != GameStates::Showdown) {
-            $handle = match (true) {
-                $community->getPot() => (int) array_search(true, array_map(fn ($player): bool => $player->isDealer(), $players)),
-                default => (int) array_search(true, array_map(fn ($player): bool => $player->isBigBlind(), $players))
+            $handle = match ($community->getState()) {
+                GameStates::NewGame, GameStates::PreFlop =>
+                   (int) array_search(true, array_map(fn ($player): bool => $player->isBigBlind(), $players)),
+                default => (int) array_search(true, array_map(fn ($player): bool => $player->isDealer(), $players))
             };
 
             $betorder = array_map(fn ($key): int => ($handle + $key) % 3, [1, 2, 3]);

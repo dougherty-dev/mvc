@@ -8,6 +8,7 @@
                 <div class="player0">
                     <table>
                         <tr>
+                            <td class="player_handle">0</td>
                             <td>👱🏻‍♀️</td>
                             <td>
                             {%- if players[0].dealer -%}
@@ -24,6 +25,9 @@
                 </div>
                 <div class="player1">
                     <table>
+                        <tr>
+                            <td class="player_handle">1</td>
+                        </tr>
                         <tr>
                             <td>👩🏼‍💻</td>
                         </tr>
@@ -44,6 +48,9 @@
                 <div class="player2">
                     <table>
                         <tr>
+                            <td class="player_handle">2</td>
+                        </tr>
+                        <tr>
                             <td>🧑🏼‍💻</td>
                         </tr>
                         <tr>
@@ -60,27 +67,47 @@
                         </tr>
                     </table>
                 </div>
+                {% set activePlayer = players[0].state.name not in ["None", "Out", "Folds"] %}
+                {% set playersTurn = community.betorder[0] is defined and community.betorder[0] == 0 %}
+                {% set notShowdown = community.state.name != "Showdown" %}
+                {% set zeroBets = players[0].bet == 0 and players[1].bet == 0 and players[2].bet == 0 %}
+                {% set equalBets = players[1].bet == players[0].bet and players[2].bet == players[0].bet %}
+                {% set hasLowerBet = players[1].bet > players[0].bet or players[2].bet > players[0].bet %}
+                {% set canRaise = community.raises < 3 and hasLowerBet %}
+                {% set handSize = community.hand.hand|length %}
+                {% set preflop = handSize == 0 %}
+                {% set flop = handSize == 3 and community.state.name == "Flop" %}
+                {% set turn = handSize == 4 and community.state.name == "Turn" %}
+                {% set river = handSize == 5 and community.state.name == "River" %}
                 <div class="grid-action">
                     <table class="action-table">
                         <tr>
-                            <td class="action right divider">{{ community.stateText }} {{ community.betorder|join('|') }}</td>
+                            <td class="action right divider">{{ community.stateText }} {{ app.session.get('bestPokerHand').text| default('') }} {{ community.betorder|join('|') }}</td>
                             <td class="action left">
                                 <form method="POST" action="{{ path(action[2]) }}">
-                                    {%- if players[0].state.name in ['Bets', 'Calls', 'Raises', "Passes"] and community.betorder[0] is defined and community.betorder[0] == 0 -%}
-                                    {%- if community.raises <= 2 -%}
-                                    <input type="number" name="bet" min="0" max="{{ community.state.betCost() }}" value="{{ community.state.betCost() }}">
-                                    <button type="submit" name="raise">Höj</button>
-                                    {%- endif -%}
-                                    {%- if players[1].bet > 0 or players[2].bet > 0 -%}
-                                    <button type="submit" name="call">Syna</button>
-                                    {%- endif -%}
-                                    {%- if players[1].bet == 0 and players[2].bet == 0 -%}
-                                    <button type="submit" name="check">Passa</button>
-                                    {%- endif -%}
-                                    <button type="submit" name="fold">Lägg</button>
+                                {%- if activePlayer and playersTurn and notShowdown -%}
+                                    {%- if (preflop or flop or turn or river) and not zeroBets -%}
+                                        {%- if canRaise -%}
+                                            <input type="number" name="bet" min="0" max="{{ community.state.betCost() }}" value="{{ community.state.betCost() }}">
+                                            <button type="submit" name="raise">Höj</button>
+                                        {%- endif -%}
+                                        {%- if equalBets -%}
+                                        <input type="number" name="bet" min="0" max="{{ community.state.betCost() }}" value="{{ community.state.betCost() }}">
+                                        <button type="submit" name="makebet">Satsa</button>
+                                        {%- endif -%}
+                                        {%- if hasLowerBet > 0 -%}
+                                        <button type="submit" name="call">Syna</button>
+                                        {%- endif -%}
+                                        {%- if zeroBets -%}
+                                        <button type="submit" name="check">Passa</button>
+                                        {%- endif -%}
+                                        <button type="submit" name="fold">Lägg</button>
                                     {%- else -%}
-                                    <button type="submit">{{ action[0] }}</button>
+                                        <button type="submit">{{ action[0] }}</button>
                                     {%- endif -%}
+                                {%- else -%}
+                                    <button type="submit">{{ action[0] }}</button>
+                                {%- endif -%}
                                 </form>
                             </td>
                         </tr>
@@ -92,7 +119,11 @@
                     <img src="{{ asset('build/images/cards/'~card.value~'.svg') }}" width="50" class="poker-card" alt="{{ app.session.get('deckIntValues')[card.value] }}" title="{{ app.session.get('deckTextValues')[card.value] }}">
                     {%- endfor -%}
                 </div>
+                {%- if app.session.get('bestPokerHand').handle is defined and app.session.get('bestPokerHand').handle == 0 -%}
+                <div class="grid-player0 winner">
+                {%- else -%}
                 <div class="grid-player0">
+                {%- endif -%}
                     <div class="player0-grid">
                         <div class="grid-p0-info">
                             <table class="info-table">
@@ -112,7 +143,11 @@
                         </div>
                     </div>
                 </div>
+                {%- if app.session.get('bestPokerHand').handle is defined and app.session.get('bestPokerHand').handle == 1 -%}
+                <div class="grid-player1 winner">
+                {%- else -%}
                 <div class="grid-player1">
+                {%- endif -%}
                     <div class="player1-grid">
                         <div class="grid-p1-info">
                             <table class="info-table">
@@ -136,7 +171,11 @@
                         </div>
                     </div>
                 </div>
+                {%- if app.session.get('bestPokerHand').handle is defined and app.session.get('bestPokerHand').handle == 2 -%}
+                <div class="grid-player2 winner">
+                {%- else -%}
                 <div class="grid-player2">
+                {%- endif -%}
                     <div class="player2-grid">
                         <div class="grid-p2-info">
                             <table class="info-table">
@@ -162,6 +201,8 @@
                 </div>
             </div>
         </section>
+{{ players[0].bet + players[1].bet + players[2].bet + players[0].cash + players[1].cash + players[2].cash + community.pot }}
+{{ dump(app.session.get('bestPokerHand')) }}
 {{ dump(community) }}
 {{ dump(players) }}
 {{ dump(action) }}

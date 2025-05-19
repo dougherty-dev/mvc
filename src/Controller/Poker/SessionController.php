@@ -23,7 +23,7 @@ use App\Poker\FaceMethods;
  */
 class SessionController extends AbstractController
 {
-    protected SessionInterface $session;
+    public SessionInterface $session;
 
     public function __construct(protected RequestStack $requestStack)
     {
@@ -41,6 +41,7 @@ class SessionController extends AbstractController
             $this->session->set("deckUnicodeValues", FaceMethods::deckUnicodeValues());
             $this->session->set("deckSymbolValues", FaceMethods::deckSymbolValues());
             $this->session->set("deckTextValues", FaceMethods::deckTextValues());
+            $this->session->set("bestPokerHand", []);
         }
     }
 }

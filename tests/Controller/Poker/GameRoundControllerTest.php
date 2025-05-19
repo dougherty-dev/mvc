@@ -23,7 +23,7 @@ class GameRoundControllerTest extends WebTestCase
      */
     public function testGameRoundController(): void
     {
-        $cls = new GameRoundController();
+        $cls = new GameRoundController(new RequestStack());
         $this->assertInstanceOf("\App\Controller\Poker\GameRoundController", $cls);
     }
 
@@ -35,6 +35,28 @@ class GameRoundControllerTest extends WebTestCase
         $client = static::createClient();
         $client->request('POST', '/proj/poker/begin');
         $client->request('POST', '/proj/poker/round');
+        $this->assertResponseRedirects('/proj/poker');
+    }
+
+    /**
+     * Test route /proj/poker/round
+     */
+    public function testPokerRound(): void
+    {
+        $client = static::createClient();
+        $client->request('POST', '/proj/poker/round', ['fold' => 1]);
+        $this->assertResponseRedirects('/proj/poker');
+
+        $client->request('POST', '/proj/poker/round', ['call' => 1]);
+        $this->assertResponseRedirects('/proj/poker');
+
+        $client->request('POST', '/proj/poker/round', ['check' => 1]);
+        $this->assertResponseRedirects('/proj/poker');
+
+        $client->request('POST', '/proj/poker/round', ['raise' => 1]);
+        $this->assertResponseRedirects('/proj/poker');
+
+        $client->request('POST', '/proj/poker/round', ['makebet' => 1, 'bet' => 10]);
         $this->assertResponseRedirects('/proj/poker');
     }
 }

@@ -25,7 +25,7 @@ use App\Poker\Round\PrepareNextRound;
 /**
  * The GameNextController class.
  */
-class GameNextController extends AbstractController
+class GameNextController extends SessionController
 {
     /**
      * POST route for continuing game after showdown.
@@ -33,28 +33,23 @@ class GameNextController extends AbstractController
     #[Route("/proj/poker/next", name: "proj_poker_next", methods: ['POST'])]
     public function projPokerBegin(ManagerRegistry $doctrine): Response
     {
+        $this->checkSession();
+        $this->session->set("bestPokerHand", []);
+
         $entityManager = $doctrine->getManager();
 
-        $pokerCommunity = new FetchCommunity();
-        $community = $pokerCommunity->fetchCommunity($entityManager);
-
-        $pokerPlayers = new FetchPlayers();
-        $players = $pokerPlayers->fetchPlayers($entityManager);
+        $community = (new FetchCommunity())->fetchCommunity($entityManager);
+        $players = (new FetchPlayers())->fetchPlayers($entityManager);
 
         $updateCommunity = new UpdateCommunity($entityManager);
         $updatePlayer = new UpdatePlayer($entityManager);
 
-        $nextRound = new PrepareNextRound();
-        $nextRound->save($entityManager, $players, $community, $updatePlayer);
+        (new PrepareNextRound())->save($entityManager, $players, $community, $updatePlayer);
 
-        $newDealer = new SetNewDealer();
-        [$dealer, $smallBlind, $bigBlind] = $newDealer->set($players);
+        [$dealer, $smallBlind, $bigBlind] = (new SetNewDealer())->set($players);
 
-        $setBadges = new SetBadges();
-        $setBadges->set($entityManager, $community, $dealer, $smallBlind, $bigBlind);
-
-        $dealCards = new DealCards($entityManager, $players, $community, $updatePlayer, $updateCommunity);
-        $dealCards->deal();
+        (new SetBadges())->set($entityManager, $community, $dealer, $smallBlind, $bigBlind);
+        (new DealCards($entityManager, $players, $community, $updatePlayer, $updateCommunity))->deal();
 
         return $this->redirectToRoute('proj_poker');
     }

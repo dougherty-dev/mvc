@@ -18,9 +18,8 @@ use App\Poker\Helpers\FetchPlayers;
 use App\Poker\Helpers\FetchCommunity;
 use App\Poker\Helpers\UpdatePlayer;
 use App\Poker\Helpers\UpdateCommunity;
-use App\Poker\Helpers\HandleComputerBet;
+use App\Poker\Round\BettingLoop;
 use App\Poker\Round\DealCards;
-use App\Poker\Round\HumanPlayer;
 use App\Poker\Round\RoundDone;
 use App\Poker\GameStates;
 
@@ -28,7 +27,7 @@ use App\Poker\GameStates;
  * The GameRoundController class.
  * @SuppressWarnings("StaticAccess")
  */
-class GameRoundController extends AbstractController
+class GameRoundController extends SessionController
 {
     /**
      * POST route for preflop, flop, turn and river betting rounds.
@@ -36,57 +35,27 @@ class GameRoundController extends AbstractController
     #[Route("/proj/poker/round", name: "proj_poker_round", methods: ['POST'])]
     public function projPokerRound(Request $request, ManagerRegistry $doctrine): Response
     {
+        $this->checkSession();
         $entityManager = $doctrine->getManager();
 
-        $pokerCommunity = new FetchCommunity();
-        $community = $pokerCommunity->fetchCommunity($entityManager);
-
-        $pokerPlayers = new FetchPlayers();
-        $players = $pokerPlayers->fetchPlayers($entityManager);
+        $community = (new FetchCommunity())->fetchCommunity($entityManager);
+        $players = (new FetchPlayers())->fetchPlayers($entityManager);
 
         $updateCommunity = new UpdateCommunity($entityManager);
         $updatePlayer = new UpdatePlayer($entityManager);
 
-        $dealCards = new DealCards($entityManager, $players, $community, $updatePlayer, $updateCommunity);
-        $dealCards->deal();
+        (new DealCards($entityManager, $players, $community, $updatePlayer, $updateCommunity))->deal();
 
-        /**
-         * Main loop for betting round, according to betting order.
-         * Interrupt for human player and treat input when available.
-         */
-        $betorder = array_map('intval', $community->getBetorder());
-
-        foreach ($betorder as $currentPlayer) {
-            /**
-             * Human player
-             */
-            if ($currentPlayer === 0) {
-                $humanPlayer = new HumanPlayer();
-                $res = $humanPlayer->handlePlayer($players, $community, $updatePlayer, $updateCommunity, $request);
-                if ($res) {
-                    return $this->redirectToRoute('proj_poker');
-                }
-            }
-
-            /**
-             * Computer player
-             */
-            if ($currentPlayer != 0) {
-                $handleCB = new HandleComputerBet();
-                $handleCB->handleBet($players, $community, $updatePlayer, $updateCommunity, $currentPlayer);
-            }
-
-            array_shift($betorder);
-            $community->setBetorder($betorder);
-            $updateCommunity->saveBetorder($betorder);
+        if ((new BettingLoop())->doLoop($request, $players, $community, $updatePlayer, $updateCommunity)) {
+            return $this->redirectToRoute('proj_poker');
         }
 
         /**
          * Check if round is done, collect bets, do next state.
          */
         $roundDone = new RoundDone();
-        if ($roundDone->isDone($entityManager, $players, $community, $updatePlayer, $updateCommunity)) {
-            $updateCommunity->saveState($community->getState()->nextState()->value);
+        if ($roundDone->isDone($this->session, $entityManager, $players, $community, $updatePlayer, $updateCommunity)) {
+            (new DealCards($entityManager, $players, $community, $updatePlayer, $updateCommunity))->deal();
         }
 
         return $this->redirectToRoute('proj_poker');

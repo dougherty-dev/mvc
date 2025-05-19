@@ -54,6 +54,7 @@ return [
         '/proj/about' => [[['_route' => 'proj_about', '_controller' => 'App\\Controller\\Poker\\HomeController::projAbout'], null, null, null, false, false, null]],
         '/proj/session' => [[['_route' => 'proj_session', '_controller' => 'App\\Controller\\Poker\\HomeController::projSession'], null, null, null, false, false, null]],
         '/proj/reset' => [[['_route' => 'proj_reset', '_controller' => 'App\\Controller\\Poker\\HomeController::projReset'], null, null, null, false, false, null]],
+        '/proj/about/database' => [[['_route' => 'proj_about_database', '_controller' => 'App\\Controller\\Poker\\HomeController::projAboutDatabase'], null, null, null, false, false, null]],
         '/proj/reset/post' => [[['_route' => 'proj_reset_post', '_controller' => 'App\\Controller\\Poker\\ResetController::projResetPost'], null, ['POST' => 0], null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::home'], null, null, null, false, false, null]],
         '/about' => [[['_route' => 'about', '_controller' => 'App\\Controller\\HomeController::about'], null, null, null, false, false, null]],

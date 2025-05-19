@@ -47,8 +47,6 @@ class SetBadges
                 default => 0
             };
 
-            $cash = $player->getCash() - $bet;
-
             $player->setDealer($handle === $dealer)
                 ->setSmallBlind($handle === $smallBlind)
                 ->setBigBlind($handle === $bigBlind);

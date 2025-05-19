@@ -16,7 +16,7 @@ use App\Poker\Helpers\GetDeck;
 /**
  * Test cases for class GameBeginController.
  */
-class GameGetDeckTest extends WebTestCase
+class GetDeckTest extends WebTestCase
 {
     /**
      * Test instantiation of the class itself.

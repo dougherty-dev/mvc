@@ -9,6 +9,7 @@ declare (strict_types=1);
 
 namespace App\Tests\Controller\Poker;
 
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Controller\Poker\ResetController;
@@ -23,7 +24,7 @@ class ResetControllerTest extends WebTestCase
      */
     public function testResetController(): void
     {
-        $this->assertInstanceOf("\App\Controller\Poker\ResetController", new ResetController());
+        $this->assertInstanceOf("\App\Controller\Poker\ResetController", new ResetController(new RequestStack()));
     }
 
     /**

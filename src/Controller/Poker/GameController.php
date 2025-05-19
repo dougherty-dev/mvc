@@ -30,11 +30,8 @@ class GameController extends SessionController
         $this->checkSession();
         $entityManager = $doctrine->getManager();
 
-        $pokerCommunity = new FetchCommunity();
-        $community = $pokerCommunity->fetchCommunity($entityManager);
-
-        $pokerPlayers = new FetchPlayers();
-        $players = $pokerPlayers->fetchPlayers($entityManager);
+        $community = (new FetchCommunity())->fetchCommunity($entityManager);
+        $players = (new FetchPlayers())->fetchPlayers($entityManager);
 
         $action = match ($community->getState()) {
             GameStates::None => ['Spela', 'spela', 'proj_poker_begin'],
