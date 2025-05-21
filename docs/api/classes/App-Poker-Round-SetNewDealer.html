@@ -120,6 +120,9 @@
         <h2 class="phpdocumentor-content__title">
     SetNewDealer
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/App-Poker-Round-NewDealerFuncs.html"><abbr title="\App\Poker\Round\NewDealerFuncs">NewDealerFuncs</abbr></a>
+    </span>
     
             <div class="phpdocumentor-element__package">
             in package
@@ -183,6 +186,31 @@
 
 
 
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/App-Poker-Round-SetNewDealer.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Poker-Round-NewDealerFuncs.html#property_bigBlind">$bigBlind</a>
+    <span>
+                        &nbsp;: int            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Poker-Round-NewDealerFuncs.html#property_dealer">$dealer</a>
+    <span>
+                        &nbsp;: int            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Poker-Round-NewDealerFuncs.html#property_smallBlind">$smallBlind</a>
+    <span>
+                        &nbsp;: int            </span>
+</dt>
+
+    </dl>
 
 <h4 id="toc-methods">
     Methods
@@ -197,6 +225,34 @@
 </dt>
 <dd>Determine next dealer from either 2 or 3 players after round completed.</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/App-Poker-Round-NewDealerFuncs.html#method_newDealerOut">newDealerOut()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Two players. New dealer is out?</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/App-Poker-Round-NewDealerFuncs.html#method_newDealerPlusOneOut">newDealerPlusOneOut()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>New dealer is still in.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/App-Poker-Round-NewDealerFuncs.html#method_newDealerPlusTwoOut">newDealerPlusTwoOut()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Dealer + 2 out?</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/App-Poker-Round-NewDealerFuncs.html#method_threePlayersLeft">threePlayersLeft()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Three players?</dd>
+
     </dl>
 
 
@@ -204,6 +260,121 @@
         
 
         
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="classes/App-Poker-Round-SetNewDealer.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_bigBlind">
+        $bigBlind
+        <a href="classes/App-Poker-Round-NewDealerFuncs.html#property_bigBlind" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Round/NewDealerFuncs.php"><a href="files/src-poker-round-newdealerfuncs.html"><abbr title="src/Poker/Round/NewDealerFuncs.php">NewDealerFuncs.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">22</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$bigBlind</span>
+     = <span class="phpdocumentor-signature__default-value">-1</span></code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_dealer">
+        $dealer
+        <a href="classes/App-Poker-Round-NewDealerFuncs.html#property_dealer" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Round/NewDealerFuncs.php"><a href="files/src-poker-round-newdealerfuncs.html"><abbr title="src/Poker/Round/NewDealerFuncs.php">NewDealerFuncs.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">20</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$dealer</span>
+     = <span class="phpdocumentor-signature__default-value">-1</span></code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_smallBlind">
+        $smallBlind
+        <a href="classes/App-Poker-Round-NewDealerFuncs.html#property_smallBlind" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Round/NewDealerFuncs.php"><a href="files/src-poker-round-newdealerfuncs.html"><abbr title="src/Poker/Round/NewDealerFuncs.php">NewDealerFuncs.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">21</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$smallBlind</span>
+     = <span class="phpdocumentor-signature__default-value">-1</span></code>
+
+    
+    
+    
+
+    
+
+</article>
+            </section>
 
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
@@ -263,6 +434,148 @@
 
             </section>
 
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_newDealerOut">
+        newDealerOut()
+        <a href="classes/App-Poker-Round-NewDealerFuncs.html#method_newDealerOut" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Round/NewDealerFuncs.php"><a href="files/src-poker-round-newdealerfuncs.html"><abbr title="src/Poker/Round/NewDealerFuncs.php">NewDealerFuncs.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">37</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Two players. New dealer is out?</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">newDealerOut</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_newDealerPlusOneOut">
+        newDealerPlusOneOut()
+        <a href="classes/App-Poker-Round-NewDealerFuncs.html#method_newDealerPlusOneOut" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Round/NewDealerFuncs.php"><a href="files/src-poker-round-newdealerfuncs.html"><abbr title="src/Poker/Round/NewDealerFuncs.php">NewDealerFuncs.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">48</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">New dealer is still in.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">newDealerPlusOneOut</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <section class="phpdocumentor-description"><p>Dealer + 1 out?</p>
+</section>
+
+    
+    
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_newDealerPlusTwoOut">
+        newDealerPlusTwoOut()
+        <a href="classes/App-Poker-Round-NewDealerFuncs.html#method_newDealerPlusTwoOut" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Round/NewDealerFuncs.php"><a href="files/src-poker-round-newdealerfuncs.html"><abbr title="src/Poker/Round/NewDealerFuncs.php">NewDealerFuncs.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">58</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Dealer + 2 out?</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">newDealerPlusTwoOut</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_threePlayersLeft">
+        threePlayersLeft()
+        <a href="classes/App-Poker-Round-NewDealerFuncs.html#method_threePlayersLeft" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Round/NewDealerFuncs.php"><a href="files/src-poker-round-newdealerfuncs.html"><abbr title="src/Poker/Round/NewDealerFuncs.php">NewDealerFuncs.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">27</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Three players?</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">threePlayersLeft</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+    
 </article>
             </section>
 
@@ -369,15 +682,28 @@
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                                                                <li><a href="classes/App-Poker-Round-SetNewDealer.html#toc-methods">Methods</a></li>
+                                                            <li><a href="classes/App-Poker-Round-SetNewDealer.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/App-Poker-Round-SetNewDealer.html#toc-methods">Methods</a></li>
                                     </ul>
             </li>
             
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li class=""><a href="classes/App-Poker-Round-NewDealerFuncs.html#property_bigBlind">$bigBlind</a></li>
+                                                    <li class=""><a href="classes/App-Poker-Round-NewDealerFuncs.html#property_dealer">$dealer</a></li>
+                                                    <li class=""><a href="classes/App-Poker-Round-NewDealerFuncs.html#property_smallBlind">$smallBlind</a></li>
+                                            </ul>
+                </li>
             
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
                                             <li class=""><a href="classes/App-Poker-Round-SetNewDealer.html#method_set">set()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Round-NewDealerFuncs.html#method_newDealerOut">newDealerOut()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Round-NewDealerFuncs.html#method_newDealerPlusOneOut">newDealerPlusOneOut()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Round-NewDealerFuncs.html#method_newDealerPlusTwoOut">newDealerPlusTwoOut()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Round-NewDealerFuncs.html#method_threePlayersLeft">threePlayersLeft()</a></li>
                                     </ul>
             </li>
                     </ul>

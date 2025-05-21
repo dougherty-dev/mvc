@@ -30,6 +30,9 @@ class HandleComputerBet extends PlayerBetFunctions
         UpdateCommunity $updateCommunity,
         int $currentPlayer
     ): void {
+        if ($players[$currentPlayer]->getState() === PlayerStates::Out) {
+            return;
+        }
         $this->updatePlayer = $updatePlayer;
         $this->updateCommunity = $updateCommunity;
 

@@ -565,6 +565,48 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Library\LibraryViewController"/>
       </call>
     </service>
+    <service id="App\Controller\Poker\API\CombinationsAPIController" class="App\Controller\Poker\API\CombinationsAPIController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Poker\API\CombinationsAPIController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Poker\API\GameAPIController" class="App\Controller\Poker\API\GameAPIController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Poker\API\GameAPIController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Poker\API\HandAPIController" class="App\Controller\Poker\API\HandAPIController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Poker\API\HandAPIController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Poker\API\HexAPIController" class="App\Controller\Poker\API\HexAPIController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Poker\API\HexAPIController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Poker\API\HexDecodeAPIController" class="App\Controller\Poker\API\HexDecodeAPIController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Poker\API\HexDecodeAPIController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Poker\API\WinnerAPIController" class="App\Controller\Poker\API\WinnerAPIController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Poker\API\WinnerAPIController"/>
+      </call>
+    </service>
     <service id="App\Controller\Poker\GameBeginController" class="App\Controller\Poker\GameBeginController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -675,9 +717,12 @@
     <service id="App\Poker\HandFoundation" class="App\Poker\HandFoundation" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Helpers\FetchCommunity" class="App\Poker\Helpers\FetchCommunity" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Helpers\FetchPlayers" class="App\Poker\Helpers\FetchPlayers" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\Helpers\FindAllHands" class="App\Poker\Helpers\FindAllHands" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\Helpers\FindBestHand" class="App\Poker\Helpers\FindBestHand" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Helpers\GetDeck" class="App\Poker\Helpers\GetDeck" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Helpers\HandleComputerBet" class="App\Poker\Helpers\HandleComputerBet" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Helpers\HandlePlayerBet" class="App\Poker\Helpers\HandlePlayerBet" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\Helpers\HexDecode" class="App\Poker\Helpers\HexDecode" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Helpers\PlayerBetFunctions" class="App\Poker\Helpers\PlayerBetFunctions" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Helpers\UpdateCommunity" class="App\Poker\Helpers\UpdateCommunity" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;App\Poker\Helpers\UpdateCommunity&quot;: argument &quot;$entityManager&quot; of method &quot;__construct()&quot; references interface &quot;Doctrine\Persistence\ObjectManager&quot; but no such service exists. You should maybe alias this interface to the existing &quot;doctrine.orm.default_entity_manager&quot; service."/>
@@ -702,6 +747,7 @@
     <service id="App\Poker\Round\BettingLoop" class="App\Poker\Round\BettingLoop" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Round\BettingOrder" class="App\Poker\Round\BettingOrder" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Round\CheckBadges" class="App\Poker\Round\CheckBadges" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\Round\CollectBets" class="App\Poker\Round\CollectBets" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Round\CommunityCards" class="App\Poker\Round\CommunityCards" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Round\DealCards" class="App\Poker\Round\DealCards" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;App\Poker\Round\DealCards&quot;: argument &quot;$entityManager&quot; of method &quot;__construct()&quot; references interface &quot;Doctrine\Persistence\ObjectManager&quot; but no such service exists. You should maybe alias this interface to the existing &quot;doctrine.orm.default_entity_manager&quot; service."/>
@@ -711,8 +757,11 @@
     <service id="App\Poker\Round\DealHoleCardsHelper" class="App\Poker\Round\DealHoleCardsHelper" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Round\DealerLottery" class="App\Poker\Round\DealerLottery" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Round\DecideWinner" class="App\Poker\Round\DecideWinner" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\Round\EndGame" class="App\Poker\Round\EndGame" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\Round\Folds" class="App\Poker\Round\Folds" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Round\HoleCards" class="App\Poker\Round\HoleCards" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Round\HumanPlayer" class="App\Poker\Round\HumanPlayer" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\Round\NewDealerFuncs" class="App\Poker\Round\NewDealerFuncs" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Round\PermuteHands" class="App\Poker\Round\PermuteHands" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Round\PrepareNextRound" class="App\Poker\Round\PrepareNextRound" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Round\ResetRound" class="App\Poker\Round\ResetRound" autowire="true" autoconfigure="true"/>
@@ -763,7 +812,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.PHEwZQs"/>
+      <argument type="service" id=".service_locator.35Pf7CI"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3771,7 +3820,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.PHEwZQs"/>
+      <argument type="service" id=".service_locator.35Pf7CI"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -7828,6 +7877,24 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Library\LibraryViewController" class="App\Controller\Library\LibraryViewController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Library\LibraryViewController" class="App\Controller\Library\LibraryViewController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Library\LibraryViewController" class="App\Controller\Library\LibraryViewController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Poker\API\CombinationsAPIController" class="App\Controller\Poker\API\CombinationsAPIController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Poker\API\CombinationsAPIController" class="App\Controller\Poker\API\CombinationsAPIController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Poker\API\CombinationsAPIController" class="App\Controller\Poker\API\CombinationsAPIController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Poker\API\GameAPIController" class="App\Controller\Poker\API\GameAPIController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Poker\API\GameAPIController" class="App\Controller\Poker\API\GameAPIController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Poker\API\GameAPIController" class="App\Controller\Poker\API\GameAPIController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Poker\API\HandAPIController" class="App\Controller\Poker\API\HandAPIController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Poker\API\HandAPIController" class="App\Controller\Poker\API\HandAPIController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Poker\API\HandAPIController" class="App\Controller\Poker\API\HandAPIController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Poker\API\HexAPIController" class="App\Controller\Poker\API\HexAPIController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Poker\API\HexAPIController" class="App\Controller\Poker\API\HexAPIController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Poker\API\HexAPIController" class="App\Controller\Poker\API\HexAPIController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Poker\API\HexDecodeAPIController" class="App\Controller\Poker\API\HexDecodeAPIController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Poker\API\HexDecodeAPIController" class="App\Controller\Poker\API\HexDecodeAPIController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Poker\API\HexDecodeAPIController" class="App\Controller\Poker\API\HexDecodeAPIController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Poker\API\WinnerAPIController" class="App\Controller\Poker\API\WinnerAPIController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Poker\API\WinnerAPIController" class="App\Controller\Poker\API\WinnerAPIController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Poker\API\WinnerAPIController" class="App\Controller\Poker\API\WinnerAPIController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Poker\GameBeginController" class="App\Controller\Poker\GameBeginController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Poker\GameBeginController" class="App\Controller\Poker\GameBeginController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Poker\GameBeginController" class="App\Controller\Poker\GameBeginController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -8451,6 +8518,24 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ErcxNfJ" method="withContext"/>
     </service>
+    <service id=".service_locator.E7ajBy2.App\Controller\Poker\API\GameAPIController::apiPokerGame()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Poker\API\GameAPIController::apiPokerGame()"/>
+      <argument>App\Controller\Poker\API\GameAPIController::apiPokerGame()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.E7ajBy2" method="withContext"/>
+    </service>
+    <service id=".service_locator.E7ajBy2.App\Controller\Poker\API\HandAPIController::apiPokerHand()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Poker\API\HandAPIController::apiPokerHand()"/>
+      <argument>App\Controller\Poker\API\HandAPIController::apiPokerHand()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.E7ajBy2" method="withContext"/>
+    </service>
+    <service id=".service_locator.E7ajBy2.App\Controller\Poker\API\WinnerAPIController::apiPokerWinner()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Poker\API\WinnerAPIController::apiPokerWinner()"/>
+      <argument>App\Controller\Poker\API\WinnerAPIController::apiPokerWinner()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.E7ajBy2" method="withContext"/>
+    </service>
     <service id=".service_locator.E7ajBy2.App\Controller\Poker\GameBeginController::projPokerBegin()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Poker\GameBeginController::projPokerBegin()"/>
       <argument>App\Controller\Poker\GameBeginController::projPokerBegin()</argument>
@@ -8488,7 +8573,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.Y.u6NW0" method="withContext"/>
     </service>
-    <service id=".service_locator.PHEwZQs" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.35Pf7CI" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
@@ -8504,6 +8589,9 @@
         <argument key="App\Controller\Library\LibraryUpdateController::libraryUpdate" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Library\LibraryUpdateController::libraryUpdate()"/>
         <argument key="App\Controller\Library\LibraryViewController::libraryView" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryViewController::libraryView()"/>
         <argument key="App\Controller\Library\LibraryViewController::libraryViewID" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryViewController::libraryViewID()"/>
+        <argument key="App\Controller\Poker\API\GameAPIController::apiPokerGame" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\API\GameAPIController::apiPokerGame()"/>
+        <argument key="App\Controller\Poker\API\HandAPIController::apiPokerHand" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\API\HandAPIController::apiPokerHand()"/>
+        <argument key="App\Controller\Poker\API\WinnerAPIController::apiPokerWinner" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\API\WinnerAPIController::apiPokerWinner()"/>
         <argument key="App\Controller\Poker\GameBeginController::projPokerBegin" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\GameBeginController::projPokerBegin()"/>
         <argument key="App\Controller\Poker\GameController::projPoker" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\GameController::projPoker()"/>
         <argument key="App\Controller\Poker\GameNextController::projPokerBegin" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\GameNextController::projPokerBegin()"/>
@@ -8520,6 +8608,9 @@
         <argument key="App\Controller\Library\LibraryUpdateController:libraryUpdate" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Library\LibraryUpdateController::libraryUpdate()"/>
         <argument key="App\Controller\Library\LibraryViewController:libraryView" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryViewController::libraryView()"/>
         <argument key="App\Controller\Library\LibraryViewController:libraryViewID" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryViewController::libraryViewID()"/>
+        <argument key="App\Controller\Poker\API\GameAPIController:apiPokerGame" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\API\GameAPIController::apiPokerGame()"/>
+        <argument key="App\Controller\Poker\API\HandAPIController:apiPokerHand" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\API\HandAPIController::apiPokerHand()"/>
+        <argument key="App\Controller\Poker\API\WinnerAPIController:apiPokerWinner" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\API\WinnerAPIController::apiPokerWinner()"/>
         <argument key="App\Controller\Poker\GameBeginController:projPokerBegin" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\GameBeginController::projPokerBegin()"/>
         <argument key="App\Controller\Poker\GameController:projPoker" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\GameController::projPoker()"/>
         <argument key="App\Controller\Poker\GameNextController:projPokerBegin" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\GameNextController::projPokerBegin()"/>
@@ -9248,6 +9339,42 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Poker\API\CombinationsAPIController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Poker\API\CombinationsAPIController"/>
+      <argument>App\Controller\Poker\API\CombinationsAPIController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Poker\API\GameAPIController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Poker\API\GameAPIController"/>
+      <argument>App\Controller\Poker\API\GameAPIController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Poker\API\HandAPIController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Poker\API\HandAPIController"/>
+      <argument>App\Controller\Poker\API\HandAPIController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Poker\API\HexAPIController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Poker\API\HexAPIController"/>
+      <argument>App\Controller\Poker\API\HexAPIController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Poker\API\HexDecodeAPIController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Poker\API\HexDecodeAPIController"/>
+      <argument>App\Controller\Poker\API\HexDecodeAPIController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Poker\API\WinnerAPIController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Poker\API\WinnerAPIController"/>
+      <argument>App\Controller\Poker\API\WinnerAPIController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
     <service id=".service_locator.ZyP9f7K.App\Controller\Poker\GameBeginController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Poker\GameBeginController"/>
       <argument>App\Controller\Poker\GameBeginController</argument>
@@ -9506,6 +9633,12 @@
           <argument>App\Controller\Library\LibraryResetController</argument>
           <argument>App\Controller\Library\LibraryUpdateController</argument>
           <argument>App\Controller\Library\LibraryViewController</argument>
+          <argument>App\Controller\Poker\API\CombinationsAPIController</argument>
+          <argument>App\Controller\Poker\API\GameAPIController</argument>
+          <argument>App\Controller\Poker\API\HandAPIController</argument>
+          <argument>App\Controller\Poker\API\HexAPIController</argument>
+          <argument>App\Controller\Poker\API\HexDecodeAPIController</argument>
+          <argument>App\Controller\Poker\API\WinnerAPIController</argument>
           <argument>App\Controller\Poker\GameBeginController</argument>
           <argument>App\Controller\Poker\GameController</argument>
           <argument>App\Controller\Poker\GameNextController</argument>
@@ -10922,7 +11055,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.PHEwZQs"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.35Pf7CI"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

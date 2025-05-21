@@ -36,13 +36,16 @@ class HoleCards
         $playerActions = array_map(fn ($player): string =>
             PlayerStates::from($player->getLatestAction())->name, $players);
 
-        if (array_unique($playerActions) === [PlayerStates::None->name]) {
+        if (in_array(PlayerStates::None->name, $playerActions)) {
             $holeCards = new DealHoleCards();
             $holeCards->deal($entityManager, $players, $community);
 
-            array_map(fn ($player): Player => $player->setState(PlayerStates::Bets), $players);
-            array_map(fn ($player): null =>
-                $updatePlayer->saveState($player->getId(), $player->getState()->value), $players);
+            foreach ($players as $player) {
+                if ($player->getState() != PlayerStates::Out) {
+                    $player->setState(PlayerStates::Bets);
+                    $updatePlayer->saveState($player->getId(), PlayerStates::Bets->value);
+                }
+            }
 
             $bettingOrder = new BettingOrder();
             $bettingOrder->setOrder($players, $community, $updateCommunity);

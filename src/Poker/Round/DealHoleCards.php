@@ -12,6 +12,7 @@ namespace App\Poker\Round;
 use Doctrine\Persistence\ObjectManager;
 use App\Poker as Poker;
 use App\Poker\Player;
+use App\Poker\PlayerStates;
 use App\Entity\Community;
 use App\Entity\Players;
 
@@ -30,8 +31,7 @@ class DealHoleCards
         Poker\Community $community
     ): void {
 
-        $deal = new DealHoleCardsHelper();
-        $deal->dealHoleCards($players, $community->getDeck()->drawCards(6));
+        (new DealHoleCardsHelper())->dealHoleCards($players, $community->getDeck()->drawCards(6));
 
         $entityCommunity = $entityManager->getRepository(Community::class)->findAll()[0];
         $entityCommunity->setStatus($community->getState()->nextState()->value)
@@ -39,10 +39,12 @@ class DealHoleCards
 
         $entityPlayers = $entityManager->getRepository(Players::class)->findBy([], ['handle' => 'ASC']);
         foreach ($entityPlayers as $player) {
-            $player->setHand($players[$player->getHandle()]->getHand()->handIntvalues());
+            if ($player->getLatestAction() != PlayerStates::Out->value) {
+                $player->setHand($players[$player->getHandle()]->getHand()->handIntvalues());
 
-            $entityManager->persist($player);
-            $entityManager->flush();
+                $entityManager->persist($player);
+                $entityManager->flush();
+            }
         }
 
         $entityManager->persist($entityCommunity);

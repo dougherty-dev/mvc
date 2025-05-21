@@ -43,6 +43,7 @@ class PrepareNextRound
 
         $entityCommunity->setStatus($community->getState()->nextState()->value)
             ->setDeck($deck->deckIntValues())
+            ->setDiscarded([])
             ->setHand([]);
 
         $entityManager->persist($entityCommunity);
@@ -50,6 +51,7 @@ class PrepareNextRound
 
         foreach ($players as $player) {
             if ($player->getState() != PlayerStates::Out) {
+                $player->setState(PlayerStates::None);
                 $updatePlayer->saveState($player->getId(), PlayerStates::None->value);
             }
         }

@@ -10,7 +10,6 @@ declare (strict_types=1);
 namespace App\Poker\Round;
 
 use Doctrine\Persistence\ObjectManager;
-use App\Poker\Helpers\FetchPlayers;
 use App\Poker\Community;
 use App\Poker\Hand;
 use App\Entity\Players;
@@ -34,8 +33,7 @@ class BeginSetBadges
     ): void {
         $entityPlayers = $entityManager->getRepository(Players::class)->findAll();
 
-        $setBadges = new SetBadges();
-        $setBadges->set($entityManager, $community, $dealer, $smallBlind, $bigBlind);
+        (new SetBadges())->set($entityManager, $community, $dealer, $smallBlind, $bigBlind);
 
         foreach ($entityPlayers as $player) {
             $handle = $player->getHandle();

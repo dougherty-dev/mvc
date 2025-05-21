@@ -34,15 +34,15 @@ class ResetRound
         UpdatePlayer $updatePlayer,
         UpdateCommunity $updateCommunity
     ): void {
-
         $bets = array_map(fn ($player): int => $player->getBet(), $players);
         $updateCommunity->savePot($community->getPot() + (int) array_sum($bets));
         $updateCommunity->saveRaises(0);
 
         array_map(fn ($player): null => $updatePlayer->saveBet($player->getId(), 0), $players);
 
-        [$dealer, $smallBlind, $bigBlind] = (new CheckBadges())->check($players);
-
+        $dealer = (int) array_search(true, array_map(fn ($player): bool => (bool) $player->isDealer(), $players));
+        $smallBlind = (int) array_search(true, array_map(fn ($player): bool => (bool) $player->isSmallBlind(), $players));
+        $bigBlind = (int) array_search(true, array_map(fn ($player): bool => (bool) $player->isBigBlind(), $players));
         (new SetBadges())->set($entityManager, $community, $dealer, $smallBlind, $bigBlind);
 
         foreach ($players as $player) {

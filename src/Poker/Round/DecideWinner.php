@@ -56,29 +56,6 @@ class DecideWinner
             PokerHands::from(intval($bestHand["hex"][1]))->text() . ".";
         $session->set("bestPokerHand", $bestHand);
 
-        /**
-         * Put all bets in community pot and save.
-         */
-        $bets = array_map(fn ($player): int => $player->getBet(), $players);
-        $newPot = $community->getPot() + (int) array_sum($bets);
-        $community->setPot($newPot);
-        $updateCommunity->savePot($newPot);
-
-        /**
-         * Add community pot to winning player and save. Reset community pot.
-         */
-        $playerCash = $community->getPot() + $players[$bestHand["handle"]]->getCash();
-        $updatePlayer->saveCash((int) $bestHand["id"], $playerCash);
-        $players[$bestHand["handle"]]->setCash($playerCash);
-
-        $updateCommunity->savePot(0);
-        $community->setPot(0);
-
-        /** Reset and save players’ bets. */
-        array_map(fn ($player): Player => $player->setBet(0), $players);
-        array_map(fn ($player): null => $updatePlayer->saveBet($player->getId(), 0), $players);
-
-        /** Save players’ cash. */
-        array_map(fn ($player): null => $updatePlayer->saveCash($player->getId(), $player->getCash()), $players);
+        (new CollectBets())->save($players, $community, $updatePlayer, $updateCommunity, $players[$bestHand["handle"]]);
     }
 }

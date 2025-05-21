@@ -3,13 +3,19 @@
 {% block title %}Texas Hold’em{% endblock %}
 
 {% block body %}
+{% set gameOver = community.state.name == "EndGame" %}
+{% set moneySum = players[0].bet + players[1].bet + players[2].bet + players[0].cash + players[1].cash + players[2].cash + community.pot %}
         <section>
             <div class="poker-grid center">
                 <div class="player0">
                     <table>
                         <tr>
                             <td class="player_handle">0</td>
+                            {%- if gameOver and players[0].cash > 0 -%}
+                            <td class="game-winner">👱🏻‍♀️</td>
+                            {%- else -%}
                             <td>👱🏻‍♀️</td>
+                            {%- endif -%}
                             <td>
                             {%- if players[0].dealer -%}
                                 <img class="badge" src="{{ asset('build/images/poker/badge-dealer.avif') }}" width="60" alt="Dealer">
@@ -29,12 +35,16 @@
                             <td class="player_handle">1</td>
                         </tr>
                         <tr>
+                            {%- if gameOver and players[1].cash > 1 -%}
+                            <td class="game-winner">👩🏼‍💻</td>
+                            {%- else -%}
                             <td>👩🏼‍💻</td>
+                            {%- endif -%}
                         </tr>
                         <tr>
                             <td>
                             {%- if players[1].dealer -%}
-                                <img class="badge" src="{{ asset('build/images/poker/badge-dealer.avif') }}" width="60" alt="Dealer">
+                                <img class="badge" src="{{ asset('build/images/poker/badge-dealer.avif') }}" width="60" alt="Dealer"><br>
                             {%- endif -%}
                             {%- if players[1].smallBlind -%}
                                 <img class="badge" src="{{ asset('build/images/poker/badge-small-blind.avif') }}" width="70" alt="Small Blind">
@@ -51,12 +61,16 @@
                             <td class="player_handle">2</td>
                         </tr>
                         <tr>
+                            {%- if gameOver and players[2].cash > 1 -%}
+                            <td class="game-winner">🧑🏼‍💻</td>
+                            {%- else -%}
                             <td>🧑🏼‍💻</td>
+                            {%- endif -%}
                         </tr>
                         <tr>
                             <td>
                             {%- if players[2].dealer -%}
-                                <img class="badge" src="{{ asset('build/images/poker/badge-dealer.avif') }}" width="60" alt="Dealer">
+                                <img class="badge" src="{{ asset('build/images/poker/badge-dealer.avif') }}" width="60" alt="Dealer"><br>
                             {%- endif -%}
                             {%- if players[2].smallBlind -%}
                                 <img class="badge" src="{{ asset('build/images/poker/badge-small-blind.avif') }}" width="70" alt="Small Blind">
@@ -82,14 +96,14 @@
                 <div class="grid-action">
                     <table class="action-table">
                         <tr>
-                            <td class="action right divider">{{ community.stateText }} {{ app.session.get('bestPokerHand').text| default('') }} {{ community.betorder|join('|') }}</td>
+                            <td class="action right divider">{{ community.stateText }} {{ app.session.get('bestPokerHand').text| default('') }} {{ app.session.get('winner')| default('') }} {{ community.betorder|join('|') }}</td>
                             <td class="action left">
                                 <form method="POST" action="{{ path(action[2]) }}">
                                 {%- if activePlayer and playersTurn and notShowdown -%}
                                     {%- if (preflop or flop or turn or river) and not zeroBets -%}
                                         {%- if canRaise -%}
-                                            <input type="number" name="bet" min="0" max="{{ community.state.betCost() }}" value="{{ community.state.betCost() }}">
                                             <button type="submit" name="raise">Höj</button>
+                                            <input type="number" name="bet" min="0" max="{{ community.state.betCost() }}" value="{{ community.state.betCost() }}"> |&nbsp;
                                         {%- endif -%}
                                         {%- if equalBets -%}
                                         <input type="number" name="bet" min="0" max="{{ community.state.betCost() }}" value="{{ community.state.betCost() }}">
@@ -121,6 +135,8 @@
                 </div>
                 {%- if app.session.get('bestPokerHand').handle is defined and app.session.get('bestPokerHand').handle == 0 -%}
                 <div class="grid-player0 winner">
+                {%- elseif players[0].state.name == "Out" -%}
+                <div class="grid-player0 out">
                 {%- else -%}
                 <div class="grid-player0">
                 {%- endif -%}
@@ -145,6 +161,8 @@
                 </div>
                 {%- if app.session.get('bestPokerHand').handle is defined and app.session.get('bestPokerHand').handle == 1 -%}
                 <div class="grid-player1 winner">
+                {%- elseif players[1].state.name == "Out" -%}
+                <div class="grid-player1 out">
                 {%- else -%}
                 <div class="grid-player1">
                 {%- endif -%}
@@ -173,6 +191,8 @@
                 </div>
                 {%- if app.session.get('bestPokerHand').handle is defined and app.session.get('bestPokerHand').handle == 2 -%}
                 <div class="grid-player2 winner">
+                {%- elseif players[2].state.name == "Out" -%}
+                <div class="grid-player2 out">
                 {%- else -%}
                 <div class="grid-player2">
                 {%- endif -%}
@@ -201,9 +221,10 @@
                 </div>
             </div>
         </section>
-{{ players[0].bet + players[1].bet + players[2].bet + players[0].cash + players[1].cash + players[2].cash + community.pot }}
+{{ moneySum }}
+{#{ moneySum }}
 {{ dump(app.session.get('bestPokerHand')) }}
 {{ dump(community) }}
 {{ dump(players) }}
-{{ dump(action) }}
+{{ dump(action) }#}
 {% endblock %}

@@ -19,7 +19,6 @@ use App\Poker\Round\BettingOrder;
 use App\Poker\Round\HumanPlayer;
 use App\Poker\Round\SetNewDealer;
 use App\Poker\Round\ResetRound;
-use App\Poker\Round\CheckBadges;
 use App\Poker\Round\SetBadges;
 use App\Poker\Round\PrepareNextRound;
 
@@ -53,9 +52,6 @@ class RoundDoneTest extends WebTestCase
 
         $cls = new ResetRound();
         $this->assertInstanceOf("\App\Poker\Round\ResetRound", $cls);
-
-        $cls = new CheckBadges();
-        $this->assertInstanceOf("\App\Poker\Round\CheckBadges", $cls);
 
         $cls = new SetBadges();
         $this->assertInstanceOf("\App\Poker\Round\SetBadges", $cls);

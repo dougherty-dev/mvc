@@ -120,6 +120,9 @@
         <h2 class="phpdocumentor-content__title">
     HandleComputerBet
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/App-Poker-Helpers-PlayerBetFunctions.html"><abbr title="\App\Poker\Helpers\PlayerBetFunctions">PlayerBetFunctions</abbr></a>
+    </span>
     
             <div class="phpdocumentor-element__package">
             in package
@@ -139,7 +142,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/HandleComputerBet.php"><a href="files/src-poker-helpers-handlecomputerbet.html"><abbr title="src/Poker/Helpers/HandleComputerBet.php">HandleComputerBet.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
@@ -189,20 +192,50 @@
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/App-Poker-Helpers-HandleComputerBet.html#property_community">$community</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_betCost">$betCost</a>
+    <span>
+                        &nbsp;: int            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_community">$community</a>
     <span>
                         &nbsp;: <a href="classes/App-Poker-Community.html"><abbr title="\App\Poker\Community">Community</abbr></a>            </span>
 </dt>
 
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/App-Poker-Helpers-HandleComputerBet.html#property_updateCommunity">$updateCommunity</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_id">$id</a>
+    <span>
+                        &nbsp;: int            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_maxBet">$maxBet</a>
+    <span>
+                        &nbsp;: int            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_player">$player</a>
+    <span>
+                        &nbsp;: <a href="classes/App-Poker-Player.html"><abbr title="\App\Poker\Player">Player</abbr></a>            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_raises">$raises</a>
+    <span>
+                        &nbsp;: int            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_updateCommunity">$updateCommunity</a>
     <span>
                         &nbsp;: <a href="classes/App-Poker-Helpers-UpdateCommunity.html"><abbr title="\App\Poker\Helpers\UpdateCommunity">UpdateCommunity</abbr></a>            </span>
 </dt>
 
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/App-Poker-Helpers-HandleComputerBet.html#property_updatePlayer">$updatePlayer</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_updatePlayer">$updatePlayer</a>
     <span>
                         &nbsp;: <a href="classes/App-Poker-Helpers-UpdatePlayer.html"><abbr title="\App\Poker\Helpers\UpdatePlayer">UpdatePlayer</abbr></a>            </span>
 </dt>
@@ -222,6 +255,48 @@
 </dt>
 <dd>Computer betting.</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_bet">bet()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Routines for player making bet.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_call">call()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Routine for player calling bet.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_check">check()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Routine for player passing.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_fold">fold()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Routine for player folding hand.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_raise">raise()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Routine for player raising bet.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_save">save()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Common routine for saving betting data.</dd>
+
     </dl>
 
 
@@ -239,27 +314,63 @@
         class="
             phpdocumentor-element
             -property
-            -private
+            -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_community">
-        $community
-        <a href="classes/App-Poker-Helpers-HandleComputerBet.html#property_community" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_betCost">
+        $betCost
+        <a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_betCost" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/HandleComputerBet.php"><a href="files/src-poker-helpers-handlecomputerbet.html"><abbr title="src/Poker/Helpers/HandleComputerBet.php">HandleComputerBet.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/PlayerBetFunctions.php"><a href="files/src-poker-helpers-playerbetfunctions.html"><abbr title="src/Poker/Helpers/PlayerBetFunctions.php">PlayerBetFunctions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$betCost</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_community">
+        $community
+        <a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_community" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/PlayerBetFunctions.php"><a href="files/src-poker-helpers-playerbetfunctions.html"><abbr title="src/Poker/Helpers/PlayerBetFunctions.php">PlayerBetFunctions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type"><a href="classes/App-Poker-Community.html"><abbr title="\App\Poker\Community">Community</abbr></a></span>
     <span class="phpdocumentor-signature__name">$community</span>
     </code>
@@ -275,18 +386,162 @@
         class="
             phpdocumentor-element
             -property
-            -private
+            -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_updateCommunity">
-        $updateCommunity
-        <a href="classes/App-Poker-Helpers-HandleComputerBet.html#property_updateCommunity" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_id">
+        $id
+        <a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_id" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/HandleComputerBet.php"><a href="files/src-poker-helpers-handlecomputerbet.html"><abbr title="src/Poker/Helpers/HandleComputerBet.php">HandleComputerBet.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/PlayerBetFunctions.php"><a href="files/src-poker-helpers-playerbetfunctions.html"><abbr title="src/Poker/Helpers/PlayerBetFunctions.php">PlayerBetFunctions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">27</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$id</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_maxBet">
+        $maxBet
+        <a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_maxBet" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/PlayerBetFunctions.php"><a href="files/src-poker-helpers-playerbetfunctions.html"><abbr title="src/Poker/Helpers/PlayerBetFunctions.php">PlayerBetFunctions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">29</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$maxBet</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_player">
+        $player
+        <a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_player" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/PlayerBetFunctions.php"><a href="files/src-poker-helpers-playerbetfunctions.html"><abbr title="src/Poker/Helpers/PlayerBetFunctions.php">PlayerBetFunctions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">24</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Poker-Player.html"><abbr title="\App\Poker\Player">Player</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$player</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_raises">
+        $raises
+        <a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_raises" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/PlayerBetFunctions.php"><a href="files/src-poker-helpers-playerbetfunctions.html"><abbr title="src/Poker/Helpers/PlayerBetFunctions.php">PlayerBetFunctions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">30</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$raises</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_updateCommunity">
+        $updateCommunity
+        <a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_updateCommunity" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/PlayerBetFunctions.php"><a href="files/src-poker-helpers-playerbetfunctions.html"><abbr title="src/Poker/Helpers/PlayerBetFunctions.php">PlayerBetFunctions.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">26</span>
 
@@ -295,7 +550,7 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type"><a href="classes/App-Poker-Helpers-UpdateCommunity.html"><abbr title="\App\Poker\Helpers\UpdateCommunity">UpdateCommunity</abbr></a></span>
     <span class="phpdocumentor-signature__name">$updateCommunity</span>
     </code>
@@ -311,18 +566,18 @@
         class="
             phpdocumentor-element
             -property
-            -private
+            -protected
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="property_updatePlayer">
         $updatePlayer
-        <a href="classes/App-Poker-Helpers-HandleComputerBet.html#property_updatePlayer" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_updatePlayer" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/HandleComputerBet.php"><a href="files/src-poker-helpers-handlecomputerbet.html"><abbr title="src/Poker/Helpers/HandleComputerBet.php">HandleComputerBet.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/PlayerBetFunctions.php"><a href="files/src-poker-helpers-playerbetfunctions.html"><abbr title="src/Poker/Helpers/PlayerBetFunctions.php">PlayerBetFunctions.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">25</span>
 
@@ -331,7 +586,7 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type"><a href="classes/App-Poker-Helpers-UpdatePlayer.html"><abbr title="\App\Poker\Helpers\UpdatePlayer">UpdatePlayer</abbr></a></span>
     <span class="phpdocumentor-signature__name">$updatePlayer</span>
     </code>
@@ -365,7 +620,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/HandleComputerBet.php"><a href="files/src-poker-helpers-handlecomputerbet.html"><abbr title="src/Poker/Helpers/HandleComputerBet.php">HandleComputerBet.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
@@ -412,6 +667,253 @@
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$currentPlayer</span>
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_bet">
+        bet()
+        <a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_bet" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/PlayerBetFunctions.php"><a href="files/src-poker-helpers-playerbetfunctions.html"><abbr title="src/Poker/Helpers/PlayerBetFunctions.php">PlayerBetFunctions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">76</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Routines for player making bet.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">bet</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$bet</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$bet</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_call">
+        call()
+        <a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_call" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/PlayerBetFunctions.php"><a href="files/src-poker-helpers-playerbetfunctions.html"><abbr title="src/Poker/Helpers/PlayerBetFunctions.php">PlayerBetFunctions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">49</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Routine for player calling bet.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">call</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_check">
+        check()
+        <a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_check" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/PlayerBetFunctions.php"><a href="files/src-poker-helpers-playerbetfunctions.html"><abbr title="src/Poker/Helpers/PlayerBetFunctions.php">PlayerBetFunctions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">57</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Routine for player passing.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">check</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_fold">
+        fold()
+        <a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_fold" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/PlayerBetFunctions.php"><a href="files/src-poker-helpers-playerbetfunctions.html"><abbr title="src/Poker/Helpers/PlayerBetFunctions.php">PlayerBetFunctions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">35</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Routine for player folding hand.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">fold</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_raise">
+        raise()
+        <a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_raise" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/PlayerBetFunctions.php"><a href="files/src-poker-helpers-playerbetfunctions.html"><abbr title="src/Poker/Helpers/PlayerBetFunctions.php">PlayerBetFunctions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">65</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Routine for player raising bet.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">raise</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$bet</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$bet</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_save">
+        save()
+        <a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_save" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Poker/Helpers/PlayerBetFunctions.php"><a href="files/src-poker-helpers-playerbetfunctions.html"><abbr title="src/Poker/Helpers/PlayerBetFunctions.php">PlayerBetFunctions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">84</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Common routine for saving betting data.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">save</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$bet</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Poker-PlayerStates.html"><abbr title="\App\Poker\PlayerStates">PlayerStates</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$state</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$bet</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$state</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Poker-PlayerStates.html"><abbr title="\App\Poker\PlayerStates">PlayerStates</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -537,9 +1039,14 @@
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="classes/App-Poker-Helpers-HandleComputerBet.html#property_community">$community</a></li>
-                                                    <li class=""><a href="classes/App-Poker-Helpers-HandleComputerBet.html#property_updateCommunity">$updateCommunity</a></li>
-                                                    <li class=""><a href="classes/App-Poker-Helpers-HandleComputerBet.html#property_updatePlayer">$updatePlayer</a></li>
+                                                    <li class=""><a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_betCost">$betCost</a></li>
+                                                    <li class=""><a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_community">$community</a></li>
+                                                    <li class=""><a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_id">$id</a></li>
+                                                    <li class=""><a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_maxBet">$maxBet</a></li>
+                                                    <li class=""><a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_player">$player</a></li>
+                                                    <li class=""><a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_raises">$raises</a></li>
+                                                    <li class=""><a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_updateCommunity">$updateCommunity</a></li>
+                                                    <li class=""><a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#property_updatePlayer">$updatePlayer</a></li>
                                             </ul>
                 </li>
             
@@ -547,6 +1054,12 @@
             <li>
                 <ul class="phpdocumentor-list -clean">
                                             <li class=""><a href="classes/App-Poker-Helpers-HandleComputerBet.html#method_handleBet">handleBet()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_bet">bet()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_call">call()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_check">check()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_fold">fold()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_raise">raise()</a></li>
+                                            <li class=""><a href="classes/App-Poker-Helpers-PlayerBetFunctions.html#method_save">save()</a></li>
                                     </ul>
             </li>
                     </ul>

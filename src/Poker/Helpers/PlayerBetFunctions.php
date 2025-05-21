@@ -9,6 +9,7 @@ declare (strict_types=1);
 
 namespace App\Poker\Helpers;
 
+use App\Poker\Hand;
 use App\Poker\Player;
 use App\Poker\Community;
 use App\Poker\PlayerStates;
@@ -33,7 +34,13 @@ class PlayerBetFunctions
      */
     protected function fold(): void
     {
+        $discarded = $this->community->getDiscarded();
+        $cards = [...$discarded->deckIntValues(), ...$this->player->getHand()->handIntValues()];
+        $discarded->addToDeck($cards);
+        $this->updateCommunity->saveDiscarded($discarded->deckIntValues());
+
         $this->updatePlayer->saveState($this->id, PlayerStates::Folds->value);
+        $this->updatePlayer->saveHand($this->id, []);
     }
 
     /**
@@ -41,10 +48,7 @@ class PlayerBetFunctions
      */
     protected function call(): void
     {
-        $bet = $this->maxBet;
-        $cash = $this->player->getCash() + $this->player->getBet() - $bet;
-
-        $this->save($bet, $cash, PlayerStates::Calls);
+        $this->save($this->maxBet, PlayerStates::Calls);
     }
 
     /**
@@ -52,7 +56,7 @@ class PlayerBetFunctions
      */
     protected function check(): void
     {
-        $this->save($this->player->getBet(), $this->player->getCash(), PlayerStates::Passes);
+        $this->save($this->player->getBet(), PlayerStates::Passes);
     }
 
     /**
@@ -60,13 +64,10 @@ class PlayerBetFunctions
      */
     protected function raise(int $bet): void
     {
-        $bet = $bet + $this->maxBet;
-        $cash = $this->player->getCash() + $this->player->getBet() - $bet;
-
         $this->updateCommunity->saveRaises($this->raises + 1);
         $this->community->setRaises($this->raises + 1);
 
-        $this->save($bet, $cash, PlayerStates::Raises);
+        $this->save($bet + $this->maxBet, PlayerStates::Raises);
     }
 
     /**
@@ -74,23 +75,22 @@ class PlayerBetFunctions
      */
     protected function bet(int $bet): void
     {
-        $cash = $this->player->getCash() + $this->player->getBet() - $bet;
-
-        $this->save($bet, $cash, PlayerStates::Bets);
+        $this->save($bet, PlayerStates::Bets);
     }
 
     /**
      * Common routine for saving betting data.
      */
-    protected function save(int $bet, int $cash, PlayerStates $state): void
+    protected function save(int $bet, PlayerStates $state): void
     {
-        $this->player->setBet($bet);
+        $cash = $this->player->getCash() + $this->player->getBet() - $bet;
+
+        $this->player->setBet($bet)
+            ->setCash($cash)
+            ->setState($state);
+
         $this->updatePlayer->saveBet($this->id, $bet);
-
-        $this->player->setCash($cash);
         $this->updatePlayer->saveCash($this->id, $cash);
-
-        $this->player->setState($state);
         $this->updatePlayer->saveState($this->id, $state->value);
     }
 }

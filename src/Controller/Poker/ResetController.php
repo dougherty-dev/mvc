@@ -10,7 +10,6 @@ declare (strict_types=1);
 namespace App\Controller\Poker;
 
 use Doctrine\Persistence\ManagerRegistry;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Community;
@@ -33,6 +32,7 @@ class ResetController extends SessionController
     ): Response {
         $this->checkSession();
         $this->session->set("bestPokerHand", []);
+        $this->session->set("winner", "");
 
         $communityRepository->truncateTables();
         $entityManager = $doctrine->getManager();

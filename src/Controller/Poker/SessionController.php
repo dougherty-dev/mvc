@@ -10,10 +10,10 @@ declare (strict_types=1);
 namespace App\Controller\Poker;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Poker\Faces;
 use App\Poker\FaceMethods;
 
@@ -42,6 +42,7 @@ class SessionController extends AbstractController
             $this->session->set("deckSymbolValues", FaceMethods::deckSymbolValues());
             $this->session->set("deckTextValues", FaceMethods::deckTextValues());
             $this->session->set("bestPokerHand", []);
+            $this->session->set("winner", "");
         }
     }
 }

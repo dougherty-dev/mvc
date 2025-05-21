@@ -17,8 +17,8 @@ use App\Poker\Helpers\FetchCommunity;
 use App\Poker\Helpers\GetDeck;
 use App\Poker\Round\DealerLottery;
 use App\Poker\Round\BeginSetBadges;
-use App\Entity\Community;
 use App\Poker\Hand;
+use App\Entity\Community;
 
 /**
  * The GameBeginController class.

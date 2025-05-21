@@ -323,3 +323,14 @@
     0 0 1rem var(--depths-of-night),
     0 0 0.2rem var(--gray-75);
 }
+
+.game-winner {
+  border-radius: 2rem;
+  background-color: var(--incarnadine);
+  border: thick solid var(--electrifying-kiss);
+}
+
+.out {
+  opacity: 0.3;
+  filter: grayscale(1);
+}

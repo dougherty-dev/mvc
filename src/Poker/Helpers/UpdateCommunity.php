@@ -65,11 +65,21 @@ class UpdateCommunity
     }
 
     /**
+     * Save discarded cards.
+     * @param int[] $discarded
+     */
+    public function saveDiscarded(array $discarded): void
+    {
+        $this->entityCommunity = $this->entityManager->getRepository(Community::class)->findAll()[0];
+        $this->entityCommunity->setDiscarded($discarded);
+        $this->save();
+    }
+
+    /**
      * Save to database.
      */
     private function save(): void
     {
-        $this->entityCommunity = $this->entityManager->getRepository(Community::class)->findAll()[0];
         $this->entityManager->persist($this->entityCommunity);
         $this->entityManager->flush();
     }

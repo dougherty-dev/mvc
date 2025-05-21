@@ -75,7 +75,7 @@ enum GameStates: int
             GameStates::Turn        => GameStates::River,
             GameStates::River       => GameStates::Showdown,
             GameStates::Showdown    => GameStates::NewGame,
-            GameStates::EndGame     => GameStates::None
+            GameStates::EndGame     => GameStates::EndGame
         };
     }
 }

@@ -53,4 +53,13 @@ class HomeController extends AbstractController
     {
         return $this->render('poker/database.html.twig');
     }
+
+    /**
+     * The route for the API page.
+     */
+    #[Route("/proj/api", name: "proj_api")]
+    public function projAPI(): Response
+    {
+        return $this->render('poker/api.html.twig');
+    }
 }

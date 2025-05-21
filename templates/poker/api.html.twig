@@ -1,0 +1,85 @@
+{% extends "poker/base.html.twig" %}
+
+{% block title %}API:n{% endblock %}
+
+{% block body %}
+    <section class="center">
+        <h1>Tillgängliga API:n</h1>
+        <table class="left striped">
+            <tbody>
+                <tr>
+                    <th>Aktuell ställning</a></th>
+                    <td><button type="button"><a href="{{ path('api_poker_game') }}">Visa</a></button></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Visar spelares momentana händer, potter, pengar, roller och agerande, tillsammans med bordets motsvarande hand, pott, turordning och runda (flop, turn o.s.v.). Även aktuell kortlek samt hög med kastade och brända kort visas. Kortvalörer visas med unicodetecken (🂫), symboliskt (♠️2) och i klartext (spader två).</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>Visa alla möjliga händer</th>
+                    <td><form method="post" action="{{ path('api_poker_combinations', {table: [32, 30, 5, 47, 4], hand: [28, 33]}) }}">
+                        <button type="submit">Visa</button> ([32, 30, 5, 47, 4] = ♥️7, ♥️5, ♣️6, ♠️9, ♣️5, samt [28, 33] = ♥️3, ♥️8) 🡆 stege, nio högt (♥️7, ♥️5, ♣️6, ♠️9, ♥️8; H4900000).
+                    </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Listar alla möjliga händer vid showdown, det vill säga de 21 unika händer som kan formas av en enstaka spelares två och bordets fem kort. Även bästa hand visas.</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>Visa spelares hand</th>
+                    <td><form method="post" action="{{ path('api_poker_hand') }}">
+                        <select name="player">
+                            <option value="0">Mänsklig spelare 0</option>
+                            <option value="1">Dum dator 1</option>
+                            <option value="2">Smart dator 2</option>
+                        </select>
+                        <button type="submit">Visa</button>
+                    </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Visa en enskild spelares hand och övriga data.</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>Avslöja vinnare</a></th>
+                    <td><button type="button"><a href="{{ path('api_poker_winner') }}">Visa</a></button></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Visa vem som vinner innan det avslöjas i showdown. Visar vinnande spelare och dess bästa hand. Förutsätter att spelet befinner sig i river och att bordet har fem kort, i annat fall returneras tomma mängden.</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>Generera hexkod för en hand</th>
+                    <td><form method="post" action="{{ path('api_poker_hex', {hand: [0, 27, 13, 2, 47]}) }}">
+                        <button type="submit">Generera</button> ([0, 27, 13, 2, 47] = ♣️A, ♥️2, ♦️A, ♣️3, ♠️9 = H1e09320)
+                    </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Skapar en representation av en hand i form av en sjuställig hexadecimal sträng, som kan nyttjas för jämförelse av händers värden. Handen behöver inte ha fem kort, och i den mån man skickar in värden utanför kortlekens intervall [0, 51] beräknas resultatet modulo 51.</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>Avkoda hexkod för en hand</th>
+                    <td><form method="post" action="{{ path('api_poker_hex_decode') }}">
+                        <input type="text" pattern="\w{8,8}" name="hex" value="H1e09320">
+                        <button type="submit">Avkoda</button> (exempel: H1e09320 = par, ess högt, kickers 9 3 2)
+                    </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Den omvända operationen av att visa vad en hexkod representerar. Resultatet är inte meningsfullt för felformaterade strängar, exempelvis fyrtal med kickers. Exempelsträngar: <strong>H8e00000</strong> (färgstege, ess högt) &gt; <strong>H2ba3000</strong> (tvåpar, knekt och tio, kicker tre) &gt; <strong>H0d0c430</strong> (högt kort, kung, kickers dam, fyra och tre).</td>
+                </tr>
+        </table>
+        <figure>
+            <img src="{{ asset('build/images/poker/poker-3.avif') }}" width="2000" alt="Poker">
+        </figure>
+    </section>
+{% endblock %}

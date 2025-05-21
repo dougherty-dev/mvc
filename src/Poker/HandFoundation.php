@@ -63,7 +63,7 @@ class HandFoundation
     }
 
     /**
-     * Count cards in deck.
+     * Count cards in hand.
      */
     public function remainingCards(): int
     {

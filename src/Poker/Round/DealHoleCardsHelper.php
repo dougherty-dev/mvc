@@ -11,6 +11,7 @@ namespace App\Poker\Round;
 
 use App\Poker\Hand;
 use App\Poker\Player;
+use App\Poker\PlayerStates;
 
 /**
  * The DealHoleCardsHelper class.
@@ -19,6 +20,7 @@ class DealHoleCardsHelper
 {
     /**
      * Dealer deals one hole card to each player, twice, from fresh deck.
+     * Only during flop, so player next to dealer receives card first.
      * @param Player[] $players
      */
     public function dealHoleCards(array &$players, Hand $dealtHand): void
@@ -30,8 +32,13 @@ class DealHoleCardsHelper
 
         for ($i = 0; $i < 2; $i++) {
             foreach ($dealOrder as $key) {
-                $players[$key]->getHand()->addCard($dealtHand->drawCard());
-                $players[$key]->setHand($players[$key]->getHand());
+                if ($players[$key]->getState() != PlayerStates::Out) {
+                    $players[$key]->getHand()->addCard($dealtHand->drawCard());
+                    $players[$key]->setHand($players[$key]->getHand());
+                    continue;
+                }
+
+                $dealtHand->drawCard(); // throw away
             }
         }
     }

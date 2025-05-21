@@ -13,6 +13,7 @@ use App\Poker\Faces;
 
 /**
  * Define methods for a deck of cards of class Card.
+ * @SuppressWarnings("StaticAccess")
  */
 class DeckMethods extends DeckFoundation
 {
@@ -45,12 +46,42 @@ class DeckMethods extends DeckFoundation
     }
 
     /**
-     * Return serial card values 0–51 of cards in hand.
+     * Return serial card values 0–51 of cards in deck.
      *
      * @return int[]
      */
     public function deckIntValues(): array
     {
         return array_map(fn ($card): int => $card->getCard(), $this->getDeck());
+    }
+
+    /**
+     * Return Unicode symbol values of cards in deck: 🃑, 🃕, 🂤
+     *
+     * @return string[]
+     */
+    public function deckUnicodeValues(): array
+    {
+        return array_map(fn ($card): string => Faces::UNICODE_FACE_ARRAY[$card->getCard()], $this->getDeck());
+    }
+
+    /**
+     * Return symbol values: ♣️2, ♥️A
+     *
+     * @return string[]
+     */
+    public function deckSymbolValues(): array
+    {
+        return array_map(fn ($card): string => FaceMethods::deckSymbolValues()[$card->getCard()], $this->getDeck());
+    }
+
+    /**
+     * Return text values: klöver 2, hjärter ess
+     *
+     * @return string[]
+     */
+    public function deckTextValues(): array
+    {
+        return array_map(fn ($card): string => FaceMethods::deckTextValues()[$card->getCard()], $this->getDeck());
     }
 }

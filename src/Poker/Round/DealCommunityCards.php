@@ -32,7 +32,7 @@ class DealCommunityCards
         $burnCard = $community->getDeck()->drawCard();
 
         $discardedCards = $community->getDiscarded();
-        $discardedCards->addToDeck([$burnCard->getValue()]);
+        $discardedCards->addToDeck([...$discardedCards->deckIntValues(), $burnCard->getValue()]);
 
         $numberOfCards = $community->getState()->communityCards();
         $communityCards = $community->getDeck()->drawCards($numberOfCards);

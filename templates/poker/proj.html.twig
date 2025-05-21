@@ -17,7 +17,7 @@
             <img src="{{ asset('build/images/poker/poker-1.avif') }}" width="1000" alt="Poker">
             <p>Croupieren <strong>bränner</strong> nu ett kort, som återförs till leken av kastade kort. Därefter rullas floppen ut, tre öppna kort som spelarna kan kombinera till en lämplig hand. Spelarnas vad i andra rundan baseras på denna analys, och proceduren är identisk som under <strong>pre-flop</strong>, men med skillnad att spelaren till vänster om croupieren inleder satsningen.</p>
             <p>Croupieren bränner ytterligare ett kort, som återförs till kastleken. Därefter visas ett fjärde gemensamt kort (turn), varefter ännu en satsningsrunda sker. Proceduren återupprepas med ett femte kort (river) och en avslutande satsningsrunda.</p>
-            <p>Därefter sker <strong>visning</strong> (showdown), om minst två spelare återstår, i annat fall vinner enda kvarvarande spelare. Under visningen vänds alla kort, varvid bästa hand tar hem hela potten. Vid oavgjort delas potten mellan vinnande spelare.</p>
+            <p>Därefter sker <strong>visning</strong> (showdown), om minst två spelare återstår, i annat fall vinner enda kvarvarande spelare. Under visningen vänds alla kort, varvid bästa hand tar hem hela potten.</p>
             <p>Bästa hand ges i fallande ordning av:</p>
             <ul>
                 <li>färgstege</li>
@@ -30,8 +30,9 @@
                 <li>par</li>
                 <li>högsta kort</li>
             </ul>
-            <p>Vid lika, exempelvis par eller tvåpar av lika valörer, blir övriga kort (kickers) avgörande. Vid helt lika delas potten.</p>
+            <p>Vid lika, exempelvis par eller tvåpar av lika valörer, blir övriga kort (kickers) avgörande. Vid oavgjort vinner spelare med lägsta ID.</p>
             <p>Ess räknas som 14 i poängvärde, utom i fall då den kan nyttjas för en stege eller färgstege, då kortet kan ta värdet 1. Kortleken är en standardlek om 52 kort utan jokrar.</p>
             <p>Kort från spelare som lägger sig läggs i kastleken. Efter avslutad omgång förs bordets kort och kastleken samman med kortleken, som blandas på nytt. Croupier roteras medurs efter varje runda. Spelet avslutas när bara en spelare återstår.</p>
+            <p>Datorspelarna har olika temperament. Den ena (dum) höjer när den kan, och synar i övrigt. Den andra (intelligent) nyttjar statistiska uppslagningstabeller för att lägga ett rimligt bud. Du har förmodligen ingen chans mot datorn.</p>
         </section>
 {% endblock %}

@@ -25,7 +25,7 @@ return [[
                 'build/project.50d16902.js',
             ],
             'css' => [
-                'build/project.57d9abc8.css',
+                'build/project.446ac797.css',
             ],
         ],
     ],

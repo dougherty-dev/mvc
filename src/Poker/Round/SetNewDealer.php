@@ -16,7 +16,7 @@ use App\Poker\PlayerStates;
  * The SetNewDealer class.
  * @SuppressWarnings("StaticAccess")
  */
-class SetNewDealer
+class SetNewDealer extends NewDealerFuncs
 {
     /**
      * Determine next dealer from either 2 or 3 players after round completed.
@@ -25,31 +25,19 @@ class SetNewDealer
      */
     public function set(array $players): array
     {
-        $dealer = (int) array_search(true, array_map(fn ($player): bool => (bool) $player->isDealer(), $players));
+        $this->dealer = (int) array_search(true, array_map(fn ($player): bool => (bool) $player->isDealer(), $players));
 
-        $dealer = ($dealer + 1) % 3;
-        if (count($players) === 3) {
-            $smallBlind = ($dealer + 1) % 3;
-            $bigBlind = ($dealer + 2) % 3;
-            return [$dealer, $smallBlind, $bigBlind];
-        }
+        $outStates = (int) array_sum(array_map(fn ($player): int => $player->getState() === PlayerStates::Out ? 1 : 0, $players));
 
-        /** new dealer is out */
-        if ($players[$dealer]->getState() === PlayerStates::Out) {
-            $dealer = ($dealer + 1) % 3;
-            $smallBlind = $dealer;
-            $bigBlind = ($dealer + 2) % 3;
-            return [$dealer, $smallBlind, $bigBlind];
-        }
+        match (true) {
+            $outStates >= 2                                                     => [-1, -1, -1],
+            $outStates === 0                                                    => $this->threePlayersLeft(),
+            $players[$this->dealer]->getState() === PlayerStates::Out           => $this->newDealerOut(),
+            $players[($this->dealer + 1) % 3]->getState() === PlayerStates::Out => $this->newDealerPlusOneOut(),
+            $players[($this->dealer + 2) % 3]->getState() === PlayerStates::Out => $this->newDealerPlusTwoOut(),
+            default                                                             => [-1, -1, -1]
+        };
 
-        /** new dealer is still in */
-        $smallBlind = $dealer;
-        $bigBlind = ($dealer + 1) % 3;
-
-        if ($players[$bigBlind]->getState() === PlayerStates::Out) {
-            $bigBlind = ($dealer + 2) % 3;
-        }
-
-        return [$dealer, $smallBlind, $bigBlind];
+        return [$this->dealer, $this->smallBlind, $this->bigBlind];
     }
 }

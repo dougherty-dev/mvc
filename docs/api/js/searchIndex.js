@@ -606,6 +606,66 @@ Search.appendIndex(
             "summary": "Display\u0020single\u0020book.",
             "url": "classes/App-Controller-Library-LibraryViewController.html#method_libraryViewID"
         },                {
+            "fqsen": "\\App\\Controller\\Poker\\API\\CombinationsAPIController",
+            "name": "CombinationsAPIController",
+            "summary": "The\u0020CombinationsAPIController\u0020class.",
+            "url": "classes/App-Controller-Poker-API-CombinationsAPIController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\Poker\\API\\CombinationsAPIController\u003A\u003AapiPokerCombinations\u0028\u0029",
+            "name": "apiPokerCombinations",
+            "summary": "The\u0020API\u0020route\u0020for\u0020generating\u0020all\u0020possible\u0020hands,\u0020and\u0020the\u0020best\u0020hand.",
+            "url": "classes/App-Controller-Poker-API-CombinationsAPIController.html#method_apiPokerCombinations"
+        },                {
+            "fqsen": "\\App\\Controller\\Poker\\API\\GameAPIController",
+            "name": "GameAPIController",
+            "summary": "The\u0020GameAPIController\u0020class.",
+            "url": "classes/App-Controller-Poker-API-GameAPIController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\Poker\\API\\GameAPIController\u003A\u003AapiPokerGame\u0028\u0029",
+            "name": "apiPokerGame",
+            "summary": "The\u0020API\u0020route\u0020for\u0020the\u0020current\u0020game.",
+            "url": "classes/App-Controller-Poker-API-GameAPIController.html#method_apiPokerGame"
+        },                {
+            "fqsen": "\\App\\Controller\\Poker\\API\\HandAPIController",
+            "name": "HandAPIController",
+            "summary": "The\u0020HandAPIController\u0020class.",
+            "url": "classes/App-Controller-Poker-API-HandAPIController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\Poker\\API\\HandAPIController\u003A\u003AapiPokerHand\u0028\u0029",
+            "name": "apiPokerHand",
+            "summary": "The\u0020API\u0020route\u0020for\u0020displaying\u0020a\u0020player\u2019s\u0020hand\u0020and\u0020data.",
+            "url": "classes/App-Controller-Poker-API-HandAPIController.html#method_apiPokerHand"
+        },                {
+            "fqsen": "\\App\\Controller\\Poker\\API\\HexAPIController",
+            "name": "HexAPIController",
+            "summary": "The\u0020HexAPIController\u0020class.",
+            "url": "classes/App-Controller-Poker-API-HexAPIController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\Poker\\API\\HexAPIController\u003A\u003AapiPokerHex\u0028\u0029",
+            "name": "apiPokerHex",
+            "summary": "The\u0020API\u0020route\u0020for\u0020generating\u0020hex\u0020codes.",
+            "url": "classes/App-Controller-Poker-API-HexAPIController.html#method_apiPokerHex"
+        },                {
+            "fqsen": "\\App\\Controller\\Poker\\API\\HexDecodeAPIController",
+            "name": "HexDecodeAPIController",
+            "summary": "The\u0020HexDecodeAPIController\u0020class.",
+            "url": "classes/App-Controller-Poker-API-HexDecodeAPIController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\Poker\\API\\HexDecodeAPIController\u003A\u003AapiPokerHexDecode\u0028\u0029",
+            "name": "apiPokerHexDecode",
+            "summary": "The\u0020API\u0020route\u0020for\u0020decoding\u0020hex\u0020codes.",
+            "url": "classes/App-Controller-Poker-API-HexDecodeAPIController.html#method_apiPokerHexDecode"
+        },                {
+            "fqsen": "\\App\\Controller\\Poker\\API\\WinnerAPIController",
+            "name": "WinnerAPIController",
+            "summary": "The\u0020WinnerAPIController\u0020class.",
+            "url": "classes/App-Controller-Poker-API-WinnerAPIController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\Poker\\API\\WinnerAPIController\u003A\u003AapiPokerWinner\u0028\u0029",
+            "name": "apiPokerWinner",
+            "summary": "The\u0020API\u0020route\u0020for\u0020deciding\u0020the\u0020winner\u0020during\u0020river,\u0020before\u0020showdown.",
+            "url": "classes/App-Controller-Poker-API-WinnerAPIController.html#method_apiPokerWinner"
+        },                {
             "fqsen": "\\App\\Controller\\Poker\\GameBeginController",
             "name": "GameBeginController",
             "summary": "The\u0020GameBeginController\u0020class.",
@@ -661,15 +721,20 @@ Search.appendIndex(
             "summary": "The\u0020route\u0020for\u0020the\u0020project\u0020about\u0020page.",
             "url": "classes/App-Controller-Poker-HomeController.html#method_projAbout"
         },                {
-            "fqsen": "\\App\\Controller\\Poker\\HomeController\u003A\u003AprojSession\u0028\u0029",
-            "name": "projSession",
-            "summary": "The\u0020route\u0020for\u0020the\u0020poker\u0020session\u0020page.",
-            "url": "classes/App-Controller-Poker-HomeController.html#method_projSession"
-        },                {
             "fqsen": "\\App\\Controller\\Poker\\HomeController\u003A\u003AprojReset\u0028\u0029",
             "name": "projReset",
             "summary": "The\u0020route\u0020for\u0020the\u0020poker\u0020reset\u0020page.",
             "url": "classes/App-Controller-Poker-HomeController.html#method_projReset"
+        },                {
+            "fqsen": "\\App\\Controller\\Poker\\HomeController\u003A\u003AprojAboutDatabase\u0028\u0029",
+            "name": "projAboutDatabase",
+            "summary": "The\u0020route\u0020for\u0020the\u0020database\u0020description.",
+            "url": "classes/App-Controller-Poker-HomeController.html#method_projAboutDatabase"
+        },                {
+            "fqsen": "\\App\\Controller\\Poker\\HomeController\u003A\u003AprojAPI\u0028\u0029",
+            "name": "projAPI",
+            "summary": "The\u0020route\u0020for\u0020the\u0020API\u0020page.",
+            "url": "classes/App-Controller-Poker-HomeController.html#method_projAPI"
         },                {
             "fqsen": "\\App\\Controller\\Poker\\ResetController",
             "name": "ResetController",
@@ -1853,8 +1918,23 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Poker\\DeckMethods\u003A\u003AdeckIntValues\u0028\u0029",
             "name": "deckIntValues",
-            "summary": "Return\u0020serial\u0020card\u0020values\u00200\u201351\u0020of\u0020cards\u0020in\u0020hand.",
+            "summary": "Return\u0020serial\u0020card\u0020values\u00200\u201351\u0020of\u0020cards\u0020in\u0020deck.",
             "url": "classes/App-Poker-DeckMethods.html#method_deckIntValues"
+        },                {
+            "fqsen": "\\App\\Poker\\DeckMethods\u003A\u003AdeckUnicodeValues\u0028\u0029",
+            "name": "deckUnicodeValues",
+            "summary": "Return\u0020Unicode\u0020symbol\u0020values\u0020of\u0020cards\u0020in\u0020deck\u003A\u0020\uD83C\uDCD1,\u0020\uD83C\uDCD5,\u0020\uD83C\uDCA4",
+            "url": "classes/App-Poker-DeckMethods.html#method_deckUnicodeValues"
+        },                {
+            "fqsen": "\\App\\Poker\\DeckMethods\u003A\u003AdeckSymbolValues\u0028\u0029",
+            "name": "deckSymbolValues",
+            "summary": "Return\u0020symbol\u0020values\u003A\u0020\u2663\uFE0F2,\u0020\u2665\uFE0FA",
+            "url": "classes/App-Poker-DeckMethods.html#method_deckSymbolValues"
+        },                {
+            "fqsen": "\\App\\Poker\\DeckMethods\u003A\u003AdeckTextValues\u0028\u0029",
+            "name": "deckTextValues",
+            "summary": "Return\u0020text\u0020values\u003A\u0020kl\u00F6ver\u00202,\u0020hj\u00E4rter\u0020ess",
+            "url": "classes/App-Poker-DeckMethods.html#method_deckTextValues"
         },                {
             "fqsen": "\\App\\Poker\\FaceMethods",
             "name": "FaceMethods",
@@ -2063,7 +2143,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Poker\\Hand\u003A\u003AhandUnicodeValues\u0028\u0029",
             "name": "handUnicodeValues",
-            "summary": "Return\u0020Unicode\u0020symbol\u0020values\u0020of\u0020cards\u0020in\u0020deck\u003A\u0020\uD83C\uDCD1,\u0020\uD83C\uDCD5,\u0020\uD83C\uDCA4",
+            "summary": "Return\u0020Unicode\u0020symbol\u0020values\u0020of\u0020cards\u0020in\u0020hand\u003A\u0020\uD83C\uDCD1,\u0020\uD83C\uDCD5,\u0020\uD83C\uDCA4",
             "url": "classes/App-Poker-Hand.html#method_handUnicodeValues"
         },                {
             "fqsen": "\\App\\Poker\\Hand\u003A\u003AhandSymbolValues\u0028\u0029",
@@ -2108,7 +2188,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Poker\\HandFoundation\u003A\u003AremainingCards\u0028\u0029",
             "name": "remainingCards",
-            "summary": "Count\u0020cards\u0020in\u0020deck.",
+            "summary": "Count\u0020cards\u0020in\u0020hand.",
             "url": "classes/App-Poker-HandFoundation.html#method_remainingCards"
         },                {
             "fqsen": "\\App\\Poker\\HandFoundation\u003A\u003A\u0024hand",
@@ -2136,6 +2216,26 @@ Search.appendIndex(
             "summary": "Helper\u0020method\u0020for\u0020populating\u0020the\u0020Player\u0020class\u0020from\u0020DB.",
             "url": "classes/App-Poker-Helpers-FetchPlayers.html#method_fetchPlayers"
         },                {
+            "fqsen": "\\App\\Poker\\Helpers\\FindAllHands",
+            "name": "FindAllHands",
+            "summary": "The\u0020FindAllHands\u0020class.",
+            "url": "classes/App-Poker-Helpers-FindAllHands.html"
+        },                {
+            "fqsen": "\\App\\Poker\\Helpers\\FindAllHands\u003A\u003AfindHands\u0028\u0029",
+            "name": "findHands",
+            "summary": "Find\u0020all\u0020possible\u0020hands\u0020given\u0020a\u0020hand\u0020and\u0020five\u0020community\u0020cards.",
+            "url": "classes/App-Poker-Helpers-FindAllHands.html#method_findHands"
+        },                {
+            "fqsen": "\\App\\Poker\\Helpers\\FindBestHand",
+            "name": "FindBestHand",
+            "summary": "The\u0020FindBestHand\u0020class.",
+            "url": "classes/App-Poker-Helpers-FindBestHand.html"
+        },                {
+            "fqsen": "\\App\\Poker\\Helpers\\FindBestHand\u003A\u003Afind\u0028\u0029",
+            "name": "find",
+            "summary": "Select\u0020best\u0020hand\u0020given\u0020seven\u0020cards\u0020in\u0020total.",
+            "url": "classes/App-Poker-Helpers-FindBestHand.html#method_find"
+        },                {
             "fqsen": "\\App\\Poker\\Helpers\\GetDeck",
             "name": "GetDeck",
             "summary": "The\u0020GetDeck\u0020helper\u0020class.",
@@ -2156,90 +2256,105 @@ Search.appendIndex(
             "summary": "Computer\u0020betting.",
             "url": "classes/App-Poker-Helpers-HandleComputerBet.html#method_handleBet"
         },                {
-            "fqsen": "\\App\\Poker\\Helpers\\HandleComputerBet\u003A\u003A\u0024community",
-            "name": "community",
-            "summary": "",
-            "url": "classes/App-Poker-Helpers-HandleComputerBet.html#property_community"
-        },                {
-            "fqsen": "\\App\\Poker\\Helpers\\HandleComputerBet\u003A\u003A\u0024updatePlayer",
-            "name": "updatePlayer",
-            "summary": "",
-            "url": "classes/App-Poker-Helpers-HandleComputerBet.html#property_updatePlayer"
-        },                {
-            "fqsen": "\\App\\Poker\\Helpers\\HandleComputerBet\u003A\u003A\u0024updateCommunity",
-            "name": "updateCommunity",
-            "summary": "",
-            "url": "classes/App-Poker-Helpers-HandleComputerBet.html#property_updateCommunity"
-        },                {
             "fqsen": "\\App\\Poker\\Helpers\\HandlePlayerBet",
             "name": "HandlePlayerBet",
             "summary": "The\u0020HandlePlayerBet\u0020class.",
             "url": "classes/App-Poker-Helpers-HandlePlayerBet.html"
-        },                {
-            "fqsen": "\\App\\Poker\\Helpers\\HandlePlayerBet\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/App-Poker-Helpers-HandlePlayerBet.html#method___construct"
         },                {
             "fqsen": "\\App\\Poker\\Helpers\\HandlePlayerBet\u003A\u003AprocessForm\u0028\u0029",
             "name": "processForm",
             "summary": "Handle\u0020form\u0020input\u0020for\u0020betting.",
             "url": "classes/App-Poker-Helpers-HandlePlayerBet.html#method_processForm"
         },                {
-            "fqsen": "\\App\\Poker\\Helpers\\HandlePlayerBet\u003A\u003Afold\u0028\u0029",
+            "fqsen": "\\App\\Poker\\Helpers\\HexDecode",
+            "name": "HexDecode",
+            "summary": "The\u0020HexDecode\u0020class.",
+            "url": "classes/App-Poker-Helpers-HexDecode.html"
+        },                {
+            "fqsen": "\\App\\Poker\\Helpers\\HexDecode\u003A\u003AhexDecode\u0028\u0029",
+            "name": "hexDecode",
+            "summary": "Decode\u0020hex\u0020string.",
+            "url": "classes/App-Poker-Helpers-HexDecode.html#method_hexDecode"
+        },                {
+            "fqsen": "\\App\\Poker\\Helpers\\HexDecode\u003A\u003Adecode\u0028\u0029",
+            "name": "decode",
+            "summary": "Find\u0020facetext.",
+            "url": "classes/App-Poker-Helpers-HexDecode.html#method_decode"
+        },                {
+            "fqsen": "\\App\\Poker\\Helpers\\PlayerBetFunctions",
+            "name": "PlayerBetFunctions",
+            "summary": "The\u0020PlayerBetFunctions\u0020class.",
+            "url": "classes/App-Poker-Helpers-PlayerBetFunctions.html"
+        },                {
+            "fqsen": "\\App\\Poker\\Helpers\\PlayerBetFunctions\u003A\u003Afold\u0028\u0029",
             "name": "fold",
-            "summary": "Routines\u0020for\u0020player\u0020folding\u0020hand.",
-            "url": "classes/App-Poker-Helpers-HandlePlayerBet.html#method_fold"
+            "summary": "Routine\u0020for\u0020player\u0020folding\u0020hand.",
+            "url": "classes/App-Poker-Helpers-PlayerBetFunctions.html#method_fold"
         },                {
-            "fqsen": "\\App\\Poker\\Helpers\\HandlePlayerBet\u003A\u003Acall\u0028\u0029",
+            "fqsen": "\\App\\Poker\\Helpers\\PlayerBetFunctions\u003A\u003Acall\u0028\u0029",
             "name": "call",
-            "summary": "Routines\u0020for\u0020player\u0020calling\u0020bet.",
-            "url": "classes/App-Poker-Helpers-HandlePlayerBet.html#method_call"
+            "summary": "Routine\u0020for\u0020player\u0020calling\u0020bet.",
+            "url": "classes/App-Poker-Helpers-PlayerBetFunctions.html#method_call"
         },                {
-            "fqsen": "\\App\\Poker\\Helpers\\HandlePlayerBet\u003A\u003Acheck\u0028\u0029",
+            "fqsen": "\\App\\Poker\\Helpers\\PlayerBetFunctions\u003A\u003Acheck\u0028\u0029",
             "name": "check",
-            "summary": "Routines\u0020for\u0020player\u0020passing.",
-            "url": "classes/App-Poker-Helpers-HandlePlayerBet.html#method_check"
+            "summary": "Routine\u0020for\u0020player\u0020passing.",
+            "url": "classes/App-Poker-Helpers-PlayerBetFunctions.html#method_check"
         },                {
-            "fqsen": "\\App\\Poker\\Helpers\\HandlePlayerBet\u003A\u003Araise\u0028\u0029",
+            "fqsen": "\\App\\Poker\\Helpers\\PlayerBetFunctions\u003A\u003Araise\u0028\u0029",
             "name": "raise",
-            "summary": "Routines\u0020for\u0020player\u0020raising\u0020bet.",
-            "url": "classes/App-Poker-Helpers-HandlePlayerBet.html#method_raise"
+            "summary": "Routine\u0020for\u0020player\u0020raising\u0020bet.",
+            "url": "classes/App-Poker-Helpers-PlayerBetFunctions.html#method_raise"
         },                {
-            "fqsen": "\\App\\Poker\\Helpers\\HandlePlayerBet\u003A\u003A\u0024community",
+            "fqsen": "\\App\\Poker\\Helpers\\PlayerBetFunctions\u003A\u003Abet\u0028\u0029",
+            "name": "bet",
+            "summary": "Routines\u0020for\u0020player\u0020making\u0020bet.",
+            "url": "classes/App-Poker-Helpers-PlayerBetFunctions.html#method_bet"
+        },                {
+            "fqsen": "\\App\\Poker\\Helpers\\PlayerBetFunctions\u003A\u003Asave\u0028\u0029",
+            "name": "save",
+            "summary": "Common\u0020routine\u0020for\u0020saving\u0020betting\u0020data.",
+            "url": "classes/App-Poker-Helpers-PlayerBetFunctions.html#method_save"
+        },                {
+            "fqsen": "\\App\\Poker\\Helpers\\PlayerBetFunctions\u003A\u003A\u0024community",
             "name": "community",
             "summary": "",
-            "url": "classes/App-Poker-Helpers-HandlePlayerBet.html#property_community"
+            "url": "classes/App-Poker-Helpers-PlayerBetFunctions.html#property_community"
         },                {
-            "fqsen": "\\App\\Poker\\Helpers\\HandlePlayerBet\u003A\u003A\u0024player",
+            "fqsen": "\\App\\Poker\\Helpers\\PlayerBetFunctions\u003A\u003A\u0024player",
             "name": "player",
             "summary": "",
-            "url": "classes/App-Poker-Helpers-HandlePlayerBet.html#property_player"
+            "url": "classes/App-Poker-Helpers-PlayerBetFunctions.html#property_player"
         },                {
-            "fqsen": "\\App\\Poker\\Helpers\\HandlePlayerBet\u003A\u003A\u0024updatePlayer",
+            "fqsen": "\\App\\Poker\\Helpers\\PlayerBetFunctions\u003A\u003A\u0024updatePlayer",
             "name": "updatePlayer",
             "summary": "",
-            "url": "classes/App-Poker-Helpers-HandlePlayerBet.html#property_updatePlayer"
+            "url": "classes/App-Poker-Helpers-PlayerBetFunctions.html#property_updatePlayer"
         },                {
-            "fqsen": "\\App\\Poker\\Helpers\\HandlePlayerBet\u003A\u003A\u0024updateCommunity",
+            "fqsen": "\\App\\Poker\\Helpers\\PlayerBetFunctions\u003A\u003A\u0024updateCommunity",
             "name": "updateCommunity",
             "summary": "",
-            "url": "classes/App-Poker-Helpers-HandlePlayerBet.html#property_updateCommunity"
+            "url": "classes/App-Poker-Helpers-PlayerBetFunctions.html#property_updateCommunity"
         },                {
-            "fqsen": "\\App\\Poker\\Helpers\\HandlePlayerBet\u003A\u003A\u0024id",
+            "fqsen": "\\App\\Poker\\Helpers\\PlayerBetFunctions\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
-            "url": "classes/App-Poker-Helpers-HandlePlayerBet.html#property_id"
+            "url": "classes/App-Poker-Helpers-PlayerBetFunctions.html#property_id"
         },                {
-            "fqsen": "\\App\\Poker\\Helpers\\HandlePlayerBet\u003A\u003A\u0024maxBet",
+            "fqsen": "\\App\\Poker\\Helpers\\PlayerBetFunctions\u003A\u003A\u0024betCost",
+            "name": "betCost",
+            "summary": "",
+            "url": "classes/App-Poker-Helpers-PlayerBetFunctions.html#property_betCost"
+        },                {
+            "fqsen": "\\App\\Poker\\Helpers\\PlayerBetFunctions\u003A\u003A\u0024maxBet",
             "name": "maxBet",
             "summary": "",
-            "url": "classes/App-Poker-Helpers-HandlePlayerBet.html#property_maxBet"
+            "url": "classes/App-Poker-Helpers-PlayerBetFunctions.html#property_maxBet"
         },                {
-            "fqsen": "\\App\\Poker\\Helpers\\HandlePlayerBet\u003A\u003A\u0024raises",
+            "fqsen": "\\App\\Poker\\Helpers\\PlayerBetFunctions\u003A\u003A\u0024raises",
             "name": "raises",
             "summary": "",
-            "url": "classes/App-Poker-Helpers-HandlePlayerBet.html#property_raises"
+            "url": "classes/App-Poker-Helpers-PlayerBetFunctions.html#property_raises"
         },                {
             "fqsen": "\\App\\Poker\\Helpers\\UpdateCommunity",
             "name": "UpdateCommunity",
@@ -2270,6 +2385,11 @@ Search.appendIndex(
             "name": "saveState",
             "summary": "Save\u0020state.",
             "url": "classes/App-Poker-Helpers-UpdateCommunity.html#method_saveState"
+        },                {
+            "fqsen": "\\App\\Poker\\Helpers\\UpdateCommunity\u003A\u003AsaveDiscarded\u0028\u0029",
+            "name": "saveDiscarded",
+            "summary": "Save\u0020discarded\u0020cards.",
+            "url": "classes/App-Poker-Helpers-UpdateCommunity.html#method_saveDiscarded"
         },                {
             "fqsen": "\\App\\Poker\\Helpers\\UpdateCommunity\u003A\u003Asave\u0028\u0029",
             "name": "save",
@@ -2476,6 +2596,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Poker-PlayerStates.html#enumcase_None"
         },                {
+            "fqsen": "\\App\\Poker\\PlayerStates\u003A\u003AWaits",
+            "name": "Waits",
+            "summary": "",
+            "url": "classes/App-Poker-PlayerStates.html#enumcase_Waits"
+        },                {
             "fqsen": "\\App\\Poker\\PlayerStates\u003A\u003ABets",
             "name": "Bets",
             "summary": "",
@@ -2586,6 +2711,206 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Poker-PlayerVars.html#property_latestAction"
         },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandBase",
+            "name": "PokerHandBase",
+            "summary": "PokerHandBase\u0020class.",
+            "url": "classes/App-Poker-PokerHand-PokerHandBase.html"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandBase\u003A\u003AaceHiLo\u0028\u0029",
+            "name": "aceHiLo",
+            "summary": "Determine\u0020high\u0020card\u0020if\u0020ace\u0020part\u0020of\u0020straight.",
+            "url": "classes/App-Poker-PokerHand-PokerHandBase.html#method_aceHiLo"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandBase\u003A\u003AglueHex\u0028\u0029",
+            "name": "glueHex",
+            "summary": "Construct\u0020a\u0020padded\u0020hex\u0020string\u0020from\u0020hand\u0020properties.",
+            "url": "classes/App-Poker-PokerHand-PokerHandBase.html#method_glueHex"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandBase\u003A\u003A\u0024mults",
+            "name": "mults",
+            "summary": "",
+            "url": "classes/App-Poker-PokerHand-PokerHandBase.html#property_mults"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandBase\u003A\u003A\u0024kickers",
+            "name": "kickers",
+            "summary": "",
+            "url": "classes/App-Poker-PokerHand-PokerHandBase.html#property_kickers"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandCombinations",
+            "name": "PokerHandCombinations",
+            "summary": "PokerHandCombinations\u0020class.",
+            "url": "classes/App-Poker-PokerHand-PokerHandCombinations.html"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandCombinations\u003A\u003Apermute\u0028\u0029",
+            "name": "permute",
+            "summary": "All\u0020permutations\u0020n\u0020choose\u0020k\u0020of\u0020an\u0020array.",
+            "url": "classes/App-Poker-PokerHand-PokerHandCombinations.html#method_permute"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandCombinations\u003A\u003ApermuteHand\u0028\u0029",
+            "name": "permuteHand",
+            "summary": "Specifically\u00207\u0020choose\u00205\u0020\u003D\u002021\u0020hands.",
+            "url": "classes/App-Poker-PokerHand-PokerHandCombinations.html#method_permuteHand"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandIssers",
+            "name": "PokerHandIssers",
+            "summary": "PokerHandIssers\u0020class.",
+            "url": "classes/App-Poker-PokerHand-PokerHandIssers.html"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandIssers\u003A\u003AisSuite\u0028\u0029",
+            "name": "isSuite",
+            "summary": "Determine\u0020if\u0020hand\u0020is\u0020in\u0020a\u0020single\u0020suite.",
+            "url": "classes/App-Poker-PokerHand-PokerHandIssers.html#method_isSuite"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandIssers\u003A\u003AisSequence\u0028\u0029",
+            "name": "isSequence",
+            "summary": "Determine\u0020if\u0020hand\u0020is\u0020a\u0020sequence\u0020of\u0020cards,\u0020considering\u0020ace\u0020high\u0020and\u0020low.",
+            "url": "classes/App-Poker-PokerHand-PokerHandIssers.html#method_isSequence"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandNonSeries",
+            "name": "PokerHandNonSeries",
+            "summary": "PokerHandBase\u0020class.",
+            "url": "classes/App-Poker-PokerHand-PokerHandNonSeries.html"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandNonSeries\u003A\u003AfourOfAKind\u0028\u0029",
+            "name": "fourOfAKind",
+            "summary": "Four\u0020of\u0020a\u0020kind,\u0020one\u0020high\u0020card,\u0020no\u0020kickers.",
+            "url": "classes/App-Poker-PokerHand-PokerHandNonSeries.html#method_fourOfAKind"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandNonSeries\u003A\u003AfullHouse\u0028\u0029",
+            "name": "fullHouse",
+            "summary": "Full\u0020house,\u0020one\u0020high\u0020card,\u0020no\u0020kickers.",
+            "url": "classes/App-Poker-PokerHand-PokerHandNonSeries.html#method_fullHouse"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandNonSeries\u003A\u003AthreeOfAKind\u0028\u0029",
+            "name": "threeOfAKind",
+            "summary": "Three\u0020of\u0020a\u0020kind,\u0020one\u0020high\u0020card,\u0020no\u0020kickers.",
+            "url": "classes/App-Poker-PokerHand-PokerHandNonSeries.html#method_threeOfAKind"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandNonSeries\u003A\u003AtwoPairs\u0028\u0029",
+            "name": "twoPairs",
+            "summary": "Two\u0020pairs,\u0020two\u0020high\u0020cards,\u0020one\u0020kicker.",
+            "url": "classes/App-Poker-PokerHand-PokerHandNonSeries.html#method_twoPairs"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandNonSeries\u003A\u003Apair\u0028\u0029",
+            "name": "pair",
+            "summary": "Pair,\u0020one\u0020high\u0020card,\u0020three\u0020kickers.",
+            "url": "classes/App-Poker-PokerHand-PokerHandNonSeries.html#method_pair"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHands",
+            "name": "PokerHands",
+            "summary": "The\u0020PokerHands\u0020enumeration.",
+            "url": "classes/App-Poker-PokerHand-PokerHands.html"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHands\u003A\u003Atext\u0028\u0029",
+            "name": "text",
+            "summary": "",
+            "url": "classes/App-Poker-PokerHand-PokerHands.html#method_text"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHands\u003A\u003Astring\u0028\u0029",
+            "name": "string",
+            "summary": "",
+            "url": "classes/App-Poker-PokerHand-PokerHands.html#method_string"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHands\u003A\u003AHighCard",
+            "name": "HighCard",
+            "summary": "",
+            "url": "classes/App-Poker-PokerHand-PokerHands.html#enumcase_HighCard"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHands\u003A\u003APair",
+            "name": "Pair",
+            "summary": "",
+            "url": "classes/App-Poker-PokerHand-PokerHands.html#enumcase_Pair"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHands\u003A\u003ATwoPairs",
+            "name": "TwoPairs",
+            "summary": "",
+            "url": "classes/App-Poker-PokerHand-PokerHands.html#enumcase_TwoPairs"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHands\u003A\u003AThreeOfAKind",
+            "name": "ThreeOfAKind",
+            "summary": "",
+            "url": "classes/App-Poker-PokerHand-PokerHands.html#enumcase_ThreeOfAKind"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHands\u003A\u003AStraight",
+            "name": "Straight",
+            "summary": "",
+            "url": "classes/App-Poker-PokerHand-PokerHands.html#enumcase_Straight"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHands\u003A\u003AFlush",
+            "name": "Flush",
+            "summary": "",
+            "url": "classes/App-Poker-PokerHand-PokerHands.html#enumcase_Flush"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHands\u003A\u003AFullHouse",
+            "name": "FullHouse",
+            "summary": "",
+            "url": "classes/App-Poker-PokerHand-PokerHands.html#enumcase_FullHouse"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHands\u003A\u003AFourOfAKind",
+            "name": "FourOfAKind",
+            "summary": "",
+            "url": "classes/App-Poker-PokerHand-PokerHands.html#enumcase_FourOfAKind"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHands\u003A\u003AStraightFlush",
+            "name": "StraightFlush",
+            "summary": "",
+            "url": "classes/App-Poker-PokerHand-PokerHands.html#enumcase_StraightFlush"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandSequence",
+            "name": "PokerHandSequence",
+            "summary": "PokerHandSequence\u0020class.",
+            "url": "classes/App-Poker-PokerHand-PokerHandSequence.html"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandSequence\u003A\u003Asequence\u0028\u0029",
+            "name": "sequence",
+            "summary": "Single\u0020high\u0020card,\u0020straight,\u0020flush,\u0020or\u0020straight\u0020flush.",
+            "url": "classes/App-Poker-PokerHand-PokerHandSequence.html#method_sequence"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandSeries",
+            "name": "PokerHandSeries",
+            "summary": "PokerHandSeries\u0020class.",
+            "url": "classes/App-Poker-PokerHand-PokerHandSeries.html"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandSeries\u003A\u003AstraightFlush\u0028\u0029",
+            "name": "straightFlush",
+            "summary": "Straight\u0020flush,\u0020one\u0020high\u0020card,\u0020no\u0020kickers.",
+            "url": "classes/App-Poker-PokerHand-PokerHandSeries.html#method_straightFlush"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandSeries\u003A\u003Aflush\u0028\u0029",
+            "name": "flush",
+            "summary": "Flush,\u0020one\u0020high\u0020card,\u0020no\u0020kickers.",
+            "url": "classes/App-Poker-PokerHand-PokerHandSeries.html#method_flush"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandSeries\u003A\u003Astraight\u0028\u0029",
+            "name": "straight",
+            "summary": "Straight,\u0020one\u0020high\u0020card,\u0020no\u0020kickers.",
+            "url": "classes/App-Poker-PokerHand-PokerHandSeries.html#method_straight"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandSeries\u003A\u003AhighCard\u0028\u0029",
+            "name": "highCard",
+            "summary": "Nothing,\u0020one\u0020high\u0020card,\u0020four\u0020kickers.",
+            "url": "classes/App-Poker-PokerHand-PokerHandSeries.html#method_highCard"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandSeries\u003A\u003A\u0024hand",
+            "name": "hand",
+            "summary": "",
+            "url": "classes/App-Poker-PokerHand-PokerHandSeries.html#property_hand"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandSeries\u003A\u003A\u0024faceValues",
+            "name": "faceValues",
+            "summary": "",
+            "url": "classes/App-Poker-PokerHand-PokerHandSeries.html#property_faceValues"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandValue",
+            "name": "PokerHandValue",
+            "summary": "PokerHandValue\u0020class.",
+            "url": "classes/App-Poker-PokerHand-PokerHandValue.html"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand\\PokerHandValue\u003A\u003AcheckHand\u0028\u0029",
+            "name": "checkHand",
+            "summary": "Deconstruct\u0020hand\u0020using\u0020array\u0020values,\u0020match\u0020pattern.",
+            "url": "classes/App-Poker-PokerHand-PokerHandValue.html#method_checkHand"
+        },                {
             "fqsen": "\\App\\Poker\\Round\\BeginSetBadges",
             "name": "BeginSetBadges",
             "summary": "The\u0020BeginSetBadges\u0020class.",
@@ -2625,6 +2950,16 @@ Search.appendIndex(
             "name": "check",
             "summary": "Make\u0020sure\u0020badges\u0020belong\u0020to\u0020active\u0020players.",
             "url": "classes/App-Poker-Round-CheckBadges.html#method_check"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\CollectBets",
+            "name": "CollectBets",
+            "summary": "The\u0020CollectBets\u0020class.",
+            "url": "classes/App-Poker-Round-CollectBets.html"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\CollectBets\u003A\u003Asave\u0028\u0029",
+            "name": "save",
+            "summary": "Check\u0020if\u0020player\u0028s\u0029\u0020fold\u0028s\u0029.",
+            "url": "classes/App-Poker-Round-CollectBets.html#method_save"
         },                {
             "fqsen": "\\App\\Poker\\Round\\CommunityCards",
             "name": "CommunityCards",
@@ -2726,6 +3061,36 @@ Search.appendIndex(
             "summary": "Dealer\u0020deals\u0020one\u0020hole\u0020card\u0020to\u0020each\u0020player,\u0020twice,\u0020from\u0020fresh\u0020deck.",
             "url": "classes/App-Poker-Round-DealHoleCardsHelper.html#method_dealHoleCards"
         },                {
+            "fqsen": "\\App\\Poker\\Round\\DecideWinner",
+            "name": "DecideWinner",
+            "summary": "The\u0020DecideWinner\u0020class.",
+            "url": "classes/App-Poker-Round-DecideWinner.html"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\DecideWinner\u003A\u003AevaluateHands\u0028\u0029",
+            "name": "evaluateHands",
+            "summary": "Decide\u0020winner,\u0020pay\u0020out\u0020and\u0020reset\u0020community\u0020pot,\u0020save\u0020results\u0020in\u0020session\u0020for\u0020display.",
+            "url": "classes/App-Poker-Round-DecideWinner.html#method_evaluateHands"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\EndGame",
+            "name": "EndGame",
+            "summary": "The\u0020EndGame\u0020class.",
+            "url": "classes/App-Poker-Round-EndGame.html"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\EndGame\u003A\u003AcheckStatus\u0028\u0029",
+            "name": "checkStatus",
+            "summary": "Check\u0020if\u0020players\u0020are\u0020out\u0020or\u0020game\u0020is\u0020over.",
+            "url": "classes/App-Poker-Round-EndGame.html#method_checkStatus"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\Folds",
+            "name": "Folds",
+            "summary": "The\u0020Folds\u0020class.",
+            "url": "classes/App-Poker-Round-Folds.html"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\Folds\u003A\u003Acheck\u0028\u0029",
+            "name": "check",
+            "summary": "Check\u0020if\u0020player\u0028s\u0029\u0020fold\u0028s\u0029.",
+            "url": "classes/App-Poker-Round-Folds.html#method_check"
+        },                {
             "fqsen": "\\App\\Poker\\Round\\HoleCards",
             "name": "HoleCards",
             "summary": "The\u0020HoleCards\u0020class.",
@@ -2745,6 +3110,76 @@ Search.appendIndex(
             "name": "handlePlayer",
             "summary": "",
             "url": "classes/App-Poker-Round-HumanPlayer.html#method_handlePlayer"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\NewDealerFuncs",
+            "name": "NewDealerFuncs",
+            "summary": "The\u0020NewDealerFuncs\u0020class.",
+            "url": "classes/App-Poker-Round-NewDealerFuncs.html"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\NewDealerFuncs\u003A\u003AthreePlayersLeft\u0028\u0029",
+            "name": "threePlayersLeft",
+            "summary": "Three\u0020players\u003F",
+            "url": "classes/App-Poker-Round-NewDealerFuncs.html#method_threePlayersLeft"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\NewDealerFuncs\u003A\u003AnewDealerOut\u0028\u0029",
+            "name": "newDealerOut",
+            "summary": "Two\u0020players.\u0020New\u0020dealer\u0020is\u0020out\u003F",
+            "url": "classes/App-Poker-Round-NewDealerFuncs.html#method_newDealerOut"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\NewDealerFuncs\u003A\u003AnewDealerPlusOneOut\u0028\u0029",
+            "name": "newDealerPlusOneOut",
+            "summary": "New\u0020dealer\u0020is\u0020still\u0020in.",
+            "url": "classes/App-Poker-Round-NewDealerFuncs.html#method_newDealerPlusOneOut"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\NewDealerFuncs\u003A\u003AnewDealerPlusTwoOut\u0028\u0029",
+            "name": "newDealerPlusTwoOut",
+            "summary": "Dealer\u0020\u002B\u00202\u0020out\u003F",
+            "url": "classes/App-Poker-Round-NewDealerFuncs.html#method_newDealerPlusTwoOut"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\NewDealerFuncs\u003A\u003A\u0024dealer",
+            "name": "dealer",
+            "summary": "",
+            "url": "classes/App-Poker-Round-NewDealerFuncs.html#property_dealer"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\NewDealerFuncs\u003A\u003A\u0024smallBlind",
+            "name": "smallBlind",
+            "summary": "",
+            "url": "classes/App-Poker-Round-NewDealerFuncs.html#property_smallBlind"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\NewDealerFuncs\u003A\u003A\u0024bigBlind",
+            "name": "bigBlind",
+            "summary": "",
+            "url": "classes/App-Poker-Round-NewDealerFuncs.html#property_bigBlind"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\PermuteHands",
+            "name": "PermuteHands",
+            "summary": "The\u0020PermuteHands\u0020class.",
+            "url": "classes/App-Poker-Round-PermuteHands.html"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\PermuteHands\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Poker-Round-PermuteHands.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\PermuteHands\u003A\u003Apermute\u0028\u0029",
+            "name": "permute",
+            "summary": "Decide\u0020winner,\u0020pay\u0020out\u0020and\u0020reset\u0020community\u0020pot,\u0020save\u0020results\u0020in\u0020session\u0020for\u0020display.",
+            "url": "classes/App-Poker-Round-PermuteHands.html#method_permute"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\PermuteHands\u003A\u003A\u0024permutations",
+            "name": "permutations",
+            "summary": "",
+            "url": "classes/App-Poker-Round-PermuteHands.html#property_permutations"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\PermuteHands\u003A\u003A\u0024pokerHand",
+            "name": "pokerHand",
+            "summary": "",
+            "url": "classes/App-Poker-Round-PermuteHands.html#property_pokerHand"
+        },                {
+            "fqsen": "\\App\\Poker\\Round\\PermuteHands\u003A\u003A\u0024bestHex",
+            "name": "bestHex",
+            "summary": "",
+            "url": "classes/App-Poker-Round-PermuteHands.html#property_bestHex"
         },                {
             "fqsen": "\\App\\Poker\\Round\\PrepareNextRound",
             "name": "PrepareNextRound",
@@ -2921,6 +3356,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/app-controller-library.html"
         },                {
+            "fqsen": "\\App\\Controller\\Poker\\API",
+            "name": "API",
+            "summary": "",
+            "url": "namespaces/app-controller-poker-api.html"
+        },                {
             "fqsen": "\\App\\Controller\\Poker",
             "name": "Poker",
             "summary": "",
@@ -2950,6 +3390,11 @@ Search.appendIndex(
             "name": "Helpers",
             "summary": "",
             "url": "namespaces/app-poker-helpers.html"
+        },                {
+            "fqsen": "\\App\\Poker\\PokerHand",
+            "name": "PokerHand",
+            "summary": "",
+            "url": "namespaces/app-poker-pokerhand.html"
         },                {
             "fqsen": "\\App\\Poker\\Round",
             "name": "Round",

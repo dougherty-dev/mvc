@@ -37,7 +37,7 @@ class RoundDone
         UpdateCommunity $updateCommunity
     ): bool {
         /**
-         * Check if round is done, collect bets, do flop.
+         * Check if round is done, collect bets, up level.
          */
         $bets = [];
         foreach ($players as $player) {
@@ -51,16 +51,14 @@ class RoundDone
              * Select a winner and tidy up before showdown.
              */
             if ($community->getState() === GameStates::River) {
-                $winner = new DecideWinner();
-                $winner->evaluateHands($session, $players, $community, $updatePlayer, $updateCommunity);
+                (new DecideWinner())->evaluateHands($session, $players, $community, $updatePlayer, $updateCommunity);
             }
-            $resetRound = new ResetRound();
-            $resetRound->reset($entityManager, $players, $community, $updatePlayer, $updateCommunity);
+
+            (new ResetRound())->reset($entityManager, $players, $community, $updatePlayer, $updateCommunity);
             return true;
         }
 
-        $bettingOrder = new BettingOrder();
-        $bettingOrder->setOrder($players, $community, $updateCommunity);
+        (new BettingOrder())->setOrder($players, $community, $updateCommunity);
 
         return false;
     }

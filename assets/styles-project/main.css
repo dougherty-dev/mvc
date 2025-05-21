@@ -82,3 +82,16 @@ input[type="number"] {
   right: 0.4rem;
   font-size: 1.6rem;
 }
+
+.striped {
+  max-width: 60rem;
+  border: thin solid var(--incarnadine);
+}
+
+.striped tbody:nth-child(odd) > tr {
+  background-color: var(--gray-15);
+}
+
+.striped tbody:nth-child(even) > tr {
+  background-color: var(--gray-35);
+}

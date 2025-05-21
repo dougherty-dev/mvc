@@ -41,7 +41,7 @@ class GameController extends SessionController
             GameStates::Turn => ['Fortsätt', 'turn', 'proj_poker_round'],
             GameStates::River => ['Fortsätt', 'river', 'proj_poker_round'],
             GameStates::Showdown => ['Nästa runda', 'showdown', 'proj_poker_next'],
-            GameStates::EndGame => ['Nytt spel', 'endgame', 'proj_reset'],
+            GameStates::EndGame => ['Nytt spel', 'endgame', 'proj_reset_post'],
         };
 
         $data = [

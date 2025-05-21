@@ -37,8 +37,7 @@ class CommunityCards
             PlayerStates::from($player->getLatestAction())->name, $players);
 
         if (in_array(PlayerStates::Waits->name, $playerActions)) {
-            $dealCards = new DealCommunityCards();
-            $dealCards->deal($entityManager, $community);
+            (new DealCommunityCards())->deal($entityManager, $community);
 
             foreach ($players as $player) {
                 if (!in_array($player->getState(), [PlayerStates::Folds, PlayerStates::Out])) {
@@ -47,8 +46,7 @@ class CommunityCards
                 }
             }
 
-            $bettingOrder = new BettingOrder();
-            $bettingOrder->setOrder($players, $community, $updateCommunity);
+            (new BettingOrder())->setOrder($players, $community, $updateCommunity);
         }
     }
 }

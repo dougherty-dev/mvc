@@ -33,34 +33,34 @@ class CheckBadges
         $smallBlindPlayer = $players[$smallBlind];
         $bigBlindPlayer = $players[$bigBlind];
 
-        [$dealer, $smallBlind, $bigBlind] = match (true) {
-            count($players) === 3 => [
+        $outStates = (int) array_sum(array_map(fn ($player): int => $player->getState() === PlayerStates::Out ? 1 : 0, $players));
+
+        return match (true) {
+            $outStates != 0 => [
                 $dealer,
-                $smallBlind = ($dealer + 1) % 3,
-                $bigBlind = ($dealer + 2) % 3
+                ($dealer + 1) % 3,
+                ($dealer + 2) % 3
             ],
 
             $dealerPlayer->getState() === PlayerStates::Out => [
-                $dealer = ($dealer + 1) % 3,
-                $smallBlind = $dealer,
-                $bigBlind = ($dealer + 2) % 3
+                ($dealer + 1) % 3,
+                $dealer,
+                ($dealer + 2) % 3
             ],
 
             $smallBlindPlayer->getState() === PlayerStates::Out => [
                 $dealer,
-                $smallBlind = $dealer,
-                $bigBlind = ($dealer + 2) % 3
+                $dealer,
+                ($dealer + 2) % 3
             ],
 
             $bigBlindPlayer->getState() === PlayerStates::Out => [
                 $dealer,
-                $smallBlind = $dealer,
-                $bigBlind = ($dealer + 1) % 3
+                $dealer,
+                ($dealer + 1) % 3
             ],
 
             default => [$dealer, $smallBlind, $bigBlind]
         };
-
-        return [$dealer, $smallBlind, $bigBlind];
     }
 }

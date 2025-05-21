@@ -71,4 +71,14 @@ class HomeControllerTest extends WebTestCase
         $client->request('GET', '/proj/about/database');
         $this->assertResponseIsSuccessful();
     }
+
+    /**
+     * Test route /proj/api
+     */
+    public function testAPI(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', '/proj/api');
+        $this->assertResponseIsSuccessful();
+    }
 }

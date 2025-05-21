@@ -39,7 +39,7 @@ class Hand extends HandFoundation
     }
 
     /**
-     * Return Unicode symbol values of cards in deck: 🃑, 🃕, 🂤
+     * Return Unicode symbol values of cards in hand: 🃑, 🃕, 🂤
      *
      * @return string[]
      */

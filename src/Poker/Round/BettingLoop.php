@@ -15,6 +15,7 @@ use App\Poker\Helpers\UpdateCommunity;
 use App\Poker\Helpers\HandleComputerBet;
 use App\Poker\Community;
 use App\Poker\Player;
+use App\Poker\PlayerStates;
 
 /**
  * The BettingLoop class.
@@ -44,8 +45,7 @@ class BettingLoop
              * Human player
              */
             if ($currentPlayer === 0) {
-                $humanPlayer = new HumanPlayer();
-                $res = $humanPlayer->handlePlayer($players, $community, $updatePlayer, $updateCommunity, $request);
+                $res = (new HumanPlayer())->handlePlayer($players, $community, $updatePlayer, $updateCommunity, $request);
                 if ($res) {
                     return true;
                 }
@@ -55,8 +55,7 @@ class BettingLoop
              * Computer player
              */
             if ($currentPlayer != 0) {
-                $handleCB = new HandleComputerBet();
-                $handleCB->handleBet($players, $community, $updatePlayer, $updateCommunity, $currentPlayer);
+                (new HandleComputerBet())->handleBet($players, $community, $updatePlayer, $updateCommunity, $currentPlayer);
             }
 
             array_shift($betorder);

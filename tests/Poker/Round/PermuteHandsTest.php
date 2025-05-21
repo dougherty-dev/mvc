@@ -11,6 +11,13 @@ namespace App\Tests\Poker\Round;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Poker\Round\PermuteHands;
+use App\Poker\Round\CheckBadges;
+use App\Poker\Round\CollectBets;
+use App\Poker\Round\DecideWinner;
+use App\Poker\Round\EndGame;
+use App\Poker\Round\Folds;
+use App\Poker\Round\BettingLoop;
+use App\Poker\Round\NewDealerFuncs;
 
 /**
  * PermuteHandsTest class.
@@ -22,17 +29,28 @@ class PermuteHandsTest extends WebTestCase
      */
     public function testPermuteHands(): void
     {
-        $permuteHands = new PermuteHands();
-        $this->assertInstanceOf("\App\Poker\Round\PermuteHands", $permuteHands);
+        $cls = new PermuteHands();
+        $this->assertInstanceOf("\App\Poker\Round\PermuteHands", $cls);
 
+        $cls = new CheckBadges();
+        $this->assertInstanceOf("\App\Poker\Round\CheckBadges", $cls);
 
-        //     /** Four of a kind */
-        //     $vals = [0, 13, 12, 26, 39]; // ♣️A, ♦️A, ♣️K, ♥️A, ♠️A
-        //     $hand = new Hand();
-        //     $hand->addToHand($vals);
-        //     $hex = $pokerHandValue->checkHand($hand);
-        //     $this->assertEquals($hex, "H7e00000");
-        //     $this->assertNotEquals($hex, "H5300000");
-        //     $this->assertTrue($hex > "H1e00000"); // pair
+        $cls = new CollectBets();
+        $this->assertInstanceOf("\App\Poker\Round\CollectBets", $cls);
+
+        $cls = new DecideWinner();
+        $this->assertInstanceOf("\App\Poker\Round\DecideWinner", $cls);
+
+        $cls = new EndGame();
+        $this->assertInstanceOf("\App\Poker\Round\EndGame", $cls);
+
+        $cls = new Folds();
+        $this->assertInstanceOf("\App\Poker\Round\Folds", $cls);
+
+        $cls = new BettingLoop();
+        $this->assertInstanceOf("\App\Poker\Round\BettingLoop", $cls);
+
+        $cls = new NewDealerFuncs();
+        $this->assertInstanceOf("\App\Poker\Round\NewDealerFuncs", $cls);
     }
 }
