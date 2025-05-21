@@ -35,7 +35,7 @@ class WinnerAPIController extends AbstractController
         $noCommunityCards = $community->getHand()->remainingCards();
 
         if (!($community->getState() === GameStates::River && ($noCommunityCards === 5))) {
-            return $response = new JsonResponse([]);
+            return new JsonResponse([]);
         }
 
         $players = (new FetchPlayers())->fetchPlayers($entityManager);

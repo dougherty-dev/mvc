@@ -36,7 +36,6 @@ class FindAllHands
         $handValues = $hand->handIntValues();
         $hands = [];
         $bestHand = [];
-        $hex = "";
         $bestHex = "";
 
         foreach ($permutations as $permutation) {

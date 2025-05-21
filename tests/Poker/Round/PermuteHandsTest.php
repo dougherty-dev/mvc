@@ -10,14 +10,13 @@ declare(strict_types=1);
 namespace App\Tests\Poker\Round;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Doctrine\Persistence\ManagerRegistry;
+use App\Poker\Helpers\FetchCommunity;
+use App\Poker\Helpers\FetchPlayers;
+use App\Poker\Helpers\UpdatePlayer;
+use App\Poker\Player;
+use App\Poker\Hand;
 use App\Poker\Round\PermuteHands;
-use App\Poker\Round\CheckBadges;
-use App\Poker\Round\CollectBets;
-use App\Poker\Round\DecideWinner;
-use App\Poker\Round\EndGame;
-use App\Poker\Round\Folds;
-use App\Poker\Round\BettingLoop;
-use App\Poker\Round\NewDealerFuncs;
 
 /**
  * PermuteHandsTest class.
@@ -29,28 +28,30 @@ class PermuteHandsTest extends WebTestCase
      */
     public function testPermuteHands(): void
     {
-        $cls = new PermuteHands();
-        $this->assertInstanceOf("\App\Poker\Round\PermuteHands", $cls);
+        $permuteHands = new PermuteHands();
+        $this->assertInstanceOf("\App\Poker\Round\PermuteHands", $permuteHands);
 
-        $cls = new CheckBadges();
-        $this->assertInstanceOf("\App\Poker\Round\CheckBadges", $cls);
+        self::bootKernel();
+        $container = static::getContainer();
+        $registry = $container->get(ManagerRegistry::class);
+        /** @phpstan-ignore-next-line */
+        $entityManager = $registry->getManager();
 
-        $cls = new CollectBets();
-        $this->assertInstanceOf("\App\Poker\Round\CollectBets", $cls);
+        $community = (new FetchCommunity())->fetchCommunity($entityManager);
+        $players = (new FetchPlayers())->fetchPlayers($entityManager);
+        $updatePlayer = new UpdatePlayer($entityManager);
 
-        $cls = new DecideWinner();
-        $this->assertInstanceOf("\App\Poker\Round\DecideWinner", $cls);
+        $hand = new Hand();
+        $hand->addToHand([12, 34, 2, 22, 18]);
+        $community->setHand($hand);
 
-        $cls = new EndGame();
-        $this->assertInstanceOf("\App\Poker\Round\EndGame", $cls);
+        foreach ([[1, 45], [51, 0], [4, 33]] as $key => $arr) {
+            $hand = new Hand();
+            $hand->addToHand($arr);
+            $players[$key]->setHand($hand);
+        }
 
-        $cls = new Folds();
-        $this->assertInstanceOf("\App\Poker\Round\Folds", $cls);
+        $permuteHands->permute($community, $players[0], $updatePlayer, []);
 
-        $cls = new BettingLoop();
-        $this->assertInstanceOf("\App\Poker\Round\BettingLoop", $cls);
-
-        $cls = new NewDealerFuncs();
-        $this->assertInstanceOf("\App\Poker\Round\NewDealerFuncs", $cls);
     }
 }

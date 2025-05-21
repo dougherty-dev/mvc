@@ -44,6 +44,8 @@ class GameRoundControllerTest extends WebTestCase
     public function testPokerRound(): void
     {
         $client = static::createClient();
+        $client->request('POST', '/proj/reset/post');
+
         $client->request('POST', '/proj/poker/round', ['fold' => 1]);
         $this->assertResponseRedirects('/proj/poker');
 

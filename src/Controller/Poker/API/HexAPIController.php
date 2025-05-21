@@ -31,7 +31,7 @@ class HexAPIController extends AbstractController
     {
         $req = $request->query->all();
         if (!isset($req["hand"]) && empty($req["hand"])) {
-            return $response = new JsonResponse([]);
+            return new JsonResponse([]);
         }
 
         /**

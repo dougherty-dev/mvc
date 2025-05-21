@@ -45,6 +45,5 @@ class ResetControllerTest extends WebTestCase
         $client = $this->resetDB();
         $client->request('POST', '/proj/reset/post');
         $this->assertResponseRedirects("/proj/poker");
-
     }
 }

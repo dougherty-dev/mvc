@@ -31,7 +31,7 @@ class HandAPIController extends AbstractController
     {
         $req = $request->request->get("player");
         if (!in_array($req, [0, 1, 2])) {
-            return $response = new JsonResponse([]);
+            return new JsonResponse([]);
         }
 
         $entityManager = $doctrine->getManager();

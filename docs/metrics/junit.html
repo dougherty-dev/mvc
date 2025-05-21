@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2025-05-21 17:22:37        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2025-05-21 22:49:56        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -60,24 +60,24 @@
         <div class="bloc bloc-number">
             <div class="label">Test suites</div>
             <div class="number">
-                57            </div>
+                64            </div>
         </div>
     </div>
     <div class="column">
         <div class="bloc bloc-number">
             <div class="label">Assertions</div>
             <div class="number">
-                928            </div>
+                930            </div>
         </div>
     </div>
     <div class="column">
         <div class="bloc bloc-number">
             <div class="label">
                 classes never called by tests
-                <small>(1.5 %)</small>
+                <small>(6.02 %)</small>
             </div>
             <div class="number">
-                2            </div>
+                8            </div>
         </div>
     </div>
 </div>
@@ -103,6 +103,17 @@
                         </thead>
                         <tbody id="contentAreaJunitNeverCalled" class="clusterize-content">
                                                     <tr>
+                                <td><span class="path">App\Poker\Helpers\PlayerBetFunctions</span></td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0);">
+                                        1                                        </span>
+                                    </td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.06);">
+                                        0.06                                        </span>
+                                    </td>
+                                                            </tr>
+                                                        <tr>
                                 <td><span class="path">App\Poker\Round\DealCards</span></td>
                                                                     <td>
                                         <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0);">
@@ -111,6 +122,61 @@
                                                                     <td>
                                         <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.03);">
                                         0.03                                        </span>
+                                    </td>
+                                                            </tr>
+                                                        <tr>
+                                <td><span class="path">App\Poker\Round\EndGame</span></td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.8);">
+                                        5                                        </span>
+                                    </td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.07);">
+                                        0.07                                        </span>
+                                    </td>
+                                                            </tr>
+                                                        <tr>
+                                <td><span class="path">App\Poker\Round\Folds</span></td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.8);">
+                                        5                                        </span>
+                                    </td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.05);">
+                                        0.05                                        </span>
+                                    </td>
+                                                            </tr>
+                                                        <tr>
+                                <td><span class="path">App\Poker\Round\BettingLoop</span></td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.8);">
+                                        5                                        </span>
+                                    </td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.05);">
+                                        0.05                                        </span>
+                                    </td>
+                                                            </tr>
+                                                        <tr>
+                                <td><span class="path">App\Poker\Round\NewDealerFuncs</span></td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0);">
+                                        1                                        </span>
+                                    </td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.07);">
+                                        0.07                                        </span>
+                                    </td>
+                                                            </tr>
+                                                        <tr>
+                                <td><span class="path">App\Poker\Round\SetNewDealer</span></td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.2);">
+                                        2                                        </span>
+                                    </td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.07);">
+                                        0.07                                        </span>
                                     </td>
                                                             </tr>
                                                         <tr>
@@ -955,23 +1021,48 @@
                                                                     </td>
                             </tr>
                                                     <tr>
+                                <td valign="top"><span class="path">App\Tests\Poker\FindAllHandsTest</span></td>
+                                <td style="padding-bottom: 1em;">
+                                                                                                                    <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">Symfony\Bundle\FrameworkBundle\Test\WebTestCase</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            3                                        </span>
+                                        <span class="path">App\Poker\Helpers\FindAllHands</span>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
                                 <td valign="top"><span class="path">App\Tests\Poker\FindBestHandTest</span></td>
                                 <td style="padding-bottom: 1em;">
                                                                                                                     <span class="badge" title="Cyclomatic complexity of class">
                                             -                                        </span>
-                                        <span class="path">PHPUnit\Framework\TestCase</span>
+                                        <span class="path">Symfony\Bundle\FrameworkBundle\Test\WebTestCase</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             5                                        </span>
                                         <span class="path">App\Poker\Helpers\FindBestHand</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">static</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Poker\Helpers\FetchCommunity</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             3                                        </span>
-                                        <span class="path">App\Poker\Helpers\FindAllHands</span>
+                                        <span class="path">App\Poker\Helpers\FetchPlayers</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            1                                        </span>
+                                        <span class="path">App\Poker\Hand</span>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <td valign="top"><span class="path">App\Tests\Poker\HexDecodeTest</span></td>
+                                <td style="padding-bottom: 1em;">
+                                                                                                                    <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">Symfony\Bundle\FrameworkBundle\Test\WebTestCase</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             5                                        </span>
                                         <span class="path">App\Poker\Helpers\HexDecode</span>
-                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            1                                        </span>
-                                        <span class="path">App\Poker\Helpers\PlayerBetFunctions</span>
                                                                     </td>
                             </tr>
                                                     <tr>
@@ -1089,6 +1180,127 @@
                                                                     </td>
                             </tr>
                                                     <tr>
+                                <td valign="top"><span class="path">App\Tests\Poker\Round\CheckBadgesTest</span></td>
+                                <td style="padding-bottom: 1em;">
+                                                                                                                    <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">Symfony\Bundle\FrameworkBundle\Test\WebTestCase</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Poker\Round\CheckBadges</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">static</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            3                                        </span>
+                                        <span class="path">App\Poker\Helpers\FetchPlayers</span>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <td valign="top"><span class="path">App\Tests\Poker\Round\CollectBetsTest</span></td>
+                                <td style="padding-bottom: 1em;">
+                                                                                                                    <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">Symfony\Bundle\FrameworkBundle\Test\WebTestCase</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            1                                        </span>
+                                        <span class="path">App\Poker\Round\CollectBets</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">static</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Poker\Helpers\FetchCommunity</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            3                                        </span>
+                                        <span class="path">App\Poker\Helpers\FetchPlayers</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Poker\Helpers\UpdatePlayer</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            1                                        </span>
+                                        <span class="path">App\Poker\Helpers\UpdateCommunity</span>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <td valign="top"><span class="path">App\Tests\Poker\Round\CommunityCardsTest</span></td>
+                                <td style="padding-bottom: 1em;">
+                                                                                                                    <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">Symfony\Bundle\FrameworkBundle\Test\WebTestCase</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">Symfony\Component\HttpFoundation\Request</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            4                                        </span>
+                                        <span class="path">App\Poker\Round\CommunityCards</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">static</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Poker\Helpers\FetchCommunity</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            3                                        </span>
+                                        <span class="path">App\Poker\Helpers\FetchPlayers</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Poker\Helpers\UpdatePlayer</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            1                                        </span>
+                                        <span class="path">App\Poker\Helpers\UpdateCommunity</span>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <td valign="top"><span class="path">App\Tests\Poker\Round\DealCommunityCardsTest</span></td>
+                                <td style="padding-bottom: 1em;">
+                                                                                                                    <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">Symfony\Bundle\FrameworkBundle\Test\WebTestCase</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            1                                        </span>
+                                        <span class="path">App\Poker\Round\DealCommunityCards</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">static</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Poker\Helpers\FetchCommunity</span>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <td valign="top"><span class="path">App\Tests\Poker\Round\DecideWinnerTest</span></td>
+                                <td style="padding-bottom: 1em;">
+                                                                                                                    <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">Symfony\Bundle\FrameworkBundle\Test\WebTestCase</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            4                                        </span>
+                                        <span class="path">App\Poker\Round\DecideWinner</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">static</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Poker\Helpers\FetchCommunity</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            3                                        </span>
+                                        <span class="path">App\Poker\Helpers\FetchPlayers</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Poker\Helpers\UpdatePlayer</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            1                                        </span>
+                                        <span class="path">App\Poker\Helpers\UpdateCommunity</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            1                                        </span>
+                                        <span class="path">App\Poker\Hand</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">Symfony\Component\HttpFoundation\Request</span>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
                                 <td valign="top"><span class="path">App\Tests\Poker\Round\PermuteHandsTest</span></td>
                                 <td style="padding-bottom: 1em;">
                                                                                                                     <span class="badge" title="Cyclomatic complexity of class">
@@ -1098,26 +1310,20 @@
                                             3                                        </span>
                                         <span class="path">App\Poker\Round\PermuteHands</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">static</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             2                                        </span>
-                                        <span class="path">App\Poker\Round\CheckBadges</span>
+                                        <span class="path">App\Poker\Helpers\FetchCommunity</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            3                                        </span>
+                                        <span class="path">App\Poker\Helpers\FetchPlayers</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            2                                        </span>
+                                        <span class="path">App\Poker\Helpers\UpdatePlayer</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             1                                        </span>
-                                        <span class="path">App\Poker\Round\CollectBets</span>
-                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            4                                        </span>
-                                        <span class="path">App\Poker\Round\DecideWinner</span>
-                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            5                                        </span>
-                                        <span class="path">App\Poker\Round\EndGame</span>
-                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            5                                        </span>
-                                        <span class="path">App\Poker\Round\Folds</span>
-                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            5                                        </span>
-                                        <span class="path">App\Poker\Round\BettingLoop</span>
-                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            1                                        </span>
-                                        <span class="path">App\Poker\Round\NewDealerFuncs</span>
+                                        <span class="path">App\Poker\Hand</span>
                                                                     </td>
                             </tr>
                                                     <tr>
@@ -1141,9 +1347,6 @@
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             2                                        </span>
                                         <span class="path">App\Poker\Round\BeginSetBadges</span>
-                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            2                                        </span>
-                                        <span class="path">App\Poker\Round\SetNewDealer</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             3                                        </span>
                                         <span class="path">App\Poker\Round\ResetRound</span>
@@ -1443,7 +1646,7 @@
 
 
             
-            var json = {"name":"Execution time","children":[{"name":"App\\Tests\\Cards\\CardGraphicTest","time":0.011371},{"name":"App\\Tests\\Cards\\CardTest","time":0.002856},{"name":"App\\Tests\\Cards\\DeckTest","time":0.018709},{"name":"App\\Tests\\Cards\\HandTest","time":0.007837},{"name":"App\\Tests\\Controller\\Cards\\CardAPIDealControllerTest","time":0.369155},{"name":"App\\Tests\\Controller\\Cards\\CardAPIDeckControllerTest","time":0.029349},{"name":"App\\Tests\\Controller\\Cards\\CardAPIDrawControllerTest","time":0.068664},{"name":"App\\Tests\\Controller\\Cards\\CardControllerTest","time":0.176541},{"name":"App\\Tests\\Controller\\Cards\\CardProcessControllerTest","time":0.049495},{"name":"App\\Tests\\Controller\\Game21\\GameAPIControllerTest","time":0.020779},{"name":"App\\Tests\\Controller\\Game21\\GameControllerTest","time":0.052855},{"name":"App\\Tests\\Controller\\Game21\\GameProcessControllerTest","time":0.08196},{"name":"App\\Tests\\Controller\\HomeControllerTest","time":0.10044},{"name":"App\\Tests\\Controller\\Library\\LibraryControllerTest","time":0.269308},{"name":"App\\Tests\\Controller\\Library\\LibraryAddControllerTest","time":0.237145},{"name":"App\\Tests\\Controller\\Library\\LibraryResetControllerTest","time":0.000361},{"name":"App\\Tests\\Controller\\Poker\\API\\CombinationsAPIControllerTest","time":0.065014},{"name":"App\\Tests\\Controller\\Poker\\API\\GameAPIControllerTest","time":0.04415},{"name":"App\\Tests\\Controller\\Poker\\API\\HandAPIControllerTest","time":0.01887},{"name":"App\\Tests\\Controller\\Poker\\API\\HexAPIControllerTest","time":0.014031},{"name":"App\\Tests\\Controller\\Poker\\API\\HexDecodeAPIControllerTest","time":0.011095},{"name":"App\\Tests\\Controller\\Poker\\API\\WinnerAPIControllerTest","time":0.030688},{"name":"App\\Tests\\Controller\\Poker\\GameBeginControllerTest","time":0.027082},{"name":"App\\Tests\\Controller\\Poker\\GameControllerTest","time":0.029341},{"name":"App\\Tests\\Controller\\Poker\\GameNextControllerTest","time":0.048903},{"name":"App\\Tests\\Controller\\Poker\\GameRoundControllerTest","time":0.206383},{"name":"App\\Tests\\Controller\\Poker\\HomeControllerTest","time":0.073039},{"name":"App\\Tests\\Controller\\Poker\\ResetControllerTest","time":0.047972},{"name":"App\\Tests\\Controller\\QuotationsControllerTest","time":0.011783},{"name":"App\\Tests\\Entity\\BookTest","time":0.000396},{"name":"App\\Tests\\Entity\\CommunityTest","time":0.000388},{"name":"App\\Tests\\Entity\\LogTest","time":0.000958},{"name":"App\\Tests\\Entity\\PlayersTest","time":0.000418},{"name":"App\\Tests\\Game21\\GameActionsBankMovesTest","time":0.001319},{"name":"App\\Tests\\Game21\\GameActionsTest","time":0.128079},{"name":"App\\Tests\\Game21\\GameTest","time":0.002674},{"name":"App\\Tests\\Game21\\HandScoreTest","time":0.00169},{"name":"App\\Tests\\Game21\\PlayerTest","time":0.000771},{"name":"App\\Tests\\Poker\\CommunityTest","time":0.000747},{"name":"App\\Tests\\Poker\\DealOrderTest","time":0.00035},{"name":"App\\Tests\\Poker\\DeckTest","time":0.090967},{"name":"App\\Tests\\Poker\\GameFoundationTest","time":0.001423},{"name":"App\\Tests\\Controller\\Poker\\GetDeckTest","time":0.000352},{"name":"App\\Tests\\Poker\\HandlePlayerBetTest","time":0.002744},{"name":"App\\Tests\\Poker\\FindBestHandTest","time":0.00099},{"name":"App\\Tests\\Poker\\HoleCardsTest","time":0.000849},{"name":"App\\Tests\\Poker\\LogTest","time":0.000807},{"name":"App\\Tests\\Poker\\PlayerTest","time":0.001407},{"name":"App\\Tests\\Poker\\PokerHand\\PokerHandCombinationsTest","time":0.0009},{"name":"App\\Tests\\Poker\\PokerHand\\PokerHandSeriesTest","time":0.014558},{"name":"App\\Tests\\Poker\\PokerHand\\PokerHandValueTest","time":0.00676},{"name":"App\\Tests\\Poker\\Round\\PermuteHandsTest","time":0.002309},{"name":"App\\Tests\\Poker\\RoundDoneTest","time":0.001019},{"name":"App\\Tests\\Repository\\BookRepositoryTest","time":0.000482},{"name":"App\\Tests\\Repository\\CommunityRepositoryTest","time":0.000424},{"name":"App\\Tests\\Repository\\LogRepositoryTest","time":0.000828},{"name":"App\\Tests\\Repository\\PlayersRepositoryTest","time":0.000443}]};
+            var json = {"name":"Execution time","children":[{"name":"App\\Tests\\Cards\\CardGraphicTest","time":0.011559},{"name":"App\\Tests\\Cards\\CardTest","time":0.00279},{"name":"App\\Tests\\Cards\\DeckTest","time":0.019014},{"name":"App\\Tests\\Cards\\HandTest","time":0.007624},{"name":"App\\Tests\\Controller\\Cards\\CardAPIDealControllerTest","time":0.373713},{"name":"App\\Tests\\Controller\\Cards\\CardAPIDeckControllerTest","time":0.032386},{"name":"App\\Tests\\Controller\\Cards\\CardAPIDrawControllerTest","time":0.06437},{"name":"App\\Tests\\Controller\\Cards\\CardControllerTest","time":0.173199},{"name":"App\\Tests\\Controller\\Cards\\CardProcessControllerTest","time":0.051307},{"name":"App\\Tests\\Controller\\Game21\\GameAPIControllerTest","time":0.014927},{"name":"App\\Tests\\Controller\\Game21\\GameControllerTest","time":0.052121},{"name":"App\\Tests\\Controller\\Game21\\GameProcessControllerTest","time":0.077949},{"name":"App\\Tests\\Controller\\HomeControllerTest","time":0.100858},{"name":"App\\Tests\\Controller\\Library\\LibraryControllerTest","time":0.264064},{"name":"App\\Tests\\Controller\\Library\\LibraryAddControllerTest","time":0.242338},{"name":"App\\Tests\\Controller\\Library\\LibraryResetControllerTest","time":0.00037},{"name":"App\\Tests\\Controller\\Poker\\API\\CombinationsAPIControllerTest","time":0.069946},{"name":"App\\Tests\\Controller\\Poker\\API\\GameAPIControllerTest","time":0.047189},{"name":"App\\Tests\\Controller\\Poker\\API\\HandAPIControllerTest","time":0.021971},{"name":"App\\Tests\\Controller\\Poker\\API\\HexAPIControllerTest","time":0.013462},{"name":"App\\Tests\\Controller\\Poker\\API\\HexDecodeAPIControllerTest","time":0.010737},{"name":"App\\Tests\\Controller\\Poker\\API\\WinnerAPIControllerTest","time":0.029703},{"name":"App\\Tests\\Controller\\Poker\\GameBeginControllerTest","time":0.027942},{"name":"App\\Tests\\Controller\\Poker\\GameControllerTest","time":0.026696},{"name":"App\\Tests\\Controller\\Poker\\GameNextControllerTest","time":0.041995},{"name":"App\\Tests\\Controller\\Poker\\GameRoundControllerTest","time":0.236873},{"name":"App\\Tests\\Controller\\Poker\\HomeControllerTest","time":0.069408},{"name":"App\\Tests\\Controller\\Poker\\ResetControllerTest","time":0.052984},{"name":"App\\Tests\\Controller\\QuotationsControllerTest","time":0.011059},{"name":"App\\Tests\\Entity\\BookTest","time":0.000389},{"name":"App\\Tests\\Entity\\CommunityTest","time":0.000387},{"name":"App\\Tests\\Entity\\LogTest","time":0.000845},{"name":"App\\Tests\\Entity\\PlayersTest","time":0.000465},{"name":"App\\Tests\\Game21\\GameActionsBankMovesTest","time":0.001351},{"name":"App\\Tests\\Game21\\GameActionsTest","time":0.126373},{"name":"App\\Tests\\Game21\\GameTest","time":0.002514},{"name":"App\\Tests\\Game21\\HandScoreTest","time":0.001672},{"name":"App\\Tests\\Game21\\PlayerTest","time":0.000925},{"name":"App\\Tests\\Poker\\CommunityTest","time":0.000742},{"name":"App\\Tests\\Poker\\DealOrderTest","time":0.000356},{"name":"App\\Tests\\Poker\\DeckTest","time":0.090785},{"name":"App\\Tests\\Poker\\GameFoundationTest","time":0.001376},{"name":"App\\Tests\\Controller\\Poker\\GetDeckTest","time":0.000371},{"name":"App\\Tests\\Poker\\HandlePlayerBetTest","time":0.002354},{"name":"App\\Tests\\Poker\\FindAllHandsTest","time":0.000342},{"name":"App\\Tests\\Poker\\FindBestHandTest","time":0.053623},{"name":"App\\Tests\\Poker\\HexDecodeTest","time":0.000356},{"name":"App\\Tests\\Poker\\HoleCardsTest","time":0.000859},{"name":"App\\Tests\\Poker\\LogTest","time":0.000659},{"name":"App\\Tests\\Poker\\PlayerTest","time":0.00143},{"name":"App\\Tests\\Poker\\PokerHand\\PokerHandCombinationsTest","time":0.000826},{"name":"App\\Tests\\Poker\\PokerHand\\PokerHandSeriesTest","time":0.01461},{"name":"App\\Tests\\Poker\\PokerHand\\PokerHandValueTest","time":0.006741},{"name":"App\\Tests\\Poker\\Round\\CheckBadgesTest","time":0.005326},{"name":"App\\Tests\\Poker\\Round\\CollectBetsTest","time":0.009422},{"name":"App\\Tests\\Poker\\Round\\CommunityCardsTest","time":0.008918},{"name":"App\\Tests\\Poker\\Round\\DealCommunityCardsTest","time":0.007299},{"name":"App\\Tests\\Poker\\Round\\DecideWinnerTest","time":0.13772},{"name":"App\\Tests\\Poker\\Round\\PermuteHandsTest","time":0.030669},{"name":"App\\Tests\\Poker\\RoundDoneTest","time":0.00043},{"name":"App\\Tests\\Repository\\BookRepositoryTest","time":0.000456},{"name":"App\\Tests\\Repository\\CommunityRepositoryTest","time":0.000436},{"name":"App\\Tests\\Repository\\LogRepositoryTest","time":0.000852},{"name":"App\\Tests\\Repository\\PlayersRepositoryTest","time":0.000476}]};
             root = json;
             var nodes = treemap.nodes(json)
                 .filter(function (d) {

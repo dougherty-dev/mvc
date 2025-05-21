@@ -33,7 +33,6 @@ class FindBestHand
         Community $community
     ): array {
         $bestHand = [];
-        $hex = "";
         $bestHex = "";
 
         $permutations = (new PokerHandCombinations())->permuteHand();

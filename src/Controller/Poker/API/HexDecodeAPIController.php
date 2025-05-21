@@ -31,7 +31,7 @@ class HexDecodeAPIController extends AbstractController
         $hex = (string) $request->request->get("hex");
 
         if (strlen($hex) != 8) {
-            return $response = new JsonResponse([]);
+            return new JsonResponse([]);
         }
 
         $response = new JsonResponse((new HexDecode())->hexDecode($hex));

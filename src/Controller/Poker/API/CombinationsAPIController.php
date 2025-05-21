@@ -29,7 +29,7 @@ class CombinationsAPIController extends AbstractController
     {
         $req = $request->query->all();
         if (!isset($req["table"], $req["hand"]) || empty($req["hand"]) || empty($req["table"])) {
-            return $response = new JsonResponse([]);
+            return new JsonResponse([]);
         }
 
         /**
