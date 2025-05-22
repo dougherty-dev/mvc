@@ -11,6 +11,7 @@ namespace App\Tests\Poker;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Request;
 use App\Poker\Helpers\FindBestHand;
 use App\Poker\Helpers\FetchCommunity;
 use App\Poker\Helpers\FetchPlayers;

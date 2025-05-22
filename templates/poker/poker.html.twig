@@ -96,18 +96,18 @@
                 <div class="grid-action">
                     <table class="action-table">
                         <tr>
-                            <td class="action right divider">{{ community.stateText }} {{ app.session.get('bestPokerHand').text| default('') }} {{ app.session.get('winner')| default('') }} {{ community.betorder|join('|') }}</td>
+                            <td class="action right divider">{{ community.stateText }} {{ app.session.get('bestPokerHand').text| default('') }} {{ app.session.get('winner')| default('') }}</td>
                             <td class="action left">
                                 <form method="POST" action="{{ path(action[2]) }}">
                                 {%- if activePlayer and playersTurn and notShowdown -%}
-                                    {%- if (preflop or flop or turn or river) and not zeroBets -%}
+                                    {%- if preflop or flop or turn or river -%}
                                         {%- if canRaise -%}
                                             <button type="submit" name="raise">Höj</button>
-                                            <input type="number" name="bet" min="0" max="{{ community.state.betCost() }}" value="{{ community.state.betCost() }}"> |&nbsp;
+                                            <input type="number" name="bet" min="{{ community.state.betCost() }}" max="{{ community.state.betCost() }}" value="{{ community.state.betCost() }}"> |&nbsp;
                                         {%- endif -%}
                                         {%- if equalBets -%}
-                                        <input type="number" name="bet" min="0" max="{{ community.state.betCost() }}" value="{{ community.state.betCost() }}">
                                         <button type="submit" name="makebet">Satsa</button>
+                                        <input type="number" name="bet" min="{{ community.state.betCost() }}" max="{{ community.state.betCost() }}" value="{{ community.state.betCost() }}">
                                         {%- endif -%}
                                         {%- if hasLowerBet > 0 -%}
                                         <button type="submit" name="call">Syna</button>
@@ -221,7 +221,6 @@
                 </div>
             </div>
         </section>
-{{ moneySum }}
 {#{ moneySum }}
 {{ dump(app.session.get('bestPokerHand')) }}
 {{ dump(community) }}

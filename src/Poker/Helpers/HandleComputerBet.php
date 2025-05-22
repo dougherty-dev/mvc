@@ -30,9 +30,6 @@ class HandleComputerBet extends PlayerBetFunctions
         UpdateCommunity $updateCommunity,
         int $currentPlayer
     ): void {
-        if ($players[$currentPlayer]->getState() === PlayerStates::Out) {
-            return;
-        }
         $this->updatePlayer = $updatePlayer;
         $this->updateCommunity = $updateCommunity;
 
@@ -46,8 +43,8 @@ class HandleComputerBet extends PlayerBetFunctions
         $this->maxBet = max([0, ...$bets]);
         $this->raises = $this->community->getRaises();
 
-        /** For now, raise until can't raise more, then call or pass */
         match (true) {
+            $currentPlayer === 1 && (new AIPlayer())->checkFold($this->player) => $this->fold(),
             $this->raises <= 2 && $this->player->getBet() < $this->maxBet => $this->raise($this->betCost),
             $this->raises > 2 && $this->player->getBet() === $this->maxBet => $this->check(),
             $this->raises > 2 && $this->player->getBet() < $this->maxBet => $this->call(),

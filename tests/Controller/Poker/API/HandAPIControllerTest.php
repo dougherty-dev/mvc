@@ -34,5 +34,6 @@ class HandAPIControllerTest extends WebTestCase
         $client->request('POST', '/api/poker/hand', ['player' => 4]);
         $this->assertResponseIsSuccessful();
         $this->assertEquals($client->getResponse()->getContent(), '[]');
+        $client->request('POST', '/proj/reset/post');
     }
 }

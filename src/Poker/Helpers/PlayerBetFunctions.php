@@ -39,6 +39,7 @@ class PlayerBetFunctions
         $discarded->addToDeck($cards);
         $this->updateCommunity->saveDiscarded($discarded->deckIntValues());
 
+        $this->player->setState(PlayerStates::Folds);
         $this->updatePlayer->saveState($this->id, PlayerStates::Folds->value);
         $this->updatePlayer->saveHand($this->id, []);
     }

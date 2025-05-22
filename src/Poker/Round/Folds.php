@@ -47,8 +47,12 @@ class Folds
             return false;
         }
 
+        if ($outStates > 2) {
+            return true;
+        }
+
         /**
-         * Just find legit player, and settle the score.
+         * $outStates == 1: just find legit player, and settle the score.
          */
         foreach ($players as $player) {
             if (!in_array($player->getState(), [PlayerStates::Out, PlayerStates::Folds])) {

@@ -41,7 +41,7 @@ class ResetController extends SessionController
             $player = new Players();
             $player->setHandle($handle)
                 ->setHand([])
-                ->setCash(1000)
+                ->setCash(500)
                 ->setBet(0)
                 ->setLatestAction(0)
                 ->setDealer(false)

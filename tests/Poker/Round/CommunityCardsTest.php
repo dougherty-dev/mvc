@@ -31,10 +31,6 @@ class CommunityCardsTest extends WebTestCase
      */
     public function testCommunityCards(): void
     {
-        Request::create(
-            "/proj/poker/reset",
-            "POST"
-        );
         $communityCards = new CommunityCards();
         $this->assertInstanceOf("\App\Poker\Round\CommunityCards", $communityCards);
 
@@ -54,5 +50,10 @@ class CommunityCardsTest extends WebTestCase
         $updatePlayer->saveState($players[0]->getId(), PlayerStates::Waits->value);
         $players[0]->setState(PlayerStates::Waits);
         $communityCards->prepareCommunityCards($entityManager, $players, $community, $updatePlayer, $updateCommunity);
+
+        Request::create(
+            "/proj/poker/reset",
+            "POST"
+        );
     }
 }

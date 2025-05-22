@@ -41,14 +41,5 @@ class PokerHandCombinationsTest extends TestCase
         /** Uniqueness */
         $hashes = array_map(fn ($value): string => md5(serialize($value)), $uniqueHands);
         $this->assertEquals($hashes, array_unique($hashes));
-
-        // /** Straight flush */
-        // $vals = [16, 17, 18, 19, 20]; // ♦️4, ♦️5, ♦️6, ♦️7, ♦️8
-        // $hand = new Hand();
-        // $hand->addToHand($vals);
-        // $hex = $pokerHandValue->checkHand($hand);
-        // $this->assertEquals($hex, "H8800000");
-        // $this->assertNotEquals($hex, "H5300000");
-        // $this->assertTrue($hex > "H1c0da20"); // one pair
     }
 }

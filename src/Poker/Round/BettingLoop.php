@@ -54,7 +54,7 @@ class BettingLoop
             /**
              * Computer player
              */
-            if ($currentPlayer != 0) {
+            if ($currentPlayer != 0 && !in_array($players[$currentPlayer]->getState(), [PlayerStates::Out, PlayerStates::Folds])) {
                 (new HandleComputerBet())->handleBet($players, $community, $updatePlayer, $updateCommunity, $currentPlayer);
             }
 

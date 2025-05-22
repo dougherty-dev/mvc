@@ -771,6 +771,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-Poker-SessionController.html#property_requestStack"
         },                {
+            "fqsen": "\\App\\Controller\\Poker\\Unit\\StatesController",
+            "name": "StatesController",
+            "summary": "The\u0020StatesController\u0020class.",
+            "url": "classes/App-Controller-Poker-Unit-StatesController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\Poker\\Unit\\StatesController\u003A\u003AprojUnitStatest\u0028\u0029",
+            "name": "projUnitStatest",
+            "summary": "Route\u0020for\u0020changing\u0020game\u0020parameters\u0020for\u0020testing\u0020purposes.",
+            "url": "classes/App-Controller-Poker-Unit-StatesController.html#method_projUnitStatest"
+        },                {
             "fqsen": "\\QUOTATIONS",
             "name": "QUOTATIONS",
             "summary": "The\u0020array\u0020holding\u0020the\u0020quotations.",
@@ -2196,6 +2206,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Poker-HandFoundation.html#property_hand"
         },                {
+            "fqsen": "\\App\\Poker\\Helpers\\AIPlayer",
+            "name": "AIPlayer",
+            "summary": "The\u0020AIPlayer\u0020class.",
+            "url": "classes/App-Poker-Helpers-AIPlayer.html"
+        },                {
+            "fqsen": "\\App\\Poker\\Helpers\\AIPlayer\u003A\u003AcheckFold\u0028\u0029",
+            "name": "checkFold",
+            "summary": "Computer\u0020betting.",
+            "url": "classes/App-Poker-Helpers-AIPlayer.html#method_checkFold"
+        },                {
+            "fqsen": "\\App\\Poker\\Helpers\\AIPlayer\u003A\u003ASUITED",
+            "name": "SUITED",
+            "summary": "",
+            "url": "classes/App-Poker-Helpers-AIPlayer.html#constant_SUITED"
+        },                {
             "fqsen": "\\App\\Poker\\Helpers\\FetchCommunity",
             "name": "FetchCommunity",
             "summary": "The\u0020FetchCommunity\u0020class.",
@@ -3365,6 +3390,11 @@ Search.appendIndex(
             "name": "Poker",
             "summary": "",
             "url": "namespaces/app-controller-poker.html"
+        },                {
+            "fqsen": "\\App\\Controller\\Poker\\Unit",
+            "name": "Unit",
+            "summary": "",
+            "url": "namespaces/app-controller-poker-unit.html"
         },                {
             "fqsen": "\\App\\Entity",
             "name": "Entity",

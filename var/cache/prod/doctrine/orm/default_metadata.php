@@ -5,6 +5,9 @@
 return [[
 
 'App__Entity__Book__CLASSMETADATA__' => 0,
+'App__Entity__Community__CLASSMETADATA__' => 1,
+'App__Entity__Players__CLASSMETADATA__' => 2,
+'App__Entity__Log__CLASSMETADATA__' => 3,
 
 ], [
 
@@ -109,6 +112,341 @@ return [[
                 ],
                 'nullable' => [
                     5 => true,
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+},
+1 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+            clone ($p['Doctrine\\ORM\\Mapping\\FieldMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\FieldMapping')),
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'namespace' => [
+                    'App\\Entity',
+                ],
+                'rootEntityName' => [
+                    'App\\Entity\\Community',
+                ],
+                'customRepositoryClassName' => [
+                    'App\\Repository\\CommunityRepository',
+                ],
+                'identifier' => [
+                    [
+                        'id',
+                    ],
+                ],
+                'generatorType' => [
+                    4,
+                ],
+                'fieldMappings' => [
+                    [
+                        'id' => $o[1],
+                        'status' => $o[2],
+                        'deck' => $o[3],
+                        'discarded' => $o[4],
+                        'hand' => $o[5],
+                        'betorder' => $o[6],
+                        'pot' => $o[7],
+                        'raises' => $o[8],
+                    ],
+                ],
+                'fieldNames' => [
+                    [
+                        'id' => 'id',
+                        'status' => 'status',
+                        'deck' => 'deck',
+                        'discarded' => 'discarded',
+                        'hand' => 'hand',
+                        'betorder' => 'betorder',
+                        'pot' => 'pot',
+                        'raises' => 'raises',
+                    ],
+                ],
+                'columnNames' => [
+                    [
+                        'id' => 'id',
+                        'status' => 'status',
+                        'deck' => 'deck',
+                        'discarded' => 'discarded',
+                        'hand' => 'hand',
+                        'betorder' => 'betorder',
+                        'pot' => 'pot',
+                        'raises' => 'raises',
+                    ],
+                ],
+                'table' => [
+                    [
+                        'name' => 'community',
+                    ],
+                ],
+                'idGenerator' => [
+                    $o[9],
+                ],
+                'name' => [
+                    'App\\Entity\\Community',
+                ],
+                'id' => [
+                    1 => true,
+                ],
+                'type' => [
+                    1 => 'integer',
+                    'smallint',
+                    'simple_array',
+                    'simple_array',
+                    'simple_array',
+                    'simple_array',
+                    'integer',
+                    'smallint',
+                ],
+                'fieldName' => [
+                    1 => 'id',
+                    'status',
+                    'deck',
+                    'discarded',
+                    'hand',
+                    'betorder',
+                    'pot',
+                    'raises',
+                ],
+                'columnName' => [
+                    1 => 'id',
+                    'status',
+                    'deck',
+                    'discarded',
+                    'hand',
+                    'betorder',
+                    'pot',
+                    'raises',
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+},
+2 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+            clone ($p['Doctrine\\ORM\\Mapping\\FieldMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\FieldMapping')),
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'namespace' => [
+                    'App\\Entity',
+                ],
+                'rootEntityName' => [
+                    'App\\Entity\\Players',
+                ],
+                'customRepositoryClassName' => [
+                    'App\\Repository\\PlayersRepository',
+                ],
+                'identifier' => [
+                    [
+                        'id',
+                    ],
+                ],
+                'generatorType' => [
+                    4,
+                ],
+                'fieldMappings' => [
+                    [
+                        'id' => $o[1],
+                        'handle' => $o[2],
+                        'hand' => $o[3],
+                        'cash' => $o[4],
+                        'bet' => $o[5],
+                        'latest_action' => $o[6],
+                        'dealer' => $o[7],
+                        'small_blind' => $o[8],
+                        'big_blind' => $o[9],
+                    ],
+                ],
+                'fieldNames' => [
+                    [
+                        'id' => 'id',
+                        'handle' => 'handle',
+                        'hand' => 'hand',
+                        'cash' => 'cash',
+                        'bet' => 'bet',
+                        'latest_action' => 'latest_action',
+                        'dealer' => 'dealer',
+                        'small_blind' => 'small_blind',
+                        'big_blind' => 'big_blind',
+                    ],
+                ],
+                'columnNames' => [
+                    [
+                        'id' => 'id',
+                        'handle' => 'handle',
+                        'hand' => 'hand',
+                        'cash' => 'cash',
+                        'bet' => 'bet',
+                        'latest_action' => 'latest_action',
+                        'dealer' => 'dealer',
+                        'small_blind' => 'small_blind',
+                        'big_blind' => 'big_blind',
+                    ],
+                ],
+                'table' => [
+                    [
+                        'name' => 'players',
+                    ],
+                ],
+                'idGenerator' => [
+                    $o[10],
+                ],
+                'name' => [
+                    'App\\Entity\\Players',
+                ],
+                'id' => [
+                    1 => true,
+                ],
+                'type' => [
+                    1 => 'integer',
+                    'smallint',
+                    'simple_array',
+                    'integer',
+                    'integer',
+                    'smallint',
+                    'boolean',
+                    'boolean',
+                    'boolean',
+                ],
+                'fieldName' => [
+                    1 => 'id',
+                    'handle',
+                    'hand',
+                    'cash',
+                    'bet',
+                    'latest_action',
+                    'dealer',
+                    'small_blind',
+                    'big_blind',
+                ],
+                'columnName' => [
+                    1 => 'id',
+                    'handle',
+                    'hand',
+                    'cash',
+                    'bet',
+                    'latest_action',
+                    'dealer',
+                    'small_blind',
+                    'big_blind',
+                ],
+            ],
+        ],
+        $o[0],
+        []
+    );
+},
+3 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+            clone ($p['Doctrine\\ORM\\Mapping\\FieldMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\FieldMapping')),
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone $p['Doctrine\\ORM\\Mapping\\FieldMapping'],
+            clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'namespace' => [
+                    'App\\Entity',
+                ],
+                'rootEntityName' => [
+                    'App\\Entity\\Log',
+                ],
+                'customRepositoryClassName' => [
+                    'App\\Repository\\LogRepository',
+                ],
+                'identifier' => [
+                    [
+                        'id',
+                    ],
+                ],
+                'generatorType' => [
+                    4,
+                ],
+                'fieldMappings' => [
+                    [
+                        'id' => $o[1],
+                        'event' => $o[2],
+                        'time' => $o[3],
+                    ],
+                ],
+                'fieldNames' => [
+                    [
+                        'id' => 'id',
+                        'event' => 'event',
+                        'time' => 'time',
+                    ],
+                ],
+                'columnNames' => [
+                    [
+                        'id' => 'id',
+                        'event' => 'event',
+                        'time' => 'time',
+                    ],
+                ],
+                'table' => [
+                    [
+                        'name' => 'log',
+                    ],
+                ],
+                'idGenerator' => [
+                    $o[4],
+                ],
+                'name' => [
+                    'App\\Entity\\Log',
+                ],
+                'id' => [
+                    1 => true,
+                ],
+                'type' => [
+                    1 => 'integer',
+                    'string',
+                    'datetime',
+                ],
+                'fieldName' => [
+                    1 => 'id',
+                    'event',
+                    'time',
+                ],
+                'columnName' => [
+                    1 => 'id',
+                    'event',
+                    'time',
+                ],
+                'length' => [
+                    2 => 255,
                 ],
             ],
         ],

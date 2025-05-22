@@ -661,6 +661,13 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Poker\SessionController"/>
       </call>
     </service>
+    <service id="App\Controller\Poker\Unit\StatesController" class="App\Controller\Poker\Unit\StatesController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Poker\Unit\StatesController"/>
+      </call>
+    </service>
     <service id="App\Controller\QuotationsController" class="App\Controller\QuotationsController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -715,6 +722,7 @@
     <service id="App\Poker\GameFoundation" class="App\Poker\GameFoundation" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Hand" class="App\Poker\Hand" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\HandFoundation" class="App\Poker\HandFoundation" autowire="true" autoconfigure="true"/>
+    <service id="App\Poker\Helpers\AIPlayer" class="App\Poker\Helpers\AIPlayer" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Helpers\FetchCommunity" class="App\Poker\Helpers\FetchCommunity" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Helpers\FetchPlayers" class="App\Poker\Helpers\FetchPlayers" autowire="true" autoconfigure="true"/>
     <service id="App\Poker\Helpers\FindAllHands" class="App\Poker\Helpers\FindAllHands" autowire="true" autoconfigure="true"/>
@@ -812,7 +820,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.35Pf7CI"/>
+      <argument type="service" id=".service_locator.uq9j_Uy"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3820,7 +3828,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.35Pf7CI"/>
+      <argument type="service" id=".service_locator.uq9j_Uy"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -7916,6 +7924,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Poker\SessionController" class="App\Controller\Poker\SessionController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Poker\SessionController" class="App\Controller\Poker\SessionController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Poker\SessionController" class="App\Controller\Poker\SessionController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Poker\Unit\StatesController" class="App\Controller\Poker\Unit\StatesController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Poker\Unit\StatesController" class="App\Controller\Poker\Unit\StatesController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Poker\Unit\StatesController" class="App\Controller\Poker\Unit\StatesController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\QuotationsController" class="App\Controller\QuotationsController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -8573,7 +8584,13 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.Y.u6NW0" method="withContext"/>
     </service>
-    <service id=".service_locator.35Pf7CI" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Y.u6NW0.App\Controller\Poker\Unit\StatesController::projUnitStatest()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Poker\Unit\StatesController::projUnitStatest()"/>
+      <argument>App\Controller\Poker\Unit\StatesController::projUnitStatest()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.Y.u6NW0" method="withContext"/>
+    </service>
+    <service id=".service_locator.uq9j_Uy" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
@@ -8597,6 +8614,7 @@
         <argument key="App\Controller\Poker\GameNextController::projPokerBegin" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\GameNextController::projPokerBegin()"/>
         <argument key="App\Controller\Poker\GameRoundController::projPokerRound" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\GameRoundController::projPokerRound()"/>
         <argument key="App\Controller\Poker\ResetController::projResetPost" type="service_closure" id=".service_locator.Y.u6NW0.App\Controller\Poker\ResetController::projResetPost()"/>
+        <argument key="App\Controller\Poker\Unit\StatesController::projUnitStatest" type="service_closure" id=".service_locator.Y.u6NW0.App\Controller\Poker\Unit\StatesController::projUnitStatest()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
         <argument key="App\Controller\Library\LibraryAPIController:apiLibraryBooks" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\Library\LibraryAPIController::apiLibraryBooks()"/>
@@ -8616,6 +8634,7 @@
         <argument key="App\Controller\Poker\GameNextController:projPokerBegin" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\GameNextController::projPokerBegin()"/>
         <argument key="App\Controller\Poker\GameRoundController:projPokerRound" type="service_closure" id=".service_locator.E7ajBy2.App\Controller\Poker\GameRoundController::projPokerRound()"/>
         <argument key="App\Controller\Poker\ResetController:projResetPost" type="service_closure" id=".service_locator.Y.u6NW0.App\Controller\Poker\ResetController::projResetPost()"/>
+        <argument key="App\Controller\Poker\Unit\StatesController:projUnitStatest" type="service_closure" id=".service_locator.Y.u6NW0.App\Controller\Poker\Unit\StatesController::projUnitStatest()"/>
       </argument>
     </service>
     <service id=".service_locator.ea.H0ae" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -9417,6 +9436,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Poker\Unit\StatesController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Poker\Unit\StatesController"/>
+      <argument>App\Controller\Poker\Unit\StatesController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
     <service id=".service_locator.ZyP9f7K.App\Controller\QuotationsController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\QuotationsController"/>
       <argument>App\Controller\QuotationsController</argument>
@@ -9646,6 +9671,7 @@
           <argument>App\Controller\Poker\HomeController</argument>
           <argument>App\Controller\Poker\ResetController</argument>
           <argument>App\Controller\Poker\SessionController</argument>
+          <argument>App\Controller\Poker\Unit\StatesController</argument>
           <argument>App\Controller\QuotationsController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>
@@ -11055,7 +11081,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.35Pf7CI"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.uq9j_Uy"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

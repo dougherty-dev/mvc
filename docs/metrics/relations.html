@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2025-05-21 22:49:56        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2025-05-22 18:23:38        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -476,17 +476,19 @@
         "relations": []
     },
     {
+        "name": "\\App\\Poker\\Helpers\\AIPlayer",
+        "size": 3000,
+        "relations": [
+            "\\App\\Poker\\Player"
+        ]
+    },
+    {
         "name": "\\App\\Poker\\Helpers\\HexDecode",
         "size": 3000,
         "relations": []
     },
     {
         "name": "\\App\\Poker\\PlayerStates",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Poker\\Helpers\\FetchPlayers",
         "size": 3000,
         "relations": []
     },
@@ -498,6 +500,11 @@
             "\\App\\Poker\\Hand",
             "\\App\\Poker\\PlayerStates"
         ]
+    },
+    {
+        "name": "\\App\\Poker\\Helpers\\FetchPlayers",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Poker\\Helpers\\FetchCommunity",
@@ -766,6 +773,19 @@
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\Poker\\Unit\\StatesController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Repository\\CommunityRepository",
+            "\\App\\Entity\\Players",
+            "\\App\\Entity\\Community"
         ]
     },
     {

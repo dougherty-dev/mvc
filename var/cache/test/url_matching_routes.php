@@ -55,6 +55,7 @@ return [
         '/proj/about/database' => [[['_route' => 'proj_about_database', '_controller' => 'App\\Controller\\Poker\\HomeController::projAboutDatabase'], null, null, null, false, false, null]],
         '/proj/api' => [[['_route' => 'proj_api', '_controller' => 'App\\Controller\\Poker\\HomeController::projAPI'], null, null, null, false, false, null]],
         '/proj/reset/post' => [[['_route' => 'proj_reset_post', '_controller' => 'App\\Controller\\Poker\\ResetController::projResetPost'], null, ['POST' => 0], null, false, false, null]],
+        '/proj/unit/states' => [[['_route' => 'proj_unit_states', '_controller' => 'App\\Controller\\Poker\\Unit\\StatesController::projUnitStatest'], null, ['POST' => 0], null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::home'], null, null, null, false, false, null]],
         '/about' => [[['_route' => 'about', '_controller' => 'App\\Controller\\HomeController::about'], null, null, null, false, false, null]],
         '/report' => [[['_route' => 'report', '_controller' => 'App\\Controller\\HomeController::report'], null, null, null, false, false, null]],

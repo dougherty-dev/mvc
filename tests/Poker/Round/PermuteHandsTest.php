@@ -11,6 +11,7 @@ namespace App\Tests\Poker\Round;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Request;
 use App\Poker\Helpers\FetchCommunity;
 use App\Poker\Helpers\FetchPlayers;
 use App\Poker\Helpers\UpdatePlayer;
@@ -20,6 +21,7 @@ use App\Poker\Round\PermuteHands;
 
 /**
  * PermuteHandsTest class.
+ * @SuppressWarnings("StaticAccess")
  */
 class PermuteHandsTest extends WebTestCase
 {
@@ -53,5 +55,14 @@ class PermuteHandsTest extends WebTestCase
 
         $permuteHands->permute($community, $players[0], $updatePlayer, []);
 
+        /**
+         * Restore
+         */
+        foreach ([[1, 45], [51, 0], [4, 33]] as $key => $arr) {
+            $hand = new Hand();
+            $hand->addToHand($arr);
+            $players[$key]->setHand($hand);
+            $updatePlayer->saveHand($players[$key]->getId(), $hand->handIntValues());
+        }
     }
 }

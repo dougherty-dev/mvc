@@ -30,6 +30,7 @@ class CombinationsAPIControllerTest extends WebTestCase
         $client = static::createClient();
         $client->request('POST', '/api/poker/combinations', ['table' => [32, 30, 5, 47, 4], 'hand' => [28, 33]]);
         $this->assertResponseIsSuccessful();
+        $client->request('POST', '/proj/reset/post');
     }
 
     /**
